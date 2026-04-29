@@ -491,9 +491,21 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="site-mark" href="/">Free Scripture</a>
+    <a class="site-mark" href="/">
+      <svg class="site-mark__icon" width="32" height="22" viewBox="0 0 32 22" fill="none" aria-hidden="true">
+        <path d="M16 2Q16 0 14 0L2 0Q0 0 0 2L0 22Q7 20 16 21" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 2Q16 0 18 0L30 0Q32 0 32 2L32 22Q25 20 16 21" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="4" y1="6" x2="12.5" y2="6" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        <line x1="4" y1="10" x2="11.5" y2="10" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        <line x1="4" y1="14" x2="10.5" y2="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        <line x1="19.5" y1="6" x2="28" y2="6" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        <line x1="19.5" y1="10" x2="27" y2="10" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        <line x1="19.5" y1="14" x2="26" y2="14" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+      </svg>
+      <span class="site-mark__text">Free Scripture</span>
+    </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="/christian/">Christian</a>
+      <a href="/kjv/">Bible</a>
       <a href="/search/">Search</a>
       <a href="/about/">About</a>
     </nav>
@@ -509,7 +521,9 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
     <div class="site-footer__col">
       <h4>Library</h4>
       <ul>
-        <li><a href="/christian/">Christian Bible</a></li>
+        <li><a href="/kjv/">King James Version</a></li>
+        <li><a href="/web/">World English Bible</a></li>
+        <li><a href="/bbe/">Bible in Basic English</a></li>
         <li><a href="/search/">Search all texts</a></li>
       </ul>
     </div>
@@ -542,74 +556,212 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 
 
 def render_homepage():
-    body = """
-<section class="hero">
-  <div class="hero__eyebrow">A Hope for Americans project</div>
-  <h1 class="hero__title">A free library of scripture, beautifully presented</h1>
-  <p class="hero__lede">Every text in the public domain. No accounts, no ads, no tracking. Just the words, well-displayed, free for anyone who comes looking.</p>
+    # Genre-cards homepage: every book as a proper card, organized by reading type.
+    # Each genre section uses the BOOK_ORDER and BOOK_INTROS for content,
+    # but we hardcode the genre structure here because it's editorial (not data).
 
-  <form class="search-bar" action="/search/" method="get" role="search">
-    <span class="search-bar__icon" aria-hidden="true">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    # Genre definitions: (slug, title, subtitle, description, books)
+    # books is a list of (book_name, note, meta) tuples.
+    GENRES = [
+        {
+            "title": "These read like a novel",
+            "desc": "Narrative — characters, events, a plot that moves forward.",
+            "gospels_note": "Four accounts of the same story — the life of Jesus, each told by a different person.",
+            "books": [
+                ("Matthew", "The life of Jesus as told by a tax collector. Written to show Jesus as the fulfillment of Jewish prophecy.", "28 chapters", True),
+                ("Mark", "The shortest gospel. Fast, urgent, action-driven. Starts with Jesus already an adult. No birth story.", "16 chapters", True),
+                ("Luke", "Written by a doctor who interviewed eyewitnesses. The most detailed account, especially about women and outsiders.", "24 chapters", True),
+                ("John", "The most reflective gospel. Written decades after the others by someone who was there. Philosophical and personal.", "21 chapters &middot; start here if you're new", True),
+            ],
+            "other_books": [
+                ("Genesis", "The beginning of everything. Creation, Adam and Eve, the flood, Abraham. The origin story.", "50 chapters"),
+                ("Exodus", "Escape from Egypt. Moses, the plagues, the Red Sea, the Ten Commandments.", "40 chapters"),
+                ("Numbers", "Forty years wandering in the desert. Rebellion, faith, and survival between Egypt and the promised land.", "36 chapters"),
+                ("Joshua", "Conquering the promised land. Military campaigns, land division, and a new beginning after Moses.", "24 chapters"),
+                ("Judges", "Heroes and chaos. Before there were kings, there were judges &mdash; warriors and leaders in a lawless era.", "21 chapters"),
+                ("Ruth", "A love story about loyalty, immigration, and belonging. One of the shortest books in the Bible.", "4 chapters &middot; about 15 min"),
+                ("1 Samuel", "The first king of Israel. Samuel, Saul, and the young David &mdash; including the fight with Goliath.", "31 chapters"),
+                ("2 Samuel", "David's rise to power and his fall. War, betrayal, adultery, and the cost of being king.", "24 chapters"),
+                ("1 Kings", "Solomon builds the temple, then the kingdom splits in two. Elijah appears as a prophet.", "22 chapters"),
+                ("2 Kings", "Both kingdoms collapse. Elisha performs miracles. Israel and Judah are conquered and exiled.", "25 chapters"),
+                ("1 Chronicles", "Israel's history retold from Adam to David. Genealogies and a second perspective on familiar events.", "29 chapters"),
+                ("2 Chronicles", "Judah's history from Solomon to the exile. The temple, the kings, the fall of Jerusalem.", "36 chapters"),
+                ("Ezra", "Returning from exile. The Jewish people rebuild their temple and their identity after Babylon.", "10 chapters"),
+                ("Nehemiah", "Rebuilding the walls of Jerusalem. Leadership, opposition, and community restoration.", "13 chapters"),
+                ("Esther", "A Jewish queen in Persia saves her people from genocide. God is never mentioned by name.", "10 chapters"),
+                ("Jonah", "A prophet runs from God, gets swallowed by a fish, and learns about mercy. Stranger than you think.", "4 chapters &middot; about 10 min"),
+                ("Acts", "What happened after Jesus left. The early church, Paul's travels, and the spread of Christianity across the Roman Empire.", "28 chapters"),
+            ],
+            "apocrypha": [
+                ("Tobit", "An angel in disguise, a magic fish, and a family reunion. Adventure and faith.", "14 chapters &middot; about 25 min"),
+                ("Judith", "A widow infiltrates an enemy camp and kills their general. One of the Bible's most dramatic heroines.", "16 chapters"),
+                ("1 Maccabees", "War for independence. A family leads a revolt against a king who outlawed their religion.", "16 chapters"),
+                ("2 Maccabees", "The same war told differently &mdash; more theological, more focused on martyrdom and miracle.", "15 chapters"),
+                ("Esther (Greek)", "The extended version of Esther, with the prayers and dreams the Hebrew version left out.", "6 additional chapters"),
+                ("1 Esdras", "An alternate account of the temple rebuilding. Overlaps with Ezra and Chronicles.", "9 chapters"),
+                ("2 Esdras", "Apocalyptic visions. Ezra asks God why the world is so unjust. God answers &mdash; sort of.", "16 chapters"),
+            ],
+        },
+        {
+            "title": "These read like music",
+            "desc": "Songs, prayers, and poems. Best read slowly or out loud.",
+            "books_flat": [
+                ("Psalms", "150 songs and prayers. Joy, rage, grief, praise &mdash; the full range of human emotion directed at God.", "150 chapters &middot; start with Psalm 23"),
+                ("Song of Solomon", "Erotic love poetry in the middle of the Bible. Yes, really. Beautiful, surprising, and ancient.", "8 chapters &middot; about 15 min"),
+                ("Lamentations", "Five poems of grief over the destruction of Jerusalem. Raw, structured, and devastating.", "5 chapters &middot; about 20 min"),
+            ],
+            "apocrypha": [
+                ("Prayer of Manasseh", "One of the worst kings of Judah prays for forgiveness. A single chapter of repentance.", "1 chapter &middot; 2 min"),
+                ("The Song of the Three Holy Children", "Three men thrown into a furnace praise God from inside the flames.", "1 chapter &middot; 3 min"),
+            ],
+        },
+        {
+            "title": "Advice about how to live",
+            "desc": "Philosophy, practical wisdom, and the hardest questions. No plot &mdash; just thinking.",
+            "books_flat": [
+                ("Job", "Why do good people suffer? A man loses everything and demands answers from God. God eventually responds &mdash; but not the way anyone expects.", "42 chapters"),
+                ("Proverbs", "Practical advice about money, relationships, work, and character. One line at a time. Dip in anywhere.", "31 chapters"),
+                ("Ecclesiastes", "&ldquo;Everything is meaningless.&rdquo; A wealthy king tries pleasure, work, and wisdom &mdash; and concludes none of it lasts.", "12 chapters &middot; about 30 min"),
+            ],
+            "apocrypha": [
+                ("Wisdom of Solomon", "A meditation on justice, immortality, and why the righteous suffer. Philosophical and beautiful.", "19 chapters"),
+                ("Sirach", "Ethics and everyday wisdom. How to handle money, friendship, speech, and death. The longest wisdom book.", "51 chapters"),
+            ],
+        },
+        {
+            "title": "The original constitution",
+            "desc": "Rules, ceremonies, and the law given to Israel. Dense but foundational.",
+            "books_flat": [
+                ("Leviticus", "Religious law &mdash; sacrifice, purity, diet, festivals. The operating manual for ancient Israelite worship.", "27 chapters"),
+                ("Deuteronomy", "Moses' farewell speech. He retells the law and the story so far before the people enter the promised land without him.", "34 chapters"),
+            ],
+        },
+        {
+            "title": "Mail from the early church",
+            "desc": "Real letters sent to real communities dealing with real problems. Most are from Paul.",
+            "books_flat": [
+                ("Romans", "Paul's masterwork. A systematic argument about sin, grace, faith, and freedom. The most influential letter in Christian history.", "16 chapters"),
+                ("1 Corinthians", "A messy church in a wild city. Paul addresses divisions, lawsuits, sex, marriage, and the famous chapter on love.", "16 chapters"),
+                ("2 Corinthians", "Paul defends his authority. The most personal and emotional of his letters. Weakness as strength.", "13 chapters"),
+                ("Galatians", "Freedom vs rules. Paul argues that faith, not law-keeping, is what matters. A short, angry, important letter.", "6 chapters &middot; about 20 min"),
+                ("Ephesians", "Unity and identity. What does it mean to be part of the church? One of the most quoted letters.", "6 chapters &middot; about 20 min"),
+                ("Philippians", "Joy from prison. Paul writes to his favorite church from a jail cell. Warm, personal, and hopeful.", "4 chapters &middot; about 15 min"),
+                ("Colossians", "Who Jesus really is. A short letter about the supremacy of Christ over every power and philosophy.", "4 chapters &middot; about 15 min"),
+                ("1 Thessalonians", "What happens to people who die before Jesus returns? Paul's earliest letter, written to a worried church.", "5 chapters &middot; about 15 min"),
+                ("2 Thessalonians", "Waiting for the end. People quit their jobs because they thought Jesus was coming back immediately.", "3 chapters &middot; about 10 min"),
+                ("1 Timothy", "Advice to a young pastor. How to lead a church, handle false teaching, and live with integrity.", "6 chapters &middot; about 15 min"),
+                ("2 Timothy", "Paul's last letter. Written from prison, expecting execution. His final words to his closest student.", "4 chapters &middot; about 12 min"),
+                ("Titus", "Church leadership on the island of Crete. Practical instructions for building a healthy community.", "3 chapters &middot; about 8 min"),
+                ("Philemon", "A runaway slave meets Paul in prison. Paul sends him back with this letter asking his owner to free him.", "1 chapter &middot; 3 min"),
+                ("Hebrews", "Old covenant vs new. A theological argument that Jesus fulfills and replaces the temple system. Author unknown.", "13 chapters"),
+                ("James", "&ldquo;Faith without action is dead.&rdquo; Practical, blunt, and focused on how you actually live &mdash; not just what you believe.", "5 chapters &middot; about 15 min"),
+                ("1 Peter", "Suffering with hope. Written to persecuted Christians scattered across the Roman Empire.", "5 chapters &middot; about 15 min"),
+                ("2 Peter", "Warnings about false teachers and the end of the world. Peter's last word to the churches.", "3 chapters &middot; about 10 min"),
+                ("1 John", "&ldquo;God is love.&rdquo; A letter about truth, love, and how to tell real faith from false faith.", "5 chapters &middot; about 15 min"),
+                ("2 John", "A short note about truth and love. Thirteen verses. One page.", "1 chapter &middot; 1 min"),
+                ("3 John", "A personal note about hospitality and a church leader who refuses to welcome visitors.", "1 chapter &middot; 1 min"),
+                ("Jude", "&ldquo;Hold on to your faith.&rdquo; A short, fierce warning against people who distort the gospel.", "1 chapter &middot; 2 min"),
+            ],
+            "apocrypha": [
+                ("Baruch", "A letter from exile. Jeremiah's secretary writes to the people left in Jerusalem. Includes the Letter of Jeremiah.", "6 chapters &middot; about 15 min"),
+            ],
+        },
+        {
+            "title": "People speaking for God",
+            "desc": "Visions, warnings, poetry, and hope. Often strange, always intense.",
+            "books_flat": [
+                ("Isaiah", "The biggest prophetic book. Judgment, comfort, and the most famous messianic prophecies. Two halves, two moods.", "66 chapters"),
+                ("Jeremiah", "The weeping prophet. He warned Judah for forty years that destruction was coming. Nobody listened.", "52 chapters"),
+                ("Ezekiel", "Bizarre visions. Wheels within wheels, a valley of dry bones, a rebuilt temple. Written in exile.", "48 chapters"),
+                ("Daniel", "Dreams, a lion's den, and a fiery furnace. Half stories, half apocalyptic visions.", "12 chapters &middot; about 30 min"),
+                ("Hosea", "God tells a prophet to marry an unfaithful woman as a living metaphor for Israel's relationship with God.", "14 chapters"),
+                ("Joel", "A plague of locusts becomes a vision of judgment and the outpouring of God's spirit.", "3 chapters &middot; about 10 min"),
+                ("Amos", "Justice for the poor. A farmer becomes a prophet and condemns the wealthy for exploiting the vulnerable.", "9 chapters &middot; about 20 min"),
+                ("Obadiah", "The shortest book in the Old Testament. One chapter against Edom for betraying their brother nation.", "1 chapter &middot; 2 min"),
+                ("Micah", "&ldquo;Do justice, love mercy, walk humbly.&rdquo; A prophet challenges both the powerful and the complacent.", "7 chapters &middot; about 15 min"),
+                ("Nahum", "The fall of Nineveh. A vivid, poetic vision of an empire's collapse.", "3 chapters &middot; about 8 min"),
+                ("Habakkuk", "&ldquo;Why do you allow evil?&rdquo; A prophet argues with God about injustice. God answers but doesn't explain.", "3 chapters &middot; about 8 min"),
+                ("Zephaniah", "Judgment and restoration. The darkest warning followed by one of the most tender promises in scripture.", "3 chapters &middot; about 8 min"),
+                ("Haggai", "&ldquo;You've built nice houses for yourselves. When will you rebuild God's?&rdquo; A short, sharp challenge.", "2 chapters &middot; about 5 min"),
+                ("Zechariah", "Night visions about the future. Horses, lampstands, flying scrolls, and a coming king on a donkey.", "14 chapters"),
+                ("Malachi", "The last prophet of the Old Testament. A dialogue between God and a people who've stopped caring.", "4 chapters &middot; about 10 min"),
+                ("Revelation", "The end of everything &mdash; and the beginning of something new. Visions, symbols, judgment, and a new heaven and earth.", "22 chapters"),
+            ],
+            "apocrypha": [
+                ("Susanna", "A woman is falsely accused by two corrupt judges. Daniel exposes the lie. A courtroom drama.", "1 chapter &middot; 5 min"),
+                ("Bel and the Dragon", "Daniel proves that idol worship is a fraud. Two stories about false gods &mdash; one funny, one deadly.", "1 chapter &middot; 5 min"),
+            ],
+        },
+    ]
+
+    def card_html(name, desc, meta, featured=False):
+        slug = book_slug(name)
+        # Apocrypha books link to KJV; others default to BBE
+        trans = "kjv" if book_testament(name) == "ap" else "bbe"
+        cls = 'book-card book-card--featured' if featured else 'book-card'
+        return f'''<a href="/{trans}/{slug}/1" class="{cls}">
+  <div class="book-card__name">{escape(name)}</div>
+  <div class="book-card__desc">{desc}</div>
+  <div class="book-card__meta">{meta}</div>
+</a>'''
+
+    sections = []
+    for genre in GENRES:
+        count = len(genre.get("books", [])) + len(genre.get("other_books", [])) + len(genre.get("books_flat", [])) + len(genre.get("apocrypha", []))
+        parts = [f'''<section class="genre-section">
+  <h2 class="genre-section__title">{genre["title"]}</h2>
+  <p class="genre-section__desc">{genre["desc"]}</p>
+  <p class="genre-section__count">{count} books</p>''']
+
+        # Gospels special callout
+        if genre.get("gospels_note"):
+            parts.append(f'  <div class="genre-callout">{genre["gospels_note"]}</div>')
+            parts.append('  <div class="book-cards">')
+            for name, desc, meta, featured in genre["books"]:
+                parts.append(card_html(name, desc, meta, featured))
+            parts.append('  </div>')
+
+        # Other narrative books
+        if genre.get("other_books"):
+            parts.append('  <div class="book-cards" style="margin-top:0.75rem;">')
+            for name, desc, meta in genre["other_books"]:
+                parts.append(card_html(name, desc, meta))
+            parts.append('  </div>')
+
+        # Flat book list (non-narrative genres)
+        if genre.get("books_flat"):
+            parts.append('  <div class="book-cards">')
+            for name, desc, meta in genre["books_flat"]:
+                parts.append(card_html(name, desc, meta))
+            parts.append('  </div>')
+
+        # Apocrypha
+        if genre.get("apocrypha"):
+            parts.append('  <div class="genre-apoc-divider">Apocrypha</div>')
+            parts.append('  <div class="book-cards">')
+            for name, desc, meta in genre["apocrypha"]:
+                parts.append(card_html(name, desc, meta))
+            parts.append('  </div>')
+
+        parts.append('</section>')
+        sections.append('\n'.join(parts))
+
+    body = f"""
+<div class="home-hero">
+  <h1 class="home-hero__title">The Bible, organized by what kind of reading it is</h1>
+  <p class="home-hero__sub">Three translations. No ads. No account. Pick a book and start reading.</p>
+  <form class="home-hero__search" action="/search/" method="get" role="search">
+    <span class="home-hero__search-icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
     </span>
-    <input type="search" name="q" placeholder="Search a verse like &ldquo;John 3:16&rdquo; or a phrase&hellip;" aria-label="Search scripture">
+    <input type="search" name="q" placeholder='Jump to a verse &mdash; "John 3:16"' aria-label="Search scripture">
   </form>
-  <p class="search-bar__hint">Type a reference, a phrase, or a question</p>
+  <p class="home-hero__steward">A project of <a href="/about/">Shepherd of the Hills Lutheran Church</a>, Flagstaff AZ</p>
+</div>
 
-  <hr class="hero__rule">
-
-  <p class="hero__steward">Stewarded freely by <a href="/about/">Hope for Americans</a>, Flagstaff Arizona</p>
-</section>
-
-<section>
-  <p class="section-eyebrow">Begin reading</p>
-  <h2 class="section-title">Choose a tradition</h2>
-  <hr class="section-rule">
-
-  <div class="tradition-grid">
-    <a href="/christian/" class="tradition-card" data-tradition="christian">
-      <span class="tradition-card__label">Christian</span>
-      <h3 class="tradition-card__title">The Holy Bible</h3>
-      <p class="tradition-card__desc">Three public-domain translations: the King James Version with the 1611 Apocrypha, the World English Bible (modern), and the Bible in Basic English (accessible).</p>
-      <div class="tradition-card__meta">Available now &rarr;</div>
-    </a>
-
-    <div class="tradition-card tradition-card--placeholder" data-tradition="islamic" aria-hidden="true">
-      <span class="tradition-card__label">Islamic</span>
-      <h3 class="tradition-card__title">The Holy Quran</h3>
-      <p class="tradition-card__desc">Arabic with English translation. Coming in the next phase of this library.</p>
-      <div class="tradition-card__meta">Coming soon</div>
-    </div>
-
-    <div class="tradition-card tradition-card--placeholder" data-tradition="jewish" aria-hidden="true">
-      <span class="tradition-card__label">Jewish</span>
-      <h3 class="tradition-card__title">The Tanakh</h3>
-      <p class="tradition-card__desc">JPS 1917 English translation alongside the Hebrew. Coming in a future phase.</p>
-      <div class="tradition-card__meta">Coming soon</div>
-    </div>
-
-    <div class="tradition-card tradition-card--placeholder" data-tradition="buddhist" aria-hidden="true">
-      <span class="tradition-card__label">Buddhist</span>
-      <h3 class="tradition-card__title">The Dhammapada</h3>
-      <p class="tradition-card__desc">Verses of the Buddha in classical English translation. Coming in a future phase.</p>
-      <div class="tradition-card__meta">Coming soon</div>
-    </div>
-
-    <div class="tradition-card tradition-card--placeholder" data-tradition="hindu" aria-hidden="true">
-      <span class="tradition-card__label">Hindu</span>
-      <h3 class="tradition-card__title">The Bhagavad Gita</h3>
-      <p class="tradition-card__desc">The Song of the Lord in classical English translation. Coming in a future phase.</p>
-      <div class="tradition-card__meta">Coming soon</div>
-    </div>
-
-    <div class="tradition-card tradition-card--placeholder" data-tradition="sikh" aria-hidden="true">
-      <span class="tradition-card__label">Sikh</span>
-      <h3 class="tradition-card__title">Sri Guru Granth Sahib</h3>
-      <p class="tradition-card__desc">English translation under Creative Commons. Coming in a future phase.</p>
-      <div class="tradition-card__meta">Coming soon</div>
-    </div>
-  </div>
-</section>
+<div class="home-content">
+{''.join(sections)}
+</div>
 """
     schema = {
         "@context": "https://schema.org",
