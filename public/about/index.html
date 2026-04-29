@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Free Scripture | freescripture.org</title>
+<meta name="description" content="A free, beautifully presented online library of scripture, stewarded by Hope for Americans in Flagstaff Arizona.">
+<link rel="canonical" href="https://freescripture.org/about/">
+
+<meta property="og:title" content="About — Free Scripture | freescripture.org">
+<meta property="og:description" content="A free, beautifully presented online library of scripture, stewarded by Hope for Americans in Flagstaff Arizona.">
+<meta property="og:url" content="https://freescripture.org/about/">
+<meta property="og:site_name" content="Free Scripture">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://freescripture.org/static/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Free Scripture — a free library of scripture, beautifully presented. King James Bible and Apocrypha. 80 books, 36,923 verses.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://freescripture.org/static/og-image.jpg">
+
+<meta name="theme-color" content="#f4ecd8">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+<link rel="apple-touch-icon" href="/static/favicon.svg">
+<link rel="mask-icon" href="/static/favicon.svg" color="#2a1f15">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Lexend:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/site.css">
+<script>
+// Apply saved reading preferences before render to avoid a flash of unstyled content.
+// The full reading-prefs.js loads later and provides the panel UI.
+(function () {
+  try {
+    var raw = localStorage.getItem('fs-prefs');
+    if (!raw) return;
+    var p = JSON.parse(raw);
+    var defaults = {font:'default', size:'default', leading:'default', layout:'flowing', italics:'on'};
+    var root = document.documentElement;
+    Object.keys(defaults).forEach(function (k) {
+      if (p[k] && p[k] !== defaults[k]) root.setAttribute('data-fs-' + k, p[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
+</head>
+<body class="">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-mark" href="/">Free Scripture</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/christian/">Christian</a>
+      <a href="/search/">Search</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="reading-column reading-column--narrow">
+  <h1>About this library</h1>
+  <hr class="section-rule" style="margin-left:0;">
+
+  <p>This library exists because scripture should not cost money to read. Most free Bible websites today are paid for with ads, with email signup walls, or with a "premium" tier that gates the better tools behind a paywall. We believe a different model is possible.</p>
+
+  <p>Free Scripture is a project of <strong>Hope for Americans</strong>, a ministry of Shepherd of the Hills Lutheran Church in Flagstaff, Arizona. We pay the hosting bill ourselves. There are no ads on this site, ever. There is no account required and no tracking. We are not collecting your data. We are not building a profile of you. We are not going to sell anything to you.</p>
+
+  <p>Every text in this library is in the public domain or is freely licensed for redistribution. Where a text is copyrighted (such as most modern English Bible translations), we do not host it. We will tell you so plainly and link out to a place where you can read it.</p>
+
+  <h2 id="sources">What is here today, and what is coming</h2>
+  <p>The first phase of this library focuses on the <strong>King James Version</strong> of the Christian Bible, in its standard 1769 revision, together with the <strong>Apocrypha</strong> as it appeared in the original 1611 edition. The KJV is in the public domain in the United States and most of the world. It is, by a wide margin, the single most-read English Bible in human history. The Apocrypha &mdash; sometimes called the Deuterocanonical Books &mdash; has been read in Lutheran Bibles for nearly five centuries, and was included in the 1611 King James Bible as a separate section between the Old and New Testaments.</p>
+
+  <p>One small note about the Apocrypha as it stands today: it is sourced from two different public-domain digital editions stitched together. Books 1 Esdras through 2 Maccabees come from the Scrollmapper Deuterocanonical Project, while the Letter of Jeremiah (Baruch chapter 6 in the 1611 King James arrangement) comes from the Scrollmapper Bible Databases KJVA dataset. Both preserve the 1611 King James translation.</p>
+
+  <p>In future phases, we plan to add the World English Bible, the American Standard Version, and texts from other faith traditions, beginning with the Quran in public-domain English translation.</p>
+
+  <h2>What this library is not</h2>
+  <p>This is a reading library, not a study tool. We do not offer commentary, concordances, or cross-references. There are excellent tools elsewhere for that work. We are not a comparative-religion site. We do not argue which scripture is true. We do not offer reading plans, friend feeds, streak counters, or notifications. The goal here is simpler: a single warm room where the words can be read.</p>
+
+  <h2>Source texts</h2>
+  <p>The KJV canonical text on this site comes from public-domain digital editions, principally the <code>aruljohn/Bible-kjv</code> repository on GitHub, with verification against the openbible.com KJV text. The Apocrypha text comes from two public-domain sources combined: books 1 Esdras through 2 Maccabees from the Scrollmapper Deuterocanonical Project (2024 branch), and the Letter of Jeremiah (Baruch ch 6) from the Scrollmapper Bible Databases KJVA dataset (2025 branch). Both preserve the 1611 King James translation. If you find an error, please write to us at <a href="mailto:hello@hopeforamericans.org">hello@hopeforamericans.org</a>.</p>
+
+  <h2>Stewardship</h2>
+  <p>This project is a public good. It is American-stewarded because we believe a project this culturally significant should be built and maintained here. It is free because we believe scripture should not cost money. If you would like to help us keep it free, we welcome support at <a href="/support/">our support page</a>, but you owe us nothing for the use of this library.</p>
+
+  <hr class="section-rule">
+  <p class="muted" style="text-align:center;font-style:italic;">Built carefully, in Flagstaff Arizona at 7,000 feet.</p>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__col">
+      <h4>Library</h4>
+      <ul>
+        <li><a href="/christian/">Christian Bible</a></li>
+        <li><a href="/search/">Search all texts</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="/about/">Our mission</a></li>
+        <li><a href="/about/#sources">Translation sources</a></li>
+        <li><a href="/support/">Support this work</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4>Stewardship</h4>
+      <p>A project of <strong>Hope for Americans</strong>, a ministry of Shepherd of the Hills Lutheran Church in Flagstaff, Arizona.</p>
+      <p>Sister project: <a href="https://fablepixels.com">Fablepixels</a> — interactive emoji storybooks.</p>
+    </div>
+  </div>
+  <div class="trust-row">
+    <div class="trust-row__items">
+      <span>Free forever</span>
+      <span>No account needed</span>
+      <span>No ads</span>
+      <span>No data sold</span>
+    </div>
+    <div class="trust-row__steward">Made with ♥ in Flagstaff, Arizona at 7,000 feet</div>
+  </div>
+</footer>
+</body>
+</html>
