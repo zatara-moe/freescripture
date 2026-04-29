@@ -1,0 +1,5 @@
+source-kjv/
+source-web/
+public/
+__pycache__/
+.DS_Store
