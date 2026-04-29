@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Scripture — A free, beautiful library of scripture | freescripture.org</title>
+<meta name="description" content="Read scripture from multiple faith traditions, free forever. No ads, no accounts, no tracking. King James Bible online and more.">
+<link rel="canonical" href="https://freescripture.org/">
+
+<meta property="og:title" content="Free Scripture — A free, beautiful library of scripture | freescripture.org">
+<meta property="og:description" content="Read scripture from multiple faith traditions, free forever. No ads, no accounts, no tracking. King James Bible online and more.">
+<meta property="og:url" content="https://freescripture.org/">
+<meta property="og:site_name" content="Free Scripture">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://freescripture.org/static/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Free Scripture — a free library of scripture, beautifully presented. King James Bible and Apocrypha. 80 books, 36,923 verses.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://freescripture.org/static/og-image.jpg">
+
+<meta name="theme-color" content="#f4ecd8">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+<link rel="apple-touch-icon" href="/static/favicon.svg">
+<link rel="mask-icon" href="/static/favicon.svg" color="#2a1f15">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Lexend:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/site.css">
+<script>
+// Apply saved reading preferences before render to avoid a flash of unstyled content.
+// The full reading-prefs.js loads later and provides the panel UI.
+(function () {
+  try {
+    var raw = localStorage.getItem('fs-prefs');
+    if (!raw) return;
+    var p = JSON.parse(raw);
+    var defaults = {font:'default', size:'default', leading:'default', layout:'flowing', italics:'on'};
+    var root = document.documentElement;
+    Object.keys(defaults).forEach(function (k) {
+      if (p[k] && p[k] !== defaults[k]) root.setAttribute('data-fs-' + k, p[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Free Scripture", "url": "https://freescripture.org", "description": "A free, beautifully presented online library of scripture from multiple faith traditions. No ads, no accounts, no tracking.", "publisher": {"@type": "Organization", "name": "Hope for Americans", "parentOrganization": {"@type": "Organization", "name": "Shepherd of the Hills Lutheran Church", "address": {"@type": "PostalAddress", "addressLocality": "Flagstaff", "addressRegion": "AZ"}}}, "potentialAction": {"@type": "SearchAction", "target": "https://freescripture.org/search/?q={search_term_string}", "query-input": "required name=search_term_string"}}</script>
+</head>
+<body class="page-home">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-mark" href="/">Free Scripture</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/christian/">Christian</a>
+      <a href="/search/">Search</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="hero__eyebrow">A Hope for Americans project</div>
+  <h1 class="hero__title">A free library of scripture, beautifully presented</h1>
+  <p class="hero__lede">Every text in the public domain. No accounts, no ads, no tracking. Just the words, well-displayed, free for anyone who comes looking.</p>
+
+  <form class="search-bar" action="/search/" method="get" role="search">
+    <span class="search-bar__icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </span>
+    <input type="search" name="q" placeholder="Search a verse like &ldquo;John 3:16&rdquo; or a phrase&hellip;" aria-label="Search scripture">
+  </form>
+  <p class="search-bar__hint">Type a reference, a phrase, or a question</p>
+
+  <hr class="hero__rule">
+
+  <p class="hero__steward">Stewarded freely by <a href="/about/">Hope for Americans</a>, Flagstaff Arizona</p>
+</section>
+
+<section>
+  <p class="section-eyebrow">Begin reading</p>
+  <h2 class="section-title">Choose a tradition</h2>
+  <hr class="section-rule">
+
+  <div class="tradition-grid">
+    <a href="/christian/" class="tradition-card" data-tradition="christian">
+      <span class="tradition-card__label">Christian</span>
+      <h3 class="tradition-card__title">The Holy Bible</h3>
+      <p class="tradition-card__desc">Three public-domain translations: the King James Version with the 1611 Apocrypha, the World English Bible (modern), and the Bible in Basic English (accessible).</p>
+      <div class="tradition-card__meta">Available now &rarr;</div>
+    </a>
+
+    <div class="tradition-card tradition-card--placeholder" data-tradition="islamic" aria-hidden="true">
+      <span class="tradition-card__label">Islamic</span>
+      <h3 class="tradition-card__title">The Holy Quran</h3>
+      <p class="tradition-card__desc">Arabic with English translation. Coming in the next phase of this library.</p>
+      <div class="tradition-card__meta">Coming soon</div>
+    </div>
+
+    <div class="tradition-card tradition-card--placeholder" data-tradition="jewish" aria-hidden="true">
+      <span class="tradition-card__label">Jewish</span>
+      <h3 class="tradition-card__title">The Tanakh</h3>
+      <p class="tradition-card__desc">JPS 1917 English translation alongside the Hebrew. Coming in a future phase.</p>
+      <div class="tradition-card__meta">Coming soon</div>
+    </div>
+
+    <div class="tradition-card tradition-card--placeholder" data-tradition="buddhist" aria-hidden="true">
+      <span class="tradition-card__label">Buddhist</span>
+      <h3 class="tradition-card__title">The Dhammapada</h3>
+      <p class="tradition-card__desc">Verses of the Buddha in classical English translation. Coming in a future phase.</p>
+      <div class="tradition-card__meta">Coming soon</div>
+    </div>
+
+    <div class="tradition-card tradition-card--placeholder" data-tradition="hindu" aria-hidden="true">
+      <span class="tradition-card__label">Hindu</span>
+      <h3 class="tradition-card__title">The Bhagavad Gita</h3>
+      <p class="tradition-card__desc">The Song of the Lord in classical English translation. Coming in a future phase.</p>
+      <div class="tradition-card__meta">Coming soon</div>
+    </div>
+
+    <div class="tradition-card tradition-card--placeholder" data-tradition="sikh" aria-hidden="true">
+      <span class="tradition-card__label">Sikh</span>
+      <h3 class="tradition-card__title">Sri Guru Granth Sahib</h3>
+      <p class="tradition-card__desc">English translation under Creative Commons. Coming in a future phase.</p>
+      <div class="tradition-card__meta">Coming soon</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__col">
+      <h4>Library</h4>
+      <ul>
+        <li><a href="/christian/">Christian Bible</a></li>
+        <li><a href="/search/">Search all texts</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="/about/">Our mission</a></li>
+        <li><a href="/about/#sources">Translation sources</a></li>
+        <li><a href="/support/">Support this work</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4>Stewardship</h4>
+      <p>A project of <strong>Hope for Americans</strong>, a ministry of Shepherd of the Hills Lutheran Church in Flagstaff, Arizona.</p>
+      <p>Sister project: <a href="https://fablepixels.com">Fablepixels</a> — interactive emoji storybooks.</p>
+    </div>
+  </div>
+  <div class="trust-row">
+    <div class="trust-row__items">
+      <span>Free forever</span>
+      <span>No account needed</span>
+      <span>No ads</span>
+      <span>No data sold</span>
+    </div>
+    <div class="trust-row__steward">Made with ♥ in Flagstaff, Arizona at 7,000 feet</div>
+  </div>
+</footer>
+</body>
+</html>

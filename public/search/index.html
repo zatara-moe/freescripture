@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search — Free Scripture | freescripture.org</title>
+<meta name="description" content="Search the Bible by verse reference or phrase. Free, fast, no ads.">
+<link rel="canonical" href="https://freescripture.org/search/">
+
+<meta property="og:title" content="Search — Free Scripture | freescripture.org">
+<meta property="og:description" content="Search the Bible by verse reference or phrase. Free, fast, no ads.">
+<meta property="og:url" content="https://freescripture.org/search/">
+<meta property="og:site_name" content="Free Scripture">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://freescripture.org/static/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Free Scripture — a free library of scripture, beautifully presented. King James Bible and Apocrypha. 80 books, 36,923 verses.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://freescripture.org/static/og-image.jpg">
+
+<meta name="theme-color" content="#f4ecd8">
+<meta name="robots" content="index, follow">
+
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+<link rel="apple-touch-icon" href="/static/favicon.svg">
+<link rel="mask-icon" href="/static/favicon.svg" color="#2a1f15">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Lexend:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/site.css">
+<script>
+// Apply saved reading preferences before render to avoid a flash of unstyled content.
+// The full reading-prefs.js loads later and provides the panel UI.
+(function () {
+  try {
+    var raw = localStorage.getItem('fs-prefs');
+    if (!raw) return;
+    var p = JSON.parse(raw);
+    var defaults = {font:'default', size:'default', leading:'default', layout:'flowing', italics:'on'};
+    var root = document.documentElement;
+    Object.keys(defaults).forEach(function (k) {
+      if (p[k] && p[k] !== defaults[k]) root.setAttribute('data-fs-' + k, p[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
+</head>
+<body class="page-search">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-mark" href="/">Free Scripture</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/christian/">Christian</a>
+      <a href="/search/">Search</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="reading-column" style="max-width:760px;">
+  <h1>Search</h1>
+  <hr class="section-rule" style="margin-left:0;">
+
+  <form class="search-bar" role="search" onsubmit="return false;">
+    <span class="search-bar__icon" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </span>
+    <input type="search" id="search-input" placeholder="John 3:16, &ldquo;love your neighbor&rdquo;, or any phrase&hellip;" aria-label="Search scripture" autocomplete="off">
+  </form>
+  <p class="search-bar__hint" id="search-status">Type a verse reference to jump there. Type a phrase to find every match.</p>
+
+  <div class="trans-switch" id="search-trans-switch" aria-label="Search within translation">
+    <span class="trans-switch__label">Search in:</span>
+    <a class="trans-switch__btn" href="/search/?t=kjv" data-t="kjv">KJV</a>
+    <a class="trans-switch__btn" href="/search/?t=web" data-t="web">WEB</a>
+    <a class="trans-switch__btn" href="/search/?t=bbe" data-t="bbe">BBE</a>
+  </div>
+
+  <div class="search-results" id="search-results" aria-live="polite"></div>
+</div>
+
+<script>
+// Mark the current translation button and preserve query when switching.
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var current = (params.get('t') || 'kjv').toLowerCase();
+  var q = params.get('q') || '';
+  document.querySelectorAll('#search-trans-switch [data-t]').forEach(function (btn) {
+    var t = btn.getAttribute('data-t');
+    var href = '/search/?t=' + t + (q ? '&q=' + encodeURIComponent(q) : '');
+    btn.setAttribute('href', href);
+    if (t === current) {
+      btn.classList.add('trans-switch__btn--current');
+      btn.removeAttribute('href');
+    }
+  });
+})();
+</script>
+<script src="/static/js/search.js" defer></script>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__col">
+      <h4>Library</h4>
+      <ul>
+        <li><a href="/christian/">Christian Bible</a></li>
+        <li><a href="/search/">Search all texts</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="/about/">Our mission</a></li>
+        <li><a href="/about/#sources">Translation sources</a></li>
+        <li><a href="/support/">Support this work</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4>Stewardship</h4>
+      <p>A project of <strong>Hope for Americans</strong>, a ministry of Shepherd of the Hills Lutheran Church in Flagstaff, Arizona.</p>
+      <p>Sister project: <a href="https://fablepixels.com">Fablepixels</a> — interactive emoji storybooks.</p>
+    </div>
+  </div>
+  <div class="trust-row">
+    <div class="trust-row__items">
+      <span>Free forever</span>
+      <span>No account needed</span>
+      <span>No ads</span>
+      <span>No data sold</span>
+    </div>
+    <div class="trust-row__steward">Made with ♥ in Flagstaff, Arizona at 7,000 feet</div>
+  </div>
+</footer>
+</body>
+</html>
