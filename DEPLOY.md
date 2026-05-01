@@ -25,7 +25,7 @@ You need:
 **Pre-launch checklist** — do these once before going public:
 
 1. **Replace the Vanco donation URL.** Open `scripts/build.py`, find the `DONATE_URL` constant near the top of the file (look for the `DEPLOY-TIME TODO` comment), and swap in the real Hope for Americans Vanco endpoint. Same value Fablepixels uses.
-2. **Verify the `mailto:` address on the About page** is the address you want errata sent to (currently `hello@hopeforamericans.org`).
+2. **Verify the `mailto:` address on the About page** is the address you want errata sent to (currently `hello@hopeforamericans.net`).
 3. **Run `python3 scripts/build.py` locally** and click around `public/` — make sure pages render cleanly before pushing.
 
 ---
@@ -167,7 +167,7 @@ These are not blockers, but they're worth doing in the first week:
 1. **Test verse-link sharing.** Open `https://freescripture.org/kjv/john/3#v16` and share it on a couple of platforms (iMessage, WhatsApp, Discord, X). The OG image and description should preview correctly.
 2. **Test the search bar with common queries.** "John 3:16", "love thy neighbour", "scarecrow in a garden of cucumbers" (the Letter of Jeremiah test), "Tobit 1:1", "ecclesiasticus 24:1" (the Sirach alias).
 3. **Tell three people.** Particularly Lutheran folks who know the Apocrypha is missing from most free Bible sites. Word of mouth from people who care about scripture beats SEO for the first hundred users.
-4. **Set up email forwarding** for `hello@hopeforamericans.org` so errata reports go somewhere a human reads.
+4. **Set up email forwarding** for `hello@hopeforamericans.net` so errata reports go somewhere a human reads.
 5. **Add an analytics-free visit counter** if curiosity strikes. Cloudflare Pages has a built-in analytics view that doesn't require third-party scripts (no tracking cookies, no third-party JS, no data sold). It just tells you how many people are visiting.
 
 ---
