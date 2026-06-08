@@ -68,7 +68,7 @@
       <span class="site-mark__text">Free Scripture</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="/kjv/">Bible</a>
+      <a href="/web/">Bible</a>
       <a href="/search/">Search</a>
       <a href="/about/">About</a>
     </nav>
@@ -88,6 +88,16 @@
     <input type="search" id="search-input" placeholder="John 3:16, &ldquo;love your neighbor&rdquo;, or any phrase&hellip;" aria-label="Search scripture" autocomplete="off">
   </form>
   <p class="search-bar__hint" id="search-status">Type a verse reference to jump there. Type a phrase to find every match.</p>
+
+  <div class="search-suggestions" id="search-suggestions" style="text-align:center;margin:1.5rem 0;">
+    <p style="font-size:0.82rem;color:var(--ink-faded);margin-bottom:0.5rem;">Try:</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;">
+      <a href="/web/psalms/23" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">Psalm 23</a>
+      <a href="/web/john/1" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">John 1</a>
+      <a href="/web/1-corinthians/13" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">1 Corinthians 13</a>
+      <a href="/web/romans/8" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">Romans 8</a>
+    </div>
+  </div>
 
   <div class="trans-switch" id="search-trans-switch" aria-label="Search within translation">
     <span class="trans-switch__label">Search in:</span>
@@ -140,11 +150,7 @@
 </nav>
 
 <footer class="site-footer">
-  <nav class="site-footer__links" aria-label="Footer">
-    <a href="/about/">About</a>
-    <a href="/about/#sources">Sources</a>
-    <a href="/support/">Support</a>
-  </nav>
+  <div class="foot-tag">The whole text, open to anyone.</div>
   <p class="hfa-madein">Made with <span class="hfa-heart" aria-hidden="true">&hearts;</span> in Flagstaff</p>
   <div class="hfa-rule"></div>
   <div class="hfa-mark">A Hope for Americans tool</div>

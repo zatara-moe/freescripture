@@ -765,22 +765,12 @@ main {
   text-align: center;
 }
 
-.site-footer__links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.75rem;
-  margin-bottom: 1.75rem;
+.foot-tag {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
 }
-
-.site-footer__links a {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-  text-decoration: none;
-}
-
-.site-footer__links a:hover { color: var(--ink); }
 
 .hfa-madein {
   font-family: var(--font-body);
@@ -814,6 +804,20 @@ main {
   color: var(--ink-faded);
   margin-top: 0.35rem;
 }
+
+.hfa-fine {
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  margin-top: 1.25rem;
+  line-height: 1.6;
+}
+
+.hfa-fine a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.hfa-fine a:hover { color: var(--ink); }
 
 /* ---- Search results ---- */
 .search-results {
@@ -1298,16 +1302,15 @@ html[data-fs-italics="off"] .chapter-text i {
 }
 .touchstone:hover { border-color: var(--tradition-accent); box-shadow: 0 6px 20px rgba(42, 31, 21, 0.10); transform: translateY(-3px); }
 .touchstone__ref {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+}
+.touchstone__line {
   font-family: var(--font-display);
   font-size: 1.1rem;
   color: var(--ink);
-}
-.touchstone__line {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--ink-soft);
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .home-content__lead {

@@ -161,4 +161,17 @@
       }
     });
   }
+
+  var shareBtn = document.querySelector('[data-action="share"]');
+  if (shareBtn) {
+    if (!navigator.share) {
+      shareBtn.style.display = 'none';
+    } else {
+      shareBtn.addEventListener('click', function () {
+        var title = document.title;
+        var url = window.location.origin + window.location.pathname;
+        navigator.share({ title: title, url: url }).catch(function () {});
+      });
+    }
+  }
 })();

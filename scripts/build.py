@@ -266,6 +266,88 @@ BOOK_INTROS = {
     "Revelation": "John's apocalyptic vision of Christ, the church, and the final renewal of all things."
 }
 
+# Movie-pitch descriptions for book landing pages and SEO meta tags.
+# These are the shareable, approachable versions from the genre sections.
+BOOK_PITCHES = {
+    "Matthew": "The life of Jesus as told by a tax collector. Written to show Jesus as the fulfillment of Jewish prophecy.",
+    "Mark": "The shortest gospel. Fast, urgent, action-driven. Starts with Jesus already an adult. No birth story.",
+    "Luke": "Written by a doctor who interviewed eyewitnesses. The most detailed account, especially about women and outsiders.",
+    "John": "The most reflective gospel. Written decades after the others by someone who was there. Philosophical and personal.",
+    "Genesis": "The beginning of everything. Creation, Adam and Eve, the flood, Abraham. The origin story.",
+    "Exodus": "Escape from Egypt. Moses, the plagues, the Red Sea, the Ten Commandments.",
+    "Numbers": "Forty years wandering in the desert. Rebellion, faith, and survival between Egypt and the promised land.",
+    "Joshua": "Conquering the promised land. Military campaigns, land division, and a new beginning after Moses.",
+    "Judges": "Heroes and chaos. Before there were kings, there were judges, warriors and leaders in a lawless era.",
+    "Ruth": "A love story about loyalty, immigration, and belonging. One of the shortest books in the Bible.",
+    "1 Samuel": "The first king of Israel. Samuel, Saul, and the young David, including the fight with Goliath.",
+    "2 Samuel": "David's rise to power and his fall. War, betrayal, adultery, and the cost of being king.",
+    "1 Kings": "Solomon builds the temple, then the kingdom splits in two. Elijah appears as a prophet.",
+    "2 Kings": "Both kingdoms collapse. Elisha performs miracles. Israel and Judah are conquered and exiled.",
+    "1 Chronicles": "Israel's history retold from Adam to David. Genealogies and a second perspective on familiar events.",
+    "2 Chronicles": "Judah's history from Solomon to the exile. The temple, the kings, the fall of Jerusalem.",
+    "Ezra": "Returning from exile. The Jewish people rebuild their temple and their identity after Babylon.",
+    "Nehemiah": "Rebuilding the walls of Jerusalem. Leadership, opposition, and community restoration.",
+    "Esther": "A Jewish queen in Persia saves her people from genocide. God is never mentioned by name.",
+    "Jonah": "A prophet runs from God, gets swallowed by a fish, and learns about mercy. Stranger than you think.",
+    "Acts": "What happened after Jesus left. The early church, Paul's travels, and the spread of Christianity across the Roman Empire.",
+    "Tobit": "An angel in disguise, a magic fish, and a family reunion. Adventure and faith.",
+    "Judith": "A widow infiltrates an enemy camp and kills their general. One of the Bible's most dramatic heroines.",
+    "1 Maccabees": "War for independence. A family leads a revolt against a king who outlawed their religion.",
+    "2 Maccabees": "The same war told differently, more theological, more focused on martyrdom and miracle.",
+    "1 Esdras": "An alternate account of the temple rebuilding. Overlaps with Ezra and Chronicles.",
+    "2 Esdras": "Apocalyptic visions. Ezra asks God why the world is so unjust. God answers, sort of.",
+    "Psalms": "150 songs and prayers. Joy, rage, grief, praise, the full range of human emotion directed at God.",
+    "Song of Solomon": "Erotic love poetry in the middle of the Bible. Yes, really. Beautiful, surprising, and ancient.",
+    "Lamentations": "Five poems of grief over the destruction of Jerusalem. Raw, structured, and devastating.",
+    "Job": "Why do good people suffer? A man loses everything and demands answers from God. God eventually responds, but not the way anyone expects.",
+    "Proverbs": "Practical advice about money, relationships, work, and character. One line at a time. Dip in anywhere.",
+    "Ecclesiastes": "Everything is meaningless. A wealthy king tries pleasure, work, and wisdom, and concludes none of it lasts.",
+    "Leviticus": "Religious law, sacrifice, purity, diet, festivals. The operating manual for ancient Israelite worship.",
+    "Deuteronomy": "Moses' farewell speech. He retells the law and the story so far before the people enter the promised land without him.",
+    "Romans": "Paul's masterwork. A systematic argument about sin, grace, faith, and freedom. The most influential letter in Christian history.",
+    "1 Corinthians": "A messy church in a wild city. Paul addresses divisions, lawsuits, sex, marriage, and the famous chapter on love.",
+    "2 Corinthians": "Paul defends his authority. The most personal and emotional of his letters. Weakness as strength.",
+    "Galatians": "Freedom vs rules. Paul argues that faith, not law-keeping, is what matters. A short, angry, important letter.",
+    "Ephesians": "Unity and identity. What does it mean to be part of the church? One of the most quoted letters.",
+    "Philippians": "Joy from prison. Paul writes to his favorite church from a jail cell. Warm, personal, and hopeful.",
+    "Colossians": "Who Jesus really is. A short letter about the supremacy of Christ over every power and philosophy.",
+    "1 Thessalonians": "What happens to people who die before Jesus returns? Paul's earliest letter, written to a worried church.",
+    "2 Thessalonians": "Waiting for the end. People quit their jobs because they thought Jesus was coming back immediately.",
+    "1 Timothy": "Advice to a young pastor. How to lead a church, handle false teaching, and live with integrity.",
+    "2 Timothy": "Paul's last letter. Written from prison, expecting execution. His final words to his closest student.",
+    "Titus": "Church leadership on the island of Crete. Practical instructions for building a healthy community.",
+    "Philemon": "A runaway slave meets Paul in prison. Paul sends him back with this letter asking his owner to free him.",
+    "Hebrews": "Old covenant vs new. A theological argument that Jesus fulfills and replaces the temple system. Author unknown.",
+    "James": "Faith without action is dead. Practical, blunt, and focused on how you actually live, not just what you believe.",
+    "1 Peter": "Suffering with hope. Written to persecuted Christians scattered across the Roman Empire.",
+    "2 Peter": "Warnings about false teachers and the end of the world. Peter's last word to the churches.",
+    "1 John": "God is love. A letter about truth, love, and how to tell real faith from false faith.",
+    "2 John": "A short note about truth and love. Thirteen verses. One page.",
+    "3 John": "A personal note about hospitality and a church leader who refuses to welcome visitors.",
+    "Jude": "Hold on to your faith. A short, fierce warning against people who distort the gospel.",
+    "Revelation": "The end of everything, and the beginning of something new. Visions, symbols, judgment, and a new heaven and earth.",
+    "Isaiah": "The biggest prophetic book. Judgment, comfort, and the most famous messianic prophecies. Two halves, two moods.",
+    "Jeremiah": "The weeping prophet. He warned Judah for forty years that destruction was coming. Nobody listened.",
+    "Ezekiel": "Bizarre visions. Wheels within wheels, a valley of dry bones, a rebuilt temple. Written in exile.",
+    "Daniel": "Dreams, a lion's den, and a fiery furnace. Half stories, half apocalyptic visions.",
+    "Hosea": "God tells a prophet to marry an unfaithful woman as a living metaphor for Israel's relationship with God.",
+    "Joel": "A plague of locusts becomes a vision of judgment and the outpouring of God's spirit.",
+    "Amos": "Justice for the poor. A farmer becomes a prophet and condemns the wealthy for exploiting the vulnerable.",
+    "Obadiah": "The shortest book in the Old Testament. One chapter against Edom for betraying their brother nation.",
+    "Micah": "Do justice, love mercy, walk humbly. A prophet challenges both the powerful and the complacent.",
+    "Nahum": "The fall of Nineveh. A vivid, poetic vision of an empire's collapse.",
+    "Habakkuk": "Why do you allow evil? A prophet argues with God about injustice. God answers but doesn't explain.",
+    "Zephaniah": "Judgment and restoration. The darkest warning followed by one of the most tender promises in scripture.",
+    "Haggai": "You've built nice houses for yourselves. When will you rebuild God's? A short, sharp challenge.",
+    "Zechariah": "Night visions about the future. Horses, lampstands, flying scrolls, and a coming king on a donkey.",
+    "Malachi": "The last prophet of the Old Testament. A dialogue between God and a people who've stopped caring.",
+    "Susanna": "A woman is falsely accused by two corrupt judges. Daniel exposes the lie. A courtroom drama.",
+    "Bel and the Dragon": "Daniel proves that idol worship is a fraud. Two stories about false gods, one funny, one deadly.",
+    "Baruch": "A letter from exile. Jeremiah's secretary writes to the people left in Jerusalem.",
+    "Wisdom of Solomon": "A meditation on justice, immortality, and why the righteous suffer. Philosophical and beautiful.",
+    "Sirach": "Ethics and everyday wisdom. How to handle money, friendship, speech, and death. The longest wisdom book.",
+}
+
 # Map source filename -> canonical book name
 SOURCE_FILE_MAP = {
     "Genesis": "Genesis.json", "Exodus": "Exodus.json", "Leviticus": "Leviticus.json",
@@ -508,7 +590,7 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
       <span class="site-mark__text">Free Scripture</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="/kjv/">Bible</a>
+      <a href="/web/">Bible</a>
       <a href="/search/">Search</a>
       <a href="/about/">About</a>
     </nav>
@@ -539,11 +621,7 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 </nav>
 
 <footer class="site-footer">
-  <nav class="site-footer__links" aria-label="Footer">
-    <a href="/about/">About</a>
-    <a href="/about/#sources">Sources</a>
-    <a href="/support/">Support</a>
-  </nav>
+  <div class="foot-tag">The whole text, open to anyone.</div>
   <p class="hfa-madein">Made with <span class="hfa-heart" aria-hidden="true">&hearts;</span> in Flagstaff</p>
   <div class="hfa-rule"></div>
   <div class="hfa-mark">A Hope for Americans tool</div>
@@ -763,8 +841,8 @@ def render_homepage():
     for label, trans, slug, ch, line in TOUCHSTONES:
         touchstone_cards.append(
             f'<a href="/{trans}/{slug}/{ch}" class="touchstone">'
-            f'<span class="touchstone__ref">{escape(label)}</span>'
             f'<span class="touchstone__line">{escape(line)}</span>'
+            f'<span class="touchstone__ref">{escape(label)}</span>'
             f'</a>'
         )
     touchstones_html = (
@@ -778,7 +856,7 @@ def render_homepage():
 
     body = f"""
 <div class="home-hero">
-  <h1 class="home-hero__title">Read scripture, free and clear.</h1>
+  <h1 class="home-hero__title">Read the Bible, free and clear.</h1>
   <p class="home-hero__sub">The whole text, open to anyone. Search a verse, or begin below.</p>
   <form class="home-hero__search" action="/search/" method="get" role="search">
     <span class="home-hero__search-icon" aria-hidden="true">
@@ -977,24 +1055,32 @@ def render_book_landing(book, translation="kjv"):
     """The /<translation>/<book>/ landing, list of chapters."""
     t = TRANSLATIONS[translation]
     name = book["name"]
+    pitch = BOOK_PITCHES.get(name, "")
     intro = BOOK_INTROS.get(name, "")
     is_apocrypha = (book_testament(name) == "ap")
     if is_apocrypha:
         translation_tag = "King James Version &middot; Apocrypha"
     else:
         translation_tag = t["label"]
+    n_chapters = len(book["chapters"])
     chapters_html = "".join(
         f'<li><a href="/{t["slug"]}/{book_slug(name)}/{ch["num"]}">{ch["num"]}</a></li>'
         for ch in book["chapters"]
     )
+    # Use pitch as the prominent description; fall back to intro
+    display_desc = pitch or intro
+    meta_desc = pitch or intro or f"Read {name} online for free."
     body = f"""
+<div class="tradition-stripe"></div>
 <div class="reading-column" style="max-width:780px;">
   <p class="chapter-translation-tag">{translation_tag}</p>
-  <h1 class="chapter-title" style="margin-bottom:1rem;">{escape(name)}</h1>
-  <p style="text-align:center;color:var(--ink-soft);max-width:580px;margin:0 auto 2rem;font-size:1.1rem;">{escape(intro)}</p>
+  <h1 class="chapter-title" style="margin-bottom:0.75rem;">{escape(name)}</h1>
+  <p style="text-align:center;color:var(--ink);max-width:520px;margin:0 auto 0.75rem;font-size:1.15rem;font-family:var(--font-display);line-height:1.4;">{escape(display_desc)}</p>
+  <p style="text-align:center;color:var(--ink-faded);margin:0 auto 1.5rem;font-size:0.85rem;">{n_chapters} chapter{"s" if n_chapters != 1 else ""}</p>
+  <p style="text-align:center;margin-bottom:2rem;">
+    <a href="/{t["slug"]}/{book_slug(name)}/1" class="action-btn" data-action="tts" style="display:inline-flex;text-decoration:none;">Start reading</a>
+  </p>
   <hr class="section-rule">
-
-  <p class="book-section-label" style="text-align:center;border:none;">{len(book["chapters"])} chapter{"s" if len(book["chapters"]) != 1 else ""}</p>
   <ul class="chapter-list" style="margin-left:auto;margin-right:auto;">
     {chapters_html}
   </ul>
@@ -1004,13 +1090,14 @@ def render_book_landing(book, translation="kjv"):
         "@context": "https://schema.org",
         "@type": "Book",
         "name": f"{name}, {t['label']}",
+        "description": meta_desc,
         "isPartOf": {"@type": "Book", "name": f"{t['label']} Bible"},
         "inLanguage": "en",
         "url": f"{SITE_URL}/{t['slug']}/{book_slug(name)}/"
     }
     return base_layout(
-        title=f"{name}, {t['label']} ({t['short']}) | Free Online | freescripture.org",
-        description=f"Read the book of {name} from the {t['label']} online for free. All chapters, no ads, no account.",
+        title=f"{name} | Read free online | Free Scripture",
+        description=f"{meta_desc} Read free, no ads, no account.",
         body=body, canonical=f"{SITE_URL}/{t['slug']}/{book_slug(name)}/", schema_jsonld=schema
     )
 
@@ -1137,6 +1224,9 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
     if ch_num < len(book["chapters"]):
         chapter_nav_next = f'<a href="/{t["slug"]}/{book_slug(name)}/{ch_num+1}" rel="next">Ch {ch_num+1} &rarr;</a>'
 
+    # "Psalms" is the book name, but individual chapters are "Psalm 23" not "Psalms 23"
+    ch_display = name[:-1] if name == "Psalms" else name
+
     body = f"""
 <div class="tradition-stripe"></div>
 <div class="reading-column">
@@ -1144,7 +1234,7 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
     <div class="chapter-nav__group">
       <a href="/{t["slug"]}/{book_slug(name)}/">&larr; {escape(name)}</a>
     </div>
-    <div class="chapter-nav__current">{escape(name)} {ch_num}</div>
+    <div class="chapter-nav__current">{escape(ch_display)} {ch_num}</div>
     <div class="chapter-nav__group">
       {chapter_nav_prev}
       {chapter_nav_next}
@@ -1156,7 +1246,7 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
   <article>
     <header>
       <div class="chapter-translation-tag">{translation_tag}</div>
-      <h1 class="chapter-title">{escape(name)} {ch_num}</h1>
+      <h1 class="chapter-title">{escape(ch_display)} {ch_num}</h1>
     </header>
 
     <div class="chapter-text" lang="en">
@@ -1169,6 +1259,10 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
       <button class="action-btn" data-action="tts" aria-pressed="false">
         <svg class="action-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
         <span class="action-btn__text">Listen</span>
+      </button>
+      <button class="action-btn" data-action="share">
+        <svg class="action-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+        <span class="action-btn__text">Share</span>
       </button>
       <button class="action-btn" data-action="copy-link">
         <svg class="action-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -1195,7 +1289,7 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
     schema = {
         "@context": "https://schema.org",
         "@type": "Chapter",
-        "name": f"{name} {ch_num}",
+        "name": f"{ch_display} {ch_num}",
         "isPartOf": {
             "@type": "Book",
             "name": name,
@@ -1205,10 +1299,9 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
         "inLanguage": "en"
     }
 
-    # Slightly tailored description for SEO
-    desc = f'Read {name} {ch_num} from the {t["label"]} online for free. Complete chapter with verse markers. No ads, no account.'
+    desc = f'Read {ch_display} {ch_num} from the {t["label"]} online for free. Complete chapter with verse markers.'
     return base_layout(
-        title=f"{name} {ch_num}, {t['label']} ({t['short']}) | Free Online | freescripture.org",
+        title=f"{ch_display} {ch_num}, {t['label']} ({t['short']}) | Free Scripture",
         description=desc, body=body, canonical=canonical, schema_jsonld=schema,
         body_class="page-chapter"
     )
@@ -1227,6 +1320,16 @@ def render_search_page():
     <input type="search" id="search-input" placeholder="John 3:16, &ldquo;love your neighbor&rdquo;, or any phrase&hellip;" aria-label="Search scripture" autocomplete="off">
   </form>
   <p class="search-bar__hint" id="search-status">Type a verse reference to jump there. Type a phrase to find every match.</p>
+
+  <div class="search-suggestions" id="search-suggestions" style="text-align:center;margin:1.5rem 0;">
+    <p style="font-size:0.82rem;color:var(--ink-faded);margin-bottom:0.5rem;">Try:</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;">
+      <a href="/web/psalms/23" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">Psalm 23</a>
+      <a href="/web/john/1" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">John 1</a>
+      <a href="/web/1-corinthians/13" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">1 Corinthians 13</a>
+      <a href="/web/romans/8" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">Romans 8</a>
+    </div>
+  </div>
 
   <div class="trans-switch" id="search-trans-switch" aria-label="Search within translation">
     <span class="trans-switch__label">Search in:</span>
@@ -1285,7 +1388,7 @@ def render_about():
   <p>The KJV text comes from public-domain digital editions, principally the <code>aruljohn/Bible-kjv</code> repository on GitHub, checked against the openbible.com KJV text. The Apocrypha combines two public-domain sources: books 1 Esdras through 2 Maccabees from the Scrollmapper Deuterocanonical Project (2024 branch), and the Letter of Jeremiah, which is Baruch chapter 6 in the 1611 arrangement, from the Scrollmapper Bible Databases KJVA dataset (2025 branch). Both keep the 1611 King James translation. Find an error? Write to us at <a href="mailto:hello@hopeforamericans.net">hello@hopeforamericans.net</a>.</p>
 
   <h2>Keeping it free</h2>
-  <p>This is a reading library. For commentary, cross-references, and study tools, there are good places elsewhere, and we will happily send you to them. Here, the work is quieter: a warm room where the words can be read. If you want to help keep the room open, you can <a href="/support/">support the work</a>. You owe us nothing for reading.</p>
+  <p>This is a reading library. For commentary, cross-references, and study tools, there are good places elsewhere, and we will happily send you to them. Here, the work is quieter: a warm room where the words can be read.</p>
 
   <hr class="section-rule">
   <p class="muted" style="text-align:center;font-style:italic;">Built carefully in Flagstaff, Arizona.</p>
@@ -1321,7 +1424,6 @@ def render_support():
     return base_layout(
         title="Support, Free Scripture | freescripture.org",
         description="Support Free Scripture, a free online library of scripture stewarded by Hope for Americans.",
-        body=body, canonical=f"{SITE_URL}/support/"
     )
 
 
@@ -1456,7 +1558,6 @@ def build_sitemap(all_books):
     urls = [
         f"{SITE_URL}/",
         f"{SITE_URL}/about/",
-        f"{SITE_URL}/support/",
         f"{SITE_URL}/search/",
         f"{SITE_URL}/christian/",
     ]
@@ -1513,11 +1614,10 @@ def build():
     print("\n[2/7] Building top-level pages...")
     write_file(PUBLIC / "index.html", render_homepage())
     write_file(PUBLIC / "about" / "index.html", render_about())
-    write_file(PUBLIC / "support" / "index.html", render_support())
     write_file(PUBLIC / "search" / "index.html", render_search_page())
     write_file(PUBLIC / "christian" / "index.html", render_christian_landing(books_data))
     write_file(PUBLIC / "404.html", render_404())
-    print("      Homepage, About, Support, Search, /christian/, 404")
+    print("      Homepage, About, Search, /christian/, 404")
 
     # 3-5. Per-translation: landing + book landings + chapter pages
     print("\n[3/7] Building per-translation pages...")
@@ -1551,15 +1651,17 @@ def build():
             next_link = None
             if i > 0:
                 pname, pch = flat_chapters[i - 1]
+                plabel = pname[:-1] if pname == "Psalms" else pname
                 prev_link = {
                     "url": f"/{slug}/{book_slug(pname)}/{pch['num']}",
-                    "label": f"{pname} {pch['num']}"
+                    "label": f"{plabel} {pch['num']}"
                 }
             if i < len(flat_chapters) - 1:
                 nname, nch = flat_chapters[i + 1]
+                nlabel = nname[:-1] if nname == "Psalms" else nname
                 next_link = {
                     "url": f"/{slug}/{book_slug(nname)}/{nch['num']}",
-                    "label": f"{nname} {nch['num']}"
+                    "label": f"{nlabel} {nch['num']}"
                 }
             rendered = render_chapter(trans_books[name], ch, prev_link, next_link, trans_key)
             out_html = PUBLIC / slug / book_slug(name) / f"{ch['num']}.html"
