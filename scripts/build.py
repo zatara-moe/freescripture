@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-freescripture.org — build script
+freescripture.org, build script
 Generates the complete static site from KJV source JSON.
 Outputs to /public/
 
@@ -180,7 +180,7 @@ BOOK_ORDER = [
 
 # One-sentence book introductions, written for a curious reader (not a scholar)
 BOOK_INTROS = {
-    "Genesis": "The book of beginnings — creation, the first families, the call of Abraham, and the journey of Joseph into Egypt.",
+    "Genesis": "The book of beginnings, creation, the first families, the call of Abraham, and the journey of Joseph into Egypt.",
     "Exodus": "Moses leads Israel out of slavery in Egypt, receives the Ten Commandments, and the people learn to live as a nation under God.",
     "Leviticus": "A handbook of worship, ritual, and daily holiness for the priests and people of ancient Israel.",
     "Numbers": "Israel's forty-year journey through the wilderness, told through censuses, complaints, victories, and divine guidance.",
@@ -452,7 +452,7 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 <meta property="og:image" content="{SITE_URL}/static/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Free Scripture — a free library of scripture, beautifully presented. King James Bible and Apocrypha. 80 books, 36,923 verses.">
+<meta property="og:image:alt" content="Free Scripture, a free library of scripture, beautifully presented. King James Bible and Apocrypha. 80 books, 36,923 verses.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{SITE_URL}/static/og-image.jpg">
 
@@ -538,7 +538,7 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
     <div class="site-footer__col">
       <h4>Stewardship</h4>
       <p>A project of <strong><a href="https://hopeforamericans.net">Hope for Americans</a></strong>, an independent maker of free, honest tools.</p>
-      <p>Sister project: <a href="https://fablepixels.com">Fablepixels</a> &mdash; interactive emoji storybooks.</p>
+      <p>Sister project: <a href="https://fablepixels.com">Fablepixels</a>, interactive emoji storybooks.</p>
     </div>
   </div>
   <div class="trust-row">
@@ -568,8 +568,8 @@ def render_homepage():
     GENRES = [
         {
             "title": "These read like a novel",
-            "desc": "Narrative — characters, events, a plot that moves forward.",
-            "gospels_note": "Four accounts of the same story — the life of Jesus, each told by a different person.",
+            "desc": "Narrative, characters, events, a plot that moves forward.",
+            "gospels_note": "Four accounts of the same story, the life of Jesus, each told by a different person.",
             "books": [
                 ("Matthew", "The life of Jesus as told by a tax collector. Written to show Jesus as the fulfillment of Jewish prophecy.", "28 chapters", True),
                 ("Mark", "The shortest gospel. Fast, urgent, action-driven. Starts with Jesus already an adult. No birth story.", "16 chapters", True),
@@ -581,9 +581,9 @@ def render_homepage():
                 ("Exodus", "Escape from Egypt. Moses, the plagues, the Red Sea, the Ten Commandments.", "40 chapters"),
                 ("Numbers", "Forty years wandering in the desert. Rebellion, faith, and survival between Egypt and the promised land.", "36 chapters"),
                 ("Joshua", "Conquering the promised land. Military campaigns, land division, and a new beginning after Moses.", "24 chapters"),
-                ("Judges", "Heroes and chaos. Before there were kings, there were judges &mdash; warriors and leaders in a lawless era.", "21 chapters"),
+                ("Judges", "Heroes and chaos. Before there were kings, there were judges, warriors and leaders in a lawless era.", "21 chapters"),
                 ("Ruth", "A love story about loyalty, immigration, and belonging. One of the shortest books in the Bible.", "4 chapters &middot; about 15 min"),
-                ("1 Samuel", "The first king of Israel. Samuel, Saul, and the young David &mdash; including the fight with Goliath.", "31 chapters"),
+                ("1 Samuel", "The first king of Israel. Samuel, Saul, and the young David, including the fight with Goliath.", "31 chapters"),
                 ("2 Samuel", "David's rise to power and his fall. War, betrayal, adultery, and the cost of being king.", "24 chapters"),
                 ("1 Kings", "Solomon builds the temple, then the kingdom splits in two. Elijah appears as a prophet.", "22 chapters"),
                 ("2 Kings", "Both kingdoms collapse. Elisha performs miracles. Israel and Judah are conquered and exiled.", "25 chapters"),
@@ -599,17 +599,17 @@ def render_homepage():
                 ("Tobit", "An angel in disguise, a magic fish, and a family reunion. Adventure and faith.", "14 chapters &middot; about 25 min"),
                 ("Judith", "A widow infiltrates an enemy camp and kills their general. One of the Bible's most dramatic heroines.", "16 chapters"),
                 ("1 Maccabees", "War for independence. A family leads a revolt against a king who outlawed their religion.", "16 chapters"),
-                ("2 Maccabees", "The same war told differently &mdash; more theological, more focused on martyrdom and miracle.", "15 chapters"),
+                ("2 Maccabees", "The same war told differently, more theological, more focused on martyrdom and miracle.", "15 chapters"),
                 ("Esther (Greek)", "The extended version of Esther, with the prayers and dreams the Hebrew version left out.", "6 additional chapters"),
                 ("1 Esdras", "An alternate account of the temple rebuilding. Overlaps with Ezra and Chronicles.", "9 chapters"),
-                ("2 Esdras", "Apocalyptic visions. Ezra asks God why the world is so unjust. God answers &mdash; sort of.", "16 chapters"),
+                ("2 Esdras", "Apocalyptic visions. Ezra asks God why the world is so unjust. God answers, sort of.", "16 chapters"),
             ],
         },
         {
             "title": "These read like music",
             "desc": "Songs, prayers, and poems. Best read slowly or out loud.",
             "books_flat": [
-                ("Psalms", "150 songs and prayers. Joy, rage, grief, praise &mdash; the full range of human emotion directed at God.", "150 chapters &middot; start with Psalm 23"),
+                ("Psalms", "150 songs and prayers. Joy, rage, grief, praise, the full range of human emotion directed at God.", "150 chapters &middot; start with Psalm 23"),
                 ("Song of Solomon", "Erotic love poetry in the middle of the Bible. Yes, really. Beautiful, surprising, and ancient.", "8 chapters &middot; about 15 min"),
                 ("Lamentations", "Five poems of grief over the destruction of Jerusalem. Raw, structured, and devastating.", "5 chapters &middot; about 20 min"),
             ],
@@ -620,11 +620,11 @@ def render_homepage():
         },
         {
             "title": "Advice about how to live",
-            "desc": "Philosophy, practical wisdom, and the hardest questions. No plot &mdash; just thinking.",
+            "desc": "Philosophy, practical wisdom, and the hardest questions. No plot, just thinking.",
             "books_flat": [
-                ("Job", "Why do good people suffer? A man loses everything and demands answers from God. God eventually responds &mdash; but not the way anyone expects.", "42 chapters"),
+                ("Job", "Why do good people suffer? A man loses everything and demands answers from God. God eventually responds, but not the way anyone expects.", "42 chapters"),
                 ("Proverbs", "Practical advice about money, relationships, work, and character. One line at a time. Dip in anywhere.", "31 chapters"),
-                ("Ecclesiastes", "&ldquo;Everything is meaningless.&rdquo; A wealthy king tries pleasure, work, and wisdom &mdash; and concludes none of it lasts.", "12 chapters &middot; about 30 min"),
+                ("Ecclesiastes", "&ldquo;Everything is meaningless.&rdquo; A wealthy king tries pleasure, work, and wisdom, and concludes none of it lasts.", "12 chapters &middot; about 30 min"),
             ],
             "apocrypha": [
                 ("Wisdom of Solomon", "A meditation on justice, immortality, and why the righteous suffer. Philosophical and beautiful.", "19 chapters"),
@@ -635,7 +635,7 @@ def render_homepage():
             "title": "The original constitution",
             "desc": "Rules, ceremonies, and the law given to Israel. Dense but foundational.",
             "books_flat": [
-                ("Leviticus", "Religious law &mdash; sacrifice, purity, diet, festivals. The operating manual for ancient Israelite worship.", "27 chapters"),
+                ("Leviticus", "Religious law, sacrifice, purity, diet, festivals. The operating manual for ancient Israelite worship.", "27 chapters"),
                 ("Deuteronomy", "Moses' farewell speech. He retells the law and the story so far before the people enter the promised land without him.", "34 chapters"),
             ],
         },
@@ -657,7 +657,7 @@ def render_homepage():
                 ("Titus", "Church leadership on the island of Crete. Practical instructions for building a healthy community.", "3 chapters &middot; about 8 min"),
                 ("Philemon", "A runaway slave meets Paul in prison. Paul sends him back with this letter asking his owner to free him.", "1 chapter &middot; 3 min"),
                 ("Hebrews", "Old covenant vs new. A theological argument that Jesus fulfills and replaces the temple system. Author unknown.", "13 chapters"),
-                ("James", "&ldquo;Faith without action is dead.&rdquo; Practical, blunt, and focused on how you actually live &mdash; not just what you believe.", "5 chapters &middot; about 15 min"),
+                ("James", "&ldquo;Faith without action is dead.&rdquo; Practical, blunt, and focused on how you actually live, not just what you believe.", "5 chapters &middot; about 15 min"),
                 ("1 Peter", "Suffering with hope. Written to persecuted Christians scattered across the Roman Empire.", "5 chapters &middot; about 15 min"),
                 ("2 Peter", "Warnings about false teachers and the end of the world. Peter's last word to the churches.", "3 chapters &middot; about 10 min"),
                 ("1 John", "&ldquo;God is love.&rdquo; A letter about truth, love, and how to tell real faith from false faith.", "5 chapters &middot; about 15 min"),
@@ -688,11 +688,11 @@ def render_homepage():
                 ("Haggai", "&ldquo;You've built nice houses for yourselves. When will you rebuild God's?&rdquo; A short, sharp challenge.", "2 chapters &middot; about 5 min"),
                 ("Zechariah", "Night visions about the future. Horses, lampstands, flying scrolls, and a coming king on a donkey.", "14 chapters"),
                 ("Malachi", "The last prophet of the Old Testament. A dialogue between God and a people who've stopped caring.", "4 chapters &middot; about 10 min"),
-                ("Revelation", "The end of everything &mdash; and the beginning of something new. Visions, symbols, judgment, and a new heaven and earth.", "22 chapters"),
+                ("Revelation", "The end of everything, and the beginning of something new. Visions, symbols, judgment, and a new heaven and earth.", "22 chapters"),
             ],
             "apocrypha": [
                 ("Susanna", "A woman is falsely accused by two corrupt judges. Daniel exposes the lie. A courtroom drama.", "1 chapter &middot; 5 min"),
-                ("Bel and the Dragon", "Daniel proves that idol worship is a fraud. Two stories about false gods &mdash; one funny, one deadly.", "1 chapter &middot; 5 min"),
+                ("Bel and the Dragon", "Daniel proves that idol worship is a fraud. Two stories about false gods, one funny, one deadly.", "1 chapter &middot; 5 min"),
             ],
         },
     ]
@@ -752,12 +752,12 @@ def render_homepage():
     body = f"""
 <div class="home-hero">
   <h1 class="home-hero__title">The Bible, organized by what kind of reading it is</h1>
-  <p class="home-hero__sub">Three translations. No ads. No account. Pick a book and start reading.</p>
+  <p class="home-hero__sub">Three translations, free to read. Pick a book and begin.</p>
   <form class="home-hero__search" action="/search/" method="get" role="search">
     <span class="home-hero__search-icon" aria-hidden="true">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
     </span>
-    <input type="search" name="q" placeholder='Jump to a verse &mdash; "John 3:16"' aria-label="Search scripture">
+    <input type="search" name="q" placeholder='Jump to a verse, "John 3:16"' aria-label="Search scripture">
   </form>
 </div>
 
@@ -783,7 +783,7 @@ def render_homepage():
         }
     }
     return base_layout(
-        title="Free Scripture — A free, beautiful library of scripture | freescripture.org",
+        title="Free Scripture, A free, beautiful library of scripture | freescripture.org",
         description="Read scripture from multiple faith traditions, free forever. No ads, no accounts, no tracking. King James Bible online and more.",
         body=body, canonical=SITE_URL + "/",
         schema_jsonld=schema, body_class="page-home"
@@ -791,14 +791,14 @@ def render_homepage():
 
 
 def render_christian_landing(books):
-    """The /christian/ landing — list of available Christian translations."""
+    """The /christian/ landing, list of available Christian translations."""
     body = f"""
 <div class="reading-column">
   <p class="section-eyebrow">Christian Library</p>
   <h1>The Holy Bible</h1>
   <hr class="section-rule" style="margin-left:0;">
 
-  <p>Christian scripture, presented in three public-domain English translations: the King James Version (1769) for tradition, the World English Bible (2000) for modern clarity, and the Bible in Basic English (1949) for accessibility. Read whichever speaks to you, or compare them side by side &mdash; every chapter has a translation switcher at the top.</p>
+  <p>Christian scripture, presented in three public-domain English translations: the King James Version (1769) for tradition, the World English Bible (2000) for modern clarity, and the Bible in Basic English (1949) for accessibility. Read whichever speaks to you, or compare them side by side, every chapter has a translation switcher at the top.</p>
 
   <div class="tradition-grid" style="margin-top:3rem;">
     <a href="/kjv/" class="tradition-card" data-tradition="christian">
@@ -829,14 +829,14 @@ def render_christian_landing(books):
 </div>
 """
     return base_layout(
-        title="Christian Bible — Free Online | freescripture.org",
+        title="Christian Bible, Free Online | freescripture.org",
         description="Read the Christian Bible online for free in three public-domain English translations: KJV, WEB, and BBE. No ads, no account, no tracking.",
         body=body, canonical=f"{SITE_URL}/christian/", body_class="page-tradition"
     )
 
 
 def render_translation_landing(books, translation):
-    """The /<translation>/ landing — list of all books grouped by Testament and section."""
+    """The /<translation>/ landing, list of all books grouped by Testament and section."""
     t = TRANSLATIONS[translation]
     has_apoc = t["has_apocrypha"]
     sections_html = []
@@ -887,26 +887,26 @@ def render_translation_landing(books, translation):
     if translation == "kjv":
         eyebrow = "King James Version (1769) with Apocrypha"
         title_h1 = "The Holy Bible"
-        intro = "The King James Version, sometimes called the Authorized Version, is a translation of the Christian Bible into English that was first published in 1611. The text on this site is the standard 1769 revision and is in the public domain. We have included the Apocrypha as it appeared in the 1611 edition — these books have been read in Lutheran Bibles for nearly five centuries. Choose a book below to begin reading."
-        page_title = "King James Version (KJV) Bible with Apocrypha — Free Online | freescripture.org"
+        intro = "The King James Version, sometimes called the Authorized Version, is a translation of the Christian Bible into English that was first published in 1611. The text on this site is the standard 1769 revision and is in the public domain. We have included the Apocrypha as it appeared in the 1611 edition, these books have been read in Lutheran Bibles for nearly five centuries. Choose a book below to begin reading."
+        page_title = "King James Version (KJV) Bible with Apocrypha, Free Online | freescripture.org"
         page_desc = "Read the King James Bible online for free, including the Apocrypha. All books, all chapters. No ads, no account needed."
     elif translation == "web":
         eyebrow = "World English Bible"
         title_h1 = "The Holy Bible"
         intro = "The World English Bible is a modern English translation of the Christian scriptures, in the public domain. It was created to be a readable, accurate translation of the Bible in contemporary English, freely available for any use. Choose a book below to begin reading."
-        page_title = "World English Bible (WEB) — Free Online | freescripture.org"
+        page_title = "World English Bible (WEB), Free Online | freescripture.org"
         page_desc = "Read the World English Bible online for free. A modern, public-domain English translation. No ads, no account needed."
     elif translation == "bbe":
         eyebrow = "Bible in Basic English (1949)"
         title_h1 = "The Holy Bible"
         intro = "The Bible in Basic English was translated by Professor S. H. Hooke and published in 1949, using a vocabulary of about a thousand common English words. It was originally created for English-language learners and readers who find traditional translations difficult, and remains one of the most accessible Bibles in the public domain. Choose a book below to begin reading."
-        page_title = "Bible in Basic English (BBE) — Free Online | freescripture.org"
+        page_title = "Bible in Basic English (BBE), Free Online | freescripture.org"
         page_desc = "Read the Bible in Basic English online for free. A simple-vocabulary translation in the public domain. No ads, no account needed."
     else:
         eyebrow = t["label"]
         title_h1 = "The Holy Bible"
         intro = t["description"]
-        page_title = f"{t['label']} — Free Online | freescripture.org"
+        page_title = f"{t['label']}, Free Online | freescripture.org"
         page_desc = f"Read the {t['label']} online for free."
 
     body = f"""
@@ -941,7 +941,7 @@ def render_kjv_landing(books):
 
 
 def render_book_landing(book, translation="kjv"):
-    """The /<translation>/<book>/ landing — list of chapters."""
+    """The /<translation>/<book>/ landing, list of chapters."""
     t = TRANSLATIONS[translation]
     name = book["name"]
     intro = BOOK_INTROS.get(name, "")
@@ -970,20 +970,20 @@ def render_book_landing(book, translation="kjv"):
     schema = {
         "@context": "https://schema.org",
         "@type": "Book",
-        "name": f"{name} — {t['label']}",
+        "name": f"{name}, {t['label']}",
         "isPartOf": {"@type": "Book", "name": f"{t['label']} Bible"},
         "inLanguage": "en",
         "url": f"{SITE_URL}/{t['slug']}/{book_slug(name)}/"
     }
     return base_layout(
-        title=f"{name} — {t['label']} ({t['short']}) | Free Online | freescripture.org",
+        title=f"{name}, {t['label']} ({t['short']}) | Free Online | freescripture.org",
         description=f"Read the book of {name} from the {t['label']} online for free. All chapters, no ads, no account.",
         body=body, canonical=f"{SITE_URL}/{t['slug']}/{book_slug(name)}/", schema_jsonld=schema
     )
 
 
 def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
-    """The /<translation>/<book>/<chapter> page — the heart of the site."""
+    """The /<translation>/<book>/<chapter> page, the heart of the site."""
     t = TRANSLATIONS[translation]
     name = book["name"]
     ch_num = chapter["num"]
@@ -1175,7 +1175,7 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
     # Slightly tailored description for SEO
     desc = f'Read {name} {ch_num} from the {t["label"]} online for free. Complete chapter with verse markers. No ads, no account.'
     return base_layout(
-        title=f"{name} {ch_num} — {t['label']} ({t['short']}) | Free Online | freescripture.org",
+        title=f"{name} {ch_num}, {t['label']} ({t['short']}) | Free Online | freescripture.org",
         description=desc, body=body, canonical=canonical, schema_jsonld=schema,
         body_class="page-chapter"
     )
@@ -1225,7 +1225,7 @@ def render_search_page():
 <script src="/static/js/search.js" defer></script>
 """
     return base_layout(
-        title="Search — Free Scripture | freescripture.org",
+        title="Search, Free Scripture | freescripture.org",
         description="Search the Bible by verse reference or phrase. Free, fast, no ads.",
         body=body, canonical=f"{SITE_URL}/search/", body_class="page-search"
     )
@@ -1237,34 +1237,29 @@ def render_about():
   <h1>About this library</h1>
   <hr class="section-rule" style="margin-left:0;">
 
-  <p>This library exists because scripture should not cost money to read. Most free Bible websites today are paid for with ads, with email signup walls, or with a "premium" tier that gates the better tools behind a paywall. We believe a different model is possible.</p>
+  <p>Scripture is free. Reading it should be too. So here it is: the full text, clean on the page, ready when you are.</p>
 
-  <p>Free Scripture is a project of <strong><a href="https://hopeforamericans.net">Hope for Americans</a></strong>, an independent maker of free, honest tools. We pay the hosting bill ourselves. There are no ads on this site, ever. There is no account required and no tracking. We are not collecting your data. We are not building a profile of you. We are not going to sell anything to you.</p>
+  <p>We pay the hosting ourselves. You can read every word without an account, and nothing here is watching you do it. That is the whole arrangement.</p>
 
-  <p>Every text in this library is in the public domain or is freely licensed for redistribution. Where a text is copyrighted (such as most modern English Bible translations), we do not host it. We will tell you so plainly and link out to a place where you can read it.</p>
+  <p>Every text in this library is in the public domain or freely licensed to share. When a translation is still under copyright, we say so plainly and point you to where you can read it.</p>
 
-  <h2 id="sources">What is here today, and what is coming</h2>
-  <p>The first phase of this library focuses on the <strong>King James Version</strong> of the Christian Bible, in its standard 1769 revision, together with the <strong>Apocrypha</strong> as it appeared in the original 1611 edition. The KJV is in the public domain in the United States and most of the world. It is, by a wide margin, the single most-read English Bible in human history. The Apocrypha &mdash; sometimes called the Deuterocanonical Books &mdash; has been read in Lutheran Bibles for nearly five centuries, and was included in the 1611 King James Bible as a separate section between the Old and New Testaments.</p>
+  <h2 id="sources">What is here, and what is coming</h2>
+  <p>Today the library holds the <strong>King James Version</strong> in its 1769 revision, along with the <strong>Apocrypha</strong> as it appeared in the original 1611 edition. The KJV is in the public domain in most of the world. It is the most-read English Bible in history. The Apocrypha, sometimes called the Deuterocanonical Books, has been read in Lutheran Bibles for nearly five centuries, and sat in the 1611 King James Bible as its own section between the Old and New Testaments.</p>
 
-  <p>One small note about the Apocrypha as it stands today: it is sourced from two different public-domain digital editions stitched together. Books 1 Esdras through 2 Maccabees come from the Scrollmapper Deuterocanonical Project, while the Letter of Jeremiah (Baruch chapter 6 in the 1611 King James arrangement) comes from the Scrollmapper Bible Databases KJVA dataset. Both preserve the 1611 King James translation.</p>
-
-  <p>In future phases, we plan to add the World English Bible, the American Standard Version, and texts from other faith traditions, beginning with the Quran in public-domain English translation.</p>
-
-  <h2>What this library is not</h2>
-  <p>This is a reading library, not a study tool. We do not offer commentary, concordances, or cross-references. There are excellent tools elsewhere for that work. We are not a comparative-religion site. We do not argue which scripture is true. We do not offer reading plans, friend feeds, streak counters, or notifications. The goal here is simpler: a single warm room where the words can be read.</p>
+  <p>Next come the World English Bible, the American Standard Version, and texts from other traditions, starting with the Quran in a public-domain English translation.</p>
 
   <h2>Source texts</h2>
-  <p>The KJV canonical text on this site comes from public-domain digital editions, principally the <code>aruljohn/Bible-kjv</code> repository on GitHub, with verification against the openbible.com KJV text. The Apocrypha text comes from two public-domain sources combined: books 1 Esdras through 2 Maccabees from the Scrollmapper Deuterocanonical Project (2024 branch), and the Letter of Jeremiah (Baruch ch 6) from the Scrollmapper Bible Databases KJVA dataset (2025 branch). Both preserve the 1611 King James translation. If you find an error, please write to us at <a href="mailto:hello@hopeforamericans.net">hello@hopeforamericans.net</a>.</p>
+  <p>The KJV text comes from public-domain digital editions, principally the <code>aruljohn/Bible-kjv</code> repository on GitHub, checked against the openbible.com KJV text. The Apocrypha combines two public-domain sources: books 1 Esdras through 2 Maccabees from the Scrollmapper Deuterocanonical Project (2024 branch), and the Letter of Jeremiah, which is Baruch chapter 6 in the 1611 arrangement, from the Scrollmapper Bible Databases KJVA dataset (2025 branch). Both keep the 1611 King James translation. Find an error? Write to us at <a href="mailto:hello@hopeforamericans.net">hello@hopeforamericans.net</a>.</p>
 
-  <h2>Stewardship</h2>
-  <p>This project is a public good. It is American-stewarded because we believe a project this culturally significant should be built and maintained here. It is free because we believe scripture should not cost money. If you would like to help us keep it free, we welcome support at <a href="/support/">our support page</a>, but you owe us nothing for the use of this library.</p>
+  <h2>Keeping it free</h2>
+  <p>This is a reading library. For commentary, cross-references, and study tools, there are good places elsewhere, and we will happily send you to them. Here, the work is quieter: a warm room where the words can be read. If you want to help keep the room open, you can <a href="/support/">support the work</a>. You owe us nothing for reading.</p>
 
   <hr class="section-rule">
-  <p class="muted" style="text-align:center;font-style:italic;">Built carefully, in Flagstaff Arizona at 7,000 feet.</p>
+  <p class="muted" style="text-align:center;font-style:italic;">Built carefully in Flagstaff, Arizona.</p>
 </div>
 """
     return base_layout(
-        title="About — Free Scripture | freescripture.org",
+        title="About, Free Scripture | freescripture.org",
         description="A free, beautifully presented online library of scripture, stewarded by Hope for Americans in Flagstaff Arizona.",
         body=body, canonical=f"{SITE_URL}/about/"
     )
@@ -1276,9 +1271,9 @@ def render_support():
   <h1>Support this work</h1>
   <hr class="section-rule" style="margin-left:0;">
 
-  <p>This library is free because scripture should not cost money. We will not put ads on it. We will not build a paywall. We will not sell your data. We will not ask you to make an account.</p>
+  <p>This library stays free, and it stays clean: just the text, open to anyone, for as long as we can keep it running.</p>
 
-  <p>The hosting bill, the source-text licensing checks, and the careful work of building each translation page still cost something. If you are in a position to help, you are warmly invited to support the work through the parent ministry.</p>
+  <p>Hosting, licensing checks, and the careful work of building each translation page still cost something. If you are in a position to help, you are warmly invited to chip in toward keeping the room open.</p>
 
   <p style="text-align:center;margin:2.5rem 0;">
     <a href="{escape(DONATE_URL)}" class="action-btn" style="background:var(--ink);color:var(--paper);border-color:var(--ink);padding:0.85rem 1.5rem;font-size:0.85rem;">{escape(DONATE_LABEL)}</a>
@@ -1291,14 +1286,14 @@ def render_support():
 </div>
 """
     return base_layout(
-        title="Support — Free Scripture | freescripture.org",
+        title="Support, Free Scripture | freescripture.org",
         description="Support Free Scripture, a free online library of scripture stewarded by Hope for Americans.",
         body=body, canonical=f"{SITE_URL}/support/"
     )
 
 
 def render_404():
-    """The 404 page — graceful, in keeping with the parchment language."""
+    """The 404 page, graceful, in keeping with the parchment language."""
     body = """
 <div class="reading-column reading-column--narrow" style="text-align:center;padding:3rem 1rem;">
   <p class="section-eyebrow" style="margin-top:0;">Four hundred and four</p>
@@ -1326,12 +1321,12 @@ def render_404():
 
   <hr class="section-rule" style="margin-top:3rem;">
   <p class="muted" style="text-align:center;font-style:italic;font-family:var(--font-display);font-size:1rem;">
-    &ldquo;Seek, and ye shall find&rdquo; &mdash; Matthew 7:7
+    &ldquo;Seek, and ye shall find&rdquo;, Matthew 7:7
   </p>
 </div>
 """
     return base_layout(
-        title="Not found — Free Scripture | freescripture.org",
+        title="Not found, Free Scripture | freescripture.org",
         description="The page you sought could not be found. Return to the library.",
         body=body, canonical=f"{SITE_URL}/404", body_class="page-404"
     )
@@ -1360,7 +1355,7 @@ def build_search_index(all_books):
     translation, slashing the download from ~17 MB combined to ~5-6 MB
     for any single translation (~1.5 MB gzipped over the wire).
 
-    Each entry is just {b, c, v, t} — translation is implicit in the filename.
+    Each entry is just {b, c, v, t}, translation is implicit in the filename.
     """
     total = 0
     written = []
@@ -1401,7 +1396,7 @@ Sitemap: https://freescripture.org/sitemap.xml
 """
     write_file(PUBLIC / "robots.txt", robots)
 
-    llms = """# Free Scripture — freescripture.org
+    llms = """# Free Scripture, freescripture.org
 
 > A free, beautifully presented online library of scripture from multiple faith traditions. Stewarded by Hope for Americans, an independent maker of free, honest tools.
 
@@ -1454,7 +1449,7 @@ def build_sitemap(all_books):
 
 def build():
     print("=" * 60)
-    print("  freescripture.org — build")
+    print("  freescripture.org, build")
     print("=" * 60)
 
     clean_public()
