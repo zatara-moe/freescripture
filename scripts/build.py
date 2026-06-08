@@ -419,8 +419,298 @@ DONATE_URL = "https://secure.myvanco.com/L-Z7RC/campaign/C-133BH"
 DONATE_LABEL = "Give to Hope for Americans"
 
 # ============================================================
+# NEEDS — scripture by what a reader is going through
+# ============================================================
+# Each need becomes its own indexable page at /read/<slug>/, plus a row on
+# the /read/ hub. Passages are (book, chapter, genre, frame). The frame is
+# the one-line, platform-authored description shown in the list and is tuned
+# per need (the same passage can read differently under two needs).
+# genre drives the left-edge accent color: narrative, poetry, wisdom, law,
+# letters, prophecy. Passages link to the modern WEB reader.
+
+NEEDS = [
+    {
+        "slug": "fear", "group": "hard", "accent": "poetry",
+        "short": "When you're afraid",
+        "h1": "Verses for when you're afraid",
+        "lede": "For a hard night of your own, or to send to someone facing one. Read into any of these, or grab the line and pass it on.",
+        "card": "Fear answered, on the water and on foot.",
+        "meta_title": "Bible verses for when you're afraid",
+        "meta_desc": "Verses for fear and anxiety, from the storm Jesus calmed to whom shall I fear. Read one, or send it to a friend.",
+        "passages": [
+            ("Mark", 4, 39, "narrative", "A storm hits the boat. Jesus is asleep in the back."),
+            ("Psalms", 27, 1, "poetry", "The Lord is my light. Whom shall I fear."),
+            ("Isaiah", 41, 10, "prophecy", "I am with you. I am holding your hand."),
+            ("Joshua", 1, 9, "narrative", "Be strong and courageous, said three times for a reason."),
+            ("Philippians", 4, 6, "letters", "Be anxious for nothing."),
+        ],
+    },
+    {
+        "slug": "grief", "group": "hard", "accent": "prophecy",
+        "short": "When you're grieving",
+        "h1": "Verses for grief and loss",
+        "lede": "For your own loss, or to send to someone carrying one. Read into a passage, or pass a verse along.",
+        "card": "For loss, and the God who weeps with you.",
+        "meta_title": "Bible verses for grief and loss",
+        "meta_desc": "Verses for mourning and sympathy, from Lazarus to the promise that every tear gets wiped away. Read one, or send it.",
+        "passages": [
+            ("John", 11, 25, "narrative", "His friend has died. Jesus weeps before he acts."),
+            ("Psalms", 23, 4, "poetry", "The shepherd walks with you through the darkest valley."),
+            ("Psalms", 34, 18, "poetry", "Close to the brokenhearted, near to the crushed."),
+            ("Lamentations", 3, 22, "poetry", "In the middle of ruin, mercies new every morning."),
+            ("Revelation", 21, 4, "prophecy", "A promise that every tear gets wiped away."),
+        ],
+    },
+    {
+        "slug": "strength", "group": "hard", "accent": "wisdom",
+        "short": "When you're worn out",
+        "h1": "Verses for strength",
+        "lede": "For empty tanks and second winds, yours or a friend's. Read it, or send it.",
+        "card": "For empty tanks and second winds.",
+        "meta_title": "Bible verses for strength and weariness",
+        "meta_desc": "Verses for exhaustion and encouragement, from eagles' wings to strength made perfect in weakness. Read one, or send it.",
+        "passages": [
+            ("Isaiah", 40, 31, "prophecy", "Wait on the Lord, and rise up on wings like eagles."),
+            ("1 Kings", 19, 12, "narrative", "Not the wind or the fire. A still, small voice."),
+            ("Matthew", 11, 28, "narrative", "Come to me, all who are weary, and I will give you rest."),
+            ("2 Corinthians", 12, 9, "letters", "His power is made perfect in your weakness."),
+            ("Philippians", 4, 13, "letters", "Strength for whatever is in front of you."),
+        ],
+    },
+    {
+        "slug": "guilt", "group": "hard", "accent": "narrative",
+        "short": "When you've messed up",
+        "h1": "Verses for guilt and starting over",
+        "lede": "For shame and a fresh start. Read into one, or send it to someone who needs it.",
+        "card": "For shame, regret, and starting over.",
+        "meta_title": "Bible verses for guilt and starting over",
+        "meta_desc": "Verses for regret and grace, from the prodigal son to no condemnation. Read one, or send it.",
+        "passages": [
+            ("Luke", 15, 20, "narrative", "While he was still far off, his father ran to him."),
+            ("Psalms", 51, 10, "poetry", "Create in me a clean heart."),
+            ("John", 8, 11, "narrative", "Neither do I condemn you. Go, and sin no more."),
+            ("Romans", 8, 1, "letters", "There is now no condemnation."),
+            ("Luke", 19, 10, "narrative", "He came to seek and to save the lost."),
+        ],
+    },
+    {
+        "slug": "forgiveness", "group": "hard", "accent": "letters",
+        "short": "When someone hurt you",
+        "h1": "Verses about forgiving someone",
+        "lede": "For the weight you can't put down. Read into one, or send it on.",
+        "card": "For the weight you can't put down.",
+        "meta_title": "Bible verses about forgiveness",
+        "meta_desc": "Verses for resentment and forgiving, from Joseph to the words from the cross. Read one, or send it.",
+        "passages": [
+            ("Matthew", 18, 22, "narrative", "Not seven times, but seventy times seven."),
+            ("Genesis", 50, 20, "narrative", "You meant evil against me. God meant it for good."),
+            ("Matthew", 5, 44, "narrative", "Love your enemies. Pray for those who hurt you."),
+            ("Colossians", 3, 13, "letters", "Forgive the way you were forgiven."),
+            ("Luke", 23, 34, "narrative", "From the cross: Father, forgive them."),
+        ],
+    },
+    {
+        "slug": "wisdom", "group": "hard", "accent": "law",
+        "short": "When you need wisdom",
+        "h1": "Verses for wisdom",
+        "lede": "For decisions and how to live. Read into one, or send it to someone deciding.",
+        "card": "For decisions and how to live.",
+        "meta_title": "Bible verses for wisdom and decisions",
+        "meta_desc": "Verses for choices and how to live, from Proverbs to the Sermon on the Mount. Read one, or send it.",
+        "passages": [
+            ("Proverbs", 3, 5, "wisdom", "Trust the Lord with your whole heart."),
+            ("James", 1, 5, "letters", "If anyone lacks wisdom, ask, and it will be given."),
+            ("Ecclesiastes", 3, 1, "wisdom", "A time for everything, a season for every purpose."),
+            ("Psalms", 1, 1, "poetry", "Two ways to live, laid side by side."),
+            ("Matthew", 5, 16, "narrative", "Let your light shine before others."),
+        ],
+    },
+    {
+        "slug": "celebrate", "group": "good", "accent": "narrative",
+        "short": "Something to celebrate",
+        "h1": "Verses to celebrate",
+        "lede": "For good news worth marking, yours or someone else's. Read it, or send the joy along.",
+        "card": "A win, a milestone, a good day.",
+        "meta_title": "Bible verses to celebrate good news",
+        "meta_desc": "Joyful verses for good news and milestones, from this is the day the Lord has made to rejoicing over you with singing. Read one, or send it.",
+        "passages": [
+            ("Psalms", 118, 24, "poetry", "This is the day the Lord has made."),
+            ("Philippians", 4, 4, "letters", "Rejoice in the Lord always."),
+            ("Zephaniah", 3, 17, "prophecy", "He rejoices over you with singing."),
+            ("Psalms", 126, 3, "poetry", "The Lord has done great things for us."),
+            ("Nehemiah", 8, 10, "narrative", "The joy of the Lord is your strength."),
+        ],
+    },
+    {
+        "slug": "new-baby", "group": "good", "accent": "poetry",
+        "short": "A new baby",
+        "h1": "Verses for a new baby",
+        "lede": "For a birth, a blessing, a child arriving. Read one, or send it to the new family.",
+        "card": "A birth, a blessing, a child arriving.",
+        "meta_title": "Bible verses for a new baby",
+        "meta_desc": "Verses to bless a newborn and new parents, from fearfully and wonderfully made to children are a gift. Read one, or send it.",
+        "passages": [
+            ("Psalms", 139, 14, "poetry", "Fearfully and wonderfully made."),
+            ("Psalms", 127, 3, "poetry", "Children are a gift from the Lord."),
+            ("1 Samuel", 1, 27, "narrative", "For this child I prayed."),
+            ("Isaiah", 40, 11, "prophecy", "He gathers the lambs in his arms."),
+            ("Luke", 18, 16, "narrative", "Let the little children come to me."),
+        ],
+    },
+    {
+        "slug": "gratitude", "group": "good", "accent": "letters",
+        "short": "Giving thanks",
+        "h1": "Verses for giving thanks",
+        "lede": "For a full heart, or to thank someone who showed up. Read it, or send your thanks.",
+        "card": "When someone showed up for you.",
+        "meta_title": "Bible verses for giving thanks",
+        "meta_desc": "Verses for gratitude and thank you, from in everything give thanks to I thank my God whenever I remember you. Read one, or send it.",
+        "passages": [
+            ("1 Thessalonians", 5, 18, "letters", "In everything, give thanks."),
+            ("Psalms", 100, 4, "poetry", "Enter his gates with thanksgiving."),
+            ("Philippians", 1, 3, "letters", "I thank my God every time I remember you."),
+            ("Psalms", 107, 1, "poetry", "Give thanks to the Lord, for he is good."),
+            ("Colossians", 3, 15, "letters", "And be thankful."),
+        ],
+    },
+    {
+        "slug": "thinking-of-you", "group": "good", "accent": "prophecy",
+        "short": "Thinking of you",
+        "h1": "Verses for thinking of you",
+        "lede": "A blessing for no reason at all. Read it, or send it to someone on your mind.",
+        "card": "A verse for no reason at all.",
+        "meta_title": "Bible verses for thinking of you",
+        "meta_desc": "Verses to send when someone is on your mind, from the Lord bless you and keep you to plans for a future and a hope.",
+        "passages": [
+            ("Numbers", 6, 24, "law", "The Lord bless you and keep you."),
+            ("Jeremiah", 29, 11, "prophecy", "Plans to give you a future and a hope."),
+            ("Psalms", 121, 8, "poetry", "He keeps your going out and your coming in."),
+            ("Isaiah", 43, 1, "prophecy", "I have called you by name. You are mine."),
+            ("3 John", 1, 2, "letters", "That you may prosper and be in health."),
+        ],
+    },
+]
+# ============================================================
 # Helpers
 # ============================================================
+
+
+# ============================================================
+# GENRES — browse by kind of book
+# ============================================================
+GENRE_OF = {
+    "Leviticus": "law",
+    "Deuteronomy": "law",
+    "Genesis": "narrative",
+    "Exodus": "narrative",
+    "Numbers": "narrative",
+    "Joshua": "narrative",
+    "Judges": "narrative",
+    "Ruth": "narrative",
+    "1 Samuel": "narrative",
+    "2 Samuel": "narrative",
+    "1 Kings": "narrative",
+    "2 Kings": "narrative",
+    "1 Chronicles": "narrative",
+    "2 Chronicles": "narrative",
+    "Ezra": "narrative",
+    "Nehemiah": "narrative",
+    "Esther": "narrative",
+    "Matthew": "narrative",
+    "Mark": "narrative",
+    "Luke": "narrative",
+    "John": "narrative",
+    "Acts": "narrative",
+    "Psalms": "poetry",
+    "Song of Solomon": "poetry",
+    "Lamentations": "poetry",
+    "Job": "wisdom",
+    "Proverbs": "wisdom",
+    "Ecclesiastes": "wisdom",
+    "Romans": "letters",
+    "1 Corinthians": "letters",
+    "2 Corinthians": "letters",
+    "Galatians": "letters",
+    "Ephesians": "letters",
+    "Philippians": "letters",
+    "Colossians": "letters",
+    "1 Thessalonians": "letters",
+    "2 Thessalonians": "letters",
+    "1 Timothy": "letters",
+    "2 Timothy": "letters",
+    "Titus": "letters",
+    "Philemon": "letters",
+    "Hebrews": "letters",
+    "James": "letters",
+    "1 Peter": "letters",
+    "2 Peter": "letters",
+    "1 John": "letters",
+    "2 John": "letters",
+    "3 John": "letters",
+    "Jude": "letters",
+    "Isaiah": "prophecy",
+    "Jeremiah": "prophecy",
+    "Ezekiel": "prophecy",
+    "Daniel": "prophecy",
+    "Hosea": "prophecy",
+    "Joel": "prophecy",
+    "Amos": "prophecy",
+    "Obadiah": "prophecy",
+    "Jonah": "prophecy",
+    "Micah": "prophecy",
+    "Nahum": "prophecy",
+    "Habakkuk": "prophecy",
+    "Zephaniah": "prophecy",
+    "Haggai": "prophecy",
+    "Zechariah": "prophecy",
+    "Malachi": "prophecy",
+    "Revelation": "prophecy",
+}
+
+GENRES = [
+    {
+        "slug": "narrative", "accent": "narrative", "label": "Reads like a novel", "kicker": "Story",
+        "h1": "The books that read like a novel",
+        "intro": "Battles, families, kings, exiles, and a wandering teacher. The parts of the Bible that move like a story.",
+        "meta_title": "Books of the Bible that read like a novel",
+        "meta_desc": "The narrative books, from Genesis to Acts. The story parts of the Bible, free to read.",
+    },
+    {
+        "slug": "poetry", "accent": "poetry", "label": "Reads like music", "kicker": "Poetry",
+        "h1": "The books that read like music",
+        "intro": "Songs, laments, and love poems, written to be felt as much as read.",
+        "meta_title": "The poetry books of the Bible",
+        "meta_desc": "Psalms, Song of Solomon, and Lamentations. The Bible's songs and poems, free to read.",
+    },
+    {
+        "slug": "wisdom", "accent": "wisdom", "label": "How to live", "kicker": "Wisdom",
+        "h1": "The books about how to live",
+        "intro": "Hard-won advice on work, money, suffering, and time. Plain wisdom for ordinary days.",
+        "meta_title": "The wisdom books of the Bible",
+        "meta_desc": "Job, Proverbs, and Ecclesiastes. The Bible's books of practical wisdom, free to read.",
+    },
+    {
+        "slug": "law", "accent": "law", "label": "The constitution", "kicker": "Law",
+        "h1": "The original constitution",
+        "intro": "The codes a young nation was built on. Dense, but foundational.",
+        "meta_title": "The law books of the Bible",
+        "meta_desc": "Leviticus and Deuteronomy. The Bible's books of law, free to read.",
+    },
+    {
+        "slug": "letters", "accent": "letters", "label": "Mail from the church", "kicker": "Letters",
+        "h1": "Mail from the early church",
+        "intro": "Real letters to real congregations: arguing, encouraging, and sorting out how to live together.",
+        "meta_title": "The letters of the New Testament",
+        "meta_desc": "The epistles, from Romans to Jude. Letters written to the early church, free to read.",
+    },
+    {
+        "slug": "prophecy", "accent": "prophecy", "label": "Speaking for God", "kicker": "Prophecy",
+        "h1": "People speaking for God",
+        "intro": "Warnings, visions, and promises, delivered by people convinced they spoke for God.",
+        "meta_title": "The prophetic books of the Bible",
+        "meta_desc": "Isaiah through Malachi, and Revelation. The Bible's prophets, free to read.",
+    },
+]
 
 def book_slug(name):
     """Convert a book name to a URL-safe slug.
@@ -590,7 +880,8 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
       <span class="site-mark__text">Free Scripture</span>
     </a>
     <nav class="site-nav" aria-label="Primary">
-      <a href="/web/">Bible</a>
+      <a href="/read/">Verses</a>
+      <a href="/web/">Books</a>
       <a href="/search/">Search</a>
       <a href="/about/">About</a>
     </nav>
@@ -632,274 +923,100 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 </html>"""
 
 
-def render_homepage():
-    # Genre-cards homepage: every book as a proper card, organized by reading type.
-    # Each genre section uses the BOOK_ORDER and BOOK_INTROS for content,
-    # but we hardcode the genre structure here because it's editorial (not data).
+_HOME_TODAY = [
+    ("Psalms", 23, 4), ("Isaiah", 40, 31), ("Matthew", 11, 28), ("Psalms", 27, 1),
+    ("Lamentations", 3, 22), ("John", 11, 25), ("Proverbs", 3, 5), ("Psalms", 46, 10),
+]
+_HOME_TOUCH = [
+    ("The shepherd psalm, for comfort and rest.", "Psalms", 23),
+    ("On worry, peace, and contentment.", "Philippians", 4),
+    ("The chapter on what love is.", "1 Corinthians", 13),
+    ("Strength for the weary.", "Isaiah", 40),
+    ("Nothing can separate us from love.", "Romans", 8),
+    ("In the beginning was the Word.", "John", 1),
+]
+_HOME_GENRES = [
+    ("narrative", "Reads like a novel", "28 books"),
+    ("poetry", "Reads like music", "5 books"),
+    ("wisdom", "How to live", "5 books"),
+    ("law", "The constitution", "2 books"),
+    ("letters", "Mail from the church", "22 books"),
+    ("prophecy", "Speaking for God", "18 books"),
+]
+_HOME_NEED_PREVIEW = ["fear", "grief", "strength", "celebrate", "thinking-of-you"]
 
-    # Genre definitions: (slug, title, subtitle, description, books)
-    # books is a list of (book_name, note, meta) tuples.
-    GENRES = [
-        {
-            "title": "These read like a novel",
-            "desc": "Narrative, characters, events, a plot that moves forward.",
-            "gospels_note": "Four accounts of the same story, the life of Jesus, each told by a different person.",
-            "books": [
-                ("Matthew", "The life of Jesus as told by a tax collector. Written to show Jesus as the fulfillment of Jewish prophecy.", "28 chapters", True),
-                ("Mark", "The shortest gospel. Fast, urgent, action-driven. Starts with Jesus already an adult. No birth story.", "16 chapters", True),
-                ("Luke", "Written by a doctor who interviewed eyewitnesses. The most detailed account, especially about women and outsiders.", "24 chapters", True),
-                ("John", "The most reflective gospel. Written decades after the others by someone who was there. Philosophical and personal.", "21 chapters &middot; start here if you're new", True),
-            ],
-            "other_books": [
-                ("Genesis", "The beginning of everything. Creation, Adam and Eve, the flood, Abraham. The origin story.", "50 chapters"),
-                ("Exodus", "Escape from Egypt. Moses, the plagues, the Red Sea, the Ten Commandments.", "40 chapters"),
-                ("Numbers", "Forty years wandering in the desert. Rebellion, faith, and survival between Egypt and the promised land.", "36 chapters"),
-                ("Joshua", "Conquering the promised land. Military campaigns, land division, and a new beginning after Moses.", "24 chapters"),
-                ("Judges", "Heroes and chaos. Before there were kings, there were judges, warriors and leaders in a lawless era.", "21 chapters"),
-                ("Ruth", "A love story about loyalty, immigration, and belonging. One of the shortest books in the Bible.", "4 chapters &middot; about 15 min"),
-                ("1 Samuel", "The first king of Israel. Samuel, Saul, and the young David, including the fight with Goliath.", "31 chapters"),
-                ("2 Samuel", "David's rise to power and his fall. War, betrayal, adultery, and the cost of being king.", "24 chapters"),
-                ("1 Kings", "Solomon builds the temple, then the kingdom splits in two. Elijah appears as a prophet.", "22 chapters"),
-                ("2 Kings", "Both kingdoms collapse. Elisha performs miracles. Israel and Judah are conquered and exiled.", "25 chapters"),
-                ("1 Chronicles", "Israel's history retold from Adam to David. Genealogies and a second perspective on familiar events.", "29 chapters"),
-                ("2 Chronicles", "Judah's history from Solomon to the exile. The temple, the kings, the fall of Jerusalem.", "36 chapters"),
-                ("Ezra", "Returning from exile. The Jewish people rebuild their temple and their identity after Babylon.", "10 chapters"),
-                ("Nehemiah", "Rebuilding the walls of Jerusalem. Leadership, opposition, and community restoration.", "13 chapters"),
-                ("Esther", "A Jewish queen in Persia saves her people from genocide. God is never mentioned by name.", "10 chapters"),
-                ("Jonah", "A prophet runs from God, gets swallowed by a fish, and learns about mercy. Stranger than you think.", "4 chapters &middot; about 10 min"),
-                ("Acts", "What happened after Jesus left. The early church, Paul's travels, and the spread of Christianity across the Roman Empire.", "28 chapters"),
-            ],
-            "apocrypha": [
-                ("Tobit", "An angel in disguise, a magic fish, and a family reunion. Adventure and faith.", "14 chapters &middot; about 25 min"),
-                ("Judith", "A widow infiltrates an enemy camp and kills their general. One of the Bible's most dramatic heroines.", "16 chapters"),
-                ("1 Maccabees", "War for independence. A family leads a revolt against a king who outlawed their religion.", "16 chapters"),
-                ("2 Maccabees", "The same war told differently, more theological, more focused on martyrdom and miracle.", "15 chapters"),
-                ("Esther (Greek)", "The extended version of Esther, with the prayers and dreams the Hebrew version left out.", "6 additional chapters"),
-                ("1 Esdras", "An alternate account of the temple rebuilding. Overlaps with Ezra and Chronicles.", "9 chapters"),
-                ("2 Esdras", "Apocalyptic visions. Ezra asks God why the world is so unjust. God answers, sort of.", "16 chapters"),
-            ],
-        },
-        {
-            "title": "These read like music",
-            "desc": "Songs, prayers, and poems. Best read slowly or out loud.",
-            "books_flat": [
-                ("Psalms", "150 songs and prayers. Joy, rage, grief, praise, the full range of human emotion directed at God.", "150 chapters &middot; start with Psalm 23"),
-                ("Song of Solomon", "Erotic love poetry in the middle of the Bible. Yes, really. Beautiful, surprising, and ancient.", "8 chapters &middot; about 15 min"),
-                ("Lamentations", "Five poems of grief over the destruction of Jerusalem. Raw, structured, and devastating.", "5 chapters &middot; about 20 min"),
-            ],
-            "apocrypha": [
-                ("Prayer of Manasseh", "One of the worst kings of Judah prays for forgiveness. A single chapter of repentance.", "1 chapter &middot; 2 min"),
-                ("The Song of the Three Holy Children", "Three men thrown into a furnace praise God from inside the flames.", "1 chapter &middot; 3 min"),
-            ],
-        },
-        {
-            "title": "Advice about how to live",
-            "desc": "Philosophy, practical wisdom, and the hardest questions. No plot, just thinking.",
-            "books_flat": [
-                ("Job", "Why do good people suffer? A man loses everything and demands answers from God. God eventually responds, but not the way anyone expects.", "42 chapters"),
-                ("Proverbs", "Practical advice about money, relationships, work, and character. One line at a time. Dip in anywhere.", "31 chapters"),
-                ("Ecclesiastes", "&ldquo;Everything is meaningless.&rdquo; A wealthy king tries pleasure, work, and wisdom, and concludes none of it lasts.", "12 chapters &middot; about 30 min"),
-            ],
-            "apocrypha": [
-                ("Wisdom of Solomon", "A meditation on justice, immortality, and why the righteous suffer. Philosophical and beautiful.", "19 chapters"),
-                ("Sirach", "Ethics and everyday wisdom. How to handle money, friendship, speech, and death. The longest wisdom book.", "51 chapters"),
-            ],
-        },
-        {
-            "title": "The original constitution",
-            "desc": "Rules, ceremonies, and the law given to Israel. Dense but foundational.",
-            "books_flat": [
-                ("Leviticus", "Religious law, sacrifice, purity, diet, festivals. The operating manual for ancient Israelite worship.", "27 chapters"),
-                ("Deuteronomy", "Moses' farewell speech. He retells the law and the story so far before the people enter the promised land without him.", "34 chapters"),
-            ],
-        },
-        {
-            "title": "Mail from the early church",
-            "desc": "Real letters sent to real communities dealing with real problems. Most are from Paul.",
-            "books_flat": [
-                ("Romans", "Paul's masterwork. A systematic argument about sin, grace, faith, and freedom. The most influential letter in Christian history.", "16 chapters"),
-                ("1 Corinthians", "A messy church in a wild city. Paul addresses divisions, lawsuits, sex, marriage, and the famous chapter on love.", "16 chapters"),
-                ("2 Corinthians", "Paul defends his authority. The most personal and emotional of his letters. Weakness as strength.", "13 chapters"),
-                ("Galatians", "Freedom vs rules. Paul argues that faith, not law-keeping, is what matters. A short, angry, important letter.", "6 chapters &middot; about 20 min"),
-                ("Ephesians", "Unity and identity. What does it mean to be part of the church? One of the most quoted letters.", "6 chapters &middot; about 20 min"),
-                ("Philippians", "Joy from prison. Paul writes to his favorite church from a jail cell. Warm, personal, and hopeful.", "4 chapters &middot; about 15 min"),
-                ("Colossians", "Who Jesus really is. A short letter about the supremacy of Christ over every power and philosophy.", "4 chapters &middot; about 15 min"),
-                ("1 Thessalonians", "What happens to people who die before Jesus returns? Paul's earliest letter, written to a worried church.", "5 chapters &middot; about 15 min"),
-                ("2 Thessalonians", "Waiting for the end. People quit their jobs because they thought Jesus was coming back immediately.", "3 chapters &middot; about 10 min"),
-                ("1 Timothy", "Advice to a young pastor. How to lead a church, handle false teaching, and live with integrity.", "6 chapters &middot; about 15 min"),
-                ("2 Timothy", "Paul's last letter. Written from prison, expecting execution. His final words to his closest student.", "4 chapters &middot; about 12 min"),
-                ("Titus", "Church leadership on the island of Crete. Practical instructions for building a healthy community.", "3 chapters &middot; about 8 min"),
-                ("Philemon", "A runaway slave meets Paul in prison. Paul sends him back with this letter asking his owner to free him.", "1 chapter &middot; 3 min"),
-                ("Hebrews", "Old covenant vs new. A theological argument that Jesus fulfills and replaces the temple system. Author unknown.", "13 chapters"),
-                ("James", "&ldquo;Faith without action is dead.&rdquo; Practical, blunt, and focused on how you actually live, not just what you believe.", "5 chapters &middot; about 15 min"),
-                ("1 Peter", "Suffering with hope. Written to persecuted Christians scattered across the Roman Empire.", "5 chapters &middot; about 15 min"),
-                ("2 Peter", "Warnings about false teachers and the end of the world. Peter's last word to the churches.", "3 chapters &middot; about 10 min"),
-                ("1 John", "&ldquo;God is love.&rdquo; A letter about truth, love, and how to tell real faith from false faith.", "5 chapters &middot; about 15 min"),
-                ("2 John", "A short note about truth and love. Thirteen verses. One page.", "1 chapter &middot; 1 min"),
-                ("3 John", "A personal note about hospitality and a church leader who refuses to welcome visitors.", "1 chapter &middot; 1 min"),
-                ("Jude", "&ldquo;Hold on to your faith.&rdquo; A short, fierce warning against people who distort the gospel.", "1 chapter &middot; 2 min"),
-            ],
-            "apocrypha": [
-                ("Baruch", "A letter from exile. Jeremiah's secretary writes to the people left in Jerusalem. Includes the Letter of Jeremiah.", "6 chapters &middot; about 15 min"),
-            ],
-        },
-        {
-            "title": "People speaking for God",
-            "desc": "Visions, warnings, poetry, and hope. Often strange, always intense.",
-            "books_flat": [
-                ("Isaiah", "The biggest prophetic book. Judgment, comfort, and the most famous messianic prophecies. Two halves, two moods.", "66 chapters"),
-                ("Jeremiah", "The weeping prophet. He warned Judah for forty years that destruction was coming. Nobody listened.", "52 chapters"),
-                ("Ezekiel", "Bizarre visions. Wheels within wheels, a valley of dry bones, a rebuilt temple. Written in exile.", "48 chapters"),
-                ("Daniel", "Dreams, a lion's den, and a fiery furnace. Half stories, half apocalyptic visions.", "12 chapters &middot; about 30 min"),
-                ("Hosea", "God tells a prophet to marry an unfaithful woman as a living metaphor for Israel's relationship with God.", "14 chapters"),
-                ("Joel", "A plague of locusts becomes a vision of judgment and the outpouring of God's spirit.", "3 chapters &middot; about 10 min"),
-                ("Amos", "Justice for the poor. A farmer becomes a prophet and condemns the wealthy for exploiting the vulnerable.", "9 chapters &middot; about 20 min"),
-                ("Obadiah", "The shortest book in the Old Testament. One chapter against Edom for betraying their brother nation.", "1 chapter &middot; 2 min"),
-                ("Micah", "&ldquo;Do justice, love mercy, walk humbly.&rdquo; A prophet challenges both the powerful and the complacent.", "7 chapters &middot; about 15 min"),
-                ("Nahum", "The fall of Nineveh. A vivid, poetic vision of an empire's collapse.", "3 chapters &middot; about 8 min"),
-                ("Habakkuk", "&ldquo;Why do you allow evil?&rdquo; A prophet argues with God about injustice. God answers but doesn't explain.", "3 chapters &middot; about 8 min"),
-                ("Zephaniah", "Judgment and restoration. The darkest warning followed by one of the most tender promises in scripture.", "3 chapters &middot; about 8 min"),
-                ("Haggai", "&ldquo;You've built nice houses for yourselves. When will you rebuild God's?&rdquo; A short, sharp challenge.", "2 chapters &middot; about 5 min"),
-                ("Zechariah", "Night visions about the future. Horses, lampstands, flying scrolls, and a coming king on a donkey.", "14 chapters"),
-                ("Malachi", "The last prophet of the Old Testament. A dialogue between God and a people who've stopped caring.", "4 chapters &middot; about 10 min"),
-                ("Revelation", "The end of everything, and the beginning of something new. Visions, symbols, judgment, and a new heaven and earth.", "22 chapters"),
-            ],
-            "apocrypha": [
-                ("Susanna", "A woman is falsely accused by two corrupt judges. Daniel exposes the lie. A courtroom drama.", "1 chapter &middot; 5 min"),
-                ("Bel and the Dragon", "Daniel proves that idol worship is a fraud. Two stories about false gods, one funny, one deadly.", "1 chapter &middot; 5 min"),
-            ],
-        },
-    ]
-
-    def card_html(name, desc, meta, featured=False):
-        slug = book_slug(name)
-        # Apocrypha books link to KJV (only place they exist); everything else
-        # defaults to WEB, the modern, readable translation used site-wide.
-        trans = "kjv" if book_testament(name) == "ap" else "web"
-        cls = 'book-card book-card--featured' if featured else 'book-card'
-        return f'''<a href="/{trans}/{slug}/1" class="{cls}">
-  <div class="book-card__name">{escape(name)}</div>
-  <div class="book-card__desc">{desc}</div>
-  <div class="book-card__meta">{meta}</div>
-</a>'''
-
-    sections = []
-    for genre in GENRES:
-        count = len(genre.get("books", [])) + len(genre.get("other_books", [])) + len(genre.get("books_flat", [])) + len(genre.get("apocrypha", []))
-        parts = [f'''<section class="genre-section">
-  <h2 class="genre-section__title">{genre["title"]}</h2>
-  <p class="genre-section__desc">{genre["desc"]}</p>
-  <p class="genre-section__count">{count} books</p>''']
-
-        # Gospels special callout
-        if genre.get("gospels_note"):
-            parts.append(f'  <div class="genre-callout">{genre["gospels_note"]}</div>')
-            parts.append('  <div class="book-cards">')
-            for name, desc, meta, featured in genre["books"]:
-                parts.append(card_html(name, desc, meta, featured))
-            parts.append('  </div>')
-
-        # Other narrative books
-        if genre.get("other_books"):
-            parts.append('  <div class="book-cards" style="margin-top:0.75rem;">')
-            for name, desc, meta in genre["other_books"]:
-                parts.append(card_html(name, desc, meta))
-            parts.append('  </div>')
-
-        # Flat book list (non-narrative genres)
-        if genre.get("books_flat"):
-            parts.append('  <div class="book-cards">')
-            for name, desc, meta in genre["books_flat"]:
-                parts.append(card_html(name, desc, meta))
-            parts.append('  </div>')
-
-        # Apocrypha
-        if genre.get("apocrypha"):
-            parts.append('  <div class="genre-apoc-divider">Apocrypha</div>')
-            parts.append('  <div class="book-cards">')
-            for name, desc, meta in genre["apocrypha"]:
-                parts.append(card_html(name, desc, meta))
-            parts.append('  </div>')
-
-        parts.append('</section>')
-        sections.append('\n'.join(parts))
-
-    # Tier 2: curated passages people return to. Labeled by the passage's own
-    # name and a plain line of what it is, never by a feeling. The reader brings
-    # their own need; we name the door by what is behind it.
-    TOUCHSTONES = [
-        ("Psalm 23", "web", "psalms", 23, "The shepherd psalm, for comfort and rest."),
-        ("Philippians 4", "web", "philippians", 4, "On worry, peace, and contentment."),
-        ("1 Corinthians 13", "web", "1-corinthians", 13, "The chapter on what love is."),
-        ("Isaiah 40", "web", "isaiah", 40, "Strength for the weary."),
-        ("Matthew 5", "web", "matthew", 5, "The Sermon on the Mount begins."),
-        ("Romans 8", "web", "romans", 8, "Nothing can separate us from love."),
-        ("Ecclesiastes 3", "web", "ecclesiastes", 3, "A time for everything."),
-        ("John 1", "web", "john", 1, "In the beginning was the Word."),
-    ]
-    touchstone_cards = []
-    for label, trans, slug, ch, line in TOUCHSTONES:
-        touchstone_cards.append(
-            f'<a href="/{trans}/{slug}/{ch}" class="touchstone">'
-            f'<span class="touchstone__line">{escape(line)}</span>'
-            f'<span class="touchstone__ref">{escape(label)}</span>'
-            f'</a>'
-        )
-    touchstones_html = (
-        '<section class="touchstones">\n'
-        '  <h2 class="touchstones__title">Passages people return to</h2>\n'
-        '  <div class="touchstones__grid">\n    '
-        + "\n    ".join(touchstone_cards) +
-        '\n  </div>\n'
-        '</section>'
-    )
-
-    body = f"""
-<div class="home-hero">
-  <h1 class="home-hero__title">Read the Bible, free and clear.</h1>
-  <p class="home-hero__sub">The whole text, open to anyone. Search a verse, or begin below.</p>
-  <form class="home-hero__search" action="/search/" method="get" role="search">
-    <span class="home-hero__search-icon" aria-hidden="true">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    </span>
-    <input type="search" name="q" placeholder='Jump to a verse, "John 3:16"' aria-label="Search scripture">
-  </form>
-</div>
-
-{touchstones_html}
-
-<div class="home-content">
-  <div class="home-content__lead">
-    <h2 class="home-content__heading">Browse by kind of reading</h2>
-    <p class="home-content__sub">Every book, grouped by how it reads.</p>
-  </div>
-{''.join(sections)}
-</div>
+_HOME_JS_REST = r"""
+var cover=document.getElementById('home-cover');
+var idx=(function(){var s=new Date();var st=new Date(s.getFullYear(),0,0);return Math.floor((s-st)/86400000)%TODAY.length;})();
+function paint(){
+  var t=TODAY[idx];
+  cover.innerHTML='<div class="home-kick">Today\u2019s reading</div><div class="cref">'+t.ref+'</div><div class="cpull">'+t.pull+'</div><div class="cacts"><a class="rbtn rbtn--send" href="'+t.url+'">Start reading \u2192</a><button class="home-another" type="button" id="home-another">\u21bb Show another</button></div>';
+  var a=document.getElementById('home-another');
+  if(a)a.addEventListener('click',function(){idx=(idx+1)%TODAY.length;paint();});
+}
+paint();
+try{var raw=localStorage.getItem('fs-last');if(raw){var c=JSON.parse(raw);var el=document.getElementById('home-cont');if(el&&c&&c.url){el.setAttribute('href',c.url);var r=el.querySelector('[data-cont-ref]');if(r)r.textContent=c.label||'Keep reading';el.hidden=false;}}}catch(e){}
+var q=document.getElementById('home-q');
+if(q)q.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=q.value.trim();location.href='/search/'+(v?('#q='+encodeURIComponent(v)):'');}});
 """
-    schema = {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": SITE_NAME,
-        "url": SITE_URL,
-        "description": "A free, beautifully presented online library of scripture from multiple faith traditions. No ads, no accounts, no tracking.",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Hope for Americans",
-            "url": "https://hopeforamericans.net"
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": f"{SITE_URL}/search/?q={{search_term_string}}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    return base_layout(
-        title="Free Scripture, A free, beautiful library of scripture | freescripture.org",
-        description="Read scripture from multiple faith traditions, free forever. No ads, no accounts, no tracking. King James Bible online and more.",
-        body=body, canonical=SITE_URL + "/",
-        schema_jsonld=schema, body_class="page-home"
-    )
 
+def render_homepage():
+    pool=[]
+    for book,ch,vn in _HOME_TODAY:
+        pool.append({"ref": _ref_label(book,ch),
+                     "pull": _pull_verse(book,ch,vn),
+                     "url": f"/web/{book_slug(book)}/{ch}#v{vn}"})
+    need_by={n["slug"]:n for n in NEEDS}
+    need_rows=""
+    for slug in _HOME_NEED_PREVIEW:
+        n=need_by[slug]
+        need_rows+=(f'<a class="read-row" style="--rowc:var(--g-{n["accent"]})" href="/read/{n["slug"]}/">'
+                    f'<span class="read-need"><span class="read-need__t">{escape(n["short"])}</span>'
+                    f'<span class="read-need__d">{escape(n["card"])}</span></span>'
+                    f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>')
+    # genre cards point to Books for now; repointed to /genre/<slug>/ in the genre step
+    genre_cards=""
+    for g in GENRES:
+        n=len(_genre_books(g["slug"]))
+        genre_cards+=(f'<a class="home-genre" style="--rowc:var(--g-{g["accent"]})" href="/genre/{g["slug"]}/">'
+                      f'<div class="gt">{escape(g["label"])}</div><div class="gc">{n} books</div></a>')
+    touch_rows=""
+    for desc,book,ch in _HOME_TOUCH:
+        ref=_ref_label(book,ch)
+        touch_rows+=(f'<a class="read-row" href="/web/{book_slug(book)}/{ch}">'
+                     f'<span class="read-need"><span class="read-need__t">{escape(desc)}</span>'
+                     f'<span class="read-need__d">{escape(ref)}</span></span>'
+                     f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>')
+    body=f"""<div class="home">
+  <label class="home-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="home-q" placeholder="Search the Bible" aria-label="Search the Bible"></label>
+  <div class="home-cover" id="home-cover"></div>
+  <a class="home-cont" id="home-cont" href="#" hidden><span><span class="m">Where you left off</span><span class="r" data-cont-ref></span></span><span class="a" aria-hidden="true">&rarr;</span></a>
+  <section class="home-sec">
+    <div class="home-sec__k">Find what you need</div>
+    <h2 class="home-sec__h">Verses for the moment you're in</h2>
+    <div class="read-list">{need_rows}</div>
+    <a class="home-seeall" href="/read/">See all verses &rarr;</a>
+  </section>
+  <section class="home-sec">
+    <div class="home-sec__k">Browse</div>
+    <h2 class="home-sec__h">By kind of book</h2>
+    <div class="home-genres">{genre_cards}</div>
+  </section>
+  <section class="home-sec">
+    <div class="home-sec__k">Famous passages</div>
+    <h2 class="home-sec__h">The ones everybody knows</h2>
+    <div class="read-list">{touch_rows}</div>
+  </section>
+</div>"""
+    body = body + "<script>(function(){var TODAY=" + json.dumps(pool, ensure_ascii=False) + ";" + _HOME_JS_REST + "})();</script>"
+    return base_layout(
+        title=f"{SITE_NAME} \u2014 read the Bible free",
+        description="Read the Bible free. Find a verse for whatever you're going through, or one to send to a friend. Three translations, no account.",
+        body=body,
+        canonical=f"{SITE_URL}/",
+        og_title=f"{SITE_NAME} \u2014 read the Bible free",
+        body_class="home-page",
+    )
 
 def render_christian_landing(books):
     """The /christian/ landing, list of available Christian translations."""
@@ -1401,6 +1518,246 @@ def render_about():
     )
 
 
+_WEB_CACHE = {}
+
+def _pull_verse(book, chapter, vnum):
+    """Load a single WEB verse's text at build time."""
+    slug = book_slug(book)
+    if slug not in _WEB_CACHE:
+        with open(SOURCE_WEB / f"{slug}.json", encoding="utf-8") as f:
+            _WEB_CACHE[slug] = json.load(f)
+    for c in _WEB_CACHE[slug]["chapters"]:
+        if c["chapter"] == str(chapter):
+            for v in c["verses"]:
+                if v["verse"] == str(vnum):
+                    return v["text"]
+    return ""
+
+def _ref_label(book, chapter):
+    """Display label for a passage. 'Psalms' renders singular for a chapter."""
+    label = book[:-1] if book == "Psalms" else book
+    return f"{label} {chapter}"
+
+SHARE_JS = """
+<script>
+(function () {
+  document.querySelectorAll('.read-card').forEach(function (card) {
+    var ref = card.getAttribute('data-ref');
+    var url = card.getAttribute('data-url');
+    var text = card.getAttribute('data-text');
+    var payload = '\\u201C' + text + '\\u201D\\n' + ref + '\\n' + url;
+    function flash(btn, word) {
+      var o = btn.textContent; btn.textContent = word;
+      setTimeout(function () { btn.textContent = o; }, 1400);
+    }
+    var copyBtn = card.querySelector('[data-copy]');
+    var sendBtn = card.querySelector('[data-send]');
+    if (copyBtn) copyBtn.addEventListener('click', function () {
+      if (navigator.clipboard) navigator.clipboard.writeText(payload);
+      flash(copyBtn, 'Copied');
+    });
+    if (sendBtn) sendBtn.addEventListener('click', function () {
+      if (navigator.share) { navigator.share({ text: payload, url: url }).catch(function () {}); }
+      else if (navigator.clipboard) { navigator.clipboard.writeText(payload); flash(sendBtn, 'Copied'); }
+    });
+  });
+})();
+</script>
+"""
+
+def _need_crosslinks(current_slug):
+    cards = []
+    for other in NEEDS:
+        if other["slug"] == current_slug:
+            continue
+        cards.append(
+            f'<a class="read-xcard" style="--rowc:var(--g-{other["accent"]})" '
+            f'href="/read/{other["slug"]}/">{escape(other["short"])}'
+            f'<span class="read-xcard__arr" aria-hidden="true">&rarr;</span></a>'
+        )
+    return "".join(cards)
+
+def render_need_page(need):
+    """One indexable page per need, at /read/<slug>/. Universal rows: read or send."""
+    canonical = f"{SITE_URL}/read/{need['slug']}/"
+    cards = []
+    for book, chapter, vnum, genre, frame in need["passages"]:
+        ref = _ref_label(book, chapter)
+        full_ref = f"{ref}:{vnum}"
+        text = _pull_verse(book, chapter, vnum)
+        read_url = f"/web/{book_slug(book)}/{chapter}#v{vnum}"
+        share_url = f"{SITE_URL}/web/{book_slug(book)}/{chapter}#v{vnum}"
+        cards.append(
+            f'<div class="read-card" style="--rowc:var(--g-{genre})" '
+            f'data-ref="{escape(full_ref)}" data-url="{escape(share_url)}" data-text="{escape(text)}">'
+            f'<div class="read-card__ref">{escape(full_ref)}</div>'
+            f'<div class="read-card__frame">{escape(frame)}</div>'
+            f'<p class="read-card__verse">{escape(text)}</p>'
+            f'<div class="read-card__acts">'
+            f'<a class="rbtn" href="{read_url}">Read the chapter</a>'
+            f'<button class="rbtn" type="button" data-copy>Copy</button>'
+            f'<button class="rbtn rbtn--send" type="button" data-send>Send</button>'
+            f'</div></div>'
+        )
+    body = f"""<div class="read">
+  <nav class="read-crumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/read/">Verses for</a> &rsaquo; <b>{escape(need['short'])}</b></nav>
+  <h1 class="read-h1">{escape(need['h1'])}</h1>
+  <p class="read-lede">{escape(need['lede'])}</p>
+  <div class="read-cards">
+    {"".join(cards)}
+  </div>
+  <section class="read-x">
+    <div class="read-x__k">Here for something else</div>
+    <div class="read-xgrid">
+      {_need_crosslinks(need['slug'])}
+    </div>
+  </section>
+</div>
+{SHARE_JS}"""
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": need["meta_title"],
+        "description": need["meta_desc"],
+        "url": canonical,
+    }
+    return base_layout(
+        title=f"{need['meta_title']} \u2014 {SITE_NAME}",
+        description=need["meta_desc"],
+        body=body,
+        canonical=canonical,
+        og_title=need["meta_title"],
+        schema_jsonld=schema,
+        body_class="read-page",
+    )
+
+def render_needs_hub():
+    """The /read/ hub, grouped into hard seasons and good moments."""
+    canonical = f"{SITE_URL}/read/"
+    groups = [("hard", "When life is hard"), ("good", "Good moments to mark")]
+    sections = []
+    for gkey, glabel in groups:
+        rows = []
+        for need in NEEDS:
+            if need["group"] != gkey:
+                continue
+            rows.append(
+                f'<a class="read-row" style="--rowc:var(--g-{need["accent"]})" '
+                f'href="/read/{need["slug"]}/">'
+                f'<span class="read-need"><span class="read-need__t">{escape(need["short"])}</span>'
+                f'<span class="read-need__d">{escape(need["card"])}</span></span>'
+                f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>'
+            )
+        sections.append(
+            f'<section class="read-group"><div class="read-group__k">{escape(glabel)}</div>'
+            f'<div class="read-list">{"".join(rows)}</div></section>'
+        )
+    body = f"""<div class="read">
+  <nav class="read-crumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <b>Verses for</b></nav>
+  <h1 class="read-h1">Find the right words</h1>
+  <p class="read-lede">For where you are, or for someone you care about. Each one opens a short shelf of passages you can read into, or grab a verse and send.</p>
+  {"".join(sections)}
+</div>"""
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Bible verses for what you're going through and what you're celebrating",
+        "url": canonical,
+    }
+    return base_layout(
+        title="Find a Bible verse by the moment \u2014 " + SITE_NAME,
+        description="Verses for fear, grief, weariness, guilt, forgiveness, wisdom, celebration, a new baby, gratitude, and thinking of you. Read one, or send it.",
+        body=body,
+        canonical=canonical,
+        schema_jsonld=schema,
+        body_class="read-page",
+    )
+
+def _genre_books(genre_slug):
+    return [n for n, t, _ in BOOK_ORDER if t != "ap" and GENRE_OF.get(n) == genre_slug]
+
+def _genre_crosslinks(current_slug):
+    cards = []
+    for g in GENRES:
+        if g["slug"] == current_slug:
+            continue
+        cards.append(
+            f'<a class="read-xcard" style="--rowc:var(--g-{g["accent"]})" '
+            f'href="/genre/{g["slug"]}/">{escape(g["label"])}'
+            f'<span class="read-xcard__arr" aria-hidden="true">&rarr;</span></a>'
+        )
+    return "".join(cards)
+
+def render_genre_page(g):
+    canonical = f"{SITE_URL}/genre/{g['slug']}/"
+    rows = []
+    for book in _genre_books(g["slug"]):
+        pitch = BOOK_PITCHES.get(book, "")
+        desc = f'<span class="read-need__d">{escape(pitch)}</span>' if pitch else ""
+        rows.append(
+            f'<a class="read-row" style="--rowc:var(--g-{g["accent"]})" href="/web/{book_slug(book)}/">'
+            f'<span class="read-need"><span class="read-need__t">{escape(book)}</span>{desc}</span>'
+            f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>'
+        )
+    body = f"""<div class="read">
+  <nav class="read-crumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/genre/">By kind of book</a> &rsaquo; <b>{escape(g['label'])}</b></nav>
+  <h1 class="read-h1">{escape(g['h1'])}</h1>
+  <p class="read-lede">{escape(g['intro'])}</p>
+  <div class="read-list">
+    {"".join(rows)}
+  </div>
+  <section class="read-x">
+    <div class="read-x__k">Other kinds of book</div>
+    <div class="read-xgrid">
+      {_genre_crosslinks(g['slug'])}
+    </div>
+  </section>
+</div>"""
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": g["meta_title"],
+        "description": g["meta_desc"],
+        "url": canonical,
+    }
+    return base_layout(
+        title=f"{g['meta_title']} \u2014 {SITE_NAME}",
+        description=g["meta_desc"],
+        body=body,
+        canonical=canonical,
+        og_title=g["meta_title"],
+        schema_jsonld=schema,
+        body_class="read-page",
+    )
+
+def render_genre_hub():
+    canonical = f"{SITE_URL}/genre/"
+    rows = []
+    for g in GENRES:
+        n = len(_genre_books(g["slug"]))
+        rows.append(
+            f'<a class="read-row" style="--rowc:var(--g-{g["accent"]})" href="/genre/{g["slug"]}/">'
+            f'<span class="read-need"><span class="read-need__t">{escape(g["label"])}</span>'
+            f'<span class="read-need__d">{n} books</span></span>'
+            f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>'
+        )
+    body = f"""<div class="read">
+  <nav class="read-crumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <b>By kind of book</b></nav>
+  <h1 class="read-h1">Browse by kind of book</h1>
+  <p class="read-lede">The Bible is a library, not one book. Here it is sorted by the kind of reading each part is.</p>
+  <div class="read-list">
+    {"".join(rows)}
+  </div>
+</div>"""
+    return base_layout(
+        title="Browse the Bible by kind of book \u2014 " + SITE_NAME,
+        description="The Bible by genre: narrative, poetry, wisdom, law, letters, and prophecy. Find the kind of reading you want.",
+        body=body,
+        canonical=canonical,
+        schema_jsonld={"@context":"https://schema.org","@type":"CollectionPage","name":"Browse the Bible by kind of book","url":canonical},
+        body_class="read-page",
+    )
+
 def render_support():
     body = f"""
 <div class="reading-column reading-column--narrow">
@@ -1560,7 +1917,13 @@ def build_sitemap(all_books):
         f"{SITE_URL}/about/",
         f"{SITE_URL}/search/",
         f"{SITE_URL}/christian/",
+        f"{SITE_URL}/read/",
     ]
+    for need in NEEDS:
+        urls.append(f"{SITE_URL}/read/{need['slug']}/")
+    urls.append(f"{SITE_URL}/genre/")
+    for g in GENRES:
+        urls.append(f"{SITE_URL}/genre/{g['slug']}/")
     for trans_key, trans_meta in TRANSLATIONS.items():
         slug = trans_meta["slug"]
         urls.append(f"{SITE_URL}/{slug}/")
@@ -1618,6 +1981,18 @@ def build():
     write_file(PUBLIC / "christian" / "index.html", render_christian_landing(books_data))
     write_file(PUBLIC / "404.html", render_404())
     print("      Homepage, About, Search, /christian/, 404")
+
+    # Need pages: scripture by what you're going through (/read/, /read/<slug>/)
+    write_file(PUBLIC / "read" / "index.html", render_needs_hub())
+    for need in NEEDS:
+        write_file(PUBLIC / "read" / need["slug"] / "index.html", render_need_page(need))
+    print(f"      Needs hub + {len(NEEDS)} need pages (/read/)")
+
+    # Genre pages: browse by kind of book (/genre/, /genre/<slug>/)
+    write_file(PUBLIC / "genre" / "index.html", render_genre_hub())
+    for g in GENRES:
+        write_file(PUBLIC / "genre" / g["slug"] / "index.html", render_genre_page(g))
+    print(f"      Genre hub + {len(GENRES)} genre pages (/genre/)")
 
     # 3-5. Per-translation: landing + book landings + chapter pages
     print("\n[3/7] Building per-translation pages...")
