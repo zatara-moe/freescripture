@@ -7,39 +7,39 @@
 
 /* ---- Design tokens ---- */
 :root {
-  /* Core parchment palette */
-  --paper:        #f4ecd8;
-  --paper-warm:   #ede2c8;
-  --paper-deep:   #e3d4ad;
-  --ink:          #2a1f15;
-  --ink-soft:     #4a3a28;
-  --ink-faded:    #7a6648;
-  --rule:         #c9b88a;
-  --rule-soft:    #d8c89c;
+  /* Core palette — near-white with a trace of warmth, high-contrast ink */
+  --paper:        #fcfaf6;
+  --paper-warm:   #f4efe6;
+  --paper-deep:   #e9e1d3;
+  --ink:          #1a1714;
+  --ink-soft:     #4c453c;
+  --ink-faded:    #6e6456;
+  --rule:         #d8cdb8;
+  --rule-soft:    #e6ddcc;
 
-  /* Tradition accents (sparing use only) */
-  --accent-christian: #8B6914;
-  --accent-islamic:   #0F6E56;
-  --accent-lds:       #185FA5;
-  --accent-jewish:    #3C3489;
-  --accent-buddhist:  #BA7517;
-  --accent-hindu:     #993C1D;
-  --accent-sikh:      #854F0B;
+  /* Tradition accents (sparing use only) — darkened for AA contrast on near-white */
+  --accent-christian: #7a5a10;
+  --accent-islamic:   #0c5c47;
+  --accent-lds:       #134e87;
+  --accent-jewish:    #322b73;
+  --accent-buddhist:  #9a5f12;
+  --accent-hindu:     #843219;
+  --accent-sikh:      #6f4209;
 
   /* Default tradition (Christian for KJV) */
   --tradition-accent: var(--accent-christian);
 
   /* Typography */
-  --font-display: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
-  --font-body:    'Crimson Pro', 'Crimson Text', Georgia, serif;
+  --font-display: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Source Serif 4', 'Crimson Pro', 'Iowan Old Style', Georgia, serif;
   --font-mono:    'DM Mono', 'IBM Plex Mono', ui-monospace, monospace;
 
   /* Reading measure */
-  --measure:      640px;
-  --measure-narrow: 580px;
+  --measure:      40rem;
+  --measure-narrow: 34rem;
 
   /* Verse anchor highlight */
-  --verse-highlight: #f6dc8a;
+  --verse-highlight: #f3e2a8;
 }
 
 /* ---- Reset and base ---- */
@@ -67,22 +67,19 @@ body {
   line-height: 1.7;
   color: var(--ink);
   background: var(--paper);
-  background-image:
-    radial-gradient(ellipse at top, rgba(255,255,255,0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom, rgba(0,0,0,0.03) 0%, transparent 60%);
   min-height: 100vh;
   position: relative;
 }
 
-/* Subtle paper noise overlay */
+/* Faint paper tooth — kept very subtle so text stays crisp */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.4;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.165 0 0 0 0 0.122 0 0 0 0 0.082 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.34 0 0 0 0 0.24 0 0 0 0.02 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   mix-blend-mode: multiply;
 }
 
@@ -553,20 +550,18 @@ main {
 .chapter-translation-tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.04em;
   color: var(--ink-faded);
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .chapter-title {
   font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(2.3rem, 5.5vw, 3.1rem);
   text-align: center;
   margin: 0 0 0.5rem;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .chapter-subtitle {
@@ -604,16 +599,18 @@ main {
 .verse__num {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.65em;
+  font-size: 0.6em;
   vertical-align: super;
   color: var(--ink-faded);
-  margin-right: 0.2em;
-  font-weight: 500;
+  margin-right: 0.25em;
+  font-weight: 400;
+  opacity: 0.7;
   user-select: none;
   text-decoration: none;
+  transition: opacity 120ms ease, color 120ms ease;
 }
 
-.verse__num:hover { color: var(--tradition-accent); }
+.verse__num:hover { color: var(--tradition-accent); opacity: 1; }
 
 /* RTL text support */
 .chapter-text[dir="rtl"] {
@@ -818,13 +815,26 @@ main {
 .trust-row__items span:first-child::before { content: ""; margin: 0; }
 
 .trust-row__steward {
-  margin-top: 1rem;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.95rem;
+  margin-top: 1.25rem;
   text-transform: none;
   letter-spacing: 0;
-  color: var(--ink-soft);
+}
+
+.trust-row__steward .hfa-mark {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.trust-row__steward .hfa-vision {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 0.82rem;
+  letter-spacing: -0.01em;
+  color: var(--ink-faded);
+  margin-top: 0.35rem;
 }
 
 /* ---- Search results ---- */

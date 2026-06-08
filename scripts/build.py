@@ -456,7 +456,7 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{SITE_URL}/static/og-image.jpg">
 
-<meta name="theme-color" content="#f4ecd8">
+<meta name="theme-color" content="#fcfaf6">
 <meta name="robots" content="index, follow">
 
 <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
@@ -465,7 +465,7 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=Lexend:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/static/css/site.css">
 <script>
@@ -537,8 +537,8 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
     </div>
     <div class="site-footer__col">
       <h4>Stewardship</h4>
-      <p>A project of <strong><a href="https://hopeforamericans.net">Hope for Americans</a></strong>, a ministry of Shepherd of the Hills Lutheran Church in Flagstaff, Arizona.</p>
-      <p>Sister project: <a href="https://fablepixels.com">Fablepixels</a> — interactive emoji storybooks.</p>
+      <p>A project of <strong><a href="https://hopeforamericans.net">Hope for Americans</a></strong>, an independent maker of free, honest tools.</p>
+      <p>Sister project: <a href="https://fablepixels.com">Fablepixels</a> &mdash; interactive emoji storybooks.</p>
     </div>
   </div>
   <div class="trust-row">
@@ -548,7 +548,10 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
       <span>No ads</span>
       <span>No data sold</span>
     </div>
-    <div class="trust-row__steward">Made with ♥ in Flagstaff, Arizona at 7,000 feet</div>
+    <div class="trust-row__steward">
+      <div class="hfa-mark">A Hope for Americans tool</div>
+      <div class="hfa-vision">free to use, the way the web used to be</div>
+    </div>
   </div>
 </footer>
 </body>
@@ -756,7 +759,6 @@ def render_homepage():
     </span>
     <input type="search" name="q" placeholder='Jump to a verse &mdash; "John 3:16"' aria-label="Search scripture">
   </form>
-  <p class="home-hero__steward">A project of <a href="/about/">Shepherd of the Hills Lutheran Church</a>, Flagstaff AZ</p>
 </div>
 
 <div class="home-content">
@@ -772,11 +774,7 @@ def render_homepage():
         "publisher": {
             "@type": "Organization",
             "name": "Hope for Americans",
-            "parentOrganization": {
-                "@type": "Organization",
-                "name": "Shepherd of the Hills Lutheran Church",
-                "address": {"@type": "PostalAddress", "addressLocality": "Flagstaff", "addressRegion": "AZ"}
-            }
+            "url": "https://hopeforamericans.net"
         },
         "potentialAction": {
             "@type": "SearchAction",
@@ -1241,7 +1239,7 @@ def render_about():
 
   <p>This library exists because scripture should not cost money to read. Most free Bible websites today are paid for with ads, with email signup walls, or with a "premium" tier that gates the better tools behind a paywall. We believe a different model is possible.</p>
 
-  <p>Free Scripture is a project of <strong><a href="https://hopeforamericans.net">Hope for Americans</a></strong>, a ministry of Shepherd of the Hills Lutheran Church in Flagstaff, Arizona. We pay the hosting bill ourselves. There are no ads on this site, ever. There is no account required and no tracking. We are not collecting your data. We are not building a profile of you. We are not going to sell anything to you.</p>
+  <p>Free Scripture is a project of <strong><a href="https://hopeforamericans.net">Hope for Americans</a></strong>, an independent maker of free, honest tools. We pay the hosting bill ourselves. There are no ads on this site, ever. There is no account required and no tracking. We are not collecting your data. We are not building a profile of you. We are not going to sell anything to you.</p>
 
   <p>Every text in this library is in the public domain or is freely licensed for redistribution. Where a text is copyrighted (such as most modern English Bible translations), we do not host it. We will tell you so plainly and link out to a place where you can read it.</p>
 
@@ -1405,7 +1403,7 @@ Sitemap: https://freescripture.org/sitemap.xml
 
     llms = """# Free Scripture — freescripture.org
 
-> A free, beautifully presented online library of scripture from multiple faith traditions. Stewarded by Hope for Americans, a ministry of Shepherd of the Hills Lutheran Church in Flagstaff, Arizona.
+> A free, beautifully presented online library of scripture from multiple faith traditions. Stewarded by Hope for Americans, an independent maker of free, honest tools.
 
 ## What this is
 
@@ -1563,6 +1561,8 @@ def build():
     # Netlify/CF Pages-style _redirects file: map /kjv/john/3 -> /kjv/john/3.html
     redirects_lines = []
     for name, _, _ in BOOK_ORDER:
+        if name not in books_data:
+            continue
         for ch in books_data[name]["chapters"]:
             slug = book_slug(name)
             redirects_lines.append(f"/kjv/{slug}/{ch['num']} /kjv/{slug}/{ch['num']}.html 200")
