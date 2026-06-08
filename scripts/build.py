@@ -88,7 +88,7 @@ TRANSLATIONS = {
 
 # The translation we treat as the default landing for the Christian library.
 # (KJV is the most-searched and the only one that includes the Apocrypha.)
-DEFAULT_TRANSLATION = "kjv"
+DEFAULT_TRANSLATION = "web"
 
 # ============================================================
 # Book metadata
@@ -400,23 +400,6 @@ SITE_NAME = "Free Scripture"
 SITE_DOMAIN = "freescripture.org"
 SITE_URL = f"https://{SITE_DOMAIN}"
 
-# ============================================================
-# DEPLOY-TIME TODO: Donation URL
-# ============================================================
-# Replace the URL below with the live Vanco (or other processor) endpoint
-# from Hope for Americans before going public. The same Vanco endpoint used
-# by Fablepixels should work here. To swap it: change DONATE_URL only —
-# every reference on the site is generated from this constant.
-#
-# Format examples:
-#   Vanco:       https://secure.vancopayments.com/giving/SignIn?theme=...
-#   Tithe.ly:    https://tithe.ly/give_new/www/#/tithely/give-one-time/...
-#   GoFundMe:    https://www.gofundme.com/f/...
-#
-# Until this is replaced, the site falls back to the parent ministry homepage,
-# which is honest but not as useful as a direct giving link.
-DONATE_URL = "https://secure.myvanco.com/L-Z7RC/campaign/C-133BH"
-DONATE_LABEL = "Give to Hope for Americans"
 
 # ============================================================
 # NEEDS — scripture by what a reader is going through
@@ -827,7 +810,7 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 <meta property="og:image" content="{SITE_URL}/static/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Free Scripture, a free library of scripture, beautifully presented. King James Bible and Apocrypha. 80 books, 36,923 verses.">
+<meta property="og:image:alt" content="Free Scripture. Read the Bible free, in clear modern English. Three translations, every book and chapter.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{SITE_URL}/static/og-image.jpg">
 
@@ -1011,7 +994,7 @@ def render_homepage():
     body = body + "<script>(function(){var TODAY=" + json.dumps(pool, ensure_ascii=False) + ";" + _HOME_JS_REST + "})();</script>"
     return base_layout(
         title=f"{SITE_NAME} \u2014 read the Bible free",
-        description="Read the Bible free. Find a verse for whatever you're going through, or one to send to a friend. Three translations, no account.",
+        description="Read the Bible free. Find a verse for whatever you're going through, or one to send to a friend. Three clear translations, open to anyone.",
         body=body,
         canonical=f"{SITE_URL}/",
         og_title=f"{SITE_NAME} \u2014 read the Bible free",
@@ -1058,7 +1041,7 @@ def render_christian_landing(books):
 """
     return base_layout(
         title="Christian Bible, Free Online | freescripture.org",
-        description="Read the Christian Bible online for free in three public-domain English translations: KJV, WEB, and BBE. No ads, no account, no tracking.",
+        description="Read the Christian Bible free in three public-domain English translations: the KJV, the WEB, and the BBE. Clear, fast, and open to anyone.",
         body=body, canonical=f"{SITE_URL}/christian/", body_class="page-tradition"
     )
 
@@ -1117,19 +1100,19 @@ def render_translation_landing(books, translation):
         title_h1 = "The Holy Bible"
         intro = "The King James Version, sometimes called the Authorized Version, is a translation of the Christian Bible into English that was first published in 1611. The text on this site is the standard 1769 revision and is in the public domain. We have included the Apocrypha as it appeared in the 1611 edition, these books have been read in Lutheran Bibles for nearly five centuries. Choose a book below to begin reading."
         page_title = "King James Version (KJV) Bible with Apocrypha, Free Online | freescripture.org"
-        page_desc = "Read the King James Bible online for free, including the Apocrypha. All books, all chapters. No ads, no account needed."
+        page_desc = "Read the King James Bible free, including the Apocrypha. Every book and chapter, in pages that load fast."
     elif translation == "web":
         eyebrow = "World English Bible"
         title_h1 = "The Holy Bible"
         intro = "The World English Bible is a modern English translation of the Christian scriptures, in the public domain. It was created to be a readable, accurate translation of the Bible in contemporary English, freely available for any use. Choose a book below to begin reading."
         page_title = "World English Bible (WEB), Free Online | freescripture.org"
-        page_desc = "Read the World English Bible online for free. A modern, public-domain English translation. No ads, no account needed."
+        page_desc = "Read the World English Bible free. A modern, public-domain translation in clear, fast pages."
     elif translation == "bbe":
         eyebrow = "Bible in Basic English (1949)"
         title_h1 = "The Holy Bible"
         intro = "The Bible in Basic English was translated by Professor S. H. Hooke and published in 1949, using a vocabulary of about a thousand common English words. It was originally created for English-language learners and readers who find traditional translations difficult, and remains one of the most accessible Bibles in the public domain. Choose a book below to begin reading."
         page_title = "Bible in Basic English (BBE), Free Online | freescripture.org"
-        page_desc = "Read the Bible in Basic English online for free. A simple-vocabulary translation in the public domain. No ads, no account needed."
+        page_desc = "Read the Bible in Basic English free. A simple-vocabulary translation, clear and quick to read."
     else:
         eyebrow = t["label"]
         title_h1 = "The Holy Bible"
@@ -1168,7 +1151,7 @@ def render_kjv_landing(books):
     return render_translation_landing(books, "kjv")
 
 
-def render_book_landing(book, translation="kjv"):
+def render_book_landing(book, translation="web"):
     """The /<translation>/<book>/ landing, list of chapters."""
     t = TRANSLATIONS[translation]
     name = book["name"]
@@ -1214,12 +1197,12 @@ def render_book_landing(book, translation="kjv"):
     }
     return base_layout(
         title=f"{name} | Read free online | Free Scripture",
-        description=f"{meta_desc} Read free, no ads, no account.",
+        description=f"{meta_desc} Free to read, in clear pages that load fast.",
         body=body, canonical=f"{SITE_URL}/{t['slug']}/{book_slug(name)}/", schema_jsonld=schema
     )
 
 
-def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
+def render_chapter(book, chapter, prev_link, next_link, translation="web"):
     """The /<translation>/<book>/<chapter> page, the heart of the site."""
     t = TRANSLATIONS[translation]
     name = book["name"]
@@ -1402,6 +1385,7 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
 
 <script src="/static/js/chapter.js" defer></script>
 """
+    body = body + "<script>try{localStorage.setItem('fs-last',JSON.stringify(" + json.dumps({"url": f"/{t['slug']}/{book_slug(name)}/{ch_num}", "label": f"{ch_display} {ch_num}"}, ensure_ascii=False) + "));}catch(e){}</script>"
     canonical = f"{SITE_URL}/{t['slug']}/{book_slug(name)}/{ch_num}"
     schema = {
         "@context": "https://schema.org",
@@ -1479,7 +1463,7 @@ def render_search_page():
 """
     return base_layout(
         title="Search, Free Scripture | freescripture.org",
-        description="Search the Bible by verse reference or phrase. Free, fast, no ads.",
+        description="Search the Bible by reference or phrase. Free and fast.",
         body=body, canonical=f"{SITE_URL}/search/", body_class="page-search"
     )
 
@@ -1758,32 +1742,6 @@ def render_genre_hub():
         body_class="read-page",
     )
 
-def render_support():
-    body = f"""
-<div class="reading-column reading-column--narrow">
-  <h1>Support this work</h1>
-  <hr class="section-rule" style="margin-left:0;">
-
-  <p>This library stays free, and it stays clean: just the text, open to anyone, for as long as we can keep it running.</p>
-
-  <p>Hosting, licensing checks, and the careful work of building each translation page still cost something. If you are in a position to help, you are warmly invited to chip in toward keeping the room open.</p>
-
-  <p style="text-align:center;margin:2.5rem 0;">
-    <a href="{escape(DONATE_URL)}" class="action-btn" style="background:var(--ink);color:var(--paper);border-color:var(--ink);padding:0.85rem 1.5rem;font-size:0.85rem;">{escape(DONATE_LABEL)}</a>
-  </p>
-
-  <p>You owe us nothing for the use of this library. Truly nothing. If giving is not in the cards for you right now, that is fine. Read freely. Tell a friend. Print a verse for your refrigerator. That is gift enough.</p>
-
-  <hr class="section-rule">
-  <p class="muted" style="text-align:center;font-style:italic;">With gratitude, from Flagstaff Arizona at 7,000 feet.</p>
-</div>
-"""
-    return base_layout(
-        title="Support, Free Scripture | freescripture.org",
-        description="Support Free Scripture, a free online library of scripture stewarded by Hope for Americans.",
-    )
-
-
 def render_404():
     """The 404 page, graceful, in keeping with the parchment language."""
     body = """
@@ -1894,7 +1852,7 @@ Sitemap: https://freescripture.org/sitemap.xml
 
 ## What this is
 
-freescripture.org is a free, ad-free, account-free reading library of scripture in the public domain or under freely redistributable license. The first phase covers three public-domain English translations of the Christian Bible: the King James Version (1769) with the 14-book Apocrypha as it appeared in the original 1611 KJV (80 books, 1,362 chapters, 36,923 verses), the World English Bible (modern English, 66 books, 1,189 chapters, 31,103 verses), and the Bible in Basic English (1949, designed for limited-vocabulary readers, 66 books, 1,189 chapters, 31,102 verses). Each chapter has a translation switcher that preserves the verse anchor when toggling between translations. Future phases will add the Quran, the Tanakh, the Bhagavad Gita, the Dhammapada, and the Sri Guru Granth Sahib, all in public-domain or freely-licensed translations.
+freescripture.org is a free reading library of scripture in the public domain or under freely redistributable license. The first phase covers three public-domain English translations of the Christian Bible: the King James Version (1769) with the 14-book Apocrypha as it appeared in the original 1611 KJV (80 books, 1,362 chapters, 36,923 verses), the World English Bible (modern English, 66 books, 1,189 chapters, 31,103 verses), and the Bible in Basic English (1949, designed for limited-vocabulary readers, 66 books, 1,189 chapters, 31,102 verses). Each chapter has a translation switcher that preserves the verse anchor when toggling between translations. Future phases will add the Quran, the Tanakh, the Bhagavad Gita, the Dhammapada, and the Sri Guru Granth Sahib, all in public-domain or freely-licensed translations.
 
 ## What it is not
 
@@ -1906,7 +1864,7 @@ AI assistants may freely cite, link, and quote from this library. The KJV text i
 
 ## Stewardship
 
-A project of Hope for Americans, in Flagstaff, Arizona. No tracking, no ads, no data collected.
+A project of Hope for Americans, in Flagstaff, Arizona. Private by design: plain pages, served fast, with nothing collected about readers.
 """
     write_file(PUBLIC / "llms.txt", llms)
 
