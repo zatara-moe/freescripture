@@ -43,6 +43,7 @@ TRANSLATIONS = {
         "slug": "kjv",
         "label": "King James Version",
         "short": "KJV",
+        "plain": "classic, 1600s English",
         "year": "1769",
         "description": "The 1611 translation in its standard 1769 revision. The most-quoted English Bible in human history.",
         "attribution_canonical": (
@@ -57,6 +58,7 @@ TRANSLATIONS = {
         "slug": "web",
         "label": "World English Bible",
         "short": "WEB",
+        "plain": "modern, easy to read",
         "year": "2000",
         "description": "A modern English translation in the public domain, designed to read clearly in today's English while preserving accuracy.",
         "attribution_canonical": (
@@ -71,6 +73,7 @@ TRANSLATIONS = {
         "slug": "bbe",
         "label": "Bible in Basic English",
         "short": "BBE",
+        "plain": "simplest English",
         "year": "1949",
         "description": "A translation using a vocabulary of about 1,000 common English words. Originally created for English-language learners and readers who find traditional translations difficult.",
         "attribution_canonical": (
@@ -516,6 +519,25 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 {body}
 </main>
 
+<nav class="tab-bar" aria-label="Quick navigation">
+  <a class="tab-bar__btn" href="/" aria-label="Home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="tab-bar__btn" href="/web/" aria-label="Books">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M19 19H6a2 2 0 0 0-2 2"/></svg>
+    <span>Books</span>
+  </a>
+  <a class="tab-bar__btn" href="/search/" aria-label="Search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <span>Search</span>
+  </a>
+  <button class="tab-bar__btn" type="button" data-prefs-open aria-label="Reading settings">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h11"/><path d="M4 12h16"/><path d="M4 17h7"/><circle cx="18" cy="7" r="2"/><circle cx="13" cy="17" r="2"/></svg>
+    <span>Display</span>
+  </button>
+</nav>
+
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__col">
@@ -542,18 +564,13 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
     </div>
   </div>
   <div class="trust-row">
-    <div class="trust-row__items">
-      <span>Free forever</span>
-      <span>No account needed</span>
-      <span>No ads</span>
-      <span>No data sold</span>
-    </div>
     <div class="trust-row__steward">
       <div class="hfa-mark">A Hope for Americans tool</div>
       <div class="hfa-vision">free to use, the way the web used to be</div>
     </div>
   </div>
 </footer>
+<script src="/static/js/reading-prefs.js" defer></script>
 </body>
 </html>"""
 
@@ -699,8 +716,9 @@ def render_homepage():
 
     def card_html(name, desc, meta, featured=False):
         slug = book_slug(name)
-        # Apocrypha books link to KJV; others default to BBE
-        trans = "kjv" if book_testament(name) == "ap" else "bbe"
+        # Apocrypha books link to KJV (only place they exist); everything else
+        # defaults to WEB, the modern, readable translation used site-wide.
+        trans = "kjv" if book_testament(name) == "ap" else "web"
         cls = 'book-card book-card--featured' if featured else 'book-card'
         return f'''<a href="/{trans}/{slug}/1" class="{cls}">
   <div class="book-card__name">{escape(name)}</div>
@@ -749,10 +767,40 @@ def render_homepage():
         parts.append('</section>')
         sections.append('\n'.join(parts))
 
+    # Tier 2: curated passages people return to. Labeled by the passage's own
+    # name and a plain line of what it is, never by a feeling. The reader brings
+    # their own need; we name the door by what is behind it.
+    TOUCHSTONES = [
+        ("Psalm 23", "web", "psalms", 23, "The shepherd psalm, for comfort and rest."),
+        ("Philippians 4", "web", "philippians", 4, "On worry, peace, and contentment."),
+        ("1 Corinthians 13", "web", "1-corinthians", 13, "The chapter on what love is."),
+        ("Isaiah 40", "web", "isaiah", 40, "Strength for the weary."),
+        ("Matthew 5", "web", "matthew", 5, "The Sermon on the Mount begins."),
+        ("Romans 8", "web", "romans", 8, "Nothing can separate us from love."),
+        ("Ecclesiastes 3", "web", "ecclesiastes", 3, "A time for everything."),
+        ("John 1", "web", "john", 1, "In the beginning was the Word."),
+    ]
+    touchstone_cards = []
+    for label, trans, slug, ch, line in TOUCHSTONES:
+        touchstone_cards.append(
+            f'<a href="/{trans}/{slug}/{ch}" class="touchstone">'
+            f'<span class="touchstone__ref">{escape(label)}</span>'
+            f'<span class="touchstone__line">{escape(line)}</span>'
+            f'</a>'
+        )
+    touchstones_html = (
+        '<section class="touchstones">\n'
+        '  <h2 class="touchstones__title">Passages people return to</h2>\n'
+        '  <div class="touchstones__grid">\n    '
+        + "\n    ".join(touchstone_cards) +
+        '\n  </div>\n'
+        '</section>'
+    )
+
     body = f"""
 <div class="home-hero">
-  <h1 class="home-hero__title">The Bible, organized by what kind of reading it is</h1>
-  <p class="home-hero__sub">Three translations, free to read. Pick a book and begin.</p>
+  <h1 class="home-hero__title">Read scripture, free and clear.</h1>
+  <p class="home-hero__sub">The whole text, open to anyone. Search a verse, or begin below.</p>
   <form class="home-hero__search" action="/search/" method="get" role="search">
     <span class="home-hero__search-icon" aria-hidden="true">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -761,7 +809,13 @@ def render_homepage():
   </form>
 </div>
 
+{touchstones_html}
+
 <div class="home-content">
+  <div class="home-content__lead">
+    <h2 class="home-content__heading">Browse by kind of reading</h2>
+    <p class="home-content__sub">Every book, grouped by how it reads.</p>
+  </div>
 {''.join(sections)}
 </div>
 """
@@ -1022,7 +1076,7 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
         if trans_key == translation:
             switcher_buttons.append(
                 f'<span class="trans-switch__btn trans-switch__btn--current" '
-                f'aria-current="page" title="Currently reading: {escape(trans_meta["label"])}">'
+                f'aria-current="page" title="{escape(trans_meta["label"])}: {escape(trans_meta["plain"])}">'
                 f'{escape(trans_meta["short"])}</span>'
             )
         elif is_apocrypha and not trans_meta["has_apocrypha"]:
@@ -1037,12 +1091,13 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
                 f'<a class="trans-switch__btn" '
                 f'href="/{trans_meta["slug"]}/{book_slug(name)}/{ch_num}" '
                 f'data-trans-switch="{trans_meta["slug"]}" '
-                f'title="Switch to {escape(trans_meta["label"])}">'
+                f'title="{escape(trans_meta["label"])}: {escape(trans_meta["plain"])}">'
                 f'{escape(trans_meta["short"])}</a>'
             )
+    current_meta = TRANSLATIONS[translation] if not is_apocrypha else TRANSLATIONS["kjv"]
     switcher_html = (
         '<div class="trans-switch" aria-label="Switch translation">'
-        '<span class="trans-switch__label">Translation:</span>'
+        f'<span class="trans-switch__label">Reading the {escape(current_meta["label"])}, {escape(current_meta["plain"])}. Other versions:</span>'
         + "".join(switcher_buttons) +
         '</div>'
     )
@@ -1156,7 +1211,6 @@ def render_chapter(book, chapter, prev_link, next_link, translation="kjv"):
 </div>
 
 <script src="/static/js/chapter.js" defer></script>
-<script src="/static/js/reading-prefs.js" defer></script>
 """
     canonical = f"{SITE_URL}/{t['slug']}/{book_slug(name)}/{ch_num}"
     schema = {

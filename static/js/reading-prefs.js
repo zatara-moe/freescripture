@@ -87,6 +87,19 @@
     panel.innerHTML = panelHTML();
     document.body.appendChild(panel);
 
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-prefs-open]'),
+      function (opener) {
+        opener.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          panel.classList.add('reading-prefs-panel--open');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.style.display = 'none';
+        });
+      }
+    );
+
     // Wire button to toggle panel
     btn.addEventListener('click', function () {
       var open = panel.classList.toggle('reading-prefs-panel--open');

@@ -1086,7 +1086,7 @@ html[data-fs-italics="off"] .chapter-text i {
 .reading-prefs-btn svg { width: 22px; height: 22px; }
 
 @media (max-width: 600px) {
-  .reading-prefs-btn { bottom: 1rem; right: 1rem; width: 44px; height: 44px; }
+  .reading-prefs-btn { display: none; }
 }
 
 /* --- The settings panel --- */
@@ -1241,11 +1241,11 @@ html[data-fs-italics="off"] .chapter-text i {
 }
 .home-hero__title {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.6rem;
+  font-weight: 400;
+  font-size: 1.9rem;
   color: var(--ink);
   margin-bottom: 0.3rem;
+  line-height: 1.1;
 }
 .home-hero__sub {
   font-size: 0.9rem;
@@ -1285,6 +1285,66 @@ html[data-fs-italics="off"] .chapter-text i {
   color: var(--ink-soft);
 }
 .home-hero__steward a { color: var(--ink-soft); }
+
+.touchstones {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 0.5rem;
+}
+.touchstones__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.touchstones__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+.touchstone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  border: 0.5px solid var(--rule);
+  border-radius: 8px;
+  background: #fff;
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.1s;
+}
+.touchstone:hover { border-color: var(--tradition-accent); transform: translateY(-1px); }
+.touchstone__ref {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+.touchstone__line {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.home-content__lead {
+  text-align: center;
+  padding-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.home-content__heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+.home-content__sub {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
 
 .home-content {
   max-width: 1000px;
@@ -1398,4 +1458,52 @@ html[data-fs-italics="off"] .chapter-text i {
 }
 @media (max-width: 380px) {
   .book-cards { grid-template-columns: 1fr; }
+}
+
+/* ============================================================ */
+/* MOBILE QUICK-NAV BAR                                          */
+/* Hidden on desktop. Appears at the bottom on phones as a       */
+/* fixed shortcut bar for getting around the library fast.       */
+/* ============================================================ */
+.tab-bar { display: none; }
+
+@media (max-width: 600px) {
+  .tab-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    background: var(--paper);
+    border-top: 0.5px solid var(--rule);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .tab-bar__btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 9px 0 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    min-height: 52px;
+  }
+  .tab-bar__btn svg {
+    width: 22px;
+    height: 22px;
+  }
+  .tab-bar__btn:active { color: var(--tradition-accent); }
+
+  /* keep page content clear of the fixed bar */
+  body { padding-bottom: 60px; }
+  .site-footer { margin-bottom: 60px; }
 }
