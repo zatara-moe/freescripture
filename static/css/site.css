@@ -1679,3 +1679,26 @@ body.home-page main { padding-top: 1.5rem; }
 @supports (background: color-mix(in srgb, red, white)) {
   .home-sec__k, .home-kick { background: color-mix(in srgb, var(--tradition-accent) 15%, #fff); }
 }
+
+/* Books page: section sub-labels as soft brand pills (consistent with homepage) */
+.book-section-label {
+  display: inline-block;
+  background: var(--paper-warm);
+  color: var(--tradition-accent);
+  font-family: var(--font-ui); font-weight: 700; font-size: 12px; line-height: 1.25;
+  border-radius: 999px; padding: 5px 12px; margin: 1.8rem 0 0.9rem;
+  text-transform: none; letter-spacing: normal;
+}
+@supports (background: color-mix(in srgb, red, white)) {
+  .book-section-label { background: color-mix(in srgb, var(--tradition-accent) 15%, #fff); }
+}
+.book-grid { margin-bottom: 0.5rem; }
+
+/* ============================================================
+   Card edge B: neutral border site-wide. Genre color lives in
+   the pill, never as a left stripe. Matches the book-card border.
+   ============================================================ */
+.read-card::before, .home-genre::before, .read-row::before, .read-xcard::before { display: none; }
+.read-card:hover, .home-genre:hover, .read-row:hover, .read-xcard:hover { border-color: var(--tradition-accent); }
+.read-card__ref, .read-row__ref { color: var(--ink); }
+.read-card { padding-left: 18px; }

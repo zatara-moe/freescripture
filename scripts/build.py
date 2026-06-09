@@ -944,7 +944,7 @@ var q=document.getElementById('home-q');
 if(q)q.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=q.value.trim();location.href='/search/'+(v?('#q='+encodeURIComponent(v)):'');}});
 """
 
-def _book_card(book, show_genre=False):
+def _book_card(book, show_genre=False, slug="web"):
     """A book as a card in the site card system (genre edge, soft lift)."""
     genre = GENRE_OF.get(book, "")
     rowc = f"var(--g-{genre})" if genre else "var(--rule)"
@@ -955,7 +955,7 @@ def _book_card(book, show_genre=False):
         kicker = next((g["kicker"] for g in GENRES if g["slug"] == genre), "")
         if kicker:
             pill = f'<span class="pill">{escape(kicker)}</span>'
-    return (f'<a class="book-card" style="--rowc:{rowc}" href="/web/{book_slug(book)}/">'
+    return (f'<a class="book-card" style="--rowc:{rowc}" href="/{slug}/{book_slug(book)}/">'
             f'{pill}<div class="book-card__t">{escape(book)}</div>{desc}</a>')
 
 def render_homepage():
@@ -1095,7 +1095,7 @@ def render_translation_landing(books, translation):
             continue
         if testament != current_testament:
             if open_list:
-                sections_html.append("</ul>")
+                sections_html.append("</div>")
                 open_list = False
             t_label = TESTAMENT_LABELS.get(testament, testament.upper())
             t_note = TESTAMENT_NOTES.get(testament, "")
@@ -1108,16 +1108,16 @@ def render_translation_landing(books, translation):
 
         if section != current_section:
             if open_list:
-                sections_html.append("</ul>")
+                sections_html.append("</div>")
             sections_html.append(f'<div class="book-section-label">{escape(section)}</div>')
-            sections_html.append('<ul class="book-list">')
+            sections_html.append('<div class="book-grid">')
             open_list = True
             current_section = section
 
-        sections_html.append(f'<li><a href="/{t["slug"]}/{book_slug(name)}/">{escape(name)}</a></li>')
+        sections_html.append(_book_card(name, show_genre=False, slug=t["slug"]))
 
     if open_list:
-        sections_html.append("</ul>")
+        sections_html.append("</div>")
 
     # Per-translation hero copy
     if translation == "kjv":
