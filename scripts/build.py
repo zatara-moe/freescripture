@@ -823,7 +823,7 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/static/css/site.css">
 <script>
@@ -927,6 +927,7 @@ _HOME_GENRES = [
     ("prophecy", "Speaking for God", "18 books"),
 ]
 _HOME_NEED_PREVIEW = ["fear", "grief", "strength", "celebrate", "thinking-of-you"]
+_HOME_FEATURED = ["John", "Genesis", "Psalms", "Proverbs", "Mark", "Philippians"]
 
 _HOME_JS_REST = r"""
 var cover=document.getElementById('home-cover');
@@ -938,10 +939,24 @@ function paint(){
   if(a)a.addEventListener('click',function(){idx=(idx+1)%TODAY.length;paint();});
 }
 paint();
-try{var raw=localStorage.getItem('fs-last');if(raw){var c=JSON.parse(raw);var el=document.getElementById('home-cont');if(el&&c&&c.url){el.setAttribute('href',c.url);var r=el.querySelector('[data-cont-ref]');if(r)r.textContent=c.label||'Keep reading';el.hidden=false;}}}catch(e){}
+try{var raw=localStorage.getItem('fs-last');if(raw){var c=JSON.parse(raw);var el=document.getElementById('home-cont');if(el&&c&&c.url&&c.label){el.setAttribute('href',c.url);var r=el.querySelector('[data-cont-ref]');if(r)r.textContent=c.label;el.hidden=false;}}}catch(e){}
 var q=document.getElementById('home-q');
 if(q)q.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=q.value.trim();location.href='/search/'+(v?('#q='+encodeURIComponent(v)):'');}});
 """
+
+def _book_card(book, show_genre=False):
+    """A book as a card in the site card system (genre edge, soft lift)."""
+    genre = GENRE_OF.get(book, "")
+    rowc = f"var(--g-{genre})" if genre else "var(--rule)"
+    pitch = BOOK_PITCHES.get(book, "")
+    desc = f'<div class="book-card__d">{escape(pitch)}</div>' if pitch else ""
+    pill = ""
+    if show_genre and genre:
+        kicker = next((g["kicker"] for g in GENRES if g["slug"] == genre), "")
+        if kicker:
+            pill = f'<span class="pill">{escape(kicker)}</span>'
+    return (f'<a class="book-card" style="--rowc:{rowc}" href="/web/{book_slug(book)}/">'
+            f'{pill}<div class="book-card__t">{escape(book)}</div>{desc}</a>')
 
 def render_homepage():
     pool=[]
@@ -970,10 +985,20 @@ def render_homepage():
                      f'<span class="read-need"><span class="read-need__t">{escape(desc)}</span>'
                      f'<span class="read-need__d">{escape(ref)}</span></span>'
                      f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>')
+    featured_cards = "".join(_book_card(b, show_genre=True) for b in _HOME_FEATURED)
     body=f"""<div class="home">
+  <div class="home-hero">
+    <h1 class="home-hero__h">Read the Bible.</h1>
+    <p class="home-hero__s">Search for a verse, or start with today's reading.</p>
+  </div>
   <label class="home-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="home-q" placeholder="Search the Bible" aria-label="Search the Bible"></label>
   <div class="home-cover" id="home-cover"></div>
   <a class="home-cont" id="home-cont" href="#" hidden><span><span class="m">Where you left off</span><span class="r" data-cont-ref></span></span><span class="a" aria-hidden="true">&rarr;</span></a>
+  <section class="home-sec">
+    <div class="home-sec__k">Start here</div>
+    <h2 class="home-sec__h">Good places to begin</h2>
+    <div class="book-grid">{featured_cards}</div>
+  </section>
   <section class="home-sec">
     <div class="home-sec__k">Find what you need</div>
     <h2 class="home-sec__h">Verses for the moment you're in</h2>
@@ -1569,12 +1594,14 @@ def render_need_page(need):
         ref = _ref_label(book, chapter)
         full_ref = f"{ref}:{vnum}"
         text = _pull_verse(book, chapter, vnum)
+        _vk = next((gg["kicker"] for gg in GENRES if gg["slug"] == genre), "")
+        gpill = f'<span class="pill">{escape(_vk)}</span>' if _vk else ""
         read_url = f"/web/{book_slug(book)}/{chapter}#v{vnum}"
         share_url = f"{SITE_URL}/web/{book_slug(book)}/{chapter}#v{vnum}"
         cards.append(
             f'<div class="read-card" style="--rowc:var(--g-{genre})" '
             f'data-ref="{escape(full_ref)}" data-url="{escape(share_url)}" data-text="{escape(text)}">'
-            f'<div class="read-card__ref">{escape(full_ref)}</div>'
+            f'<div class="read-card__top"><span class="read-card__ref">{escape(full_ref)}</span>{gpill}</div>'
             f'<div class="read-card__frame">{escape(frame)}</div>'
             f'<p class="read-card__verse">{escape(text)}</p>'
             f'<div class="read-card__acts">'
@@ -1674,20 +1701,12 @@ def _genre_crosslinks(current_slug):
 
 def render_genre_page(g):
     canonical = f"{SITE_URL}/genre/{g['slug']}/"
-    rows = []
-    for book in _genre_books(g["slug"]):
-        pitch = BOOK_PITCHES.get(book, "")
-        desc = f'<span class="read-need__d">{escape(pitch)}</span>' if pitch else ""
-        rows.append(
-            f'<a class="read-row" style="--rowc:var(--g-{g["accent"]})" href="/web/{book_slug(book)}/">'
-            f'<span class="read-need"><span class="read-need__t">{escape(book)}</span>{desc}</span>'
-            f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>'
-        )
+    rows = [_book_card(book) for book in _genre_books(g["slug"])]
     body = f"""<div class="read">
   <nav class="read-crumb" aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/genre/">By kind of book</a> &rsaquo; <b>{escape(g['label'])}</b></nav>
   <h1 class="read-h1">{escape(g['h1'])}</h1>
   <p class="read-lede">{escape(g['intro'])}</p>
-  <div class="read-list">
+  <div class="book-grid">
     {"".join(rows)}
   </div>
   <section class="read-x">

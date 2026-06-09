@@ -30,9 +30,9 @@
   --tradition-accent: var(--accent-christian);
 
   /* Typography */
-  --font-display: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'DM Sans', system-ui, -apple-system, sans-serif;
   --font-body:    'Source Serif 4', 'Crimson Pro', 'Iowan Old Style', Georgia, serif;
-  --font-mono:    'DM Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-mono:    'DM Sans', system-ui, -apple-system, sans-serif;
 
   /* Reading measure */
   --measure:      40rem;
@@ -1646,4 +1646,36 @@ body.home-page main { padding-top: 1.5rem; }
   /* clear the floating bar so it never covers footer content */
   body { padding-bottom: 104px; }
   .site-footer { margin-bottom: 24px; }
+}
+
+/* ===== Book cards (same card system: genre edge, soft lift) ===== */
+.book-grid { display: grid; grid-template-columns: 1fr; gap: 11px; margin-top: 4px; }
+@media (min-width: 560px) { .book-grid { grid-template-columns: 1fr 1fr; } }
+.book-card { position: relative; display: block; background: var(--paper); border: 1.5px solid var(--rule); border-radius: 16px; box-shadow: 0 2px 6px rgba(42,31,21,.06); padding: 16px 16px 16px 19px; overflow: hidden; text-decoration: none; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.book-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--rowc, var(--rule)); }
+.book-card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(42,31,21,.10); border-color: var(--rowc, var(--tradition-accent)); }
+.book-card__t { font-family: var(--font-ui); font-weight: 700; font-size: 16px; color: var(--ink); line-height: 1.2; }
+.book-card__d { font-family: var(--font-ui); font-size: 13px; color: var(--ink-faded); line-height: 1.45; margin-top: 6px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.book-card__m { font-family: var(--font-ui); font-size: 11px; font-weight: 700; color: var(--rowc, var(--ink-faded)); margin-top: 9px; }
+
+/* ============================================================
+   Unified sans type + soft color pills (color does the sorting)
+   ============================================================ */
+.pill { display: inline-block; font-family: var(--font-ui); font-weight: 700; font-size: 12px; line-height: 1.25; border-radius: 999px; padding: 5px 11px; background: var(--paper-warm); color: var(--rowc, var(--ink-soft)); }
+@supports (background: color-mix(in srgb, red, white)) {
+  .pill { background: color-mix(in srgb, var(--rowc, var(--ink-soft)) 14%, #fff); color: color-mix(in srgb, var(--rowc, var(--ink-soft)) 80%, #1a1714); }
+}
+.read-card__top { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.book-card .pill { margin-bottom: 10px; }
+.book-card__t { margin-top: 0; }
+/* section labels become soft brand pills */
+.home-sec__k, .home-kick {
+  display: inline-block;
+  background: var(--paper-warm);
+  color: var(--tradition-accent);
+  font-family: var(--font-ui); font-weight: 700; font-size: 12px; line-height: 1.25;
+  border-radius: 999px; padding: 5px 12px; margin-bottom: 12px; letter-spacing: normal;
+}
+@supports (background: color-mix(in srgb, red, white)) {
+  .home-sec__k, .home-kick { background: color-mix(in srgb, var(--tradition-accent) 15%, #fff); }
 }
