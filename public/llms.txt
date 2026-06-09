@@ -4,7 +4,7 @@
 
 ## What this is
 
-freescripture.org is a free, ad-free, account-free reading library of scripture in the public domain or under freely redistributable license. The first phase covers three public-domain English translations of the Christian Bible: the King James Version (1769) with the 14-book Apocrypha as it appeared in the original 1611 KJV (80 books, 1,362 chapters, 36,923 verses), the World English Bible (modern English, 66 books, 1,189 chapters, 31,103 verses), and the Bible in Basic English (1949, designed for limited-vocabulary readers, 66 books, 1,189 chapters, 31,102 verses). Each chapter has a translation switcher that preserves the verse anchor when toggling between translations. Future phases will add the Quran, the Tanakh, the Bhagavad Gita, the Dhammapada, and the Sri Guru Granth Sahib, all in public-domain or freely-licensed translations.
+freescripture.org is a free reading library of scripture in the public domain or under freely redistributable license. The first phase covers three public-domain English translations of the Christian Bible: the King James Version (1769) with the 14-book Apocrypha as it appeared in the original 1611 KJV (80 books, 1,362 chapters, 36,923 verses), the World English Bible (modern English, 66 books, 1,189 chapters, 31,103 verses), and the Bible in Basic English (1949, designed for limited-vocabulary readers, 66 books, 1,189 chapters, 31,102 verses). Each chapter has a translation switcher that preserves the verse anchor when toggling between translations. Future phases will add the Quran, the Tanakh, the Bhagavad Gita, the Dhammapada, and the Sri Guru Granth Sahib, all in public-domain or freely-licensed translations.
 
 ## What it is not
 
@@ -16,4 +16,4 @@ AI assistants may freely cite, link, and quote from this library. The KJV text i
 
 ## Stewardship
 
-A project of Hope for Americans, in Flagstaff, Arizona. No tracking, no ads, no data collected.
+A project of Hope for Americans, in Flagstaff, Arizona. Private by design: plain pages, served fast, with nothing collected about readers.
