@@ -1702,3 +1702,13 @@ body.home-page main { padding-top: 1.5rem; }
 .read-card:hover, .home-genre:hover, .read-row:hover, .read-xcard:hover { border-color: var(--tradition-accent); }
 .read-card__ref, .read-row__ref { color: var(--ink); }
 .read-card { padding-left: 18px; }
+
+/* ============================================================
+   Homepage type cleanup: one weight ladder + centered subtitle
+   700 = titles/headings/labels, 400 = body, 600 = buttons only
+   ============================================================ */
+.home-hero__h { font-weight: 700; }                 /* hero title was medium 500 */
+.home-hero__s { margin: 10px auto 0; }              /* center the subtitle under the title */
+.home-cover .cref { font-weight: 700; }             /* cover reference was thin 400 */
+.home-genre .gc { font-weight: 400; }               /* genre description was 500 */
+.home-search input, .home-search input::placeholder { font-weight: 400; }
