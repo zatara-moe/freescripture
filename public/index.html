@@ -78,6 +78,10 @@
 
 <main id="main">
 <div class="home">
+  <div class="home-hero">
+    <h1 class="home-hero__h">Read the Bible.</h1>
+    <p class="home-hero__s">Search for a verse, or start with today's reading.</p>
+  </div>
   <label class="home-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="home-q" placeholder="Search the Bible" aria-label="Search the Bible"></label>
   <div class="home-cover" id="home-cover"></div>
   <a class="home-cont" id="home-cont" href="#" hidden><span><span class="m">Where you left off</span><span class="r" data-cont-ref></span></span><span class="a" aria-hidden="true">&rarr;</span></a>
@@ -107,7 +111,7 @@ function paint(){
   if(a)a.addEventListener('click',function(){idx=(idx+1)%TODAY.length;paint();});
 }
 paint();
-try{var raw=localStorage.getItem('fs-last');if(raw){var c=JSON.parse(raw);var el=document.getElementById('home-cont');if(el&&c&&c.url){el.setAttribute('href',c.url);var r=el.querySelector('[data-cont-ref]');if(r)r.textContent=c.label||'Keep reading';el.hidden=false;}}}catch(e){}
+try{var raw=localStorage.getItem('fs-last');if(raw){var c=JSON.parse(raw);var el=document.getElementById('home-cont');if(el&&c&&c.url&&c.label){el.setAttribute('href',c.url);var r=el.querySelector('[data-cont-ref]');if(r)r.textContent=c.label;el.hidden=false;}}}catch(e){}
 var q=document.getElementById('home-q');
 if(q)q.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=q.value.trim();location.href='/search/'+(v?('#q='+encodeURIComponent(v)):'');}});
 })();</script>

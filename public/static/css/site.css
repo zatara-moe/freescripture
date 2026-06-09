@@ -79,17 +79,22 @@ main, header, footer, nav { position: relative; z-index: 2; }
 /* ---- Skip link ---- */
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 0.75rem 1rem;
+  left: 0; top: 0;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap;
+  background: var(--ink); color: var(--paper);
   text-decoration: none;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-ui); font-size: 0.9rem;
   z-index: 100;
 }
-.skip-link:focus { top: 0; }
+.skip-link:focus {
+  width: auto; height: auto;
+  margin: 0; padding: 0.75rem 1rem;
+  overflow: visible; clip: auto; clip-path: none;
+  border-radius: 0 0 8px 0;
+}
 
 /* ---- Focus-visible ---- */
 :focus-visible {
@@ -1597,3 +1602,48 @@ body.home-page main { padding-top: 1.5rem; }
 .trans-switch__btn { font-family: var(--font-ui); letter-spacing: normal; }
 .action-btn { font-family: var(--font-ui); font-weight: 600; }
 .attribution { font-family: var(--font-ui); text-transform: none; letter-spacing: normal; }
+
+/* ===== Homepage hero (anchored top section) ===== */
+.home-hero { margin: 6px 0 22px; }
+.home-hero__h { font-family: var(--font-display); font-size: clamp(34px, 5vw, 48px); line-height: 1.05; letter-spacing: -0.01em; color: var(--ink); margin: 0; }
+.home-hero__s { font-family: var(--font-ui); font-size: clamp(16px, 2vw, 19px); color: var(--ink-faded); margin: 10px 0 0; max-width: 540px; line-height: 1.45; }
+
+/* ===== Tab bar on desktop: centered floating bar (mobile stays full-width bottom) ===== */
+@media (min-width: 601px) {
+  .tab-bar {
+    display: flex;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    right: auto;
+    z-index: 40;
+    width: auto;
+    background: #fff;
+    border: 1.5px solid var(--ink);
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(42, 31, 21, 0.14);
+    padding: 0 6px;
+  }
+  .tab-bar__btn {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 20px 11px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--ink-faded);
+    min-height: 56px;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .tab-bar__btn svg { width: 22px; height: 22px; }
+  .tab-bar__btn:hover { color: var(--ink); }
+  /* clear the floating bar so it never covers footer content */
+  body { padding-bottom: 104px; }
+  .site-footer { margin-bottom: 24px; }
+}
