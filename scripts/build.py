@@ -949,14 +949,18 @@ def _book_card(book, show_genre=False, slug="web"):
     genre = GENRE_OF.get(book, "")
     rowc = f"var(--g-{genre})" if genre else "var(--rule)"
     pitch = BOOK_PITCHES.get(book, "")
-    desc = f'<div class="book-card__d">{escape(pitch)}</div>' if pitch else ""
+    desc = f'<span class="bookrow__d">{escape(pitch)}</span>' if pitch else ""
     pill = ""
     if show_genre and genre:
         kicker = next((g["kicker"] for g in GENRES if g["slug"] == genre), "")
         if kicker:
             pill = f'<span class="pill">{escape(kicker)}</span>'
-    return (f'<a class="book-card" style="--rowc:{rowc}" href="/{slug}/{book_slug(book)}/">'
-            f'{pill}<div class="book-card__t">{escape(book)}</div>{desc}</a>')
+    chev = ('<svg class="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true">'
+            '<path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" stroke-width="1.6" '
+            'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    return (f'<a class="bookrow" style="--rowc:{rowc}" href="/{slug}/{book_slug(book)}/">'
+            f'<span class="bookrow__main">{pill}<span class="bookrow__t">{escape(book)}</span>{desc}</span>'
+            f'{chev}</a>')
 
 def render_homepage():
     pool=[]
@@ -1018,11 +1022,11 @@ def render_homepage():
 </div>"""
     body = body + "<script>(function(){var TODAY=" + json.dumps(pool, ensure_ascii=False) + ";" + _HOME_JS_REST + "})();</script>"
     return base_layout(
-        title=f"{SITE_NAME} \u2014 read the Bible free",
-        description="Read the Bible free. Find a verse for whatever you're going through, or one to send to a friend. Three clear translations, open to anyone.",
+        title=f"{SITE_NAME}. Read the whole Bible online.",
+        description="The King James, World English, and Basic English Bibles, free to read. Every book and chapter, plus a verse for whatever you're going through.",
         body=body,
         canonical=f"{SITE_URL}/",
-        og_title=f"{SITE_NAME} \u2014 read the Bible free",
+        og_title=f"{SITE_NAME}. Read the whole Bible online.",
         body_class="home-page",
     )
 
@@ -1522,7 +1526,7 @@ def render_about():
 """
     return base_layout(
         title="About, Free Scripture | freescripture.org",
-        description="A free, beautifully presented online library of scripture, stewarded by Hope for Americans in Flagstaff Arizona.",
+        description="A free reading library of scripture, stewarded by Hope for Americans in Flagstaff, Arizona.",
         body=body, canonical=f"{SITE_URL}/about/"
     )
 
@@ -1633,7 +1637,7 @@ def render_need_page(need):
         "url": canonical,
     }
     return base_layout(
-        title=f"{need['meta_title']} \u2014 {SITE_NAME}",
+        title=f"{need['meta_title']} | {SITE_NAME}",
         description=need["meta_desc"],
         body=body,
         canonical=canonical,
@@ -1676,7 +1680,7 @@ def render_needs_hub():
         "url": canonical,
     }
     return base_layout(
-        title="Find a Bible verse by the moment \u2014 " + SITE_NAME,
+        title="Find a Bible verse by the moment | " + SITE_NAME,
         description="Verses for fear, grief, weariness, guilt, forgiveness, wisdom, celebration, a new baby, gratitude, and thinking of you. Read one, or send it.",
         body=body,
         canonical=canonical,
@@ -1724,7 +1728,7 @@ def render_genre_page(g):
         "url": canonical,
     }
     return base_layout(
-        title=f"{g['meta_title']} \u2014 {SITE_NAME}",
+        title=f"{g['meta_title']} | {SITE_NAME}",
         description=g["meta_desc"],
         body=body,
         canonical=canonical,
@@ -1753,7 +1757,7 @@ def render_genre_hub():
   </div>
 </div>"""
     return base_layout(
-        title="Browse the Bible by kind of book \u2014 " + SITE_NAME,
+        title="Browse the Bible by kind of book | " + SITE_NAME,
         description="The Bible by genre: narrative, poetry, wisdom, law, letters, and prophecy. Find the kind of reading you want.",
         body=body,
         canonical=canonical,
@@ -1867,7 +1871,7 @@ Sitemap: https://freescripture.org/sitemap.xml
 
     llms = """# Free Scripture, freescripture.org
 
-> A free, beautifully presented online library of scripture from multiple faith traditions. Stewarded by Hope for Americans, an independent maker of free, honest tools.
+> A free reading library of scripture from multiple faith traditions. Stewarded by Hope for Americans, an independent maker of free, honest tools.
 
 ## What this is
 
