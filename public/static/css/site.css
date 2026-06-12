@@ -1731,3 +1731,13 @@ body.home-page main { padding-top: 1.5rem; }
 /* Footer attribution link */
 .hfa-mark a { color: inherit; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; text-decoration-color: var(--rule); }
 .hfa-mark a:hover { color: var(--tradition-accent); text-decoration-color: var(--tradition-accent); }
+
+/* ============================================================
+   Homepage doors: bookrow + icon chip in the section's color
+   ============================================================ */
+.door { padding: 17px 16px; }
+.door__ic { flex: 0 0 44px; height: 44px; margin-right: 14px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--paper-warm); color: var(--dc, var(--ink-soft)); }
+@supports (background: color-mix(in srgb, red, white)) {
+  .door__ic { background: color-mix(in srgb, var(--dc, var(--ink-soft)) 12%, #fff); }
+}
+.read-list { display: grid; grid-template-columns: 1fr; gap: 10px; }

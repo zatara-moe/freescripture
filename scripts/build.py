@@ -962,6 +962,24 @@ def _book_card(book, show_genre=False, slug="web"):
             f'<span class="bookrow__main">{pill}<span class="bookrow__t">{escape(book)}</span>{desc}</span>'
             f'{chev}</a>')
 
+
+_CHEV = ('<svg class="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true">'
+         '<path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" stroke-width="1.6" '
+         'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+_ICONS = {
+    "heart": '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.4 3-3.1 3-5.3C22 6 20 4 17.5 4 16 4 14.7 4.7 14 5.8h-4C9.3 4.7 8 4 6.5 4 4 4 2 6 2 8.7 2 10.9 3.5 12.6 5 14l7 6.5z"/></svg>',
+    "book": '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7z"/></svg>',
+    "star": '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.9 6.3 6.6.6-5 4.5 1.5 6.6L12 16.8 6 20l1.5-6.6-5-4.5 6.6-.6z"/></svg>',
+}
+
+def _door_row(href, title, desc, color_var, icon):
+    """A homepage door: icon chip + title + one supporting line + chevron."""
+    return (f'<a class="bookrow door" style="--dc:{color_var}" href="{href}">'
+            f'<span class="door__ic" aria-hidden="true">{_ICONS[icon]}</span>'
+            f'<span class="bookrow__main"><span class="bookrow__t">{escape(title)}</span>'
+            f'<span class="bookrow__d">{escape(desc)}</span></span>'
+            f'{_CHEV}</a>')
+
 def render_homepage():
     pool=[]
     for book,ch,vn in _HOME_TODAY:
@@ -972,23 +990,20 @@ def render_homepage():
     need_rows=""
     for slug in _HOME_NEED_PREVIEW:
         n=need_by[slug]
-        need_rows+=(f'<a class="read-row" style="--rowc:var(--g-{n["accent"]})" href="/read/{n["slug"]}/">'
-                    f'<span class="read-need"><span class="read-need__t">{escape(n["short"])}</span>'
-                    f'<span class="read-need__d">{escape(n["card"])}</span></span>'
-                    f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>')
+        need_rows+=_door_row(f'/read/{n["slug"]}/', n["short"], n["card"],
+                             f'var(--g-{n["accent"]})', "heart")
     # genre cards point to Books for now; repointed to /genre/<slug>/ in the genre step
     genre_cards=""
     for g in GENRES:
         n=len(_genre_books(g["slug"]))
-        genre_cards+=(f'<a class="home-genre" style="--rowc:var(--g-{g["accent"]})" href="/genre/{g["slug"]}/">'
-                      f'<div class="gt">{escape(g["label"])}</div><div class="gc">{n} books</div></a>')
+        genre_cards+=_door_row(f'/genre/{g["slug"]}/', g["kicker"],
+                               f'{g["label"]}. {n} books.',
+                               f'var(--g-{g["accent"]})', "book")
     touch_rows=""
     for desc,book,ch in _HOME_TOUCH:
         ref=_ref_label(book,ch)
-        touch_rows+=(f'<a class="read-row" href="/web/{book_slug(book)}/{ch}">'
-                     f'<span class="read-need"><span class="read-need__t">{escape(desc)}</span>'
-                     f'<span class="read-need__d">{escape(ref)}</span></span>'
-                     f'<span class="read-row__arr" aria-hidden="true">&rarr;</span></a>')
+        touch_rows+=_door_row(f'/web/{book_slug(book)}/{ch}', ref, desc,
+                              'var(--tradition-accent)', "star")
     featured_cards = "".join(_book_card(b, show_genre=True) for b in _HOME_FEATURED)
     body=f"""<div class="home">
   <div class="home-hero">
@@ -1012,7 +1027,7 @@ def render_homepage():
   <section class="home-sec">
     <div class="home-sec__k">Browse</div>
     <h2 class="home-sec__h">By kind of book</h2>
-    <div class="home-genres">{genre_cards}</div>
+    <div class="read-list">{genre_cards}</div>
   </section>
   <section class="home-sec">
     <div class="home-sec__k">Famous passages</div>
