@@ -812,10 +812,15 @@ def base_layout(title, description, body, *, canonical, og_title=None, schema_js
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Free Scripture. Read the Bible free, in clear modern English. Three translations, every book and chapter.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{escape(og_title)}">
+<meta name="twitter:description" content="{escape(description)}">
 <meta name="twitter:image" content="{SITE_URL}/static/og-image.jpg">
+<meta name="twitter:image:alt" content="Free Scripture. Read the Bible free, in clear modern English.">
 
 <meta name="theme-color" content="#fcfaf6">
 <meta name="robots" content="index, follow">
+<meta name="author" content="Hope for Americans">
+<link rel="author" href="https://hopeforamericans.net">
 
 <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
 <link rel="apple-touch-icon" href="/static/favicon.svg">
@@ -1036,12 +1041,41 @@ def render_homepage():
   </section>
 </div>"""
     body = body + "<script>(function(){var TODAY=" + json.dumps(pool, ensure_ascii=False) + ";" + _HOME_JS_REST + "})();</script>"
+    home_schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": f"{SITE_URL}/#website",
+                "url": f"{SITE_URL}/",
+                "name": SITE_NAME,
+                "description": "Read the Bible free in clear modern English. Three public-domain translations, every book and chapter.",
+                "publisher": {"@type": "Organization", "name": "Hope for Americans", "url": "https://hopeforamericans.net"},
+                "inLanguage": "en",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {"@type": "EntryPoint", "urlTemplate": f"{SITE_URL}/search/?q={{search_term_string}}"},
+                    "query-input": "required name=search_term_string",
+                },
+            },
+            {
+                "@type": "WebPage",
+                "@id": f"{SITE_URL}/#webpage",
+                "url": f"{SITE_URL}/",
+                "name": f"{SITE_NAME}. Read the whole Bible online.",
+                "description": "The King James, World English, and Basic English Bibles, free to read. Every book and chapter, plus a verse for whatever you're going through.",
+                "isPartOf": {"@id": f"{SITE_URL}/#website"},
+                "inLanguage": "en",
+            },
+        ],
+    }
     return base_layout(
         title=f"{SITE_NAME}. Read the whole Bible online.",
         description="The King James, World English, and Basic English Bibles, free to read. Every book and chapter, plus a verse for whatever you're going through.",
         body=body,
         canonical=f"{SITE_URL}/",
         og_title=f"{SITE_NAME}. Read the whole Bible online.",
+        schema_jsonld=home_schema,
         body_class="home-page",
     )
 
@@ -1908,36 +1942,45 @@ A project of Hope for Americans, in Flagstaff, Arizona. Private by design: plain
 
 def build_sitemap(all_books):
     """Build a single sitemap.xml across all translations."""
-    urls = [
-        f"{SITE_URL}/",
-        f"{SITE_URL}/about/",
-        f"{SITE_URL}/search/",
-        f"{SITE_URL}/christian/",
-        f"{SITE_URL}/read/",
+    from datetime import date
+    today = date.today().isoformat()
+
+    # (url, changefreq, priority)
+    entries = [
+        (f"{SITE_URL}/", "weekly", "1.0"),
+        (f"{SITE_URL}/about/", "monthly", "0.5"),
+        (f"{SITE_URL}/search/", "monthly", "0.7"),
+        (f"{SITE_URL}/christian/", "monthly", "0.8"),
+        (f"{SITE_URL}/read/", "weekly", "0.8"),
     ]
     for need in NEEDS:
-        urls.append(f"{SITE_URL}/read/{need['slug']}/")
-    urls.append(f"{SITE_URL}/genre/")
+        entries.append((f"{SITE_URL}/read/{need['slug']}/", "monthly", "0.7"))
+    entries.append((f"{SITE_URL}/genre/", "monthly", "0.7"))
     for g in GENRES:
-        urls.append(f"{SITE_URL}/genre/{g['slug']}/")
+        entries.append((f"{SITE_URL}/genre/{g['slug']}/", "monthly", "0.6"))
     for trans_key, trans_meta in TRANSLATIONS.items():
         slug = trans_meta["slug"]
-        urls.append(f"{SITE_URL}/{slug}/")
+        entries.append((f"{SITE_URL}/{slug}/", "monthly", "0.8"))
         trans_books = all_books.get(trans_key, {})
         for name, _, _ in BOOK_ORDER:
             if name not in trans_books:
                 continue
-            urls.append(f"{SITE_URL}/{slug}/{book_slug(name)}/")
+            entries.append((f"{SITE_URL}/{slug}/{book_slug(name)}/", "monthly", "0.6"))
             for ch in trans_books[name]["chapters"]:
-                urls.append(f"{SITE_URL}/{slug}/{book_slug(name)}/{ch['num']}")
+                entries.append((f"{SITE_URL}/{slug}/{book_slug(name)}/{ch['num']}", "yearly", "0.5"))
 
     parts = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in urls:
-        parts.append(f'  <url><loc>{u}</loc></url>')
+    for url, freq, priority in entries:
+        parts.append(
+            f'  <url><loc>{url}</loc>'
+            f'<lastmod>{today}</lastmod>'
+            f'<changefreq>{freq}</changefreq>'
+            f'<priority>{priority}</priority></url>'
+        )
     parts.append('</urlset>')
     write_file(PUBLIC / "sitemap.xml", "\n".join(parts))
-    return len(urls)
+    return len(entries)
 
 
 def build():
