@@ -715,66 +715,62 @@ def book_testament(name):
             return t
     return "ot"
 
+# ------------------------------------------------------------
+# Data source: the complete per-translation verse indexes.
+# Each file is a flat list of {b: book, c: chapter, v: verse, t: text}.
+# This is the single source of truth for verse data. Books, chapters, and
+# verses are reconstructed from it, so all three translations run the
+# identical code path and nothing is host- or translation-special.
+# ------------------------------------------------------------
+INDEX_DIR = STATIC
+_INDEX_CACHE = {}
+
+def _load_index(translation):
+    """Load and shape one translation's verse index into
+    {book_name: {chapter_num: {verse_num: text}}}, preserving first-seen
+    book and verse order. Cached per translation."""
+    if translation in _INDEX_CACHE:
+        return _INDEX_CACHE[translation]
+    path = INDEX_DIR / f"search-index-{translation}.json"
+    if not path.exists():
+        raise FileNotFoundError(f"Verse index missing: {path}")
+    with open(path, encoding="utf-8") as f:
+        rows = json.load(f)
+    books = {}
+    for r in rows:
+        b, c, v, t = r["b"], int(r["c"]), int(r["v"]), r.get("t", "")
+        books.setdefault(b, {}).setdefault(c, {})[v] = t
+    _INDEX_CACHE[translation] = books
+    return books
+
 def load_book(book_name, translation="kjv"):
-    """Load a book's JSON data and return normalized structure.
+    """Return normalized structure for one book in one translation:
+    {name, chapters: [{num, verses: [{num, text}]}], translation}.
 
-    Looks in the appropriate translation source. Apocrypha is loaded only
-    for translations whose registry entry has has_apocrypha=True.
+    Data comes from the per-translation verse index. Verses whose text is
+    empty in the source (e.g. WEB/BBE omit Acts 8:37 and similar) are
+    skipped rather than emitted as blank lines. Apocrypha books are only
+    available for translations whose registry entry has has_apocrypha=True.
     """
-    # Apocrypha books always come from /content/apocrypha/ regardless of translation,
-    # because the only translation we have for them is the 1611 KJV translation.
     is_apocrypha_book = (book_name in APOCRYPHA_FILE_MAP)
+    if is_apocrypha_book and not TRANSLATIONS.get(translation, {}).get("has_apocrypha"):
+        raise KeyError(f"Translation '{translation}' does not include Apocrypha; "
+                       f"book '{book_name}' is unavailable.")
 
-    if is_apocrypha_book:
-        if not TRANSLATIONS.get(translation, {}).get("has_apocrypha"):
-            raise KeyError(f"Translation '{translation}' does not include Apocrypha; "
-                           f"book '{book_name}' is unavailable.")
-        src_path = SOURCE_APOCRYPHA / APOCRYPHA_FILE_MAP[book_name]
-    elif translation == "kjv":
-        if book_name not in SOURCE_FILE_MAP:
-            raise KeyError(f"No KJV source file mapped for book '{book_name}'")
-        src_path = SOURCE_KJV / SOURCE_FILE_MAP[book_name]
-    elif translation == "asv":
-        slug = book_slug(book_name)
-        src_path = SOURCE_ASV / f"{slug}.json"
-    elif translation == "bbe":
-        slug = book_slug(book_name)
-        src_path = SOURCE_BBE / f"{slug}.json"
-    elif translation == "web":
-        slug = book_slug(book_name)
-        src_path = SOURCE_WEB / f"{slug}.json"
-    else:
-        raise KeyError(f"Unknown translation: {translation}")
+    books = _load_index(translation)
+    if book_name not in books:
+        raise FileNotFoundError(f"Book '{book_name}' not present in {translation} index")
 
-    if not src_path.exists():
-        raise FileNotFoundError(f"Source file missing: {src_path}")
-
-    with open(src_path, encoding="utf-8") as f:
-        data = json.load(f)
     chapters = []
-    for ch in data["chapters"]:
-        chapters.append({
-            "num": int(ch["chapter"]),
-            "verses": [{"num": int(v["verse"]), "text": v["text"]} for v in ch["verses"]]
-        })
-
-    # Apocrypha supplement merge (only for translations with apocrypha)
-    if is_apocrypha_book:
-        for supplement_path in sorted(SOURCE_APOCRYPHA.glob("*-supplement.json")):
-            with open(supplement_path, encoding="utf-8") as f:
-                supp = json.load(f)
-            if supp.get("book") != book_name:
-                continue
-            existing_nums = {c["num"] for c in chapters}
-            for ch in supp.get("chapters", []):
-                ch_num = int(ch["chapter"])
-                if ch_num in existing_nums:
-                    continue
-                chapters.append({
-                    "num": ch_num,
-                    "verses": [{"num": int(v["verse"]), "text": v["text"]} for v in ch["verses"]]
-                })
-            chapters.sort(key=lambda c: c["num"])
+    for ch_num in sorted(books[book_name].keys()):
+        verses = []
+        for v_num in sorted(books[book_name][ch_num].keys()):
+            text = books[book_name][ch_num][v_num]
+            if not text.strip():
+                continue  # source genuinely omits this verse; do not emit a blank
+            verses.append({"num": v_num, "text": text})
+        if verses:
+            chapters.append({"num": ch_num, "verses": verses})
 
     return {"name": book_name, "chapters": chapters, "translation": translation}
 
@@ -985,7 +981,7 @@ def render_homepage():
     for book,ch,vn in _HOME_TODAY:
         pool.append({"ref": _ref_label(book,ch),
                      "pull": _pull_verse(book,ch,vn),
-                     "url": f"/web/{book_slug(book)}/{ch}#v{vn}"})
+                     "url": f"/web/{book_slug(book)}/{ch}/#v{vn}"})
     need_by={n["slug"]:n for n in NEEDS}
     need_rows=""
     for slug in _HOME_NEED_PREVIEW:
@@ -1002,7 +998,7 @@ def render_homepage():
     touch_rows=""
     for desc,book,ch in _HOME_TOUCH:
         ref=_ref_label(book,ch)
-        touch_rows+=_door_row(f'/web/{book_slug(book)}/{ch}', ref, desc,
+        touch_rows+=_door_row(f'/web/{book_slug(book)}/{ch}/', ref, desc,
                               'var(--tradition-accent)', "star")
     featured_cards = "".join(_book_card(b, show_genre=True) for b in _HOME_FEATURED)
     body=f"""<div class="home">
@@ -1208,7 +1204,7 @@ def render_book_landing(book, translation="web"):
         translation_tag = t["label"]
     n_chapters = len(book["chapters"])
     chapters_html = "".join(
-        f'<li><a href="/{t["slug"]}/{book_slug(name)}/{ch["num"]}">{ch["num"]}</a></li>'
+        f'<li><a href="/{t["slug"]}/{book_slug(name)}/{ch["num"]}/">{ch["num"]}</a></li>'
         for ch in book["chapters"]
     )
     # Use pitch as the prominent description; fall back to intro
@@ -1222,7 +1218,7 @@ def render_book_landing(book, translation="web"):
   <p style="text-align:center;color:var(--ink);max-width:520px;margin:0 auto 0.75rem;font-size:1.15rem;font-family:var(--font-display);line-height:1.4;">{escape(display_desc)}</p>
   <p style="text-align:center;color:var(--ink-faded);margin:0 auto 1.5rem;font-size:0.85rem;">{n_chapters} chapter{"s" if n_chapters != 1 else ""}</p>
   <p style="text-align:center;margin-bottom:2rem;">
-    <a href="/{t["slug"]}/{book_slug(name)}/1" class="action-btn" data-action="tts" style="display:inline-flex;text-decoration:none;">Start reading</a>
+    <a href="/{t["slug"]}/{book_slug(name)}/1/" class="action-btn" data-action="tts" style="display:inline-flex;text-decoration:none;">Start reading</a>
   </p>
   <hr class="section-rule">
   <ul class="chapter-list" style="margin-left:auto;margin-right:auto;">
@@ -1299,7 +1295,7 @@ def render_chapter(book, chapter, prev_link, next_link, translation="web"):
         else:
             switcher_buttons.append(
                 f'<a class="trans-switch__btn" '
-                f'href="/{trans_meta["slug"]}/{book_slug(name)}/{ch_num}" '
+                f'href="/{trans_meta["slug"]}/{book_slug(name)}/{ch_num}/" '
                 f'data-trans-switch="{trans_meta["slug"]}" '
                 f'title="{escape(trans_meta["label"])}: {escape(trans_meta["plain"])}">'
                 f'{escape(trans_meta["short"])}</a>'
@@ -1364,9 +1360,9 @@ def render_chapter(book, chapter, prev_link, next_link, translation="web"):
     chapter_nav_prev = ""
     chapter_nav_next = ""
     if ch_num > 1:
-        chapter_nav_prev = f'<a href="/{t["slug"]}/{book_slug(name)}/{ch_num-1}" rel="prev">&larr; Ch {ch_num-1}</a>'
+        chapter_nav_prev = f'<a href="/{t["slug"]}/{book_slug(name)}/{ch_num-1}/" rel="prev">&larr; Ch {ch_num-1}</a>'
     if ch_num < len(book["chapters"]):
-        chapter_nav_next = f'<a href="/{t["slug"]}/{book_slug(name)}/{ch_num+1}" rel="next">Ch {ch_num+1} &rarr;</a>'
+        chapter_nav_next = f'<a href="/{t["slug"]}/{book_slug(name)}/{ch_num+1}/" rel="next">Ch {ch_num+1} &rarr;</a>'
 
     # "Psalms" is the book name, but individual chapters are "Psalm 23" not "Psalms 23"
     ch_display = name[:-1] if name == "Psalms" else name
@@ -1429,8 +1425,8 @@ def render_chapter(book, chapter, prev_link, next_link, translation="web"):
 
 <script src="/static/js/chapter.js" defer></script>
 """
-    body = body + "<script>try{localStorage.setItem('fs-last',JSON.stringify(" + json.dumps({"url": f"/{t['slug']}/{book_slug(name)}/{ch_num}", "label": f"{ch_display} {ch_num}"}, ensure_ascii=False) + "));}catch(e){}</script>"
-    canonical = f"{SITE_URL}/{t['slug']}/{book_slug(name)}/{ch_num}"
+    body = body + "<script>try{localStorage.setItem('fs-last',JSON.stringify(" + json.dumps({"url": f"/{t['slug']}/{book_slug(name)}/{ch_num}/", "label": f"{ch_display} {ch_num}"}, ensure_ascii=False) + "));}catch(e){}</script>"
+    canonical = f"{SITE_URL}/{t['slug']}/{book_slug(name)}/{ch_num}/"
     schema = {
         "@context": "https://schema.org",
         "@type": "Chapter",
@@ -1469,9 +1465,9 @@ def render_search_page():
   <div class="search-suggestions" id="search-suggestions" style="text-align:center;margin:1.5rem 0;">
     <p style="font-size:0.82rem;color:var(--ink-faded);margin-bottom:0.5rem;">Try:</p>
     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;">
-      <a href="/web/psalms/23" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">Psalm 23</a>
-      <a href="/web/john/1" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">John 1</a>
-      <a href="/web/1-corinthians/13" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">1 Corinthians 13</a>
+      <a href="/web/psalms/23/" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">Psalm 23</a>
+      <a href="/web/john/1/" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">John 1</a>
+      <a href="/web/1-corinthians/13/" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">1 Corinthians 13</a>
       <a href="/web/romans/8" class="action-btn" style="font-size:0.78rem;padding:0.4rem 0.9rem;min-height:auto;">Romans 8</a>
     </div>
   </div>
@@ -1546,20 +1542,13 @@ def render_about():
     )
 
 
-_WEB_CACHE = {}
-
-def _pull_verse(book, chapter, vnum):
-    """Load a single WEB verse's text at build time."""
-    slug = book_slug(book)
-    if slug not in _WEB_CACHE:
-        with open(SOURCE_WEB / f"{slug}.json", encoding="utf-8") as f:
-            _WEB_CACHE[slug] = json.load(f)
-    for c in _WEB_CACHE[slug]["chapters"]:
-        if c["chapter"] == str(chapter):
-            for v in c["verses"]:
-                if v["verse"] == str(vnum):
-                    return v["text"]
-    return ""
+def _pull_verse(book, chapter, vnum, translation="web"):
+    """Return a single verse's text at build time, from the verse index."""
+    books = _load_index(translation)
+    try:
+        return books[book][int(chapter)][int(vnum)]
+    except (KeyError, ValueError):
+        return ""
 
 def _ref_label(book, chapter):
     """Display label for a passage. 'Psalms' renders singular for a chapter."""
@@ -1615,8 +1604,8 @@ def render_need_page(need):
         text = _pull_verse(book, chapter, vnum)
         _vk = next((gg["kicker"] for gg in GENRES if gg["slug"] == genre), "")
         gpill = f'<span class="pill">{escape(_vk)}</span>' if _vk else ""
-        read_url = f"/web/{book_slug(book)}/{chapter}#v{vnum}"
-        share_url = f"{SITE_URL}/web/{book_slug(book)}/{chapter}#v{vnum}"
+        read_url = f"/web/{book_slug(book)}/{chapter}/#v{vnum}"
+        share_url = f"{SITE_URL}/web/{book_slug(book)}/{chapter}/#v{vnum}"
         cards.append(
             f'<div class="read-card" style="--rowc:var(--g-{genre})" '
             f'data-ref="{escape(full_ref)}" data-url="{escape(share_url)}" data-text="{escape(text)}">'
@@ -1929,7 +1918,7 @@ def build_sitemap(all_books):
                 continue
             urls.append(f"{SITE_URL}/{slug}/{book_slug(name)}/")
             for ch in trans_books[name]["chapters"]:
-                urls.append(f"{SITE_URL}/{slug}/{book_slug(name)}/{ch['num']}")
+                urls.append(f"{SITE_URL}/{slug}/{book_slug(name)}/{ch['num']}/")
 
     parts = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -2024,19 +2013,17 @@ def build():
                 pname, pch = flat_chapters[i - 1]
                 plabel = pname[:-1] if pname == "Psalms" else pname
                 prev_link = {
-                    "url": f"/{slug}/{book_slug(pname)}/{pch['num']}",
+                    "url": f"/{slug}/{book_slug(pname)}/{pch['num']}/",
                     "label": f"{plabel} {pch['num']}"
                 }
             if i < len(flat_chapters) - 1:
                 nname, nch = flat_chapters[i + 1]
                 nlabel = nname[:-1] if nname == "Psalms" else nname
                 next_link = {
-                    "url": f"/{slug}/{book_slug(nname)}/{nch['num']}",
+                    "url": f"/{slug}/{book_slug(nname)}/{nch['num']}/",
                     "label": f"{nlabel} {nch['num']}"
                 }
             rendered = render_chapter(trans_books[name], ch, prev_link, next_link, trans_key)
-            out_html = PUBLIC / slug / book_slug(name) / f"{ch['num']}.html"
-            write_file(out_html, rendered)
             out_pretty = PUBLIC / slug / book_slug(name) / f"{ch['num']}" / "index.html"
             write_file(out_pretty, rendered)
             total_chapters += 1
@@ -2059,10 +2046,9 @@ def build():
     n_urls = build_sitemap(all_books)
     print(f"      sitemap.xml: {n_urls:,} URLs.")
 
-    # No _redirects file. Every chapter is written as both "N.html" and "N/index.html",
-    # so Cloudflare Pages serves clean URLs natively for all three translations. The old
-    # _redirects only ever emitted /kjv/ rules, which collided with Pages' own directory
-    # handling and 404'd the KJV chapters. Native serving is uniform and needs no rules.
+    # No routing files. Every chapter is written exactly once as "N/index.html" and every
+    # internal link ends in a trailing slash, so dir/index.html resolves natively on any
+    # static host with zero config. All three translations use the identical code path.
 
     print("\n" + "=" * 60)
     print(f"  Built. Output: {PUBLIC}")
