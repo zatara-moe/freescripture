@@ -12,6 +12,7 @@ import {
   SITE_URL,
   type TransSlug,
 } from "@/lib/bible";
+import { JsonLd } from "@/lib/JsonLd";
 
 type Params = { translation: string; book: string };
 
@@ -60,9 +61,46 @@ export default async function BookLanding(
   if (!bk) notFound();
 
   const intro = BOOK_INTROS[bk.name] || BOOK_PITCHES[bk.name] || "";
+  const pitch = BOOK_PITCHES[bk.name] || BOOK_INTROS[bk.name] || "";
+
+  const jsonld = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Book",
+        name: bk.name,
+        url: `${SITE_URL}/${trans}/${book}/`,
+        description: pitch,
+        bookEdition: tmeta.label,
+        numberOfPages: bk.chapters.length,
+        isPartOf: {
+          "@type": "Book",
+          name: `${tmeta.label} Bible`,
+          url: `${SITE_URL}/${trans}/`,
+        },
+        inLanguage: "en",
+        isAccessibleForFree: true,
+        publisher: { "@id": "https://freescripture.org/#org" },
+        hasPart: bk.chapters.map((c) => ({
+          "@type": "Chapter",
+          name: `${bk.name} ${c.num}`,
+          url: `${SITE_URL}/${trans}/${book}/${c.num}/`,
+          position: c.num,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: tmeta.short, item: `${SITE_URL}/${trans}/` },
+          { "@type": "ListItem", position: 2, name: bk.name, item: `${SITE_URL}/${trans}/${book}/` },
+        ],
+      },
+    ],
+  };
 
   return (
     <div className="reading-column book-landing">
+      <JsonLd data={jsonld} />
       <nav className="chapter-nav" aria-label="Navigation">
         <div className="chapter-nav__group">
           <Link href={`/${trans}/`}>&larr; {tmeta.label}</Link>

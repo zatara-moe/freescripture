@@ -8,6 +8,7 @@ import {
   pullVerse,
   SITE_URL,
 } from "@/lib/bible";
+import { JsonLd } from "@/lib/JsonLd";
 
 type Params = { need: string };
 
@@ -42,8 +43,51 @@ export default async function NeedPage(
   const n = NEEDS.find((x: any) => x.slug === need);
   if (!n) notFound();
 
+  // Build the passages once so schema and render agree.
+  const passages = n.passages.map((p: any) => {
+    const [book, chapter, verse, accent, frame] = p;
+    return {
+      book, chapter, verse, accent, frame,
+      text: pullVerse(DEFAULT_TRANS, book, chapter, verse),
+      slug: bookSlug(book),
+    };
+  });
+
+  const jsonld = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/read/${need}/#faq`,
+        name: n.h1,
+        description: n.meta_desc || n.lede,
+        url: `${SITE_URL}/read/${need}/`,
+        isPartOf: { "@id": "https://freescripture.org/#website" },
+        mainEntity: passages
+          .filter((p: any) => p.text)
+          .map((p: any) => ({
+            "@type": "Question",
+            name: `What does ${refLabel(p.book, p.chapter)}:${p.verse} say?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `${p.text} (${refLabel(p.book, p.chapter)}:${p.verse}, World English Bible)`,
+              url: `${SITE_URL}/${DEFAULT_TRANS}/${p.slug}/${p.chapter}/#v${p.verse}`,
+            },
+          })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Verses", item: `${SITE_URL}/read/` },
+          { "@type": "ListItem", position: 2, name: n.short, item: `${SITE_URL}/read/${need}/` },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="reading-column need-page">
+      <JsonLd data={jsonld} />
       <nav className="chapter-nav" aria-label="Navigation">
         <div className="chapter-nav__group">
           <Link href="/read/">&larr; All verses</Link>
@@ -52,30 +96,23 @@ export default async function NeedPage(
         <div className="chapter-nav__group" />
       </nav>
 
-      <header className="page-head">
+      <div className="page-head">
         <h1 className="page-title">{n.h1}</h1>
         <p className="page-lede">{n.lede}</p>
-      </header>
+      </div>
 
       <div className="passage-list">
-        {n.passages.map((p: any, i: number) => {
-          const [book, chapter, verse, accent, frame] = p;
-          const text = pullVerse(DEFAULT_TRANS, book, chapter, verse);
-          const slug = bookSlug(book);
-          const url = `/${DEFAULT_TRANS}/${slug}/${chapter}/#v${verse}`;
+        {passages.map((p: any, i: number) => {
+          const url = `/${DEFAULT_TRANS}/${p.slug}/${p.chapter}/#v${p.verse}`;
           return (
-            <article
-              className="passage"
-              key={i}
-              style={{ ["--rowc" as any]: `var(--g-${accent})` } as React.CSSProperties}
-            >
+            <article className="passage" key={i}>
               <div className="passage__ref">
-                {refLabel(book, chapter)}:{verse}
+                {refLabel(p.book, p.chapter)}:{p.verse}
               </div>
-              {frame && <div className="passage__frame">{frame}</div>}
-              {text && <blockquote className="passage__verse">{text}</blockquote>}
+              {p.frame && <div className="passage__frame">{p.frame}</div>}
+              {p.text && <blockquote className="passage__verse">{p.text}</blockquote>}
               <div className="passage__acts">
-                <Link className="rbtn rbtn--read" href={url}>Read the chapter &rarr;</Link>
+                <Link className="rbtn" href={url}>Read the chapter &rarr;</Link>
               </div>
             </article>
           );

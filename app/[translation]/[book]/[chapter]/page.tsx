@@ -81,15 +81,37 @@ export default async function ChapterPage(
 
   const jsonld = {
     "@context": "https://schema.org",
-    "@type": "Chapter",
-    name: `${bk.name} ${num}`,
-    isPartOf: {
-      "@type": "Book",
-      name: bk.name,
-      isPartOf: { "@type": "Book", name: `${tmeta.label} Bible` },
-    },
-    url: `${SITE_URL}/${trans}/${book}/${num}/`,
-    inLanguage: "en",
+    "@graph": [
+      {
+        "@type": "Chapter",
+        name: `${bk.name} ${num}`,
+        description: `${refLabel(bk.name, num)} in the ${tmeta.label} (${tmeta.short}), with all ${ch.verses.length} verses. Free to read online.`,
+        url: `${SITE_URL}/${trans}/${book}/${num}/`,
+        position: num,
+        isPartOf: {
+          "@type": "Book",
+          name: bk.name,
+          url: `${SITE_URL}/${trans}/${book}/`,
+          bookEdition: tmeta.label,
+          isPartOf: {
+            "@type": "Book",
+            name: `${tmeta.label} Bible`,
+            url: `${SITE_URL}/${trans}/`,
+          },
+        },
+        inLanguage: "en",
+        isAccessibleForFree: true,
+        publisher: { "@id": "https://freescripture.org/#org" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: tmeta.short, item: `${SITE_URL}/${trans}/` },
+          { "@type": "ListItem", position: 2, name: bk.name, item: `${SITE_URL}/${trans}/${book}/` },
+          { "@type": "ListItem", position: 3, name: refLabel(bk.name, num), item: `${SITE_URL}/${trans}/${book}/${num}/` },
+        ],
+      },
+    ],
   };
 
   const lastPayload = JSON.stringify({

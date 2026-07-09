@@ -1,16 +1,28 @@
 import Link from "next/link";
-import { GENRES, NEEDS } from "@/lib/bible";
+import { GENRES, NEEDS, TRANSLATIONS, TRANS_ORDER } from "@/lib/bible";
 
 const HOME_NEEDS = ["fear", "grief", "strength", "celebrate", "thinking-of-you"];
 
 const FAMOUS = [
   { ref: "Psalm 23", url: "/web/psalms/23/", line: "The Lord is my shepherd." },
   { ref: "John 3", url: "/web/john/3/", line: "For God so loved the world." },
-  { ref: "1 Corinthians 13", url: "/web/1-corinthians/13/", line: "Love is patient, love is kind." },
   { ref: "Genesis 1", url: "/web/genesis/1/", line: "In the beginning." },
+  { ref: "1 Corinthians 13", url: "/web/1-corinthians/13/", line: "Love is patient, love is kind." },
   { ref: "Romans 8", url: "/web/romans/8/", line: "Nothing can separate us." },
   { ref: "Matthew 5", url: "/web/matthew/5/", line: "Blessed are the meek." },
 ];
+
+const TRANS_CARDS: { slug: string; label: string; desc: string; tag?: string }[] = [
+  { slug: "web", label: "World English Bible", desc: "Modern, easy to read", tag: "Good place to start" },
+  { slug: "kjv", label: "King James Version", desc: "Classic, 1600s English. Includes the Apocrypha." },
+  { slug: "bbe", label: "Bible in Basic English", desc: "About 1,000 common words" },
+];
+
+const Chev = () => (
+  <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true">
+    <path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 export default function Home() {
   const needRows = NEEDS.filter((n: any) => HOME_NEEDS.includes(n.slug));
@@ -20,14 +32,17 @@ export default function Home() {
       <section className="home-hero">
         <h1 className="home-hero__title">Free Scripture</h1>
         <p className="home-hero__sub">
-          Read the whole Bible online. Three translations, every book and chapter.
+          Three translations of the Bible, free to read. Pick one and start.
         </p>
         <form className="home-search" action="/search/" role="search">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+          </svg>
           <input
             className="home-search__input"
             type="search"
             name="q"
-            placeholder="Search a word or a verse"
+            placeholder="Search for a word or verse"
             aria-label="Search scripture"
           />
         </form>
@@ -41,93 +56,68 @@ export default function Home() {
         <span className="a" aria-hidden="true">&rarr;</span>
       </a>
 
-      <section className="home-sec">
-        <div className="home-sec__head">
-          <h2 className="home-kick">Find what you need</h2>
-          <Link className="home-seeall" href="/read/">See all verses &rarr;</Link>
-        </div>
-        <div className="read-list">
-          {needRows.map((n: any) => (
-            <Link
-              className="bookrow"
-              href={`/read/${n.slug}/`}
-              key={n.slug}
-              style={{ ["--rowc" as any]: `var(--g-${n.accent})` } as React.CSSProperties}
-            >
-              <span className="bookrow__main">
-                <span className="bookrow__t">{n.short}</span>
-                {n.card && <span className="bookrow__d">{n.card}</span>}
-              </span>
-              <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-sec">
-        <div className="home-sec__head">
-          <h2 className="home-kick">Browse by kind of book</h2>
-          <Link className="home-seeall" href="/genre/">See all &rarr;</Link>
-        </div>
-        <div className="read-list">
-          {GENRES.map((g: any) => (
-            <Link
-              className="bookrow"
-              href={`/genre/${g.slug}/`}
-              key={g.slug}
-              style={{ ["--rowc" as any]: `var(--g-${g.accent})` } as React.CSSProperties}
-            >
-              <span className="bookrow__main">
-                <span className="bookrow__t">{g.kicker}</span>
-                <span className="bookrow__d">{g.label}</span>
-              </span>
-              <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-sec">
-        <h2 className="home-kick">Passages everyone knows</h2>
-        <div className="read-list">
-          {FAMOUS.map((f) => (
-            <Link className="bookrow" href={f.url} key={f.ref}>
-              <span className="bookrow__main">
-                <span className="bookrow__t">{f.ref}</span>
-                <span className="bookrow__d">{f.line}</span>
-              </span>
-              <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-sec">
-        <h2 className="home-kick">Choose a translation</h2>
-        <div className="read-list">
-          <Link className="bookrow" href="/web/">
+      {/* --- Start reading: translations --- */}
+      <div className="home-divider" />
+      <div className="section-label">Start reading</div>
+      <div className="read-list" style={{ marginBottom: 0 }}>
+        {TRANS_CARDS.map((tc) => (
+          <Link className="bookrow bookrow--primary" href={`/${tc.slug}/`} key={tc.slug}>
             <span className="bookrow__main">
-              <span className="bookrow__t">World English Bible</span>
-              <span className="bookrow__d">Modern, easy to read</span>
+              <span className="bookrow__t">{tc.label}</span>
+              <span className="bookrow__d">{tc.desc}</span>
+              {tc.tag && <span className="bookrow__tag">{tc.tag}</span>}
             </span>
-            <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <Chev />
           </Link>
-          <Link className="bookrow" href="/kjv/">
+        ))}
+      </div>
+
+      {/* --- Famous passages --- */}
+      <div className="home-divider" />
+      <div className="section-label">Jump to a famous passage</div>
+      <div className="read-list">
+        {FAMOUS.map((f) => (
+          <Link className="bookrow" href={f.url} key={f.ref}>
             <span className="bookrow__main">
-              <span className="bookrow__t">King James Version</span>
-              <span className="bookrow__d">Classic, 1600s English, with the Apocrypha</span>
+              <span className="bookrow__t">{f.ref}</span>
+              <span className="bookrow__d">{f.line}</span>
             </span>
-            <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <Chev />
           </Link>
-          <Link className="bookrow" href="/bbe/">
+        ))}
+      </div>
+
+      {/* --- Verses for the moment --- */}
+      <div className="home-divider" />
+      <div className="section-head">
+        <span className="section-label">Verse for what you&apos;re going through</span>
+        <Link className="section-link" href="/read/">See all &rarr;</Link>
+      </div>
+      <div className="read-list">
+        {needRows.map((n: any) => (
+          <Link className="bookrow" href={`/read/${n.slug}/`} key={n.slug}>
             <span className="bookrow__main">
-              <span className="bookrow__t">Bible in Basic English</span>
-              <span className="bookrow__d">The simplest English</span>
+              <span className="bookrow__t">{n.short}</span>
+              <span className="bookrow__d">{n.card}</span>
             </span>
-            <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <Chev />
           </Link>
-        </div>
-      </section>
+        ))}
+      </div>
+
+      {/* --- Browse by kind --- */}
+      <div className="home-divider" />
+      <div className="section-head">
+        <span className="section-label">Browse by kind of book</span>
+        <Link className="section-link" href="/genre/">See all &rarr;</Link>
+      </div>
+      <div className="genre-pills">
+        {GENRES.map((g: any) => (
+          <Link className="genre-pill" href={`/genre/${g.slug}/`} key={g.slug}>
+            {g.kicker}
+          </Link>
+        ))}
+      </div>
 
       <script
         dangerouslySetInnerHTML={{

@@ -12,6 +12,7 @@ import {
   SITE_URL,
   type TransSlug,
 } from "@/lib/bible";
+import { JsonLd } from "@/lib/JsonLd";
 
 type Params = { translation: string };
 
@@ -57,8 +58,34 @@ export default async function TranslationLanding(
     sec.books.push(name);
   }
 
+  const jsonld = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Book", "CollectionPage"],
+        name: `${tmeta.label} (${tmeta.short})`,
+        alternateName: tmeta.label,
+        url: `${SITE_URL}/${trans}/`,
+        description: tmeta.description,
+        bookEdition: tmeta.label,
+        datePublished: tmeta.year,
+        inLanguage: "en",
+        isAccessibleForFree: true,
+        publisher: { "@id": "https://freescripture.org/#org" },
+        isPartOf: { "@id": "https://freescripture.org/#website" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: tmeta.short, item: `${SITE_URL}/${trans}/` },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="trans-landing">
+      <JsonLd data={jsonld} />
       <header className="trans-landing__head">
         <h1 className="trans-landing__title">{tmeta.label}</h1>
         <p className="trans-landing__desc">{tmeta.description}</p>

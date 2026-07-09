@@ -52,6 +52,48 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/static/css/site.css" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": "https://freescripture.org/#website",
+                  url: "https://freescripture.org/",
+                  name: "Free Scripture",
+                  description:
+                    "The King James, World English, and Basic English Bibles, free to read online. Every book and chapter.",
+                  publisher: { "@id": "https://freescripture.org/#org" },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: {
+                      "@type": "EntryPoint",
+                      urlTemplate:
+                        "https://freescripture.org/search/?q={search_term_string}",
+                    },
+                    "query-input": "required name=search_term_string",
+                  },
+                  inLanguage: "en",
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "https://freescripture.org/#org",
+                  name: "Free Scripture",
+                  url: "https://freescripture.org/",
+                  description:
+                    "A free online Bible reader stewarded by Hope for Americans in Flagstaff, Arizona.",
+                  parentOrganization: {
+                    "@type": "Organization",
+                    name: "Hope for Americans",
+                    url: "https://hopeforamericans.net",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
         <script dangerouslySetInnerHTML={{ __html: PREFS_BOOTSTRAP }} />
       </head>
       <body>
