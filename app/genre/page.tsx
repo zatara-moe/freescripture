@@ -16,7 +16,7 @@ export default function GenreHub() {
         <h1 className="page-title">Browse by kind of book</h1>
         <p className="page-lede">Six ways the Bible reads. Pick the shape you want.</p>
       </header>
-      <div className="home-rows">
+      <div className="read-list">
         {GENRES.map((g: any) => (
           <Link
             className="bookrow"
@@ -24,11 +24,11 @@ export default function GenreHub() {
             key={g.slug}
             style={{ ["--rowc" as any]: `var(--g-${g.accent})` } as React.CSSProperties}
           >
-            <span className="bookrow__body">
-              <span className="bookrow__title">{g.kicker}</span>
-              <span className="bookrow__desc">{g.label}</span>
+            <span className="bookrow__main">
+              <span className="bookrow__t">{g.kicker}</span>
+              <span className="bookrow__d">{g.label}</span>
             </span>
-            <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+            <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>
         ))}
       </div>

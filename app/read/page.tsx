@@ -20,11 +20,11 @@ export default function NeedsHub() {
       key={n.slug}
       style={{ ["--rowc" as any]: `var(--g-${n.accent})` } as React.CSSProperties}
     >
-      <span className="bookrow__body">
-        <span className="bookrow__title">{n.short}</span>
-        {n.card && <span className="bookrow__desc">{n.card}</span>}
+      <span className="bookrow__main">
+        <span className="bookrow__t">{n.short}</span>
+        {n.card && <span className="bookrow__d">{n.card}</span>}
       </span>
-      <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+      <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
     </Link>
   );
 
@@ -37,11 +37,11 @@ export default function NeedsHub() {
         </p>
       </header>
 
-      <h2 className="book-section__label">For a hard day</h2>
-      <div className="home-rows">{hard.map(Row)}</div>
+      <h2 className="book-section-label">For a hard day</h2>
+      <div className="read-list">{hard.map(Row)}</div>
 
-      <h2 className="book-section__label">To share good news</h2>
-      <div className="home-rows">{good.map(Row)}</div>
+      <h2 className="book-section-label">To share good news</h2>
+      <div className="read-list">{good.map(Row)}</div>
     </div>
   );
 }

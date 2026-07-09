@@ -78,8 +78,8 @@ export default async function TranslationLanding(
           key={sec.label}
           id={sec.label.toLowerCase().replace(/\s+/g, "-")}
         >
-          <h2 className="book-section__label">{sec.label}</h2>
-          <div className="book-rows">
+          <h2 className="book-section-label">{sec.label}</h2>
+          <div className="book-grid">
             {sec.books.map((name) => {
               const slug = slugByName.get(name)!;
               const desc = BOOK_PITCHES[name] || BOOK_INTROS[name] || "";
@@ -95,11 +95,11 @@ export default async function TranslationLanding(
                       : undefined
                   }
                 >
-                  <span className="bookrow__body">
-                    <span className="bookrow__title">{name}</span>
-                    {desc && <span className="bookrow__desc">{desc}</span>}
+                  <span className="bookrow__main">
+                    <span className="bookrow__t">{name}</span>
+                    {desc && <span className="bookrow__d">{desc}</span>}
                   </span>
-                  <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+                  <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </Link>
               );
             })}

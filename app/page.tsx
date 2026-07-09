@@ -46,7 +46,7 @@ export default function Home() {
           <h2 className="home-kick">Find what you need</h2>
           <Link className="home-seeall" href="/read/">See all verses &rarr;</Link>
         </div>
-        <div className="home-rows">
+        <div className="read-list">
           {needRows.map((n: any) => (
             <Link
               className="bookrow"
@@ -54,11 +54,11 @@ export default function Home() {
               key={n.slug}
               style={{ ["--rowc" as any]: `var(--g-${n.accent})` } as React.CSSProperties}
             >
-              <span className="bookrow__body">
-                <span className="bookrow__title">{n.short}</span>
-                {n.card && <span className="bookrow__desc">{n.card}</span>}
+              <span className="bookrow__main">
+                <span className="bookrow__t">{n.short}</span>
+                {n.card && <span className="bookrow__d">{n.card}</span>}
               </span>
-              <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+              <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>
           ))}
         </div>
@@ -69,7 +69,7 @@ export default function Home() {
           <h2 className="home-kick">Browse by kind of book</h2>
           <Link className="home-seeall" href="/genre/">See all &rarr;</Link>
         </div>
-        <div className="home-rows">
+        <div className="read-list">
           {GENRES.map((g: any) => (
             <Link
               className="bookrow"
@@ -77,11 +77,11 @@ export default function Home() {
               key={g.slug}
               style={{ ["--rowc" as any]: `var(--g-${g.accent})` } as React.CSSProperties}
             >
-              <span className="bookrow__body">
-                <span className="bookrow__title">{g.kicker}</span>
-                <span className="bookrow__desc">{g.label}</span>
+              <span className="bookrow__main">
+                <span className="bookrow__t">{g.kicker}</span>
+                <span className="bookrow__d">{g.label}</span>
               </span>
-              <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+              <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>
           ))}
         </div>
@@ -89,14 +89,14 @@ export default function Home() {
 
       <section className="home-sec">
         <h2 className="home-kick">Passages everyone knows</h2>
-        <div className="home-rows">
+        <div className="read-list">
           {FAMOUS.map((f) => (
             <Link className="bookrow" href={f.url} key={f.ref}>
-              <span className="bookrow__body">
-                <span className="bookrow__title">{f.ref}</span>
-                <span className="bookrow__desc">{f.line}</span>
+              <span className="bookrow__main">
+                <span className="bookrow__t">{f.ref}</span>
+                <span className="bookrow__d">{f.line}</span>
               </span>
-              <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+              <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>
           ))}
         </div>
@@ -104,27 +104,27 @@ export default function Home() {
 
       <section className="home-sec">
         <h2 className="home-kick">Choose a translation</h2>
-        <div className="home-rows">
+        <div className="read-list">
           <Link className="bookrow" href="/web/">
-            <span className="bookrow__body">
-              <span className="bookrow__title">World English Bible</span>
-              <span className="bookrow__desc">Modern, easy to read</span>
+            <span className="bookrow__main">
+              <span className="bookrow__t">World English Bible</span>
+              <span className="bookrow__d">Modern, easy to read</span>
             </span>
-            <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+            <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>
           <Link className="bookrow" href="/kjv/">
-            <span className="bookrow__body">
-              <span className="bookrow__title">King James Version</span>
-              <span className="bookrow__desc">Classic, 1600s English, with the Apocrypha</span>
+            <span className="bookrow__main">
+              <span className="bookrow__t">King James Version</span>
+              <span className="bookrow__d">Classic, 1600s English, with the Apocrypha</span>
             </span>
-            <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+            <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>
           <Link className="bookrow" href="/bbe/">
-            <span className="bookrow__body">
-              <span className="bookrow__title">Bible in Basic English</span>
-              <span className="bookrow__desc">The simplest English</span>
+            <span className="bookrow__main">
+              <span className="bookrow__t">Bible in Basic English</span>
+              <span className="bookrow__d">The simplest English</span>
             </span>
-            <span className="bookrow__chev" aria-hidden="true">&rsaquo;</span>
+            <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </Link>
         </div>
       </section>
