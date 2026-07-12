@@ -166,19 +166,71 @@ button { font: inherit; cursor: pointer; }
   font-size: 26px; font-weight: 700; letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
+.chapter-title-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 12px;
+}
+.chapter-title-row .chapter-title { margin-bottom: 20px; }
+.reading-settings-btn {
+  flex: none; display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 12px; margin-top: 2px;
+  border: 1.5px solid var(--rule); border-radius: 10px;
+  background: var(--white); color: var(--ink-soft);
+  font-size: 13px; font-weight: 600;
+}
+.reading-settings-btn:hover { border-color: var(--gold); color: var(--ink); }
+.reading-settings-btn svg { width: 20px; height: 20px; }
 .chapter-text {
   font-family: var(--font-body);
-  font-size: 19px; line-height: 1.72;
+  font-size: 19px;
+  line-height: 1.75;
+  max-width: 34rem;
 }
-.chapter-text p { margin-bottom: 1em; }
-.verse { position: relative; }
+
+/* Default layout: one verse per line, number in a left gutter. */
+.verse {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  column-gap: 10px;
+  margin-bottom: 0.85em;
+  scroll-margin-top: 96px;
+}
+.verse:last-child { margin-bottom: 0; }
 .verse__num {
-  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
-  color: var(--ink-faded); vertical-align: super; margin-right: 2px;
-  text-decoration: none; line-height: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  text-align: right;
+  padding-top: 0.35em;
+  line-height: 1;
 }
-.verse__num:hover { color: var(--gold); }
-.verse:target { background: var(--highlight); border-radius: 3px; }
+.verse__num:hover { color: var(--ink); }
+.verse__body { display: block; }
+.verse:target {
+  background: var(--highlight);
+  border-radius: 6px;
+  box-shadow: 0 0 0 6px var(--highlight);
+}
+
+/* Flowing layout (opt-in): verses run together as prose. */
+[data-fs-layout="flowing"] .chapter-text { display: block; }
+[data-fs-layout="flowing"] .verse {
+  display: inline;
+  margin: 0;
+}
+[data-fs-layout="flowing"] .verse__num {
+  vertical-align: super;
+  font-size: 12px;
+  padding: 0;
+  margin-right: 2px;
+  text-align: left;
+}
+[data-fs-layout="flowing"] .verse__body { display: inline; }
+[data-fs-layout="flowing"] .verse:target {
+  box-shadow: 0 0 0 3px var(--highlight);
+}
 
 /* Chapter actions */
 .chapter-actions {
@@ -359,8 +411,8 @@ button { font: inherit; cursor: pointer; }
   font-size: 15px; color: var(--ink); line-height: 1.4; margin-bottom: 12px;
 }
 .passage__verse {
-  font-family: var(--font-body); font-size: 17px; line-height: 1.65;
-  color: var(--ink); padding: 12px 16px;
+  font-family: var(--font-body); font-size: 18px; line-height: 1.72;
+  color: var(--ink); padding: 14px 18px;
   background: var(--paper-warm); border-radius: var(--radius-sm);
   margin: 0 0 14px; quotes: none;
 }
@@ -428,7 +480,57 @@ button { font: inherit; cursor: pointer; }
   outline: none;
 }
 .search-input:focus { border-color: var(--gold); }
-.search-results { margin-top: 16px; }
+.search-results { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.search-status {
+  font-size: 14px; color: var(--ink-faded); margin-top: 12px; min-height: 1.2em;
+}
+.search-result {
+  background: var(--white); border: 1.5px solid var(--rule);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+.search-result__ref { margin-bottom: 6px; }
+.search-result__ref a {
+  font-family: var(--font-ui); font-size: 14px; font-weight: 700;
+  color: var(--gold); text-decoration: none;
+}
+.search-result__ref a:hover { text-decoration: underline; }
+.search-result__text {
+  font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--ink);
+}
+.search-result__text mark,
+.search-result__text .hl {
+  background: var(--highlight); color: inherit; border-radius: 2px; padding: 0 1px;
+}
+.search-empty {
+  font-size: 16px; color: var(--ink-faded); line-height: 1.6;
+  padding: 16px 0;
+}
+.search-empty em { font-style: normal; font-weight: 600; color: var(--ink-soft); }
+
+/* --- Back to top --- */
+.back-to-top {
+  position: fixed;
+  right: 16px;
+  bottom: calc(84px + env(safe-area-inset-bottom));
+  z-index: 40;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--rule); border-radius: 999px;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-ui); font-size: 14px; font-weight: 600;
+  box-shadow: 0 2px 12px rgba(26, 23, 20, 0.15);
+  opacity: 0; transform: translateY(8px); pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.back-to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top svg { width: 20px; height: 20px; }
+@media (min-width: 768px) {
+  .back-to-top { bottom: 24px; right: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: opacity 0.2s ease; transform: none; }
+  .back-to-top.is-visible { transform: none; }
+}
 
 /* --- About page --- */
 .about-page .prose {
@@ -446,13 +548,67 @@ button { font: inherit; cursor: pointer; }
   padding: 16px 0; border-top: 1px solid var(--rule-soft);
 }
 
-/* --- Reading preferences (data attributes) --- */
-[data-fs-font="lexend"] .chapter-text { font-family: 'Lexend', sans-serif; }
-[data-fs-font="opendyslexic"] .chapter-text { font-family: 'OpenDyslexic', sans-serif; }
-[data-fs-size="large"] .chapter-text { font-size: 22px; }
-[data-fs-size="xlarge"] .chapter-text { font-size: 26px; }
+/* --- Reading preferences (applied via data attributes on <html>) --- */
+[data-fs-size="large"] .chapter-text { font-size: 21px; }
+[data-fs-size="xlarge"] .chapter-text { font-size: 24px; }
 [data-fs-leading="loose"] .chapter-text { line-height: 2; }
-[data-fs-leading="tight"] .chapter-text { line-height: 1.5; }
+[data-fs-leading="tight"] .chapter-text { line-height: 1.55; }
+[data-fs-font="lexend"] .chapter-text { font-family: 'Lexend', var(--font-body); }
+[data-fs-font="opendyslexic"] .chapter-text { font-family: 'OpenDyslexic', var(--font-body); }
+
+/* --- Reading settings panel --- */
+.prefs-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(26, 23, 20, 0.4);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.prefs-overlay[hidden] { display: none; }
+.prefs-panel {
+  background: var(--paper); width: 100%; max-width: 32rem;
+  border-radius: 20px 20px 0 0; padding: 20px 20px calc(24px + env(safe-area-inset-bottom));
+  max-height: 88vh; overflow-y: auto;
+  box-shadow: 0 -8px 40px rgba(26, 23, 20, 0.18);
+}
+@media (min-width: 768px) {
+  .prefs-overlay { align-items: center; }
+  .prefs-panel { border-radius: 20px; }
+}
+.prefs-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.prefs-title { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.prefs-close {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  border: none; background: var(--paper-warm); color: var(--ink);
+}
+.prefs-close:hover { background: var(--paper-deep); }
+.prefs-row { margin-bottom: 20px; }
+.prefs-label {
+  font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 10px;
+}
+.prefs-choices {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px;
+}
+.prefs-choice {
+  min-height: 52px; padding: 12px 8px;
+  border: 1.5px solid var(--rule); border-radius: 12px;
+  background: var(--white); color: var(--ink);
+  font-size: 15px; font-weight: 600; line-height: 1.2;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.prefs-choice:hover { border-color: var(--ink-soft); }
+.prefs-choice.is-active {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+.prefs-reset {
+  width: 100%; min-height: 48px; margin-top: 4px;
+  border: none; background: none; color: var(--gold);
+  font-size: 15px; font-weight: 600; text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prefs-reset:hover { color: var(--ink); }
 
 /* --- Desktop --- */
 @media (min-width: 768px) {

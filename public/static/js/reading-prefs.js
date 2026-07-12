@@ -1,230 +1,198 @@
-/* freescripture.org — reading preferences
-   Persistent reader-controlled toggles for chapter pages.
-   Stored in localStorage under fs-prefs.
-   Applied to <html> as data-fs-* attributes (so CSS can react).
-
-   No frameworks, no tracking. Degrades gracefully.
-*/
+/* Free Scripture — reading preferences panel.
+   Senior-first: large controls, plain labels, one setting per row.
+   Contract: saves to localStorage 'fs-prefs' and sets data-fs-<key> on
+   <html>. Keys: size, leading, layout, font. A tiny inline bootstrap in
+   the page <head> applies saved prefs before paint; this file builds the
+   panel and handles changes. */
 (function () {
-  'use strict';
+  "use strict";
 
-  var STORAGE_KEY = 'fs-prefs';
+  var STORAGE_KEY = "fs-prefs";
   var DEFAULTS = {
-    font: 'default',     // default | sans | dyslexic
-    size: 'default',     // smaller | default | larger | largest
-    leading: 'default',  // default | generous | roomy
-    layout: 'flowing',   // flowing | verse-per-line
-    italics: 'on'        // on | off
+    size: "default",
+    leading: "default",
+    layout: "verses",
+    font: "default",
   };
 
-  // --- Persistence ---
+  var OPTIONS = [
+    { key: "size", label: "Text size", choices: [
+      { val: "default", label: "Standard" },
+      { val: "large", label: "Large" },
+      { val: "xlarge", label: "Largest" },
+    ]},
+    { key: "leading", label: "Space between lines", choices: [
+      { val: "tight", label: "Snug" },
+      { val: "default", label: "Standard" },
+      { val: "loose", label: "Airy" },
+    ]},
+    { key: "layout", label: "Verse layout", choices: [
+      { val: "verses", label: "One per line" },
+      { val: "flowing", label: "Flowing" },
+    ]},
+    { key: "font", label: "Reading font", choices: [
+      { val: "default", label: "Standard" },
+      { val: "lexend", label: "Lexend" },
+      { val: "opendyslexic", label: "OpenDyslexic" },
+    ]},
+  ];
+
   function loadPrefs() {
     try {
-      var raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return Object.assign({}, DEFAULTS);
-      var parsed = JSON.parse(raw);
-      // Merge with defaults so new keys appear if we add them later
+      var parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
       return Object.assign({}, DEFAULTS, parsed);
-    } catch (e) {
-      return Object.assign({}, DEFAULTS);
-    }
+    } catch (e) { return Object.assign({}, DEFAULTS); }
   }
-
   function savePrefs(prefs) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
-    } catch (e) {
-      // Quota exceeded or storage unavailable — fail silently
-    }
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs)); } catch (e) {}
   }
-
-  // --- Apply prefs to <html> ---
   function applyPrefs(prefs) {
     var root = document.documentElement;
-    Object.keys(prefs).forEach(function (key) {
-      var attr = 'data-fs-' + key;
+    Object.keys(DEFAULTS).forEach(function (key) {
       var val = prefs[key];
-      if (!val || val === DEFAULTS[key]) {
-        root.removeAttribute(attr);
-      } else {
-        root.setAttribute(attr, val);
-      }
+      if (val && val !== DEFAULTS[key]) root.setAttribute("data-fs-" + key, val);
+      else root.removeAttribute("data-fs-" + key);
     });
   }
 
-  // Apply ASAP — before the panel is built — to avoid a flash.
-  // (chapter.js loads with defer; this script also loads with defer
-  //  and runs after DOM but before the user sees rendered content.)
   var prefs = loadPrefs();
   applyPrefs(prefs);
 
-  // --- Build the panel UI ---
-  // Only built on chapter pages (we look for the chapter-text element).
-  function build() {
-    if (!document.querySelector('.chapter-text')) return;
+  var panel = null, overlay = null;
 
-    // Floating settings button
-    var btn = document.createElement('button');
-    btn.className = 'reading-prefs-btn';
-    btn.setAttribute('aria-label', 'Reading preferences');
-    btn.setAttribute('aria-haspopup', 'dialog');
-    btn.setAttribute('aria-expanded', 'false');
-    btn.innerHTML =
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
-      '<path d="M4 7h10"/>' +
-      '<path d="M4 12h16"/>' +
-      '<path d="M4 17h7"/>' +
-      '<circle cx="17" cy="7" r="2.2" fill="currentColor"/>' +
-      '<circle cx="13" cy="17" r="2.2" fill="currentColor"/>' +
-      '</svg>';
-    document.body.appendChild(btn);
+  function buildPanel() {
+    overlay = document.createElement("div");
+    overlay.className = "prefs-overlay";
+    overlay.hidden = true;
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
 
-    // Panel
-    var panel = document.createElement('div');
-    panel.className = 'reading-prefs-panel';
-    panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-label', 'Reading preferences');
-    panel.innerHTML = panelHTML();
-    document.body.appendChild(panel);
+    panel = document.createElement("div");
+    panel.className = "prefs-panel";
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-modal", "true");
+    panel.setAttribute("aria-label", "Reading settings");
 
-    Array.prototype.forEach.call(
-      document.querySelectorAll('[data-prefs-open]'),
-      function (opener) {
-        opener.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          panel.classList.add('reading-prefs-panel--open');
-          btn.setAttribute('aria-expanded', 'true');
-          btn.style.display = 'none';
+    var head = document.createElement("div");
+    head.className = "prefs-head";
+    var title = document.createElement("h2");
+    title.className = "prefs-title";
+    title.textContent = "Reading settings";
+    var closeBtn = document.createElement("button");
+    closeBtn.className = "prefs-close";
+    closeBtn.type = "button";
+    closeBtn.setAttribute("aria-label", "Close settings");
+    closeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+    closeBtn.addEventListener("click", close);
+    head.appendChild(title);
+    head.appendChild(closeBtn);
+    panel.appendChild(head);
+
+    OPTIONS.forEach(function (opt) {
+      var row = document.createElement("div");
+      row.className = "prefs-row";
+      var lab = document.createElement("div");
+      lab.className = "prefs-label";
+      lab.textContent = opt.label;
+      row.appendChild(lab);
+      var group = document.createElement("div");
+      group.className = "prefs-choices";
+      group.setAttribute("role", "group");
+      group.setAttribute("aria-label", opt.label);
+      opt.choices.forEach(function (choice) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "prefs-choice";
+        btn.textContent = choice.label;
+        btn.setAttribute("data-key", opt.key);
+        btn.setAttribute("data-val", choice.val);
+        var active = prefs[opt.key] === choice.val;
+        btn.setAttribute("aria-pressed", active ? "true" : "false");
+        if (active) btn.classList.add("is-active");
+        btn.addEventListener("click", function () {
+          prefs[opt.key] = choice.val;
+          applyPrefs(prefs);
+          savePrefs(prefs);
+          [].forEach.call(group.querySelectorAll(".prefs-choice"), function (b) {
+            var on = b.getAttribute("data-val") === choice.val;
+            b.classList.toggle("is-active", on);
+            b.setAttribute("aria-pressed", on ? "true" : "false");
+          });
         });
-      }
-    );
-
-    // Wire button to toggle panel
-    btn.addEventListener('click', function () {
-      var open = panel.classList.toggle('reading-prefs-panel--open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      // When opening, hide the floating button so it doesn't peek through
-      btn.style.display = open ? 'none' : 'flex';
+        group.appendChild(btn);
+      });
+      row.appendChild(group);
+      panel.appendChild(row);
     });
 
-    // Close button
-    panel.querySelector('.reading-prefs-panel__close').addEventListener('click', function () {
-      panel.classList.remove('reading-prefs-panel--open');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.style.display = 'flex';
-    });
-
-    // Click outside closes panel
-    document.addEventListener('click', function (e) {
-      if (!panel.classList.contains('reading-prefs-panel--open')) return;
-      if (panel.contains(e.target) || btn.contains(e.target)) return;
-      panel.classList.remove('reading-prefs-panel--open');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.style.display = 'flex';
-    });
-
-    // Escape key closes panel
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && panel.classList.contains('reading-prefs-panel--open')) {
-        panel.classList.remove('reading-prefs-panel--open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.style.display = 'flex';
-        btn.focus();
-      }
-    });
-
-    // Wire pills
-    panel.addEventListener('click', function (e) {
-      var pill = e.target.closest('.reading-prefs-pill');
-      if (!pill) return;
-      var group = pill.getAttribute('data-group');
-      var value = pill.getAttribute('data-value');
-      if (!group || !value) return;
-      prefs[group] = value;
-      applyPrefs(prefs);
-      savePrefs(prefs);
-      updatePillStates(panel);
-    });
-
-    // Reset
-    panel.querySelector('.reading-prefs-reset').addEventListener('click', function () {
+    var reset = document.createElement("button");
+    reset.type = "button";
+    reset.className = "prefs-reset";
+    reset.textContent = "Reset to standard";
+    reset.addEventListener("click", function () {
       prefs = Object.assign({}, DEFAULTS);
       applyPrefs(prefs);
       savePrefs(prefs);
-      updatePillStates(panel);
+      [].forEach.call(panel.querySelectorAll(".prefs-choice"), function (b) {
+        var on = prefs[b.getAttribute("data-key")] === b.getAttribute("data-val");
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
     });
+    panel.appendChild(reset);
 
-    updatePillStates(panel);
+    overlay.appendChild(panel);
+    document.body.appendChild(overlay);
   }
 
-  function panelHTML() {
-    return [
-      '<div class="reading-prefs-panel__head">',
-      '  <h2 class="reading-prefs-panel__title">Reading</h2>',
-      '  <button class="reading-prefs-panel__close" aria-label="Close">&times;</button>',
-      '</div>',
-
-      '<div class="reading-prefs-group">',
-      '  <span class="reading-prefs-group__label">Font</span>',
-      '  <div class="reading-prefs-group__btns">',
-      '    <button class="reading-prefs-pill" data-group="font" data-value="default">Default</button>',
-      '    <button class="reading-prefs-pill reading-prefs-pill--font-sans" data-group="font" data-value="sans">Sans</button>',
-      '    <button class="reading-prefs-pill reading-prefs-pill--font-dyslexic" data-group="font" data-value="dyslexic">OpenDyslexic</button>',
-      '  </div>',
-      '</div>',
-
-      '<div class="reading-prefs-group">',
-      '  <span class="reading-prefs-group__label">Text size</span>',
-      '  <div class="reading-prefs-group__btns">',
-      '    <button class="reading-prefs-pill" data-group="size" data-value="smaller">A</button>',
-      '    <button class="reading-prefs-pill" data-group="size" data-value="default" style="font-size:1rem;">A</button>',
-      '    <button class="reading-prefs-pill" data-group="size" data-value="larger" style="font-size:1.15rem;">A</button>',
-      '    <button class="reading-prefs-pill" data-group="size" data-value="largest" style="font-size:1.3rem;">A</button>',
-      '  </div>',
-      '</div>',
-
-      '<div class="reading-prefs-group">',
-      '  <span class="reading-prefs-group__label">Line spacing</span>',
-      '  <div class="reading-prefs-group__btns">',
-      '    <button class="reading-prefs-pill" data-group="leading" data-value="default">Default</button>',
-      '    <button class="reading-prefs-pill" data-group="leading" data-value="generous">Generous</button>',
-      '    <button class="reading-prefs-pill" data-group="leading" data-value="roomy">Roomy</button>',
-      '  </div>',
-      '</div>',
-
-      '<div class="reading-prefs-group">',
-      '  <span class="reading-prefs-group__label">Layout</span>',
-      '  <div class="reading-prefs-group__btns">',
-      '    <button class="reading-prefs-pill" data-group="layout" data-value="flowing">Flowing</button>',
-      '    <button class="reading-prefs-pill" data-group="layout" data-value="verse-per-line">One verse per line</button>',
-      '  </div>',
-      '</div>',
-
-      '<div class="reading-prefs-group">',
-      '  <span class="reading-prefs-group__label">Italics for translator additions</span>',
-      '  <div class="reading-prefs-group__btns">',
-      '    <button class="reading-prefs-pill" data-group="italics" data-value="on">On</button>',
-      '    <button class="reading-prefs-pill" data-group="italics" data-value="off">Off</button>',
-      '  </div>',
-      '</div>',
-
-      '<button class="reading-prefs-reset">Reset to defaults</button>'
-    ].join('');
+  function open() {
+    if (!overlay) buildPanel();
+    overlay.hidden = false;
+    document.body.style.overflow = "hidden";
+    var first = panel.querySelector(".prefs-close");
+    if (first) first.focus();
+    document.addEventListener("keydown", onKey);
   }
-
-  function updatePillStates(panel) {
-    panel.querySelectorAll('.reading-prefs-pill').forEach(function (pill) {
-      var group = pill.getAttribute('data-group');
-      var value = pill.getAttribute('data-value');
-      if (prefs[group] === value) {
-        pill.setAttribute('aria-pressed', 'true');
-      } else {
-        pill.removeAttribute('aria-pressed');
-      }
-    });
+  function close() {
+    if (!overlay) return;
+    overlay.hidden = true;
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", onKey);
+    var opener = document.querySelector("[data-prefs-open]");
+    if (opener) opener.focus();
   }
+  function onKey(e) { if (e.key === "Escape") close(); }
 
-  if (document.readyState !== 'loading') build();
-  else document.addEventListener('DOMContentLoaded', build);
+  document.addEventListener("click", function (e) {
+    var opener = e.target.closest("[data-prefs-open]");
+    if (opener) { e.preventDefault(); open(); }
+  });
+})();
+
+/* --- Back to top (long chapters) --- */
+(function () {
+  "use strict";
+  if (!document.querySelector(".chapter-text")) return;
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "back-to-top";
+  btn.setAttribute("aria-label", "Back to top of chapter");
+  btn.tabIndex = -1;
+  btn.innerHTML =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></svg><span>Top</span>';
+  btn.addEventListener("click", function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+  document.body.appendChild(btn);
+  var shown = false;
+  function onScroll() {
+    var should = window.scrollY > 1200;
+    if (should !== shown) {
+      shown = should;
+      btn.classList.toggle("is-visible", shown);
+      btn.tabIndex = shown ? 0 : -1;
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 })();

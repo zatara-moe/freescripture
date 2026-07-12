@@ -33,7 +33,7 @@ const PREFS_BOOTSTRAP = `(function () {
     var raw = localStorage.getItem('fs-prefs');
     if (!raw) return;
     var p = JSON.parse(raw);
-    var defaults = {font:'default', size:'default', leading:'default', layout:'flowing', italics:'on'};
+    var defaults = {size:'default', leading:'default', layout:'verses', font:'default'};
     var root = document.documentElement;
     Object.keys(defaults).forEach(function (k) {
       if (p[k] && p[k] !== defaults[k]) root.setAttribute('data-fs-' + k, p[k]);

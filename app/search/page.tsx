@@ -35,6 +35,7 @@ export default function Search() {
         />
       </div>
 
+      <div id="search-status" className="search-status" role="status" aria-live="polite"></div>
       <div id="search-results" className="search-results" aria-live="polite"></div>
 
       <script src="/static/js/search.js" defer></script>

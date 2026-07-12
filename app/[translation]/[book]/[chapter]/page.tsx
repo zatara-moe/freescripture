@@ -177,20 +177,26 @@ export default async function ChapterPage(
         <article>
           <header>
             <div className="chapter-translation-tag">{tmeta.label}</div>
-            <h1 className="chapter-title">{refLabel(bk.name, num)}</h1>
+            <div className="chapter-title-row">
+              <h1 className="chapter-title">{refLabel(bk.name, num)}</h1>
+              <button className="reading-settings-btn" type="button" data-prefs-open aria-label="Reading settings: text size, spacing, and font">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M4 7h11" /><path d="M4 12h16" /><path d="M4 17h7" /><circle cx="18" cy="7" r="2" /><circle cx="13" cy="17" r="2" />
+                </svg>
+                <span>Display</span>
+              </button>
+            </div>
           </header>
 
           <div className="chapter-text" lang="en">
-            <p>
-              {ch.verses.map((v) => (
-                <span className="verse" id={`v${v.v}`} key={v.v}>
-                  <a href={`#v${v.v}`} className="verse__num" aria-label={`Verse ${v.v}`}>
-                    {v.v}
-                  </a>
-                  {v.t}{" "}
-                </span>
-              ))}
-            </p>
+            {ch.verses.map((v) => (
+              <p className="verse" id={`v${v.v}`} key={v.v}>
+                <a href={`#v${v.v}`} className="verse__num" aria-label={`Verse ${v.v}`}>
+                  {v.v}
+                </a>
+                <span className="verse__body">{v.t}</span>
+              </p>
+            ))}
           </div>
 
           <div className="chapter-actions" role="group" aria-label="Chapter actions">
