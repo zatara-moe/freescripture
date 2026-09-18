@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css" />
+        <link rel="stylesheet" href="/static/css/site.css?v=3" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -152,7 +152,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="hfa-vision">free to use, the way the web used to be</div>
         </footer>
 
-        <script src="/static/js/reading-prefs.js" defer></script>
+        <script src="/static/js/reading-prefs.js?v=3" defer></script>
       </body>
     </html>
   );

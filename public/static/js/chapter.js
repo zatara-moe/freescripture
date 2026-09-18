@@ -175,13 +175,21 @@
     }
   }
 
-  /* ---- Jump to verse: setting the hash reuses the anchor scroll and
-     the highlight behavior above, so this is just a hash change. ---- */
+  /* ---- Jump to verse: scroll to the element directly (more reliable
+     than hash-only in frameworks that intercept navigation), then set
+     the hash so the highlight and URL still work. ---- */
   document.addEventListener('change', function (e) {
     var sel = e.target.closest('[data-verse-jump]');
     if (!sel || !sel.value) return;
-    window.location.hash = 'v' + sel.value;
-    sel.value = '';
+    var id = 'v' + sel.value;
+    var el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Set hash after scroll so the URL updates and the highlight fires
+      history.replaceState(null, '', '#' + id);
+      highlightAnchoredVerse();
+    }
+    sel.selectedIndex = 0;
   });
 
   /* ---- Reading progress: a thin, quiet bar tracking scroll position

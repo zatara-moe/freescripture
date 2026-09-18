@@ -7,7 +7,12 @@ import {
   flatChapters,
   loadChapter,
   bookNameFromSlug,
+  bookSlug,
   SITE_URL,
+  BOOK_INTROS,
+  BOOK_PITCHES,
+  NEEDS,
+  GENRE_OF,
   type TransSlug,
 } from "@/lib/bible";
 
@@ -86,6 +91,28 @@ export default async function ChapterPage(
   const withinPrev = ch.num > bk.chapters[0].num ? ch.num - 1 : null;
   const withinNext =
     ch.num < bk.chapters[bk.chapters.length - 1].num ? ch.num + 1 : null;
+
+  // --- Contextual content: what makes this chapter page a destination,
+  // not just a document. All of this data already exists in meta.json;
+  // it just hasn't been surfaced on the reading page until now.
+
+  // Book intro — the "what am I about to read" framing.
+  const bookIntro = BOOK_INTROS[bk.name] || null;
+
+  // Genre link — connects the chapter to its genre landing page.
+  const genreSlug = GENRE_OF[bk.name] || null;
+
+  // Need-page cross-references: which Need pages quote a verse from
+  // THIS chapter? Turns the dead-end footer into a crossroads.
+  const needLinks = NEEDS
+    .filter((n: any) =>
+      n.passages.some((p: any) => p[0] === bk.name && p[1] === num)
+    )
+    .map((n: any) => ({
+      slug: n.slug,
+      short: n.short,
+      card: n.card,
+    }));
 
   const jsonld = {
     "@context": "https://schema.org",
@@ -199,6 +226,13 @@ export default async function ChapterPage(
             </div>
           </header>
 
+          {bookIntro && (
+            <div className="chapter-context">
+              <div className="chapter-context__label">About {bk.name}</div>
+              <p>{bookIntro}</p>
+            </div>
+          )}
+
           <div className="chapter-meta-row">
             <p className="chapter-meta">
               {ch.verses.length} verse{ch.verses.length === 1 ? "" : "s"} · ~{readMinutes} min read
@@ -263,6 +297,19 @@ export default async function ChapterPage(
             </div>
           </div>
 
+          <button
+            type="button"
+            className="focus-exit"
+            data-fs-quick="focus"
+            data-val="off"
+            aria-label="Exit focus mode"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+              <path d="M18 6 6 18" /><path d="M6 6l12 12" />
+            </svg>
+            Exit Focus
+          </button>
+
           <div className="chapter-text" lang="en">
             {ch.verses.map((v) => (
               <p className="verse" id={`v${v.v}`} key={v.v}>
@@ -291,6 +338,28 @@ export default async function ChapterPage(
             </button>
           </div>
 
+          {(needLinks.length > 0 || genreSlug) && (
+            <div className="keep-reading">
+              <div className="keep-reading__heading">Keep reading</div>
+              <div className="keep-reading__links">
+                {needLinks.map((n) => (
+                  <Link key={n.slug} className="keep-reading__link" href={`/read/${n.slug}/`}>
+                    <span className="keep-reading__link-label">{n.short}</span>
+                    <span className="keep-reading__link-desc">{n.card}</span>
+                  </Link>
+                ))}
+                {genreSlug && (
+                  <Link className="keep-reading__link" href={`/genre/${genreSlug}/`}>
+                    <span className="keep-reading__link-label">More {genreSlug} books</span>
+                    <span className="keep-reading__link-desc">
+                      Other books in the Bible that read like {bk.name}
+                    </span>
+                  </Link>
+                )}
+              </div>
+            </div>
+          )}
+
           <footer className="chapter-foot">
             <nav className="chapter-foot__nav" aria-label="Adjacent chapters">
               {prev ? (
@@ -314,7 +383,7 @@ export default async function ChapterPage(
         </article>
       </div>
 
-      <script src="/static/js/chapter.js" defer></script>
+      <script src="/static/js/chapter.js?v=3" defer></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `try{localStorage.setItem('fs-last',JSON.stringify(${lastPayload}));}catch(e){}`,
