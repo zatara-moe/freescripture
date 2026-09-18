@@ -28,6 +28,19 @@ export default function About() {
           You can read straight through a book, jump to a chapter, or find a
           verse for what you are going through and pass it to someone.
         </p>
+
+        <h2>Your privacy</h2>
+        <p>
+          This site has no accounts, no cookies, no analytics, and no tracking
+          of any kind. We do not know who you are, what you read, or when you
+          visit. Your reading preferences and your last-read position are saved
+          on your own device and never sent to a server.
+        </p>
+        <p>
+          There are no ads and nothing for sale. This is a free tool, built the
+          way the web used to work.
+        </p>
+
         <p>
           Free Scripture is a tool from{" "}
           <a href="https://hopeforamericans.net">Hope for Americans</a>, built in

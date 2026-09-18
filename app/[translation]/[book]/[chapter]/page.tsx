@@ -383,7 +383,7 @@ export default async function ChapterPage(
         </article>
       </div>
 
-      <script src="/static/js/chapter.js?v=3" defer></script>
+      <script src="/static/js/chapter.js?v=5" defer></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `try{localStorage.setItem('fs-last',JSON.stringify(${lastPayload}));}catch(e){}`,

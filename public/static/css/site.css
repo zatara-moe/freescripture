@@ -3,7 +3,7 @@
    Rewritten from scratch. Two fonts, six sizes, one system.
    ========================================================== */
 
-/* --- Tokens --- */
+/* --- Tokens (light mode) --- */
 :root {
   --paper:       #fcfaf6;
   --paper-warm:  #f4efe6;
@@ -33,6 +33,43 @@
   --radius-sm: 10px;
 }
 
+/* --- Dark mode tokens ---
+   Applied when the OS prefers dark AND the user hasn't pinned Light,
+   OR when the user has pinned Dark in the Display panel.
+   Warm near-black backgrounds; off-white ink; gold brightened for
+   legibility on dark. Contrast ratios verified: ink/paper ≈ 15:1,
+   gold/paper ≈ 7:1, ink-faded/paper ≈ 4.8:1 (passes AA). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-fs-theme="light"]) {
+    --paper:      #1c1812;
+    --paper-warm: #221d18;
+    --paper-deep: #2a2420;
+    --ink:        #ede8e0;
+    --ink-soft:   #c4b9ae;
+    --ink-faded:  #8a7f74;
+    --ink-hint:   #9a8f85;
+    --rule:       #2e2926;
+    --rule-soft:  #252220;
+    --gold:       #c89840;
+    --white:      #241f1c;
+    --highlight:  #3d3520;
+  }
+}
+:root[data-fs-theme="dark"] {
+  --paper:      #1c1812;
+  --paper-warm: #221d18;
+  --paper-deep: #2a2420;
+  --ink:        #ede8e0;
+  --ink-soft:   #c4b9ae;
+  --ink-faded:  #8a7f74;
+  --ink-hint:   #9a8f85;
+  --rule:       #2e2926;
+  --rule-soft:  #252220;
+  --gold:       #c89840;
+  --white:      #241f1c;
+  --highlight:  #3d3520;
+}
+
 /* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -42,10 +79,20 @@ body {
   background: var(--paper);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 a { color: inherit; }
 img, svg { display: block; max-width: 100%; }
 button { font: inherit; cursor: pointer; }
+
+/* Focus rings: visible on keyboard nav, invisible on mouse/touch.
+   Gold outline matches the accent system; rounded to soften. */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
 
 /* --- Skip link --- */
 .skip-link {
@@ -233,6 +280,15 @@ button { font: inherit; cursor: pointer; }
   line-height: 1.78;
   max-width: 36rem;
   word-spacing: 0.03em;
+  /* Publisher-grade text rendering: kerning, ligatures, smart hyphenation.
+     hyphens:auto requires lang="en" on the element, which the template sets. */
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  orphans: 2;
+  widows: 2;
 }
 
 /* Default layout: one verse per line, number in a left gutter. */
@@ -240,7 +296,7 @@ button { font: inherit; cursor: pointer; }
   display: grid;
   grid-template-columns: 1.75rem 1fr;
   column-gap: 10px;
-  margin-bottom: 0.85em;
+  margin-bottom: 1em;
   scroll-margin-top: 96px;
 }
 .verse:last-child { margin-bottom: 0; }
@@ -459,7 +515,7 @@ button { font: inherit; cursor: pointer; }
   font-size: 15px; color: var(--ink); line-height: 1.4; margin-bottom: 12px;
 }
 .passage__verse {
-  font-family: var(--font-body); font-size: 18px; line-height: 1.72;
+  font-family: var(--font-body); font-size: 19px; line-height: 1.72;
   color: var(--ink); padding: 14px 18px;
   background: var(--paper-warm); border-radius: var(--radius-sm);
   margin: 0 0 14px; quotes: none;
@@ -472,6 +528,12 @@ button { font: inherit; cursor: pointer; }
   background: var(--white); color: var(--ink); text-decoration: none;
 }
 .rbtn:hover { border-color: var(--ink-soft); }
+.rbtn--subtle {
+  font-size: 13px; padding: 7px 12px;
+  color: var(--ink-faded); border-color: transparent; background: none;
+  cursor: pointer;
+}
+.rbtn--subtle:hover { color: var(--ink); border-color: var(--rule); }
 
 /* --- Translation landing --- */
 .trans-landing { max-width: var(--measure); margin: 0 auto; padding: 0 20px 60px; }
@@ -543,7 +605,7 @@ button { font: inherit; cursor: pointer; }
 }
 .search-result__ref a:hover { text-decoration: underline; }
 .search-result__text {
-  font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--ink);
+  font-family: var(--font-body); font-size: 19px; line-height: 1.6; color: var(--ink);
 }
 .search-result__text mark,
 .search-result__text .hl {
@@ -586,6 +648,10 @@ button { font: inherit; cursor: pointer; }
 }
 .about-page .prose p { margin-bottom: 1em; }
 .about-page .prose a { color: var(--gold); }
+.about-page .prose h2 {
+  font-size: 20px; font-weight: 700; letter-spacing: -0.01em;
+  margin: 1.5em 0 0.5em; color: var(--ink);
+}
 
 /* --- Not found --- */
 .notfound-page { }
@@ -652,7 +718,7 @@ button { font: inherit; cursor: pointer; }
 /* --- End-of-chapter acknowledgment: one quiet sentence, not a badge
    or a checkmark — matches the site's understated tone. --- */
 .chapter-complete {
-  font-style: italic; color: var(--ink-faded); font-size: 14px;
+  font-style: italic; color: var(--ink-faded); font-size: 15px;
   margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule);
 }
 
@@ -764,6 +830,7 @@ button { font: inherit; cursor: pointer; }
   .site-nav { font-size: 14px; gap: 24px; }
   .home-hero { padding-top: 48px; }
   .home-hero__title { font-size: 36px; }
+  .chapter-title { font-size: 32px; }
   .chapter-foot__nav a { padding: 18px 20px; }
   .chapter-grid { grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); }
 }

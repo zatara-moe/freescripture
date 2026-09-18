@@ -14,6 +14,7 @@
     layout: "verses",
     font: "default",
     focus: "off",
+    theme: "system",
   };
 
   var OPTIONS = [
@@ -35,6 +36,11 @@
       { val: "default", label: "Standard" },
       { val: "lexend", label: "Lexend" },
       { val: "opendyslexic", label: "OpenDyslexic" },
+    ]},
+    { key: "theme", label: "Appearance", choices: [
+      { val: "light", label: "Light" },
+      { val: "system", label: "Auto" },
+      { val: "dark", label: "Dark" },
     ]},
   ];
 

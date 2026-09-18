@@ -86,6 +86,7 @@ export default async function NeedPage(
   };
 
   return (
+    <>
     <div className="reading-column need-page">
       <JsonLd data={jsonld} />
       <nav className="chapter-nav" aria-label="Navigation">
@@ -113,11 +114,65 @@ export default async function NeedPage(
               {p.text && <blockquote className="passage__verse">{p.text}</blockquote>}
               <div className="passage__acts">
                 <Link className="rbtn" href={url}>Read the chapter &rarr;</Link>
+                <button
+                  className="rbtn rbtn--subtle"
+                  type="button"
+                  data-share-verse
+                  data-verse-text={p.text || ""}
+                  data-verse-ref={`${refLabel(p.book, p.chapter)}:${p.verse}`}
+                  data-verse-url={`${SITE_URL}/${DEFAULT_TRANS}/${p.slug}/${p.chapter}/#v${p.verse}`}
+                >
+                  Share
+                </button>
+                <button
+                  className="rbtn rbtn--subtle"
+                  type="button"
+                  data-copy-verse
+                  data-verse-text={p.text || ""}
+                  data-verse-ref={`${refLabel(p.book, p.chapter)}:${p.verse}`}
+                >
+                  Copy
+                </button>
               </div>
             </article>
           );
         })}
       </div>
     </div>
+
+      <script dangerouslySetInnerHTML={{ __html: `
+(function(){
+  document.addEventListener('click',function(e){
+    var share=e.target.closest('[data-share-verse]');
+    if(share&&navigator.share){
+      var t=share.getAttribute('data-verse-text');
+      var r=share.getAttribute('data-verse-ref');
+      var u=share.getAttribute('data-verse-url');
+      navigator.share({title:r,text:t+' ('+r+')',url:u}).catch(function(){});
+      return;
+    }
+    var copy=e.target.closest('[data-copy-verse]');
+    if(copy){
+      var t=copy.getAttribute('data-verse-text');
+      var r=copy.getAttribute('data-verse-ref');
+      var full='"'+t+'" ('+r+', World English Bible)';
+      if(navigator.clipboard&&window.isSecureContext){
+        navigator.clipboard.writeText(full).then(function(){
+          var span=copy.querySelector('.rbtn__copied')||copy;
+          var orig=span.textContent;span.textContent='Copied';
+          setTimeout(function(){span.textContent=orig;},1600);
+        });
+      }
+      return;
+    }
+  });
+  // Hide share buttons if Web Share API isn't available
+  if(!navigator.share){
+    var btns=document.querySelectorAll('[data-share-verse]');
+    for(var i=0;i<btns.length;i++) btns[i].style.display='none';
+  }
+})();
+      ` }} />
+  </>
   );
 }

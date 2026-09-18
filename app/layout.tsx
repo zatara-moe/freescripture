@@ -33,7 +33,7 @@ const PREFS_BOOTSTRAP = `(function () {
     var raw = localStorage.getItem('fs-prefs');
     if (!raw) return;
     var p = JSON.parse(raw);
-    var defaults = {size:'default', leading:'default', layout:'verses', font:'default', focus:'off'};
+    var defaults = {size:'default', leading:'default', layout:'verses', font:'default', focus:'off', theme:'system'};
     var root = document.documentElement;
     Object.keys(defaults).forEach(function (k) {
       if (p[k] && p[k] !== defaults[k]) root.setAttribute('data-fs-' + k, p[k]);
@@ -51,7 +51,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=3" />
+        <link rel="stylesheet" href="/static/css/site.css?v=5" />
+        <meta name="theme-color" content="#fcfaf6" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1c1812" media="(prefers-color-scheme: dark)" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -115,7 +117,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="site-mark__text">Free Scripture</span>
             </Link>
             <nav className="site-nav" aria-label="Primary">
-              <Link href="/read/">Verses</Link>
+              <Link href="/read/">For you</Link>
               <Link href="/web/">Books</Link>
               <Link href="/search/">Search</Link>
               <Link href="/about/">About</Link>
@@ -152,7 +154,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="hfa-vision">free to use, the way the web used to be</div>
         </footer>
 
-        <script src="/static/js/reading-prefs.js?v=3" defer></script>
+        <script src="/static/js/reading-prefs.js?v=5" defer></script>
       </body>
     </html>
   );

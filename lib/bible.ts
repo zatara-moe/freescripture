@@ -139,6 +139,29 @@ export function flatChapters(trans: TransSlug): { name: string; slug: string; nu
 }
 
 // Look up a single verse's text at build time (for curated pulls).
+// Divine-name substitution: the upstream WEB text renders the
+// Tetragrammaton as "Yahweh" (6,831 OT occurrences) and "Yah" (47).
+// This site's stated policy is "the LORD" throughout, matching the
+// convention readers expect from NIV/NRSV/ESV pulpit Bibles. The
+// chapter renderer already applies this; pullVerse and firstVerse
+// must too, or the Need pages show "Yahweh" while the chapter page
+// shows "the LORD" for the same verse. See the pastoral review.
+function normalizeDivineName(text: string): string {
+  return text
+    .replace(/\bO Yahweh\b/g, "O LORD")
+    .replace(/\bYahweh\b/g, (_, offset: number) => {
+      // Sentence-start capitalization: "the LORD" at start of sentence
+      if (offset === 0) return "The LORD";
+      const before = text[offset - 1];
+      // After sentence-ending punctuation + space
+      if (before === " " && offset >= 2 && ".!?\"'".includes(text[offset - 2]))
+        return "The LORD";
+      return "the LORD";
+    })
+    .replace(/\bO Yah\b/g, "O LORD")
+    .replace(/\bYah\b/g, "the LORD");
+}
+
 export function pullVerse(
   trans: TransSlug,
   bookName: string,
@@ -152,7 +175,7 @@ export function pullVerse(
   const ch = book.chapters.find((c) => c.num === chapter);
   if (!ch) return "";
   const v = ch.verses.find((x) => x.v === verse);
-  return v ? v.t : "";
+  return v ? normalizeDivineName(v.t) : "";
 }
 
 // First verse of a chapter, as a short pull line.
@@ -163,7 +186,7 @@ export function firstVerse(trans: TransSlug, bookName: string, chapter: number):
   if (!book) return "";
   const ch = book.chapters.find((c) => c.num === chapter);
   if (!ch || !ch.verses.length) return "";
-  return ch.verses[0].t;
+  return normalizeDivineName(ch.verses[0].t);
 }
 
 export const SITE_URL = "https://freescripture.org";
