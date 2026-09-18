@@ -219,4 +219,30 @@
     window.addEventListener('resize', onScroll);
     updateProgress();
   }
+
+  /* ---- Swipe navigation: horizontal swipe between chapters.
+     Threshold: 60px horizontal, horizontal must dominate vertical.
+     Uses the existing chapter-foot prev/next links as targets. ---- */
+  var touchX = 0, touchY = 0;
+  document.addEventListener('touchstart', function (e) {
+    touchX = e.touches[0].clientX;
+    touchY = e.touches[0].clientY;
+  }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - touchX;
+    var dy = e.changedTouches[0].clientY - touchY;
+    if (Math.abs(dx) < 60 || Math.abs(dy) > Math.abs(dx) * 0.75) return;
+    var foot = document.querySelector('.chapter-foot__nav');
+    if (!foot) return;
+    if (dx < 0) {
+      var next = foot.querySelector('a.next');
+      if (next) window.location.href = next.getAttribute('href');
+    } else {
+      var prev = null;
+      [].forEach.call(foot.querySelectorAll('a'), function (a) {
+        if (!a.classList.contains('next')) prev = a;
+      });
+      if (prev) window.location.href = prev.getAttribute('href');
+    }
+  }, { passive: true });
 })();

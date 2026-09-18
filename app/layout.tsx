@@ -52,8 +52,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/static/css/site.css?v=7" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#fcfaf6" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1c1812" media="(prefers-color-scheme: dark)" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Free Scripture" />
+        <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -155,6 +160,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
 
         <script src="/static/js/reading-prefs.js?v=6" defer></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+(function(){
+  /* --- Service worker registration --- */
+  if('serviceWorker' in navigator){
+    window.addEventListener('load',function(){
+      navigator.serviceWorker.register('/sw.js').catch(function(){});
+    });
+  }
+  /* --- Active tab highlighting: read current path and mark the
+     matching tab-bar button with aria-current="page" so CSS can
+     style it. Runs immediately so there's no visible flash. --- */
+  var p=location.pathname;
+  var tabs=document.querySelectorAll('.tab-bar__btn');
+  [].forEach.call(tabs,function(btn){
+    var label=btn.getAttribute('aria-label')||'';
+    var active=false;
+    if(label==='Home') active=(p==='/');
+    else if(label==='Books') active=(/^\/(web|kjv|bbe|genre)\//.test(p));
+    else if(label==='Search') active=p.startsWith('/search/');
+    if(active) btn.setAttribute('aria-current','page');
+  });
+})();
+        `}} />
       </body>
     </html>
   );

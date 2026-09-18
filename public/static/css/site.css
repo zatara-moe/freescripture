@@ -152,7 +152,7 @@ button { font: inherit; cursor: pointer; }
   -webkit-tap-highlight-color: transparent;
 }
 .tab-bar__btn svg { width: 22px; height: 22px; }
-.tab-bar__btn[aria-label="Home"] { color: var(--gold); }
+.tab-bar__btn[aria-current="page"] { color: var(--gold); }
 @media (min-width: 768px) { .tab-bar { display: none; } }
 
 /* --- Footer --- */
