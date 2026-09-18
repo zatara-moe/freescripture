@@ -26,6 +26,7 @@ export const viewport: Viewport = {
   themeColor: "#fcfaf6",
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
 };
 
 const PREFS_BOOTSTRAP = `(function () {
@@ -51,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=8" />
+        <link rel="stylesheet" href="/static/css/site.css?v=9" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#fcfaf6" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1c1812" media="(prefers-color-scheme: dark)" />
@@ -160,6 +161,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V20h14V9.5" /></svg>
             <span>Home</span>
           </Link>
+          <Link className="tab-bar__btn" href="/read/" aria-label="For you">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" /></svg>
+            <span>For you</span>
+          </Link>
           <Link className="tab-bar__btn" href="/web/" aria-label="Books">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M19 19H6a2 2 0 0 0-2 2" /></svg>
             <span>Books</span>
@@ -182,7 +187,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="hfa-vision">free to use, the way the web used to be</div>
         </footer>
 
-        <script src="/static/js/reading-prefs.js?v=7" defer></script>
+        <script src="/static/js/reading-prefs.js?v=8" defer></script>
         <script dangerouslySetInnerHTML={{ __html: `
 (function(){
   /* --- Service worker registration --- */
@@ -200,6 +205,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     var label=btn.getAttribute('aria-label')||'';
     var active=false;
     if(label==='Home') active=(p==='/');
+    else if(label==='For you') active=(p.startsWith('/read/'));
     else if(label==='Books') active=(/^\/(web|kjv|bbe|genre)\//.test(p));
     else if(label==='Search') active=p.startsWith('/search/');
     if(active) btn.setAttribute('aria-current','page');
