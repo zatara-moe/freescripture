@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=7" />
+        <link rel="stylesheet" href="/static/css/site.css?v=8" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#fcfaf6" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1c1812" media="(prefers-color-scheme: dark)" />
@@ -127,6 +127,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/search/">Search</Link>
               <Link href="/about/">About</Link>
             </nav>
+            <button
+              className="theme-toggle"
+              type="button"
+              data-theme-toggle
+              aria-label="Switch between light and dark mode"
+            >
+              {/* Sun: visible when dark mode is active — click to go light */}
+              <svg className="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+              {/* Moon: visible when light mode is active — click to go dark */}
+              <svg className="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </button>
           </div>
         </header>
 
@@ -159,7 +182,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="hfa-vision">free to use, the way the web used to be</div>
         </footer>
 
-        <script src="/static/js/reading-prefs.js?v=6" defer></script>
+        <script src="/static/js/reading-prefs.js?v=7" defer></script>
         <script dangerouslySetInnerHTML={{ __html: `
 (function(){
   /* --- Service worker registration --- */

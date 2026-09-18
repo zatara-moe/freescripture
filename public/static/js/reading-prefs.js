@@ -102,6 +102,29 @@
     }
   });
 
+  /* ---- Header theme toggle (sun/moon button): switches between light
+     and dark directly. "Auto" (follow OS) stays in the Display panel.
+     If the user is on system/auto, we detect what they're actually
+     seeing and flip to the opposite so the change is always visible. */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-theme-toggle]');
+    if (!btn) return;
+    var osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var isNowDark = (prefs.theme === 'dark') ||
+                    (prefs.theme === 'system' && osDark);
+    prefs.theme = isNowDark ? 'light' : 'dark';
+    applyPrefs(prefs);
+    savePrefs(prefs);
+    // Keep the Display panel in sync if it's open
+    if (panel) {
+      [].forEach.call(panel.querySelectorAll('.prefs-choice[data-key="theme"]'), function (b) {
+        var on = b.getAttribute('data-val') === prefs.theme;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+  });
+
   var panel = null, overlay = null;
 
   function buildPanel() {

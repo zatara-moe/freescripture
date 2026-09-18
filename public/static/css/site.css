@@ -138,6 +138,34 @@ button { font: inherit; cursor: pointer; }
 .site-nav a { text-decoration: none; color: var(--ink-faded); }
 .site-nav a:hover { color: var(--ink); }
 
+/* Theme toggle: sun/moon in the header. Always visible — not buried in
+   a settings sheet. Clicking it toggles between light and dark directly;
+   the "Auto" (follow OS) option stays in the Display panel for those
+   who want it. */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid var(--rule); background: none;
+  color: var(--ink-faded); cursor: pointer; flex-shrink: 0;
+  transition: border-color 0.15s, color 0.15s;
+}
+.theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.theme-toggle svg { width: 16px; height: 16px; }
+
+/* Default (light mode): show moon (offer to go dark), hide sun */
+.theme-toggle__sun  { display: none; }
+.theme-toggle__moon { display: block; }
+
+/* When dark mode is active (OS preference, not overridden to light):
+   show sun (offer to go light), hide moon */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-fs-theme="light"]) .theme-toggle__sun  { display: block; }
+  :root:not([data-fs-theme="light"]) .theme-toggle__moon { display: none; }
+}
+/* When manually set to dark: same logic */
+:root[data-fs-theme="dark"] .theme-toggle__sun  { display: block; }
+:root[data-fs-theme="dark"] .theme-toggle__moon { display: none; }
+
 /* --- Tab bar (mobile) --- */
 .tab-bar {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
