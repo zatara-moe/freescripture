@@ -68,6 +68,14 @@ export default async function ChapterPage(
   if (!loaded) notFound();
   const { book: bk, chapter: ch } = loaded;
 
+  // Rough reading-time estimate so readers know what they're starting
+  // before they start — helpful when a chapter is Psalm 119, not Psalm 117.
+  const wordCount = ch.verses.reduce(
+    (sum, v) => sum + v.t.trim().split(/\s+/).filter(Boolean).length,
+    0
+  );
+  const readMinutes = Math.max(1, Math.round(wordCount / 200));
+
   // prev/next across the flat, canonical sequence for this translation
   const flat = flatChapters(trans);
   const idx = flat.findIndex((c) => c.slug === book && c.num === num);
@@ -125,6 +133,9 @@ export default async function ChapterPage(
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonld) }}
       />
+      <div className="reading-progress" aria-hidden="true">
+        <div className="reading-progress__bar"></div>
+      </div>
       <div className="tradition-stripe"></div>
       <div className="reading-column">
         <nav className="chapter-nav" aria-label="Chapter navigation">
@@ -188,6 +199,70 @@ export default async function ChapterPage(
             </div>
           </header>
 
+          <div className="chapter-meta-row">
+            <p className="chapter-meta">
+              {ch.verses.length} verse{ch.verses.length === 1 ? "" : "s"} · ~{readMinutes} min read
+            </p>
+            {ch.verses.length > 20 && (
+              <div className="chapter-jump">
+                <label htmlFor="verse-jump">Jump to verse</label>
+                <select id="verse-jump" data-verse-jump aria-label="Jump to verse" defaultValue="">
+                  <option value="" disabled>
+                    Verse…
+                  </option>
+                  {ch.verses.map((v) => (
+                    <option key={v.v} value={v.v}>
+                      {v.v}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+          </div>
+
+          <div className="chapter-toggles">
+            <div className="layout-toggle" role="group" aria-label="Verse layout">
+              <button
+                type="button"
+                className="layout-toggle__btn"
+                data-fs-quick="layout"
+                data-val="verses"
+                aria-pressed="true"
+              >
+                Lines
+              </button>
+              <button
+                type="button"
+                className="layout-toggle__btn"
+                data-fs-quick="layout"
+                data-val="flowing"
+                aria-pressed="false"
+              >
+                Flowing
+              </button>
+            </div>
+            <div className="layout-toggle" role="group" aria-label="Focus mode: hide navigation while reading">
+              <button
+                type="button"
+                className="layout-toggle__btn"
+                data-fs-quick="focus"
+                data-val="off"
+                aria-pressed="true"
+              >
+                Normal
+              </button>
+              <button
+                type="button"
+                className="layout-toggle__btn"
+                data-fs-quick="focus"
+                data-val="on"
+                aria-pressed="false"
+              >
+                Focus
+              </button>
+            </div>
+          </div>
+
           <div className="chapter-text" lang="en">
             {ch.verses.map((v) => (
               <p className="verse" id={`v${v.v}`} key={v.v}>
@@ -198,6 +273,8 @@ export default async function ChapterPage(
               </p>
             ))}
           </div>
+
+          <p className="chapter-complete">You&rsquo;ve read {refLabel(bk.name, num)}.</p>
 
           <div className="chapter-actions" role="group" aria-label="Chapter actions">
             <button className="action-btn" data-action="tts" aria-pressed="false">

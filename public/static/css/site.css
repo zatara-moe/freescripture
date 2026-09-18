@@ -11,7 +11,7 @@
   --ink:         #1a1714;
   --ink-soft:    #4c453c;
   --ink-faded:   #6e6456;
-  --ink-hint:    #9a9083;
+  --ink-hint:    #7e715c;
   --rule:        #d8cdb8;
   --rule-soft:   #e6ddcc;
   --gold:        #7a5a10;
@@ -548,13 +548,95 @@ button { font: inherit; cursor: pointer; }
   padding: 16px 0; border-top: 1px solid var(--rule-soft);
 }
 
-/* --- Reading preferences (applied via data attributes on <html>) --- */
-[data-fs-size="large"] .chapter-text { font-size: 21px; }
-[data-fs-size="xlarge"] .chapter-text { font-size: 24px; }
-[data-fs-leading="loose"] .chapter-text { line-height: 2; }
-[data-fs-leading="tight"] .chapter-text { line-height: 1.55; }
-[data-fs-font="lexend"] .chapter-text { font-family: 'Lexend', var(--font-body); }
-[data-fs-font="opendyslexic"] .chapter-text { font-family: 'OpenDyslexic', var(--font-body); }
+/* --- Reading preferences (applied via data attributes on <html>) ---
+   Applies to every place readers meet running scripture text: the
+   chapter reader, Need-page passage cards, and search results — not
+   just .chapter-text. A reader who sets "Largest" or OpenDyslexic
+   should never see it silently drop on a different page. */
+[data-fs-size="large"] .chapter-text,
+[data-fs-size="large"] .passage__verse,
+[data-fs-size="large"] .search-result__text { font-size: 21px; }
+[data-fs-size="xlarge"] .chapter-text,
+[data-fs-size="xlarge"] .passage__verse,
+[data-fs-size="xlarge"] .search-result__text { font-size: 24px; }
+[data-fs-leading="loose"] .chapter-text,
+[data-fs-leading="loose"] .passage__verse,
+[data-fs-leading="loose"] .search-result__text { line-height: 2; }
+[data-fs-leading="tight"] .chapter-text,
+[data-fs-leading="tight"] .passage__verse,
+[data-fs-leading="tight"] .search-result__text { line-height: 1.55; }
+[data-fs-font="lexend"] .chapter-text,
+[data-fs-font="lexend"] .passage__verse,
+[data-fs-font="lexend"] .search-result__text { font-family: 'Lexend', var(--font-body); }
+[data-fs-font="opendyslexic"] .chapter-text,
+[data-fs-font="opendyslexic"] .passage__verse,
+[data-fs-font="opendyslexic"] .search-result__text { font-family: 'OpenDyslexic', var(--font-body); }
+
+/* --- Reading progress: thin, quiet, tracks position within the
+   passage text itself. Deliberately no percentage number and no
+   color-change celebration — a plain line, not a game mechanic. */
+.reading-progress {
+  position: fixed; top: 0; left: 0; width: 100%; height: 3px;
+  z-index: 200; pointer-events: none; background: transparent;
+}
+.reading-progress__bar {
+  height: 100%; width: 0%; background: var(--gold); opacity: 0.55;
+  transition: width 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reading-progress__bar { transition: none; }
+}
+
+/* --- Chapter meta row: read-time on the left, jump-to-verse (only
+   rendered for longer chapters) on the right --- */
+.chapter-meta-row {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 12px; margin-top: -12px; margin-bottom: 20px;
+}
+.chapter-meta { font-size: 13px; color: var(--ink-faded); margin: 0; }
+.chapter-jump { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-faded); }
+.chapter-jump select {
+  font-family: var(--font-ui); font-size: 13px; padding: 4px 8px;
+  border: 1.5px solid var(--rule); border-radius: 8px;
+  background: var(--white); color: var(--ink);
+}
+
+/* --- End-of-chapter acknowledgment: one quiet sentence, not a badge
+   or a checkmark — matches the site's understated tone. --- */
+.chapter-complete {
+  font-style: italic; color: var(--ink-faded); font-size: 14px;
+  margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule);
+}
+
+/* --- Inline segmented toggles above the chapter text (Lines/Flowing,
+   Normal/Focus) — surfaced here rather than buried in the Display
+   panel. .chapter-toggles holds one or more .layout-toggle groups. */
+.chapter-toggles {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;
+}
+.layout-toggle {
+  display: inline-flex; gap: 2px; margin: 0;
+  border: 1.5px solid var(--rule); border-radius: 10px; padding: 3px;
+  background: var(--paper-warm);
+}
+.layout-toggle__btn {
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  padding: 6px 14px; border: none; border-radius: 7px;
+  background: none; color: var(--ink-soft);
+}
+.layout-toggle__btn.is-active { background: var(--white); color: var(--ink); box-shadow: 0 1px 3px rgba(26,23,20,0.12); }
+.layout-toggle__btn:hover:not(.is-active) { color: var(--ink); }
+
+/* --- Focus mode: hides surrounding chrome so only the passage,
+   the exit control, and the reading actions remain. The toggle that
+   turns it on lives inside .chapter-toggles, which is NOT hidden here,
+   so it doubles as the exit control once focus mode is on. */
+[data-fs-focus="on"] .site-header,
+[data-fs-focus="on"] .tab-bar,
+[data-fs-focus="on"] .chapter-nav,
+[data-fs-focus="on"] .trans-switch,
+[data-fs-focus="on"] .site-footer { display: none !important; }
+[data-fs-focus="on"] body { padding-bottom: 0; }
 
 /* --- Reading settings panel --- */
 .prefs-overlay {

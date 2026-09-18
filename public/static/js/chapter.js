@@ -174,4 +174,41 @@
       });
     }
   }
+
+  /* ---- Jump to verse: setting the hash reuses the anchor scroll and
+     the highlight behavior above, so this is just a hash change. ---- */
+  document.addEventListener('change', function (e) {
+    var sel = e.target.closest('[data-verse-jump]');
+    if (!sel || !sel.value) return;
+    window.location.hash = 'v' + sel.value;
+    sel.value = '';
+  });
+
+  /* ---- Reading progress: a thin, quiet bar tracking scroll position
+     through .chapter-text specifically (not the whole page), so it
+     reflects progress through the passage rather than the header/footer
+     chrome around it. Throttled to one measurement per frame. */
+  var progressBar = document.querySelector('.reading-progress__bar');
+  var chapterText = document.querySelector('.chapter-text');
+  if (progressBar && chapterText) {
+    var ticking = false;
+    function updateProgress() {
+      ticking = false;
+      var rect = chapterText.getBoundingClientRect();
+      var winH = window.innerHeight;
+      var total = rect.height - winH;
+      var pct = total > 0 ? (-rect.top) / total : (rect.top <= 0 ? 1 : 0);
+      pct = Math.min(1, Math.max(0, pct));
+      progressBar.style.width = (pct * 100) + '%';
+    }
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateProgress);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateProgress();
+  }
 })();

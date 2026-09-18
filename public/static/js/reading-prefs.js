@@ -13,6 +13,7 @@
     leading: "default",
     layout: "verses",
     font: "default",
+    focus: "off",
   };
 
   var OPTIONS = [
@@ -57,6 +58,42 @@
 
   var prefs = loadPrefs();
   applyPrefs(prefs);
+
+  /* ---- Inline quick-toggles (e.g. the Lines/Flowing switch above the
+     chapter text). Same contract as the panel: same localStorage key,
+     same data-fs-<key> attribute. Lets a setting live right next to
+     what it affects instead of only inside the Display sheet, and
+     keeps the panel's own buttons in sync if it's opened afterward. */
+  function syncQuickToggles(key) {
+    var group = document.querySelectorAll('[data-fs-quick="' + key + '"]');
+    [].forEach.call(group, function (btn) {
+      var on = btn.getAttribute('data-val') === prefs[key];
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+  Object.keys(DEFAULTS).forEach(syncQuickToggles);
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-fs-quick]');
+    if (!btn) return;
+    var key = btn.getAttribute('data-fs-quick');
+    var val = btn.getAttribute('data-val');
+    if (!key || !val || !(key in DEFAULTS)) return;
+    prefs[key] = val;
+    applyPrefs(prefs);
+    savePrefs(prefs);
+    syncQuickToggles(key);
+    // Keep the full settings panel's buttons in sync if it's been built.
+    if (panel) {
+      var panelGroup = panel.querySelectorAll('.prefs-choice[data-key="' + key + '"]');
+      [].forEach.call(panelGroup, function (b) {
+        var on = b.getAttribute('data-val') === val;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+  });
 
   var panel = null, overlay = null;
 
