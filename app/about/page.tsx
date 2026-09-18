@@ -41,6 +41,16 @@ export default function About() {
           way the web used to work.
         </p>
 
+        <h2>Part of a family</h2>
+        <p>
+          Free Scripture provides the Bible text
+          for{" "}
+          <a href="https://www.digitallutheranchurch.com">Digital Lutheran Church</a>,
+          which offers daily prayer offices, pastoral care, the Lutheran
+          library, and this Sunday&apos;s lectionary readings. If you are
+          looking for more than the text itself, that is where to go.
+        </p>
+
         <p>
           Free Scripture is a tool from{" "}
           <a href="https://hopeforamericans.net">Hope for Americans</a>, built in

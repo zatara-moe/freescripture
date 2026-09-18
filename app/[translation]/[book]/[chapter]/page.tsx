@@ -336,27 +336,43 @@ export default async function ChapterPage(
             </button>
           </div>
 
-          {(needLinks.length > 0 || genreSlug) && (
-            <div className="keep-reading">
-              <div className="keep-reading__heading">Keep reading</div>
-              <div className="keep-reading__links">
-                {needLinks.map((n) => (
-                  <Link key={n.slug} className="keep-reading__link" href={`/read/${n.slug}/`}>
-                    <span className="keep-reading__link-label">{n.short}</span>
-                    <span className="keep-reading__link-desc">{n.card}</span>
-                  </Link>
-                ))}
-                {genreSlug && (
-                  <Link className="keep-reading__link" href={`/genre/${genreSlug}/`}>
-                    <span className="keep-reading__link-label">More {genreSlug} books</span>
-                    <span className="keep-reading__link-desc">
-                      Other books in the Bible that read like {bk.name}
-                    </span>
-                  </Link>
-                )}
-              </div>
+          <div className="keep-reading">
+            <div className="keep-reading__heading">Keep reading</div>
+            <div className="keep-reading__links">
+              {needLinks.map((n) => (
+                <Link key={n.slug} className="keep-reading__link" href={`/read/${n.slug}/`}>
+                  <span className="keep-reading__link-label">{n.short}</span>
+                  <span className="keep-reading__link-desc">{n.card}</span>
+                </Link>
+              ))}
+              {genreSlug && (
+                <Link className="keep-reading__link" href={`/genre/${genreSlug}/`}>
+                  <span className="keep-reading__link-label">More {genreSlug} books</span>
+                  <span className="keep-reading__link-desc">
+                    Other books in the Bible that read like {bk.name}
+                  </span>
+                </Link>
+              )}
+              {/* DLC cross-links: contextual, not generic. Psalms → pray,
+                  Gospels → this Sunday's readings, pastoral books → what do you need. */}
+              {bk.name === "Psalms" && (
+                <a className="keep-reading__link" href="https://www.digitallutheranchurch.com/pray/" rel="noopener">
+                  <span className="keep-reading__link-label">Pray with the psalms</span>
+                  <span className="keep-reading__link-desc">
+                    Daily prayer offices at Digital Lutheran Church
+                  </span>
+                </a>
+              )}
+              {["Matthew", "Mark", "Luke", "John"].includes(bk.name) && (
+                <a className="keep-reading__link" href="https://www.digitallutheranchurch.com/word/propers" rel="noopener">
+                  <span className="keep-reading__link-label">This Sunday&apos;s readings</span>
+                  <span className="keep-reading__link-desc">
+                    The lectionary at Digital Lutheran Church
+                  </span>
+                </a>
+              )}
             </div>
-          )}
+          </div>
 
           <footer className="chapter-foot">
             <nav className="chapter-foot__nav" aria-label="Adjacent chapters">

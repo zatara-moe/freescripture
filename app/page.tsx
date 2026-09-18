@@ -124,6 +124,48 @@ export default function Home() {
         ))}
       </div>
 
+      {/* --- This Sunday (DLC integration) --- */}
+      <div className="home-divider" />
+      <div className="section-label">This Sunday</div>
+      <a className="bookrow bookrow--primary" href="https://www.digitallutheranchurch.com/word/propers" rel="noopener">
+        <span className="bookrow__main">
+          <span className="bookrow__t">This Sunday&apos;s readings</span>
+          <span className="bookrow__d">The appointed scripture for this week, from the Revised Common Lectionary.</span>
+          <span className="bookrow__tag">Digital Lutheran Church</span>
+        </span>
+        <Chev />
+      </a>
+
+      {/* --- From DLC (cross-site pastoral content) --- */}
+      <div className="home-divider" />
+      <div className="section-head">
+        <span className="section-label">From Digital Lutheran Church</span>
+        <a className="section-link" href="https://www.digitallutheranchurch.com" rel="noopener">Visit &rarr;</a>
+      </div>
+      <div className="read-list">
+        <a className="bookrow" href="https://www.digitallutheranchurch.com/pray/" rel="noopener">
+          <span className="bookrow__main">
+            <span className="bookrow__t">Daily prayer</span>
+            <span className="bookrow__d">Morning, evening, and night offices in the historic tradition.</span>
+          </span>
+          <Chev />
+        </a>
+        <a className="bookrow" href="https://www.digitallutheranchurch.com/for/" rel="noopener">
+          <span className="bookrow__main">
+            <span className="bookrow__t">What do you need</span>
+            <span className="bookrow__d">Grief, doubt, fear, marriage, work. Sorted by what brought you here.</span>
+          </span>
+          <Chev />
+        </a>
+        <a className="bookrow" href="https://www.digitallutheranchurch.com/library/" rel="noopener">
+          <span className="bookrow__main">
+            <span className="bookrow__t">The Lutheran library</span>
+            <span className="bookrow__d">Fifty works of Luther, free to read.</span>
+          </span>
+          <Chev />
+        </a>
+      </div>
+
       <script
         dangerouslySetInnerHTML={{
           __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('home-cont');if(el&&d.url){el.href=d.url;var r=el.querySelector('[data-cont-ref]');if(r)r.textContent=d.label||'Continue reading';el.hidden=false;}}catch(e){}})();`,

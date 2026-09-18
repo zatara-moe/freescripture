@@ -184,6 +184,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <p className="hfa-madein">Made with <span className="hfa-heart" aria-hidden="true">&hearts;</span> in Flagstaff</p>
           <div className="hfa-rule"></div>
           <div className="hfa-mark">A <a href="https://hopeforamericans.net">Hope for Americans</a> tool</div>
+          <div className="hfa-mark">Scripture for <a href="https://www.digitallutheranchurch.com">Digital Lutheran Church</a></div>
           <div className="hfa-vision">free to use, the way the web used to be</div>
         </footer>
 
