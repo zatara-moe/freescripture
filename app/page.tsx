@@ -75,7 +75,7 @@ export default function Home() {
       {/* --- Famous passages --- */}
       <div className="home-divider" />
       <div className="section-label">Jump to a famous passage</div>
-      <div className="read-list">
+      <div className="read-list read-list--grid">
         {FAMOUS.map((f) => (
           <Link className="bookrow" href={f.url} key={f.ref}>
             <span className="bookrow__main">
@@ -95,7 +95,12 @@ export default function Home() {
       </div>
       <div className="read-list">
         {needRows.map((n: any) => (
-          <Link className="bookrow" href={`/read/${n.slug}/`} key={n.slug}>
+          <Link
+            className="bookrow bookrow--colored"
+            href={`/read/${n.slug}/`}
+            key={n.slug}
+            style={{ ["--rowc" as any]: `var(--g-${n.accent})` } as React.CSSProperties}
+          >
             <span className="bookrow__main">
               <span className="bookrow__t">{n.short}</span>
               <span className="bookrow__d">{n.card}</span>

@@ -34,6 +34,7 @@
     ]},
     { key: "font", label: "Reading font", choices: [
       { val: "default", label: "Standard" },
+      { val: "literata", label: "Literata" },
       { val: "lexend", label: "Lexend" },
       { val: "opendyslexic", label: "OpenDyslexic" },
     ]},

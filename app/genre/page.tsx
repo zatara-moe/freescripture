@@ -19,7 +19,7 @@ export default function GenreHub() {
       <div className="read-list">
         {GENRES.map((g: any) => (
           <Link
-            className="bookrow"
+            className="bookrow bookrow--colored"
             href={`/genre/${g.slug}/`}
             key={g.slug}
             style={{ ["--rowc" as any]: `var(--g-${g.accent})` } as React.CSSProperties}

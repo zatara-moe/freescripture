@@ -8,8 +8,8 @@
   --paper:       #fcfaf6;
   --paper-warm:  #f4efe6;
   --paper-deep:  #e9e1d3;
-  --ink:         #1a1714;
-  --ink-soft:    #4c453c;
+  --ink:         #231e1a;
+  --ink-soft:    #524840;
   --ink-faded:   #6e6456;
   --ink-hint:    #7e715c;
   --rule:        #d8cdb8;
@@ -53,6 +53,12 @@
     --gold:       #c89840;
     --white:      #241f1c;
     --highlight:  #3d3520;
+    --g-narrative: #d4805a;
+    --g-poetry:    #8fa5c8;
+    --g-wisdom:    #c4a850;
+    --g-law:       #8aaa60;
+    --g-letters:   #5aada0;
+    --g-prophecy:  #b07080;
   }
 }
 :root[data-fs-theme="dark"] {
@@ -68,6 +74,12 @@
   --gold:       #c89840;
   --white:      #241f1c;
   --highlight:  #3d3520;
+  --g-narrative: #d4805a;
+  --g-poetry:    #8fa5c8;
+  --g-wisdom:    #c4a850;
+  --g-law:       #8aaa60;
+  --g-letters:   #5aada0;
+  --g-prophecy:  #b07080;
 }
 
 /* --- Reset --- */
@@ -210,11 +222,13 @@ button { font: inherit; cursor: pointer; }
    Bible site has via editorial headings or commentary, but ours uses our
    own BOOK_INTROS/BOOK_PITCHES data instead of licensed content. */
 .chapter-context {
-  font-size: 15px; line-height: 1.6; color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 15px; line-height: 1.65; color: var(--ink-soft);
   margin-bottom: 28px; padding: 16px 20px;
   background: var(--paper-warm); border-radius: 10px;
   border-left: 3px solid var(--gold);
   max-width: 36rem;
+  font-optical-sizing: auto;
 }
 .chapter-context__label {
   font-family: var(--font-ui); font-size: 12px; font-weight: 700;
@@ -280,9 +294,14 @@ button { font: inherit; cursor: pointer; }
   line-height: 1.78;
   max-width: 36rem;
   word-spacing: 0.03em;
-  /* Publisher-grade text rendering: kerning, ligatures, smart hyphenation.
-     hyphens:auto requires lang="en" on the element, which the template sets. */
+  /* Publisher-grade text rendering: activates Source Serif 4's optical
+     size axis (opsz 8–60, loaded in the Google Fonts URL) so letterforms
+     are correctly weighted at 20px, not designed-size defaults.
+     font-synthesis:none prevents the browser faking bold or italic if
+     an axis isn't loaded — better a visual gap than a wrong rendering. */
   text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  font-synthesis: none;
   font-kerning: normal;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   hyphens: auto;
@@ -303,7 +322,7 @@ button { font: inherit; cursor: pointer; }
 .verse__num {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--gold);
   text-decoration: none;
   text-align: right;
@@ -378,9 +397,30 @@ button { font: inherit; cursor: pointer; }
   background: var(--white); border: 1.5px solid var(--rule);
   border-radius: var(--radius); padding: 14px 16px;
   text-decoration: none; color: inherit;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
-.bookrow:hover { border-color: var(--gold); }
+.bookrow:hover { border-color: var(--gold); background: var(--paper-warm); }
+
+/* --colored modifier: activates the --rowc accent that Need and Genre
+   pages set via inline style. The variable is already being written;
+   this is the CSS that makes it visible. Left border + full border on
+   hover, matching the accent. Adjusted padding compensates for the
+   extra border width so internal alignment doesn't shift. */
+.bookrow--colored {
+  border-left: 3px solid var(--rowc, var(--rule));
+  padding-left: 14px;
+}
+.bookrow--colored:hover { border-color: var(--rowc, var(--gold)); }
+
+/* 2-column grid for famous passage rows on desktop — halves the
+   scroll depth of the longest list on the homepage. */
+@media (min-width: 640px) {
+  .read-list--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
 .bookrow__main {
   flex: 1 1 auto; min-width: 0;
   display: flex; flex-direction: column;
@@ -418,7 +458,7 @@ button { font: inherit; cursor: pointer; }
 /* --- Section dividers and labels --- */
 .home-divider { height: 1px; background: var(--rule); margin: 24px 0; }
 .section-label {
-  font-size: 12px; font-weight: 700; color: var(--gold);
+  font-size: 13px; font-weight: 700; color: var(--gold);
   margin-bottom: 14px;
 }
 .section-head {
@@ -512,13 +552,18 @@ button { font: inherit; cursor: pointer; }
   font-weight: 700; font-size: 14px; color: var(--gold); margin-bottom: 4px;
 }
 .passage__frame {
-  font-size: 15px; color: var(--ink); line-height: 1.4; margin-bottom: 12px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 15px; color: var(--ink-soft); line-height: 1.55;
+  margin-bottom: 12px;
+  font-optical-sizing: auto;
 }
 .passage__verse {
   font-family: var(--font-body); font-size: 19px; line-height: 1.72;
   color: var(--ink); padding: 14px 18px;
   background: var(--paper-warm); border-radius: var(--radius-sm);
   margin: 0 0 14px; quotes: none;
+  font-optical-sizing: auto; font-synthesis: none;
 }
 .passage__acts { display: flex; gap: 8px; }
 .rbtn {
@@ -606,6 +651,7 @@ button { font: inherit; cursor: pointer; }
 .search-result__ref a:hover { text-decoration: underline; }
 .search-result__text {
   font-family: var(--font-body); font-size: 19px; line-height: 1.6; color: var(--ink);
+  font-optical-sizing: auto; font-synthesis: none;
 }
 .search-result__text mark,
 .search-result__text .hl {
@@ -685,6 +731,12 @@ button { font: inherit; cursor: pointer; }
 [data-fs-font="opendyslexic"] .chapter-text,
 [data-fs-font="opendyslexic"] .passage__verse,
 [data-fs-font="opendyslexic"] .search-result__text { font-family: 'OpenDyslexic', var(--font-body); }
+[data-fs-font="literata"] .chapter-text,
+[data-fs-font="literata"] .passage__verse,
+[data-fs-font="literata"] .search-result__text {
+  font-family: 'Literata', var(--font-body);
+  font-optical-sizing: auto;
+}
 
 /* --- Reading progress: thin, quiet, tracks position within the
    passage text itself. Deliberately no percentage number and no

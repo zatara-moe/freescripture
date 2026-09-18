@@ -15,7 +15,7 @@ export default function NeedsHub() {
 
   const Row = (n: any) => (
     <Link
-      className="bookrow"
+      className="bookrow bookrow--colored"
       href={`/read/${n.slug}/`}
       key={n.slug}
       style={{ ["--rowc" as any]: `var(--g-${n.accent})` } as React.CSSProperties}

@@ -185,9 +185,7 @@ export default async function ChapterPage(
         </nav>
 
         <div className="trans-switch" aria-label="Switch translation">
-          <span className="trans-switch__label">
-            Reading the {tmeta.label}, {tmeta.plain}. Other versions:
-          </span>
+          <span className="trans-switch__label">Version:</span>
           {TRANS_ORDER.map((t) =>
             t === trans ? (
               <span
@@ -383,7 +381,7 @@ export default async function ChapterPage(
         </article>
       </div>
 
-      <script src="/static/js/chapter.js?v=5" defer></script>
+      <script src="/static/js/chapter.js?v=6" defer></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `try{localStorage.setItem('fs-last',JSON.stringify(${lastPayload}));}catch(e){}`,
