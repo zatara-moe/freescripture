@@ -152,10 +152,13 @@ button { font: inherit; cursor: pointer; }
   font-weight: 700; font-size: 19px; letter-spacing: -0.02em; color: var(--ink);
 }
 .site-nav {
-  display: flex; gap: 16px; font-size: 13px; font-weight: 500;
+  display: none; gap: 16px; font-size: 13px; font-weight: 500;
 }
 .site-nav a { text-decoration: none; color: var(--ink-faded); }
 .site-nav a:hover { color: var(--ink); }
+@media (min-width: 768px) {
+  .site-nav { display: flex; }
+}
 
 /* Theme toggle: sun/moon in the header. Always visible — not buried in
    a settings sheet. Clicking it toggles between light and dark directly;
@@ -194,10 +197,10 @@ button { font: inherit; cursor: pointer; }
 }
 .tab-bar__btn {
   display: flex; flex-direction: column; align-items: center; gap: 2px;
-  font-size: 10px; font-weight: 500; color: var(--ink-faded);
-  text-decoration: none; background: none; border: none; padding: 4px 4px;
+  font-size: 9.5px; font-weight: 500; color: var(--ink-faded);
+  text-decoration: none; background: none; border: none; padding: 4px 2px;
   -webkit-tap-highlight-color: transparent;
-  min-width: 0;
+  min-width: 0; flex: 1 1 0; white-space: nowrap;
 }
 .tab-bar__btn svg { width: 20px; height: 20px; }
 .tab-bar__btn[aria-current="page"] { color: var(--gold); }
@@ -1200,8 +1203,14 @@ body { padding-bottom: 72px; }
 /* The search card looks like the others but holds a real input.
    No separate "type here" instruction needed — it's the same shape
    as every other card, so it reads as one more thing to tap. */
+/* The search card is the one item in this grid that isn't "tap and
+   go" — it needs typing. A dashed border and different fill signal
+   that difference before anyone touches it, so the grid doesn't
+   promise "recognize a picture, tap it, done" and then break that
+   promise on the fourth card. */
 .quick-card--search {
   padding: 12px 14px; cursor: text;
+  border-style: dashed; background: var(--paper-warm);
 }
 .quick-card--search .quick-card__icon { width: 22px; height: 22px; margin-bottom: 0; }
 .quick-card--search .quick-card__search-input {

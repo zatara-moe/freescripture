@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=12" />
+        <link rel="stylesheet" href="/static/css/site.css?v=13" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#fcfaf6" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1c1812" media="(prefers-color-scheme: dark)" />
@@ -175,6 +175,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" /></svg>
             <span>For you</span>
           </Link>
+          <Link className="tab-bar__btn" href="/parables/" aria-label="Parables">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+            <span>Parables</span>
+          </Link>
           <Link className="tab-bar__btn" href="/web/" aria-label="Books">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M19 19H6a2 2 0 0 0-2 2" /></svg>
             <span>Books</span>
@@ -245,6 +249,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     var active=false;
     if(label==='Home') active=(p==='/');
     else if(label==='For you') active=(p.startsWith('/read/'));
+    else if(label==='Parables') active=(p.startsWith('/parables/'));
     else if(label==='Books') active=(/^\/(web|kjv|bbe|genre)\//.test(p));
     else if(label==='Search') active=p.startsWith('/search/');
     if(active) btn.setAttribute('aria-current','page');

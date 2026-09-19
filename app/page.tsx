@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { GENRES, NEEDS, TRANSLATIONS, TRANS_ORDER } from "@/lib/bible";
-
-const HOME_NEEDS = ["fear", "grief", "strength", "celebrate", "thinking-of-you"];
+import { GENRES } from "@/lib/bible";
 
 const FAMOUS = [
   { ref: "Psalm 23", url: "/web/psalms/23/", line: "The Lord is my shepherd." },
@@ -37,9 +35,6 @@ function IconHeart() {
 function IconStory() {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>;
 }
-function IconBookmark() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 4a2 2 0 0 0-2 2v14l8-5 8 5V6a2 2 0 0 0-2-2z" /></svg>;
-}
 function IconCross() {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3v18" /><path d="M7 8h10" /></svg>;
 }
@@ -48,27 +43,13 @@ function IconCalendar() {
 }
 
 export default function Home() {
-  const needRows = NEEDS.filter((n: any) => HOME_NEEDS.includes(n.slug));
-
   return (
     <div className="home">
       <section className="home-hero">
         <h1 className="home-hero__title">Free Scripture</h1>
         <p className="home-hero__sub">
-          Three translations of the Bible, free to read. Pick one and start.
+          The King James, World English, and Basic English Bibles. Free, with no account and no ads.
         </p>
-        <form className="home-search" action="/search/" role="search">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
-          </svg>
-          <input
-            className="home-search__input"
-            type="search"
-            name="q"
-            placeholder="Search for a word or verse"
-            aria-label="Search scripture"
-          />
-        </form>
       </section>
 
       {/* --- Quick access ---
@@ -76,9 +57,11 @@ export default function Home() {
           This is the actual front door for someone who does not know
           the site: recognize a picture and a few words, tap it, done.
           No scrolling past six sections to find the right link. */}
+      <div className="home-divider" />
+      <div className="section-label">Quick start</div>
       <div className="quick-grid">
         <a className="quick-card quick-card--start" id="quick-start" href="/web/psalms/23/" data-quick-start>
-          <span className="quick-card__icon"><IconBookmark /></span>
+          <span className="quick-card__icon" data-quick-start-icon><IconBook /></span>
           <span className="quick-card__label" data-quick-start-label>Just start reading</span>
         </a>
         <Link className="quick-card" href="/read/">
@@ -97,7 +80,7 @@ export default function Home() {
             className="quick-card__search-input"
             type="search"
             name="q"
-            placeholder="Or search for a word or name"
+            placeholder="Search for a word or verse"
             aria-label="Search scripture"
           />
         </form>
@@ -105,7 +88,7 @@ export default function Home() {
 
       <script
         dangerouslySetInnerHTML={{
-          __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label?('Continue: '+d.label):'Continue reading';}}catch(e){}})();`,
+          __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label?('Continue: '+d.label):'Continue reading';var ic=el.querySelector('[data-quick-start-icon]');if(ic)ic.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4a2 2 0 0 0-2 2v14l8-5 8 5V6a2 2 0 0 0-2-2z"/></svg>';}}catch(e){}})();`,
         }}
       />
 
@@ -172,30 +155,6 @@ export default function Home() {
           </span>
           <Chev />
         </Link>
-      </div>
-
-      {/* --- Verses for the moment --- */}
-      <div className="home-divider" />
-      <div className="section-head">
-        <span className="section-label">Verse for what you&apos;re going through</span>
-        <Link className="section-link" href="/read/">See all &rarr;</Link>
-      </div>
-      <div className="read-list">
-        {needRows.map((n: any) => (
-          <Link
-            className="bookrow bookrow--colored"
-            href={`/read/${n.slug}/`}
-            key={n.slug}
-            style={{ ["--rowc" as any]: `var(--g-${n.accent})` } as React.CSSProperties}
-          >
-            <span className="bookrow__icon"><IconHeart /></span>
-            <span className="bookrow__main">
-              <span className="bookrow__t">{n.short}</span>
-              <span className="bookrow__d">{n.card}</span>
-            </span>
-            <Chev />
-          </Link>
-        ))}
       </div>
 
       {/* --- Browse by kind --- */}
