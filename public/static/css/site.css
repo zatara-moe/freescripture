@@ -3,7 +3,13 @@
    Rewritten from scratch. Two fonts, six sizes, one system.
    ========================================================== */
 
-/* --- Tokens (light mode) --- */
+/* --- Tokens (light mode) ---
+   Aligned to the real Hope for Americans shared system (tokens.css,
+   consumed by digitallutheranchurch.com and luthersworld.com): one
+   brand hue at four weights, not a rotating rainbow of accents.
+   --gold is kept as the variable name for backward compatibility with
+   the many rules already written against it, but its value is now the
+   family's actual brand color — a muted plum, not literal gold. */
 :root {
   --paper:       #fcfaf6;
   --paper-warm:  #f4efe6;
@@ -14,9 +20,18 @@
   --ink-hint:    #7e715c;
   --rule:        #d8cdb8;
   --rule-soft:   #e6ddcc;
-  --gold:        #7a5a10;
+  --gold:        #5B2A54;  /* the one brand hue — was literal gold, now plum */
   --white:       #fff;
   --highlight:   #f3e2a8;
+
+  /* Card elevation — a ring shadow, not a colored border. Hover only
+     deepens the shadow; it never lifts, tints, or moves the card.
+     "translateY lift removed — sensory noise for neurodivergent
+     readers" appears four times in the family's own CSS comments.
+     That is a standing decision, not a style preference to re-litigate
+     per component. */
+  --card-shadow:       0 0 0 1px rgba(35,30,26,.08);
+  --card-shadow-hover: 0 0 0 1px rgba(35,30,26,.14), 0 2px 8px rgba(35,30,26,.07);
 
   --g-narrative: #A8481F;
   --g-poetry:    #5B6A8C;
@@ -25,34 +40,41 @@
   --g-letters:   #3F6F66;
   --g-prophecy:  #75384B;
 
-  --font-ui:   'DM Sans', system-ui, -apple-system, sans-serif;
+  /* Source Serif 4 + Source Sans 3 — the family's actual fonts,
+     self-hosted on DLC and Luther's World, chosen and contrast-tested
+     for exactly this readership. Literata stays available as an
+     opt-in Display-panel choice, but it is not the identity. */
+  --font-ui:   'Source Sans 3', system-ui, -apple-system, sans-serif;
   --font-body: 'Source Serif 4', Georgia, serif;
 
   --measure:   40rem;
-  --radius:    12px;
+  --radius:    10px;
   --radius-sm: 8px;
 }
 
 /* --- Dark mode tokens ---
    Applied when the OS prefers dark AND the user hasn't pinned Light,
    OR when the user has pinned Dark in the Display panel.
-   Warm near-black backgrounds; off-white ink; gold brightened for
-   legibility on dark. Contrast ratios verified: ink/paper ≈ 15:1,
-   gold/paper ≈ 7:1, ink-faded/paper ≈ 4.8:1 (passes AA). */
+   Warm near-black backgrounds; off-white ink; the brand plum lightens
+   to the same orchid tint DLC uses under dark mode. Contrast ratios
+   verified: ink/paper ≈ 15:1, plum/paper ≈ 6.7:1 (AA), ink-faded/paper
+   ≈ 4.8:1 (passes AA). */
 @media (prefers-color-scheme: dark) {
   :root:not([data-fs-theme="light"]) {
     --paper:      #1c1812;
-    --paper-warm: #221d18;
-    --paper-deep: #2a2420;
+    --paper-warm: #2d251c;
+    --paper-deep: #362c22;
     --ink:        #ede8e0;
     --ink-soft:   #c4b9ae;
     --ink-faded:  #8a7f74;
     --ink-hint:   #9a8f85;
-    --rule:       #3a332e;
+    --rule:       #453a2c;
     --rule-soft:  #2e2926;
-    --gold:       #c89840;
+    --gold:       #C99BC0;
     --white:      #241f1c;
     --highlight:  #3d3520;
+    --card-shadow:       0 0 0 1px rgba(255,255,255,.05);
+    --card-shadow-hover: 0 0 0 1px rgba(255,255,255,.11);
     --g-narrative: #d4805a;
     --g-poetry:    #8fa5c8;
     --g-wisdom:    #c4a850;
@@ -63,17 +85,19 @@
 }
 :root[data-fs-theme="dark"] {
   --paper:      #1c1812;
-  --paper-warm: #221d18;
-  --paper-deep: #2a2420;
+  --paper-warm: #2d251c;
+  --paper-deep: #362c22;
   --ink:        #ede8e0;
   --ink-soft:   #c4b9ae;
   --ink-faded:  #8a7f74;
   --ink-hint:   #9a8f85;
-  --rule:       #3a332e;
+  --rule:       #453a2c;
   --rule-soft:  #2e2926;
-  --gold:       #c89840;
+  --gold:       #C99BC0;
   --white:      #241f1c;
   --highlight:  #3d3520;
+  --card-shadow:       0 0 0 1px rgba(255,255,255,.05);
+  --card-shadow-hover: 0 0 0 1px rgba(255,255,255,.11);
   --g-narrative: #d4805a;
   --g-poetry:    #8fa5c8;
   --g-wisdom:    #c4a850;
@@ -303,10 +327,11 @@ button { font: inherit; cursor: pointer; }
 }
 .keep-reading__link {
   display: block; text-decoration: none; padding: 12px 16px;
-  border-radius: 10px; border: 1.5px solid var(--rule);
-  transition: border-color 0.15s;
+  border-radius: 10px; background: var(--white);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease;
 }
-.keep-reading__link:hover { border-color: var(--gold); }
+.keep-reading__link:hover { box-shadow: var(--card-shadow-hover); }
 .keep-reading__link-label {
   font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--ink);
 }
@@ -445,17 +470,12 @@ button { font: inherit; cursor: pointer; }
 /* --- Bookrow (the universal row component) --- */
 .bookrow {
   display: flex; align-items: center;
-  background: var(--paper); border: 1px solid var(--rule);
-  border-radius: var(--radius); padding: 16px 18px;
+  background: var(--white); border-radius: var(--radius); padding: 16px 18px;
   text-decoration: none; color: inherit;
-  box-shadow: 0 1px 2px rgba(26,23,20,0.04);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  border-bottom: 2px solid transparent;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease;
 }
-.bookrow:hover {
-  border-bottom-color: var(--gold);
-  box-shadow: 0 2px 6px rgba(26,23,20,0.07);
-}
+.bookrow:hover { box-shadow: var(--card-shadow-hover); }
 @media (prefers-reduced-motion: reduce) {
   .bookrow { transition: none; }
 }
@@ -571,29 +591,24 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* === The one card: hcard ===
-   Every interactive block on the homepage is this card.
-   Background-fill, no border in light mode, a subtle border in dark
-   (where background-fill alone has too little contrast).
-   Arrow always gold, always at the right edge.
-   This is the system: learn it once, recognize it everywhere. */
+   Matches the family's actual card language (tokens.css / dlc.css):
+   a plain white surface, a ring-shadow instead of a colored border,
+   and a hover state that only deepens the shadow — no lift, no
+   background swap, no color shift. Four separate comments in the
+   family's own CSS say the lift was removed as "sensory noise for
+   neurodivergent readers." That's a standing decision here too. */
 .hcard {
   display: flex; align-items: center; justify-content: space-between;
   gap: 12px; padding: 16px 18px;
-  background: var(--paper-warm); border-radius: var(--radius);
+  background: var(--white); border-radius: var(--radius);
   text-decoration: none; color: var(--ink);
-  border: 1px solid transparent;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease;
 }
-.hcard:hover { background: var(--paper-deep); }
+.hcard:hover { box-shadow: var(--card-shadow-hover); }
 @media (prefers-reduced-motion: reduce) { .hcard { transition: none; } }
 
-/* Dark mode: add a visible border because fill-only is 1.1:1 contrast */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-fs-theme="light"]) .hcard { border-color: var(--rule); }
-}
-:root[data-fs-theme="dark"] .hcard { border-color: var(--rule); }
-
-/* The label — DM Sans, semibold */
+/* The label */
 .hcard__label {
   font-family: var(--font-ui); font-size: 16px; font-weight: 600;
   color: var(--ink); display: block;
@@ -610,11 +625,11 @@ button { font: inherit; cursor: pointer; }
   font-family: var(--font-ui); font-size: 15px; font-weight: 700;
   color: var(--ink); display: block;
 }
-/* Tag (Good place to start) */
+/* Tag (Good place to start) — the one brand hue, same as the arrow */
 .hcard__tag { color: var(--gold); font-style: normal; }
 /* Body wrapper for cards with both label and sub */
 .hcard__body { display: flex; flex-direction: column; flex: 1 1 auto; min-width: 0; }
-/* The arrow — always gold, never wraps */
+/* The arrow — brand plum, matching DLC's .link-card .lc-arrow convention */
 .hcard__arrow {
   font-size: 20px; color: var(--gold); flex-shrink: 0; line-height: 1;
 }
@@ -1222,48 +1237,6 @@ body { padding-bottom: 72px; }
   .nav-tip { bottom: 24px; }
 }
 
-/* ==========================================================
-   Quick access grid and row icons
-   The actual fix for "how do I find what I need": recognize a
-   shape and a short label instead of reading through six sections
-   of text. Big touch targets (88px+), icon first, one line of text.
-   ========================================================== */
-
-.quick-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 14px; margin: 20px 0 8px;
-}
-.quick-card {
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 12px; text-align: center;
-  padding: 28px 12px 24px;
-  background: var(--paper); border: 1px solid var(--rule);
-  border-radius: var(--radius); text-decoration: none; color: inherit;
-  box-shadow: 0 1px 2px rgba(26,23,20,0.05);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  border-bottom: 2px solid transparent;
-}
-.quick-card:hover {
-  border-color: var(--rule);
-  border-bottom-color: var(--gold);
-  box-shadow: 0 2px 6px rgba(26,23,20,0.08);
-}
-.quick-card__icon {
-  width: 28px; height: 28px; color: var(--gold); flex-shrink: 0;
-}
-.quick-card__icon svg { width: 100%; height: 100%; }
-.quick-card__label {
-  font-family: var(--font-ui); font-size: 14px; font-weight: 600;
-  color: var(--ink); line-height: 1.3;
-}
-
-@media (max-width: 479px) {
-  .quick-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .quick-card { padding: 22px 10px 18px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .quick-card { transition: none; }
-}
 
 /* --- Row icons: a visual anchor at the lead of a bookrow, for
    recognition-based scanning. Large enough to find by shape,
