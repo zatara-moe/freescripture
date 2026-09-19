@@ -47,6 +47,7 @@ export default function Home() {
     <div className="home">
       <section className="home-hero">
         <p className="home-hero__welcome">Read the Bible, free and private.</p>
+        <p className="home-hero__desc">Three public-domain translations. No account, no tracking, works offline.</p>
       </section>
 
       {/* --- Quick access ---
