@@ -42,6 +42,8 @@ export const GENRES = meta.GENRES as any[];
 export const NEEDS = meta.NEEDS as any[];
 export const BOOK_INTROS = meta.BOOK_INTROS as Record<string, string>;
 export const BOOK_PITCHES = meta.BOOK_PITCHES as Record<string, string>;
+export const PARABLES = (meta as any).PARABLES as any[];
+export const PARABLE_THEMES = (meta as any).PARABLE_THEMES as any[];
 
 // ------------------------------------------------------------
 // Data directory + manifest
@@ -187,6 +189,27 @@ export function firstVerse(trans: TransSlug, bookName: string, chapter: number):
   const ch = book.chapters.find((c) => c.num === chapter);
   if (!ch || !ch.verses.length) return "";
   return normalizeDivineName(ch.verses[0].t);
+}
+
+// A range of verses, for parables and other passages that span more than
+// one verse. Returns [] if anything in the chain is missing rather than
+// throwing, so a bad reference degrades to "no text" instead of a crash.
+export function pullRange(
+  trans: TransSlug,
+  bookName: string,
+  chapter: number,
+  startVerse: number,
+  endVerse: number
+): { v: number; t: string }[] {
+  const b = manifest()[trans].find((x) => x.name === bookName);
+  if (!b) return [];
+  const book = loadBook(trans, b.slug);
+  if (!book) return [];
+  const ch = book.chapters.find((c) => c.num === chapter);
+  if (!ch) return [];
+  return ch.verses
+    .filter((x) => x.v >= startVerse && x.v <= endVerse)
+    .map((x) => ({ v: x.v, t: normalizeDivineName(x.t) }));
 }
 
 export const SITE_URL = "https://freescripture.org";

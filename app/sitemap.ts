@@ -5,6 +5,7 @@ import {
   flatChapters,
   NEEDS,
   GENRES,
+  PARABLES,
   SITE_URL,
 } from "@/lib/bible";
 
@@ -14,12 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/` },
     { url: `${SITE_URL}/read/` },
+    { url: `${SITE_URL}/parables/` },
     { url: `${SITE_URL}/genre/` },
     { url: `${SITE_URL}/search/` },
     { url: `${SITE_URL}/about/` },
   ];
   for (const n of NEEDS as any[]) urls.push({ url: `${SITE_URL}/read/${n.slug}/` });
   for (const g of GENRES as any[]) urls.push({ url: `${SITE_URL}/genre/${g.slug}/` });
+  for (const p of PARABLES as any[]) urls.push({ url: `${SITE_URL}/parables/${p.slug}/` });
   for (const t of TRANS_ORDER) {
     urls.push({ url: `${SITE_URL}/${t}/` });
     for (const b of booksForTranslation(t)) urls.push({ url: `${SITE_URL}/${t}/${b.slug}/` });

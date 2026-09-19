@@ -87,6 +87,36 @@ export default function Home() {
         ))}
       </div>
 
+      {/* --- Parables --- */}
+      <div className="home-divider" />
+      <div className="section-head">
+        <span className="section-label">The parables of Jesus</span>
+        <Link className="section-link" href="/parables/">All 37 &rarr;</Link>
+      </div>
+      <div className="read-list">
+        <Link className="bookrow" href="/parables/prodigal-son/">
+          <span className="bookrow__main">
+            <span className="bookrow__t">The Prodigal Son</span>
+            <span className="bookrow__d">A son spends everything and comes home expecting to be a servant.</span>
+          </span>
+          <Chev />
+        </Link>
+        <Link className="bookrow" href="/parables/good-samaritan/">
+          <span className="bookrow__main">
+            <span className="bookrow__t">The Good Samaritan</span>
+            <span className="bookrow__d">Two religious men pass by. A foreigner stops.</span>
+          </span>
+          <Chev />
+        </Link>
+        <Link className="bookrow" href="/parables/sower/">
+          <span className="bookrow__main">
+            <span className="bookrow__t">The Sower</span>
+            <span className="bookrow__d">Seed on a path, on rock, among thorns, on good soil.</span>
+          </span>
+          <Chev />
+        </Link>
+      </div>
+
       {/* --- Verses for the moment --- */}
       <div className="home-divider" />
       <div className="section-head">

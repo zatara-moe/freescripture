@@ -952,3 +952,138 @@ button { font: inherit; cursor: pointer; }
 /* Body padding for tab bar on mobile */
 body { padding-bottom: 72px; }
 @media (min-width: 768px) { body { padding-bottom: 0; } }
+
+/* ==========================================================
+   Parables
+   Organized by theme rather than book order, because a person
+   looking for the Prodigal Son is not looking for "Luke 15."
+   ========================================================== */
+
+/* --- Filter --- */
+.parable-filter { margin-bottom: 28px; }
+.parable-filter__input {
+  width: 100%; font-family: var(--font-ui); font-size: 16px;
+  padding: 13px 16px; border: 1.5px solid var(--rule);
+  border-radius: var(--radius); background: var(--white); color: var(--ink);
+}
+.parable-filter__input::placeholder { color: var(--ink-hint); }
+.parable-filter__input:focus { outline: none; border-color: var(--gold); }
+.parable-filter__count {
+  font-size: 13px; color: var(--ink-faded); margin-top: 8px; min-height: 1em;
+}
+
+/* --- Theme sections on the index --- */
+.parable-theme { margin-bottom: 36px; }
+.parable-theme[hidden] { display: none; }
+.parable-theme__head {
+  margin-bottom: 14px; padding-left: 12px;
+  border-left: 3px solid var(--rowc, var(--gold));
+}
+.parable-theme__title {
+  font-size: 19px; font-weight: 700; letter-spacing: -0.01em;
+  color: var(--ink); margin-bottom: 3px;
+}
+.parable-theme__blurb {
+  font-family: var(--font-body); font-style: italic;
+  font-size: 15px; line-height: 1.5; color: var(--ink-faded);
+  font-optical-sizing: auto;
+}
+
+/* Reference line inside a parable row — quiet, last thing you read */
+.parable-row__ref {
+  display: block; font-size: 12px; font-weight: 600;
+  color: var(--ink-hint); margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.parable-empty {
+  font-family: var(--font-body); font-size: 16px; color: var(--ink-faded);
+  text-align: center; padding: 32px 20px;
+}
+.parable-empty[hidden] { display: none; }
+
+/* --- Individual parable page --- */
+.parable-head { padding: 20px 0 8px; }
+.parable-head__theme {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--rowc, var(--gold)); margin-bottom: 8px;
+}
+.parable-title {
+  font-size: 28px; font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.15; margin-bottom: 8px;
+}
+.parable-also {
+  font-size: 14px; color: var(--ink-faded); margin-bottom: 12px;
+}
+.parable-line {
+  font-family: var(--font-body); font-size: 18px; line-height: 1.6;
+  color: var(--ink-soft); font-optical-sizing: auto;
+}
+
+/* The hinge. Deliberately not styled as a pull quote or a sermon box —
+   it is a margin note, the kind a pastor writes in their own Bible. */
+.parable-turn {
+  margin: 24px 0 28px; padding: 16px 20px;
+  background: var(--paper-warm); border-radius: var(--radius-sm);
+  border-left: 3px solid var(--rowc, var(--gold));
+  max-width: 36rem;
+}
+.parable-turn__label {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--rowc, var(--gold)); margin-bottom: 6px;
+}
+.parable-turn p {
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  color: var(--ink-soft); font-optical-sizing: auto;
+}
+
+/* --- The passage itself --- */
+.parable-passage { margin-bottom: 32px; }
+.parable-passage__ref {
+  font-family: var(--font-ui); font-size: 14px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+}
+.parable-passage__ref a { text-decoration: none; }
+.parable-passage__ref a:hover { text-decoration: underline; }
+.parable-passage__trans {
+  font-size: 13px; color: var(--ink-faded); margin-top: 16px;
+  max-width: 36rem;
+}
+.parable-passage__trans a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.parable-passage__trans a:hover { text-decoration: underline; }
+
+/* --- Parallel accounts --- */
+.parable-parallels {
+  margin: 32px 0; padding-top: 24px;
+  border-top: 1px solid var(--rule); max-width: 36rem;
+}
+.parable-parallels__heading {
+  font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px;
+}
+.parable-parallels__note {
+  font-family: var(--font-body); font-style: italic; font-size: 15px;
+  line-height: 1.55; color: var(--ink-faded); margin-bottom: 16px;
+  font-optical-sizing: auto;
+}
+.parable-parallel {
+  border: 1.5px solid var(--rule); border-radius: var(--radius-sm);
+  margin-bottom: 10px; overflow: hidden;
+}
+.parable-parallel summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 16px; cursor: pointer; list-style: none;
+  font-family: var(--font-ui);
+}
+.parable-parallel summary::-webkit-details-marker { display: none; }
+.parable-parallel__ref { font-size: 15px; font-weight: 600; color: var(--ink); }
+.parable-parallel__open { font-size: 13px; font-weight: 600; color: var(--gold); }
+.parable-parallel[open] .parable-parallel__open { color: var(--ink-faded); }
+.parable-parallel[open] summary { border-bottom: 1px solid var(--rule); }
+.parable-parallel .chapter-text { padding: 16px; font-size: 18px; }
+.parable-parallel .parable-passage__trans { padding: 0 16px 16px; margin-top: 0; }
+
+@media (min-width: 768px) {
+  .parable-title { font-size: 34px; }
+}

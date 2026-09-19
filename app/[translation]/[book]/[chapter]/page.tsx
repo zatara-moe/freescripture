@@ -364,6 +364,14 @@ export default async function ChapterPage(
                 </a>
               )}
               {["Matthew", "Mark", "Luke", "John"].includes(bk.name) && (
+                <Link className="keep-reading__link" href="/parables/">
+                  <span className="keep-reading__link-label">The parables of Jesus</span>
+                  <span className="keep-reading__link-desc">
+                    All 37, sorted by what they are about
+                  </span>
+                </Link>
+              )}
+              {["Matthew", "Mark", "Luke", "John"].includes(bk.name) && (
                 <a className="keep-reading__link" href="https://www.digitallutheranchurch.com/word/propers" rel="noopener">
                   <span className="keep-reading__link-label">This Sunday&apos;s readings</span>
                   <span className="keep-reading__link-desc">

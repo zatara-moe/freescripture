@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=9" />
+        <link rel="stylesheet" href="/static/css/site.css?v=10" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#fcfaf6" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1c1812" media="(prefers-color-scheme: dark)" />
@@ -124,6 +124,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav className="site-nav" aria-label="Primary">
               <Link href="/read/">For you</Link>
+              <Link href="/parables/">Parables</Link>
               <Link href="/web/">Books</Link>
               <Link href="/search/">Search</Link>
               <Link href="/about/">About</Link>
