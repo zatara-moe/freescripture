@@ -187,6 +187,18 @@
     return t;
   }
 
+  function parseBareRef(q) {
+    // Bare "3:22" or "3 22" — a chapter:verse with no book name.
+    // Ambiguous by nature (dozens of books can share the same pair),
+    // so this routes to the disambiguation page rather than guessing.
+    var m = q.trim().match(/^(\d{1,3})\s*[:.]?\s*(\d{1,3})$/);
+    if (!m) return null;
+    var chapter = parseInt(m[1], 10);
+    var verse = parseInt(m[2], 10);
+    if (chapter < 1 || verse < 1) return null;
+    return { chapter: chapter, verse: verse };
+  }
+
   function search(q) {
     q = (q || '').trim();
     if (!q) {
@@ -211,6 +223,17 @@
       statusEl.textContent = 'Jumping to ' + ref.book + ' ' + ref.chapter +
         (ref.verse ? ':' + ref.verse : '') + '...';
       window.location.href = url;
+      return;
+    }
+
+    // Then try as a bare chapter:verse with no book — e.g. "3:22".
+    // Genesis, Exodus, John, and two dozen other books all have a
+    // 3:22, so this goes to a page that shows the canonical-first
+    // match in full and lists every other place it appears.
+    var bare = parseBareRef(q);
+    if (bare) {
+      statusEl.textContent = 'Looking up ' + bare.chapter + ':' + bare.verse + '...';
+      window.location.href = '/verse/' + bare.chapter + '-' + bare.verse + '/';
       return;
     }
 

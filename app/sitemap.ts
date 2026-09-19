@@ -8,6 +8,7 @@ import {
   PARABLES,
   SITE_URL,
 } from "@/lib/bible";
+import verseIndex from "@/lib/verse-index.json";
 
 export const dynamic = "force-static";
 
@@ -23,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const n of NEEDS as any[]) urls.push({ url: `${SITE_URL}/read/${n.slug}/` });
   for (const g of GENRES as any[]) urls.push({ url: `${SITE_URL}/genre/${g.slug}/` });
   for (const p of PARABLES as any[]) urls.push({ url: `${SITE_URL}/parables/${p.slug}/` });
+  // Bare "chapter:verse" disambiguation pages — every one built for the
+  // literal query someone types when they don't remember the book name.
+  for (const key of Object.keys(verseIndex as Record<string, string[]>)) {
+    const [chapter, verse] = key.split(":");
+    urls.push({ url: `${SITE_URL}/verse/${chapter}-${verse}/` });
+  }
   for (const t of TRANS_ORDER) {
     urls.push({ url: `${SITE_URL}/${t}/` });
     for (const b of booksForTranslation(t)) urls.push({ url: `${SITE_URL}/${t}/${b.slug}/` });

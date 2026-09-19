@@ -1318,3 +1318,46 @@ body { padding-bottom: 72px; }
   align-self: center;
 }
 .bookrow__icon svg { width: 100%; height: 100%; }
+
+/* ==========================================================
+   Verse disambiguation page (/verse/[chapter]-[verse]/)
+   Built for a bare "3:22"-style search: honest about ambiguity,
+   canonical-first match shown in full, everything else listed
+   plainly below rather than guessed away.
+   ========================================================== */
+.verse-disambig-head { padding: 20px 0 8px; }
+.verse-disambig-head__label {
+  font-family: var(--font-body); font-size: 34px; font-weight: 400;
+  letter-spacing: -0.02em; color: var(--ink); font-optical-sizing: auto;
+}
+.verse-disambig-head__note {
+  font-size: 15px; color: var(--ink-faded); margin-top: 10px; line-height: 1.55;
+  max-width: 36rem;
+}
+
+.verse-disambig-primary {
+  margin: 24px 0 32px; padding: 22px 24px;
+  background: var(--white); border-radius: var(--radius);
+  box-shadow: var(--card-shadow); max-width: 36rem;
+}
+.verse-disambig-primary__ref {
+  font-family: var(--font-ui); font-size: 15px; font-weight: 700;
+  color: var(--gold); text-decoration: none;
+}
+.verse-disambig-primary__ref:hover { text-decoration: underline; }
+.verse-disambig-primary__text {
+  display: block; font-family: var(--font-body); font-size: 20px;
+  line-height: 1.6; color: var(--ink); margin: 14px 0;
+  font-optical-sizing: auto;
+}
+.verse-disambig-primary__more {
+  font-size: 13px; font-weight: 600; color: var(--gold); text-decoration: none;
+}
+.verse-disambig-primary__more:hover { text-decoration: underline; }
+
+.verse-disambig-rest { margin-bottom: 32px; }
+.verse-disambig-rest__heading {
+  font-family: var(--font-body); font-size: 19px; font-weight: 400;
+  color: var(--ink); letter-spacing: -0.01em; margin-bottom: 14px;
+  font-optical-sizing: auto;
+}
