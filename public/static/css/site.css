@@ -585,6 +585,72 @@ button { font: inherit; cursor: pointer; }
   font-size: 15px; color: var(--ink-faded); margin-top: 10px;
 }
 
+/* === The single primary action ===
+   One clear next step instead of four equal ones. Larger than any
+   card in the grid below it, with room for two lines of real text —
+   because a card this size can afford to say something, rather than
+   two words padded out with empty space. */
+.hero-primary {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 22px 24px;
+  background: var(--white); border-radius: var(--radius);
+  box-shadow: var(--card-shadow); text-decoration: none; color: var(--ink);
+  margin: 28px 0 14px;
+  transition: box-shadow 0.2s ease;
+}
+.hero-primary:hover { box-shadow: var(--card-shadow-hover); }
+@media (prefers-reduced-motion: reduce) { .hero-primary { transition: none; } }
+.hero-primary__body { display: flex; flex-direction: column; min-width: 0; }
+.hero-primary__label {
+  font-family: var(--font-ui); font-size: 18px; font-weight: 700;
+  color: var(--ink);
+}
+.hero-primary__sub {
+  font-family: var(--font-body); font-style: italic; font-size: 14px;
+  color: var(--ink-faded); margin-top: 4px; font-optical-sizing: auto;
+}
+.hero-primary__arrow {
+  font-size: 24px; color: var(--gold); flex-shrink: 0;
+}
+
+/* === Real search field ===
+   A text input everyone already recognizes on sight, rather than a
+   button labeled "Search" that has to be read and understood first. */
+.hero-search {
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 16px; background: var(--white);
+  border-radius: var(--radius); box-shadow: var(--card-shadow);
+  margin-bottom: 20px;
+}
+.hero-search svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--ink-faded); }
+.hero-search__input {
+  flex: 1; border: none; outline: none; background: none;
+  font-family: var(--font-ui); font-size: 16px; color: var(--ink);
+  min-width: 0;
+}
+.hero-search__input::placeholder { color: var(--ink-hint); }
+
+/* === Quiet secondary links ===
+   Plain text, not boxes — a lighter-weight option for someone who
+   wants a different starting point without evaluating another set
+   of equally-weighted cards first. Matches DLC's own restrained
+   arrow-link convention for secondary paths. */
+.hero-links {
+  display: flex; flex-wrap: wrap; gap: 4px 24px; margin-bottom: 8px;
+}
+.hero-links__link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-ui); font-size: 15px; font-weight: 600;
+  color: var(--ink); text-decoration: none; padding: 8px 0;
+}
+.hero-links__link span {
+  color: var(--gold); transition: transform 0.15s ease;
+}
+.hero-links__link:hover span { transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-links__link span { transition: none; }
+}
+
 /* Section headings */
 .home-h2 {
   font-family: var(--font-body); font-size: 19px; font-weight: 400;

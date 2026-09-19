@@ -16,26 +16,48 @@ export default function Home() {
         <h1 className="home-hero__headline">The whole Bible, open to anyone.</h1>
         <p className="home-hero__sub">Three translations. No account, no ads.</p>
       </section>
-      <div className="hcard-row hcard-row--4">
-        <a className="hcard" id="quick-start" href="/web/psalms/23/" data-quick-start>
-          <span className="hcard__label" data-quick-start-label>Start reading</span>
-          <span className="hcard__arrow">&rarr;</span>
-        </a>
-        <Link className="hcard" href="/read/">
-          <span className="hcard__label">For right now</span>
-          <span className="hcard__arrow">&rarr;</span>
+
+      {/* One clear next step, not four equal ones. For a returning
+          reader this becomes "Continue reading [X]" automatically;
+          for everyone else it's a sensible, specific default rather
+          than a vague "start here" button. */}
+      <a className="hero-primary" id="quick-start" href="/web/psalms/23/" data-quick-start>
+        <span className="hero-primary__body">
+          <span className="hero-primary__label" data-quick-start-label>Start with Psalm 23</span>
+          <span className="hero-primary__sub" data-quick-start-sub>The Lord is my shepherd. A good place to begin.</span>
+        </span>
+        <span className="hero-primary__arrow">&rarr;</span>
+      </a>
+
+      {/* A real search field — the one pattern every age group already
+          knows on sight, so it doesn't need to be a labeled button. */}
+      <form className="hero-search" action="/search/" role="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+        </svg>
+        <input
+          className="hero-search__input"
+          type="search"
+          name="q"
+          placeholder="Search for a word or verse"
+          aria-label="Search scripture"
+        />
+      </form>
+
+      {/* Lighter-weight paths, as plain text links rather than boxes —
+          for someone who wants a different starting point without
+          having to evaluate four equally-weighted options first. */}
+      <nav className="hero-links" aria-label="More ways to start">
+        <Link className="hero-links__link" href="/read/">
+          A verse for right now <span>&rarr;</span>
         </Link>
-        <Link className="hcard" href="/parables/">
-          <span className="hcard__label">Parables</span>
-          <span className="hcard__arrow">&rarr;</span>
+        <Link className="hero-links__link" href="/parables/">
+          The parables <span>&rarr;</span>
         </Link>
-        <Link className="hcard" href="/search/">
-          <span className="hcard__label">Search</span>
-          <span className="hcard__arrow">&rarr;</span>
-        </Link>
-      </div>
+      </nav>
+
       <script dangerouslySetInnerHTML={{ __html:
-        `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label||'Continue';}}catch(e){}})();`
+        `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label?('Continue: '+d.label):'Continue reading';var sub=el.querySelector('[data-quick-start-sub]');if(sub)sub.textContent='Pick up where you left off.';}}catch(e){}})();`
       }} />
       <h2 className="home-h2">Pick a translation</h2>
       <div className="hcard-row hcard-row--col">
