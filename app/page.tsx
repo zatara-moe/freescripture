@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="home">
       <section className="home-hero">
-        <h1 className="home-hero__headline">The whole Bible,<br />open to anyone.</h1>
+        <h1 className="home-hero__headline">The whole Bible, open to anyone.</h1>
         <p className="home-hero__sub">Three translations. No account, no ads.</p>
       </section>
       <div className="hcard-row hcard-row--4">
