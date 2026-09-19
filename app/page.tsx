@@ -24,6 +24,29 @@ const Chev = () => (
   </svg>
 );
 
+/* Icon set for the quick-access grid and row leads. Same stroke style
+   as the tab bar (1.7-2px, round caps) so the whole site reads as one
+   icon language, not a mix of styles. Icons exist so someone can find
+   their way by recognizing a shape, not by reading a paragraph. */
+function IconBook() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M19 19H6a2 2 0 0 0-2 2" /></svg>;
+}
+function IconHeart() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" /></svg>;
+}
+function IconStory() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>;
+}
+function IconBookmark() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 4a2 2 0 0 0-2 2v14l8-5 8 5V6a2 2 0 0 0-2-2z" /></svg>;
+}
+function IconCross() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3v18" /><path d="M7 8h10" /></svg>;
+}
+function IconCalendar() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18" /><path d="M8 3v4" /><path d="M16 3v4" /></svg>;
+}
+
 export default function Home() {
   const needRows = NEEDS.filter((n: any) => HOME_NEEDS.includes(n.slug));
 
@@ -48,13 +71,43 @@ export default function Home() {
         </form>
       </section>
 
-      <a className="home-cont" id="home-cont" href="#" hidden>
-        <span>
-          <span className="m">Where you left off</span>
-          <span className="r" data-cont-ref></span>
-        </span>
-        <span className="a" aria-hidden="true">&rarr;</span>
-      </a>
+      {/* --- Quick access ---
+          Four big, icon-led cards instead of a page of text to read.
+          This is the actual front door for someone who does not know
+          the site: recognize a picture and a few words, tap it, done.
+          No scrolling past six sections to find the right link. */}
+      <div className="quick-grid">
+        <a className="quick-card quick-card--start" id="quick-start" href="/web/psalms/23/" data-quick-start>
+          <span className="quick-card__icon"><IconBookmark /></span>
+          <span className="quick-card__label" data-quick-start-label>Just start reading</span>
+        </a>
+        <Link className="quick-card" href="/read/">
+          <span className="quick-card__icon"><IconHeart /></span>
+          <span className="quick-card__label">A verse for right now</span>
+        </Link>
+        <Link className="quick-card" href="/parables/">
+          <span className="quick-card__icon"><IconStory /></span>
+          <span className="quick-card__label">Read me a story</span>
+        </Link>
+        <form className="quick-card quick-card--search" action="/search/" role="search">
+          <span className="quick-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+          </span>
+          <input
+            className="quick-card__search-input"
+            type="search"
+            name="q"
+            placeholder="Or search for a word or name"
+            aria-label="Search scripture"
+          />
+        </form>
+      </div>
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label?('Continue: '+d.label):'Continue reading';}}catch(e){}})();`,
+        }}
+      />
 
       {/* --- Start reading: translations --- */}
       <div className="home-divider" />
@@ -62,6 +115,7 @@ export default function Home() {
       <div className="read-list" style={{ marginBottom: 0 }}>
         {TRANS_CARDS.map((tc) => (
           <Link className="bookrow bookrow--primary" href={`/${tc.slug}/`} key={tc.slug}>
+            <span className="bookrow__icon"><IconBook /></span>
             <span className="bookrow__main">
               <span className="bookrow__t">{tc.label}</span>
               <span className="bookrow__d">{tc.desc}</span>
@@ -95,6 +149,7 @@ export default function Home() {
       </div>
       <div className="read-list">
         <Link className="bookrow" href="/parables/prodigal-son/">
+          <span className="bookrow__icon"><IconStory /></span>
           <span className="bookrow__main">
             <span className="bookrow__t">The Prodigal Son</span>
             <span className="bookrow__d">A son spends everything and comes home expecting to be a servant.</span>
@@ -102,6 +157,7 @@ export default function Home() {
           <Chev />
         </Link>
         <Link className="bookrow" href="/parables/good-samaritan/">
+          <span className="bookrow__icon"><IconStory /></span>
           <span className="bookrow__main">
             <span className="bookrow__t">The Good Samaritan</span>
             <span className="bookrow__d">Two religious men pass by. A foreigner stops.</span>
@@ -109,6 +165,7 @@ export default function Home() {
           <Chev />
         </Link>
         <Link className="bookrow" href="/parables/sower/">
+          <span className="bookrow__icon"><IconStory /></span>
           <span className="bookrow__main">
             <span className="bookrow__t">The Sower</span>
             <span className="bookrow__d">Seed on a path, on rock, among thorns, on good soil.</span>
@@ -131,6 +188,7 @@ export default function Home() {
             key={n.slug}
             style={{ ["--rowc" as any]: `var(--g-${n.accent})` } as React.CSSProperties}
           >
+            <span className="bookrow__icon"><IconHeart /></span>
             <span className="bookrow__main">
               <span className="bookrow__t">{n.short}</span>
               <span className="bookrow__d">{n.card}</span>
@@ -158,6 +216,7 @@ export default function Home() {
       <div className="home-divider" />
       <div className="section-label">This Sunday</div>
       <a className="bookrow bookrow--primary" href="https://www.digitallutheranchurch.com/word/propers" rel="noopener">
+        <span className="bookrow__icon"><IconCalendar /></span>
         <span className="bookrow__main">
           <span className="bookrow__t">This Sunday&apos;s readings</span>
           <span className="bookrow__d">The appointed scripture for this week, from the Revised Common Lectionary.</span>
@@ -174,6 +233,7 @@ export default function Home() {
       </div>
       <div className="read-list">
         <a className="bookrow" href="https://www.digitallutheranchurch.com/pray/" rel="noopener">
+          <span className="bookrow__icon"><IconCross /></span>
           <span className="bookrow__main">
             <span className="bookrow__t">Daily prayer</span>
             <span className="bookrow__d">Morning, evening, and night offices in the historic tradition.</span>
@@ -181,6 +241,7 @@ export default function Home() {
           <Chev />
         </a>
         <a className="bookrow" href="https://www.digitallutheranchurch.com/for/" rel="noopener">
+          <span className="bookrow__icon"><IconHeart /></span>
           <span className="bookrow__main">
             <span className="bookrow__t">What do you need</span>
             <span className="bookrow__d">Grief, doubt, fear, marriage, work. Sorted by what brought you here.</span>
@@ -188,6 +249,7 @@ export default function Home() {
           <Chev />
         </a>
         <a className="bookrow" href="https://www.digitallutheranchurch.com/library/" rel="noopener">
+          <span className="bookrow__icon"><IconBook /></span>
           <span className="bookrow__main">
             <span className="bookrow__t">The Lutheran library</span>
             <span className="bookrow__d">Fifty works of Luther, free to read.</span>
@@ -195,12 +257,6 @@ export default function Home() {
           <Chev />
         </a>
       </div>
-
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('home-cont');if(el&&d.url){el.href=d.url;var r=el.querySelector('[data-cont-ref]');if(r)r.textContent=d.label||'Continue reading';el.hidden=false;}}catch(e){}})();`,
-        }}
-      />
     </div>
   );
 }

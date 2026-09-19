@@ -1087,3 +1087,142 @@ body { padding-bottom: 72px; }
 @media (min-width: 768px) {
   .parable-title { font-size: 34px; }
 }
+
+/* ==========================================================
+   Keyboard shortcuts, help overlay, and the first-visit tip.
+   These exist because everything built into this site so far
+   (focus mode, swipe, jump-to-verse, dark mode) was invisible
+   to a first-time user. This is the discoverability layer.
+   ========================================================== */
+
+.shortcuts-btn {
+  display: none; /* desktop only — mobile has no keyboard */
+  align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid var(--rule); background: none;
+  color: var(--ink-faded); font-family: var(--font-ui);
+  font-size: 14px; font-weight: 700; cursor: pointer; flex-shrink: 0;
+  transition: border-color 0.15s, color 0.15s;
+}
+.shortcuts-btn:hover { border-color: var(--gold); color: var(--gold); }
+@media (min-width: 768px) {
+  .shortcuts-btn { display: inline-flex; }
+}
+
+.shortcuts-modal {
+  position: fixed; inset: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(26, 23, 20, 0.4); padding: 20px;
+}
+.shortcuts-modal[hidden] { display: none; }
+.shortcuts-modal__card {
+  background: var(--paper); border-radius: var(--radius);
+  border: 1px solid var(--rule); padding: 24px;
+  max-width: 380px; width: 100%;
+  box-shadow: 0 12px 32px rgba(26, 23, 20, 0.2);
+}
+.shortcuts-modal__head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.shortcuts-modal__head h2 { font-size: 18px; font-weight: 700; }
+.shortcuts-modal__head button {
+  background: none; border: none; font-size: 22px; line-height: 1;
+  color: var(--ink-faded); cursor: pointer; padding: 4px 8px;
+}
+.shortcuts-modal__head button:hover { color: var(--ink); }
+.shortcuts-list > div {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 0; border-bottom: 1px solid var(--rule-soft);
+  font-size: 14px;
+}
+.shortcuts-list > div:last-child { border-bottom: none; }
+.shortcuts-list dt {
+  font-family: var(--font-ui); font-weight: 700; color: var(--ink);
+  background: var(--paper-warm); padding: 3px 9px; border-radius: 6px;
+  border: 1px solid var(--rule); min-width: 20px; text-align: center;
+}
+.shortcuts-list dd { color: var(--ink-faded); }
+
+/* First-visit chapter navigation tip */
+.nav-tip {
+  position: fixed; bottom: 76px; left: 50%; transform: translateX(-50%);
+  z-index: 60; display: flex; align-items: center; gap: 10px;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--font-ui); font-size: 13px;
+  padding: 10px 10px 10px 16px; border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(26, 23, 20, 0.25);
+  max-width: calc(100vw - 40px);
+}
+.nav-tip[hidden] { display: none; }
+.nav-tip button {
+  background: none; border: none; color: var(--paper); opacity: 0.7;
+  font-size: 18px; line-height: 1; cursor: pointer; padding: 2px 6px;
+  flex-shrink: 0;
+}
+.nav-tip button:hover { opacity: 1; }
+@media (min-width: 768px) {
+  .nav-tip { bottom: 24px; }
+}
+
+/* ==========================================================
+   Quick access grid and row icons
+   The actual fix for "how do I find what I need": recognize a
+   shape and a short label instead of reading through six sections
+   of text. Big touch targets (88px+), icon first, one line of text.
+   ========================================================== */
+
+.quick-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; margin: 20px 0 8px;
+}
+.quick-card {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 8px; text-align: center;
+  min-height: 100px; padding: 16px 10px;
+  background: var(--white); border: 1.5px solid var(--rule);
+  border-radius: var(--radius); text-decoration: none; color: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+.quick-card:hover { border-color: var(--gold); background: var(--paper-warm); }
+.quick-card:active { transform: scale(0.98); }
+.quick-card__icon {
+  width: 34px; height: 34px; color: var(--gold); flex-shrink: 0;
+}
+.quick-card__icon svg { width: 100%; height: 100%; }
+.quick-card__label {
+  font-family: var(--font-ui); font-size: 14px; font-weight: 700;
+  color: var(--ink); line-height: 1.25;
+}
+.quick-card--start .quick-card__icon,
+.quick-card--search .quick-card__icon { color: var(--gold); }
+
+/* The search card looks like the others but holds a real input.
+   No separate "type here" instruction needed — it's the same shape
+   as every other card, so it reads as one more thing to tap. */
+.quick-card--search {
+  padding: 12px 14px; cursor: text;
+}
+.quick-card--search .quick-card__icon { width: 22px; height: 22px; margin-bottom: 0; }
+.quick-card--search .quick-card__search-input {
+  width: 100%; border: none; background: none; font-family: var(--font-ui);
+  font-size: 14px; color: var(--ink); text-align: center; outline: none;
+}
+.quick-card--search .quick-card__search-input::placeholder { color: var(--ink-hint); }
+
+@media (min-width: 480px) {
+  .quick-grid { grid-template-columns: repeat(4, 1fr); }
+  .quick-card--search { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quick-card { transition: none; }
+}
+
+/* --- Row icons: a small icon at the lead of a bookrow, for
+   recognition-based scanning of the longer lists further down
+   the page. Same visual language as the quick-access icons. --- */
+.bookrow__icon {
+  width: 28px; height: 28px; flex-shrink: 0; margin-right: 12px;
+  color: var(--rowc, var(--gold)); opacity: 0.85;
+}
+.bookrow__icon svg { width: 100%; height: 100%; }

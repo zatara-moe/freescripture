@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=10" />
+        <link rel="stylesheet" href="/static/css/site.css?v=12" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#fcfaf6" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1c1812" media="(prefers-color-scheme: dark)" />
@@ -152,6 +152,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             </button>
+            <button
+              className="shortcuts-btn"
+              type="button"
+              data-shortcuts-open
+              aria-label="Keyboard shortcuts"
+              title="Keyboard shortcuts (?)"
+            >
+              ?
+            </button>
           </div>
         </header>
 
@@ -188,6 +197,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="hfa-mark">Scripture for <a href="https://www.digitallutheranchurch.com">Digital Lutheran Church</a></div>
           <div className="hfa-vision">free to use, the way the web used to be</div>
         </footer>
+
+        {/* Keyboard shortcuts overlay — closed by default, opened by
+            the ? button, the ? key, or Escape while open. */}
+        <div className="shortcuts-modal" id="shortcuts-help" role="dialog" aria-modal="true" aria-labelledby="shortcuts-title" hidden>
+          <div className="shortcuts-modal__card">
+            <div className="shortcuts-modal__head">
+              <h2 id="shortcuts-title">Keyboard shortcuts</h2>
+              <button type="button" data-shortcuts-close aria-label="Close">&times;</button>
+            </div>
+            <dl className="shortcuts-list">
+              <div><dt>&larr; &rarr;</dt><dd>Previous / next chapter</dd></div>
+              <div><dt>/</dt><dd>Search</dd></div>
+              <div><dt>D</dt><dd>Reading display settings</dd></div>
+              <div><dt>T</dt><dd>Light / dark mode</dd></div>
+              <div><dt>G</dt><dd>Toggle focus mode</dd></div>
+              <div><dt>Esc</dt><dd>Close this, or any open panel</dd></div>
+              <div><dt>?</dt><dd>Show this list</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        {/* First-visit tip: teaches chapter swipe/arrow navigation once. */}
+        <div className="nav-tip" id="nav-tip" hidden>
+          <span>Swipe, or use &larr; &rarr;, to move between chapters.</span>
+          <button type="button" data-tip-close aria-label="Dismiss">&times;</button>
+        </div>
+
+        <script src="/static/js/shortcuts.js?v=1" defer></script>
 
         <script src="/static/js/reading-prefs.js?v=8" defer></script>
         <script dangerouslySetInnerHTML={{ __html: `
