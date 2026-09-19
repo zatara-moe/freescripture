@@ -1,13 +1,12 @@
 import Link from "next/link";
-import { GENRES } from "@/lib/bible";
 
 const FAMOUS = [
-  { ref: "Psalm 23", url: "/web/psalms/23/", line: "The Lord is my shepherd." },
-  { ref: "John 3", url: "/web/john/3/", line: "For God so loved the world." },
-  { ref: "Genesis 1", url: "/web/genesis/1/", line: "In the beginning." },
-  { ref: "1 Corinthians 13", url: "/web/1-corinthians/13/", line: "Love is patient, love is kind." },
-  { ref: "Romans 8", url: "/web/romans/8/", line: "Nothing can separate us." },
-  { ref: "Matthew 5", url: "/web/matthew/5/", line: "Blessed are the meek." },
+  { ref: "Psalm 23",        url: "/web/psalms/23/",        line: "The Lord is my shepherd." },
+  { ref: "John 3",          url: "/web/john/3/",           line: "For God so loved the world." },
+  { ref: "Genesis 1",       url: "/web/genesis/1/",        line: "In the beginning." },
+  { ref: "1 Cor 13",        url: "/web/1-corinthians/13/", line: "Love is patient, love is kind." },
+  { ref: "Romans 8",        url: "/web/romans/8/",         line: "Nothing can separate us." },
+  { ref: "Matthew 5",       url: "/web/matthew/5/",        line: "Blessed are the meek." },
 ];
 
 export default function Home() {
