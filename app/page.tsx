@@ -10,150 +10,99 @@ const FAMOUS = [
   { ref: "Matthew 5", url: "/web/matthew/5/", line: "Blessed are the meek." },
 ];
 
-const TRANS_CARDS: { slug: string; label: string; desc: string; tag?: string }[] = [
-  { slug: "web", label: "World English Bible", desc: "Modern, easy to read", tag: "Good place to start" },
-  { slug: "kjv", label: "King James Version", desc: "Classic, 1600s English. Includes the Apocrypha." },
-  { slug: "bbe", label: "Bible in Basic English", desc: "About 1,000 common words" },
-];
-
-const Chev = () => (
-  <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true">
-    <path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-/* Icon set for the quick-access grid and row leads. Same stroke style
-   as the tab bar (1.7-2px, round caps) so the whole site reads as one
-   icon language, not a mix of styles. Icons exist so someone can find
-   their way by recognizing a shape, not by reading a paragraph. */
-function IconBook() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M19 19H6a2 2 0 0 0-2 2" /></svg>;
-}
-function IconHeart() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" /></svg>;
-}
-function IconStory() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>;
-}
-function IconCross() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3v18" /><path d="M7 8h10" /></svg>;
-}
-function IconCalendar() {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18" /><path d="M8 3v4" /><path d="M16 3v4" /></svg>;
-}
-
 export default function Home() {
   return (
     <div className="home">
+
+      {/* Hero — matches DLC's voice: says what the site does, not what
+          it costs. "Free" is discovered, not announced. */}
       <section className="home-hero">
-        <p className="home-hero__welcome">Read the Bible, free and private.</p>
-        <p className="home-hero__desc">Three public-domain translations. No account, no tracking, works offline.</p>
+        <h1 className="home-hero__headline">The whole Bible, open to anyone.</h1>
+        <p className="home-hero__sub">
+          Three public-domain translations. Read here, or take it with you.
+        </p>
       </section>
 
-      {/* --- Quick access ---
-          Four big, icon-led cards instead of a page of text to read.
-          This is the actual front door for someone who does not know
-          the site: recognize a picture and a few words, tap it, done.
-          No scrolling past six sections to find the right link. */}
-      <div className="home-divider" />
-      <div className="section-label">Quick start</div>
-      <div className="quick-grid">
-        <a className="quick-card" id="quick-start" href="/web/psalms/23/" data-quick-start>
-          <span className="quick-card__icon" data-quick-start-icon><IconBook /></span>
-          <span className="quick-card__label" data-quick-start-label>Start reading</span>
+      {/* Quick access — text-first link blocks, matching DLC's arrow-link
+          pattern. No generic stroke icons. Background fill, not borders. */}
+      <div className="home-quick">
+        <a className="home-quick__card" id="quick-start" href="/web/psalms/23/" data-quick-start>
+          <span className="home-quick__label" data-quick-start-label>Start reading</span>
+          <span className="home-quick__arrow">&rarr;</span>
         </a>
-        <Link className="quick-card" href="/read/">
-          <span className="quick-card__icon"><IconHeart /></span>
-          <span className="quick-card__label">For right now</span>
+        <Link className="home-quick__card" href="/read/">
+          <span className="home-quick__label">A verse for right now</span>
+          <span className="home-quick__arrow">&rarr;</span>
         </Link>
-        <Link className="quick-card" href="/parables/">
-          <span className="quick-card__icon"><IconStory /></span>
-          <span className="quick-card__label">Parables</span>
+        <Link className="home-quick__card" href="/parables/">
+          <span className="home-quick__label">The parables</span>
+          <span className="home-quick__arrow">&rarr;</span>
         </Link>
-        <Link className="quick-card" href="/search/">
-          <span className="quick-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-          </span>
-          <span className="quick-card__label">Search</span>
+        <Link className="home-quick__card" href="/search/">
+          <span className="home-quick__label">Search</span>
+          <span className="home-quick__arrow">&rarr;</span>
         </Link>
       </div>
 
       <script
         dangerouslySetInnerHTML={{
-          __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label||'Continue';var ic=el.querySelector('[data-quick-start-icon]');if(ic)ic.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4a2 2 0 0 0-2 2v14l8-5 8 5V6a2 2 0 0 0-2-2z"/></svg>';}}catch(e){}})();`,
+          __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label||'Continue reading';}}catch(e){}})();`,
         }}
       />
 
-      {/* --- Start reading: translations --- */}
-      <div className="home-divider" />
-      <div className="section-label">Start reading</div>
-      <div className="read-list" style={{ marginBottom: 0 }}>
-        {TRANS_CARDS.map((tc) => (
-          <Link className="bookrow bookrow--primary" href={`/${tc.slug}/`} key={tc.slug}>
-            <span className="bookrow__icon"><IconBook /></span>
-            <span className="bookrow__main">
-              <span className="bookrow__t">{tc.label}</span>
-              <span className="bookrow__d">{tc.desc}</span>
-              {tc.tag && <span className="bookrow__tag">{tc.tag}</span>}
-            </span>
-            <Chev />
-          </Link>
-        ))}
+      {/* Translations */}
+      <h2 className="home-section">Pick a translation</h2>
+      <div className="home-translations">
+        <Link className="home-trans" href="/web/">
+          <span className="home-trans__name">World English Bible</span>
+          <span className="home-trans__desc">Modern, easy to read</span>
+          <span className="home-trans__tag">Good place to start</span>
+        </Link>
+        <Link className="home-trans" href="/kjv/">
+          <span className="home-trans__name">King James Version</span>
+          <span className="home-trans__desc">Classic, 1600s English. Includes the Apocrypha.</span>
+        </Link>
+        <Link className="home-trans" href="/bbe/">
+          <span className="home-trans__name">Bible in Basic English</span>
+          <span className="home-trans__desc">About 1,000 common words</span>
+        </Link>
       </div>
 
-      {/* --- Famous passages --- */}
-      <div className="home-divider" />
-      <div className="section-label">Jump to a famous passage</div>
-      <div className="read-list read-list--grid">
+      {/* Famous passages */}
+      <h2 className="home-section">Go to a passage you know</h2>
+      <div className="home-passages">
         {FAMOUS.map((f) => (
-          <Link className="bookrow" href={f.url} key={f.ref}>
-            <span className="bookrow__main">
-              <span className="bookrow__t">{f.ref}</span>
-              <span className="bookrow__d">{f.line}</span>
-            </span>
-            <Chev />
+          <Link className="home-passage" href={f.url} key={f.ref}>
+            <span className="home-passage__ref">{f.ref}</span>
+            <span className="home-passage__line">{f.line}</span>
           </Link>
         ))}
       </div>
 
-      {/* --- Parables --- */}
-      <div className="home-divider" />
-      <div className="section-head">
-        <span className="section-label">The parables of Jesus</span>
-        <Link className="section-link" href="/parables/">All 37 &rarr;</Link>
+      {/* Parables */}
+      <div className="home-section-row">
+        <h2 className="home-section">The parables of Jesus</h2>
+        <Link className="home-section__more" href="/parables/">All 37 &rarr;</Link>
       </div>
-      <div className="read-list">
-        <Link className="bookrow" href="/parables/prodigal-son/">
-          <span className="bookrow__icon"><IconStory /></span>
-          <span className="bookrow__main">
-            <span className="bookrow__t">The Prodigal Son</span>
-            <span className="bookrow__d">A son spends everything and comes home expecting to be a servant.</span>
-          </span>
-          <Chev />
+      <div className="home-parables">
+        <Link className="home-parable" href="/parables/prodigal-son/">
+          <span className="home-parable__title">The Prodigal Son</span>
+          <span className="home-parable__line">A son spends everything and comes home.</span>
         </Link>
-        <Link className="bookrow" href="/parables/good-samaritan/">
-          <span className="bookrow__icon"><IconStory /></span>
-          <span className="bookrow__main">
-            <span className="bookrow__t">The Good Samaritan</span>
-            <span className="bookrow__d">Two religious men pass by. A foreigner stops.</span>
-          </span>
-          <Chev />
+        <Link className="home-parable" href="/parables/good-samaritan/">
+          <span className="home-parable__title">The Good Samaritan</span>
+          <span className="home-parable__line">Two pass by. A foreigner stops.</span>
         </Link>
-        <Link className="bookrow" href="/parables/sower/">
-          <span className="bookrow__icon"><IconStory /></span>
-          <span className="bookrow__main">
-            <span className="bookrow__t">The Sower</span>
-            <span className="bookrow__d">Seed on a path, on rock, among thorns, on good soil.</span>
-          </span>
-          <Chev />
+        <Link className="home-parable" href="/parables/sower/">
+          <span className="home-parable__title">The Sower</span>
+          <span className="home-parable__line">Four soils. One yields.</span>
         </Link>
       </div>
 
-      {/* --- Browse by kind --- */}
-      <div className="home-divider" />
-      <div className="section-head">
-        <span className="section-label">Browse by kind of book</span>
-        <Link className="section-link" href="/genre/">See all &rarr;</Link>
+      {/* Browse by kind */}
+      <div className="home-section-row">
+        <h2 className="home-section">Browse by kind of book</h2>
+        <Link className="home-section__more" href="/genre/">See all &rarr;</Link>
       </div>
       <div className="genre-pills">
         {GENRES.map((g: any) => (
@@ -163,49 +112,28 @@ export default function Home() {
         ))}
       </div>
 
-      {/* --- This Sunday (DLC integration) --- */}
-      <div className="home-divider" />
-      <div className="section-label">This Sunday</div>
-      <a className="bookrow bookrow--primary" href="https://www.digitallutheranchurch.com/word/propers" rel="noopener">
-        <span className="bookrow__icon"><IconCalendar /></span>
-        <span className="bookrow__main">
-          <span className="bookrow__t">This Sunday&apos;s readings</span>
-          <span className="bookrow__d">The appointed scripture for this week, from the Revised Common Lectionary.</span>
-          <span className="bookrow__tag">Digital Lutheran Church</span>
-        </span>
-        <Chev />
+      {/* This Sunday */}
+      <h2 className="home-section">This Sunday</h2>
+      <a className="home-sunday" href="https://www.digitallutheranchurch.com/word/propers" rel="noopener">
+        <span className="home-sunday__label">This Sunday&apos;s readings</span>
+        <span className="home-sunday__desc">The appointed scripture for this week, from the Revised Common Lectionary.</span>
+        <span className="home-sunday__from">Digital Lutheran Church &rarr;</span>
       </a>
 
-      {/* --- From DLC (cross-site pastoral content) --- */}
-      <div className="home-divider" />
-      <div className="section-head">
-        <span className="section-label">From Digital Lutheran Church</span>
-        <a className="section-link" href="https://www.digitallutheranchurch.com" rel="noopener">Visit &rarr;</a>
+      {/* From DLC */}
+      <div className="home-section-row">
+        <h2 className="home-section">From Digital Lutheran Church</h2>
+        <a className="home-section__more" href="https://www.digitallutheranchurch.com" rel="noopener">Visit &rarr;</a>
       </div>
-      <div className="read-list">
-        <a className="bookrow" href="https://www.digitallutheranchurch.com/pray/" rel="noopener">
-          <span className="bookrow__icon"><IconCross /></span>
-          <span className="bookrow__main">
-            <span className="bookrow__t">Daily prayer</span>
-            <span className="bookrow__d">Morning, evening, and night offices in the historic tradition.</span>
-          </span>
-          <Chev />
+      <div className="home-dlc">
+        <a className="home-dlc__link" href="https://www.digitallutheranchurch.com/pray/" rel="noopener">
+          Daily prayer <span>&rarr;</span>
         </a>
-        <a className="bookrow" href="https://www.digitallutheranchurch.com/for/" rel="noopener">
-          <span className="bookrow__icon"><IconHeart /></span>
-          <span className="bookrow__main">
-            <span className="bookrow__t">What do you need</span>
-            <span className="bookrow__d">Grief, doubt, fear, marriage, work. Sorted by what brought you here.</span>
-          </span>
-          <Chev />
+        <a className="home-dlc__link" href="https://www.digitallutheranchurch.com/for/" rel="noopener">
+          What do you need <span>&rarr;</span>
         </a>
-        <a className="bookrow" href="https://www.digitallutheranchurch.com/library/" rel="noopener">
-          <span className="bookrow__icon"><IconBook /></span>
-          <span className="bookrow__main">
-            <span className="bookrow__t">The Lutheran library</span>
-            <span className="bookrow__d">Fifty works of Luther, free to read.</span>
-          </span>
-          <Chev />
+        <a className="home-dlc__link" href="https://www.digitallutheranchurch.com/library/" rel="noopener">
+          The Lutheran library <span>&rarr;</span>
         </a>
       </div>
     </div>
