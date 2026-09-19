@@ -48,8 +48,8 @@
     --ink-soft:   #c4b9ae;
     --ink-faded:  #8a7f74;
     --ink-hint:   #9a8f85;
-    --rule:       #2e2926;
-    --rule-soft:  #252220;
+    --rule:       #3a332e;
+    --rule-soft:  #2e2926;
     --gold:       #c89840;
     --white:      #241f1c;
     --highlight:  #3d3520;
@@ -69,8 +69,8 @@
   --ink-soft:   #c4b9ae;
   --ink-faded:  #8a7f74;
   --ink-hint:   #9a8f85;
-  --rule:       #2e2926;
-  --rule-soft:  #252220;
+  --rule:       #3a332e;
+  --rule-soft:  #2e2926;
   --gold:       #c89840;
   --white:      #241f1c;
   --highlight:  #3d3520;
@@ -445,12 +445,12 @@ button { font: inherit; cursor: pointer; }
 /* --- Bookrow (the universal row component) --- */
 .bookrow {
   display: flex; align-items: center;
-  background: var(--white); border: 1.5px solid var(--rule);
+  background: var(--paper-warm); border: 1.5px solid var(--rule);
   border-radius: var(--radius); padding: 14px 16px;
   text-decoration: none; color: inherit;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition: border-color 0.15s ease;
 }
-.bookrow:hover { border-color: var(--gold); background: var(--paper-warm); }
+.bookrow:hover { border-color: var(--gold); }
 
 /* --colored modifier: activates the --rowc accent that Need and Genre
    pages set via inline style. The variable is already being written;
@@ -507,14 +507,15 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* --- Section dividers and labels --- */
-.home-divider { height: 1px; background: var(--rule); margin: 24px 0; }
+.home-divider { height: 1px; background: var(--rule); margin: 28px 0; }
 .section-label {
-  font-size: 13px; font-weight: 700; color: var(--gold);
-  margin-bottom: 14px;
+  font-size: 12px; font-weight: 700; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 12px;
 }
 .section-head {
   display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 .section-link {
   font-size: 13px; font-weight: 600; color: var(--gold); text-decoration: none;
@@ -533,27 +534,12 @@ button { font: inherit; cursor: pointer; }
 /* --- Home page --- */
 .home { max-width: var(--measure); margin: 0 auto; padding: 0 20px 60px; }
 
-.home-hero { padding: 32px 0 10px; text-align: center; }
-.home-hero__title {
-  font-size: 30px; font-weight: 700; letter-spacing: -0.025em;
-  line-height: 1.1; margin-bottom: 8px;
+.home-hero { padding: 24px 0 8px; text-align: center; }
+.home-hero__welcome {
+  font-family: var(--font-body); font-size: 18px; line-height: 1.5;
+  color: var(--ink-soft); font-style: italic;
+  font-optical-sizing: auto;
 }
-.home-hero__sub {
-  font-size: 16px; color: var(--ink-faded); margin-bottom: 20px; line-height: 1.5;
-}
-.home-search {
-  border: 1.5px solid var(--rule); border-radius: 12px;
-  padding: 11px 14px; display: flex; align-items: center; gap: 10px;
-  background: var(--white);
-}
-.home-search svg { width: 17px; height: 17px; flex: none; color: var(--ink-faded); }
-.home-search input,
-.home-search__input {
-  flex: 1; border: none; outline: none; background: none;
-  font-family: var(--font-ui); font-size: 15px; color: var(--ink);
-}
-.home-search input::placeholder,
-.home-search__input::placeholder { color: var(--ink-hint); }
 
 .home-cont {
   display: flex; align-items: center; justify-content: space-between;
@@ -930,9 +916,7 @@ button { font: inherit; cursor: pointer; }
 
 /* --- Desktop --- */
 @media (min-width: 768px) {
-  .site-nav { font-size: 14px; gap: 24px; }
-  .home-hero { padding-top: 48px; }
-  .home-hero__title { font-size: 36px; }
+  .site-nav { display: flex; font-size: 14px; gap: 24px; }
   .chapter-title { font-size: 32px; }
   .chapter-foot__nav a { padding: 18px 20px; }
   .chapter-grid { grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); }
@@ -1176,62 +1160,43 @@ body { padding-bottom: 72px; }
    ========================================================== */
 
 .quick-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 10px; margin: 20px 0 8px;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px; margin: 16px 0 8px;
 }
 .quick-card {
   display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 8px; text-align: center;
-  min-height: 100px; padding: 16px 10px;
-  background: var(--white); border: 1.5px solid var(--rule);
+  justify-content: center; gap: 10px; text-align: center;
+  aspect-ratio: 1 / 1; padding: 14px 8px;
+  background: var(--paper-warm); border: 1.5px solid var(--rule);
   border-radius: var(--radius); text-decoration: none; color: inherit;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
-.quick-card:hover { border-color: var(--gold); background: var(--paper-warm); }
-.quick-card:active { transform: scale(0.98); }
+.quick-card:hover { border-color: var(--gold); }
+.quick-card:active { transform: scale(0.97); }
 .quick-card__icon {
-  width: 34px; height: 34px; color: var(--gold); flex-shrink: 0;
+  width: 32px; height: 32px; color: var(--gold); flex-shrink: 0;
 }
 .quick-card__icon svg { width: 100%; height: 100%; }
 .quick-card__label {
-  font-family: var(--font-ui); font-size: 14px; font-weight: 700;
-  color: var(--ink); line-height: 1.25;
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  color: var(--ink); line-height: 1.3;
 }
-.quick-card--start .quick-card__icon,
-.quick-card--search .quick-card__icon { color: var(--gold); }
 
-/* The search card looks like the others but holds a real input.
-   No separate "type here" instruction needed — it's the same shape
-   as every other card, so it reads as one more thing to tap. */
-/* The search card is the one item in this grid that isn't "tap and
-   go" — it needs typing. A dashed border and different fill signal
-   that difference before anyone touches it, so the grid doesn't
-   promise "recognize a picture, tap it, done" and then break that
-   promise on the fourth card. */
-.quick-card--search {
-  padding: 12px 14px; cursor: text;
-  border-style: dashed; background: var(--paper-warm);
-}
-.quick-card--search .quick-card__icon { width: 22px; height: 22px; margin-bottom: 0; }
-.quick-card--search .quick-card__search-input {
-  width: 100%; border: none; background: none; font-family: var(--font-ui);
-  font-size: 14px; color: var(--ink); text-align: center; outline: none;
-}
-.quick-card--search .quick-card__search-input::placeholder { color: var(--ink-hint); }
-
-@media (min-width: 480px) {
-  .quick-grid { grid-template-columns: repeat(4, 1fr); }
-  .quick-card--search { grid-column: auto; }
+/* Two-column on narrow phones (< 400px), four on everything else */
+@media (max-width: 399px) {
+  .quick-grid { grid-template-columns: 1fr 1fr; }
+  .quick-card { aspect-ratio: auto; min-height: 88px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .quick-card { transition: none; }
 }
 
-/* --- Row icons: a small icon at the lead of a bookrow, for
-   recognition-based scanning of the longer lists further down
-   the page. Same visual language as the quick-access icons. --- */
+/* --- Row icons: a visual anchor at the lead of a bookrow, for
+   recognition-based scanning. Large enough to find by shape,
+   full opacity, vertically centered with the first line of text. --- */
 .bookrow__icon {
-  width: 28px; height: 28px; flex-shrink: 0; margin-right: 12px;
-  color: var(--rowc, var(--gold)); opacity: 0.85;
+  width: 32px; height: 32px; flex-shrink: 0; margin-right: 14px;
+  color: var(--rowc, var(--gold));
+  align-self: center;
 }
 .bookrow__icon svg { width: 100%; height: 100%; }

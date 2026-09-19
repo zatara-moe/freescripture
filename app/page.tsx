@@ -46,10 +46,7 @@ export default function Home() {
   return (
     <div className="home">
       <section className="home-hero">
-        <h1 className="home-hero__title">Free Scripture</h1>
-        <p className="home-hero__sub">
-          The King James, World English, and Basic English Bibles. Free, with no account and no ads.
-        </p>
+        <p className="home-hero__welcome">Read the Bible, free and private.</p>
       </section>
 
       {/* --- Quick access ---
@@ -60,35 +57,29 @@ export default function Home() {
       <div className="home-divider" />
       <div className="section-label">Quick start</div>
       <div className="quick-grid">
-        <a className="quick-card quick-card--start" id="quick-start" href="/web/psalms/23/" data-quick-start>
+        <a className="quick-card" id="quick-start" href="/web/psalms/23/" data-quick-start>
           <span className="quick-card__icon" data-quick-start-icon><IconBook /></span>
-          <span className="quick-card__label" data-quick-start-label>Just start reading</span>
+          <span className="quick-card__label" data-quick-start-label>Start reading</span>
         </a>
         <Link className="quick-card" href="/read/">
           <span className="quick-card__icon"><IconHeart /></span>
-          <span className="quick-card__label">A verse for right now</span>
+          <span className="quick-card__label">For right now</span>
         </Link>
         <Link className="quick-card" href="/parables/">
           <span className="quick-card__icon"><IconStory /></span>
-          <span className="quick-card__label">Read me a story</span>
+          <span className="quick-card__label">Parables</span>
         </Link>
-        <form className="quick-card quick-card--search" action="/search/" role="search">
+        <Link className="quick-card" href="/search/">
           <span className="quick-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
           </span>
-          <input
-            className="quick-card__search-input"
-            type="search"
-            name="q"
-            placeholder="Search for a word or verse"
-            aria-label="Search scripture"
-          />
-        </form>
+          <span className="quick-card__label">Search</span>
+        </Link>
       </div>
 
       <script
         dangerouslySetInnerHTML={{
-          __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label?('Continue: '+d.label):'Continue reading';var ic=el.querySelector('[data-quick-start-icon]');if(ic)ic.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4a2 2 0 0 0-2 2v14l8-5 8 5V6a2 2 0 0 0-2-2z"/></svg>';}}catch(e){}})();`,
+          __html: `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label||'Continue';var ic=el.querySelector('[data-quick-start-icon]');if(ic)ic.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4a2 2 0 0 0-2 2v14l8-5 8 5V6a2 2 0 0 0-2-2z"/></svg>';}}catch(e){}})();`,
         }}
       />
 
