@@ -445,12 +445,21 @@ button { font: inherit; cursor: pointer; }
 /* --- Bookrow (the universal row component) --- */
 .bookrow {
   display: flex; align-items: center;
-  background: var(--paper-warm); border: 1.5px solid var(--rule);
-  border-radius: var(--radius); padding: 14px 16px;
+  background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 14px; padding: 16px 18px;
   text-decoration: none; color: inherit;
-  transition: border-color 0.15s ease;
+  box-shadow: 0 1px 3px rgba(26,23,20,0.05);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
-.bookrow:hover { border-color: var(--gold); }
+.bookrow:hover {
+  border-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(26,23,20,0.1), 0 6px 20px rgba(26,23,20,0.06);
+  transform: translateY(-1px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bookrow { transition: none; }
+  .bookrow:hover { transform: none; }
+}
 
 /* --colored modifier: activates the --rowc accent that Need and Genre
    pages set via inline style. The variable is already being written;
@@ -469,7 +478,12 @@ button { font: inherit; cursor: pointer; }
   .read-list--grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 12px;
+  }
+}
+@media (min-width: 860px) {
+  .read-list--grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 .bookrow__main {
@@ -477,12 +491,12 @@ button { font: inherit; cursor: pointer; }
   display: flex; flex-direction: column;
 }
 .bookrow__t {
-  font-weight: 700; font-size: 16px; line-height: 1.25;
-  letter-spacing: -0.01em;
+  font-weight: 700; font-size: 17px; line-height: 1.25;
+  letter-spacing: -0.015em;
 }
 .bookrow__d {
-  font-size: 14px; color: var(--ink-faded); line-height: 1.4;
-  margin-top: 3px;
+  font-size: 14px; color: var(--ink-faded); line-height: 1.45;
+  margin-top: 4px;
   display: -webkit-box; -webkit-line-clamp: 2;
   -webkit-box-orient: vertical; overflow: hidden;
 }
@@ -493,25 +507,26 @@ button { font: inherit; cursor: pointer; }
 
 /* Promoted row (translation cards on home) */
 .bookrow--primary {
-  background: var(--paper-warm); padding: 18px 18px;
+  background: var(--paper-warm); padding: 20px 20px;
+  border: 1px solid var(--rule);
 }
-.bookrow--primary .bookrow__t { font-size: 18px; }
+.bookrow--primary .bookrow__t { font-size: 19px; }
 .bookrow--primary .bookrow__d { font-size: 15px; color: var(--ink-soft); }
 
 /* --- Row containers --- */
 .read-list {
-  display: flex; flex-direction: column; gap: 10px;
+  display: flex; flex-direction: column; gap: 12px;
 }
 .book-grid {
   display: flex; flex-direction: column; gap: 10px;
 }
 
 /* --- Section dividers and labels --- */
-.home-divider { height: 1px; background: var(--rule); margin: 28px 0; }
+.home-divider { height: 1px; background: var(--rule); margin: 32px 0; }
 .section-label {
   font-size: 12px; font-weight: 700; color: var(--gold);
-  text-transform: uppercase; letter-spacing: 0.06em;
-  margin-bottom: 12px;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 14px;
 }
 .section-head {
   display: flex; align-items: baseline; justify-content: space-between;
@@ -532,13 +547,13 @@ button { font: inherit; cursor: pointer; }
 .book-section:first-of-type .book-section-label { margin-top: 0; }
 
 /* --- Home page --- */
-.home { max-width: var(--measure); margin: 0 auto; padding: 0 20px 60px; }
+.home { max-width: 56rem; margin: 0 auto; padding: 0 24px 60px; }
 
-.home-hero { padding: 24px 0 8px; text-align: center; }
+.home-hero { padding: 40px 0 12px; text-align: center; }
 .home-hero__welcome {
-  font-family: var(--font-body); font-size: 18px; line-height: 1.5;
-  color: var(--ink-soft); font-style: italic;
-  font-optical-sizing: auto;
+  font-family: var(--font-body); font-size: 26px; font-weight: 400;
+  line-height: 1.35; color: var(--ink);
+  font-optical-sizing: auto; letter-spacing: -0.01em;
 }
 
 .home-cont {
@@ -1161,34 +1176,39 @@ body { padding-bottom: 72px; }
 
 .quick-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 10px; margin: 16px 0 8px;
+  gap: 14px; margin: 16px 0 8px;
 }
 .quick-card {
   display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 10px; text-align: center;
-  aspect-ratio: 1 / 1; padding: 14px 8px;
-  background: var(--paper-warm); border: 1.5px solid var(--rule);
-  border-radius: var(--radius); text-decoration: none; color: inherit;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  justify-content: center; gap: 12px; text-align: center;
+  padding: 28px 12px 24px;
+  background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 16px; text-decoration: none; color: inherit;
+  box-shadow: 0 1px 3px rgba(26,23,20,0.06), 0 4px 12px rgba(26,23,20,0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
-.quick-card:hover { border-color: var(--gold); }
-.quick-card:active { transform: scale(0.97); }
+.quick-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(26,23,20,0.1), 0 8px 24px rgba(26,23,20,0.08);
+  transform: translateY(-2px);
+}
+.quick-card:active { transform: translateY(0); }
 .quick-card__icon {
-  width: 32px; height: 32px; color: var(--gold); flex-shrink: 0;
+  width: 36px; height: 36px; color: var(--gold); flex-shrink: 0;
 }
 .quick-card__icon svg { width: 100%; height: 100%; }
 .quick-card__label {
-  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  font-family: var(--font-ui); font-size: 14px; font-weight: 600;
   color: var(--ink); line-height: 1.3;
 }
 
-/* Two-column on narrow phones (< 400px), four on everything else */
-@media (max-width: 399px) {
-  .quick-grid { grid-template-columns: 1fr 1fr; }
-  .quick-card { aspect-ratio: auto; min-height: 88px; }
+@media (max-width: 479px) {
+  .quick-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .quick-card { padding: 22px 10px 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .quick-card { transition: none; }
+  .quick-card:hover { transform: none; }
 }
 
 /* --- Row icons: a visual anchor at the lead of a bookrow, for
