@@ -9,7 +9,7 @@ import {
   DEFAULT_TRANS,
   SITE_URL,
 } from "@/lib/bible";
-import JsonLd from "@/lib/JsonLd";
+import { JsonLd } from "@/lib/JsonLd";
 
 type Params = { slug: string };
 

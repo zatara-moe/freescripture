@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { PARABLES, PARABLE_THEMES, SITE_URL } from "@/lib/bible";
-import JsonLd from "@/lib/JsonLd";
+import { JsonLd } from "@/lib/JsonLd";
 
 export const metadata: Metadata = {
   title: "The Parables of Jesus | Free Scripture",
