@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fcfaf6",
+  themeColor: "#FBF7F0",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -49,13 +49,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;700;800&family=Literata:opsz,wght@7..72,400;7..72,700&family=Lexend:wght@400;600&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=22" />
+        <link rel="stylesheet" href="/static/css/site.css?v=25" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#fcfaf6" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#1c1812" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#FBF7F0" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1A1814" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Free Scripture" />
@@ -123,12 +123,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="site-mark__text">Free Scripture</span>
             </Link>
             <nav className="site-nav" aria-label="Primary">
-              <Link href="/read/">For you</Link>
-              <Link href="/parables/">Parables</Link>
-              <Link href="/web/">Books</Link>
-              <Link href="/search/">Search</Link>
-              <Link href="/about/">About</Link>
+              <Link href="/stories/" data-nav="stories">Stories</Link>
+              <Link href="/web/" data-nav="bible">Bible</Link>
+              <Link href="/read/" data-nav="foryou">For you</Link>
             </nav>
+            <div className="header-actions">
+            <Link className="icon-btn" href="/search/" aria-label="Search" title="Search (/)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+            </Link>
+            <button className="icon-btn icon-btn--aa" type="button" data-prefs-open aria-label="Display settings" title="Display (D)">
+              Aa
+            </button>
             <button
               className="theme-toggle"
               type="button"
@@ -161,40 +166,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             >
               ?
             </button>
+            </div>
           </div>
         </header>
 
         <main id="main">{children}</main>
 
-        <nav className="tab-bar" aria-label="Quick navigation">
+        <nav className="tab-bar" aria-label="Main">
           <Link className="tab-bar__btn" href="/" aria-label="Home">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V20h14V9.5" /></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V20h14V9.5" /></svg>
             <span>Home</span>
           </Link>
+          <Link className="tab-bar__btn" href="/stories/" aria-label="Stories">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+            <span>Stories</span>
+          </Link>
+          <Link className="tab-bar__btn" href="/web/" aria-label="Bible">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M19 19H6a2 2 0 0 0-2 2" /></svg>
+            <span>Bible</span>
+          </Link>
           <Link className="tab-bar__btn" href="/read/" aria-label="For you">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" /></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" /></svg>
             <span>For you</span>
           </Link>
-          <Link className="tab-bar__btn" href="/parables/" aria-label="Parables">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
-            <span>Parables</span>
-          </Link>
-          <Link className="tab-bar__btn" href="/web/" aria-label="Books">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M19 19H6a2 2 0 0 0-2 2" /></svg>
-            <span>Books</span>
-          </Link>
-          <Link className="tab-bar__btn" href="/search/" aria-label="Search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-            <span>Search</span>
-          </Link>
-          <button className="tab-bar__btn" type="button" data-prefs-open aria-label="Reading settings">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 7h11" /><path d="M4 12h16" /><path d="M4 17h7" /><circle cx="18" cy="7" r="2" /><circle cx="13" cy="17" r="2" /></svg>
-            <span>Display</span>
-          </button>
         </nav>
 
         <footer className="site-footer">
           <div className="foot-tag">The whole text, open to anyone.</div>
+          <nav className="site-footer__links" aria-label="More">
+            <Link href="/about/">About</Link>
+            <Link href="/parables/">Parables</Link>
+            <Link href="/search/">Search</Link>
+          </nav>
           <p className="hfa-madein">Made with <span className="hfa-heart" aria-hidden="true">&hearts;</span> in Flagstaff</p>
           <div className="hfa-rule"></div>
           <div className="hfa-mark">A <a href="https://hopeforamericans.net">Hope for Americans</a> tool</div>
@@ -213,8 +216,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <dl className="shortcuts-list">
               <div><dt>&larr; &rarr;</dt><dd>Previous / next chapter</dd></div>
               <div><dt>/</dt><dd>Search</dd></div>
-              <div><dt>D</dt><dd>Reading display settings</dd></div>
-              <div><dt>T</dt><dd>Light / dark mode</dd></div>
+              <div><dt>D</dt><dd>Display settings</dd></div>
+              <div><dt>T</dt><dd>Switch between light and Night</dd></div>
               <div><dt>G</dt><dd>Toggle focus mode</dd></div>
               <div><dt>Esc</dt><dd>Close this, or any open panel</dd></div>
               <div><dt>?</dt><dd>Show this list</dd></div>
@@ -230,7 +233,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <script src="/static/js/shortcuts.js?v=1" defer></script>
 
-        <script src="/static/js/reading-prefs.js?v=8" defer></script>
+        <script src="/static/js/reading-prefs.js?v=10" defer></script>
         <script dangerouslySetInnerHTML={{ __html: `
 (function(){
   /* --- Service worker registration --- */
@@ -243,16 +246,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
      matching tab-bar button with aria-current="page" so CSS can
      style it. Runs immediately so there's no visible flash. --- */
   var p=location.pathname;
-  var tabs=document.querySelectorAll('.tab-bar__btn');
-  [].forEach.call(tabs,function(btn){
-    var label=btn.getAttribute('aria-label')||'';
-    var active=false;
-    if(label==='Home') active=(p==='/');
-    else if(label==='For you') active=(p.startsWith('/read/'));
-    else if(label==='Parables') active=(p.startsWith('/parables/'));
-    else if(label==='Books') active=(/^\/(web|kjv|bbe|genre)\//.test(p));
-    else if(label==='Search') active=p.startsWith('/search/');
-    if(active) btn.setAttribute('aria-current','page');
+  function section(){
+    if(p==='/') return 'home';
+    if(p.startsWith('/stories/')||p.startsWith('/parables/')) return 'stories';
+    if(/^\\/(web|kjv|bbe|genre|verse)\\//.test(p)) return 'bible';
+    if(p.startsWith('/read/')) return 'foryou';
+    return '';
+  }
+  var cur=section();
+  var map={'Home':'home','Stories':'stories','Bible':'bible','For you':'foryou'};
+  [].forEach.call(document.querySelectorAll('.tab-bar__btn'),function(btn){
+    if(map[btn.getAttribute('aria-label')]===cur) btn.setAttribute('aria-current','page');
+  });
+  [].forEach.call(document.querySelectorAll('.site-nav [data-nav]'),function(a){
+    if(a.getAttribute('data-nav')===cur) a.setAttribute('aria-current','page');
   });
 })();
         `}} />

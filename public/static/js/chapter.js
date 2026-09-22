@@ -58,7 +58,7 @@
   function flashTooltip(target, message) {
     var tip = document.createElement('span');
     tip.textContent = message;
-    tip.style.cssText = 'position:absolute;background:#2a1f15;color:#f4ecd8;font-family:DM Mono,monospace;font-size:0.7rem;padding:4px 8px;border-radius:2px;text-transform:uppercase;letter-spacing:0.08em;pointer-events:none;z-index:50;transform:translate(-50%,-130%);transition:opacity 400ms ease;opacity:0;';
+    tip.style.cssText = 'position:absolute;background:var(--ink);color:var(--paper);font-family:var(--font-ui);font-size:13px;font-weight:700;padding:6px 10px;border-radius:8px;pointer-events:none;z-index:50;transform:translate(-50%,-130%);transition:opacity 400ms ease;opacity:0;';
     var rect = target.getBoundingClientRect();
     tip.style.top = (rect.top + window.scrollY) + 'px';
     tip.style.left = (rect.left + rect.width / 2 + window.scrollX) + 'px';

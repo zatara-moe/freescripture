@@ -215,7 +215,7 @@ export default async function ChapterPage(
             <div className="chapter-translation-tag">{tmeta.label}</div>
             <div className="chapter-title-row">
               <h1 className="chapter-title">{refLabel(bk.name, num)}</h1>
-              <button className="reading-settings-btn" type="button" data-prefs-open aria-label="Reading settings: text size, spacing, and font">
+              <button className="reading-settings-btn" type="button" data-prefs-open aria-label="Display settings: text size, spacing, font, and page color">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M4 7h11" /><path d="M4 12h16" /><path d="M4 17h7" /><circle cx="18" cy="7" r="2" /><circle cx="13" cy="17" r="2" />
                 </svg>
@@ -405,7 +405,7 @@ export default async function ChapterPage(
         </article>
       </div>
 
-      <script src="/static/js/chapter.js?v=8" defer></script>
+      <script src="/static/js/chapter.js?v=9" defer></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `try{localStorage.setItem('fs-last',JSON.stringify(${lastPayload}));}catch(e){}`,

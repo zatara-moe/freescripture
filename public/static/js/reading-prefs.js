@@ -33,21 +33,22 @@
       { val: "flowing", label: "Flowing" },
     ]},
     { key: "font", label: "Reading font", choices: [
-      { val: "default", label: "Standard" },
-      { val: "literata", label: "Literata" },
+      { val: "default", label: "Clear" },
+      { val: "literata", label: "Book" },
       { val: "lexend", label: "Lexend" },
-      { val: "opendyslexic", label: "OpenDyslexic" },
     ]},
-    { key: "theme", label: "Appearance", choices: [
-      { val: "light", label: "Light" },
+    { key: "theme", label: "Page color", choices: [
+      { val: "light", label: "Paper" },
+      { val: "white", label: "White" },
+      { val: "dark", label: "Night" },
       { val: "system", label: "Auto" },
-      { val: "dark", label: "Dark" },
     ]},
   ];
 
   function loadPrefs() {
     try {
       var parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      if (parsed.font === "opendyslexic") parsed.font = "default";
       return Object.assign({}, DEFAULTS, parsed);
     } catch (e) { return Object.assign({}, DEFAULTS); }
   }
@@ -112,6 +113,7 @@
     var osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     var isNowDark = (prefs.theme === 'dark') ||
                     (prefs.theme === 'system' && osDark);
+    /* White and Paper both count as light: the toggle goes to Night. */
     prefs.theme = isNowDark ? 'light' : 'dark';
     applyPrefs(prefs);
     savePrefs(prefs);
@@ -137,17 +139,17 @@
     panel.className = "prefs-panel";
     panel.setAttribute("role", "dialog");
     panel.setAttribute("aria-modal", "true");
-    panel.setAttribute("aria-label", "Reading settings");
+    panel.setAttribute("aria-label", "Display settings");
 
     var head = document.createElement("div");
     head.className = "prefs-head";
     var title = document.createElement("h2");
     title.className = "prefs-title";
-    title.textContent = "Reading settings";
+    title.textContent = "Display";
     var closeBtn = document.createElement("button");
     closeBtn.className = "prefs-close";
     closeBtn.type = "button";
-    closeBtn.setAttribute("aria-label", "Close settings");
+    closeBtn.setAttribute("aria-label", "Close display settings");
     closeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
     closeBtn.addEventListener("click", close);
     head.appendChild(title);

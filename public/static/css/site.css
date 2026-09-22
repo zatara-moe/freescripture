@@ -1,6 +1,8 @@
 /* ==========================================================
    Free Scripture — site.css
-   Rewritten from scratch. Two fonts, six sizes, one system.
+   Scene Design System v1 (September 2026).
+   Brand: one lapis accent for tappable things. Reading: Paper, White,
+   and Night themes. Story and scripture text: Atkinson Hyperlegible.
    ========================================================== */
 
 /* --- Tokens (light mode) ---
@@ -11,27 +13,28 @@
    the many rules already written against it, but its value is now the
    family's actual brand color — a muted plum, not literal gold. */
 :root {
-  --paper:       #fcfaf6;
-  --paper-warm:  #f4efe6;
-  --paper-deep:  #e9e1d3;
-  --ink:         #231e1a;
-  --ink-soft:    #524840;
-  --ink-faded:   #6e6456;
-  --ink-hint:    #7e715c;
-  --rule:        #d8cdb8;
-  --rule-soft:   #e6ddcc;
-  --gold:        #5B2A54;  /* the one brand hue — was literal gold, now plum */
+  /* Scene Design System v1: Paper theme (default).
+     Variable names are unchanged so every page and script keeps working.
+     --gold is still the name of the one brand hue; its value is now lapis. */
+  --paper:       #FBF7F0;
+  --paper-warm:  #F3ECDF;
+  --paper-deep:  #E9DFCC;
+  --ink:         #2B2118;
+  --ink-soft:    #4A3F33;
+  --ink-faded:   #6B5D4C;
+  --ink-hint:    #756756;
+  --rule:        #E0D5C2;
+  --rule-soft:   #ECE4D5;
+  --gold:        #2F4DA0;  /* lapis: the one brand hue, for things you can tap */
+  --gold-deep:   #243C80;
+  --gold-wash:   #E7EBF6;
+  --gold-leaf:   #B8892B;  /* decoration only, never body text */
+  --on-gold:     #FFFFFF;  /* text on filled lapis */
   --white:       #fff;
   --highlight:   #f3e2a8;
 
-  /* Card elevation — a ring shadow, not a colored border. Hover only
-     deepens the shadow; it never lifts, tints, or moves the card.
-     "translateY lift removed — sensory noise for neurodivergent
-     readers" appears four times in the family's own CSS comments.
-     That is a standing decision, not a style preference to re-litigate
-     per component. */
-  --card-shadow:       0 0 0 1px rgba(35,30,26,.10), 0 1px 2px rgba(35,30,26,.04);
-  --card-shadow-hover: 0 0 0 1px rgba(35,30,26,.16), 0 3px 10px rgba(35,30,26,.08);
+  --card-shadow:       0 0 0 1px rgba(43,33,24,.10), 0 1px 2px rgba(43,33,24,.04);
+  --card-shadow-hover: 0 0 0 1px rgba(43,33,24,.16), 0 3px 10px rgba(43,33,24,.08);
 
   --g-narrative: #A8481F;
   --g-poetry:    #5B6A8C;
@@ -44,34 +47,35 @@
      self-hosted on DLC and Luther's World, chosen and contrast-tested
      for exactly this readership. Literata stays available as an
      opt-in Display-panel choice, but it is not the identity. */
-  --font-ui:   'Source Sans 3', system-ui, -apple-system, sans-serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-ui:   'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Atkinson Hyperlegible', Verdana, Arial, sans-serif;
+  --font-book: 'Literata', Georgia, serif;
 
   --measure:   40rem;
   --radius:    10px;
   --radius-sm: 8px;
 }
 
-/* --- Dark mode tokens ---
-   Applied when the OS prefers dark AND the user hasn't pinned Light,
-   OR when the user has pinned Dark in the Display panel.
-   Warm near-black backgrounds; off-white ink; the brand plum lightens
-   to the same orchid tint DLC uses under dark mode. Contrast ratios
-   verified: ink/paper ≈ 15:1, plum/paper ≈ 6.7:1 (AA), ink-faded/paper
-   ≈ 4.8:1 (passes AA). */
+/* --- Night theme tokens ---
+   Applied when the OS prefers dark and the reader hasn't pinned Paper or
+   White, or when the reader picks Night in the Display panel.
+   Contrast verified: ink 13.5:1, ink-faded 6.4:1, lapis link 8.3:1. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-fs-theme="light"]) {
-    --paper:      #1c1812;
-    --paper-warm: #2d251c;
-    --paper-deep: #362c22;
-    --ink:        #ede8e0;
-    --ink-soft:   #c4b9ae;
-    --ink-faded:  #8a7f74;
-    --ink-hint:   #9a8f85;
-    --rule:       #453a2c;
-    --rule-soft:  #2e2926;
-    --gold:       #C99BC0;
-    --white:      #241f1c;
+  :root:not([data-fs-theme="light"]):not([data-fs-theme="white"]) {
+    --paper:      #1A1814;
+    --paper-warm: #23201B;
+    --paper-deep: #2C2822;
+    --ink:        #E6E0D4;
+    --ink-soft:   #CFC7B9;
+    --ink-faded:  #A39B8D;
+    --ink-hint:   #9A9284;
+    --rule:       #3A342C;
+    --rule-soft:  #2A2621;
+    --gold:       #9AB0EE;
+    --gold-deep:  #C3D0F5;
+    --gold-wash:  #1E2640;
+    --on-gold:    #141821;
+    --white:      #211E19;
     --highlight:  #3d3520;
     --card-shadow:       0 0 0 1px rgba(255,255,255,.05);
     --card-shadow-hover: 0 0 0 1px rgba(255,255,255,.11);
@@ -84,17 +88,20 @@
   }
 }
 :root[data-fs-theme="dark"] {
-  --paper:      #1c1812;
-  --paper-warm: #2d251c;
-  --paper-deep: #362c22;
-  --ink:        #ede8e0;
-  --ink-soft:   #c4b9ae;
-  --ink-faded:  #8a7f74;
-  --ink-hint:   #9a8f85;
-  --rule:       #453a2c;
-  --rule-soft:  #2e2926;
-  --gold:       #C99BC0;
-  --white:      #241f1c;
+  --paper:      #1A1814;
+  --paper-warm: #23201B;
+  --paper-deep: #2C2822;
+  --ink:        #E6E0D4;
+  --ink-soft:   #CFC7B9;
+  --ink-faded:  #A39B8D;
+  --ink-hint:   #9A9284;
+  --rule:       #3A342C;
+  --rule-soft:  #2A2621;
+  --gold:       #9AB0EE;
+  --gold-deep:  #C3D0F5;
+  --gold-wash:  #1E2640;
+  --on-gold:    #141821;
+  --white:      #211E19;
   --highlight:  #3d3520;
   --card-shadow:       0 0 0 1px rgba(255,255,255,.05);
   --card-shadow-hover: 0 0 0 1px rgba(255,255,255,.11);
@@ -205,8 +212,8 @@ button { font: inherit; cursor: pointer; }
 /* When dark mode is active (OS preference, not overridden to light):
    show sun (offer to go light), hide moon */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-fs-theme="light"]) .theme-toggle__sun  { display: block; }
-  :root:not([data-fs-theme="light"]) .theme-toggle__moon { display: none; }
+  :root:not([data-fs-theme="light"]):not([data-fs-theme="white"]) .theme-toggle__sun  { display: block; }
+  :root:not([data-fs-theme="light"]):not([data-fs-theme="white"]) .theme-toggle__moon { display: none; }
 }
 /* When manually set to dark: same logic */
 :root[data-fs-theme="dark"] .theme-toggle__sun  { display: block; }
@@ -1361,3 +1368,374 @@ body { padding-bottom: 72px; }
   color: var(--ink); letter-spacing: -0.01em; margin-bottom: 14px;
   font-optical-sizing: auto;
 }
+
+
+/* ==========================================================
+   Scene Design System v1 — layer
+   Loaded last so it refines the components above without renaming
+   anything the templates or scripts depend on.
+   ========================================================== */
+
+/* --- White theme (reader-selectable) --- */
+:root[data-fs-theme="white"] {
+  --paper:      #FFFFFF;
+  --paper-warm: #F5F5F7;
+  --paper-deep: #EBEBEF;
+  --ink:        #1E1F24;
+  --ink-soft:   #3A3C44;
+  --ink-faded:  #5C5E66;
+  --ink-hint:   #6B6D75;
+  --rule:       #E2E2E7;
+  --rule-soft:  #EEEEF1;
+  --gold:       #2F4DA0;
+  --gold-deep:  #243C80;
+  --gold-wash:  #E7EBF6;
+  --white:      #FFFFFF;
+  --highlight:  #FCEFB4;
+  --card-shadow:       0 0 0 1px rgba(30,31,36,.10), 0 1px 2px rgba(30,31,36,.04);
+  --card-shadow-hover: 0 0 0 1px rgba(30,31,36,.16), 0 3px 10px rgba(30,31,36,.08);
+}
+
+body { letter-spacing: 0.005em; }
+
+/* --- App shell: header --- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  padding-top: env(safe-area-inset-top);
+}
+.site-header__inner { padding: 10px 20px; gap: 12px; }
+.site-mark__icon { color: var(--gold); }
+.site-mark__text { font-weight: 800; font-size: 18px; letter-spacing: -0.03em; }
+.site-nav { margin-left: auto; }
+.site-nav a { font-weight: 700; color: var(--ink-faded); padding: 6px 10px; border-radius: 8px; }
+.site-nav a:hover { color: var(--ink); background: var(--paper-warm); }
+.site-nav a[aria-current="page"] { color: var(--gold-deep); background: var(--gold-wash); }
+.header-actions { display: flex; align-items: center; gap: 6px; }
+.icon-btn, .theme-toggle, .shortcuts-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 12px;
+  border: 0; background: transparent; color: var(--ink-soft);
+  font-family: var(--font-ui); font-weight: 800; font-size: 15px;
+  text-decoration: none; cursor: pointer; flex-shrink: 0;
+  transition: background .15s, color .15s;
+}
+.icon-btn:hover, .theme-toggle:hover, .shortcuts-btn:hover { background: var(--paper-warm); color: var(--ink); border: 0; }
+.icon-btn svg { width: 20px; height: 20px; }
+.theme-toggle svg { width: 18px; height: 18px; }
+.icon-btn--aa { font-size: 16px; letter-spacing: -0.02em; }
+.shortcuts-btn { display: none; }
+@media (min-width: 768px) { .shortcuts-btn { display: inline-flex; } }
+
+/* --- App shell: tab bar (four tabs) --- */
+.tab-bar {
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  border-top: 1px solid var(--rule);
+  padding: 6px 8px calc(4px + env(safe-area-inset-bottom));
+}
+.tab-bar__btn {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 700;
+  color: var(--ink-hint); gap: 3px; padding: 4px 2px 2px; min-height: 48px;
+  justify-content: center;
+}
+.tab-bar__btn svg { width: 24px; height: 24px; }
+.tab-bar__btn[aria-current="page"] { color: var(--gold); }
+body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+@media (min-width: 768px) { body { padding-bottom: 0; } }
+
+/* --- Footer --- */
+.site-footer { background: var(--paper-warm); font-family: var(--font-ui); }
+.hfa-heart { color: var(--gold-leaf); }
+.site-footer__links { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 18px; margin: 4px 0 12px; font-weight: 700; }
+.site-footer__links a { text-decoration: none; color: var(--ink-soft); }
+.site-footer__links a:hover { color: var(--gold); }
+
+/* --- Labels: sentence case, no shouting --- */
+.chapter-context__label,
+.keep-reading__heading,
+.section-label,
+.parable-head [class*="label"],
+.book-section-label {
+  text-transform: none; letter-spacing: 0;
+}
+.chapter-context__label { color: var(--ink-faded); font-size: 13px; }
+.keep-reading__heading { font-size: 15px; color: var(--ink); }
+
+/* --- Page titles --- */
+.page-title, .book-title, .parable-title { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.025em; }
+
+/* --- Chapter reader --- */
+.chapter-nav a { font-family: var(--font-ui); font-weight: 700; color: var(--gold); }
+.chapter-nav a:hover { color: var(--gold-deep); }
+.trans-switch__btn { border: 0; background: var(--paper-warm); color: var(--ink-soft); padding: 6px 12px; border-radius: 8px; font-weight: 700; }
+.trans-switch__btn:hover { background: var(--paper-deep); color: var(--ink); }
+.trans-switch__btn--current { background: var(--gold-wash); color: var(--gold-deep); }
+.chapter-translation-tag { color: var(--ink-faded); font-weight: 700; }
+.chapter-title { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.03em; font-size: 28px; line-height: 1.15; }
+@media (min-width: 768px) { .chapter-title { font-size: 34px; } }
+.reading-settings-btn { border: 0; background: var(--paper-warm); color: var(--ink); border-radius: 12px; font-weight: 700; min-height: 40px; }
+.reading-settings-btn:hover { background: var(--paper-deep); color: var(--ink); border: 0; }
+
+/* Book intro: hairline and label, no tinted slab */
+.chapter-context {
+  background: none; border-left: 2px solid var(--rule); border-radius: 0;
+  padding: 2px 0 2px 16px; font-size: 16px; line-height: 1.6;
+}
+
+/* Scripture text: left-aligned, no hyphenation, comfortable measure */
+.chapter-text {
+  font-family: var(--font-body);
+  font-size: 20px; line-height: 1.7; max-width: 34em;
+  text-align: left; hyphens: manual; -webkit-hyphens: manual;
+  word-spacing: 0.04em; letter-spacing: 0.005em;
+}
+.verse__num { color: var(--ink-hint); font-weight: 700; font-size: 12.5px; }
+.verse__num:hover { color: var(--gold); }
+.verse--highlight, .verse:target { background: var(--highlight); }
+
+/* Italics are harder for many dyslexic readers: use upright text */
+.chapter-complete, .hcard__sub--italic, .parable-line { font-style: normal; }
+.chapter-complete { font-family: var(--font-ui); font-weight: 700; color: var(--ink-faded); }
+
+/* Layout toggles and Display panel choices */
+.layout-toggle__btn[aria-pressed="true"], .layout-toggle__btn.is-active,
+.prefs-choice.is-active {
+  background: var(--gold-wash); color: var(--gold-deep); border-color: var(--gold);
+}
+.prefs-panel { font-family: var(--font-ui); }
+.prefs-title { font-weight: 800; letter-spacing: -0.02em; }
+
+/* One filled accent per screen: Listen */
+.action-btn { font-family: var(--font-ui); font-weight: 700; border: 0; background: var(--paper-warm); }
+.action-btn:hover { background: var(--paper-deep); border: 0; }
+.action-btn:first-child { background: var(--gold); color: var(--on-gold); }
+.action-btn:first-child:hover { background: var(--gold-deep); }
+
+.chapter-foot__nav a, .chapter-foot__nav span { border: 0; background: var(--white); box-shadow: var(--card-shadow); }
+.chapter-foot__nav a:hover { box-shadow: var(--card-shadow-hover); border: 0; }
+.chapter-foot__nav span:empty { background: none; box-shadow: none; }
+.chapter-foot__nav .label { font-family: var(--font-ui); font-weight: 800; }
+.chapter-foot__nav .arrow { color: var(--gold); font-weight: 700; }
+
+/* Reading font options */
+[data-fs-font="literata"] .chapter-text,
+[data-fs-font="literata"] .passage__verse,
+[data-fs-font="literata"] .search-result__text { font-family: var(--font-book); }
+[data-fs-font="lexend"] .chapter-text,
+[data-fs-font="lexend"] .passage__verse,
+[data-fs-font="lexend"] .search-result__text { font-family: 'Lexend', var(--font-body); }
+
+/* --- Stories (Scene by Scene) index --- */
+.stories-page { max-width: 44rem; margin: 0 auto; padding: 0 20px 64px; }
+.stories-hero { padding: 28px 0 8px; }
+.stories-eyebrow { font-size: 13px; font-weight: 700; color: var(--gold); }
+.stories-title { font-size: clamp(28px, 6vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin: 6px 0 10px; }
+.stories-lede { font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--ink-soft); max-width: 34em; }
+.stories-section { margin-top: 36px; }
+.stories-section__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.stories-section__title { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.stories-section__link { font-size: 14px; font-weight: 700; color: var(--gold); text-decoration: none; }
+.story-list { display: flex; flex-direction: column; gap: 10px; }
+.story-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px; border-radius: 14px;
+  background: var(--white); box-shadow: var(--card-shadow);
+  text-decoration: none; color: inherit; transition: box-shadow .2s ease;
+}
+a.story-row:hover { box-shadow: var(--card-shadow-hover); }
+.story-row__body { flex: 1; min-width: 0; }
+.story-row__name { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+.story-row__desc { font-family: var(--font-body); font-size: 15px; color: var(--ink-faded); line-height: 1.5; margin-top: 2px; }
+.story-row__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; font-size: 12.5px; font-weight: 700; color: var(--ink-hint); }
+.badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 7px; background: var(--gold-wash); color: var(--gold-deep); }
+.badge--quiet { background: var(--paper-warm); color: var(--ink-faded); }
+.story-row__chev { color: var(--ink-hint); flex-shrink: 0; }
+.story-row--soon { box-shadow: none; background: var(--paper-warm); }
+
+/* Calm header: the thick brand stripe is replaced by the header hairline */
+.tradition-stripe { display: none; }
+
+/* One display control per screen: chapter pages keep their labeled
+   "Display" button, so the header "Aa" steps aside there. */
+body:has(.reading-settings-btn) .icon-btn--aa { display: none; }
+
+/* Night: keep the frosted header opaque enough that text never shows through */
+.site-header, .tab-bar { background: color-mix(in srgb, var(--paper) 97%, transparent); }
+
+/* Home hero in the app voice */
+.home-hero__headline { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.035em; }
+
+/* Upright text everywhere readers read (italics are harder for many dyslexic readers) */
+.hero-primary__sub, .passage__ref, .parable-theme__title, .parable-parallels__heading { font-style: normal; }
+
+/* ==========================================================
+   Scene by Scene story page
+   ========================================================== */
+.story-page { max-width: 40rem; margin: 0 auto; padding: 0 20px 56px; }
+.story-crumb { padding: 14px 0 0; }
+.story-crumb a { font-weight: 700; font-size: 14px; color: var(--gold); text-decoration: none; }
+.story-head { padding: 18px 0 6px; }
+.story-eyebrow { font-size: 13px; font-weight: 700; color: var(--ink-faded); }
+.story-title { font-size: clamp(32px, 7vw, 44px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.08; margin: 6px 0 12px; }
+.story-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 14px; font-weight: 700; color: var(--ink-hint); }
+.story-preview-note { margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--ink-faded); background: var(--paper-warm); border-radius: 10px; padding: 10px 14px; }
+
+.story-note { margin: 18px 0 4px; padding: 14px 16px; border-radius: 12px; background: var(--paper-warm); }
+.story-note__label { display: block; font-size: 13px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.story-note p { font-family: var(--font-body); font-size: 16px; line-height: 1.55; color: var(--ink-soft); }
+
+.story-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 8px; }
+.story-tools .action-btn { background: var(--gold); color: var(--on-gold); }
+.story-tools .action-btn:hover { background: var(--gold-deep); }
+.story-tools .reading-settings-btn { margin-top: 0; }
+.story-tools__note { flex-basis: 100%; font-size: 13px; color: var(--ink-hint); }
+
+/* Zones */
+.zone { margin-top: 28px; border-top: 1px solid var(--rule); }
+.zone__head {
+  display: flex; align-items: center; gap: 14px; padding: 20px 0 6px;
+  font-family: var(--font-ui); list-style: none; cursor: default;
+}
+details.zone > summary { cursor: pointer; padding-bottom: 20px; }
+details.zone > summary::-webkit-details-marker { display: none; }
+details.zone[open] > summary { padding-bottom: 6px; }
+.zone__num {
+  flex: none; width: 36px; height: 36px; border-radius: 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--gold-wash); color: var(--gold-deep); font-weight: 800; font-size: 16px;
+}
+.zone__text { flex: 1; display: flex; flex-direction: column; }
+.zone__title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); line-height: 1.2; }
+.zone__q { font-size: 14px; font-weight: 700; color: var(--ink-hint); }
+.zone__chev { flex: none; color: var(--gold); transition: transform .2s ease; }
+details.zone[open] .zone__chev { transform: rotate(180deg); }
+details.zone > summary:hover .zone__title { color: var(--gold-deep); }
+details.zone > summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; border-radius: 8px; }
+
+/* Boxes */
+.story-box { margin-top: 26px; }
+.story-box__title { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 800; letter-spacing: -0.015em; margin-bottom: 12px; color: var(--ink); }
+.story-box__emoji { font-size: 18px; line-height: 1; }
+.story-box p, .story-box li { font-family: var(--font-body); font-size: 17px; line-height: 1.65; color: var(--ink-soft); }
+.story-box p + p { margin-top: 12px; }
+.story-box strong { color: var(--ink); font-weight: 700; }
+.story-box em { font-style: normal; }
+.story-label { font-family: var(--font-ui) !important; font-size: 13px !important; font-weight: 800; color: var(--ink-faded) !important; margin: 14px 0 6px !important; }
+.story-label strong { color: inherit; }
+.story-list-plain { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+.story-cast { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.story-cast li { padding: 10px 14px; background: var(--white); border-radius: 12px; box-shadow: var(--card-shadow); font-size: 16px; }
+
+/* Before the Story: each point on its own card-free row with a hairline */
+.story-box--before-the-story p { padding-left: 14px; border-left: 2px solid var(--rule); }
+
+/* Map: tappable scene list */
+.story-table-wrap { overflow-x: auto; }
+.story-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.story-table th { text-align: left; font-family: var(--font-ui); font-size: 12.5px; font-weight: 800; color: var(--ink-faded); padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+.story-table td { font-family: var(--font-body); padding: 10px; border-bottom: 1px solid var(--rule-soft); color: var(--ink-soft); vertical-align: top; line-height: 1.5; }
+.story-table td:first-child { font-family: var(--font-ui); font-weight: 700; color: var(--ink); }
+.story-table--map td:first-child a { color: var(--gold); text-decoration: none; }
+.story-table--map td:first-child a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.story-table--map td:nth-child(2) { font-family: var(--font-ui); font-size: 13px; font-weight: 700; color: var(--ink-hint); white-space: nowrap; }
+@media (max-width: 600px) {
+  .story-table thead { display: none; }
+  .story-table, .story-table tbody, .story-table tr, .story-table td { display: block; width: 100%; }
+  .story-table tr { padding: 12px 14px; margin-bottom: 8px; background: var(--white); border-radius: 12px; box-shadow: var(--card-shadow); }
+  .story-table td { border: 0; padding: 2px 0; }
+  .story-table--map td:nth-child(2) { order: -1; }
+}
+
+/* Retelling: the reading surface */
+.story-text { max-width: 34em; }
+.story-text p { font-size: inherit; line-height: inherit; color: var(--ink); margin: 0 0 1em; }
+.story-text p + p { margin-top: 0; }
+.story-scene { display: flex; flex-direction: column; gap: 2px; margin: 36px 0 12px; scroll-margin-top: 88px; font-family: var(--font-ui); }
+.story-scene:first-child { margin-top: 8px; }
+.story-scene__num { font-size: 13px; font-weight: 700; color: var(--ink-hint); }
+.story-scene__title { font-size: 1.2em; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); line-height: 1.25; }
+.story-imagine { margin: 1.6em 0; padding: 2px 0 2px 16px; border-left: 2px solid var(--rule); }
+.story-imagine__label { display: block; font-family: var(--font-ui); font-size: 13px; font-weight: 700; color: var(--ink-faded); margin-bottom: 4px; }
+.story-imagine__label strong { color: inherit; }
+.story-imagine p { color: var(--ink-faded) !important; margin: 0 !important; }
+
+/* Hymn and other quotes */
+.story-quote { margin: 12px 0; padding: 14px 18px; background: var(--paper-warm); border-radius: 12px; }
+.story-quote__line { display: block; font-family: var(--font-body); font-size: 17px; line-height: 1.6; color: var(--ink); }
+.story-quote__line em { font-style: normal; }
+
+/* Read It */
+.story-passage { display: grid; gap: 10px; }
+@media (min-width: 560px) { .story-passage { grid-template-columns: 1fr 1fr; } }
+.story-passage__link { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border-radius: 12px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; transition: box-shadow .2s ease; }
+.story-passage__link:hover { box-shadow: var(--card-shadow-hover); }
+.story-passage__title { font-family: var(--font-ui); font-weight: 800; color: var(--gold); }
+.story-passage__sub { font-family: var(--font-ui); font-size: 13px; color: var(--ink-hint); }
+
+/* Good News gets a quiet emphasis */
+.story-box--good-news { padding: 18px 18px 20px; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); }
+
+/* Big Idea */
+.big-idea { margin: 36px 0 8px; padding: 24px 22px; border-radius: 16px; background: var(--gold-wash); }
+.big-idea__label { font-size: 14px; font-weight: 800; color: var(--gold-deep); margin-bottom: 8px; display: flex; gap: 8px; align-items: center; }
+.big-idea__text { font-family: var(--font-ui); font-size: clamp(20px, 4.6vw, 24px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; color: var(--ink); }
+
+.story-care { margin: 20px 0 8px; font-size: 14px; color: var(--ink-faded); }
+
+.story-foot { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; margin: 24px 0; }
+.story-foot a { display: block; padding: 14px 16px; border-radius: var(--radius); background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; color: inherit; }
+.story-foot a:hover { box-shadow: var(--card-shadow-hover); }
+.story-foot .next { text-align: right; }
+.story-foot .arrow { display: block; font-size: 12px; font-weight: 700; color: var(--gold); }
+.story-foot .label { display: block; font-weight: 800; font-size: 15px; margin-top: 2px; }
+.story-foot__all { text-align: center; }
+
+.story-credit { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-faded); line-height: 1.6; }
+.story-credit a { color: var(--ink-soft); }
+.story-credit__verse { margin-top: 6px; color: var(--ink-soft); }
+
+[data-fs-focus="on"] .story-crumb, [data-fs-focus="on"] .story-tools, [data-fs-focus="on"] .story-foot { display: none !important; }
+
+@media print {
+  .story-tools, .story-crumb, .story-foot, .chapter-actions, .reading-progress { display: none !important; }
+  details.zone > summary .zone__chev { display: none; }
+  .story-box--good-news, .story-cast li, .story-passage__link { box-shadow: none; border: 1px solid #ccc; }
+}
+@media (prefers-reduced-motion: reduce) { .zone__chev { transition: none; } }
+
+/* A full bold sentence (like the last line of Good News) is the key line */
+.story-box .story-key { font-family: var(--font-ui); font-size: 19px; line-height: 1.35; margin-top: 16px; color: var(--ink); }
+.story-box .story-key strong { font-weight: 800; }
+
+
+/* ==========================================================
+   Design system v1 audit fixes (September 2026)
+   ========================================================== */
+
+/* Rule: lapis marks what you can tap. Non-tappable labels use ink. */
+.section-label, .book-section-label, .book-chapters-label, .hcard__tag,
+.passage__ref, .stories-eyebrow, .parable-passage__ref:not(a) { color: var(--ink-faded); }
+
+/* Rule: stories and books have no color codes. The old genre rainbow
+   (orange, blue, olive, teal, rose) becomes one neutral hairline. */
+[style*="--rowc"] { --rowc: var(--rule) !important; }
+.bookrow--colored:hover { border-color: var(--ink-hint); }
+.parable-head__theme, .parable-turn__label { color: var(--ink-faded) !important; }
+
+/* Rule: no italics, no shouting */
+.parable-theme__blurb, .passage__frame { font-style: normal; }
+.parable-head__theme, .parable-turn__label { text-transform: none; letter-spacing: 0; }
+
+/* Brand: gold leaf is the logo mark and the Big Idea marker */
+.site-mark__icon { color: var(--gold-leaf); }
+.zone__num { background: var(--paper-warm); color: var(--ink-soft); }
+.big-idea { background: var(--white); box-shadow: var(--card-shadow); position: relative; padding-top: 30px; }
+.big-idea::before { content: ""; position: absolute; top: 18px; left: 22px; width: 32px; height: 4px; border-radius: 2px; background: var(--gold-leaf); }
+.big-idea__label { color: var(--ink-faded); margin-top: 6px; }
+
+/* Type scale: scene titles 27px at the standard 20px story size */
+.story-scene__title { font-size: 1.35em; }

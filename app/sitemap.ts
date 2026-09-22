@@ -1,3 +1,4 @@
+import { STORIES } from "@/lib/stories";
 import type { MetadataRoute } from "next";
 import {
   TRANS_ORDER,
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/` },
     { url: `${SITE_URL}/read/` },
+    { url: `${SITE_URL}/stories/` },
     { url: `${SITE_URL}/parables/` },
     { url: `${SITE_URL}/genre/` },
     { url: `${SITE_URL}/search/` },
@@ -23,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   for (const n of NEEDS as any[]) urls.push({ url: `${SITE_URL}/read/${n.slug}/` });
   for (const g of GENRES as any[]) urls.push({ url: `${SITE_URL}/genre/${g.slug}/` });
+  for (const s of STORIES) if (s.ready && s.file) urls.push({ url: `${SITE_URL}/stories/${s.slug}/` });
   for (const p of PARABLES as any[]) urls.push({ url: `${SITE_URL}/parables/${p.slug}/` });
   // Bare "chapter:verse" disambiguation pages — every one built for the
   // literal query someone types when they don't remember the book name.
