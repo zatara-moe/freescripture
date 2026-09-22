@@ -50,3 +50,11 @@ Add the translation's books to `data/bible/<slug>.json`, add the books to
 The whole repo is under 100 files, so it always fits in one upload.
 Drag new files or folders onto the repo; GitHub replaces files with the
 same name and leaves everything else alone. Don't delete folders first.
+
+## Static files live in lib/static-assets/
+
+There is no public/ folder. The stylesheet, scripts, icons, search
+indexes, service worker, and manifest are stored in lib/static-assets/
+and published at their usual addresses (/static/css/site.css, /sw.js,
+and so on) by small route files in app/. This keeps every file inside
+folders that GitHub accepts.

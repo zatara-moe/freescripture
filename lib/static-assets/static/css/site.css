@@ -1,0 +1,1827 @@
+/* ==========================================================
+   Free Scripture — site.css
+   Scene Design System v1 (September 2026).
+   Brand: one lapis accent for tappable things. Reading: Paper, White,
+   and Night themes. Story and scripture text: Atkinson Hyperlegible.
+   ========================================================== */
+
+/* --- Tokens (light mode) ---
+   Aligned to the real Hope for Americans shared system (tokens.css,
+   consumed by digitallutheranchurch.com and luthersworld.com): one
+   brand hue at four weights, not a rotating rainbow of accents.
+   --gold is kept as the variable name for backward compatibility with
+   the many rules already written against it, but its value is now the
+   family's actual brand color — a muted plum, not literal gold. */
+:root {
+  /* Scene Design System v1: Paper theme (default).
+     Variable names are unchanged so every page and script keeps working.
+     --gold is still the name of the one brand hue; its value is now lapis. */
+  --paper:       #FBF7F0;
+  --paper-warm:  #F3ECDF;
+  --paper-deep:  #E9DFCC;
+  --ink:         #2B2118;
+  --ink-soft:    #4A3F33;
+  --ink-faded:   #6B5D4C;
+  --ink-hint:    #756756;
+  --rule:        #E0D5C2;
+  --rule-soft:   #ECE4D5;
+  --gold:        #2F4DA0;  /* lapis: the one brand hue, for things you can tap */
+  --gold-deep:   #243C80;
+  --gold-wash:   #E7EBF6;
+  --gold-leaf:   #B8892B;  /* decoration only, never body text */
+  --on-gold:     #FFFFFF;  /* text on filled lapis */
+  --white:       #fff;
+  --highlight:   #f3e2a8;
+
+  --card-shadow:       0 0 0 1px rgba(43,33,24,.10), 0 1px 2px rgba(43,33,24,.04);
+  --card-shadow-hover: 0 0 0 1px rgba(43,33,24,.16), 0 3px 10px rgba(43,33,24,.08);
+
+  --g-narrative: #A8481F;
+  --g-poetry:    #5B6A8C;
+  --g-wisdom:    #8A6D1F;
+  --g-law:       #5A6638;
+  --g-letters:   #3F6F66;
+  --g-prophecy:  #75384B;
+
+  /* Source Serif 4 + Source Sans 3 — the family's actual fonts,
+     self-hosted on DLC and Luther's World, chosen and contrast-tested
+     for exactly this readership. Literata stays available as an
+     opt-in Display-panel choice, but it is not the identity. */
+  --font-ui:   'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Atkinson Hyperlegible', Verdana, Arial, sans-serif;
+  --font-book: 'Literata', Georgia, serif;
+
+  --measure:   40rem;
+  --radius:    10px;
+  --radius-sm: 8px;
+}
+
+/* --- Night theme tokens ---
+   Applied when the OS prefers dark and the reader hasn't pinned Paper or
+   White, or when the reader picks Night in the Display panel.
+   Contrast verified: ink 13.5:1, ink-faded 6.4:1, lapis link 8.3:1. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-fs-theme="light"]):not([data-fs-theme="white"]) {
+    --paper:      #1A1814;
+    --paper-warm: #23201B;
+    --paper-deep: #2C2822;
+    --ink:        #E6E0D4;
+    --ink-soft:   #CFC7B9;
+    --ink-faded:  #A39B8D;
+    --ink-hint:   #9A9284;
+    --rule:       #3A342C;
+    --rule-soft:  #2A2621;
+    --gold:       #9AB0EE;
+    --gold-deep:  #C3D0F5;
+    --gold-wash:  #1E2640;
+    --on-gold:    #141821;
+    --white:      #211E19;
+    --highlight:  #3d3520;
+    --card-shadow:       0 0 0 1px rgba(255,255,255,.05);
+    --card-shadow-hover: 0 0 0 1px rgba(255,255,255,.11);
+    --g-narrative: #d4805a;
+    --g-poetry:    #8fa5c8;
+    --g-wisdom:    #c4a850;
+    --g-law:       #8aaa60;
+    --g-letters:   #5aada0;
+    --g-prophecy:  #b07080;
+  }
+}
+:root[data-fs-theme="dark"] {
+  --paper:      #1A1814;
+  --paper-warm: #23201B;
+  --paper-deep: #2C2822;
+  --ink:        #E6E0D4;
+  --ink-soft:   #CFC7B9;
+  --ink-faded:  #A39B8D;
+  --ink-hint:   #9A9284;
+  --rule:       #3A342C;
+  --rule-soft:  #2A2621;
+  --gold:       #9AB0EE;
+  --gold-deep:  #C3D0F5;
+  --gold-wash:  #1E2640;
+  --on-gold:    #141821;
+  --white:      #211E19;
+  --highlight:  #3d3520;
+  --card-shadow:       0 0 0 1px rgba(255,255,255,.05);
+  --card-shadow-hover: 0 0 0 1px rgba(255,255,255,.11);
+  --g-narrative: #d4805a;
+  --g-poetry:    #8fa5c8;
+  --g-wisdom:    #c4a850;
+  --g-law:       #8aaa60;
+  --g-letters:   #5aada0;
+  --g-prophecy:  #b07080;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+/* View Transitions: crossfade between page loads so multi-page
+   navigation feels instant, like Mama Shepherd's client-side routing,
+   without the 100vh scroll trap or single-page architecture. */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation-duration: 0s; }
+}
+
+body {
+  font-family: var(--font-ui);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Safe-area padding for PWA standalone on notched phones:
+     content doesn't tuck under the notch or home indicator. */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; }
+
+/* Focus rings: visible on keyboard nav, invisible on mouse/touch.
+   Gold outline matches the accent system; rounded to soften. */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* --- Skip link --- */
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--ink); color: var(--paper); padding: 8px 16px;
+  font-size: 14px; font-weight: 600; z-index: 100; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+/* --- Site header --- */
+.site-header {
+  border-bottom: 1.5px solid var(--rule);
+  background: var(--paper);
+  position: sticky; top: 0; z-index: 50;
+}
+.site-header__inner {
+  max-width: 56rem; margin: 0 auto;
+  padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.site-mark {
+  display: flex; align-items: center; gap: 8px; text-decoration: none;
+}
+.site-mark__icon { width: 28px; height: 19px; color: var(--ink); }
+.site-mark__text {
+  font-weight: 700; font-size: 19px; letter-spacing: -0.02em; color: var(--ink);
+}
+.site-nav {
+  display: none; gap: 16px; font-size: 13px; font-weight: 500;
+}
+.site-nav a { text-decoration: none; color: var(--ink-faded); }
+.site-nav a:hover { color: var(--ink); }
+@media (min-width: 768px) {
+  .site-nav { display: flex; }
+}
+
+/* Theme toggle: sun/moon in the header. Always visible — not buried in
+   a settings sheet. Clicking it toggles between light and dark directly;
+   the "Auto" (follow OS) option stays in the Display panel for those
+   who want it. */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid var(--rule); background: none;
+  color: var(--ink-faded); cursor: pointer; flex-shrink: 0;
+  transition: border-color 0.15s, color 0.15s;
+}
+.theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
+.theme-toggle svg { width: 16px; height: 16px; }
+
+/* Default (light mode): show moon (offer to go dark), hide sun */
+.theme-toggle__sun  { display: none; }
+.theme-toggle__moon { display: block; }
+
+/* When dark mode is active (OS preference, not overridden to light):
+   show sun (offer to go light), hide moon */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-fs-theme="light"]):not([data-fs-theme="white"]) .theme-toggle__sun  { display: block; }
+  :root:not([data-fs-theme="light"]):not([data-fs-theme="white"]) .theme-toggle__moon { display: none; }
+}
+/* When manually set to dark: same logic */
+:root[data-fs-theme="dark"] .theme-toggle__sun  { display: block; }
+:root[data-fs-theme="dark"] .theme-toggle__moon { display: none; }
+
+/* --- Tab bar (mobile) --- */
+.tab-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+  display: flex; justify-content: space-around;
+  background: var(--paper); border-top: 1px solid var(--rule);
+  padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+}
+.tab-bar__btn {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-size: 9.5px; font-weight: 500; color: var(--ink-faded);
+  text-decoration: none; background: none; border: none; padding: 4px 2px;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 0; flex: 1 1 0; white-space: nowrap;
+}
+.tab-bar__btn svg { width: 20px; height: 20px; }
+.tab-bar__btn[aria-current="page"] { color: var(--gold); }
+@media (min-width: 768px) { .tab-bar { display: none; } }
+
+/* --- Footer --- */
+.site-footer {
+  text-align: center; padding: 24px 20px 100px;
+  background: var(--paper-warm); border-top: 1px solid var(--rule);
+  font-size: 13px; color: var(--ink-faded);
+}
+@media (min-width: 768px) { .site-footer { padding-bottom: 32px; } }
+.foot-tag { margin-bottom: 6px; }
+.hfa-madein { margin-bottom: 10px; }
+.hfa-heart { color: var(--gold); }
+.hfa-rule { height: 1px; background: var(--rule); max-width: 80px; margin: 10px auto; }
+.hfa-mark a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.hfa-mark a:hover { color: var(--gold); }
+.hfa-vision { font-size: 12px; color: var(--ink-hint); margin-top: 4px; }
+
+/* --- Reading column (max-width container) --- */
+.reading-column {
+  max-width: var(--measure); margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* --- Chapter nav (top bar) --- */
+.chapter-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0; border-bottom: 1px solid var(--rule-soft);
+  font-size: 14px;
+}
+.chapter-nav a { text-decoration: none; font-weight: 600; color: var(--ink-soft); }
+.chapter-nav a:hover { color: var(--ink); }
+.chapter-nav__current { font-weight: 700; font-size: 15px; }
+.chapter-nav__group { display: flex; gap: 12px; min-width: 70px; }
+.chapter-nav__group:last-child { justify-content: flex-end; }
+
+/* --- Translation switcher --- */
+.trans-switch {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  padding: 10px 0; font-size: 13px; color: var(--ink-faded);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.trans-switch__label { margin-right: 4px; }
+.trans-switch__btn {
+  font-weight: 600; padding: 4px 10px; border-radius: 6px;
+  font-size: 12px; text-decoration: none; color: var(--ink-soft);
+  border: 1.5px solid var(--rule);
+}
+.trans-switch__btn:hover { border-color: var(--ink-soft); }
+.trans-switch__btn--current {
+  background: var(--ink); color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* --- Page headings (needs, genre, about, search) --- */
+.page-head { padding: 20px 0 8px; }
+.page-title {
+  font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.2; margin-bottom: 8px;
+}
+.page-lede {
+  font-size: 15px; color: var(--ink-soft); line-height: 1.5;
+}
+
+/* --- Chapter reader --- */
+
+/* Book context — the "what am I about to read" framing that every major
+   Bible site has via editorial headings or commentary, but ours uses our
+   own BOOK_INTROS/BOOK_PITCHES data instead of licensed content. */
+.chapter-context {
+  font-family: var(--font-body);
+  font-size: 15px; line-height: 1.65; color: var(--ink-soft);
+  margin-bottom: 28px; padding: 16px 20px;
+  background: var(--paper-warm); border-radius: 10px;
+  border-left: 3px solid var(--gold);
+  max-width: 36rem;
+  font-optical-sizing: auto;
+}
+.chapter-context__label {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--gold); margin-bottom: 6px;
+}
+
+/* "Keep reading" block — cross-links after the chapter text, turning the
+   dead end into a crossroads using data already in meta.json. */
+.keep-reading {
+  margin-top: 36px; padding-top: 20px;
+  border-top: 1px solid var(--rule); max-width: 36rem;
+}
+.keep-reading__heading {
+  font-family: var(--font-ui); font-size: 13px; font-weight: 700;
+  color: var(--ink-faded); text-transform: uppercase; letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+.keep-reading__links {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.keep-reading__link {
+  display: block; text-decoration: none; padding: 12px 16px;
+  border-radius: 10px; background: var(--white);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease;
+}
+.keep-reading__link:hover { box-shadow: var(--card-shadow-hover); }
+.keep-reading__link-label {
+  font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--ink);
+}
+.keep-reading__link-desc {
+  font-size: 13px; color: var(--ink-faded); margin-top: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .keep-reading__link { transition: none; }
+}
+
+.chapter-translation-tag {
+  font-size: 13px; font-weight: 600; color: var(--gold);
+  margin-top: 24px; margin-bottom: 4px;
+}
+.chapter-title {
+  font-size: 26px; font-weight: 700; letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.chapter-title-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 12px;
+}
+.chapter-title-row .chapter-title { margin-bottom: 20px; }
+.reading-settings-btn {
+  flex: none; display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 12px; margin-top: 2px;
+  border: 1.5px solid var(--rule); border-radius: 10px;
+  background: var(--white); color: var(--ink-soft);
+  font-size: 13px; font-weight: 600;
+}
+.reading-settings-btn:hover { border-color: var(--gold); color: var(--ink); }
+.reading-settings-btn svg { width: 20px; height: 20px; }
+.chapter-text {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.78;
+  max-width: 36rem;
+  word-spacing: 0.03em;
+  /* Publisher-grade text rendering: activates Source Serif 4's optical
+     size axis (opsz 8–60, loaded in the Google Fonts URL) so letterforms
+     are correctly weighted at 20px, not designed-size defaults.
+     font-synthesis:none prevents the browser faking bold or italic if
+     an axis isn't loaded — better a visual gap than a wrong rendering. */
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  orphans: 2;
+  widows: 2;
+}
+
+/* Default layout: one verse per line, number in a left gutter. */
+.verse {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  column-gap: 10px;
+  margin-bottom: 1em;
+  scroll-margin-top: 96px;
+}
+.verse:last-child { margin-bottom: 0; }
+.verse__num {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold);
+  text-decoration: none;
+  text-align: right;
+  padding-top: 0.35em;
+  line-height: 1;
+}
+.verse__num:hover { color: var(--ink); }
+.verse__body { display: block; }
+.verse:target {
+  background: var(--highlight);
+  border-radius: 6px;
+  box-shadow: 0 0 0 6px var(--highlight);
+}
+
+/* Flowing layout (opt-in): verses run together as prose. */
+[data-fs-layout="flowing"] .chapter-text { display: block; }
+[data-fs-layout="flowing"] .verse {
+  display: inline;
+  margin: 0;
+}
+[data-fs-layout="flowing"] .verse__num {
+  vertical-align: super;
+  font-size: 12px;
+  padding: 0;
+  margin-right: 2px;
+  text-align: left;
+}
+[data-fs-layout="flowing"] .verse__body { display: inline; }
+[data-fs-layout="flowing"] .verse:target {
+  box-shadow: 0 0 0 3px var(--highlight);
+}
+
+/* Chapter actions */
+.chapter-actions {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  padding: 8px 0 20px;
+}
+.action-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 600; padding: 10px 16px;
+  border-radius: var(--radius-sm); border: 1.5px solid var(--rule);
+  background: var(--white); color: var(--ink);
+  text-decoration: none;
+}
+.action-btn:hover { border-color: var(--ink-soft); }
+.action-btn:first-child {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+.action-btn__icon { width: 16px; height: 16px; }
+.action-btn__text { /* inherits */ }
+
+/* Chapter footer nav */
+.chapter-foot { padding-top: 8px; }
+.chapter-foot__nav {
+  display: flex; gap: 10px; margin-bottom: 24px;
+}
+.chapter-foot__nav a, .chapter-foot__nav span {
+  flex: 1; display: block; padding: 14px 16px;
+  border: 1.5px solid var(--rule); border-radius: var(--radius);
+  text-decoration: none; color: inherit;
+}
+.chapter-foot__nav a:hover { border-color: var(--ink-soft); }
+.chapter-foot__nav .next { text-align: right; }
+.chapter-foot__nav .arrow { font-size: 12px; color: var(--ink-faded); display: block; }
+.chapter-foot__nav .label { font-weight: 700; font-size: 16px; margin-top: 2px; display: block; }
+
+.tradition-stripe { height: 3px; background: var(--gold); }
+
+/* --- Bookrow (the universal row component) --- */
+.bookrow {
+  display: flex; align-items: center;
+  background: var(--white); border-radius: var(--radius); padding: 16px 18px;
+  text-decoration: none; color: inherit;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease;
+}
+.bookrow:hover { box-shadow: var(--card-shadow-hover); }
+@media (prefers-reduced-motion: reduce) {
+  .bookrow { transition: none; }
+}
+
+/* --colored modifier: activates the --rowc accent that Need and Genre
+   pages set via inline style. The variable is already being written;
+   this is the CSS that makes it visible. Left border + full border on
+   hover, matching the accent. Adjusted padding compensates for the
+   extra border width so internal alignment doesn't shift. */
+.bookrow--colored {
+  border-left: 3px solid var(--rowc, var(--rule));
+  padding-left: 14px;
+}
+.bookrow--colored:hover { border-color: var(--rowc, var(--gold)); }
+
+/* 2-column grid for famous passage rows on desktop — halves the
+   scroll depth of the longest list on the homepage. */
+@media (min-width: 640px) {
+  .read-list--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+@media (min-width: 860px) {
+  .read-list--grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.bookrow__main {
+  flex: 1 1 auto; min-width: 0;
+  display: flex; flex-direction: column;
+}
+.bookrow__t {
+  font-weight: 700; font-size: 17px; line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+.bookrow__d {
+  font-size: 14px; color: var(--ink-faded); line-height: 1.45;
+  margin-top: 4px;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.bookrow__chev {
+  flex: 0 0 auto; color: var(--ink-faded); opacity: 0.4;
+  margin-left: 12px; width: 9px; height: 15px;
+}
+
+/* Promoted row (translation cards on home) */
+.bookrow--primary {
+  background: var(--paper-warm); padding: 20px 20px;
+}
+.bookrow--primary .bookrow__t { font-size: 18px; letter-spacing: -0.015em; }
+.bookrow--primary .bookrow__d { font-size: 15px; color: var(--ink-soft); }
+
+/* --- Row containers --- */
+.read-list {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.book-grid {
+  display: flex; flex-direction: column; gap: 10px;
+}
+
+/* --- Section dividers and labels --- */
+.home-divider { height: 1px; background: var(--rule); margin: 32px 0; }
+.section-label {
+  font-size: 12px; font-weight: 700; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.section-link {
+  font-size: 13px; font-weight: 600; color: var(--gold); text-decoration: none;
+}
+.section-link:hover { text-decoration: underline; }
+
+/* Book section labels (translation landing) */
+.book-section-label {
+  display: inline-block;
+  font-size: 12px; font-weight: 700; color: var(--gold);
+  background: var(--paper-warm); padding: 4px 10px; border-radius: 8px;
+  margin: 24px 0 12px;
+}
+.book-section:first-of-type .book-section-label { margin-top: 0; }
+
+/* --- Home page ---
+   One card language (hcard) used for everything: quick access,
+   translations, passages, and Sunday. Five different card styles
+   was the visual identity problem. One consistent card is the fix.
+   ============================================================== */
+.home { max-width: 52rem; margin: 0 auto; padding: 0 24px 72px; }
+
+/* Hero */
+.home-hero { padding: 48px 0 28px; text-align: center; }
+.home-hero__headline {
+  font-family: var(--font-body); font-size: 36px; font-weight: 400;
+  line-height: 1.2; color: var(--ink); letter-spacing: -0.025em;
+  font-optical-sizing: auto;
+  max-width: 15ch; margin: 0 auto;
+  text-wrap: balance;
+}
+@media (min-width: 640px) { .home-hero__headline { font-size: 42px; } }
+.home-hero__sub {
+  font-size: 15px; color: var(--ink-faded); margin-top: 10px;
+}
+
+/* === The single primary action ===
+   One clear next step instead of four equal ones. Larger than any
+   card in the grid below it, with room for two lines of real text —
+   because a card this size can afford to say something, rather than
+   two words padded out with empty space. */
+.hero-primary {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 22px 24px;
+  background: var(--white); border-radius: var(--radius);
+  box-shadow: var(--card-shadow); text-decoration: none; color: var(--ink);
+  margin: 28px 0 14px;
+  transition: box-shadow 0.2s ease;
+}
+.hero-primary:hover { box-shadow: var(--card-shadow-hover); }
+@media (prefers-reduced-motion: reduce) { .hero-primary { transition: none; } }
+.hero-primary__body { display: flex; flex-direction: column; min-width: 0; }
+.hero-primary__label {
+  font-family: var(--font-ui); font-size: 18px; font-weight: 700;
+  color: var(--ink);
+}
+.hero-primary__sub {
+  font-family: var(--font-body); font-style: italic; font-size: 14px;
+  color: var(--ink-faded); margin-top: 4px; font-optical-sizing: auto;
+}
+.hero-primary__arrow {
+  font-size: 24px; color: var(--gold); flex-shrink: 0;
+}
+
+/* === Real search field ===
+   A text input everyone already recognizes on sight, rather than a
+   button labeled "Search" that has to be read and understood first. */
+.hero-search {
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 16px; background: var(--white);
+  border-radius: var(--radius); box-shadow: var(--card-shadow);
+  margin-bottom: 20px;
+}
+.hero-search svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--ink-faded); }
+.hero-search__input {
+  flex: 1; border: none; outline: none; background: none;
+  font-family: var(--font-ui); font-size: 16px; color: var(--ink);
+  min-width: 0;
+}
+.hero-search__input::placeholder { color: var(--ink-hint); }
+
+/* === Quiet secondary links ===
+   Plain text, not boxes — a lighter-weight option for someone who
+   wants a different starting point without evaluating another set
+   of equally-weighted cards first. Matches DLC's own restrained
+   arrow-link convention for secondary paths. */
+.hero-links {
+  display: flex; flex-wrap: wrap; gap: 4px 24px; margin-bottom: 8px;
+}
+.hero-links__link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-ui); font-size: 15px; font-weight: 600;
+  color: var(--ink); text-decoration: none; padding: 8px 0;
+}
+.hero-links__link span {
+  color: var(--gold); transition: transform 0.15s ease;
+}
+.hero-links__link:hover span { transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-links__link span { transition: none; }
+}
+
+/* Section headings */
+.home-h2 {
+  font-family: var(--font-body); font-size: 19px; font-weight: 400;
+  color: var(--ink); letter-spacing: -0.01em; margin: 36px 0 14px;
+  font-optical-sizing: auto;
+}
+
+/* === The one card: hcard ===
+   Matches the family's actual card language (tokens.css / dlc.css):
+   a plain white surface, a ring-shadow instead of a colored border,
+   and a hover state that only deepens the shadow — no lift, no
+   background swap, no color shift. Four separate comments in the
+   family's own CSS say the lift was removed as "sensory noise for
+   neurodivergent readers." That's a standing decision here too. */
+.hcard {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 16px 18px;
+  background: var(--white); border-radius: var(--radius);
+  text-decoration: none; color: var(--ink);
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s ease;
+}
+.hcard:hover { box-shadow: var(--card-shadow-hover); }
+@media (prefers-reduced-motion: reduce) { .hcard { transition: none; } }
+
+/* The label */
+.hcard__label {
+  font-family: var(--font-ui); font-size: 16px; font-weight: 600;
+  color: var(--ink); display: block;
+}
+/* Sub-line — smaller, muted */
+.hcard__sub {
+  font-size: 13px; color: var(--ink-faded); margin-top: 3px; display: block;
+}
+.hcard__sub--italic {
+  font-family: var(--font-body); font-style: italic; font-optical-sizing: auto;
+}
+/* Passage ref — slightly larger weight */
+.hcard__ref {
+  font-family: var(--font-ui); font-size: 15px; font-weight: 700;
+  color: var(--ink); display: block;
+}
+/* Tag (Good place to start) — the one brand hue, same as the arrow */
+.hcard__tag { color: var(--gold); font-style: normal; }
+/* Body wrapper for cards with both label and sub */
+.hcard__body { display: flex; flex-direction: column; flex: 1 1 auto; min-width: 0; }
+/* The arrow — brand plum, matching DLC's .link-card .lc-arrow convention */
+.hcard__arrow {
+  font-size: 20px; color: var(--gold); flex-shrink: 0; line-height: 1;
+}
+
+/* === Row layouts ===
+   hcard-row--4: the quick-access row (equal 4-up)
+   hcard-row--3: the passages grid (3-up on desktop, 2-up on tablet)
+   hcard-row--col: stacked full-width column (translations)          */
+.hcard-row { display: grid; gap: 14px; margin-bottom: 8px; }
+.hcard-row--4 { grid-template-columns: repeat(4, 1fr); margin-bottom: 40px; }
+.hcard-row--3 { grid-template-columns: repeat(3, 1fr); }
+.hcard-row--col { grid-template-columns: 1fr; }
+
+/* Quick-access cards are taller, label top-left, arrow bottom-right —
+   the same right-edge landmark the wide cards use, so both card
+   shapes read as one consistent system rather than two conventions. */
+.hcard-row--4 .hcard {
+  flex-direction: column; align-items: flex-start; justify-content: space-between;
+  padding: 20px 20px 18px; min-height: 108px;
+}
+.hcard-row--4 .hcard__arrow { align-self: flex-end; }
+/* Wide cards (translations, Sunday) keep their label and sub in a body wrapper */
+.hcard--wide { align-items: center; }
+
+/* Accented card (This Sunday) — gold left border */
+.hcard--accented { border-left: 3px solid var(--gold); }
+
+/* Responsive breakpoints */
+@media (max-width: 639px) {
+  .hcard-row--4 { grid-template-columns: 1fr 1fr; }
+  .hcard-row--3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 399px) {
+  .hcard-row--4 { grid-template-columns: 1fr; }
+  .hcard-row--3 { grid-template-columns: 1fr; }
+}
+
+/* --- Passage cards (need pages) --- */
+.passage-list { display: flex; flex-direction: column; gap: 14px; padding: 12px 0 28px; }
+.passage {
+  background: var(--white); border: 1.5px solid var(--rule);
+  border-radius: var(--radius); padding: 18px; overflow: hidden;
+}
+.passage__ref {
+  font-weight: 700; font-size: 14px; color: var(--gold); margin-bottom: 4px;
+}
+.passage__frame {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 15px; color: var(--ink-soft); line-height: 1.55;
+  margin-bottom: 12px;
+  font-optical-sizing: auto;
+}
+.passage__verse {
+  font-family: var(--font-body); font-size: 19px; line-height: 1.72;
+  color: var(--ink); padding: 14px 18px;
+  background: var(--paper-warm); border-radius: var(--radius-sm);
+  margin: 0 0 14px; quotes: none;
+  font-optical-sizing: auto; font-synthesis: none;
+}
+.passage__acts { display: flex; gap: 8px; }
+.rbtn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 600; padding: 10px 16px;
+  border: 1.5px solid var(--rule); border-radius: var(--radius-sm);
+  background: var(--white); color: var(--ink); text-decoration: none;
+}
+.rbtn:hover { border-color: var(--ink-soft); }
+.rbtn--subtle {
+  font-size: 13px; padding: 7px 12px;
+  color: var(--ink-faded); border-color: transparent; background: none;
+  cursor: pointer;
+}
+.rbtn--subtle:hover { color: var(--ink); border-color: var(--rule); }
+
+/* --- Translation landing --- */
+.trans-landing { max-width: var(--measure); margin: 0 auto; padding: 0 20px 60px; }
+.trans-landing__head { padding: 20px 0 16px; }
+.trans-landing__title {
+  font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px;
+}
+.trans-landing__desc { font-size: 15px; color: var(--ink-soft); line-height: 1.5; }
+
+/* --- Book landing --- */
+.book-landing { }
+.book-head { padding: 20px 0 8px; }
+.book-title {
+  font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px;
+}
+.book-intro { font-size: 15px; color: var(--ink-soft); line-height: 1.5; }
+.book-chapters-label {
+  font-size: 12px; font-weight: 700; color: var(--gold); margin: 20px 0 12px;
+}
+.chapter-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+  gap: 8px; list-style: none;
+}
+.chapter-grid li a {
+  display: flex; align-items: center; justify-content: center;
+  height: 48px; font-weight: 600; font-size: 16px;
+  border: 1.5px solid var(--rule); border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--ink); background: var(--white);
+}
+.chapter-grid li a:hover { border-color: var(--gold); background: var(--paper-warm); }
+
+/* --- Genre hub/page --- */
+.genre-hub, .genre-page { }
+.genre-section { margin-bottom: 16px; }
+.genre-section__title { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.genre-section__desc { font-size: 14px; color: var(--ink-faded); margin-bottom: 12px; }
+
+/* --- Needs hub --- */
+.needs-hub { }
+
+/* --- Search page --- */
+.search-page { }
+.search-box { margin: 16px 0; }
+.search-trans { display: block; margin-bottom: 10px; font-size: 14px; }
+.search-trans select {
+  font-family: var(--font-ui); font-size: 15px; padding: 8px 12px;
+  border: 1.5px solid var(--rule); border-radius: 8px;
+  background: var(--white); color: var(--ink); margin-left: 8px;
+}
+.search-input {
+  width: 100%; font-family: var(--font-ui); font-size: 16px;
+  padding: 12px 14px; border: 1.5px solid var(--rule);
+  border-radius: 12px; background: var(--white); color: var(--ink);
+  outline: none;
+}
+.search-input:focus { border-color: var(--gold); }
+.search-results { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.search-status {
+  font-size: 14px; color: var(--ink-faded); margin-top: 12px; min-height: 1.2em;
+}
+.search-result {
+  background: var(--white); border: 1.5px solid var(--rule);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+.search-result__ref { margin-bottom: 6px; }
+.search-result__ref a {
+  font-family: var(--font-ui); font-size: 14px; font-weight: 700;
+  color: var(--gold); text-decoration: none;
+}
+.search-result__ref a:hover { text-decoration: underline; }
+.search-result__text {
+  font-family: var(--font-body); font-size: 19px; line-height: 1.6; color: var(--ink);
+  font-optical-sizing: auto; font-synthesis: none;
+}
+.search-result__text mark,
+.search-result__text .hl {
+  background: var(--highlight); color: inherit; border-radius: 2px; padding: 0 1px;
+}
+.search-empty {
+  font-size: 16px; color: var(--ink-faded); line-height: 1.6;
+  padding: 16px 0;
+}
+.search-empty em { font-style: normal; font-weight: 600; color: var(--ink-soft); }
+
+/* --- Back to top --- */
+.back-to-top {
+  position: fixed;
+  right: 16px;
+  bottom: calc(84px + env(safe-area-inset-bottom));
+  z-index: 40;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 16px;
+  border: 1.5px solid var(--rule); border-radius: 999px;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-ui); font-size: 14px; font-weight: 600;
+  box-shadow: 0 2px 12px rgba(26, 23, 20, 0.15);
+  opacity: 0; transform: translateY(8px); pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.back-to-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top svg { width: 20px; height: 20px; }
+@media (min-width: 768px) {
+  .back-to-top { bottom: 24px; right: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: opacity 0.2s ease; transform: none; }
+  .back-to-top.is-visible { transform: none; }
+}
+
+/* --- About page --- */
+.about-page .prose {
+  font-size: 17px; line-height: 1.65; color: var(--ink);
+}
+.about-page .prose p { margin-bottom: 1em; }
+.about-page .prose a { color: var(--gold); }
+.about-page .prose h2 {
+  font-size: 20px; font-weight: 700; letter-spacing: -0.01em;
+  margin: 1.5em 0 0.5em; color: var(--ink);
+}
+
+/* --- Not found --- */
+.notfound-page { }
+
+/* --- Attribution (chapter footer) --- */
+.attribution {
+  font-size: 12px; color: var(--ink-hint); line-height: 1.5;
+  padding: 16px 0; border-top: 1px solid var(--rule-soft);
+}
+
+/* --- Reading preferences (applied via data attributes on <html>) ---
+   Applies to every place readers meet running scripture text: the
+   chapter reader, Need-page passage cards, and search results — not
+   just .chapter-text. A reader who sets "Largest" or OpenDyslexic
+   should never see it silently drop on a different page. */
+[data-fs-size="large"] .chapter-text,
+[data-fs-size="large"] .passage__verse,
+[data-fs-size="large"] .search-result__text { font-size: 21px; }
+[data-fs-size="xlarge"] .chapter-text,
+[data-fs-size="xlarge"] .passage__verse,
+[data-fs-size="xlarge"] .search-result__text { font-size: 24px; }
+[data-fs-leading="loose"] .chapter-text,
+[data-fs-leading="loose"] .passage__verse,
+[data-fs-leading="loose"] .search-result__text { line-height: 2; }
+[data-fs-leading="tight"] .chapter-text,
+[data-fs-leading="tight"] .passage__verse,
+[data-fs-leading="tight"] .search-result__text { line-height: 1.55; }
+[data-fs-font="lexend"] .chapter-text,
+[data-fs-font="lexend"] .passage__verse,
+[data-fs-font="lexend"] .search-result__text { font-family: 'Lexend', var(--font-body); }
+[data-fs-font="opendyslexic"] .chapter-text,
+[data-fs-font="opendyslexic"] .passage__verse,
+[data-fs-font="opendyslexic"] .search-result__text { font-family: 'OpenDyslexic', var(--font-body); }
+[data-fs-font="literata"] .chapter-text,
+[data-fs-font="literata"] .passage__verse,
+[data-fs-font="literata"] .search-result__text {
+  font-family: 'Literata', var(--font-body);
+  font-optical-sizing: auto;
+}
+
+/* --- Reading progress: thin, quiet, tracks position within the
+   passage text itself. Deliberately no percentage number and no
+   color-change celebration — a plain line, not a game mechanic. */
+.reading-progress {
+  position: fixed; top: 0; left: 0; width: 100%; height: 3px;
+  z-index: 200; pointer-events: none; background: transparent;
+}
+.reading-progress__bar {
+  height: 100%; width: 0%; background: var(--gold); opacity: 0.55;
+  transition: width 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reading-progress__bar { transition: none; }
+}
+
+/* --- Chapter meta row: read-time on the left, jump-to-verse (only
+   rendered for longer chapters) on the right --- */
+.chapter-meta-row {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 12px; margin-top: -12px; margin-bottom: 20px;
+}
+.chapter-meta { font-size: 13px; color: var(--ink-faded); margin: 0; }
+.chapter-jump { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-faded); }
+.chapter-jump select {
+  font-family: var(--font-ui); font-size: 13px; padding: 4px 8px;
+  border: 1.5px solid var(--rule); border-radius: 8px;
+  background: var(--white); color: var(--ink);
+}
+
+/* --- End-of-chapter acknowledgment: one quiet sentence, not a badge
+   or a checkmark — matches the site's understated tone. --- */
+.chapter-complete {
+  font-style: italic; color: var(--ink-faded); font-size: 15px;
+  margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--rule);
+}
+
+/* --- Inline segmented toggles above the chapter text (Lines/Flowing,
+   Normal/Focus) — surfaced here rather than buried in the Display
+   panel. .chapter-toggles holds one or more .layout-toggle groups. */
+.chapter-toggles {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;
+}
+.layout-toggle {
+  display: inline-flex; gap: 2px; margin: 0;
+  border: 1.5px solid var(--rule); border-radius: 10px; padding: 3px;
+  background: var(--paper-warm);
+}
+.layout-toggle__btn {
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  padding: 6px 14px; border: none; border-radius: 7px;
+  background: none; color: var(--ink-soft);
+}
+.layout-toggle__btn.is-active { background: var(--white); color: var(--ink); box-shadow: 0 1px 3px rgba(26,23,20,0.12); }
+.layout-toggle__btn:hover:not(.is-active) { color: var(--ink); }
+
+/* --- Focus mode: hides surrounding chrome so only the passage,
+   the exit control, and the reading actions remain. The toggle that
+   turns it on lives inside .chapter-toggles, which is NOT hidden here,
+   so it doubles as the exit control once focus mode is on. */
+[data-fs-focus="on"] .site-header,
+[data-fs-focus="on"] .tab-bar,
+[data-fs-focus="on"] .chapter-nav,
+[data-fs-focus="on"] .trans-switch,
+[data-fs-focus="on"] .site-footer { display: none !important; }
+[data-fs-focus="on"] body { padding-bottom: 0; }
+
+/* Floating exit bar — pinned to bottom center, only visible in focus mode.
+   This is the obvious exit. The Normal/Focus toggle in .chapter-toggles
+   also still works, but this is what a disoriented reader will find. */
+.focus-exit { display: none; }
+[data-fs-focus="on"] .focus-exit {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  z-index: 300; padding: 10px 22px; border-radius: 24px;
+  background: var(--ink); color: var(--paper); font-family: var(--font-ui);
+  font-size: 14px; font-weight: 600; border: none;
+  box-shadow: 0 4px 16px rgba(26,23,20,0.25);
+  cursor: pointer; opacity: 0.92;
+  transition: opacity 0.15s;
+}
+[data-fs-focus="on"] .focus-exit:hover { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  [data-fs-focus="on"] .focus-exit { transition: none; }
+}
+
+/* --- Reading settings panel --- */
+.prefs-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(26, 23, 20, 0.4);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.prefs-overlay[hidden] { display: none; }
+.prefs-panel {
+  background: var(--paper); width: 100%; max-width: 32rem;
+  border-radius: 20px 20px 0 0; padding: 20px 20px calc(24px + env(safe-area-inset-bottom));
+  max-height: 88vh; overflow-y: auto;
+  box-shadow: 0 -8px 40px rgba(26, 23, 20, 0.18);
+}
+@media (min-width: 768px) {
+  .prefs-overlay { align-items: center; }
+  .prefs-panel { border-radius: 20px; }
+}
+.prefs-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px;
+}
+.prefs-title { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.prefs-close {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 12px;
+  border: none; background: var(--paper-warm); color: var(--ink);
+}
+.prefs-close:hover { background: var(--paper-deep); }
+.prefs-row { margin-bottom: 20px; }
+.prefs-label {
+  font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 10px;
+}
+.prefs-choices {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px;
+}
+.prefs-choice {
+  min-height: 52px; padding: 12px 8px;
+  border: 1.5px solid var(--rule); border-radius: 12px;
+  background: var(--white); color: var(--ink);
+  font-size: 15px; font-weight: 600; line-height: 1.2;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.prefs-choice:hover { border-color: var(--ink-soft); }
+.prefs-choice.is-active {
+  background: var(--ink); color: var(--paper); border-color: var(--ink);
+}
+.prefs-reset {
+  width: 100%; min-height: 48px; margin-top: 4px;
+  border: none; background: none; color: var(--gold);
+  font-size: 15px; font-weight: 600; text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prefs-reset:hover { color: var(--ink); }
+
+/* --- Desktop --- */
+@media (min-width: 768px) {
+  .site-nav { display: flex; font-size: 14px; gap: 24px; }
+  .chapter-title { font-size: 32px; }
+  .chapter-foot__nav a { padding: 18px 20px; }
+  .chapter-grid { grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); }
+}
+
+/* --- Print --- */
+@media print {
+  .site-header, .tab-bar, .site-footer,
+  .chapter-nav, .chapter-actions, .chapter-foot__nav,
+  .trans-switch, .tradition-stripe { display: none; }
+  .reading-column { max-width: none; padding: 0; }
+  .chapter-text { font-size: 12pt; line-height: 1.6; }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* Body padding for tab bar on mobile */
+body { padding-bottom: 72px; }
+@media (min-width: 768px) { body { padding-bottom: 0; } }
+
+/* ==========================================================
+   Parables
+   Organized by theme rather than book order, because a person
+   looking for the Prodigal Son is not looking for "Luke 15."
+   ========================================================== */
+
+/* --- Filter --- */
+.parable-filter { margin-bottom: 28px; }
+.parable-filter__input {
+  width: 100%; font-family: var(--font-ui); font-size: 16px;
+  padding: 13px 16px; border: 1.5px solid var(--rule);
+  border-radius: var(--radius); background: var(--white); color: var(--ink);
+}
+.parable-filter__input::placeholder { color: var(--ink-hint); }
+.parable-filter__input:focus { outline: none; border-color: var(--gold); }
+.parable-filter__count {
+  font-size: 13px; color: var(--ink-faded); margin-top: 8px; min-height: 1em;
+}
+
+/* --- Theme sections on the index --- */
+.parable-theme { margin-bottom: 36px; }
+.parable-theme[hidden] { display: none; }
+.parable-theme__head {
+  margin-bottom: 14px; padding-left: 12px;
+  border-left: 3px solid var(--rowc, var(--gold));
+}
+.parable-theme__title {
+  font-size: 19px; font-weight: 700; letter-spacing: -0.01em;
+  color: var(--ink); margin-bottom: 3px;
+}
+.parable-theme__blurb {
+  font-family: var(--font-body); font-style: italic;
+  font-size: 15px; line-height: 1.5; color: var(--ink-faded);
+  font-optical-sizing: auto;
+}
+
+/* Reference line inside a parable row — quiet, last thing you read */
+.parable-row__ref {
+  display: block; font-size: 12px; font-weight: 600;
+  color: var(--ink-hint); margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.parable-empty {
+  font-family: var(--font-body); font-size: 16px; color: var(--ink-faded);
+  text-align: center; padding: 32px 20px;
+}
+.parable-empty[hidden] { display: none; }
+
+/* --- Individual parable page --- */
+.parable-head { padding: 20px 0 8px; }
+.parable-head__theme {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--rowc, var(--gold)); margin-bottom: 8px;
+}
+.parable-title {
+  font-size: 28px; font-weight: 700; letter-spacing: -0.02em;
+  line-height: 1.15; margin-bottom: 8px;
+}
+.parable-also {
+  font-size: 14px; color: var(--ink-faded); margin-bottom: 12px;
+}
+.parable-line {
+  font-family: var(--font-body); font-size: 18px; line-height: 1.6;
+  color: var(--ink-soft); font-optical-sizing: auto;
+}
+
+/* The hinge. Deliberately not styled as a pull quote or a sermon box —
+   it is a margin note, the kind a pastor writes in their own Bible. */
+.parable-turn {
+  margin: 24px 0 28px; padding: 16px 20px;
+  background: var(--paper-warm); border-radius: var(--radius-sm);
+  border-left: 3px solid var(--rowc, var(--gold));
+  max-width: 36rem;
+}
+.parable-turn__label {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--rowc, var(--gold)); margin-bottom: 6px;
+}
+.parable-turn p {
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  color: var(--ink-soft); font-optical-sizing: auto;
+}
+
+/* --- The passage itself --- */
+.parable-passage { margin-bottom: 32px; }
+.parable-passage__ref {
+  font-family: var(--font-ui); font-size: 14px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+}
+.parable-passage__ref a { text-decoration: none; }
+.parable-passage__ref a:hover { text-decoration: underline; }
+.parable-passage__trans {
+  font-size: 13px; color: var(--ink-faded); margin-top: 16px;
+  max-width: 36rem;
+}
+.parable-passage__trans a { color: var(--gold); text-decoration: none; font-weight: 600; }
+.parable-passage__trans a:hover { text-decoration: underline; }
+
+/* --- Parallel accounts --- */
+.parable-parallels {
+  margin: 32px 0; padding-top: 24px;
+  border-top: 1px solid var(--rule); max-width: 36rem;
+}
+.parable-parallels__heading {
+  font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px;
+}
+.parable-parallels__note {
+  font-family: var(--font-body); font-style: italic; font-size: 15px;
+  line-height: 1.55; color: var(--ink-faded); margin-bottom: 16px;
+  font-optical-sizing: auto;
+}
+.parable-parallel {
+  border: 1.5px solid var(--rule); border-radius: var(--radius-sm);
+  margin-bottom: 10px; overflow: hidden;
+}
+.parable-parallel summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 16px; cursor: pointer; list-style: none;
+  font-family: var(--font-ui);
+}
+.parable-parallel summary::-webkit-details-marker { display: none; }
+.parable-parallel__ref { font-size: 15px; font-weight: 600; color: var(--ink); }
+.parable-parallel__open { font-size: 13px; font-weight: 600; color: var(--gold); }
+.parable-parallel[open] .parable-parallel__open { color: var(--ink-faded); }
+.parable-parallel[open] summary { border-bottom: 1px solid var(--rule); }
+.parable-parallel .chapter-text { padding: 16px; font-size: 18px; }
+.parable-parallel .parable-passage__trans { padding: 0 16px 16px; margin-top: 0; }
+
+@media (min-width: 768px) {
+  .parable-title { font-size: 34px; }
+}
+
+/* ==========================================================
+   Keyboard shortcuts, help overlay, and the first-visit tip.
+   These exist because everything built into this site so far
+   (focus mode, swipe, jump-to-verse, dark mode) was invisible
+   to a first-time user. This is the discoverability layer.
+   ========================================================== */
+
+.shortcuts-btn {
+  display: none; /* desktop only — mobile has no keyboard */
+  align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid var(--rule); background: none;
+  color: var(--ink-faded); font-family: var(--font-ui);
+  font-size: 14px; font-weight: 700; cursor: pointer; flex-shrink: 0;
+  transition: border-color 0.15s, color 0.15s;
+}
+.shortcuts-btn:hover { border-color: var(--gold); color: var(--gold); }
+@media (min-width: 768px) {
+  .shortcuts-btn { display: inline-flex; }
+}
+
+.shortcuts-modal {
+  position: fixed; inset: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(26, 23, 20, 0.4); padding: 20px;
+}
+.shortcuts-modal[hidden] { display: none; }
+.shortcuts-modal__card {
+  background: var(--paper); border-radius: var(--radius);
+  border: 1px solid var(--rule); padding: 24px;
+  max-width: 380px; width: 100%;
+  box-shadow: 0 12px 32px rgba(26, 23, 20, 0.2);
+}
+.shortcuts-modal__head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.shortcuts-modal__head h2 { font-size: 18px; font-weight: 700; }
+.shortcuts-modal__head button {
+  background: none; border: none; font-size: 22px; line-height: 1;
+  color: var(--ink-faded); cursor: pointer; padding: 4px 8px;
+}
+.shortcuts-modal__head button:hover { color: var(--ink); }
+.shortcuts-list > div {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 0; border-bottom: 1px solid var(--rule-soft);
+  font-size: 14px;
+}
+.shortcuts-list > div:last-child { border-bottom: none; }
+.shortcuts-list dt {
+  font-family: var(--font-ui); font-weight: 700; color: var(--ink);
+  background: var(--paper-warm); padding: 3px 9px; border-radius: 6px;
+  border: 1px solid var(--rule); min-width: 20px; text-align: center;
+}
+.shortcuts-list dd { color: var(--ink-faded); }
+
+/* First-visit chapter navigation tip */
+.nav-tip {
+  position: fixed; bottom: 76px; left: 50%; transform: translateX(-50%);
+  z-index: 60; display: flex; align-items: center; gap: 10px;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--font-ui); font-size: 13px;
+  padding: 10px 10px 10px 16px; border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(26, 23, 20, 0.25);
+  max-width: calc(100vw - 40px);
+}
+.nav-tip[hidden] { display: none; }
+.nav-tip button {
+  background: none; border: none; color: var(--paper); opacity: 0.7;
+  font-size: 18px; line-height: 1; cursor: pointer; padding: 2px 6px;
+  flex-shrink: 0;
+}
+.nav-tip button:hover { opacity: 1; }
+@media (min-width: 768px) {
+  .nav-tip { bottom: 24px; }
+}
+
+
+/* --- Row icons: a visual anchor at the lead of a bookrow, for
+   recognition-based scanning. Large enough to find by shape,
+   full opacity, vertically centered with the first line of text. --- */
+.bookrow__icon {
+  width: 32px; height: 32px; flex-shrink: 0; margin-right: 14px;
+  color: var(--rowc, var(--gold));
+  align-self: center;
+}
+.bookrow__icon svg { width: 100%; height: 100%; }
+
+/* ==========================================================
+   Verse disambiguation page (/verse/[chapter]-[verse]/)
+   Built for a bare "3:22"-style search: honest about ambiguity,
+   canonical-first match shown in full, everything else listed
+   plainly below rather than guessed away.
+   ========================================================== */
+.verse-disambig-head { padding: 20px 0 8px; }
+.verse-disambig-head__label {
+  font-family: var(--font-body); font-size: 34px; font-weight: 400;
+  letter-spacing: -0.02em; color: var(--ink); font-optical-sizing: auto;
+}
+.verse-disambig-head__note {
+  font-size: 15px; color: var(--ink-faded); margin-top: 10px; line-height: 1.55;
+  max-width: 36rem;
+}
+
+.verse-disambig-primary {
+  margin: 24px 0 32px; padding: 22px 24px;
+  background: var(--white); border-radius: var(--radius);
+  box-shadow: var(--card-shadow); max-width: 36rem;
+}
+.verse-disambig-primary__ref {
+  font-family: var(--font-ui); font-size: 15px; font-weight: 700;
+  color: var(--gold); text-decoration: none;
+}
+.verse-disambig-primary__ref:hover { text-decoration: underline; }
+.verse-disambig-primary__text {
+  display: block; font-family: var(--font-body); font-size: 20px;
+  line-height: 1.6; color: var(--ink); margin: 14px 0;
+  font-optical-sizing: auto;
+}
+.verse-disambig-primary__more {
+  font-size: 13px; font-weight: 600; color: var(--gold); text-decoration: none;
+}
+.verse-disambig-primary__more:hover { text-decoration: underline; }
+
+.verse-disambig-rest { margin-bottom: 32px; }
+.verse-disambig-rest__heading {
+  font-family: var(--font-body); font-size: 19px; font-weight: 400;
+  color: var(--ink); letter-spacing: -0.01em; margin-bottom: 14px;
+  font-optical-sizing: auto;
+}
+
+
+/* ==========================================================
+   Scene Design System v1 — layer
+   Loaded last so it refines the components above without renaming
+   anything the templates or scripts depend on.
+   ========================================================== */
+
+/* --- White theme (reader-selectable) --- */
+:root[data-fs-theme="white"] {
+  --paper:      #FFFFFF;
+  --paper-warm: #F5F5F7;
+  --paper-deep: #EBEBEF;
+  --ink:        #1E1F24;
+  --ink-soft:   #3A3C44;
+  --ink-faded:  #5C5E66;
+  --ink-hint:   #6B6D75;
+  --rule:       #E2E2E7;
+  --rule-soft:  #EEEEF1;
+  --gold:       #2F4DA0;
+  --gold-deep:  #243C80;
+  --gold-wash:  #E7EBF6;
+  --white:      #FFFFFF;
+  --highlight:  #FCEFB4;
+  --card-shadow:       0 0 0 1px rgba(30,31,36,.10), 0 1px 2px rgba(30,31,36,.04);
+  --card-shadow-hover: 0 0 0 1px rgba(30,31,36,.16), 0 3px 10px rgba(30,31,36,.08);
+}
+
+body { letter-spacing: 0.005em; }
+
+/* --- App shell: header --- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  padding-top: env(safe-area-inset-top);
+}
+.site-header__inner { padding: 10px 20px; gap: 12px; }
+.site-mark__icon { color: var(--gold); }
+.site-mark__text { font-weight: 800; font-size: 18px; letter-spacing: -0.03em; }
+.site-nav { margin-left: auto; }
+.site-nav a { font-weight: 700; color: var(--ink-faded); padding: 6px 10px; border-radius: 8px; }
+.site-nav a:hover { color: var(--ink); background: var(--paper-warm); }
+.site-nav a[aria-current="page"] { color: var(--gold-deep); background: var(--gold-wash); }
+.header-actions { display: flex; align-items: center; gap: 6px; }
+.icon-btn, .theme-toggle, .shortcuts-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 12px;
+  border: 0; background: transparent; color: var(--ink-soft);
+  font-family: var(--font-ui); font-weight: 800; font-size: 15px;
+  text-decoration: none; cursor: pointer; flex-shrink: 0;
+  transition: background .15s, color .15s;
+}
+.icon-btn:hover, .theme-toggle:hover, .shortcuts-btn:hover { background: var(--paper-warm); color: var(--ink); border: 0; }
+.icon-btn svg { width: 20px; height: 20px; }
+.theme-toggle svg { width: 18px; height: 18px; }
+.icon-btn--aa { font-size: 16px; letter-spacing: -0.02em; }
+.shortcuts-btn { display: none; }
+@media (min-width: 768px) { .shortcuts-btn { display: inline-flex; } }
+
+/* --- App shell: tab bar (four tabs) --- */
+.tab-bar {
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  border-top: 1px solid var(--rule);
+  padding: 6px 8px calc(4px + env(safe-area-inset-bottom));
+}
+.tab-bar__btn {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 700;
+  color: var(--ink-hint); gap: 3px; padding: 4px 2px 2px; min-height: 48px;
+  justify-content: center;
+}
+.tab-bar__btn svg { width: 24px; height: 24px; }
+.tab-bar__btn[aria-current="page"] { color: var(--gold); }
+body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+@media (min-width: 768px) { body { padding-bottom: 0; } }
+
+/* --- Footer --- */
+.site-footer { background: var(--paper-warm); font-family: var(--font-ui); }
+.hfa-heart { color: var(--gold-leaf); }
+.site-footer__links { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 18px; margin: 4px 0 12px; font-weight: 700; }
+.site-footer__links a { text-decoration: none; color: var(--ink-soft); }
+.site-footer__links a:hover { color: var(--gold); }
+
+/* --- Labels: sentence case, no shouting --- */
+.chapter-context__label,
+.keep-reading__heading,
+.section-label,
+.parable-head [class*="label"],
+.book-section-label {
+  text-transform: none; letter-spacing: 0;
+}
+.chapter-context__label { color: var(--ink-faded); font-size: 13px; }
+.keep-reading__heading { font-size: 15px; color: var(--ink); }
+
+/* --- Page titles --- */
+.page-title, .book-title, .parable-title { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.025em; }
+
+/* --- Chapter reader --- */
+.chapter-nav a { font-family: var(--font-ui); font-weight: 700; color: var(--gold); }
+.chapter-nav a:hover { color: var(--gold-deep); }
+.trans-switch__btn { border: 0; background: var(--paper-warm); color: var(--ink-soft); padding: 6px 12px; border-radius: 8px; font-weight: 700; }
+.trans-switch__btn:hover { background: var(--paper-deep); color: var(--ink); }
+.trans-switch__btn--current { background: var(--gold-wash); color: var(--gold-deep); }
+.chapter-translation-tag { color: var(--ink-faded); font-weight: 700; }
+.chapter-title { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.03em; font-size: 28px; line-height: 1.15; }
+@media (min-width: 768px) { .chapter-title { font-size: 34px; } }
+.reading-settings-btn { border: 0; background: var(--paper-warm); color: var(--ink); border-radius: 12px; font-weight: 700; min-height: 40px; }
+.reading-settings-btn:hover { background: var(--paper-deep); color: var(--ink); border: 0; }
+
+/* Book intro: hairline and label, no tinted slab */
+.chapter-context {
+  background: none; border-left: 2px solid var(--rule); border-radius: 0;
+  padding: 2px 0 2px 16px; font-size: 16px; line-height: 1.6;
+}
+
+/* Scripture text: left-aligned, no hyphenation, comfortable measure */
+.chapter-text {
+  font-family: var(--font-body);
+  font-size: 20px; line-height: 1.7; max-width: 34em;
+  text-align: left; hyphens: manual; -webkit-hyphens: manual;
+  word-spacing: 0.04em; letter-spacing: 0.005em;
+}
+.verse__num { color: var(--ink-hint); font-weight: 700; font-size: 12.5px; }
+.verse__num:hover { color: var(--gold); }
+.verse--highlight, .verse:target { background: var(--highlight); }
+
+/* Italics are harder for many dyslexic readers: use upright text */
+.chapter-complete, .hcard__sub--italic, .parable-line { font-style: normal; }
+.chapter-complete { font-family: var(--font-ui); font-weight: 700; color: var(--ink-faded); }
+
+/* Layout toggles and Display panel choices */
+.layout-toggle__btn[aria-pressed="true"], .layout-toggle__btn.is-active,
+.prefs-choice.is-active {
+  background: var(--gold-wash); color: var(--gold-deep); border-color: var(--gold);
+}
+.prefs-panel { font-family: var(--font-ui); }
+.prefs-title { font-weight: 800; letter-spacing: -0.02em; }
+
+/* One filled accent per screen: Listen */
+.action-btn { font-family: var(--font-ui); font-weight: 700; border: 0; background: var(--paper-warm); }
+.action-btn:hover { background: var(--paper-deep); border: 0; }
+.action-btn:first-child { background: var(--gold); color: var(--on-gold); }
+.action-btn:first-child:hover { background: var(--gold-deep); }
+
+.chapter-foot__nav a, .chapter-foot__nav span { border: 0; background: var(--white); box-shadow: var(--card-shadow); }
+.chapter-foot__nav a:hover { box-shadow: var(--card-shadow-hover); border: 0; }
+.chapter-foot__nav span:empty { background: none; box-shadow: none; }
+.chapter-foot__nav .label { font-family: var(--font-ui); font-weight: 800; }
+.chapter-foot__nav .arrow { color: var(--gold); font-weight: 700; }
+
+/* Reading font options */
+[data-fs-font="literata"] .chapter-text,
+[data-fs-font="literata"] .passage__verse,
+[data-fs-font="literata"] .search-result__text { font-family: var(--font-book); }
+[data-fs-font="lexend"] .chapter-text,
+[data-fs-font="lexend"] .passage__verse,
+[data-fs-font="lexend"] .search-result__text { font-family: 'Lexend', var(--font-body); }
+
+/* --- Stories (Scene by Scene) index --- */
+.stories-page { max-width: 44rem; margin: 0 auto; padding: 0 20px 64px; }
+.stories-hero { padding: 28px 0 8px; }
+.stories-eyebrow { font-size: 13px; font-weight: 700; color: var(--gold); }
+.stories-title { font-size: clamp(28px, 6vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin: 6px 0 10px; }
+.stories-lede { font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--ink-soft); max-width: 34em; }
+.stories-section { margin-top: 36px; }
+.stories-section__head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.stories-section__title { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.stories-section__link { font-size: 14px; font-weight: 700; color: var(--gold); text-decoration: none; }
+.story-list { display: flex; flex-direction: column; gap: 10px; }
+.story-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px; border-radius: 14px;
+  background: var(--white); box-shadow: var(--card-shadow);
+  text-decoration: none; color: inherit; transition: box-shadow .2s ease;
+}
+a.story-row:hover { box-shadow: var(--card-shadow-hover); }
+.story-row__body { flex: 1; min-width: 0; }
+.story-row__name { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+.story-row__desc { font-family: var(--font-body); font-size: 15px; color: var(--ink-faded); line-height: 1.5; margin-top: 2px; }
+.story-row__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; font-size: 12.5px; font-weight: 700; color: var(--ink-hint); }
+.badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 7px; background: var(--gold-wash); color: var(--gold-deep); }
+.badge--quiet { background: var(--paper-warm); color: var(--ink-faded); }
+.story-row__chev { color: var(--ink-hint); flex-shrink: 0; }
+.story-row--soon { box-shadow: none; background: var(--paper-warm); }
+
+/* Calm header: the thick brand stripe is replaced by the header hairline */
+.tradition-stripe { display: none; }
+
+/* One display control per screen: chapter pages keep their labeled
+   "Display" button, so the header "Aa" steps aside there. */
+body:has(.reading-settings-btn) .icon-btn--aa { display: none; }
+
+/* Night: keep the frosted header opaque enough that text never shows through */
+.site-header, .tab-bar { background: color-mix(in srgb, var(--paper) 97%, transparent); }
+
+/* Home hero in the app voice */
+.home-hero__headline { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.035em; }
+
+/* Upright text everywhere readers read (italics are harder for many dyslexic readers) */
+.hero-primary__sub, .passage__ref, .parable-theme__title, .parable-parallels__heading { font-style: normal; }
+
+/* ==========================================================
+   Scene by Scene story page
+   ========================================================== */
+.story-page { max-width: 40rem; margin: 0 auto; padding: 0 20px 56px; }
+.story-crumb { padding: 14px 0 0; }
+.story-crumb a { font-weight: 700; font-size: 14px; color: var(--gold); text-decoration: none; }
+.story-head { padding: 18px 0 6px; }
+.story-eyebrow { font-size: 13px; font-weight: 700; color: var(--ink-faded); }
+.story-title { font-size: clamp(32px, 7vw, 44px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.08; margin: 6px 0 12px; }
+.story-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 14px; font-weight: 700; color: var(--ink-hint); }
+.story-preview-note { margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--ink-faded); background: var(--paper-warm); border-radius: 10px; padding: 10px 14px; }
+
+.story-note { margin: 18px 0 4px; padding: 14px 16px; border-radius: 12px; background: var(--paper-warm); }
+.story-note__label { display: block; font-size: 13px; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.story-note p { font-family: var(--font-body); font-size: 16px; line-height: 1.55; color: var(--ink-soft); }
+
+.story-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 18px 0 8px; }
+.story-tools .action-btn { background: var(--gold); color: var(--on-gold); }
+.story-tools .action-btn:hover { background: var(--gold-deep); }
+.story-tools .reading-settings-btn { margin-top: 0; }
+.story-tools__note { flex-basis: 100%; font-size: 13px; color: var(--ink-hint); }
+
+/* Zones */
+.zone { margin-top: 28px; border-top: 1px solid var(--rule); }
+.zone__head {
+  display: flex; align-items: center; gap: 14px; padding: 20px 0 6px;
+  font-family: var(--font-ui); list-style: none; cursor: default;
+}
+details.zone > summary { cursor: pointer; padding-bottom: 20px; }
+details.zone > summary::-webkit-details-marker { display: none; }
+details.zone[open] > summary { padding-bottom: 6px; }
+.zone__num {
+  flex: none; width: 36px; height: 36px; border-radius: 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--gold-wash); color: var(--gold-deep); font-weight: 800; font-size: 16px;
+}
+.zone__text { flex: 1; display: flex; flex-direction: column; }
+.zone__title { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); line-height: 1.2; }
+.zone__q { font-size: 14px; font-weight: 700; color: var(--ink-hint); }
+.zone__chev { flex: none; color: var(--gold); transition: transform .2s ease; }
+details.zone[open] .zone__chev { transform: rotate(180deg); }
+details.zone > summary:hover .zone__title { color: var(--gold-deep); }
+details.zone > summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; border-radius: 8px; }
+
+/* Boxes */
+.story-box { margin-top: 26px; }
+.story-box__title { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 800; letter-spacing: -0.015em; margin-bottom: 12px; color: var(--ink); }
+.story-box__emoji { font-size: 18px; line-height: 1; }
+.story-box p, .story-box li { font-family: var(--font-body); font-size: 17px; line-height: 1.65; color: var(--ink-soft); }
+.story-box p + p { margin-top: 12px; }
+.story-box strong { color: var(--ink); font-weight: 700; }
+.story-box em { font-style: normal; }
+.story-label { font-family: var(--font-ui) !important; font-size: 13px !important; font-weight: 800; color: var(--ink-faded) !important; margin: 14px 0 6px !important; }
+.story-label strong { color: inherit; }
+.story-list-plain { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+.story-cast { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.story-cast li { padding: 10px 14px; background: var(--white); border-radius: 12px; box-shadow: var(--card-shadow); font-size: 16px; }
+
+/* Before the Story: each point on its own card-free row with a hairline */
+.story-box--before-the-story p { padding-left: 14px; border-left: 2px solid var(--rule); }
+
+/* Map: tappable scene list */
+.story-table-wrap { overflow-x: auto; }
+.story-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.story-table th { text-align: left; font-family: var(--font-ui); font-size: 12.5px; font-weight: 800; color: var(--ink-faded); padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+.story-table td { font-family: var(--font-body); padding: 10px; border-bottom: 1px solid var(--rule-soft); color: var(--ink-soft); vertical-align: top; line-height: 1.5; }
+.story-table td:first-child { font-family: var(--font-ui); font-weight: 700; color: var(--ink); }
+.story-table--map td:first-child a { color: var(--gold); text-decoration: none; }
+.story-table--map td:first-child a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.story-table--map td:nth-child(2) { font-family: var(--font-ui); font-size: 13px; font-weight: 700; color: var(--ink-hint); white-space: nowrap; }
+@media (max-width: 600px) {
+  .story-table thead { display: none; }
+  .story-table, .story-table tbody, .story-table tr, .story-table td { display: block; width: 100%; }
+  .story-table tr { padding: 12px 14px; margin-bottom: 8px; background: var(--white); border-radius: 12px; box-shadow: var(--card-shadow); }
+  .story-table td { border: 0; padding: 2px 0; }
+  .story-table--map td:nth-child(2) { order: -1; }
+}
+
+/* Retelling: the reading surface */
+.story-text { max-width: 34em; }
+.story-text p { font-size: inherit; line-height: inherit; color: var(--ink); margin: 0 0 1em; }
+.story-text p + p { margin-top: 0; }
+.story-scene { display: flex; flex-direction: column; gap: 2px; margin: 36px 0 12px; scroll-margin-top: 88px; font-family: var(--font-ui); }
+.story-scene:first-child { margin-top: 8px; }
+.story-scene__num { font-size: 13px; font-weight: 700; color: var(--ink-hint); }
+.story-scene__title { font-size: 1.2em; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); line-height: 1.25; }
+.story-imagine { margin: 1.6em 0; padding: 2px 0 2px 16px; border-left: 2px solid var(--rule); }
+.story-imagine__label { display: block; font-family: var(--font-ui); font-size: 13px; font-weight: 700; color: var(--ink-faded); margin-bottom: 4px; }
+.story-imagine__label strong { color: inherit; }
+.story-imagine p { color: var(--ink-faded) !important; margin: 0 !important; }
+
+/* Hymn and other quotes */
+.story-quote { margin: 12px 0; padding: 14px 18px; background: var(--paper-warm); border-radius: 12px; }
+.story-quote__line { display: block; font-family: var(--font-body); font-size: 17px; line-height: 1.6; color: var(--ink); }
+.story-quote__line em { font-style: normal; }
+
+/* Read It */
+.story-passage { display: grid; gap: 10px; }
+@media (min-width: 560px) { .story-passage { grid-template-columns: 1fr 1fr; } }
+.story-passage__link { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border-radius: 12px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; transition: box-shadow .2s ease; }
+.story-passage__link:hover { box-shadow: var(--card-shadow-hover); }
+.story-passage__title { font-family: var(--font-ui); font-weight: 800; color: var(--gold); }
+.story-passage__sub { font-family: var(--font-ui); font-size: 13px; color: var(--ink-hint); }
+
+/* Good News gets a quiet emphasis */
+.story-box--good-news { padding: 18px 18px 20px; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); }
+
+/* Big Idea */
+.big-idea { margin: 36px 0 8px; padding: 24px 22px; border-radius: 16px; background: var(--gold-wash); }
+.big-idea__label { font-size: 14px; font-weight: 800; color: var(--gold-deep); margin-bottom: 8px; display: flex; gap: 8px; align-items: center; }
+.big-idea__text { font-family: var(--font-ui); font-size: clamp(20px, 4.6vw, 24px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; color: var(--ink); }
+
+.story-care { margin: 20px 0 8px; font-size: 14px; color: var(--ink-faded); }
+
+.story-foot { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; margin: 24px 0; }
+.story-foot a { display: block; padding: 14px 16px; border-radius: var(--radius); background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; color: inherit; }
+.story-foot a:hover { box-shadow: var(--card-shadow-hover); }
+.story-foot .next { text-align: right; }
+.story-foot .arrow { display: block; font-size: 12px; font-weight: 700; color: var(--gold); }
+.story-foot .label { display: block; font-weight: 800; font-size: 15px; margin-top: 2px; }
+.story-foot__all { text-align: center; }
+
+.story-credit { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-faded); line-height: 1.6; }
+.story-credit a { color: var(--ink-soft); }
+.story-credit__verse { margin-top: 6px; color: var(--ink-soft); }
+
+[data-fs-focus="on"] .story-crumb, [data-fs-focus="on"] .story-tools, [data-fs-focus="on"] .story-foot { display: none !important; }
+
+@media print {
+  .story-tools, .story-crumb, .story-foot, .chapter-actions, .reading-progress { display: none !important; }
+  details.zone > summary .zone__chev { display: none; }
+  .story-box--good-news, .story-cast li, .story-passage__link { box-shadow: none; border: 1px solid #ccc; }
+}
+@media (prefers-reduced-motion: reduce) { .zone__chev { transition: none; } }
+
+/* A full bold sentence (like the last line of Good News) is the key line */
+.story-box .story-key { font-family: var(--font-ui); font-size: 19px; line-height: 1.35; margin-top: 16px; color: var(--ink); }
+.story-box .story-key strong { font-weight: 800; }
+
+
+/* ==========================================================
+   Design system v1 audit fixes (September 2026)
+   ========================================================== */
+
+/* Rule: lapis marks what you can tap. Non-tappable labels use ink. */
+.section-label, .book-section-label, .book-chapters-label, .hcard__tag,
+.passage__ref, .stories-eyebrow, .parable-passage__ref:not(a) { color: var(--ink-faded); }
+
+/* Rule: stories and books have no color codes. The old genre rainbow
+   (orange, blue, olive, teal, rose) becomes one neutral hairline. */
+[style*="--rowc"] { --rowc: var(--rule) !important; }
+.bookrow--colored:hover { border-color: var(--ink-hint); }
+.parable-head__theme, .parable-turn__label { color: var(--ink-faded) !important; }
+
+/* Rule: no italics, no shouting */
+.parable-theme__blurb, .passage__frame { font-style: normal; }
+.parable-head__theme, .parable-turn__label { text-transform: none; letter-spacing: 0; }
+
+/* Brand: gold leaf is the logo mark and the Big Idea marker */
+.site-mark__icon { color: var(--gold-leaf); }
+.zone__num { background: var(--paper-warm); color: var(--ink-soft); }
+.big-idea { background: var(--white); box-shadow: var(--card-shadow); position: relative; padding-top: 30px; }
+.big-idea::before { content: ""; position: absolute; top: 18px; left: 22px; width: 32px; height: 4px; border-radius: 2px; background: var(--gold-leaf); }
+.big-idea__label { color: var(--ink-faded); margin-top: 6px; }
+
+/* Type scale: scene titles 27px at the standard 20px story size */
+.story-scene__title { font-size: 1.35em; }
+
+/* ==========================================================
+   Live review fixes (September 21, 2026)
+   ========================================================== */
+
+/* Leftover genre stripes: now that they're neutral, they only add a
+   double edge to every card. Cards rely on their ring shadow alone. */
+.bookrow--colored, .bookrow--colored:hover { border-left: 0; }
+.parable-theme__head { border-left: 0; padding-left: 0; }
+
+/* One chevron size and color everywhere, visible in every theme */
+.bookrow__chev, .story-row__chev { width: 18px; height: 18px; color: var(--ink-hint); opacity: 1; flex-shrink: 0; }
+.bookrow:hover .bookrow__chev { color: var(--gold); }
+
+/* Section labels are headings, not buttons: no pill background */
+.book-section-label {
+  background: none; padding: 0; border-radius: 0;
+  font-size: 15px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em;
+}
+
+/* ==========================================================
+   Homepage and remaining pages (design review, September 21)
+   ========================================================== */
+
+/* Homepage: left-aligned, one primary action, three short shelves */
+.home2 { max-width: 40rem; margin: 0 auto; padding: 0 20px 64px; }
+.home2-hello { padding: 28px 0 18px; }
+.home2-title { font-size: clamp(28px, 7vw, 40px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.1; color: var(--ink); }
+.home2-sub { margin-top: 8px; font-size: 15px; font-weight: 700; color: var(--ink-faded); }
+.home2-section { margin-top: 36px; }
+.home2-note { margin-top: 12px; font-size: 14px; line-height: 1.5; color: var(--ink-faded); }
+.home2-sunday { margin-top: 14px; }
+
+/* The one filled accent on the homepage */
+.quick-start {
+  display: flex; align-items: center; gap: 16px;
+  padding: 22px 22px; border-radius: 16px;
+  background: var(--gold); color: var(--on-gold); text-decoration: none;
+  transition: background .15s ease;
+}
+.quick-start:hover { background: var(--gold-deep); }
+.quick-start:focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 3px; }
+.quick-start__body { flex: 1; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.quick-start__label { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.quick-start__sub { font-family: var(--font-body); font-size: 15px; line-height: 1.45; opacity: .9; }
+.quick-start__chev { flex: none; }
+.hero-search { margin-top: 12px; }
+
+/* Verse for the moment: a 2 by 2 grid of short choices */
+.need-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.need-tile { display: flex; flex-direction: column; gap: 4px; padding: 14px 14px 16px; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; transition: box-shadow .2s ease; }
+.need-tile:hover { box-shadow: var(--card-shadow-hover); }
+.need-tile__name { font-size: 15px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); line-height: 1.25; }
+.need-tile__desc { font-family: var(--font-body); font-size: 13.5px; line-height: 1.4; color: var(--ink-faded); }
+
+/* Passages: compact list rows */
+.passage-rows { display: flex; flex-direction: column; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); overflow: hidden; }
+.passage-row { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "ref chev" "line chev"; align-items: center; column-gap: 12px; padding: 13px 16px; text-decoration: none; border-top: 1px solid var(--rule-soft); }
+.passage-row:first-child { border-top: 0; }
+.passage-row:hover { background: var(--paper-warm); }
+.passage-row__ref { grid-area: ref; font-size: 16px; font-weight: 800; color: var(--ink); }
+.passage-row__line { grid-area: line; font-family: var(--font-body); font-size: 14.5px; color: var(--ink-faded); }
+.passage-row .story-row__chev { grid-area: chev; }
+
+/* Bible index: jump to a section instead of scrolling past 66 books */
+.jump-bar {
+  position: sticky; top: calc(61px + env(safe-area-inset-top)); z-index: 20;
+  display: flex; gap: 8px; overflow-x: auto; padding: 10px 0; margin: 4px 0 8px;
+  background: var(--paper); scrollbar-width: none;
+}
+.jump-bar::-webkit-scrollbar { display: none; }
+.jump-bar a { flex: none; font-size: 14px; font-weight: 700; color: var(--ink-soft); background: var(--paper-warm); padding: 8px 14px; border-radius: 10px; text-decoration: none; min-height: 40px; display: inline-flex; align-items: center; }
+.jump-bar a:hover { background: var(--gold-wash); color: var(--gold-deep); }
+.book-section { scroll-margin-top: 130px; }
+
+/* Verse lookup: headings in the app voice */
+.verse-disambig-head__label { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.03em; }
+.verse-disambig-rest__heading { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.02em; }
+.hcard .story-row__chev { flex: none; }
+
+/* Solid header and tab bar: no text ghosting through while scrolling */
+.site-header, .tab-bar { background: var(--paper); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.stories-section__link { white-space: nowrap; flex: none; }
+
+/* Section shortcuts read as a toolbar, edge to edge with a hairline */
+.jump-bar { margin: 4px -20px 12px; padding: 10px 20px; border-bottom: 1px solid var(--rule); }
