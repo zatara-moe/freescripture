@@ -1,0 +1,42 @@
+# Free Scripture
+
+> Free Scripture is a free online Bible reader in three public-domain English translations: the World English Bible (WEB), the King James Version (KJV, including the Apocrypha), and the Bible in Basic English (BBE). Every book and chapter is free to read, with no account required. Stewarded by Hope for Americans in Flagstaff, Arizona.
+
+The site lets people read the Bible online, look up a verse by what they are going through, or browse by kind of book. It is a reading tool, not a study tool: the text is presented plainly, with no commentary.
+
+## Translations
+
+- [World English Bible (WEB)](https://freescripture.org/web/): A modern English translation in the public domain, designed to read clearly in today's English while preserving accuracy. 66 books.
+- [King James Version (KJV)](https://freescripture.org/kjv/): The 1611 translation in its standard 1769 revision. The most-quoted English Bible in human history. 80 books.
+- [Bible in Basic English (BBE)](https://freescripture.org/bbe/): A translation using a vocabulary of about 1,000 common English words. Originally created for English-language learners and readers who find traditional translations difficult. 66 books.
+
+## Find a verse for the moment
+
+- [Verses for when you're afraid](https://freescripture.org/read/fear/): Verses for fear and anxiety, from the storm Jesus calmed to whom shall I fear. Read one, or send it to a friend.
+- [Verses for grief and loss](https://freescripture.org/read/grief/): Verses for mourning and sympathy, from Lazarus to the promise that every tear gets wiped away. Read one, or send it.
+- [Verses for strength](https://freescripture.org/read/strength/): Verses for exhaustion and encouragement, from eagles' wings to strength made perfect in weakness. Read one, or send it.
+- [Verses for guilt and starting over](https://freescripture.org/read/guilt/): Verses for regret and grace, from the prodigal son to no condemnation. Read one, or send it.
+- [Verses about forgiving someone](https://freescripture.org/read/forgiveness/): Verses for resentment and forgiving, from Joseph to the words from the cross. Read one, or send it.
+- [Verses for wisdom](https://freescripture.org/read/wisdom/): Verses for choices and how to live, from Proverbs to the Sermon on the Mount. Read one, or send it.
+- [Verses to celebrate](https://freescripture.org/read/celebrate/): Joyful verses for good news and milestones, from this is the day the Lord has made to rejoicing over you with singing. Read one, or send it.
+- [Verses for a new baby](https://freescripture.org/read/new-baby/): Verses to bless a newborn and new parents, from fearfully and wonderfully made to children are a gift. Read one, or send it.
+- [Verses for giving thanks](https://freescripture.org/read/gratitude/): Verses for gratitude and thank you, from in everything give thanks to I thank my God whenever I remember you. Read one, or send it.
+- [Verses for thinking of you](https://freescripture.org/read/thinking-of-you/): Verses to send when someone is on your mind, from the Lord bless you and keep you to plans for a future and a hope.
+
+## Browse by kind of book
+
+- [The books that read like a novel](https://freescripture.org/genre/narrative/): Battles, families, kings, exiles, and a wandering teacher. The parts of the Bible that move like a story.
+- [The books that read like music](https://freescripture.org/genre/poetry/): Songs, laments, and love poems, written to be felt as much as read.
+- [The books about how to live](https://freescripture.org/genre/wisdom/): Hard-won advice on work, money, suffering, and time. Plain wisdom for ordinary days.
+- [The original constitution](https://freescripture.org/genre/law/): The codes a young nation was built on. Dense, but foundational.
+- [Mail from the early church](https://freescripture.org/genre/letters/): Real letters to real congregations: arguing, encouraging, and sorting out how to live together.
+- [People speaking for God](https://freescripture.org/genre/prophecy/): Warnings, visions, and promises, delivered by people convinced they spoke for God.
+
+## Pages
+
+- [Search](https://freescripture.org/search/): Search any translation for a word or verse.
+- [About](https://freescripture.org/about/): About the project and its text sources.
+
+## Full text
+
+Every chapter has its own page at https://freescripture.org/{translation}/{book}/{chapter}/ , for example https://freescripture.org/kjv/1-peter/5/ . A complete list of URLs is in the sitemap at https://freescripture.org/sitemap.xml .

@@ -1,0 +1,49 @@
+{
+  "name": "Free Scripture",
+  "short_name": "Scripture",
+  "description": "Three translations of the Bible, free to read. No ads, no accounts, works offline.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fcfaf6",
+  "theme_color": "#fcfaf6",
+  "orientation": "portrait",
+  "categories": ["books", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "/static/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "For you",
+      "short_name": "For you",
+      "description": "Verses for what you're going through",
+      "url": "/read/",
+      "icons": [{ "src": "/static/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Psalm 23",
+      "short_name": "Psalm 23",
+      "description": "The Lord is my shepherd",
+      "url": "/web/psalms/23/",
+      "icons": [{ "src": "/static/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false
+}
