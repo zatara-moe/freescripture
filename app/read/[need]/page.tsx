@@ -113,7 +113,7 @@ export default async function NeedPage(
               {p.frame && <div className="passage__frame">{p.frame}</div>}
               {p.text && <blockquote className="passage__verse">{p.text}</blockquote>}
               <div className="passage__acts">
-                <Link className="rbtn" href={url}>Read the chapter &rarr;</Link>
+                <Link className="rbtn" href={url}>Read the chapter</Link>
                 <button
                   className="rbtn rbtn--subtle"
                   type="button"

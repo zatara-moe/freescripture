@@ -59,13 +59,13 @@ function renderBlock(b: Block, i: number, box: Box, extra: { passageHref?: strin
             {extra.passageHref && (
               <Link className="story-passage__link" href={extra.passageHref}>
                 <span className="story-passage__title">Read {extra.ref}</span>
-                <span className="story-passage__sub">On Free Scripture, in the WEB, KJV, or BBE</span>
+                <span className="story-passage__sub">Read it on Free Scripture, in three translations</span>
               </Link>
             )}
             {extra.bsbHref && (
               <a className="story-passage__link" href={extra.bsbHref} rel="noopener">
                 <span className="story-passage__title">Read it in the BSB</span>
-                <span className="story-passage__sub">The base text for this retelling, at Bible Hub</span>
+                <span className="story-passage__sub">The Berean Standard Bible, at Bible Hub</span>
               </a>
             )}
           </div>
@@ -246,7 +246,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         <nav className="story-foot" aria-label="More stories">
           {prev ? <Link href={`/stories/${prev.slug}/`}><span className="arrow">← Previous story</span><span className="label">{prev.title}</span></Link> : <span />}
           <Link href="/stories/" className="story-foot__all"><span className="arrow">All stories</span><span className="label">Back to the shelf</span></Link>
-          {next ? <Link href={`/stories/${next.slug}/`} className="next"><span className="arrow">Next story →</span><span className="label">{next.title}</span></Link> : <span />}
+          {next ? <Link href={`/stories/${next.slug}/`} className="next"><span className="arrow">Next story <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></span><span className="label">{next.title}</span></Link> : <span />}
         </nav>
 
         <footer className="story-credit">

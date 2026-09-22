@@ -13,7 +13,7 @@ export default function Search() {
     <div className="reading-column search-page">
       <header className="page-head">
         <h1 className="page-title">Search</h1>
-        <p className="page-lede">Type a word or a phrase to find it across a translation.</p>
+        <p className="page-lede">Search across all three translations at once.</p>
       </header>
 
       <div className="search-box">
@@ -29,7 +29,7 @@ export default function Search() {
           id="search-input"
           className="search-input"
           type="search"
-          placeholder="Search a word or verse"
+          placeholder="Try: shepherd, John 3:16, fear not"
           aria-label="Search scripture"
           autoComplete="off"
         />

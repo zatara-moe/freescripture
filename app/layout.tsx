@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;700;800&family=Literata:opsz,wght@7..72,400;7..72,700&family=Lexend:wght@400;600&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=28" />
+        <link rel="stylesheet" href="/static/css/site.css?v=31" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#FBF7F0" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1A1814" media="(prefers-color-scheme: dark)" />
@@ -172,7 +172,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <TabBar />
 
         <footer className="site-footer">
-          <div className="foot-tag">The whole text, open to anyone.</div>
           <nav className="site-footer__links" aria-label="More">
             <Link href="/about/">About</Link>
             <Link href="/parables/">Parables</Link>
@@ -182,7 +181,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="hfa-rule"></div>
           <div className="hfa-mark">A <a href="https://hopeforamericans.net">Hope for Americans</a> tool</div>
           <div className="hfa-mark">Scripture for <a href="https://www.digitallutheranchurch.com">Digital Lutheran Church</a></div>
-          <div className="hfa-vision">free to use, the way the web used to be</div>
+          <div className="hfa-vision">Free to read. No ads, no accounts.</div>
         </footer>
 
         {/* Keyboard shortcuts overlay — closed by default, opened by
@@ -191,7 +190,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="shortcuts-modal__card">
             <div className="shortcuts-modal__head">
               <h2 id="shortcuts-title">Keyboard shortcuts</h2>
-              <button type="button" data-shortcuts-close aria-label="Close">&times;</button>
+              <button type="button" data-shortcuts-close aria-label="Close shortcuts">Close</button>
             </div>
             <dl className="shortcuts-list">
               <div><dt>&larr; &rarr;</dt><dd>Previous / next chapter</dd></div>

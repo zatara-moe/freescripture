@@ -1899,3 +1899,60 @@ details.zone > summary:focus-visible { outline: 3px solid var(--gold); outline-o
 /* Paged reading hides the page behind it; keep the scroll page intact */
 :root[data-fs-reading="pages"] body{overflow:hidden}
 @media (prefers-reduced-motion: reduce){.pg__leaf{transition:none!important}}
+
+/* ==========================================================
+   Homepage: a map a first-time reader can take in quickly
+   ========================================================== */
+.section-lede { font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--ink-faded); margin: -6px 0 14px; max-width: 34em; }
+
+/* Three ways in */
+.doors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 28px; }
+.door { display: flex; flex-direction: column; gap: 2px; padding: 16px 14px 16px; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; transition: box-shadow .2s ease; }
+.door:hover { box-shadow: var(--card-shadow-hover); }
+.door__count { font-family: var(--font-ui); font-size: 26px; font-weight: 800; letter-spacing: -.03em; color: var(--gold); line-height: 1.1; }
+.door__name { font-size: 15px; font-weight: 800; color: var(--ink); letter-spacing: -.01em; }
+.door__line { font-family: var(--font-body); font-size: 13px; line-height: 1.45; color: var(--ink-faded); }
+@media (max-width: 560px) { .doors { grid-template-columns: 1fr; } .door { flex-direction: row; align-items: baseline; gap: 12px; flex-wrap: wrap; } .door__count { font-size: 22px; } .door__line { flex-basis: 100%; } }
+
+/* A retelling looks like a retelling */
+.sbs-card { display: flex; align-items: center; gap: 12px; padding: 18px 18px 18px 20px; border-radius: 16px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; color: inherit; transition: box-shadow .2s ease; }
+.sbs-card:hover { box-shadow: var(--card-shadow-hover); }
+.sbs-card__body { flex: 1; min-width: 0; }
+.sbs-card__kicker { font-size: 12px; font-weight: 800; color: var(--gold); letter-spacing: .02em; }
+.sbs-card__name { font-size: 19px; font-weight: 800; letter-spacing: -.02em; color: var(--ink); margin: 2px 0 4px; line-height: 1.2; }
+.sbs-card__desc { font-family: var(--font-body); font-size: 15px; line-height: 1.5; color: var(--ink-faded); }
+.sbs-card__meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 10px; font-size: 12.5px; font-weight: 700; color: var(--ink-hint); }
+
+.sbs-soon { padding: 18px 20px 20px; border-radius: 16px; background: var(--paper-warm); }
+.sbs-soon__label { font-size: 12.5px; font-weight: 800; color: var(--ink-faded); margin-bottom: 10px; }
+.sbs-soon__list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.sbs-soon__list li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--rule); padding-bottom: 8px; }
+.sbs-soon__list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.sbs-soon__name { font-size: 15px; font-weight: 700; color: var(--ink); }
+.sbs-soon__ref { font-size: 13px; font-weight: 700; color: var(--ink-hint); white-space: nowrap; }
+.sbs-soon__note { font-family: var(--font-body); font-size: 13.5px; line-height: 1.5; color: var(--ink-faded); margin-top: 12px; }
+
+/* Theme chips */
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.chip { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 10px; background: var(--paper-warm); font-size: 14px; font-weight: 700; color: var(--ink-soft); text-decoration: none; }
+.chip:hover { background: var(--gold-wash); color: var(--gold-deep); }
+
+/* A parable looks like a pointer into the text */
+.parable-row { display: flex; align-items: center; gap: 12px; padding: 14px 16px 14px 18px; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; color: inherit; transition: box-shadow .2s ease; }
+.parable-row:hover { box-shadow: var(--card-shadow-hover); }
+.parable-row__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.parable-row__name { font-size: 16px; font-weight: 800; color: var(--ink); letter-spacing: -.01em; }
+.parable-row__line { font-family: var(--font-body); font-size: 14px; line-height: 1.45; color: var(--ink-faded); }
+.parable-row__ref { font-size: 12.5px; font-weight: 700; color: var(--ink-hint); white-space: nowrap; }
+@media (max-width: 520px) {
+  .parable-row { flex-wrap: wrap; }
+  .parable-row__ref { order: 3; flex-basis: 100%; margin-top: 2px; }
+}
+
+/* Books by kind */
+.kind-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (min-width: 720px) { .kind-grid { grid-template-columns: repeat(3, 1fr); } }
+.kind { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; transition: box-shadow .2s ease; }
+.kind:hover { box-shadow: var(--card-shadow-hover); }
+.kind__name { font-size: 15px; font-weight: 800; color: var(--ink); }
+.kind__line { font-family: var(--font-body); font-size: 13.5px; color: var(--ink-faded); line-height: 1.4; }

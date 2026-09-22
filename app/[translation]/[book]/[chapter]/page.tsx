@@ -178,14 +178,14 @@ export default async function ChapterPage(
             )}
             {withinNext !== null && (
               <Link href={`/${trans}/${book}/${withinNext}/`} rel="next">
-                Ch {withinNext} &rarr;
+                Ch {withinNext}
               </Link>
             )}
           </div>
         </nav>
 
         <div className="trans-switch" aria-label="Switch translation">
-          <span className="trans-switch__label">Version:</span>
+          <span className="trans-switch__label">Translation</span>
           {TRANS_ORDER.map((t) =>
             t === trans ? (
               <span
@@ -394,7 +394,7 @@ export default async function ChapterPage(
               )}
               {next ? (
                 <Link href={`/${trans}/${next.slug}/${next.num}/`} className="next">
-                  <span className="arrow">Next &rarr;</span>
+                  <span className="arrow">Next chapter</span>
                   <span className="label">{refLabel(next.name, next.num)}</span>
                 </Link>
               ) : (

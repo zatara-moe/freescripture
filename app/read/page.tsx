@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { NEEDS, SITE_URL } from "@/lib/bible";
 
 export const metadata: Metadata = {
-  title: "Find a verse for the moment",
+  title: "A verse for the moment",
   description:
     "Scripture for what you're going through. Fear, grief, strength, guilt, forgiveness, and good news to share. Read one, or send it along.",
   alternates: { canonical: `${SITE_URL}/read/` },
@@ -31,10 +31,8 @@ export default function NeedsHub() {
   return (
     <div className="reading-column needs-hub">
       <header className="page-head">
-        <h1 className="page-title">Find a verse for the moment</h1>
-        <p className="page-lede">
-          Pick what fits. Read into a passage, or grab a line and send it to someone.
-        </p>
+        <h1 className="page-title">A verse for the moment</h1>
+        <p className="page-lede">Pick what fits. Read it, or send it to someone.</p>
       </header>
 
       <h2 className="book-section-label">For a hard day</h2>

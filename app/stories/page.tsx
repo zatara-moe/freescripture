@@ -39,7 +39,7 @@ export default function StoriesPage() {
     <div className="stories-page">
       <header className="stories-hero">
         <div className="stories-eyebrow">Scene by Scene</div>
-        <h1 className="stories-title">Bible stories, told so you can follow them</h1>
+        <h1 className="stories-title">Stories from the Bible</h1>
         <p className="stories-lede">
           Each story is retold in plain language, one short scene at a time.
           Every one is reviewed by a Lutheran pastor and tested with real
@@ -71,7 +71,7 @@ export default function StoriesPage() {
                   <div className="story-row__name">{s.title}</div>
                   <div className="story-row__desc">{s.desc}</div>
                   <div className="story-row__meta">
-                    <span className="badge badge--quiet">Coming soon</span>
+                    <span className="badge badge--quiet">In the works</span>
                     <span>{s.kind} · {s.ref}</span>
                   </div>
                 </div>
@@ -84,7 +84,8 @@ export default function StoriesPage() {
       <section className="stories-section" aria-labelledby="parables-title">
         <div className="stories-section__head">
           <h2 className="stories-section__title" id="parables-title">The parables of Jesus</h2>
-          <Link className="stories-section__link" href="/parables/">All {PARABLES.length} →</Link>
+          <p className="section-lede">Short stories Jesus told, grouped by what they are about.</p>
+          <Link className="stories-section__link" href="/parables/">All {PARABLES.length}</Link>
         </div>
         <div className="story-list">
           {parables.map((p) => (

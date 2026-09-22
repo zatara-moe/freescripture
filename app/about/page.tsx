@@ -41,7 +41,7 @@ export default function About() {
           way the web used to work.
         </p>
 
-        <h2>Part of a family</h2>
+        <h2>Connected to Digital Lutheran Church</h2>
         <p>
           Free Scripture provides the Bible text
           for{" "}

@@ -98,7 +98,7 @@ export default async function ParablePage({
 
       <nav className="chapter-nav" aria-label="Navigation">
         <div className="chapter-nav__group">
-          <Link href="/parables/">&larr; All parables</Link>
+          <Link href="/parables/">← All parables</Link>
         </div>
         <div className="chapter-nav__current">{theme?.label}</div>
         <div className="chapter-nav__group" />
@@ -116,7 +116,7 @@ export default async function ParablePage({
       {/* The hinge — what the parable turns on. A pointer, not a sermon. */}
       {p.turn && (
         <div className="parable-turn">
-          <div className="parable-turn__label">What it turns on</div>
+          <div className="parable-turn__label">The point</div>
           <p>{p.turn}</p>
         </div>
       )}
@@ -135,7 +135,7 @@ export default async function ParablePage({
         </div>
         <p className="parable-passage__trans">
           World English Bible, public domain.{" "}
-          <Link href={chapterUrl(p.ref)}>Read the whole chapter &rarr;</Link>
+          <Link href={chapterUrl(p.ref)}>Read the whole chapter</Link>
         </p>
       </div>
 
@@ -152,7 +152,7 @@ export default async function ParablePage({
             <details className="parable-parallel" key={pb.label}>
               <summary>
                 <span className="parable-parallel__ref">{pb.label}</span>
-                <span className="parable-parallel__open">Read it</span>
+                <span className="parable-parallel__open">Read the chapter</span>
               </summary>
               <div className="chapter-text" lang="en">
                 {pb.verses.map((v: any) => (
@@ -163,7 +163,7 @@ export default async function ParablePage({
                 ))}
               </div>
               <p className="parable-passage__trans">
-                <Link href={pb.url}>Read the whole chapter &rarr;</Link>
+                <Link href={pb.url}>Read the whole chapter</Link>
               </p>
             </details>
           ))}

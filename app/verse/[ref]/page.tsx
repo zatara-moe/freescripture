@@ -141,7 +141,7 @@ export default async function VersePage({
           className="verse-disambig-primary__more"
           href={`/${DEFAULT_TRANS}/${bookSlug(primary)}/${chapter}/#v${verse}`}
         >
-          Read the whole chapter &rarr;
+          Read the whole chapter
         </Link>
       </div>
 
