@@ -8,8 +8,9 @@ HTML. No server, no database.
 
 ## How it works
 
-- Verse data lives in `data/books/<translation>/<book>.json`, with `data/manifest.json`
-  listing every book and its chapters. This is the single source of truth.
+- Verse data lives in `data/bible/<translation>.json` (one file per translation, keyed by
+  book slug), with `data/manifest.json` listing every book and its chapters. One file per
+  translation keeps the whole repo under GitHub's 100-file web upload limit.
 - One dynamic route, `app/[translation]/[book]/[chapter]/page.tsx`, generates every
   chapter page via `generateStaticParams`.
 - `next.config.js` sets `output: 'export'` and `trailingSlash: true`. The build writes
@@ -34,12 +35,18 @@ stale files to manage and no folder to delete-and-replace.
 
 ## Add or update a translation
 
-Drop a per-book JSON file into `data/books/<slug>/`, add the books to
+Add the translation's books to `data/bible/<slug>.json`, add the books to
 `data/manifest.json`, and add the translation to `lib/meta.json`. Rebuild.
 
 ## Data shape
 
-`data/books/web/genesis.json`:
+`data/bible/web.json` holds every book, keyed by slug:
 
-    { "name": "Genesis", "slug": "genesis", "translation": "web",
-      "chapters": [ { "num": 1, "verses": [ { "v": 1, "t": "In the beginning..." } ] } ] }
+    { "genesis": { "name": "Genesis", "slug": "genesis", "translation": "web",
+      "chapters": [ { "num": 1, "verses": [ { "v": 1, "t": "In the beginning..." } ] } ] }, ... }
+
+## Updating the site from the GitHub website
+
+The whole repo is under 100 files, so it always fits in one upload.
+Drag new files or folders onto the repo; GitHub replaces files with the
+same name and leaves everything else alone. Don't delete folders first.
