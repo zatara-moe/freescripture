@@ -1739,3 +1739,22 @@ details.zone > summary:focus-visible { outline: 3px solid var(--gold); outline-o
 
 /* Type scale: scene titles 27px at the standard 20px story size */
 .story-scene__title { font-size: 1.35em; }
+
+/* ==========================================================
+   Live review fixes (September 21, 2026)
+   ========================================================== */
+
+/* Leftover genre stripes: now that they're neutral, they only add a
+   double edge to every card. Cards rely on their ring shadow alone. */
+.bookrow--colored, .bookrow--colored:hover { border-left: 0; }
+.parable-theme__head { border-left: 0; padding-left: 0; }
+
+/* One chevron size and color everywhere, visible in every theme */
+.bookrow__chev, .story-row__chev { width: 18px; height: 18px; color: var(--ink-hint); opacity: 1; flex-shrink: 0; }
+.bookrow:hover .bookrow__chev { color: var(--gold); }
+
+/* Section labels are headings, not buttons: no pill background */
+.book-section-label {
+  background: none; padding: 0; border-radius: 0;
+  font-size: 15px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em;
+}
