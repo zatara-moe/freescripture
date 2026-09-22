@@ -35,10 +35,10 @@ export default function Search() {
         />
       </div>
 
-      <div id="search-status" className="search-status" role="status" aria-live="polite"></div>
-      <div id="search-results" className="search-results" aria-live="polite"></div>
+      <div id="search-status" className="search-status" role="status" aria-live="polite" dangerouslySetInnerHTML={{ __html: "" }} />
+      <div id="search-results" className="search-results" aria-live="polite" dangerouslySetInnerHTML={{ __html: "" }} />
 
-      <script src="/static/js/search.js" defer></script>
+      <script src="/static/js/search.js?v=2" defer></script>
     </div>
   );
 }

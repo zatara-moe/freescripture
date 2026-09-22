@@ -1758,3 +1758,70 @@ details.zone > summary:focus-visible { outline: 3px solid var(--gold); outline-o
   background: none; padding: 0; border-radius: 0;
   font-size: 15px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em;
 }
+
+/* ==========================================================
+   Homepage and remaining pages (design review, September 21)
+   ========================================================== */
+
+/* Homepage: left-aligned, one primary action, three short shelves */
+.home2 { max-width: 40rem; margin: 0 auto; padding: 0 20px 64px; }
+.home2-hello { padding: 28px 0 18px; }
+.home2-title { font-size: clamp(28px, 7vw, 40px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.1; color: var(--ink); }
+.home2-sub { margin-top: 8px; font-size: 15px; font-weight: 700; color: var(--ink-faded); }
+.home2-section { margin-top: 36px; }
+.home2-note { margin-top: 12px; font-size: 14px; line-height: 1.5; color: var(--ink-faded); }
+.home2-sunday { margin-top: 14px; }
+
+/* The one filled accent on the homepage */
+.quick-start {
+  display: flex; align-items: center; gap: 16px;
+  padding: 22px 22px; border-radius: 16px;
+  background: var(--gold); color: var(--on-gold); text-decoration: none;
+  transition: background .15s ease;
+}
+.quick-start:hover { background: var(--gold-deep); }
+.quick-start:focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 3px; }
+.quick-start__body { flex: 1; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.quick-start__label { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+.quick-start__sub { font-family: var(--font-body); font-size: 15px; line-height: 1.45; opacity: .9; }
+.quick-start__chev { flex: none; }
+.hero-search { margin-top: 12px; }
+
+/* Verse for the moment: a 2 by 2 grid of short choices */
+.need-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.need-tile { display: flex; flex-direction: column; gap: 4px; padding: 14px 14px 16px; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; transition: box-shadow .2s ease; }
+.need-tile:hover { box-shadow: var(--card-shadow-hover); }
+.need-tile__name { font-size: 15px; font-weight: 800; letter-spacing: -0.01em; color: var(--ink); line-height: 1.25; }
+.need-tile__desc { font-family: var(--font-body); font-size: 13.5px; line-height: 1.4; color: var(--ink-faded); }
+
+/* Passages: compact list rows */
+.passage-rows { display: flex; flex-direction: column; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); overflow: hidden; }
+.passage-row { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "ref chev" "line chev"; align-items: center; column-gap: 12px; padding: 13px 16px; text-decoration: none; border-top: 1px solid var(--rule-soft); }
+.passage-row:first-child { border-top: 0; }
+.passage-row:hover { background: var(--paper-warm); }
+.passage-row__ref { grid-area: ref; font-size: 16px; font-weight: 800; color: var(--ink); }
+.passage-row__line { grid-area: line; font-family: var(--font-body); font-size: 14.5px; color: var(--ink-faded); }
+.passage-row .story-row__chev { grid-area: chev; }
+
+/* Bible index: jump to a section instead of scrolling past 66 books */
+.jump-bar {
+  position: sticky; top: calc(61px + env(safe-area-inset-top)); z-index: 20;
+  display: flex; gap: 8px; overflow-x: auto; padding: 10px 0; margin: 4px 0 8px;
+  background: var(--paper); scrollbar-width: none;
+}
+.jump-bar::-webkit-scrollbar { display: none; }
+.jump-bar a { flex: none; font-size: 14px; font-weight: 700; color: var(--ink-soft); background: var(--paper-warm); padding: 8px 14px; border-radius: 10px; text-decoration: none; min-height: 40px; display: inline-flex; align-items: center; }
+.jump-bar a:hover { background: var(--gold-wash); color: var(--gold-deep); }
+.book-section { scroll-margin-top: 130px; }
+
+/* Verse lookup: headings in the app voice */
+.verse-disambig-head__label { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.03em; }
+.verse-disambig-rest__heading { font-family: var(--font-ui); font-weight: 800; letter-spacing: -0.02em; }
+.hcard .story-row__chev { flex: none; }
+
+/* Solid header and tab bar: no text ghosting through while scrolling */
+.site-header, .tab-bar { background: var(--paper); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.stories-section__link { white-space: nowrap; flex: none; }
+
+/* Section shortcuts read as a toolbar, edge to edge with a hairline */
+.jump-bar { margin: 4px -20px 12px; padding: 10px 20px; border-bottom: 1px solid var(--rule); }

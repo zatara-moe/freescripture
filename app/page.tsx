@@ -1,110 +1,124 @@
 import Link from "next/link";
+import { NEEDS, PARABLES } from "@/lib/bible";
+import { STORIES } from "@/lib/stories";
+import QuickStart from "./QuickStart";
 
-const FAMOUS = [
-  { ref: "Psalm 23",   url: "/web/psalms/23/",        line: "The Lord is my shepherd." },
-  { ref: "John 3",     url: "/web/john/3/",           line: "For God so loved the world." },
-  { ref: "Genesis 1",  url: "/web/genesis/1/",        line: "In the beginning." },
-  { ref: "1 Cor 13",   url: "/web/1-corinthians/13/", line: "Love is patient, love is kind." },
-  { ref: "Romans 8",   url: "/web/romans/8/",         line: "Nothing can separate us." },
-  { ref: "Matthew 5",  url: "/web/matthew/5/",        line: "Blessed are the meek." },
+/* Homepage: one primary action, then three short shelves.
+   Kept deliberately small: every extra equal-weight choice is a
+   decision a new reader has to make before they read anything. */
+
+const PASSAGES = [
+  { ref: "John 3", url: "/web/john/3/", line: "For God so loved the world." },
+  { ref: "Genesis 1", url: "/web/genesis/1/", line: "In the beginning." },
+  { ref: "1 Corinthians 13", url: "/web/1-corinthians/13/", line: "Love is patient, love is kind." },
+  { ref: "Romans 8", url: "/web/romans/8/", line: "Nothing can separate us from God's love." },
+  { ref: "Matthew 5", url: "/web/matthew/5/", line: "Blessed are the meek." },
 ];
 
-export default function Home() {
+const FEATURED_PARABLES = ["prodigal-son", "good-samaritan", "lost-sheep"];
+const HOME_NEEDS = ["fear", "grief", "strength", "guilt"];
+
+function Chev() {
   return (
-    <div className="home">
-      <section className="home-hero">
-        <h1 className="home-hero__headline">The whole Bible, open to anyone.</h1>
-        <p className="home-hero__sub">Three translations. No account, no ads.</p>
-      </section>
+    <svg className="story-row__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+  );
+}
 
-      {/* One clear next step, not four equal ones. For a returning
-          reader this becomes "Continue reading [X]" automatically;
-          for everyone else it's a sensible, specific default rather
-          than a vague "start here" button. */}
-      <a className="hero-primary" id="quick-start" href="/web/psalms/23/" data-quick-start>
-        <span className="hero-primary__body">
-          <span className="hero-primary__label" data-quick-start-label>Start with Psalm 23</span>
-          <span className="hero-primary__sub" data-quick-start-sub>The Lord is my shepherd. A good place to begin.</span>
-        </span>
-        <span className="hero-primary__arrow">&rarr;</span>
-      </a>
+function refLabel(p: any) {
+  const [book, ch, s, e] = p.ref;
+  return s === e ? `${book} ${ch}:${s}` : `${book} ${ch}:${s}-${e}`;
+}
 
-      {/* A real search field — the one pattern every age group already
-          knows on sight, so it doesn't need to be a labeled button. */}
+export default function Home() {
+  const ready = STORIES.filter((s) => s.ready && s.file).slice(0, 3);
+  const parables = FEATURED_PARABLES.map((slug) => PARABLES.find((p: any) => p.slug === slug)).filter(Boolean).slice(0, 3 - ready.length) as any[];
+  const needs = HOME_NEEDS.map((slug) => (NEEDS as any[]).find((n) => n.slug === slug)).filter(Boolean) as any[];
+
+  return (
+    <div className="home2">
+      <header className="home2-hello">
+        <h1 className="home2-title">The whole Bible, open to anyone.</h1>
+        <p className="home2-sub">Free to read. No account, no ads.</p>
+      </header>
+
+      <QuickStart />
+
       <form className="hero-search" action="/search/" role="search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
-        </svg>
-        <input
-          className="hero-search__input"
-          type="search"
-          name="q"
-          placeholder="Search for a word or verse"
-          aria-label="Search scripture"
-        />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+        <input className="hero-search__input" type="search" name="q" placeholder="Search a word, or try John 3:16" aria-label="Search scripture" />
       </form>
 
-      {/* Lighter-weight paths, as plain text links rather than boxes —
-          for someone who wants a different starting point without
-          having to evaluate four equally-weighted options first. */}
-      <nav className="hero-links" aria-label="More ways to start">
-        <Link className="hero-links__link" href="/read/">
-          A verse for right now <span>&rarr;</span>
-        </Link>
-        <Link className="hero-links__link" href="/parables/">
-          The parables <span>&rarr;</span>
-        </Link>
-      </nav>
+      <section className="home2-section" aria-labelledby="home-stories">
+        <div className="stories-section__head">
+          <h2 className="stories-section__title" id="home-stories">Stories</h2>
+          <Link className="stories-section__link" href="/stories/">All stories</Link>
+        </div>
+        <div className="story-list">
+          {ready.map((s) => (
+            <Link key={s.slug} className="story-row" href={`/stories/${s.slug}/`}>
+              <div className="story-row__body">
+                <div className="story-row__name">{s.title}</div>
+                <div className="story-row__desc">{s.desc}</div>
+                <div className="story-row__meta"><span className="badge">{s.level}</span><span>Scene by Scene · {s.ref}</span></div>
+              </div>
+              <Chev />
+            </Link>
+          ))}
+          {parables.map((p) => (
+            <Link key={p.slug} className="story-row" href={`/parables/${p.slug}/`}>
+              <div className="story-row__body">
+                <div className="story-row__name">{p.title}</div>
+                <div className="story-row__desc">{p.line}</div>
+                <div className="story-row__meta"><span>Parable · {refLabel(p)}</span></div>
+              </div>
+              <Chev />
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      <script dangerouslySetInnerHTML={{ __html:
-        `(function(){try{var raw=localStorage.getItem('fs-last');if(!raw)return;var d=JSON.parse(raw);var el=document.getElementById('quick-start');if(el&&d.url){el.href=d.url;var lab=el.querySelector('[data-quick-start-label]');if(lab)lab.textContent=d.label?('Continue: '+d.label):'Continue reading';var sub=el.querySelector('[data-quick-start-sub]');if(sub)sub.textContent='Pick up where you left off.';}}catch(e){}})();`
-      }} />
-      <h2 className="home-h2">Pick a translation</h2>
-      <div className="hcard-row hcard-row--col">
-        <Link className="hcard hcard--wide" href="/web/">
-          <span className="hcard__body">
-            <span className="hcard__label">World English Bible</span>
-            <span className="hcard__sub">Modern, easy to read &middot; <span className="hcard__tag">Good place to start</span></span>
-          </span>
-          <span className="hcard__arrow">&rarr;</span>
-        </Link>
-        <Link className="hcard hcard--wide" href="/kjv/">
-          <span className="hcard__body">
-            <span className="hcard__label">King James Version</span>
-            <span className="hcard__sub">Classic, 1600s English. Includes the Apocrypha.</span>
-          </span>
-          <span className="hcard__arrow">&rarr;</span>
-        </Link>
-        <Link className="hcard hcard--wide" href="/bbe/">
-          <span className="hcard__body">
-            <span className="hcard__label">Bible in Basic English</span>
-            <span className="hcard__sub">About 1,000 common words</span>
-          </span>
-          <span className="hcard__arrow">&rarr;</span>
-        </Link>
-      </div>
-      <h2 className="home-h2">Go to a passage you know</h2>
-      <div className="hcard-row hcard-row--3">
-        {FAMOUS.map((f) => (
-          <Link className="hcard hcard--passage" href={f.url} key={f.ref}>
-            <span className="hcard__body">
-              <span className="hcard__ref">{f.ref}</span>
-              <span className="hcard__sub hcard__sub--italic">{f.line}</span>
-            </span>
-            <span className="hcard__arrow">&rarr;</span>
-          </Link>
-        ))}
-      </div>
-      <h2 className="home-h2">This Sunday</h2>
-      <a className="hcard hcard--wide hcard--accented"
-         href="https://www.digitallutheranchurch.com/word/propers"
-         rel="noopener">
-        <span className="hcard__body">
-          <span className="hcard__label">This Sunday&apos;s readings</span>
-          <span className="hcard__sub">Appointed scripture from the Revised Common Lectionary &middot; Digital Lutheran Church</span>
-        </span>
-        <span className="hcard__arrow">&rarr;</span>
-      </a>
+      <section className="home2-section" aria-labelledby="home-moment">
+        <div className="stories-section__head">
+          <h2 className="stories-section__title" id="home-moment">A verse for the moment</h2>
+          <Link className="stories-section__link" href="/read/">See all</Link>
+        </div>
+        <div className="need-grid">
+          {needs.map((n) => (
+            <Link key={n.slug} className="need-tile" href={`/read/${n.slug}/`}>
+              <span className="need-tile__name">{n.short}</span>
+              <span className="need-tile__desc">{n.card}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="home2-section" aria-labelledby="home-passages">
+        <div className="stories-section__head">
+          <h2 className="stories-section__title" id="home-passages">Well-known passages</h2>
+          <Link className="stories-section__link" href="/web/">All books</Link>
+        </div>
+        <div className="passage-rows">
+          {PASSAGES.map((f) => (
+            <Link className="passage-row" href={f.url} key={f.ref}>
+              <span className="passage-row__ref">{f.ref}</span>
+              <span className="passage-row__line">{f.line}</span>
+              <Chev />
+            </Link>
+          ))}
+        </div>
+        <p className="home2-note">These open in the World English Bible. You can switch to the King James or Basic English on any chapter.</p>
+      </section>
+
+      <section className="home2-section" aria-labelledby="home-sunday">
+        <h2 className="stories-section__title" id="home-sunday">This Sunday</h2>
+        <a className="story-row home2-sunday" href="https://www.digitallutheranchurch.com/word/propers" rel="noopener">
+          <div className="story-row__body">
+            <div className="story-row__name">This Sunday&apos;s readings</div>
+            <div className="story-row__desc">The appointed readings from the Revised Common Lectionary, at Digital Lutheran Church.</div>
+          </div>
+          <Chev />
+        </a>
+      </section>
     </div>
   );
 }

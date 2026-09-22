@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;700;800&family=Literata:opsz,wght@7..72,400;7..72,700&family=Lexend:wght@400;600&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=26" />
+        <link rel="stylesheet" href="/static/css/site.css?v=27" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#FBF7F0" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1A1814" media="(prefers-color-scheme: dark)" />

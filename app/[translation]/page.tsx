@@ -99,6 +99,12 @@ export default async function TranslationLanding(
         </div>
       </header>
 
+      <nav className="jump-bar" aria-label="Jump to a section">
+        {sections.map((sec) => (
+          <a key={sec.label} href={`#${sec.label.toLowerCase().replace(/\s+/g, "-")}`}>{sec.label}</a>
+        ))}
+      </nav>
+
       {sections.map((sec) => (
         <section
           className="book-section"
@@ -109,7 +115,9 @@ export default async function TranslationLanding(
           <div className="book-grid">
             {sec.books.map((name) => {
               const slug = slugByName.get(name)!;
-              const desc = BOOK_PITCHES[name] || BOOK_INTROS[name] || "";
+              const full = BOOK_PITCHES[name] || BOOK_INTROS[name] || "";
+              const m = full.match(/^.+?[.!?](?=\s|$)/);
+              const desc = m ? m[0] : full;
               const genre = GENRE_OF[name] || "";
               return (
                 <Link

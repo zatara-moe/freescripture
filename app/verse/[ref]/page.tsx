@@ -14,9 +14,17 @@ function parseRef(ref: string): { chapter: number; verse: number } | null {
   return { chapter: parseInt(m[1], 10), verse: parseInt(m[2], 10) };
 }
 
+/* References people almost always mean when they type the bare numbers.
+   These go first; everything else stays in Bible order. */
+const MOST_MEANT: Record<string, string> = { "3:16": "John", "23:1": "Psalms", "29:11": "Jeremiah", "8:28": "Romans" };
+
 function lookup(chapter: number, verse: number): string[] {
   const key = `${chapter}:${verse}`;
-  return (verseIndex as Record<string, string[]>)[key] || [];
+  const list = [...((verseIndex as Record<string, string[]>)[key] || [])];
+  const want = MOST_MEANT[key];
+  const i = want ? list.indexOf(want) : -1;
+  if (i > 0) { list.splice(i, 1); list.unshift(want); }
+  return list;
 }
 
 export function generateStaticParams() {
@@ -44,7 +52,7 @@ export async function generateMetadata({
   const title =
     books.length === 1
       ? `${primary} ${label} | Free Scripture`
-      : `${label} — ${primary} and ${books.length - 1} other place${books.length > 2 ? "s" : ""} it appears | Free Scripture`;
+      : `${label}: ${primary} and ${books.length - 1} other place${books.length > 2 ? "s" : ""} it appears | Free Scripture`;
   const description =
     books.length === 1
       ? `Read ${primary} ${label} in the World English Bible, King James Version, and Bible in Basic English.`
@@ -110,8 +118,8 @@ export default async function VersePage({
         {books.length > 1 && (
           <p className="verse-disambig-head__note">
             Chapter {chapter}, verse {verse} appears in {books.length} books of
-            the Bible. Here is {primary}, the first in canonical order — every
-            other place it appears is listed below.
+            the Bible. Here is {primary}{MOST_MEANT[`${chapter}:${verse}`] === primary ? ", the one most people mean" : ", the first in Bible order"}.
+            Every other place it appears is listed below.
           </p>
         )}
       </header>
@@ -160,7 +168,7 @@ export default async function VersePage({
                     <span className="hcard__sub hcard__sub--italic">{text}</span>
                   )}
                 </span>
-                <span className="hcard__arrow">&rarr;</span>
+                <svg className="story-row__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
               </Link>
             ))}
           </div>
