@@ -258,6 +258,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
       </article>
 
       <script src="/static/js/chapter.js?v=9" defer></script>
+      <script src="/static/js/pages.js?v=2" defer></script>
       <script dangerouslySetInnerHTML={{ __html: `window.addEventListener('beforeprint',function(){document.querySelectorAll('details.zone').forEach(function(d){d.open=true;});});` }} />
     </>
   );

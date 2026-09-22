@@ -1825,3 +1825,77 @@ details.zone > summary:focus-visible { outline: 3px solid var(--gold); outline-o
 
 /* Section shortcuts read as a toolbar, edge to edge with a hairline */
 .jump-bar { margin: 4px -20px 12px; padding: 10px 20px; border-bottom: 1px solid var(--rule); }
+
+/* ==========================================================
+   Paged reading (Display → Reading → Pages)
+   ========================================================== */
+.pg{position:fixed;inset:0;z-index:1200;background:var(--paper);display:flex;flex-direction:column}
+.pg__bar{flex:none;background:var(--paper);transition:transform .3s ease}
+.pg__bar--top{border-bottom:1px solid var(--rule);padding-top:env(safe-area-inset-top,0px)}
+.pg__bar--bottom{border-top:1px solid var(--rule);padding-bottom:env(safe-area-inset-bottom,0px)}
+.pg[data-chrome="off"] .pg__bar--top{transform:translateY(-110%);position:absolute;left:0;right:0;top:0}
+.pg[data-chrome="off"] .pg__bar--bottom{transform:translateY(110%);position:absolute;left:0;right:0;bottom:0}
+.pg__bar-in{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px}
+.pg__crumb{display:flex;flex-direction:column;min-width:0}
+.pg__crumb-title{font-family:var(--font-ui);font-size:15px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pg__crumb-sub{font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--ink-hint)}
+.pg__spacer{flex:1}
+.pg__icon{width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;border:0;background:none;font-family:var(--font-ui);font-weight:800;font-size:15px;color:var(--ink-soft);cursor:pointer}
+.pg__icon:hover{background:var(--paper-warm);color:var(--ink)}
+.pg__done{min-height:44px;padding:0 16px;border-radius:12px;border:0;background:var(--gold);color:var(--on-gold);font-family:var(--font-ui);font-weight:800;font-size:14px;cursor:pointer}
+.pg__done:hover{background:var(--gold-deep)}
+.pg__stage{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
+.pg__book{position:relative;display:flex;perspective:2400px}
+.pg__page{position:relative;background:var(--white);border-radius:4px;overflow:hidden}
+.pg[data-spread="1"] .pg__page{box-shadow:0 1px 2px rgba(0,0,0,.05),0 12px 34px rgba(0,0,0,.10)}
+.pg[data-spread="1"] .pg__page--l{border-radius:10px 2px 2px 10px}
+.pg[data-spread="1"] .pg__page--r{border-radius:2px 10px 10px 2px}
+.pg[data-spread="1"] .pg__page--l::after,.pg[data-spread="1"] .pg__page--r::after{content:"";position:absolute;top:0;bottom:0;width:26px;pointer-events:none}
+.pg[data-spread="1"] .pg__page--l::after{right:0;background:linear-gradient(to right,transparent,rgba(43,33,24,.09))}
+.pg[data-spread="1"] .pg__page--r::after{left:0;background:linear-gradient(to left,transparent,rgba(43,33,24,.09))}
+.pg__vp{position:absolute;inset:0;overflow:hidden}
+.pg__flow{position:absolute;top:0;left:0;column-fill:auto;max-width:none}
+.pg__flow .verse{break-inside:avoid-column}
+.pg__folio{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--ink-hint)}
+.pg__zone{position:absolute;top:0;bottom:0;z-index:5;border:0;background:none;cursor:pointer}
+.pg__zone--prev{left:0;width:25%}
+.pg__zone--next{right:0;width:45%}
+.pg__nav{width:44px;height:44px;border-radius:12px;border:0;background:none;color:var(--gold);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.pg__nav svg{width:22px;height:22px}
+.pg__nav:disabled{opacity:.3;cursor:default}
+.pg__track{flex:1;cursor:pointer;display:flex;flex-direction:column;gap:5px;justify-content:center;min-height:40px}
+.pg__rail{height:4px;border-radius:4px;background:var(--rule);overflow:hidden}
+.pg__fill{height:100%;background:var(--gold);width:0;transition:width .3s ease}
+.pg__label{font-family:var(--font-ui);font-size:12px;font-weight:700;color:var(--ink-hint);text-align:center}
+
+/* the leaf */
+.pg__leaf{position:absolute;top:0;z-index:20;transform-style:preserve-3d;pointer-events:none;will-change:transform}
+.pg__leaf-face{position:absolute;inset:0;overflow:hidden;background:var(--white);backface-visibility:hidden}
+.pg__leaf-back{position:absolute;inset:0;overflow:hidden;background:var(--white);transform:rotateY(180deg);backface-visibility:hidden;border-radius:10px 2px 2px 10px}
+.pg__leaf-backwrap{position:absolute;inset:0;overflow:hidden}
+.pg__leaf-back::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to left,rgba(43,33,24,.13),transparent 50%)}
+.pg__leaf-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to left,rgba(43,33,24,.22),transparent 55%);opacity:0}
+.pg__leaf.is-turning .pg__leaf-shade{opacity:1;transition:opacity .5s}
+.pg-out{animation:pgOut .26s cubic-bezier(.4,0,.2,1) forwards}
+.pg-in{animation:pgIn .26s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes pgOut{to{transform:translateX(-14%);opacity:0}}
+@keyframes pgIn{from{transform:translateX(14%);opacity:0}}
+
+/* end of chapter */
+.pg__end{break-inside:avoid-column;margin-top:1.4em;padding-top:1.2em;border-top:1px solid var(--rule);font-family:var(--font-ui)}
+.pg__end-label{font-size:13px;font-weight:700;color:var(--ink-hint);margin-bottom:10px}
+.pg__end-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:12px;background:var(--gold);color:var(--on-gold);font-size:15px;font-weight:800;text-decoration:none}
+
+/* first-time coach marks */
+.pg__coach{position:absolute;left:50%;bottom:92px;transform:translateX(-50%) translateY(8px);z-index:40;width:min(420px,calc(100% - 32px));
+  background:var(--ink);color:var(--paper);border-radius:16px;padding:16px 18px;box-shadow:0 12px 40px rgba(0,0,0,.28);opacity:0;transition:opacity .3s,transform .3s}
+.pg__coach.is-on{opacity:1;transform:translateX(-50%) translateY(0)}
+.pg__coach-row{font-family:var(--font-ui);font-size:14.5px;font-weight:600;line-height:1.45}
+.pg__coach-row + .pg__coach-row{margin-top:8px}
+.pg__coach-btn{margin-top:14px;width:100%;min-height:44px;border-radius:12px;border:0;background:var(--paper);color:var(--ink);font-family:var(--font-ui);font-weight:800;font-size:15px;cursor:pointer}
+
+/* Display panel must sit above the reader */
+.prefs-overlay{z-index:2000}
+/* Paged reading hides the page behind it; keep the scroll page intact */
+:root[data-fs-reading="pages"] body{overflow:hidden}
+@media (prefers-reduced-motion: reduce){.pg__leaf{transition:none!important}}

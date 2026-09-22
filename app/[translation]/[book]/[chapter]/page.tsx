@@ -406,6 +406,7 @@ export default async function ChapterPage(
       </div>
 
       <script src="/static/js/chapter.js?v=9" defer></script>
+      <script src="/static/js/pages.js?v=2" defer></script>
       <script
         dangerouslySetInnerHTML={{
           __html: `try{localStorage.setItem('fs-last',JSON.stringify(${lastPayload}));}catch(e){}`,

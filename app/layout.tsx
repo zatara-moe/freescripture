@@ -35,7 +35,7 @@ const PREFS_BOOTSTRAP = `(function () {
     var raw = localStorage.getItem('fs-prefs');
     if (!raw) return;
     var p = JSON.parse(raw);
-    var defaults = {size:'default', leading:'default', layout:'verses', font:'default', focus:'off', theme:'system'};
+    var defaults = {size:'default', leading:'default', layout:'verses', font:'default', focus:'off', theme:'system', reading:'scroll', turn:'paper'};
     var root = document.documentElement;
     Object.keys(defaults).forEach(function (k) {
       if (p[k] && p[k] !== defaults[k]) root.setAttribute('data-fs-' + k, p[k]);
@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;700;800&family=Literata:opsz,wght@7..72,400;7..72,700&family=Lexend:wght@400;600&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=27" />
+        <link rel="stylesheet" href="/static/css/site.css?v=28" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#FBF7F0" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1A1814" media="(prefers-color-scheme: dark)" />
@@ -213,7 +213,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <script src="/static/js/shortcuts.js?v=1" defer></script>
 
-        <script src="/static/js/reading-prefs.js?v=10" defer></script>
+        <script src="/static/js/reading-prefs.js?v=12" defer></script>
         <script dangerouslySetInnerHTML={{ __html: `
 (function(){
   /* --- Service worker registration --- */
