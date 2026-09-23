@@ -2142,12 +2142,12 @@ p { text-wrap: pretty; }
 .stories-page { max-width: 78rem; }
 
 /* --- Hero --- */
-.hero { display: grid; gap: 28px; padding-top: 28px; align-items: center; }
+.hero { display: grid; gap: 20px; padding-top: 20px; align-items: center; }
 @media (min-width: 900px) {
-  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; padding-top: 40px; }
+  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; padding-top: 32px; }
   .hero--solo { grid-template-columns: minmax(0, 1fr); }
 }
-.hero__text { display: flex; flex-direction: column; gap: 18px; }
+.hero__text { display: flex; flex-direction: column; gap: 14px; }
 .hero__title {
   font-family: var(--font-ui); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1;
   font-size: clamp(32px, 8.4vw, 60px); color: var(--ink);
@@ -2167,12 +2167,12 @@ p { text-wrap: pretty; }
 
 /* The open book */
 .hero__display {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
-  padding: 24px 16px; border-radius: 20px; background: var(--paper-warm); text-decoration: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  padding: 20px 16px; border-radius: 16px; background: var(--paper-warm); text-decoration: none;
 }
-@media (min-width: 900px) { .hero__display { min-height: 380px; padding: 28px 24px; } }
+@media (min-width: 900px) { .hero__display { min-height: 0; padding: 24px 20px; } }
 .spread {
-  width: 100%; max-width: 440px; min-height: 300px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%; max-width: 380px; min-height: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
   border-radius: 6px; background: var(--white); overflow: hidden;
   box-shadow: 0 10px 24px rgba(28,27,46,.14), inset 0 0 0 1px var(--rule);
 }
@@ -2187,11 +2187,11 @@ p { text-wrap: pretty; }
 .spread__ref { margin-top: auto; font-family: var(--font-body); font-weight: 700; font-size: 14px; color: var(--ink); }
 .spread__text { font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--ink); text-wrap: pretty; }
 .spread__folio { margin-top: auto; padding-top: 12px; align-self: flex-end; font-family: var(--font-body); font-size: 14px; color: var(--ink-hint); }
-.hero__caption { font-family: var(--font-body); font-size: 15px; color: var(--ink-faded); }
+.hero__caption { font-family: var(--font-body); font-size: 14px; color: var(--ink-hint); }
 
 /* --- Shelves --- */
-.shelf { margin-top: 64px; }
-@media (min-width: 900px) { .shelf { margin-top: 96px; } }
+.shelf { margin-top: 48px; }
+@media (min-width: 900px) { .shelf { margin-top: 56px; } }
 .shelf__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 22px; }
 .shelf__title { font-family: var(--font-ui); font-weight: 600; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.025em; line-height: 1.2; color: var(--ink); }
 .shelf__more { flex: none; font-family: var(--font-ui); font-weight: 600; font-size: 16px; color: var(--gold); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
