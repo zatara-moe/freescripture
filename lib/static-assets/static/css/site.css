@@ -171,7 +171,7 @@ button { font: inherit; cursor: pointer; }
   position: sticky; top: 0; z-index: 50;
 }
 .site-header__inner {
-  max-width: 56rem; margin: 0 auto;
+  max-width: 78rem; margin: 0 auto;
   padding: 14px 24px;
   display: flex; align-items: center; justify-content: space-between;
 }
@@ -1406,7 +1406,8 @@ body { letter-spacing: 0.005em; }
   backdrop-filter: saturate(1.4) blur(14px);
   padding-top: env(safe-area-inset-top);
 }
-.site-header__inner { padding: 10px 20px; gap: 12px; }
+.site-header__inner { max-width: 78rem; margin: 0 auto; padding: 10px 20px; gap: 12px; }
+@media (min-width: 900px) { .site-header__inner { padding: 14px 48px; } }
 .site-mark__icon { color: var(--gold); }
 .site-mark__text { font-weight: 800; font-size: 18px; letter-spacing: -0.03em; }
 .site-nav { margin-left: auto; }
@@ -2141,13 +2142,12 @@ p { text-wrap: pretty; }
 .stories-page { max-width: 78rem; }
 
 /* --- Hero --- */
-.hero { display: grid; gap: 36px; padding-top: 40px; align-items: center; }
+.hero { display: grid; gap: 28px; padding-top: 28px; align-items: center; }
 @media (min-width: 900px) {
-  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; padding-top: 72px; }
+  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px; padding-top: 40px; }
   .hero--solo { grid-template-columns: minmax(0, 1fr); }
 }
 .hero__text { display: flex; flex-direction: column; gap: 18px; }
-.hero__series { font-family: var(--font-ui); font-weight: 500; font-size: 16px; color: var(--gold); }
 .hero__title {
   font-family: var(--font-ui); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1;
   font-size: clamp(32px, 8.4vw, 60px); color: var(--ink);
@@ -2167,10 +2167,10 @@ p { text-wrap: pretty; }
 
 /* The open book */
 .hero__display {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
-  padding: 32px 20px; border-radius: 24px; background: var(--paper-warm); text-decoration: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+  padding: 24px 16px; border-radius: 20px; background: var(--paper-warm); text-decoration: none;
 }
-@media (min-width: 900px) { .hero__display { min-height: 500px; padding: 40px 32px; } }
+@media (min-width: 900px) { .hero__display { min-height: 380px; padding: 28px 24px; } }
 .spread {
   width: 100%; max-width: 440px; min-height: 300px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
   border-radius: 6px; background: var(--white); overflow: hidden;

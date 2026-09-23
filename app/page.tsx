@@ -83,7 +83,6 @@ export default function Home() {
     <div className="home3">
       <section className={`hero${book ? "" : " hero--solo"}`} aria-labelledby="hero-title">
         <div className="hero__text">
-          <p className="hero__series">Scene by Scene</p>
           <h1 className="hero__title" id="hero-title">Bible stories,<br />one scene at a time.</h1>
           <p className="hero__lede">Plain-language retellings you can read next to the Bible itself. Free, with no account and no ads.</p>
           <QuickStart
