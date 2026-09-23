@@ -1,7 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { PARABLES, SITE_URL } from "@/lib/bible";
-import { STORIES } from "@/lib/stories";
+import { readableStories, plannedStories, activeLenses, LENSES, compareHref } from "@/lib/stories";
+import { loadStory } from "@/lib/story";
+import { Shelf, StoryCover, ParableCover } from "../Shelf";
 
 export const metadata: Metadata = {
   title: "Stories",
@@ -15,91 +17,95 @@ export const metadata: Metadata = {
   },
 };
 
-const FEATURED_PARABLES = ["prodigal-son", "good-samaritan", "lost-sheep", "sower", "mustard-seed", "talents"];
+const FEATURED_PARABLES = ["prodigal-son", "good-samaritan", "lost-sheep", "sower", "mustard-seed", "talents", "pharisee-and-tax-collector", "lost-coin"];
 
-function Chev() {
-  return (
-    <svg className="story-row__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="m9 18 6-6-6-6" />
-    </svg>
-  );
-}
-
-function refLabel(p: any) {
-  const [book, ch, s, e] = p.ref;
-  return s === e ? `${book} ${ch}:${s}` : `${book} ${ch}:${s}-${e}`;
-}
-
+/* The Stories tab. When only one story is ready, it gets a featured
+   card instead of a lonely book on a five-wide shelf. The "being
+   written" row always shows as a grid, not a scrolling shelf, so
+   nothing is hidden off-screen on desktop. */
 export default function StoriesPage() {
-  const parables = FEATURED_PARABLES
-    .map((slug) => PARABLES.find((p: any) => p.slug === slug))
-    .filter(Boolean) as any[];
+  const ready = readableStories();
+  const planned = plannedStories();
+  const lenses = activeLenses();
+  const multi = lenses.length > 1;
+  const parables = FEATURED_PARABLES.map((slug) => (PARABLES as any[]).find((p) => p.slug === slug)).filter(Boolean);
+  const featured = ready.length === 1 ? ready[0] : null;
+  const featuredStats = featured ? loadStory(featured.slug) : null;
+  const featuredMin = featuredStats ? Math.max(1, Math.round(featuredStats.words / 200)) : 0;
 
   return (
     <div className="stories-page">
       <header className="stories-hero">
-        <div className="stories-eyebrow">Scene by Scene</div>
-        <h1 className="stories-title">Stories from the Bible</h1>
+        <h1 className="shelf__title">Stories</h1>
         <p className="stories-lede">
-          Each story is retold in plain language, one short scene at a time.
-          Every one is reviewed by a Lutheran pastor and tested with real
-          readers before it goes up.
+          Scene by Scene tells Bible stories in plain language, one short
+          scene at a time, with what they mean and why they matter. Every
+          story is reviewed by a Lutheran pastor. Stories marked Early
+          edition are still in that review.
         </p>
       </header>
 
-      <section className="stories-section" aria-labelledby="sbs-title">
-        <div className="stories-section__head">
-          <h2 className="stories-section__title" id="sbs-title">Scene by Scene</h2>
-        </div>
-        <div className="story-list">
-          {STORIES.map((s) =>
-            s.ready && s.file ? (
-              <Link key={s.title} className="story-row" href={`/stories/${s.slug}/`}>
-                <div className="story-row__body">
-                  <div className="story-row__name">{s.title}</div>
-                  <div className="story-row__desc">{s.desc}</div>
-                  <div className="story-row__meta">
-                    <span className="badge">{s.level}</span>
-                    <span>{s.kind} · {s.ref}</span>
-                  </div>
-                </div>
-                <Chev />
-              </Link>
-            ) : (
-              <div key={s.title} className="story-row story-row--soon">
-                <div className="story-row__body">
-                  <div className="story-row__name">{s.title}</div>
-                  <div className="story-row__desc">{s.desc}</div>
-                  <div className="story-row__meta">
-                    <span className="badge badge--quiet">In the works</span>
-                    <span>{s.kind} · {s.ref}</span>
-                  </div>
-                </div>
+      {featured ? (
+        <section className="stories-featured" aria-labelledby="feat-title">
+          <h2 className="shelf__title" id="feat-title">Ready to read</h2>
+          <div className="featured-card">
+            <div className="featured-card__body">
+              <span className="featured-card__flag">
+                {featured.status === "early" ? "Early edition" : "Story"}
+              </span>
+              <span className="featured-card__title">{featured.title}</span>
+              <span className="featured-card__desc">{featured.desc}</span>
+              <span className="featured-card__meta">
+                {featured.ref}
+                {featuredMin > 0 ? ` · About ${featuredMin} minutes · ${featuredStats!.scenes} scenes` : ""}
+                {` · ${featured.level}`}
+              </span>
+              <div className="featured-card__actions">
+                <Link className="hero-cta" href={`/stories/${featured.slug}/`}>
+                  Read {featured.title}
+                </Link>
+                <Link className="hero-link" href={compareHref(featured)}>
+                  Read it side by side
+                </Link>
               </div>
-            )
-          )}
-        </div>
-      </section>
+            </div>
+            <div className="featured-card__cover">
+              <StoryCover s={featured} />
+            </div>
+          </div>
+        </section>
+      ) : ready.length > 1 && (multi ? (
+        lenses.map((l) => (
+          <Shelf key={l} id={`lens-${l}`} title={LENSES[l].name}>
+            {ready.filter((s) => s.lens === l).map((s) => <StoryCover key={s.slug} s={s} showLens />)}
+          </Shelf>
+        ))
+      ) : (
+        <Shelf id="ready" title="Ready to read">
+          {ready.map((s) => <StoryCover key={s.slug} s={s} />)}
+        </Shelf>
+      ))}
 
-      <section className="stories-section" aria-labelledby="parables-title">
-        <div className="stories-section__head">
-          <h2 className="stories-section__title" id="parables-title">The parables of Jesus</h2>
-          <p className="section-lede">Short stories Jesus told, grouped by what they are about.</p>
-          <Link className="stories-section__link" href="/parables/">All {PARABLES.length}</Link>
-        </div>
-        <div className="story-list">
-          {parables.map((p) => (
-            <Link key={p.slug} className="story-row" href={`/parables/${p.slug}/`}>
-              <div className="story-row__body">
-                <div className="story-row__name">{p.title}</div>
-                <div className="story-row__desc">{p.line}</div>
-                <div className="story-row__meta"><span>{refLabel(p)}</span></div>
-              </div>
-              <Chev />
-            </Link>
-          ))}
-        </div>
-      </section>
+      {planned.length > 0 && (
+        <section className="stories-planned" aria-labelledby="soon-title">
+          <h2 className="shelf__title" id="soon-title">Being written now</h2>
+          <p className="stories-planned__note">
+            These are on their way. Until they are ready, each one opens the
+            passage in the Bible so you can read it today.
+          </p>
+          <div className="stories-planned__grid">
+            {planned.map((s) => <StoryCover key={s.slug} s={s} />)}
+          </div>
+        </section>
+      )}
+
+      <Shelf id="parables" title="The parables of Jesus" more={{ href: "/parables/", label: `All ${PARABLES.length}` }}>
+        {parables.map((p: any) => <ParableCover key={p.slug} p={p} />)}
+      </Shelf>
+
+      <p className="stories-cmp">
+        Want to check a retelling against the Bible? <Link href="/compare/">Read side by side</Link>.
+      </p>
     </div>
   );
 }

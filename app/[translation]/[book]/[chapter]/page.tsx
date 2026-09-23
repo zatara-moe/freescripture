@@ -15,6 +15,7 @@ import {
   GENRE_OF,
   type TransSlug,
 } from "@/lib/bible";
+import { storiesForChapter, compareHref } from "@/lib/stories";
 
 type Params = { translation: string; book: string; chapter: string };
 
@@ -149,6 +150,10 @@ export default async function ChapterPage(
     ],
   };
 
+  // Scene by Scene stories that retell this chapter.
+  const chapterStories = trans === "web" || trans === "kjv" || trans === "bbe" ? storiesForChapter(book, num) : [];
+  const canCompare = !!loadChapter("web", book, num);
+
   const lastPayload = JSON.stringify({
     url: `/${trans}/${book}/${num}/`,
     label: refLabel(bk.name, num),
@@ -194,7 +199,7 @@ export default async function ChapterPage(
                 aria-current="page"
                 title={`${tmeta.label}: ${tmeta.plain}`}
               >
-                {tmeta.short}
+                {tmeta.nick} <span className="trans-switch__abbr">{tmeta.short}</span>
               </span>
             ) : (
               <Link
@@ -204,9 +209,15 @@ export default async function ChapterPage(
                 data-trans-switch={t}
                 title={`${TRANSLATIONS[t].label}: ${TRANSLATIONS[t].plain}`}
               >
-                {TRANSLATIONS[t].short}
+                {TRANSLATIONS[t].nick} <span className="trans-switch__abbr">{TRANSLATIONS[t].short}</span>
               </Link>
             )
+          )}
+          {canCompare && (
+            <Link className="trans-switch__cmp" href={`/compare/${book}/${num}/?a=${trans}`}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.5" /><rect x="13.5" y="4" width="7.5" height="16" rx="1.5" /></svg>
+              Side by side
+            </Link>
           )}
         </div>
 
@@ -224,11 +235,23 @@ export default async function ChapterPage(
             </div>
           </header>
 
-          {bookIntro && (
-            <div className="chapter-context">
-              <div className="chapter-context__label">About {bk.name}</div>
-              <p>{bookIntro}</p>
+          {chapterStories.map((st) => (
+            <div className="chapter-story" key={st.slug}>
+              <div className="chapter-story__text">
+                <span className="chapter-story__name">This chapter is also a story</span>
+                <span className="chapter-story__line">{st.title}, retold in plain language, one scene at a time.</span>
+              </div>
+              <div className="chapter-story__acts">
+                <Link className="rbtn" href={`/stories/${st.slug}/`}>Read the story</Link>
+                <Link className="rbtn rbtn--subtle" href={compareHref(st, trans)}>Read both side by side</Link>
+              </div>
             </div>
+          ))}
+          {bookIntro && (
+            <details className="chapter-context">
+              <summary className="chapter-context__label">About {bk.name}</summary>
+              <p>{bookIntro}</p>
+            </details>
           )}
 
           <div className="chapter-meta-row">
@@ -253,48 +276,17 @@ export default async function ChapterPage(
           </div>
 
           <div className="chapter-toggles">
-            <div className="layout-toggle" role="group" aria-label="Verse layout">
-              <button
-                type="button"
-                className="layout-toggle__btn"
-                data-fs-quick="layout"
-                data-val="verses"
-                aria-pressed="true"
-              >
-                Lines
-              </button>
-              <button
-                type="button"
-                className="layout-toggle__btn"
-                data-fs-quick="layout"
-                data-val="flowing"
-                aria-pressed="false"
-              >
-                Flowing
-              </button>
-            </div>
-            <div className="layout-toggle" role="group" aria-label="Focus mode: hide navigation while reading">
-              <button
-                type="button"
-                className="layout-toggle__btn"
-                data-fs-quick="focus"
-                data-val="off"
-                aria-pressed="true"
-              >
-                Normal
-              </button>
-              <button
-                type="button"
-                className="layout-toggle__btn"
-                data-fs-quick="focus"
-                data-val="on"
-                aria-pressed="false"
-              >
-                Focus
-              </button>
-            </div>
+            <button
+              type="button"
+              className="layout-toggle__btn chapter-focus-btn"
+              data-fs-quick="focus"
+              data-val="on"
+              aria-pressed="false"
+              title="Focus (G): hide everything but the text"
+            >
+              Focus
+            </button>
           </div>
-
           <button
             type="button"
             className="focus-exit"

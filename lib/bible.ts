@@ -23,6 +23,7 @@ export interface TransMeta {
   year: string;
   description: string;
   has_apocrypha: boolean;
+  nick: string; // plain name for buttons: Modern, Classic, Simple
 }
 
 interface ManifestBook { name: string; slug: string; chapters: number[]; }
@@ -159,7 +160,7 @@ export function flatChapters(trans: TransSlug): { name: string; slug: string; nu
 // chapter renderer already applies this; pullVerse and firstVerse
 // must too, or the Need pages show "Yahweh" while the chapter page
 // shows "the LORD" for the same verse. See the pastoral review.
-function normalizeDivineName(text: string): string {
+export function normalizeDivineName(text: string): string {
   return text
     .replace(/\bO Yahweh\b/g, "O LORD")
     .replace(/\bYahweh\b/g, (_, offset: number) => {

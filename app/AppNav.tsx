@@ -10,7 +10,7 @@ type Section = "home" | "stories" | "bible" | "foryou" | "";
 function sectionOf(p: string): Section {
   if (p === "/") return "home";
   if (p.startsWith("/stories/") || p.startsWith("/parables/")) return "stories";
-  if (/^\/(web|kjv|bbe|genre|verse)\//.test(p)) return "bible";
+  if (/^\/(web|kjv|bbe|genre|verse|compare)\//.test(p)) return "bible";
   if (p.startsWith("/read/")) return "foryou";
   return "";
 }
@@ -23,7 +23,7 @@ export function SiteNav() {
     <nav className="site-nav" aria-label="Primary">
       <Link href="/stories/" {...cur(s === "stories")}>Stories</Link>
       <Link href="/web/" {...cur(s === "bible")}>Bible</Link>
-      <Link href="/read/" {...cur(s === "foryou")}>For you</Link>
+      <Link href="/read/" {...cur(s === "foryou")}>Verses</Link>
     </nav>
   );
 }
@@ -46,9 +46,9 @@ export function TabBar() {
         <svg {...ICON}><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M19 19H6a2 2 0 0 0-2 2" /></svg>
         <span>Bible</span>
       </Link>
-      <Link className="tab-bar__btn" href="/read/" aria-label="For you" {...cur(s === "foryou")}>
+      <Link className="tab-bar__btn" href="/read/" aria-label="Verses" {...cur(s === "foryou")}>
         <svg {...ICON}><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" /></svg>
-        <span>For you</span>
+        <span>Verses</span>
       </Link>
     </nav>
   );

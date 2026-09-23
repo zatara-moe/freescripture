@@ -4,8 +4,8 @@
   "description": "Three translations of the Bible, free to read. No ads, no accounts, works offline.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fcfaf6",
-  "theme_color": "#fcfaf6",
+  "background_color": "#F0EFEA",
+  "theme_color": "#F0EFEA",
   "orientation": "portrait",
   "categories": ["books", "education", "lifestyle"],
   "icons": [

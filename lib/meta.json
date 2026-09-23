@@ -9,7 +9,8 @@
       "description": "The 1611 translation in its standard 1769 revision. The most-quoted English Bible in human history.",
       "attribution_canonical": "King James Version (1769)<br>Public domain &middot; Crown copyright in the United Kingdom only<br>Source text from openbible.com / aruljohn KJV JSON",
       "has_apocrypha": true,
-      "tone": "archaic"
+      "tone": "archaic",
+      "nick": "Classic"
     },
     "web": {
       "slug": "web",
@@ -20,7 +21,8 @@
       "description": "A modern English translation in the public domain, designed to read clearly in today's English while preserving accuracy.",
       "attribution_canonical": "World English Bible<br>Public domain<br>Source text from the World English Bible (TehShrike repository)",
       "has_apocrypha": false,
-      "tone": "modern"
+      "tone": "modern",
+      "nick": "Modern"
     },
     "bbe": {
       "slug": "bbe",
@@ -31,7 +33,8 @@
       "description": "A translation using a vocabulary of about 1,000 common English words. Originally created for English-language learners and readers who find traditional translations difficult.",
       "attribution_canonical": "Bible in Basic English (1949/1964)<br>Public domain<br>Source text from the Scrollmapper Bible Databases",
       "has_apocrypha": false,
-      "tone": "accessible"
+      "tone": "accessible",
+      "nick": "Simple"
     }
   },
   "BOOK_ORDER": [
@@ -856,6 +859,184 @@
       ]
     },
     {
+      "slug": "alone",
+      "group": "hard",
+      "accent": "poetry",
+      "short": "When you feel alone",
+      "h1": "Verses for when you feel alone",
+      "lede": "For the nights when it feels like nobody gets it. These were written by people who felt that too.",
+      "card": "You are less alone than it feels.",
+      "meta_title": "Bible verses for when you feel alone",
+      "meta_desc": "Verses for loneliness, from a psalm that says \"I am desolate\" to Jesus saying \"I am with you always.\" Read one, or send it to a friend.",
+      "passages": [
+        [
+          "Psalms",
+          25,
+          16,
+          "poetry",
+          "A prayer that says it straight: I feel alone. Turn to me."
+        ],
+        [
+          "Psalms",
+          139,
+          7,
+          "poetry",
+          "A question with only one answer. There is nowhere God isn't."
+        ],
+        [
+          "Deuteronomy",
+          31,
+          8,
+          "law",
+          "Moses, near the end of his life, telling Israel who goes ahead of them."
+        ],
+        [
+          "Matthew",
+          28,
+          20,
+          "narrative",
+          "The last words of Matthew's gospel. Jesus promises to stay."
+        ],
+        [
+          "Hebrews",
+          13,
+          5,
+          "letters",
+          "\"I will in no way leave you.\" A promise quoted from much older scripture."
+        ]
+      ]
+    },
+    {
+      "slug": "racing-mind",
+      "group": "hard",
+      "accent": "letters",
+      "short": "When your mind won't slow down",
+      "h1": "Verses for when your mind won't slow down",
+      "lede": "For looping thoughts, a busy head, and nights that won't settle. Pick one line and stay with it for a minute.",
+      "card": "For thoughts that keep looping.",
+      "meta_title": "Bible verses for a racing mind",
+      "meta_desc": "Verses for anxious, busy, looping thoughts, from \"Be still\" to the peace that guards your thoughts. Read one, or send it to a friend.",
+      "passages": [
+        [
+          "Psalms",
+          46,
+          10,
+          "poetry",
+          "Be still. The whole instruction is two words long."
+        ],
+        [
+          "Matthew",
+          11,
+          28,
+          "narrative",
+          "Jesus invites tired people to come to him for rest."
+        ],
+        [
+          "Philippians",
+          4,
+          7,
+          "letters",
+          "Peace that guards your heart and your thoughts."
+        ],
+        [
+          "Isaiah",
+          26,
+          3,
+          "prophecy",
+          "A steady mind, kept in peace."
+        ],
+        [
+          "1 Peter",
+          5,
+          7,
+          "letters",
+          "Hand your worries over. He cares about you."
+        ]
+      ]
+    },
+    {
+      "slug": "doubt",
+      "group": "hard",
+      "accent": "narrative",
+      "short": "When you have doubts",
+      "h1": "Verses for when you have doubts",
+      "lede": "Honest questions are part of the Bible, not a problem for it. Some of the people closest to Jesus doubted too.",
+      "card": "Honest questions have a long history here.",
+      "meta_title": "Bible verses for when you have doubts",
+      "meta_desc": "Verses for doubt and honest questions, from \"Help my unbelief\" to the disciples who doubted. Read one, or send it to a friend.",
+      "passages": [
+        [
+          "Mark",
+          9,
+          24,
+          "narrative",
+          "A father tells Jesus the truth: I believe, and I also don't. Help me."
+        ],
+        [
+          "Matthew",
+          28,
+          17,
+          "narrative",
+          "The risen Jesus is standing right there. Some still doubted."
+        ],
+        [
+          "John",
+          20,
+          27,
+          "narrative",
+          "Thomas wanted proof. Jesus didn't send him away. He showed him."
+        ],
+        [
+          "Psalms",
+          13,
+          1,
+          "poetry",
+          "How long? A prayer that asks God hard questions out loud."
+        ]
+      ]
+    },
+    {
+      "slug": "angry",
+      "group": "hard",
+      "accent": "wisdom",
+      "short": "When you're angry",
+      "h1": "Verses for when you're angry",
+      "lede": "Anger is real, and the Bible doesn't pretend otherwise. These are about what to do with it.",
+      "card": "Anger is real. What you do next matters.",
+      "meta_title": "Bible verses for when you're angry",
+      "meta_desc": "Verses about anger, from \"Be angry, and don't sin\" to a gentle answer that turns away wrath. Read one, or send it to a friend.",
+      "passages": [
+        [
+          "Ephesians",
+          4,
+          26,
+          "letters",
+          "Being angry isn't the sin. Letting it run you is the danger."
+        ],
+        [
+          "Mark",
+          3,
+          5,
+          "narrative",
+          "Jesus got angry too. Look at what he did with it."
+        ],
+        [
+          "James",
+          1,
+          19,
+          "letters",
+          "A three-part plan: listen fast, speak slow, anger slow."
+        ],
+        [
+          "Proverbs",
+          15,
+          1,
+          "wisdom",
+          "A gentle answer can calm a fight."
+        ]
+      ]
+    },
+    {
       "slug": "celebrate",
       "group": "good",
       "accent": "narrative",
@@ -1283,7 +1464,8 @@
       ],
       "parallels": [],
       "line": "A son takes his inheritance early, spends it all, and comes home expecting to be a servant.",
-      "turn": "The father runs. In that culture, a grown man did not run. He was watching the road."
+      "turn": "The father runs. In that culture, a grown man did not run. He was watching the road.",
+      "cover": "A son spends it all and comes home. His father runs to meet him."
     },
     {
       "slug": "lost-sheep",
@@ -1307,7 +1489,8 @@
         ]
       ],
       "line": "A shepherd leaves ninety-nine sheep to go find the one that wandered off.",
-      "turn": "The math is bad on purpose. The one is not worth less because there are ninety-nine others."
+      "turn": "The math is bad on purpose. The one is not worth less because there are ninety-nine others.",
+      "cover": "A shepherd leaves ninety-nine sheep to find one lost sheep."
     },
     {
       "slug": "lost-coin",
@@ -1324,7 +1507,8 @@
       ],
       "parallels": [],
       "line": "A woman lights a lamp and sweeps the whole house until she finds one lost coin.",
-      "turn": "She throws a party over it. The joy is out of proportion, and that is the point."
+      "turn": "She throws a party over it. The joy is out of proportion, and that is the point.",
+      "cover": "A woman sweeps the whole house until she finds one lost coin."
     },
     {
       "slug": "unforgiving-servant",
@@ -1342,7 +1526,8 @@
       ],
       "parallels": [],
       "line": "A servant is forgiven an impossible debt, then jails a man who owes him a small one.",
-      "turn": "The first debt was unpayable in several lifetimes. The second was about three months wages."
+      "turn": "The first debt was unpayable in several lifetimes. The second was about three months wages.",
+      "cover": "Forgiven a huge debt, he jails a man who owes him a little."
     },
     {
       "slug": "two-debtors",
@@ -1359,7 +1544,8 @@
       ],
       "parallels": [],
       "line": "Two people owe money. Both are forgiven. Jesus asks which will love more.",
-      "turn": "Told at a dinner table, to a host who was judging a woman weeping on the floor."
+      "turn": "Told at a dinner table, to a host who was judging a woman weeping on the floor.",
+      "cover": "Two people are forgiven their debts. Who will love more?"
     },
     {
       "slug": "pharisee-and-tax-collector",
@@ -1376,7 +1562,8 @@
       ],
       "parallels": [],
       "line": "Two men pray in the temple. One lists his virtues. One asks for mercy.",
-      "turn": "The one who goes home right with God is the one who brought nothing to the conversation."
+      "turn": "The one who goes home right with God is the one who brought nothing to the conversation.",
+      "cover": "Two men pray. One lists his virtues. One asks for mercy."
     },
     {
       "slug": "good-samaritan",
@@ -1393,7 +1580,8 @@
       ],
       "parallels": [],
       "line": "A man is beaten and left on the road. Two religious men pass by. A foreigner stops.",
-      "turn": "The question asked was \"who is my neighbor.\" The question answered was \"who acted like one.\""
+      "turn": "The question asked was \"who is my neighbor.\" The question answered was \"who acted like one.\"",
+      "cover": "Two religious men walk past. A foreigner stops to help."
     },
     {
       "slug": "rich-man-and-lazarus",
@@ -1410,7 +1598,8 @@
       ],
       "parallels": [],
       "line": "A rich man feasts daily while a beggar starves at his gate. Both die.",
-      "turn": "The rich man knows the beggar by name. He had seen him every day and done nothing."
+      "turn": "The rich man knows the beggar by name. He had seen him every day and done nothing.",
+      "cover": "A rich man feasts while a beggar starves at his gate."
     },
     {
       "slug": "sheep-and-goats",
@@ -1428,7 +1617,8 @@
       ],
       "parallels": [],
       "line": "Nations are divided by what they did for the hungry, the sick, the imprisoned.",
-      "turn": "Neither group recognized Christ in the person in front of them. The righteous are surprised. They were not keeping score."
+      "turn": "Neither group recognized Christ in the person in front of them. The righteous are surprised. They were not keeping score.",
+      "cover": "Nations are sorted by what they did for the hungry and sick."
     },
     {
       "slug": "sower",
@@ -1459,7 +1649,8 @@
         ]
       ],
       "line": "Seed falls on a path, on rock, among thorns, and on good soil. Only one yields.",
-      "turn": "One of the few parables Jesus explains. The explanation is right there in the text."
+      "turn": "One of the few parables Jesus explains. The explanation is right there in the text.",
+      "cover": "Seed falls on four kinds of ground. Only one yields a crop."
     },
     {
       "slug": "mustard-seed",
@@ -1489,7 +1680,8 @@
         ]
       ],
       "line": "The smallest seed grows into a shrub large enough for birds to nest in.",
-      "turn": "Mustard was a weed. Farmers pulled it out. The kingdom is compared to something invasive."
+      "turn": "Mustard was a weed. Farmers pulled it out. The kingdom is compared to something invasive.",
+      "cover": "The smallest seed grows big enough for birds to nest in."
     },
     {
       "slug": "yeast",
@@ -1514,7 +1706,8 @@
         ]
       ],
       "line": "A woman mixes yeast into a large batch of flour until it works all the way through.",
-      "turn": "Everywhere else in scripture, yeast means corruption. Here it means the kingdom."
+      "turn": "Everywhere else in scripture, yeast means corruption. Here it means the kingdom.",
+      "cover": "A little yeast works its way through a whole batch of flour."
     },
     {
       "slug": "hidden-treasure",
@@ -1531,7 +1724,8 @@
       ],
       "parallels": [],
       "line": "A man finds treasure buried in a field, and sells everything he has to buy that field.",
-      "turn": "One verse long. He sells everything and the text says he does it with joy."
+      "turn": "One verse long. He sells everything and the text says he does it with joy.",
+      "cover": "A man finds treasure in a field and sells everything to buy it."
     },
     {
       "slug": "pearl",
@@ -1548,7 +1742,8 @@
       ],
       "parallels": [],
       "line": "A merchant finds one perfect pearl and sells his whole inventory to buy it.",
-      "turn": "He was already looking. Unlike the man in the field, this one was searching on purpose."
+      "turn": "He was already looking. Unlike the man in the field, this one was searching on purpose.",
+      "cover": "A merchant sells everything he owns to buy one perfect pearl."
     },
     {
       "slug": "the-net",
@@ -1566,7 +1761,8 @@
       ],
       "parallels": [],
       "line": "A net catches every kind of fish. The sorting happens on the shore, at the end.",
-      "turn": "The sorting is not the fishermen job, and it does not happen while the net is still out."
+      "turn": "The sorting is not the fishermen job, and it does not happen while the net is still out.",
+      "cover": "A net catches every kind of fish. The sorting comes at the end."
     },
     {
       "slug": "growing-seed",
@@ -1583,7 +1779,8 @@
       ],
       "parallels": [],
       "line": "A farmer scatters seed, then sleeps and rises while it grows without him knowing how.",
-      "turn": "Only in Mark. The farmer does not make it grow, and he does not understand it either."
+      "turn": "Only in Mark. The farmer does not make it grow, and he does not understand it either.",
+      "cover": "A farmer sleeps and wakes while the seed grows on its own."
     },
     {
       "slug": "weeds",
@@ -1601,7 +1798,8 @@
       ],
       "parallels": [],
       "line": "An enemy sows weeds in a wheat field. The owner says let both grow until harvest.",
-      "turn": "Pulling the weeds early would tear up the wheat. Patience here is not passivity."
+      "turn": "Pulling the weeds early would tear up the wheat. Patience here is not passivity.",
+      "cover": "An enemy sows weeds in the wheat. Both grow until harvest."
     },
     {
       "slug": "persistent-widow",
@@ -1619,7 +1817,8 @@
       ],
       "parallels": [],
       "line": "A widow wears down a judge who fears neither God nor people, simply by not stopping.",
-      "turn": "Luke tells you the point before the story starts: pray and do not lose heart."
+      "turn": "Luke tells you the point before the story starts: pray and do not lose heart.",
+      "cover": "A widow keeps asking an unjust judge until he gives in."
     },
     {
       "slug": "friend-at-midnight",
@@ -1637,7 +1836,8 @@
       ],
       "parallels": [],
       "line": "A man bangs on his neighbor door at midnight for bread and will not go away.",
-      "turn": "The neighbor gets up not out of friendship but because the knocking will not stop."
+      "turn": "The neighbor gets up not out of friendship but because the knocking will not stop.",
+      "cover": "A man knocks at midnight for bread and will not go away."
     },
     {
       "slug": "rich-fool",
@@ -1654,7 +1854,8 @@
       ],
       "parallels": [],
       "line": "A man with a bumper crop tears down his barns to build bigger ones, and dies that night.",
-      "turn": "Count the first-person pronouns in his speech. He is having a conversation with himself."
+      "turn": "Count the first-person pronouns in his speech. He is having a conversation with himself.",
+      "cover": "A man builds bigger barns for his crop, and dies that night."
     },
     {
       "slug": "shrewd-manager",
@@ -1672,7 +1873,8 @@
       ],
       "parallels": [],
       "line": "A manager about to be fired slashes his master debtors bills to make friends.",
-      "turn": "The hardest parable to preach. The dishonest man is commended, and not for his honesty."
+      "turn": "The hardest parable to preach. The dishonest man is commended, and not for his honesty.",
+      "cover": "A manager about to be fired cuts debts to make friends."
     },
     {
       "slug": "ten-virgins",
@@ -1690,7 +1892,8 @@
       ],
       "parallels": [],
       "line": "Ten wait for a bridegroom. Five brought extra oil. Five did not, and the door closes.",
-      "turn": "All ten fell asleep. The difference was not staying awake, it was what they packed."
+      "turn": "All ten fell asleep. The difference was not staying awake, it was what they packed.",
+      "cover": "Ten wait for a bridegroom. Only five brought extra oil."
     },
     {
       "slug": "talents",
@@ -1707,7 +1910,8 @@
       ],
       "parallels": [],
       "line": "Three servants are given money to manage. Two invest it. One buries his in the ground.",
-      "turn": "The third servant explains himself by describing his master as harsh. Fear is his reason."
+      "turn": "The third servant explains himself by describing his master as harsh. Fear is his reason.",
+      "cover": "Three servants get money to manage. One buries his."
     },
     {
       "slug": "ten-minas",
@@ -1725,7 +1929,8 @@
       ],
       "parallels": [],
       "line": "A nobleman leaves money with ten servants before traveling to be made king.",
-      "turn": "Luke version of the Talents, but with a political subplot the Matthew version does not have."
+      "turn": "Luke version of the Talents, but with a political subplot the Matthew version does not have.",
+      "cover": "A man about to be made king leaves money with ten servants."
     },
     {
       "slug": "watchful-servants",
@@ -1743,7 +1948,8 @@
       ],
       "parallels": [],
       "line": "Servants keep their lamps burning, waiting for a master who returns at an unknown hour.",
-      "turn": "The master, when he comes, puts on an apron and serves them. That is not how this works."
+      "turn": "The master, when he comes, puts on an apron and serves them. That is not how this works.",
+      "cover": "Servants keep their lamps lit, waiting for their master."
     },
     {
       "slug": "faithful-servant",
@@ -1767,7 +1973,8 @@
         ]
       ],
       "line": "A servant put in charge of the household either feeds them or beats them while the master is away.",
-      "turn": "Addressed to leaders. The question is what you do with authority when nobody is watching."
+      "turn": "Addressed to leaders. The question is what you do with authority when nobody is watching.",
+      "cover": "A servant is left in charge. Will he feed the house or abuse it?"
     },
     {
       "slug": "workers-in-the-vineyard",
@@ -1785,7 +1992,8 @@
       ],
       "parallels": [],
       "line": "Workers hired at dawn and workers hired an hour before quitting time are paid the same.",
-      "turn": "Nobody was cheated. The complaint is not about injustice, it is about someone else getting grace."
+      "turn": "Nobody was cheated. The complaint is not about injustice, it is about someone else getting grace.",
+      "cover": "Early workers and last-hour workers get the same pay."
     },
     {
       "slug": "great-banquet",
@@ -1803,7 +2011,8 @@
       ],
       "parallels": [],
       "line": "Invited guests all make excuses, so the host fills the table with strangers off the street.",
-      "turn": "The excuses are all reasonable. A field, some oxen, a new marriage. That is what makes it sting."
+      "turn": "The excuses are all reasonable. A field, some oxen, a new marriage. That is what makes it sting.",
+      "cover": "The invited guests make excuses, so the host invites strangers."
     },
     {
       "slug": "wedding-feast",
@@ -1821,7 +2030,8 @@
       ],
       "parallels": [],
       "line": "A king invites guests to his son wedding. They refuse, so he opens it to everyone.",
-      "turn": "Matthew version is darker than Luke, and it does not end when the hall fills up."
+      "turn": "Matthew version is darker than Luke, and it does not end when the hall fills up.",
+      "cover": "A king’s wedding guests refuse, so he invites everyone."
     },
     {
       "slug": "two-sons",
@@ -1838,7 +2048,8 @@
       ],
       "parallels": [],
       "line": "A father asks two sons to work. One says no and goes. One says yes and does not.",
-      "turn": "Told to chief priests. Jesus tells them tax collectors are entering the kingdom ahead of them."
+      "turn": "Told to chief priests. Jesus tells them tax collectors are entering the kingdom ahead of them.",
+      "cover": "One son says no, then works. The other says yes, and doesn’t."
     },
     {
       "slug": "wicked-tenants",
@@ -1869,7 +2080,8 @@
         ]
       ],
       "line": "Tenants beat the servants sent to collect rent, then kill the owner son.",
-      "turn": "The listeners understood it was about them. Mark says so explicitly at the end."
+      "turn": "The listeners understood it was about them. Mark says so explicitly at the end.",
+      "cover": "Tenants beat the owner’s servants, then kill his son."
     },
     {
       "slug": "wise-and-foolish-builders",
@@ -1894,7 +2106,8 @@
         ]
       ],
       "line": "Two houses, one on rock and one on sand. The same storm hits both.",
-      "turn": "The storm is not the variable. Both houses get the same weather."
+      "turn": "The storm is not the variable. Both houses get the same weather.",
+      "cover": "One house on rock, one on sand. The same storm hits both."
     },
     {
       "slug": "counting-the-cost",
@@ -1912,7 +2125,8 @@
       ],
       "parallels": [],
       "line": "A man builds a tower without pricing it out. A king marches to war outnumbered.",
-      "turn": "Jesus is talking people out of following him casually. This is a warning, not a recruitment pitch."
+      "turn": "Jesus is talking people out of following him casually. This is a warning, not a recruitment pitch.",
+      "cover": "A tower with no budget. A king at war, outnumbered."
     },
     {
       "slug": "barren-fig-tree",
@@ -1929,7 +2143,8 @@
       ],
       "parallels": [],
       "line": "An owner wants to cut down a tree that has not fruited in three years. The gardener asks for one more year.",
-      "turn": "The parable ends without telling you whether the tree fruited. The year is still running."
+      "turn": "The parable ends without telling you whether the tree fruited. The year is still running.",
+      "cover": "A tree bears no fruit. The gardener asks for one more year."
     },
     {
       "slug": "new-wineskins",
@@ -1960,7 +2175,8 @@
         ]
       ],
       "line": "You do not patch old cloth with new, or pour new wine into brittle old skins.",
-      "turn": "Said when asked why his disciples were not fasting. The answer is that something has changed."
+      "turn": "Said when asked why his disciples were not fasting. The answer is that something has changed.",
+      "cover": "You don’t pour new wine into old, brittle wineskins."
     },
     {
       "slug": "unworthy-servants",
@@ -1977,7 +2193,8 @@
       ],
       "parallels": [],
       "line": "A servant who has done his work does not expect to be thanked for doing his work.",
-      "turn": "Uncomfortable in a culture built on recognition. Duty, here, is not a grievance."
+      "turn": "Uncomfortable in a culture built on recognition. Duty, here, is not a grievance.",
+      "cover": "A servant doing his job doesn’t expect thanks for it."
     },
     {
       "slug": "lamp-under-a-bowl",
@@ -2008,7 +2225,9 @@
         ]
       ],
       "line": "Nobody lights a lamp and hides it. Lamps go on stands.",
-      "turn": "The reason given is not duty. It is that hidden things are going to come out anyway."
+      "turn": "The reason given is not duty. It is that hidden things are going to come out anyway.",
+      "cover": "Nobody lights a lamp and hides it. Lamps go on stands."
     }
-  ]
+  ],
+  "PARABLES_NOTE": "Each parable's 'cover' is the short line printed on its shelf cover: 64 characters at most, never cut off. 'line' is the longer description used on the parable page."
 }

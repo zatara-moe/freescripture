@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FBF7F0",
+  themeColor: "#F0EFEA",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -50,12 +50,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;700;800&family=Literata:opsz,wght@7..72,400;7..72,700&family=Lexend:wght@400;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:opsz,wght@7..72,400;7..72,700&family=Lexend:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=31" />
+        <link rel="stylesheet" href="/static/css/site.css?v=36" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#FBF7F0" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#F0EFEA" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#1A1814" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -111,16 +111,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site-header">
           <div className="site-header__inner">
             <Link className="site-mark" href="/">
-              <svg className="site-mark__icon" width="32" height="22" viewBox="0 0 32 22" fill="none" aria-hidden="true">
-                <path d="M16 2Q16 0 14 0L2 0Q0 0 0 2L0 22Q7 20 16 21" fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M16 2Q16 0 18 0L30 0Q32 0 32 2L32 22Q25 20 16 21" fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                <line x1="4" y1="6" x2="12.5" y2="6" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-                <line x1="4" y1="10" x2="11.5" y2="10" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-                <line x1="4" y1="14" x2="10.5" y2="14" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-                <line x1="19.5" y1="6" x2="28" y2="6" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-                <line x1="19.5" y1="10" x2="27" y2="10" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-                <line x1="19.5" y1="14" x2="26" y2="14" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-              </svg>
+              <span className="site-mark__fs" aria-hidden="true">
+                <svg width="22" height="16" viewBox="0 0 26 20" fill="none" aria-hidden="true">
+                  <path d="M13 3C11 1.5 8 0.5 5 0.5C3.5 0.5 2 0.8 1 1.3V16.5C2 16 3.5 15.7 5 15.7C8 15.7 11 16.7 13 18.5C15 16.7 18 15.7 21 15.7C22.5 15.7 24 16 25 16.5V1.3C24 0.8 22.5 0.5 21 0.5C18 0.5 15 1.5 13 3Z" fill="currentColor" />
+                  <line x1="13" y1="3" x2="13" y2="18.5" stroke="var(--gold)" strokeWidth="1" />
+                  <line x1="16" y1="7" x2="22" y2="7" stroke="var(--gold)" strokeWidth="1" opacity="0.35" />
+                  <line x1="16" y1="10" x2="21" y2="10" stroke="var(--gold)" strokeWidth="1" opacity="0.35" />
+                  <line x1="16" y1="13" x2="20" y2="13" stroke="var(--gold)" strokeWidth="1" opacity="0.35" />
+                </svg>
+              </span>
               <span className="site-mark__text">Free Scripture</span>
             </Link>
             <SiteNav />
@@ -210,7 +209,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <button type="button" data-tip-close aria-label="Dismiss">&times;</button>
         </div>
 
-        <script src="/static/js/shortcuts.js?v=1" defer></script>
+        <script src="/static/js/shortcuts.js?v=2" defer></script>
 
         <script src="/static/js/reading-prefs.js?v=12" defer></script>
         <script dangerouslySetInnerHTML={{ __html: `

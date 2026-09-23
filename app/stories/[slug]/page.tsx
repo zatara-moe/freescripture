@@ -2,11 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/bible";
-import { STORIES, storyBySlug } from "@/lib/stories";
+import { STORIES, storyBySlug, isBuilt, isIndexed, isReadable, siblings, compareHref, LENSES } from "@/lib/stories";
 import { loadStory, type Block, type Box } from "@/lib/story";
 
 export function generateStaticParams() {
-  return STORIES.filter((s) => s.file).map((s) => ({ slug: s.slug }));
+  return STORIES.filter(isBuilt).map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description,
     alternates: { canonical: `${SITE_URL}/stories/${s.slug}/` },
     openGraph: { title: `${title} | Scene by Scene`, description, url: `${SITE_URL}/stories/${s.slug}/`, type: "article" },
-    robots: s.ready ? { index: true, follow: true } : { index: false, follow: false },
+    robots: isIndexed(s) ? { index: true, follow: true } : { index: false, follow: isReadable(s) },
   };
 }
 
@@ -39,7 +39,7 @@ function plain(html: string) {
   return html.replace(/<[^>]+>/g, "");
 }
 
-function renderBlock(b: Block, i: number, box: Box, extra: { passageHref?: string; bsbHref?: string; ref: string }) {
+function renderBlock(b: Block, i: number, box: Box, extra: { passageHref?: string; bsbHref?: string; compare?: string; ref: string }) {
   switch (b.type) {
     case "scene":
       return (
@@ -60,6 +60,12 @@ function renderBlock(b: Block, i: number, box: Box, extra: { passageHref?: strin
               <Link className="story-passage__link" href={extra.passageHref}>
                 <span className="story-passage__title">Read {extra.ref}</span>
                 <span className="story-passage__sub">Read it on Free Scripture, in three translations</span>
+              </Link>
+            )}
+            {extra.compare && (
+              <Link className="story-passage__link" href={extra.compare}>
+                <span className="story-passage__title">Read it side by side</span>
+                <span className="story-passage__sub">This retelling next to the Bible text, scene by scene</span>
               </Link>
             )}
             {extra.bsbHref && (
@@ -138,15 +144,18 @@ function BoxView({ box, extra }: { box: Box; extra: any }) {
 export default async function StoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const entry = storyBySlug(slug);
-  if (!entry || !entry.file) notFound();
+  if (!entry || !isBuilt(entry)) notFound();
   const story = loadStory(slug);
   if (!story) notFound();
 
   const minutes = Math.max(1, Math.round(story.words / 200));
   const passageHref = entry.passage ? `/web/${entry.passage.book}/${entry.passage.chapter}/` : undefined;
   const bsbHref = entry.passage ? `https://biblehub.com/bsb/${entry.passage.book.replace(/-/g, "_")}/${entry.passage.chapter}.htm` : undefined;
-  const extra = { passageHref, bsbHref, ref: entry.ref };
-  const shelf = STORIES.filter((s) => s.file && (s.ready || s.slug === slug));
+  const compare = entry.passage ? compareHref(entry) : undefined;
+  const extra = { passageHref, bsbHref, compare, ref: entry.ref };
+  const others = siblings(entry);
+  const lastPayload = JSON.stringify({ url: `/stories/${entry.slug}/`, label: entry.title });
+  const shelf = STORIES.filter((s) => isReadable(s) || s.slug === slug);
   const idx = shelf.findIndex((s) => s.slug === slug);
   const prev = idx > 0 ? shelf[idx - 1] : null;
   const next = idx >= 0 && idx < shelf.length - 1 ? shelf[idx + 1] : null;
@@ -168,8 +177,22 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
             {story.scenes > 0 && <span>{story.scenes} scenes</span>}
             <span>About {minutes} min</span>
           </div>
-          {!entry.ready && (
-            <p className="story-preview-note">Preview. This story is waiting for final review and isn&rsquo;t listed yet.</p>
+          {entry.status === "early" && (
+            <p className="story-preview-note">
+              {isReadable(entry)
+                ? "Early edition. A Lutheran pastor is still reviewing this story, so small changes may come."
+                : "Preview. This story is waiting for final review and isn\u2019t listed yet."}
+            </p>
+          )}
+          {others.length > 0 && (
+            <div className="story-versions" aria-label="Other versions of this story">
+              <span className="story-versions__label">Also available:</span>
+              {others.map((o) => (
+                <Link key={o.slug} className="chip" href={`/stories/${o.slug}/`}>
+                  {o.lens === entry.lens ? `Ages ${o.level}` : `${LENSES[o.lens].name}, ${o.level}`}
+                </Link>
+              ))}
+            </div>
           )}
         </header>
 
@@ -189,6 +212,12 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 7h11" /><path d="M4 12h16" /><path d="M4 17h7" /><circle cx="18" cy="7" r="2" /><circle cx="13" cy="17" r="2" /></svg>
             <span>Display</span>
           </button>
+          {compare && (
+            <Link className="reading-settings-btn story-tools__cmp" href={compare}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.5" /><rect x="13.5" y="4" width="7.5" height="16" rx="1.5" /></svg>
+              <span>Side by side</span>
+            </Link>
+          )}
           <span className="story-tools__note">Narration by a real reader is coming. Listen uses your device&rsquo;s voice for now.</span>
         </div>
 
@@ -260,6 +289,9 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
       <script src="/static/js/chapter.js?v=9" defer></script>
       <script src="/static/js/pages.js?v=2" defer></script>
       <script dangerouslySetInnerHTML={{ __html: `window.addEventListener('beforeprint',function(){document.querySelectorAll('details.zone').forEach(function(d){d.open=true;});});` }} />
+      {isReadable(entry) && (
+        <script dangerouslySetInnerHTML={{ __html: `try{localStorage.setItem('fs-last',JSON.stringify(${lastPayload}));}catch(e){}` }} />
+      )}
     </>
   );
 }

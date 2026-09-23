@@ -136,3 +136,60 @@ export function loadStory(slug: string): Story | null {
   }
   return { zones, bigIdea, words, scenes };
 }
+
+/* ------------------------------------------------------------------
+   Scenes with verse ranges, for side-by-side reading.
+   The verse range for each scene comes from the story's own
+   "Map of the Story" table (Scene | Verses | What happens), so writers
+   only record it once. Ranges look like "17:1–3", "17:4", or "1:17–2:10".
+   ------------------------------------------------------------------ */
+export interface SceneRange { startCh: number; startV: number; endCh: number; endV: number }
+export interface Scene { num: number; title: string; html: string; range: SceneRange | null }
+
+function parseRange(cell: string): SceneRange | null {
+  const t = cell.replace(/<[^>]+>/g, "").replace(/\s+/g, "").replace(/[–—]/g, "-");
+  const m = t.match(/^(\d+):(\d+)(?:-(?:(\d+):)?(\d+))?$/);
+  if (!m) return null;
+  const startCh = +m[1], startV = +m[2];
+  const endCh = m[3] ? +m[3] : startCh;
+  const endV = m[4] ? +m[4] : startV;
+  return { startCh, startV, endCh, endV };
+}
+
+function blockHtml(b: Block): string {
+  switch (b.type) {
+    case "p": case "key": case "label": return `<p>${b.html}</p>`;
+    case "ul": return `<ul>${b.items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+    case "quote": return `<blockquote>${b.lines.join("<br>")}</blockquote>`;
+    case "imagine": return `<aside class="cmp-imagine"><strong>${b.label.replace(/<\/?em>/g, "")}</strong> ${b.html}</aside>`;
+    default: return "";
+  }
+}
+
+export function loadScenes(slug: string): Scene[] {
+  const story = loadStory(slug);
+  if (!story) return [];
+  const boxes = story.zones.flatMap((z) => z.boxes);
+  const ranges = new Map<number, SceneRange>();
+  const map = boxes.find((b) => b.id.startsWith("map-of-the"));
+  const table = map?.blocks.find((b) => b.type === "table") as Extract<Block, { type: "table" }> | undefined;
+  if (table) {
+    for (const row of table.rows) {
+      const n = row[0]?.replace(/<[^>]+>/g, "").match(/^(\d+)\./);
+      const r = row[1] ? parseRange(row[1]) : null;
+      if (n && r) ranges.set(+n[1], r);
+    }
+  }
+  const retell = boxes.find((b) => b.id === "plain-retelling");
+  const scenes: Scene[] = [];
+  let cur: Scene | null = null;
+  for (const b of retell?.blocks || []) {
+    if (b.type === "scene") {
+      cur = { num: b.num, title: b.title, html: "", range: ranges.get(b.num) || null };
+      scenes.push(cur);
+    } else if (cur) {
+      cur.html += blockHtml(b);
+    }
+  }
+  return scenes;
+}
