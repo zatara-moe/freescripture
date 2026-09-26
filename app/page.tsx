@@ -1,14 +1,24 @@
 import { NEEDS, PARABLES } from "@/lib/bible";
-import { PATHS, pathsData } from "@/lib/paths";
-import { readableStories, storyMinutes, FEELINGS, nw } from "@/lib/stories";
+import { PATHS, pathsData, pathMinutes } from "@/lib/paths";
+import { readableStories, storyMinutes, catalog, nw } from "@/lib/stories";
 import { loadStory } from "@/lib/story";
+import { PARTS } from "@/lib/timeline";
+import { Bands } from "@/lib/TimelineBands";
 
 /* Home: an overview, not a set of doors.
-   It answers three questions, in this order:
-     1. What should I do next?    (returning readers, filled in by learn.js)
+   It answers, in this order:
+     1. What should I do next?     (returning readers, filled in by learn.js)
      2. I'm new. Where do I start? (one story, with what will happen)
-     3. What's on this site?      (everything, with counts and what opens)
-   Then a shortcut into Stories by feeling. */
+     3. What does it look like?    (a shelf of stories people already know)
+     4. How does it all fit?       (the timeline, then reading paths)
+     5. What else is here?         (every area, with counts and where it goes)
+   Every link says where it goes, so nothing on the next page is a surprise.
+   Feeling filters stay inside Filters on the Stories page, not here. */
+
+/* Stories most people already know, in Bible order. */
+const FAMILIAR = ["noahs-ark", "david-and-goliath", "jonah", "the-birth-of-jesus", "the-prodigal-son", "the-resurrection"];
+/* Three short paths that suit a first visit. */
+const START_PATHS = ["who-is-jesus", "christmas", "holy-week"];
 
 export default function Home() {
   const ready = readableStories();
@@ -19,12 +29,15 @@ export default function Home() {
   const firstStats = first ? loadStory(first.slug) : null;
   const unit = "scenes";
 
+  const cat = catalog();
+  const shelf = FAMILIAR.map((slug) => cat.find((c) => c.id === `story-${slug}`)).filter(Boolean) as ReturnType<typeof catalog>;
+  const paths = START_PATHS.map((slug) => PATHS.find((p) => p.slug === slug)).filter(Boolean) as typeof PATHS;
+  const storyCount = ready.length;
+
   const areas = [
-    { href: "/stories/?kind=Story,Teaching", title: "Bible stories", count: "New stories added often", line: "Explained scene by scene, with the verse beside each paragraph.", opens: "Opens the Stories list" },
-    { href: "/stories/#paths", title: "Reading paths", count: `${PATHS.length} paths`, line: PATHS.map((pp) => `"${pp.title}"`).join(" and ") + ". A few stories in order, one step at a time.", opens: "Opens the Stories list" },
-    { href: "/timeline/", title: "Bible timeline", count: "4 parts", line: "The whole Bible story in time order, drawn to scale, with where each story fits.", opens: "Opens the timeline" },
-    { href: "/stories/?kind=Parable", title: "Parables of Jesus", count: `${PARABLES.length}`, line: "Short stories Jesus told, with the surprising point.", opens: "Opens the Stories list" },
-    { href: "/stories/?kind=Verses", title: "Verses for how you feel", count: `${NEEDS.length} topics`, line: "A few verses about one feeling. Easy to send to a friend.", opens: "Opens the Stories list" },
+    { href: "/stories/", title: "Bible stories", count: `${storyCount} stories`, line: "Explained scene by scene, with the verse beside each paragraph.", opens: "Opens the Stories list" },
+    { href: "/parables/", title: "Parables of Jesus", count: `${PARABLES.length} parables`, line: "Short stories Jesus told, sorted by what they are about.", opens: "Opens Parables" },
+    { href: "/read/", title: "Verses for how you feel", count: `${NEEDS.length} topics`, line: "A few verses for a hard day or a good one. Easy to send to a friend.", opens: "Opens Verses for how you feel" },
     { href: "/bsb/", title: "Full Bible", count: "66 books", line: "The actual text, word for word, in 4 free translations.", opens: "Opens Full Bible" },
     { href: "/memorize/", title: "Memorize", count: "Your lines", line: "Lines you are learning by heart, and when to practice next.", opens: "Opens Memorize" },
     { href: "/search/", title: "Search", count: "Stories and verses", line: "Find a story, a person, or a verse like John 3:16.", opens: "Opens Search" },
@@ -61,10 +74,75 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="home4-section" aria-labelledby="shelf-title">
+        <div className="home4-head">
+          <h2 className="home4-h2" id="shelf-title">{nw("Stories you may already know")}</h2>
+          <a className="home4-more" href="/stories/">See all {storyCount} stories</a>
+        </div>
+        <div className="home-shelf">
+          <ul className="shelf2__row home-shelf__row">
+            {shelf.map((c) => (
+              <li key={c.id}>
+                <a className={`cover2 cover2--${c.kind.toLowerCase()}`} href={c.href}>
+                  <span className="cover2__spine" aria-hidden="true"></span>
+                  <span className="cover2__body">
+                    <span className="cover2__top"><span className="cover2__kind">{c.kind}</span></span>
+                    <span className="cover2__rule" aria-hidden="true"></span>
+                    <span className="cover2__title">{c.title}</span>
+                    <span className="cover2__sub">{c.subtitle}</span>
+                    <span className="cover2__time">{c.minutes ? `About ${c.minutes} min` : ""}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="shelf2__ledge" aria-hidden="true"></div>
+        </div>
+        <p className="home4-note home-shelf__hint">Each cover opens that story. Slide the row to see more.</p>
+      </section>
+
+      <section className="home4-section" aria-labelledby="tl-title">
+        <a className="home-tl" href="/timeline/">
+          <span className="home-tl__kicker">Bible timeline</span>
+          <span className="home-tl__title" id="tl-title">{nw("The whole Bible story, in 4 parts")}</span>
+          <Bands />
+          <span className="home-tl__parts">
+            {PARTS.map((p) => (
+              <span className={`home-tl__part tl-t${p.n}`} key={p.n}>
+                <span className="home-tl__n">Part {p.n}</span>
+                <span className="home-tl__name">{p.name}</span>
+                <span className="home-tl__years">{p.years}</span>
+              </span>
+            ))}
+          </span>
+          <span className="area__opens">Opens the timeline. Every story shows where it fits.</span>
+        </a>
+      </section>
+
+      <section className="home4-section" aria-labelledby="paths-title">
+        <div className="home4-head">
+          <h2 className="home4-h2" id="paths-title">Reading paths</h2>
+          <a className="home4-more" href="/stories/#paths">See all {PATHS.length} paths</a>
+        </div>
+        <p className="home4-note home4-note--under">A few stories in order, one step at a time. Your progress is saved on this device.</p>
+        <ul className="area-grid">
+          {paths.map((p) => (
+            <li key={p.slug}>
+              <a className="area" href={`/paths/${p.slug}/`}>
+                <span className="area__count">{p.steps.length} stories · About {pathMinutes(p)} min</span>
+                <span className="area__title">{nw(p.title)}</span>
+                <span className="area__line">{p.question}</span>
+                <span className="area__opens">Opens the reading path</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section className="home4-section" aria-labelledby="all-title">
         <div className="home4-head">
           <h2 className="home4-h2" id="all-title">Everything on Free Scripture</h2>
-          <p className="home4-note">Each one says what it opens. Nothing starts until you pick.</p>
+          <p className="home4-note">Each card says where it goes.</p>
         </div>
         <ul className="area-grid">
           {areas.map((a) => (
@@ -77,19 +155,6 @@ export default function Home() {
               </a>
             </li>
           ))}
-        </ul>
-      </section>
-
-      <section className="home4-section" aria-labelledby="feel-title">
-        <div className="home4-head">
-          <h2 className="home4-h2" id="feel-title">Find something for how you feel</h2>
-          <p className="home4-note">Opens the Stories list, already filtered. You can change it there.</p>
-        </div>
-        <ul className="feel-chips">
-          {FEELINGS.map((f) => (
-            <li key={f.slug}><a className="feel-chip" href={`/stories/?feel=${f.slug}`}>{f.label}</a></li>
-          ))}
-          <li><a className="feel-chip feel-chip--plain" href="/stories/">Just curious</a></li>
         </ul>
       </section>
 

@@ -3,7 +3,7 @@ import { PARABLES, PARABLE_THEMES, SITE_URL } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
 
 export const metadata: Metadata = {
-  title: "The Parables of Jesus | Free Scripture",
+  title: "The Parables of Jesus",
   description:
     "Every parable Jesus told, sorted by what it is about rather than where it falls in the book. The Prodigal Son, the Good Samaritan, the Sower, and 34 more.",
   alternates: { canonical: `${SITE_URL}/parables/` },
@@ -62,7 +62,7 @@ export default function ParablesIndex() {
           type="search"
           id="parable-search"
           className="parable-filter__input"
-          placeholder="Find a parable by name, theme, or what happens"
+          placeholder="Find a parable, like lost sheep"
           aria-label="Filter parables"
           autoComplete="off"
         />

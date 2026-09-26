@@ -3290,3 +3290,44 @@ a.trans-list__item:hover { background: var(--paper-warm); }
   .rail-card__line { display: none; }
 }
 .rail details.chapter-context { width: 100%; max-width: none; }
+
+/* ================= HOME: shelf, timeline, paths (Sept 2026) ================= */
+.home4-more { font-family: var(--font-ui); font-size: 16px; font-weight: 600; color: var(--gold-deep); text-decoration: none; white-space: nowrap; }
+.home4-more::after { content: " \2192"; }
+.home4-more:hover { text-decoration: underline; }
+@media (min-width: 600px) { .home4-head:has(.home4-more) { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 16px; } }
+.home4-note--under { margin: -8px 0 16px; }
+.home-shelf { margin: 0 -20px; }
+.home-shelf .shelf2__ledge { margin: 0 12px; }
+.home-shelf__hint { margin-top: 12px; font-size: 15px; }
+@media (min-width: 900px) { .home-shelf { margin: 0; } .home-shelf .shelf2__ledge { margin: 0; } }
+@media (min-width: 1000px) {
+  .home-shelf__row { justify-content: space-between; overflow: visible; padding: 10px 4px 2px; }
+  .home-shelf__row .cover2 { width: 136px; }
+  .home-shelf__hint { display: none; }
+}
+@media (min-width: 1200px) { .home-shelf__row .cover2 { width: 160px; } }
+
+.home-tl { display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: 18px; background: var(--white); box-shadow: var(--card-shadow); text-decoration: none; color: var(--ink); }
+@media (min-width: 900px) { .home-tl { padding: 24px 28px; } }
+.home-tl:hover { box-shadow: var(--card-shadow-hover); }
+.home-tl__kicker { font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--gold); }
+.home-tl__title { font-family: var(--font-ui); font-weight: 600; font-size: clamp(21px, 3vw, 26px); letter-spacing: -0.02em; line-height: 1.2; }
+.home-tl .tl-band { height: 14px; border-radius: 7px; overflow: hidden; }
+.home-tl__parts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; }
+@media (min-width: 760px) { .home-tl__parts { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.home-tl__part { display: flex; flex-direction: column; gap: 1px; padding-left: 10px; border-left: 4px solid var(--tl-tint); }
+.home-tl__n { font-family: var(--font-ui); font-size: 12px; font-weight: 600; color: var(--ink-hint); }
+.home-tl__name { font-family: var(--font-ui); font-size: 16px; font-weight: 600; line-height: 1.25; }
+.home-tl__years { font-family: var(--font-body); font-size: 14px; color: var(--ink-faded); }
+.parable-story { display: flex; flex-direction: column; gap: 4px; margin: 16px 0 8px; padding: 16px 44px 16px 18px; position: relative; border-radius: 14px; background: var(--white); box-shadow: var(--card-shadow); border-left: 6px solid var(--spine-parable, #3B574B); text-decoration: none; color: var(--ink); }
+.parable-story::after { content: ""; position: absolute; right: 18px; top: 50%; width: 9px; height: 9px; border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: translateY(-50%) rotate(-45deg); }
+.parable-story:hover { box-shadow: var(--card-shadow-hover); }
+.parable-story__kicker { font-family: var(--font-ui); font-size: 13px; font-weight: 600; color: var(--gold); }
+.parable-story__title { font-family: var(--font-ui); font-size: 18px; font-weight: 600; }
+.parable-story__line { font-family: var(--font-body); font-size: 15px; line-height: 1.45; color: var(--ink-faded); }
+.parable-story__opens { font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--ink-soft); }
+.search-try { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 14px; font-family: var(--font-ui); font-size: 14px; color: var(--ink-hint); }
+.search-try a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--ledge, var(--rule)); background: var(--white); color: var(--ink); text-decoration: none; font-weight: 500; }
+.search-try a:hover { border-color: var(--gold); color: var(--gold-deep); }
+.search-box .search-trans { margin: 4px 0 0; }

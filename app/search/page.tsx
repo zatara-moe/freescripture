@@ -18,8 +18,23 @@ export default function Search() {
       </header>
 
       <div className="search-box">
+        <input
+          id="search-input"
+          className="search-input"
+          type="search"
+          placeholder="A story, a person, or a verse"
+          aria-label="Search stories, people, and verses"
+          autoComplete="off"
+          suppressHydrationWarning
+        />
+        <p className="search-try">
+          <span>Try:</span>
+          {["The Prodigal Son", "Noah's Ark", "Psalm 23", "Peter", "John 3:16", "Love is patient"].map((t) => (
+            <a key={t} href={`/search/?q=${encodeURIComponent(t)}`}>{t}</a>
+          ))}
+        </p>
         <label className="search-trans">
-          <span>Translation</span>
+          <span>Verses from</span>
           <select id="search-trans" defaultValue="bsb">
             <option value="bsb">Berean Standard Bible</option>
             <option value="web">World English Bible</option>
@@ -27,15 +42,6 @@ export default function Search() {
             <option value="bbe">Bible in Basic English</option>
           </select>
         </label>
-        <input
-          id="search-input"
-          className="search-input"
-          type="search"
-          placeholder="Try: prodigal son, Nicodemus, John 3:16"
-          aria-label="Search stories, people, and verses"
-          autoComplete="off"
-          suppressHydrationWarning
-        />
       </div>
 
       <div id="search-shortcuts" className="search-shortcuts" aria-live="polite" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: "" }} />
@@ -43,7 +49,7 @@ export default function Search() {
       <div id="search-results" className="search-results" aria-live="polite" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: "" }} />
 
       <script id="search-catalog" type="application/json" dangerouslySetInnerHTML={{ __html: JSON.stringify(searchCatalog()).replace(/</g, "\\u003c") }} />
-      <script src="/static/js/search.js?v=9" defer></script>
+      <script src="/static/js/search.js?v=10" defer></script>
     </div>
   );
 }

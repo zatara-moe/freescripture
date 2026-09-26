@@ -210,7 +210,7 @@ export default async function ChapterPage(
           <div className="rail__group rail__trans" role="group" aria-label="Translation">
             <p className="rail__label">Translation</p>
             <ul className="trans-list">
-              {TRANS_ORDER.map((t) => (
+              {TRANS_ORDER.filter((t) => t === trans || loadChapter(t, book, num)).map((t) => (
                 <li key={t}>
                   {t === trans ? (
                     <span className="trans-list__item is-on" aria-current="page">
@@ -232,7 +232,7 @@ export default async function ChapterPage(
             <details className="trans-menu">
               <summary className="rail-btn">Translation: {tmeta.nick} <span className="trans-list__abbr">{tmeta.short}</span></summary>
               <ul className="trans-menu__list">
-                {TRANS_ORDER.map((t) => (
+                {TRANS_ORDER.filter((t) => t === trans || loadChapter(t, book, num)).map((t) => (
                   <li key={t}>
                     {t === trans ? (
                       <span className="trans-list__item is-on" aria-current="page"><span className="trans-list__check" aria-hidden="true">✓</span>{TRANSLATIONS[t].nick} <span className="trans-list__abbr">{TRANSLATIONS[t].short}</span></span>

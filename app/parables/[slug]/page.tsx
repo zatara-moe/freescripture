@@ -10,6 +10,7 @@ import {
   SITE_URL,
 } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
+import { STORIES, isReadable, storyHref, storyMinutes } from "@/lib/stories";
 
 type Params = { slug: string };
 
@@ -19,6 +20,13 @@ export function generateStaticParams() {
 
 function find(slug: string) {
   return PARABLES.find((p: any) => p.slug === slug) || null;
+}
+
+/* A parable that also has a full Scene by Scene story links to it. */
+const STORY_FOR: Record<string, string> = { "lost-coin": "lost-sheep" };
+function storyFor(slug: string) {
+  const key = STORY_FOR[slug] || slug;
+  return STORIES.find((s) => s.parable === key && isReadable(s)) || null;
 }
 
 function refLabel(ref: any[]) {
@@ -59,6 +67,7 @@ export default async function ParablePage({
   const { slug } = await params;
   const p = find(slug);
   if (!p) notFound();
+  const story = storyFor(slug);
 
   const theme = PARABLE_THEMES.find((t: any) => t.slug === p.theme);
   const [book, ch, sv, ev] = p.ref;
@@ -112,6 +121,15 @@ export default async function ParablePage({
         )}
         <p className="parable-line">{p.line}</p>
       </header>
+
+      {story && (
+        <a className="parable-story" href={storyHref(story)}>
+          <span className="parable-story__kicker">Also told scene by scene</span>
+          <span className="parable-story__title">{story.title}</span>
+          <span className="parable-story__line">Plain words, what it means, and what it means for you. About {storyMinutes(story.slug)} min.</span>
+          <span className="parable-story__opens">Opens the story</span>
+        </a>
+      )}
 
       {/* The hinge — what the parable turns on. A pointer, not a sermon. */}
       {p.turn && (

@@ -112,7 +112,7 @@ export default async function BookLanding(
         <span className="trans-switch__label">
           Reading the {tmeta.label}. Other versions:
         </span>
-        {TRANS_ORDER.map((t) =>
+        {TRANS_ORDER.filter((t) => t === trans || bookNameFromSlug(t, book)).map((t) =>
           t === trans ? (
             <span key={t} className="trans-switch__btn trans-switch__btn--current" aria-current="page">
               {tmeta.short}

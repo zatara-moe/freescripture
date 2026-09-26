@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) return {};
   const description = `${p.question} Bible stories in plain words, one step at a time. Free, no account.`;
   return {
-    title: `${p.title} A reading path`,
+    title: `${p.title}: a reading path`,
     description,
     alternates: { canonical: `${SITE_URL}/paths/${p.slug}/` },
     robots: { index: false, follow: true },
