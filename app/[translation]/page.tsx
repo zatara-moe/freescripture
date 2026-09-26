@@ -12,6 +12,7 @@ import {
   type TransSlug,
 } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
+import { readableStories } from "@/lib/stories";
 
 type Params = { translation: string };
 
@@ -42,20 +43,31 @@ export default async function TranslationLanding(
   const tmeta = TRANSLATIONS[trans];
   if (!tmeta) notFound();
 
-  const present = new Set(booksForTranslation(trans).map((b) => b.name));
-  const slugByName = new Map(booksForTranslation(trans).map((b) => [b.name, b.slug]));
+  const list = booksForTranslation(trans);
+  const bySlug = new Map(list.map((b) => [b.name, b]));
 
-  // group books in canonical order by their section label
-  const sections: { label: string; books: string[] }[] = [];
-  for (const [name, , group] of BOOK_ORDER) {
-    if (!present.has(name)) continue;
-    let sec = sections.find((s) => s.label === group);
-    if (!sec) {
-      sec = { label: group, books: [] };
-      sections.push(sec);
+  /* Old Testament, New Testament, then the Apocrypha (King James only).
+     Inside each, books keep their usual groups in Bible order. */
+  const TESTAMENTS: { id: string; label: string; note?: string }[] = [
+    { id: "ot", label: "Old Testament" },
+    { id: "nt", label: "New Testament" },
+    { id: "ap", label: "Apocrypha", note: "Books from between the Old and New Testaments. Lutherans read them as useful and good, but not equal to Scripture." },
+  ];
+  const parts = TESTAMENTS.map((t) => {
+    const groups: { label: string; books: string[] }[] = [];
+    for (const [name, test, group] of BOOK_ORDER) {
+      if (test !== t.id || !bySlug.has(name)) continue;
+      let g = groups.find((x) => x.label === group);
+      if (!g) { g = { label: group, books: [] }; groups.push(g); }
+      g.books.push(name);
     }
-    sec.books.push(name);
-  }
+    return { ...t, groups, count: groups.reduce((n, g) => n + g.books.length, 0) };
+  }).filter((t) => t.count > 0);
+
+  /* How many Scene by Scene stories come from each book. */
+  const storyCount = new Map<string, number>();
+  for (const st of readableStories()) storyCount.set(st.passage.book, (storyCount.get(st.passage.book) || 0) + 1);
+  const idOf = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
   const jsonld = {
     "@context": "https://schema.org",
@@ -83,61 +95,67 @@ export default async function TranslationLanding(
   };
 
   return (
-    <div className="trans-landing">
+    <div className="bible-home">
       <JsonLd data={jsonld} />
-      <header className="trans-landing__head">
-        <h1 className="trans-landing__title">{tmeta.label}</h1>
-        <p className="trans-landing__desc">{tmeta.description}</p>
-        <div className="trans-switch" aria-label="Switch translation">
-          <span className="trans-switch__label">Other versions:</span>
-          {TRANS_ORDER.filter((t) => t !== trans).map((t) => (
-            <a key={t} className="trans-switch__btn" href={`/${t}/`}>
-              {TRANSLATIONS[t].short}
-            </a>
-          ))}
+      <header className="bible-home__head">
+        <p className="bible-home__kicker">Full Bible</p>
+        <h1 className="bible-home__title">{tmeta.label}</h1>
+        <p className="bible-home__desc">{tmeta.description}</p>
+        <div className="bible-vers" role="group" aria-label="Choose a translation">
+          <span className="bible-vers__label">Translation:</span>
+          {TRANS_ORDER.map((t) =>
+            t === trans ? (
+              <span key={t} className="bible-vers__btn is-on" aria-current="page">{TRANSLATIONS[t].nick} <abbr>{TRANSLATIONS[t].short}</abbr></span>
+            ) : (
+              <a key={t} className="bible-vers__btn" href={`/${t}/`} title={`${TRANSLATIONS[t].label}: ${TRANSLATIONS[t].plain}`}>{TRANSLATIONS[t].nick} <abbr>{TRANSLATIONS[t].short}</abbr></a>
+            )
+          )}
         </div>
       </header>
 
-      <nav className="jump-bar" aria-label="Jump to a section">
-        {sections.map((sec) => (
-          <a key={sec.label} href={`#${sec.label.toLowerCase().replace(/\s+/g, "-")}`}>{sec.label}</a>
+      <nav className="bible-jump" aria-label="Jump to a part of the Bible">
+        {parts.map((t) => (
+          <div className="bible-jump__row" key={t.id}>
+            <a className="bible-jump__test" href={`#${t.id}`}>{t.label}</a>
+            {t.groups.map((g) => (
+              <a key={g.label} href={`#${idOf(g.label)}`}>{g.label}</a>
+            ))}
+          </div>
         ))}
       </nav>
 
-      {sections.map((sec) => (
-        <section
-          className="book-section"
-          key={sec.label}
-          id={sec.label.toLowerCase().replace(/\s+/g, "-")}
-        >
-          <h2 className="book-section-label">{sec.label}</h2>
-          <div className="book-grid">
-            {sec.books.map((name) => {
-              const slug = slugByName.get(name)!;
-              const full = BOOK_PITCHES[name] || BOOK_INTROS[name] || "";
-              const m = full.match(/^.+?[.!?](?=\s|$)/);
-              const desc = m ? m[0] : full;
-              const genre = GENRE_OF[name] || "";
-              return (
-                <a
-                  className="bookrow"
-                  href={`/${trans}/${slug}/`}
-                  key={name}
-                  style={
-                    genre
-                      ? ({ ["--rowc" as any]: `var(--g-${genre})` } as React.CSSProperties)
-                      : undefined
-                  }
-                >
-                  <span className="bookrow__main">
-                    <span className="bookrow__t">{name}</span>
-                    {desc && <span className="bookrow__d">{desc}</span>}
-                  </span>
-                  <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </a>
-              );
-            })}
-          </div>
+      {parts.map((t) => (
+        <section className="bible-test" id={t.id} key={t.id} aria-labelledby={`${t.id}-title`}>
+          <h2 className="bible-test__title" id={`${t.id}-title`}>{t.label} <span>{t.count} books</span></h2>
+          {t.note && <p className="bible-test__note">{t.note}</p>}
+          {t.groups.map((g) => (
+            <section className="book-section" id={idOf(g.label)} key={g.label}>
+              <h3 className="bible-group">{g.label}</h3>
+              <ul className="bible-books">
+                {g.books.map((name) => {
+                  const b = bySlug.get(name)!;
+                  const full = BOOK_PITCHES[name] || BOOK_INTROS[name] || "";
+                  const m = full.match(/^.+?[.!?](?=\s|$)/);
+                  const desc = m ? m[0] : full;
+                  const genre = GENRE_OF[name] || "";
+                  const n = storyCount.get(b.slug) || 0;
+                  const ch = b.chapters.length;
+                  return (
+                    <li key={name}>
+                      <a className="bible-book" href={`/${trans}/${b.slug}/`} style={genre ? ({ ["--rowc" as any]: `var(--g-${genre})` } as React.CSSProperties) : undefined}>
+                        <span className="bible-book__name">{name}</span>
+                        {desc && <span className="bible-book__desc">{desc}</span>}
+                        <span className="bible-book__meta">
+                          {ch} {ch === 1 ? "chapter" : "chapters"}
+                          {n > 0 && <span className="bible-book__stories">{n} {n === 1 ? "story" : "stories"}</span>}
+                        </span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          ))}
         </section>
       ))}
     </div>

@@ -564,7 +564,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
       <script type="application/json" id="story-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />
       <script src="/static/js/chapter.js?v=9" defer></script>
-      <script src="/static/js/learn.js?v=4" defer></script>
+      <script src="/static/js/learn.js?v=5" defer></script>
       <script dangerouslySetInnerHTML={{ __html: `window.addEventListener('beforeprint',function(){document.documentElement.classList.add('printing');document.querySelectorAll('details').forEach(function(d){d.open=true;});});` }} />
     </>
   );

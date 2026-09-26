@@ -39,7 +39,7 @@ export default function Home() {
     { href: "/parables/", title: "Parables of Jesus", count: `${PARABLES.length} parables`, line: "Short stories Jesus told, sorted by what they are about.", opens: "Opens Parables" },
     { href: "/read/", title: "Verses for how you feel", count: `${NEEDS.length} topics`, line: "A few verses for a hard day or a good one. Easy to send to a friend.", opens: "Opens Verses for how you feel" },
     { href: "/bsb/", title: "Full Bible", count: "66 books", line: "The actual text, word for word, in 4 free translations.", opens: "Opens Full Bible" },
-    { href: "/memorize/", title: "Memorize", count: "Your lines", line: "Lines you are learning by heart, and when to practice next.", opens: "Opens Memorize" },
+    { href: "/memorize/", title: "Memorize", count: `${ready.filter((s) => s.memorize).length} lines`, line: "Learn one Bible line at a time. Practice it right on the page.", opens: "Opens Memorize" },
     { href: "/search/", title: "Search", count: "Stories and verses", line: "Find a story, a person, or a verse like John 3:16.", opens: "Opens Search" },
   ];
 
@@ -167,7 +167,7 @@ export default function Home() {
         </a>
       </section>
       <script type="application/json" id="paths-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(pathsData()).replace(/</g, "\\u003c") }} />
-      <script src="/static/js/learn.js?v=4" defer></script>
+      <script src="/static/js/learn.js?v=5" defer></script>
     </div>
   );
 }

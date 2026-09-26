@@ -276,7 +276,7 @@ export default async function ChapterPage(
           {chapterStories.map((st) => {
             const min = isReadable(st) ? storyMinutes(st.slug) : null;
             return (
-              <div className="chapter-story rail-card" key={st.slug}>
+              <div className="chapter-story rail-card rail-card--in-rail" key={st.slug}>
                 <p className="rail-card__kicker">
                   {st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story"} · {st.ref}{min ? ` · About ${min} min` : ""}
                   {st.status === "early" && <span className="badge badge--new">New</span>}
@@ -416,6 +416,29 @@ export default async function ChapterPage(
             </nav>
           </footer>
         </article>
+        {chapterStories.length > 0 && (
+          <aside className="rail-margin" aria-label="Stories from this chapter">
+            <p className="rail__label">Told scene by scene</p>
+            {chapterStories.map((st) => {
+            const min = isReadable(st) ? storyMinutes(st.slug) : null;
+            return (
+              <div className="chapter-story rail-card" key={st.slug}>
+                <p className="rail-card__kicker">
+                  {st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story"} · {st.ref}{min ? ` · About ${min} min` : ""}
+                  {st.status === "early" && <span className="badge badge--new">New</span>}
+                </p>
+                <p className="rail-card__title">{st.title}</p>
+                <p className="rail-card__line">{st.subtitle}. Retold in plain words, one scene at a time.</p>
+                <div className="rail-card__acts">
+                  <a className="btn btn--primary" href={`/stories/${st.slug}/`}>Read the story</a>
+                  <a className="btn btn--line" href={compareHref(st, trans)}>Read both side by side</a>
+                </div>
+              </div>
+            );
+          })}
+
+          </aside>
+        )}
       </div>
 
       <script src="/static/js/chapter.js?v=9" defer></script>

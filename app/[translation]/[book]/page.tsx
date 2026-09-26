@@ -12,6 +12,7 @@ import {
   type TransSlug,
 } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
+import { readableStories, storyMinutes } from "@/lib/stories";
 
 type Params = { translation: string; book: string };
 
@@ -108,19 +109,13 @@ export default async function BookLanding(
         <div className="chapter-nav__group" />
       </nav>
 
-      <div className="trans-switch" aria-label="Switch translation">
-        <span className="trans-switch__label">
-          Reading the {tmeta.label}. Other versions:
-        </span>
+      <div className="bible-vers bible-vers--book" role="group" aria-label="Choose a translation">
+        <span className="bible-vers__label">Translation:</span>
         {TRANS_ORDER.filter((t) => t === trans || bookNameFromSlug(t, book)).map((t) =>
           t === trans ? (
-            <span key={t} className="trans-switch__btn trans-switch__btn--current" aria-current="page">
-              {tmeta.short}
-            </span>
+            <span key={t} className="bible-vers__btn is-on" aria-current="page">{TRANSLATIONS[t].nick} <abbr>{TRANSLATIONS[t].short}</abbr></span>
           ) : (
-            <a key={t} className="trans-switch__btn" href={`/${t}/${book}/`}>
-              {TRANSLATIONS[t].short}
-            </a>
+            <a key={t} className="bible-vers__btn" href={`/${t}/${book}/`} title={`${TRANSLATIONS[t].label}: ${TRANSLATIONS[t].plain}`}>{TRANSLATIONS[t].nick} <abbr>{TRANSLATIONS[t].short}</abbr></a>
           )
         )}
       </div>
@@ -129,6 +124,27 @@ export default async function BookLanding(
         <h1 className="book-title">{bk.name}</h1>
         {intro && <p className="book-intro">{intro}</p>}
       </header>
+
+      {(() => {
+        const sts = readableStories().filter((st) => st.passage.book === book).sort((a, b) => a.passage.chapter - b.passage.chapter);
+        if (!sts.length) return null;
+        return (
+          <section className="book-stories" aria-labelledby="book-stories-title">
+            <h2 className="book-chapters-label" id="book-stories-title">Stories from {bk.name}, in plain words</h2>
+            <ul className="book-stories__list">
+              {sts.map((st) => (
+                <li key={st.slug}>
+                  <a className="next-row" href={`/stories/${st.slug}/`}>
+                    <span className="next-row__kicker">{st.ref}{storyMinutes(st.slug) ? ` · About ${storyMinutes(st.slug)} min` : ""}</span>
+                    <span className="next-row__title">{st.title}</span>
+                    <span className="next-row__meta">{st.subtitle}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })()}
 
       <h2 className="book-chapters-label">Chapters</h2>
       <ul className="chapter-grid">
