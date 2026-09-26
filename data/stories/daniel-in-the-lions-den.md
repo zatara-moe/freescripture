@@ -51,7 +51,7 @@ Over all the satraps, Darius put three top leaders. The satraps answered to them
 
 Daniel was an old man by now. He had been taken from Jerusalem as a young man, about 70 years earlier (Daniel 1:1-6). He had served kings in Babylon ever since. {v: 6:2}
 
-Daniel did his work better than all the others. The Bible says he stood out **"by his extraordinary spirit"** (6:3). So Darius made a plan. He would put Daniel in charge of the whole kingdom. {v: 6:3}
+Daniel did his work better than all the others. The Bible says Daniel did this **"by his extraordinary spirit"** (6:3). Earlier in the book, this spirit showed itself as unusual wisdom and understanding (Daniel 5:12). So Darius made a plan. He would put Daniel in charge of the whole kingdom. {v: 6:3}
 
 ### Scene 2: Nothing to Find
 
@@ -63,7 +63,7 @@ The Bible doesn't say exactly why they turned against Daniel. But the king's pla
 
 At last the men said, **"We will never find any charge against this Daniel, unless we find something against him concerning the law of his God"** (6:5). {v: 6:5}
 
-They knew Daniel belonged to his God. That was the one place they could set a trap. {v: 6:5}
+They knew Daniel was faithful to his God. His faith was the one thing they could use against him. So they made a plan to catch him, like a trap for an animal. This is a comparison. {v: 6:5}
 
 ### Scene 3: A Law for Thirty Days
 
@@ -98,11 +98,11 @@ Then the men came as a group. They found Daniel praying and asking his God for h
 
 ### Scene 5: The King Is Trapped
 
-The men went to the king. They asked him about his law. Hadn't he signed a law about the lions' den? {v: 6:12}
+The men went to the king. They asked him about his law. They asked if he had signed a law about the lions' den. {v: 6:12}
 
 The king said yes. **"According to the law of the Medes and Persians the order stands, and it cannot be repealed"** (6:12). Repealed means taken back. {v: 6:12}
 
-Then the men sprang their trap. They said, **"Daniel, one of the exiles from Judah, shows no regard for you, O king"** (6:13). They said Daniel still prayed three times a day. {v: 6:13}
+Then the men carried out their plan. They said, **"Daniel, one of the exiles from Judah, shows no regard for you, O king"** (6:13). They said Daniel still prayed three times a day. {v: 6:13}
 
 They did not call Daniel a leader or a loyal servant. They called him an exile, a person taken from his home by force. {v: 6:13}
 
@@ -162,9 +162,9 @@ This was the king's command. The Bible does not say that God told him to do it. 
 
 Then King Darius wrote a letter. He sent it to every nation and every language in his land. {v: 6:25}
 
-Darius ordered everyone in his kingdom to fear and honor the God of Daniel. He wrote, **"For He is the living God, and He endures forever; His kingdom will never be destroyed, and His dominion will never end"** (6:26). Dominion means rule. {v: 6:26}
+Darius ordered everyone in his kingdom to tremble in fear before the God of Daniel. He wrote, **"For He is the living God, and He endures forever; His kingdom will never be destroyed, and His dominion will never end"** (6:26). Dominion means rule. {v: 6:26}
 
-Darius also wrote, **"He delivers and rescues"** (6:27). He said God had rescued Daniel from the power of the lions. {v: 6:27}
+Darius also wrote, **"He delivers and rescues"** (6:27). He said God does signs and wonders in the heavens and on the earth. He said God had rescued Daniel from the power of the lions. {v: 6:27}
 
 Not long before, Darius had signed a law. It said that only the king could be asked for help. Now the same king told the whole world who really rescues. {v: 6:7, 6:27}
 
@@ -185,14 +185,14 @@ Daniel 6 (BSB)
 | **"He was trustworthy"** (6:4) | Daniel's enemies checked his work closely. They found nothing to use against him. |
 | **"Concerning the law of his God"** (6:5) | The men knew Daniel's faith was the one thing he would not give up. So they made his prayers against the law. |
 | **"So that it cannot be changed"** (6:8) | Once the king signed it, the law was locked. Even the king could not take it back. |
-| **"Just as he had done before"** (6:10) | Daniel did not start praying to make a point. He kept the habit he already had. |
+| **"Just as he had done before"** (6:10) | Daniel did not start praying as a protest. He kept the habit he already had. |
 | **"My God sent His angel and shut the mouths of the lions"** (6:22) | God did the rescuing. Daniel did not fight the lions or escape on his own. |
 | **"I was found innocent in His sight"** (6:22) | Daniel was innocent of the charge against him. It does not mean he never sinned. Daniel's own prayers include **"confessing my sin"** (Daniel 9:20). |
 | **"He delivers and rescues"** (6:27) | A foreign king ends the story by saying the truest thing about God. |
 
 ## 🌍 Back Then...
 
-**Daniel was probably in his 80s.** Easton's dates Daniel's capture to about 606 B.C. and the rule of Darius the Mede to about 538 B.C. That is almost 70 years in a foreign land. (Easton's Bible Dictionary)
+**Daniel was probably in his 80s.** Easton's Bible Dictionary dates Daniel's capture to about 606 B.C. and the rule of Darius the Mede to about 538 B.C. That is almost 70 years in a foreign land. (Easton's Bible Dictionary)
 
 **Nobody is sure who Darius the Mede was in other history books.** Some think he was a king known by another name. Others think "Darius" was a title for a governor that Cyrus put over Babylon. (Easton's Bible Dictionary)
 
@@ -204,11 +204,11 @@ Daniel 6 (BSB)
 
 ## 🚨 Literal Reader Alert: "Wait, what?"
 
-**Why were the wives and children thrown to the lions?** This is one of the hardest verses in the book. The Bible says it plainly. The men who lied about Daniel were thrown to the lions, **"they and their children and wives"** (6:24). The children had done nothing wrong. The Bible does not say God commanded this. It says it happened **"At the command of the king"** (6:24). But the book of Daniel also does not say the king was wrong. It tells what happened and moves on. Many readers notice a pattern: the men who set a trap with the lions' den fell into it themselves. That does not make it fair to their children. God's law for Israel's judges, given through Moses, did not allow this: **"nor children for their fathers; each is to die for his own sin"** (Deuteronomy 24:16). Darius did not rule by that law. The verse does not solve the problem. It shows that the problem is real. Christians have struggled with this passage for a long time. We do not have to explain it away or call it fair. When a part of the Bible frightens us, Christians look to Jesus, the clearest picture of who God is. Jesus taught, **"love your enemies and pray for those who persecute you"** (Matthew 5:44). On the cross, he prayed for the people who killed him: **"Father, forgive them, for they do not know what they are doing"** (Luke 23:34). If this story brings up big feelings, talk with a parent, pastor, or trusted adult.
+**Why were the wives and children thrown to the lions?** This is one of the hardest verses in the book. The Bible says it plainly. The men who lied about Daniel were thrown to the lions, **"they and their children and wives"** (6:24). The children had done nothing wrong. The Bible does not say God commanded this. It says it happened **"At the command of the king"** (6:24). But the book of Daniel also does not say the king was wrong. It tells what happened and moves on. Many readers notice a pattern. The men who used the lions' den as a trap ended up in the den themselves. That does not make it fair to their children. God's law for Israel's judges, given through Moses, did not allow this: **"nor children for their fathers; each is to die for his own sin"** (Deuteronomy 24:16). Darius did not rule by that law. The verse does not solve the problem. It shows that the problem is real. Christians have struggled with this passage for a long time. We do not have to explain it away or call it fair. When a part of the Bible frightens us, Christians look to Jesus, the clearest picture of who God is. Jesus taught, **"love your enemies and pray for those who persecute you"** (Matthew 5:44). On the cross, he prayed for the people who killed him: **"Father, forgive them, for they do not know what they are doing"** (Luke 23:34). If this story brings up big feelings, talk with a parent, pastor, or trusted adult.
 
-**If I trust God, will I never get hurt?** The Bible says Daniel had no wounds **"because he had trusted in his God"** (6:23). But the Bible also tells about faithful people who were not rescued from harm. Some were beaten and put in chains (Hebrews 11:36). Jesus trusted his Father completely, and he still died on a cross. Trust is not a way to control what happens. Faith is a gift from God, and God holds on to us in the lions' den and in the grave.
+**If I trust God, will I never get hurt?** The Bible says Daniel had no wounds **"because he had trusted in his God"** (6:23). But the Bible also tells about faithful people who were not rescued from harm. Some were beaten and put in chains (Hebrews 11:36). Jesus trusted his Father completely, and he still died on a cross. Trust is not a way to control what happens. Faith is a gift from God. God stays with us in the lions' den and even in the grave.
 
-**Did Daniel break the law on purpose?** Daniel did not protest or give a speech. He prayed as he always had. He still spoke to the king with respect, and he said he had done no wrong against him (6:21-22). Later, the apostles said something like this: **"We must obey God rather than men"** (Acts 5:29).
+**Did Daniel break the law on purpose?** Daniel did not protest or give a speech. He prayed as he always had. He still spoke to the king with respect, and he said he had done no wrong against him (6:21-22). Hundreds of years later, Jesus's apostles said something like this: **"We must obey God rather than men"** (Acts 5:29).
 
 **Was Daniel sinless?** No. When Daniel said he was **"found innocent"** (6:22), he meant he was innocent of the charge. He had not betrayed the king. Daniel also confessed his sins to God (Daniel 9:20).
 
@@ -242,7 +242,7 @@ Daniel 6 (BSB)
 
 **What's true:** Daniel was faithful. He kept praying when it was against the law. Courage like that is a gift from God, and it is a good gift.
 
-**What the story is mainly about:** God is the rescuer. Daniel's part was quiet. He knelt and prayed, as he always had. Then he was thrown into a pit he could not climb out of. Daniel said, **"My God sent His angel and shut the mouths of the lions"** (6:22). At the end, even the king does not praise Daniel. He praises Daniel's God. The story does not promise that brave people never get hurt (Hebrews 11:36).
+**What the story is mainly about:** God is the rescuer. Daniel's part was quiet. He knelt and prayed, as he always had. Then he was thrown into a pit he could not climb out of. Daniel said, **"My God sent His angel and shut the mouths of the lions"** (6:22). At the end, even the king does not praise Daniel. He praises Daniel's God. The story does not promise that brave people will always stay safe (Hebrews 11:36).
 
 **Where Jesus is:** Many Christians have noticed that this story sounds like Easter. An innocent man was accused by people looking for a charge. A stone was placed over the opening and sealed. At dawn, someone came to the sealed place. Jesus was also accused by people who **"bore false witness"** (Mark 14:56). His tomb was secured **"by sealing the stone"** (Matthew 27:66). At dawn, the women came to the tomb (Matthew 28:1). But Daniel was kept from death. Jesus went all the way through death and came out alive. And where the king paid back his enemies, Jesus prayed for his (Luke 23:34).
 
@@ -262,4 +262,4 @@ In his hymn "A Mighty Fortress Is Our God," Luther wrote about enemies who can t
 
 ## 💡 Big Idea
 
-**God shut the lions' mouths and kept Daniel alive in the sealed den, and the same God raised Jesus from the sealed tomb.**
+**God kept Daniel alive in the sealed den, and the same God raised Jesus from the sealed tomb.**

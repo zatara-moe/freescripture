@@ -21,13 +21,13 @@
 
 ## 🧭 Before the Story
 
-**An angel visited Mary.** He told her she would have a baby, God's own Son, and name him Jesus (Luke 1:30-33).
+**An angel visited Mary.** He told her she would have a baby and name him Jesus. The baby would be called the Son of God (Luke 1:30-35).
 
 **God had promised a king from David's family.** The angel said Jesus would be that king (Luke 1:32).
 
 **A prophet named the town.** Hundreds of years earlier, Micah said the promised ruler would come from Bethlehem (Micah 5:2).
 
-**Here's what you know that almost nobody in this story knows:** The emperor's order is about to bring Mary and Joseph to Bethlehem, the very town the prophet named.
+**Here's what you know that almost nobody in this story knows:** The emperor's order is about to bring Mary and Joseph to Bethlehem. That is the very town the prophet named.
 
 ## 🗺️ Map of the Story
 
@@ -50,15 +50,15 @@ Caesar Augustus, the emperor of Rome, gave an order. Everyone in the empire had 
 
 It was the first census while a man named Quirinius was governor of Syria. {v: 2:2}
 
-So everyone went to their family's hometown to sign up. {v: 2:3}
+So everyone went to their own town to register. To register means to sign up on the list. {v: 2:3}
 
 ### Scene 2: The Trip to Bethlehem
 
-Joseph lived in Nazareth, a town in Galilee. But his family came from King David. So Joseph had to go to David's town, Bethlehem. {v: 2:4}
+Joseph lived in Nazareth, a town in Galilee. But Joseph was from the family line of King David. So Joseph went to David's town, Bethlehem, in Judea. {v: 2:4}
 
 David, the shepherd boy who fought Goliath, grew up in Bethlehem. {v: 2:4}
 
-Joseph went with Mary. They were engaged to be married. Mary was going to have a baby soon. {v: 2:5}
+Joseph went there to register with Mary. They were engaged to be married. Mary was expecting a baby. {v: 2:5}
 
 The trip from Nazareth to Bethlehem was about 90 miles. {v: 2:4}
 
@@ -66,9 +66,9 @@ The trip from Nazareth to Bethlehem was about 90 miles. {v: 2:4}
 
 While they were in Bethlehem, the time came for the baby to be born. {v: 2:6}
 
-Mary gave birth to her first child, a son. She wrapped him snugly in strips of cloth. This kept a newborn warm and safe. {v: 2:7}
+Mary gave birth to her first child, a son. She wrapped him snugly in strips of cloth. People believed this kept a newborn warm and safe. {v: 2:7}
 
-Then she laid him in a manger. A manger is a box that holds food for animals. There was no room for them in the inn. {v: 2:7}
+Then she laid him in a manger. A manger is a box that holds food for animals. She laid him there because there was no room for them in the inn. {v: 2:7}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
 > Picture a small, crowded room with a lamp burning low. Animals shuffle and breathe nearby.
@@ -81,7 +81,7 @@ Shepherds were ordinary workers. They were not important people in town. {v: 2:8
 
 Suddenly an angel of the Lord stood in front of them. God's glory shone all around them. Glory means God's bright, shining greatness. {v: 2:9}
 
-The shepherds were terrified. {v: 2:9}
+The shepherds were terrified by the angel and the bright light. {v: 2:9}
 
 ### Scene 5: Good News
 
@@ -103,21 +103,21 @@ The angels praised God. **"Glory to God in the highest, and on earth peace to me
 
 ### Scene 7: The Shepherds Go
 
-The angels went back into heaven. The shepherds said to each other, "Let's go to Bethlehem and see this." {v: 2:15}
+The angels went back into heaven. The shepherds said to each other, "Let's go to Bethlehem and see this thing the Lord has told us about." {v: 2:15}
 
 They hurried off. They found Mary and Joseph, and the baby lying in the manger. {v: 2:16}
 
-After they saw him, the shepherds told everyone what the angel had said about this child. {v: 2:17}
+After they saw the baby, the shepherds spread the message the angel had given them about this child. {v: 2:17}
 
-Everyone who heard them was amazed. {v: 2:18}
+Everyone who heard the shepherds was amazed at what they said. {v: 2:18}
 
 ### Scene 8: Mary Remembers
 
-Mary kept all these things close. She thought about them deeply in her heart. {v: 2:19}
+But Mary kept all these things in her memory, like treasure. She thought about them again and again. {v: 2:19}
 
-The shepherds went back to their fields. They praised God for everything they had heard and seen. It was all just as the angel had told them. {v: 2:20}
+The shepherds went back to their fields. They praised God for everything they had heard and seen. It was all exactly as the angel had told them. {v: 2:20}
 
-Eight days later, the baby was circumcised, as God's law said. Circumcision was the sign that a Jewish boy belonged to God's people. Then he was named Jesus. The angel had given that name before he was born. The name Jesus means "the LORD saves." {v: 2:21}
+Eight days later, the baby was circumcised, as God's law said. Circumcision was the sign that a Jewish boy belonged to God's people. Then he was named Jesus. The angel had given that name before Mary became pregnant. The name Jesus means "the LORD saves." LORD in capital letters stands for God's personal name. Jewish readers traditionally don't say it aloud, out of respect. {v: 2:21}
 
 ---
 
@@ -150,7 +150,7 @@ Luke 2:1-21 (BSB)
 
 **Was Jesus born in a stable?** The Bible mentions a manger, but it does not mention a stable or a barn. Many people picture a stable because mangers held animal food.
 
-**Was there an inn with a mean innkeeper?** The Bible does not mention an innkeeper. The Greek word can also mean a guest room in a house.
+**Was there an inn with a mean innkeeper?** The Bible does not mention an innkeeper. The Greek word can also mean a guest room in a house. Luke uses the same word for the guest room where Jesus ate the Passover with his disciples (Luke 22:11).
 
 **Were there three wise men?** Not in this story. Wise men come in Matthew 2, and the Bible does not say how many there were.
 
@@ -164,7 +164,7 @@ Luke 2:1-21 (BSB)
 | The shepherds | Eager | They hurried to see the baby (2:16) |
 | Everyone who heard | Amazed | The shepherds told what the angel had said (2:18) |
 | Mary | Thoughtful | She treasured these things in her heart (2:19) |
-| The shepherds | Joyful | Everything was just as the angel said (2:20) |
+| The shepherds | Joyful | Everything was exactly as the angel said (2:20) |
 
 ---
 
@@ -183,11 +183,11 @@ Luke 2:1-21 (BSB)
 
 *"Christmas is a sweet story about a baby."*
 
-**What's true:** It is tender. A mother wraps her newborn and lays him down to sleep.
+**What's true:** It is tender. A mother wraps her newborn and lays him in a manger.
 
 **What the story is mainly about:** God came close. The promised king came as a poor baby. The first people to hear were ordinary shepherds working the night shift.
 
-**Where Jesus is:** Right in the middle of the story. Another Gospel calls him Immanuel, which means "God with us" (Matthew 1:23).
+**Where Jesus is:** Jesus is the baby at the center of this story. Another Gospel calls him Immanuel, which means "God with us" (Matthew 1:23).
 
 ## ✝️ Good News
 
@@ -195,7 +195,7 @@ The angel's first words were "Do not be afraid." God did not come to scare peopl
 
 ## 📚 From Luther
 
-Martin Luther loved this story. In his Christmas sermons, he asked people to picture how poor and cold Mary and Joseph were. He also wrote a Christmas hymn. It is traditionally said to be for his own children (1534–35). English translation by Catherine Winkworth (1855):†
+Martin Luther loved this story. In his Christmas sermons, he asked people to picture how poor and cold Mary and Joseph were. He also wrote a Christmas hymn around 1534 to 1535. It is traditionally said to be for his own children. This English translation is by Catherine Winkworth (1855).†
 
 > From heaven above to earth I come
 > To bear good news to every home;

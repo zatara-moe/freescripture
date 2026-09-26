@@ -23,7 +23,7 @@
 
 **It was written for people who already knew God.** It answers big questions. Who made the world? What are people for? Why is life so hard now?
 
-**It tells creation twice.** Chapter 1 shows the big picture, day by day. Chapter 2 zooms in on the first two people.
+**It tells creation twice.** Chapter 1 shows the big picture, day by day. Chapter 2 looks closely at the first two people.
 
 **Here's what you know that the first people don't:** God will not give up on them. The whole rest of the Bible shows God keeping his promises.
 
@@ -78,7 +78,7 @@ Then God said, **"Let Us make man in Our image, after Our likeness"** (1:26). He
 
 **"So God created man in His own image; in the image of God He created him; male and female He created them"** (1:27). {v: 1:27}
 
-To be made in God's image means people reflect God in a way nothing else in creation does. It is true of every person. {v: 1:27}
+To be made in God's image means people show what God is like in a way nothing else in creation does. It is true of every person. {v: 1:27}
 
 God blessed the people. He told them to have children and fill the earth. He put them in charge of the fish, the birds, and every animal. He gave them plants and fruit for food. {v: 1:28, 1:29, 1:30}
 
@@ -95,11 +95,11 @@ On the seventh day, God rested from all his work. The word "rested" also means "
 God blessed the seventh day and made it holy. {v: 2:3}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> Picture a whole world, brand new and quiet. Nothing needs fixing. Nothing needs to be rushed.
+> Picture a whole world, brand new and quiet. Nothing needs fixing, and nothing needs to be rushed.
 
 ### Scene 6: Dust and Breath
 
-Now the story zooms in. No plants had grown yet, and there was no one to farm the ground. {v: 2:4, 2:5, 2:6}
+Now the story looks closely at the first people. At first no plants had grown yet, and there was no one to farm the ground. {v: 2:4, 2:5, 2:6}
 
 **"Then the LORD God formed man from the dust of the ground and breathed the breath of life into his nostrils"** (2:7). The man became a living being. {v: 2:7}
 
@@ -107,7 +107,7 @@ God planted a garden in a place called Eden. He put the man there. The garden wa
 
 Two trees stood in the middle of the garden. One was the tree of life. The other was the tree of the knowledge of good and evil. {v: 2:9}
 
-A river watered the garden. God gave the man a job: take care of the garden and keep it safe. {v: 2:10, 2:15}
+A river watered the garden. God gave the man a job: to work the garden and take care of it. {v: 2:10, 2:15}
 
 God gave him one rule. He could eat from every tree in the garden except one. If he ate from the tree of the knowledge of good and evil, he would surely die on that day. {v: 2:16, 2:17}
 
@@ -119,9 +119,9 @@ God brought the animals to the man. The man gave each one its name. But none of 
 
 So God put the man into a deep sleep. He took one of the man's ribs and closed up the spot. From the rib, God made a woman. He brought her to the man. {v: 2:21, 2:22}
 
-The man spoke a poem. **"This is now bone of my bones and flesh of my flesh"** (2:23). {v: 2:23}
+The man spoke a poem. **"This is now bone of my bones and flesh of my flesh"** (2:23). He said she would be called "woman," because she was taken out of man. {v: 2:23}
 
-That is why a man leaves his parents and joins his wife, and the two become one. {v: 2:24}
+Then Genesis adds a comment. This is why a man leaves his father and mother and is joined to his wife. The two of them become one. {v: 2:24}
 
 The man and his wife were naked, and they did not feel ashamed. {v: 2:25}
 
@@ -131,36 +131,36 @@ The serpent was more crafty than any other wild animal God had made. Crafty mean
 
 He asked the woman, **"Did God really say, 'You must not eat from any tree in the garden?'"** (3:1). {v: 3:1}
 
-That is not what God said. God said they could eat from every tree but one. The serpent made God sound stingy, which means not willing to share. {v: 2:16, 3:1}
+That is not what God said. God said they could eat from every tree but one. The serpent made God sound stingy. Stingy means not willing to share. {v: 2:16, 3:1}
 
-The woman said they could eat from the trees. But God had said not to eat from the tree in the middle, or even touch it, or they would die. {v: 3:2, 3:3}
+The woman said they could eat from the trees. But she said God had told them not to eat from the tree in the middle. They must not even touch it, or they would die. {v: 3:2, 3:3}
 
-**"You will not surely die,"** the serpent told her (3:4). He said God knew that when they ate it, their eyes would be opened. They would be like God, knowing good and evil. {v: 3:4, 3:5}
+**"You will not surely die,"** the serpent told her (3:4). He said God knew that when they ate from that tree, their eyes would be opened. They would be like God, knowing good and evil. {v: 3:4, 3:5}
 
-Now the serpent was calling God a liar. {v: 3:4, 3:5}
+Now the serpent was saying that God had lied. {v: 3:4, 3:5}
 
 ### Scene 9: They Eat
 
-The woman looked at the tree. The fruit looked good to eat and beautiful. She wanted the wisdom it promised. {v: 3:6}
+The woman looked at the tree. The fruit looked good to eat and beautiful. She saw it as a way to become wise, and she wanted that. {v: 3:6}
 
 She took some fruit and ate it. She gave some to her husband, who was with her. And he ate it too. {v: 3:6}
 
 Then their eyes were opened. They saw that they were naked, and they felt ashamed. They sewed fig leaves together to cover themselves. {v: 3:7}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> Picture the same garden, just as beautiful as before. But now two people are crouched behind the leaves, trying not to be seen.
+> Picture the same garden, as beautiful as before. But now two people are crouched behind the leaves, trying not to be seen.
 
 ### Scene 10: "Where Are You?"
 
-In the cool breeze of the day, the man and his wife heard the LORD God walking in the garden. They hid among the trees. {v: 3:8}
+In the breeze of the day, the man and his wife heard the LORD God walking in the garden. They hid among the trees. {v: 3:8}
 
 **"But the LORD God called out to the man, 'Where are you?'"** (3:9). {v: 3:9}
 
-God already knew where they were. His question gave them a chance to come out and tell the truth. {v: 3:9}
+God already knew where they were. One likely reason for the question: it gave them a chance to come out and tell the truth. {v: 3:9}
 
 The man said he heard God and was afraid because he was naked. So he hid. {v: 3:10}
 
-God asked, **"Who told you that you were naked?"** (3:11). Then he asked if they had eaten from the tree he told them not to eat from. {v: 3:11}
+God asked, **"Who told you that you were naked?"** (3:11). Then God asked the man if he had eaten from the tree God had told him not to eat from. {v: 3:11}
 
 The man blamed the woman, and he blamed God for giving her to him. **"The woman whom You gave me, she gave me fruit from the tree, and I ate it"** (3:12). {v: 3:12}
 
@@ -170,23 +170,23 @@ Then God asked the woman, **"What is this you have done?"** (3:13). The woman bl
 
 God put a curse on the serpent. It would crawl on its belly all its life. {v: 3:14}
 
-Then God said the serpent and the woman would be enemies, and so would their children. God said to the serpent, **"He will crush your head, and you will strike his heel"** (3:15). {v: 3:15}
+Then God said he would make the serpent and the woman enemies. Their children would be enemies too. God said to the serpent about the woman's child, **"He will crush your head, and you will strike his heel"** (3:15). {v: 3:15}
 
 God told the woman that having children would now be very painful. She would long for her husband, and he would rule over her. {v: 3:16}
 
 God told the man that the ground was now cursed because of what he did. Growing food would be hard work, with thorns and sweat. {v: 3:17, 3:18, 3:19}
 
-And one day he would die. **"For dust you are, and to dust you shall return"** (3:19). {v: 3:19}
+At the end of his life, he would return to the ground he came from. **"For dust you are, and to dust you shall return"** (3:19). {v: 3:19}
 
 ### Scene 12: Clothes and a Way Out
 
-The man named his wife Eve. The name sounds like the Hebrew word for "living." She would be the mother of every person. {v: 3:20}
+The man named his wife Eve. The name sounds like the Hebrew word for "living." She would be the mother of every person. From here on, this story calls the man Adam. {v: 3:20}
 
 Then God made clothes out of animal skins for Adam and Eve. He dressed them himself. {v: 3:21}
 
-God did not want them to take fruit from the tree of life and live forever. So he banished them from the garden, to work the ground. Many readers see mercy here: God would not let them live forever in a broken world. {v: 3:22, 3:23}
+Then God said, **"Behold, the man has become like one of Us, knowing good and evil"** (3:22). God did not want the man to take fruit from the tree of life and live forever. So God sent them out of the garden to work the ground. Many readers see mercy here: God would not let them live forever in a broken world. {v: 3:22, 3:23}
 
-East of the garden, God placed cherubim, powerful heavenly guards, and a flaming sword. They guarded the way to the tree of life. {v: 3:24}
+On the east side of the garden, God placed cherubim. Cherubim are powerful heavenly beings. God also placed a whirling sword of fire there. The cherubim and the sword guarded the way to the tree of life. {v: 3:24}
 
 ---
 
@@ -202,7 +202,7 @@ Genesis 1 to 3 (BSB)
 |---|---|
 | **"In the beginning God created"** (1:1) | God was already there. Everything else comes from him. |
 | **"God saw that it was good"** (1:10) | The world is a gift, not a mistake. That includes plants, animals, and human bodies. |
-| **"In the image of God He created him"** (1:27) | Every person reflects God in a special way. Every person, with no exceptions. |
+| **"In the image of God He created him"** (1:27) | Every person shows something of what God is like. That is true of every person, with no exceptions. |
 | **"Rule over"** (1:28) | People are to take care of the world for God, the way a good king cares for his people. Chapter 2 says the man was to "cultivate and keep" the garden (2:15).† |
 | **"Did God really say...?"** (3:1) | The serpent twists God's words to make God sound stingy. Sin starts with not trusting God. |
 | **"Where are you?"** (3:9) | God knows where they are. He is calling them out of hiding. |
@@ -221,11 +221,11 @@ Genesis 1 to 3 (BSB)
 
 **Did God make the world in six 24-hour days?** Christians read these days in different ways. Some, including Martin Luther, read them as regular days. Many others, including many Lutherans today, read Genesis 1 as a true story about who made the world and why. They don't read it as a science report on how, or how long. Both groups believe God made everything. Faith and science do not have to be enemies.†
 
-**Why does the story of creation happen twice?** Chapter 1 shows the big picture, day by day. Chapter 2 zooms in on the first two people. They fit together like a map and a close-up photo.
+**Why does the story of creation happen twice?** Chapter 1 shows the big picture, day by day. Chapter 2 looks closely at the first two people. The two chapters fit together the way a map and a close-up photo fit together. This is a comparison.
 
-**Who is "Us" in "Let Us make man"?** The Bible doesn't explain. Many Christians hear a hint of the Trinity: Father, Son, and Holy Spirit. Jewish readers explain it in other ways.
+**Who is "Us" in "Let Us make man"?** The Bible doesn't explain. Many Christians see a hint of the Trinity here: Father, Son, and Holy Spirit. Jewish readers explain it in other ways.
 
-**Was the fruit an apple?** The Bible just says "fruit." Nobody knows what kind.
+**Was the fruit an apple?** The Bible says only "fruit." Nobody knows what kind.
 
 **Was the serpent the devil?** Genesis doesn't say. The last book of the Bible calls the devil **"that ancient serpent"** (Revelation 12:9).
 
@@ -235,7 +235,7 @@ Genesis 1 to 3 (BSB)
 
 **Does "helper" mean less important?** No. The Bible uses the same Hebrew word for God. **"He is our help and our shield"** (Psalm 33:20).†
 
-**Does God want husbands to rule over wives?** Genesis 3:16 describes what sin broke. It is not how God first made things. In chapter 2, the man and woman were equal partners with nothing between them. If anyone uses this verse to control or hurt you, that is wrong. Tell someone you trust.†
+**Does God want husbands to rule over wives?** Genesis 3:16 describes what sin broke. It is not how God first made things. In chapter 2, the man and woman were equal partners, and they felt no shame (2:25). If anyone uses this verse to control or hurt you, that is wrong. Tell someone you trust.†
 
 ## 💭 How People Feel
 
@@ -243,7 +243,7 @@ Genesis 1 to 3 (BSB)
 |---|---|---|
 | God | Pleased | Everything he made was very good (1:31) |
 | The man | Joyful | God made the woman, a true partner (2:23) |
-| The man and woman | Unashamed | Nothing stood between them (2:25) |
+| The man and woman | Unashamed | They had nothing to hide from each other (2:25) |
 | The man and woman | Ashamed and afraid | They ate the fruit and knew they were naked (3:7, 3:10) |
 | The man and woman | Defensive | Each one blamed someone else (3:12-13) |
 
@@ -256,7 +256,7 @@ Genesis 1 to 3 (BSB)
 **Which part of this story speaks to you today?** Tap one.
 
 - "It was very good" :: God made you on purpose, in his image. That is still true on your worst days.
-- Hiding in the trees :: When we mess up, we hide. God didn't wait for Adam and Eve to come out. He came looking.
+- Hiding in the trees :: When we do wrong, we often want to hide. God didn't wait for Adam and Eve to come out. He came looking.
 - Blaming someone else :: Adam blamed Eve. Eve blamed the serpent. Saying "I did it" is hard. God did not leave them, even then.
 - "Not good to be alone" :: God made people for each other. Being lonely is not a failure. It is a need God understands.
 
@@ -264,15 +264,15 @@ Genesis 1 to 3 (BSB)
 
 *"God got angry because two people ate a piece of fruit."*
 
-**What's true:** Disobeying God is serious. It broke a lot.
+**What's true:** Disobeying God is serious. In this story it damaged trust, work, and family (3:12-19).
 
-**What the story is mainly about:** Trust. The serpent made God sound unwilling to share, and dishonest. Adam and Eve believed him instead of God. That is what sin is at its root: not trusting that God is good. But God still came looking for them.
+**What the story is mainly about:** Trust. The serpent made God sound unwilling to share, and dishonest. Adam and Eve believed him instead of God. Sin starts here: not trusting that God is good. But God still came looking for them.
 
 **Where Jesus is:** Christians hear the promise in Genesis 3:15 pointing to him. Paul calls Jesus **"the last Adam"** (1 Corinthians 15:45). **"For as in Adam all die, so in Christ all will be made alive"** (1 Corinthians 15:22).†
 
 ## ✝️ Good News
 
-Right after sin broke things, God said a child of the woman would crush the serpent's head (3:15). Christians hear Jesus in that promise. He defeats evil, even though it costs him.
+Right after sin broke things, God said a child of the woman would crush the serpent's head (3:15). Christians hear Jesus in that promise. He defeats evil, even though it means he suffers and dies.
 
 Then God made clothes for Adam and Eve and dressed them himself (3:21). He did not leave them in their fig leaves.
 
@@ -282,7 +282,7 @@ Then God made clothes for Adam and Eve and dressed them himself (3:21). He did n
 
 In the Small Catechism, Luther explains the first part of the Apostles' Creed. He says God made me and everything else, and still takes care of me every day. God does this out of pure goodness and mercy, not because I earned it.†
 
-In his *Lectures on Genesis* (begun in 1535), Luther taught that Genesis 3:15 is the first gospel promise in the Bible, a promise about Christ. He taught that Adam and Eve were saved by believing it.†
+In his *Lectures on Genesis* (begun in 1535), Luther taught that Genesis 3:15 is the first gospel promise in the Bible. He taught that it is a promise about Christ. He also taught that Adam and Eve were saved by believing it.†
 
 The Augsburg Confession (1530) is a key statement of Lutheran belief. Article 2 says that since the fall, all people are born with sin. That means we are born without true respect for God, without trust in God, and with selfish desires. It says God gives new birth through Baptism and the Holy Spirit.†
 

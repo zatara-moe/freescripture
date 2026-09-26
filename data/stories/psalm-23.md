@@ -62,11 +62,11 @@ This is a comparison too. God gives rest, food, and peace. God leads, and David 
 
 **"He restores my soul"** (23:3). To restore means to make new again. David is saying that God brings him back to life inside. {v: 23:3}
 
-**"He guides me in the paths of righteousness"** (23:3). These are right paths, the good ways God wants people to walk. God does it **"for the sake of His name"** (23:3). That means God guides because of who God is. The sheep did not earn it. {v: 23:3}
+**"He guides me in the paths of righteousness"** (23:3). These are right paths. They stand for the good ways God wants people to live. God does it **"for the sake of His name"** (23:3). That means God guides because of who God is. The sheep did not earn it. {v: 23:3}
 
 ### Scene 3: The Dark Valley
 
-Now the picture turns dark. {v: 23:4}
+Now the picture in the song becomes a dark one. {v: 23:4}
 
 **"Even though I walk through the valley of the shadow of death"** (23:4). A valley is a low place between hills. A deep valley can be full of shadows. It is hard to see what is coming. {v: 23:4}
 
@@ -76,7 +76,7 @@ This is a comparison. The dark valley stands for the most frightening times in l
 
 The shepherd does not lead the sheep around the valley. The sheep walks through it. {v: 23:4}
 
-Then David says, **"I will fear no evil, for You are with me"** (23:4). Something changes here. Until now, David talked about God. Now, in the dark, David talks to God. {v: 23:4}
+Then David says, **"I will fear no evil, for You are with me"** (23:4). Something changes here. Until now, David talked about God. Now, in the dark valley, David talks to God. {v: 23:4}
 
 **"Your rod and Your staff, they comfort me"** (23:4). A shepherd carried a rod, a short club, to drive off wild animals. He carried a staff, a long stick, to guide the sheep. Both meant the shepherd was close by. {v: 23:4}
 
@@ -98,11 +98,11 @@ The picture changes again. Now God is a host, and David is a guest. This is a co
 
 ### Scene 5: Home
 
-**"Surely goodness and mercy will follow me all the days of my life"** (23:6). Mercy is kindness to someone who needs it. God's goodness and mercy stay right behind David, every day, wherever he goes. {v: 23:6}
+**"Surely goodness and mercy will follow me all the days of my life"** (23:6). Mercy is kindness to someone who needs it. This is a comparison. God's goodness and mercy are pictured as following right behind David, every day, wherever he goes. {v: 23:6}
 
 **"And I will dwell in the house of the LORD forever"** (23:6). To dwell means to live. The house of the LORD was the place where Israel gathered to worship God. {v: 23:6}
 
-The song began in a field, with a shepherd and his sheep. It ends at home, with God. The shepherd was with the sheep the whole way, even in the dark. {v: 23:1, 23:6}
+The song began in a field, with a shepherd and his sheep. It ends at home, with God. The shepherd was with the sheep the whole way, even in the dark valley. {v: 23:1, 23:6}
 
 ---
 
@@ -119,7 +119,7 @@ Psalm 23 (BSB)
 | **"A Psalm of David"** (23:1) | This heading is part of the Hebrew text. The Hebrew words can mean "by David" or "for David." Jewish and Christian readers have long prayed it as David's song.† |
 | **"The LORD is my shepherd"** (23:1) | God leads, feeds, and protects. The prophets used this picture too. God says, **"I Myself will search for My flock and seek them out"** (Ezekiel 34:11). |
 | **"I shall not want"** (23:1) | I will not lack what I really need. It does not mean I will get everything I wish for. |
-| **"He restores my soul"** (23:3) | God brings me back to life inside when I am worn out, sad, or far away. |
+| **"He restores my soul"** (23:3) | God brings me back to life inside when I am worn out, sad, or far from him. |
 | **"For the sake of His name"** (23:3) | God cares for us because of who God is. It is a gift. We do not earn it. |
 | **"The valley of the shadow of death"** (23:4) | The hardest, darkest times, including death. The Hebrew words can mean "deep darkness" or "shadow of death." That is why some Bibles say "the darkest valley." The Bible in Basic English says "the valley of deep shade."† |
 | **"For You are with me"** (23:4) | This is the center of the psalm. God does not always take the valley away. God goes through it with us. |
@@ -127,13 +127,13 @@ Psalm 23 (BSB)
 | **"You prepare a table before me"** (23:5) | God welcomes and feeds us, even while trouble is close. Many Christians also think of the Lord's Supper, where Jesus feeds his people. |
 | **"My cup overflows"** (23:5) | God gives more than enough. |
 | **"Goodness and mercy will follow me"** (23:6) | The Hebrew word for "follow" often means "chase" or "run after." God's kindness does not lag behind. It goes after us.† |
-| **"I will dwell in the house of the LORD forever"** (23:6) | To live close to God for good. The Hebrew says something like "for length of days." Christians also hear a promise of life with God that death cannot end.† |
+| **"I will dwell in the house of the LORD forever"** (23:6) | To live close to God always. The Hebrew says something like "for length of days." Christians also hear a promise of life with God that death cannot end.† |
 
 ## 🌍 Back Then...
 
 **A shepherd's work was hard and sometimes dangerous.** He found grass and water, guarded the flock from wild animals, and searched for lost sheep (Smith's Bible Dictionary). David says he fought lions and bears for his father's sheep (1 Samuel 17:34-35).†
 
-**Shepherds carried a rod and a staff.** Many scholars explain the rod as a short club for defense and the staff as a long stick for guiding the sheep.† Smith's Bible Dictionary says the shepherd's staff served as both a weapon against enemies and a crook for guiding the flock (Smith's Bible Dictionary).
+**Shepherds carried a rod and a staff.** Many scholars explain the rod as a short club for defense. They explain the staff as a long stick for guiding the sheep.† The staff had two uses. It was a weapon against enemies, and it was a crook, a hooked stick, for guiding the flock (Smith's Bible Dictionary).
 
 **Hosts sometimes anointed their guests.** Pouring sweet-smelling oil on a guest's head was a sign of honor (Easton's Bible Dictionary). Jesus mentions this custom in Luke 7:46.
 
@@ -155,7 +155,7 @@ Psalm 23 (BSB)
 |---|---|---|
 | David | Safe and content | God is his shepherd and gives what he needs (23:1-2) |
 | David | Worn out, then renewed | His soul needed restoring, and God restored it (23:3) |
-| David | Comforted in the dark | God was with him in the valley (23:4) |
+| David | Comforted in the dark valley | God was with him in the valley (23:4) |
 | David | Honored | God welcomed him like a guest (23:5) |
 | David | Hopeful | Goodness and mercy would follow him home (23:6) |
 
@@ -191,13 +191,13 @@ The good news is not that the pain disappears right away. The good news is that 
 
 Jesus is the Good Shepherd who gave his life for his sheep. Many Christians hear **"You prepare a table before me"** (23:5) and think of the Lord's Supper. There, Jesus says, **"This is My body, given for you"** (Luke 22:19). The psalm first spoke of God's care for David. Christians believe the same Shepherd feeds them today.
 
-The Bible's last book shows where the path ends. **"For the Lamb in the center of the throne will be their shepherd... God will wipe away every tear from their eyes"** (Revelation 7:17).
+The Bible's last book shows where the Shepherd leads his people in the end. **"For the Lamb in the center of the throne will be their shepherd... God will wipe away every tear from their eyes"** (Revelation 7:17).
 
 **You do not walk through the dark valley alone. Your Shepherd walks with you, all the way home.**
 
 ## 📚 From Luther
 
-In 1536, Martin Luther explained Psalm 23 at his own table one evening after supper. It was printed that same year (*Luther's Works*, volume 12). He taught that the grass in the green pasture is God's Word. Through it, the Shepherd feeds his sheep and makes troubled hearts strong again.
+In 1536, Martin Luther explained Psalm 23 at his own table one evening after supper. It was printed that same year (*Luther's Works*, volume 12). He taught that the grass in the green pasture is God's Word. Through it, the Shepherd feeds his sheep. He strengthens and refreshes troubled consciences. Your conscience is your inner sense of right and wrong.
 
 ## 📅 In Church
 

@@ -27,7 +27,7 @@
 
 **Jesus had not done any signs yet.** John says this was the first of his signs (2:11).
 
-**Here's what you know that almost nobody in this story knows:** John says at the start that Jesus is God's Word who became a human being. **"We have seen His glory"** (1:14). At this wedding, almost no one knows who Jesus is yet.
+**Here's what you know that almost nobody in this story knows:** Jesus is God's Word who became a human being. John says this at the start of his Gospel. He writes, **"We have seen His glory"** (1:14). At this wedding, almost no one knows who Jesus is yet.
 
 ## 🗺️ Map of the Story
 
@@ -44,7 +44,7 @@
 
 ### Scene 1: The Wedding
 
-On the third day, there was a wedding in Cana. Cana was a small village in Galilee. {v: 2:1}
+On the third day, there was a wedding in Cana. This most likely counts from when Jesus called Philip and Nathanael (1:43-51). Cana was a small village in Galilee. {v: 2:1}
 
 Jesus's mother, Mary, was there. {v: 2:1}
 
@@ -63,9 +63,9 @@ Mary went to Jesus. She said, **"They have no more wine"** (2:3). {v: 2:3}
 
 **"Woman, why does this concern us?"** Jesus replied. **"My hour has not yet come"** (2:4). {v: 2:4}
 
-To us, "Woman" can sound cold. Back then, it was a polite way to speak to a woman. Jesus's "hour" means the time of his death and rising. There is more about this below. {v: 2:4}
+To us, "Woman" can sound rude. Back then, it was a polite way to speak to a woman. Jesus's "hour" means the time of his death and rising. There is more about this below. {v: 2:4}
 
-Mary did not argue. She turned to the servants. **"Do whatever He tells you"** (2:5). {v: 2:5}
+Mary did not argue. She spoke to the servants. **"Do whatever He tells you"** (2:5). {v: 2:5}
 
 The Bible doesn't say what Mary expected Jesus to do. But her words show that she trusted him. {v: 2:5}
 
@@ -85,20 +85,20 @@ So they filled them to the very top. {v: 2:7}
 
 Then Jesus said, **"Now draw some out... and take it to the master of the banquet"** (2:8). The master of the banquet was the man in charge of the feast. {v: 2:8}
 
-The servants did it. {v: 2:8}
+The servants took some to the master of the banquet. {v: 2:8}
 
 The master tasted it. The water had turned into wine. {v: 2:9}
 
-He did not know where it came from. But the servants knew. They had drawn it out themselves. {v: 2:9}
+The master did not know where the wine came from. But the servants knew. They had drawn it out themselves. {v: 2:9}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> A servant dips a cup into a tall stone jar. Dark red wine drips from its rim in the lamplight.
+> A servant dips a cup into a tall stone jar. Dark red wine drips from the cup's rim in the lamplight.
 
 ### Scene 5: The Best for Last
 
 The master called the bridegroom aside. The bridegroom is the man getting married. {v: 2:9}
 
-The master said that people usually serve the good wine first. Later, after the guests have had a lot to drink, they bring out the cheap wine. {v: 2:10}
+The master said that people usually serve the fine wine first. Later, after the guests have had a lot to drink, they bring out the cheap wine. {v: 2:10}
 
 Then he said, **"But you have saved the fine wine until now!"** (2:10). {v: 2:10}
 
@@ -112,7 +112,7 @@ In this way, Jesus showed his glory. Glory is the shining greatness of God. {v: 
 
 And his disciples believed in him. {v: 2:11}
 
-The party had run out. Jesus gave far more than enough. And he saved the best for last. {v: 2:10, 2:11}
+The wine at the party had run out. Jesus gave far more than enough. And the best wine came last. {v: 2:10, 2:11}
 
 ---
 
@@ -130,7 +130,7 @@ John 2:1-11 (BSB)
 | **"My hour has not yet come"** (2:4) | Jesus's "hour" is the time of his death and rising. His whole life was moving toward it. |
 | **"Do whatever He tells you"** (2:5) | Mary pointed away from herself and toward Jesus. |
 | **"Six stone water jars"** (2:6) | These jars held water for Jewish washing rites. Jesus used what was already there, plain jars and plain water, to give a gift. |
-| **"You have saved the fine wine until now"** (2:10) | The master was talking about wine. John wants us to hear more. With Jesus, the best comes last. |
+| **"You have saved the fine wine until now"** (2:10) | The master was talking about wine. Many readers see a second meaning too: with Jesus, the best comes last. |
 | **"The first of His signs"** (2:11) | A sign points past itself. This one points to who Jesus is. |
 | **"He thus revealed His glory"** (2:11) | Glory is God's shining greatness. In Jesus, people could see it up close. |
 
@@ -146,11 +146,11 @@ John 2:1-11 (BSB)
 
 ## 🚨 Literal Reader Alert: "Wait, what?"
 
-**Was Jesus being rude to his mother?** No. "Woman" sounds cold in English today. But back then, it was a respectful way to speak to a woman. Jesus used the same word for his mother while he was dying on the cross, as he made sure she would be cared for: **"Woman, here is your son"** (John 19:26). His question means something like, "Why is this our concern?" Mary still told the servants to do whatever he said. And Jesus did act.
+**Was Jesus being rude to his mother?** No. "Woman" sounds rude in English today. But back then, it was a respectful way to speak to a woman. Jesus used the same word for his mother while he was dying on the cross. He was making sure she would be cared for. He said, **"Woman, here is your son"** (John 19:26). His question means something like, "Why is this our concern?" Mary still told the servants to do whatever he said. And Jesus did act.
 
-**What is Jesus's "hour"?** In John's Gospel, Jesus's "hour" is the time of his death, rising, and return to the Father. Much later, Jesus said, **"The hour has come for the Son of Man to be glorified"** (John 12:23). At Cana, that hour was still ahead. But Jesus gave people a first look at his glory.
+**What is Jesus's "hour"?** In John's Gospel, Jesus's "hour" is the time of his death, rising, and return to the Father. A few days before his death, Jesus said, **"The hour has come for the Son of Man to be glorified"** (John 12:23). At Cana, that hour was still ahead. But Jesus gave people a first look at his glory.
 
-**Was it real wine?** Yes. The master of the banquet tasted it and called it fine wine. Wine was a normal part of meals and parties then. The Bible calls wine a gift **"that gladdens the heart of man"** (Psalm 104:15). The Bible also warns, **"Do not get drunk on wine"** (Ephesians 5:18). Many people choose not to drink, and many churches offer grape juice at the Lord's Supper. This story is not about drinking. It is about Jesus giving joy.
+**Was it real wine?** Yes. The master of the banquet tasted it and called it fine wine. Wine was a normal part of meals and parties then. The Bible calls wine a gift **"that gladdens the heart of man"** (Psalm 104:15). That means wine can make people glad. The Bible also warns, **"Do not get drunk on wine"** (Ephesians 5:18). Many people choose not to drink. Many churches offer grape juice at the Lord's Supper. This story is not about drinking. It is about Jesus giving joy.
 
 **Did the water change before or after it was poured?** The Bible doesn't say when it changed. It says the master **"tasted the water that had been turned into wine"** (2:9). It's okay to notice things like this. Careful readers have asked about it for centuries.
 
@@ -158,7 +158,7 @@ John 2:1-11 (BSB)
 
 | Who | Feeling | Why |
 |---|---|---|
-| Mary | Concerned | The wine had run out at the wedding (2:3). One likely reason: she cared about the family's shame |
+| Mary | Concerned | The wine had run out at the wedding (2:3). One likely reason: she did not want the family to be embarrassed |
 | Mary | Trusting | She told the servants to do whatever Jesus said (2:5) |
 | The master of the banquet | Surprised and pleased | The best wine came at the end, not the start (2:10) |
 | Jesus's disciples | Believing | They saw Jesus's glory in this sign (2:11) |
@@ -169,12 +169,12 @@ John 2:1-11 (BSB)
 
 ## 🙋 Your Turn
 
-**What does this story stir up in you?** Tap one.
+**What do you feel after reading this story?** Tap one.
 
-- I feel thankful :: That fits this story. Jesus gave more than anyone asked for. Thank him for the good things, big and small.
-- I'm not enough :: The party had nothing left. Jesus did not scold them. He filled six jars. He does not wait for you to be enough.
+- I feel thankful :: That fits this story. Jesus gave more than anyone asked for. You can thank him for the good things, big and small.
+- I'm not enough :: The wine at the party was gone. Jesus did not scold them. He filled six jars. He does not wait for you to be enough.
 - My problem seems too small :: Running out of wine was not life or death. Jesus still cared. You can bring him small things too.
-- I'm unsure about Jesus :: The disciples were new and unsure too. After this sign, they believed. Keep watching what Jesus does.
+- I'm unsure about Jesus :: The disciples were new and unsure too. After this sign, they believed. You can keep reading about what Jesus does.
 
 ## 🤔 You Might Have Heard...
 
@@ -184,15 +184,15 @@ John 2:1-11 (BSB)
 
 **What the story is mainly about:** What Jesus gives. The servants only carried water. They did not earn the wine. The family did nothing to deserve it. Jesus gave far more than they needed, and the best came last.
 
-**Where Jesus is:** At the center of the party. John says this sign **"revealed His glory"** (2:11). Jesus is God with us, and he came to a wedding.
+**Where Jesus is:** Jesus is at the center of the party. John says this sign **"revealed His glory"** (2:11). Jesus is God with us, and he came to a wedding.
 
 ## ✝️ Good News
 
-The wine ran out. That is often how life feels. We run out of energy, patience, hope, and love. We are not enough.
+The wine ran out at Cana. Our lives can feel like that too. We run out of energy, patience, hope, and love. We are not enough.
 
-Jesus does not wait for us to fill ourselves back up. He gives, and he gives more than enough. God promised through the prophet Isaiah a great feast **"of finely aged wine"** for all peoples (Isaiah 25:6). At Cana, Jesus gave a first taste of that joy.
+Jesus does not wait for us to fill ourselves back up. He gives, and he gives more than enough. Through the prophet Isaiah, God promised a banquet for all peoples. It would be a feast **"of finely aged wine"** (Isaiah 25:6). At Cana, Jesus gave a first taste of that joy.
 
-Jesus's "hour" did come. He gave his life on the cross and rose again. At his last supper, he gave his disciples a cup of wine and said, **"This cup is the new covenant in My blood"** (1 Corinthians 11:25). In the Lord's Supper, Jesus still gives himself to us, for us, and the Holy Spirit gives us faith to receive him.
+Jesus's "hour" did come. He gave his life on the cross and rose again. At his last supper, he gave his disciples a cup of wine and said, **"This cup is the new covenant in My blood"** (1 Corinthians 11:25). In the Lord's Supper, Jesus still gives himself to us, for us. The Holy Spirit gives us faith to receive him.
 
 **Jesus fills what is empty. With him, the best is still to come.**
 

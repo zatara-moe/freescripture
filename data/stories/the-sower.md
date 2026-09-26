@@ -4,7 +4,7 @@
 
 **Cast**
 
-- **Jesus:** The one the Gospels present as the promised Messiah and the Son of God. Today he teaches a huge crowd.
+- **Jesus:** The one the Gospels present as the promised Messiah and the Son of God. In this story he teaches a huge crowd.
 - **The Twelve:** The twelve disciples Jesus chose to be closest to him. Other followers are with them too.
 - **The crowd:** People from many towns, packed along the shore.
 - **In Jesus's story:** A farmer, his seed, and four kinds of ground.
@@ -45,12 +45,12 @@
 
 Waves lapped against the shore of the Sea of Galilee. Jesus was teaching there again. {v: 4:1}
 
-Jesus had called his first disciples beside this same lake. They were fishermen (1:16-20). Now so many people came that there was no room. Jesus got into a boat and sat down in it, out on the water. The whole crowd stood along the shore to listen. {v: 4:1}
+Jesus had called his first disciples beside this same lake. They were fishermen (1:16-20). Now such a large crowd gathered that Jesus got into a boat. He sat down in it, out on the water. The whole crowd stood along the shore to listen. {v: 4:1}
 
 Jesus taught them many things in parables. Then he began a new story. **"Listen!"** he said (4:3). {v: 4:2, 4:3}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> A small wooden boat rocks a little way out from the beach. Hundreds of people crowd the pebbles and grass, and his voice carries over the water.
+> A small wooden boat rocks a little way out from the beach. Hundreds of people crowd the pebbles and grass. Jesus's voice carries over the water.
 
 ### Scene 2: The Farmer and the Path
 
@@ -64,11 +64,11 @@ Some seed fell on the path. People walked across fields on paths like this, and 
 
 Some seed fell on rocky ground. There was only a thin layer of soil over the rock. {v: 4:5}
 
-That seed sprang up fast, because the soil was shallow. But then the sun came up hot. The young plants burned and dried up. They had no roots. {v: 4:5, 4:6}
+That seed sprang up fast, because the soil was shallow. But then the sun came up. The heat scorched the young plants, and they dried up. They had no roots. {v: 4:5, 4:6}
 
 Other seed fell among thorns. Back then, thorns were often left in a field. The thorns grew up with the young plants and choked them. Those plants never made any grain. {v: 4:7}
 
-Three kinds of ground, and three failures. So far, the story sounds like a lot of wasted seed. {v: 4:4, 4:7}
+Three kinds of ground, and three failures. So far, it sounds like the farmer wasted much of his seed. {v: 4:4, 4:7}
 
 ### Scene 4: A Huge Harvest
 
@@ -81,15 +81,15 @@ A farmer is glad when his seed comes back many times over. This was a huge harve
 Then Jesus said, **"He who has ears to hear, let him hear"** (4:9). This means: pay attention. There is more here than a farming story. {v: 4:9}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> Tall golden grain waves in the wind, as far as the eye can see. The stalks bend low because they are so heavy with seed.
+> Tall golden grain waves in the wind and fills the whole field. The stalks bend low because they are so heavy with seed.
 
 ### Scene 5: Why Parables?
 
-Later, the crowd was gone. Jesus was alone with his closest followers. The Twelve and Jesus's other followers came to him with a question. What did the story mean? {v: 4:10}
+Then the crowd was gone. Jesus was alone with the Twelve and his other followers. They asked him what the story meant. {v: 4:10}
 
 Jesus told them that God had given them **"the mystery of the kingdom of God"** (4:11). A mystery here means something hidden that God shows to people. The kingdom of God means God's rule. {v: 4:11}
 
-But for people outside, Jesus said, everything comes in parables. Then he used words from the prophet Isaiah. Some people would look and look but never see. They would listen and listen but never understand. Otherwise they might turn and be forgiven (Isaiah 6:9-10). {v: 4:11, 4:12}
+But for those on the outside, Jesus said, everything comes in parables. Then he used words from the prophet Isaiah. Some people would look and look but never see. They would listen and listen but never understand. Otherwise they might turn and be forgiven (Isaiah 6:9-10). {v: 4:11, 4:12}
 
 These are hard words. The followers who asked were not being shut out. Jesus was about to explain everything to them. We will look at these words more closely in the Literal Reader Alert below. {v: 4:12}
 
@@ -97,9 +97,9 @@ These are hard words. The followers who asked were not being shut out. Jesus was
 
 Jesus asked his followers, "Don't you understand this parable? Then how will you understand the others?" {v: 4:13}
 
-Jesus's own friends did not get it either. He did not send them away. He explained it. {v: 4:13}
+Jesus's own followers did not understand the parable. Still, he did not send them away. He explained it to them. {v: 4:13}
 
-**"The farmer sows the word"** (4:14). The seed is God's word, the message about God's kingdom. Jesus had been preaching it since the start: God's kingdom has come near (1:15). {v: 4:14}
+**"The farmer sows the word"** (4:14). The seed is God's word, the message about God's kingdom. Jesus had been preaching this message since his work began: God's kingdom has come near (1:15). {v: 4:14}
 
 The path is like people who hear the word, and right away Satan takes it away. Satan is the enemy of God. In the story, the birds snatching the seed stand for him. {v: 4:15}
 
@@ -107,13 +107,13 @@ The rocky ground is like people who hear the word and are happy about it at firs
 
 ### Scene 7: Thorns and Good Soil
 
-The thorns are like people who hear the word too. But the worries of this life crowd in. Money tricks them with false promises. They want other things too. These things choke the word, like thorns choke a plant. It makes no crop. {v: 4:18, 4:19}
+The thorns are like people who hear the word too. But the worries of this life crowd in. Money tricks them with false promises. They want other things too. These things choke the word, like thorns choke a plant. The word makes no crop in them. {v: 4:18, 4:19}
 
 The good soil is like people who hear the word and welcome it. They produce a crop, **"thirtyfold, sixtyfold, or a hundredfold"** (4:20). {v: 4:20}
 
 The farmer sowed everywhere, even where the ground looked hopeless. And the good soil gave back many times more than was planted. {v: 4:3, 4:8, 4:20}
 
-That evening, Jesus told his disciples, "Let's cross to the other side." A storm was coming. They were about to learn more about who Jesus is. {v: 4:35}
+That evening, Jesus told his followers, "Let's cross to the other side." A storm was coming. They were about to learn more about who Jesus is. {v: 4:35}
 
 ---
 
@@ -133,11 +133,11 @@ Mark 4:1-20 (BSB)
 | **"The farmer sows the word"** (4:14) | The seed is God's word. It is the good news that God's kingdom has come near in Jesus (1:15). |
 | **"Have no root"** (4:17) | This is a comparison. Their faith did not go deep, so it dried up when life got hard. |
 | **"The worries of this life"** (4:19) | This is a comparison too. Worries and wanting more can crowd out God's word, like weeds crowd out a plant. |
-| **"Thirtyfold, sixtyfold, or a hundredfold"** (4:20) | God's word grows far more than it costs to plant. The harvest is God's work. |
+| **"Thirtyfold, sixtyfold, or a hundredfold"** (4:20) | God's word produces far more than was planted. The harvest is God's work. |
 
 ## 🌍 Back Then...
 
-**Farmers often sowed seed by hand.** They threw it in wide sweeps, so some landed on hard paths, on rocky places, and among thorns that had not been cleared. (Edersheim, The Life and Times of Jesus the Messiah)
+**Farmers often sowed seed by hand.** They threw it in wide sweeps. So some seed landed on hard paths and rocky places. Some landed among thorns that had not been cleared. (Edersheim, The Life and Times of Jesus the Messiah)
 
 **Rocky ground was thin soil over rock.** Seed there sprang up fast but dried out before it could make grain. (Edersheim, The Life and Times of Jesus the Messiah)
 
@@ -173,7 +173,7 @@ Mark 4:1-20 (BSB)
 - Am I bad soil? :: Worrying about this can be a sign that God's word is already at work in you. The farmer is still sowing, and he does not give up on his field.
 - My faith feels thin :: Rocky ground describes a feeling many Christians have. Faith is a gift from God, not something you grow by trying harder. A worried father once told Jesus that he believed, and asked him to help his unbelief. Jesus did not turn him away (Mark 9:24).
 - Worries choke everything :: Jesus named worries as real. They are not a sign you have failed. God keeps sowing his word, even into busy, crowded lives.
-- I don't understand it :: The disciples didn't either. They asked Jesus, and he explained. Asking is how you come close.
+- I don't understand it :: Jesus's followers didn't either. They asked Jesus, and he explained. Asking is how you come close.
 - It's really bad right now :: Please tell a trusted adult today. If you are in danger, call 911 or your local emergency number. In the U.S., you can call or text 988 any time. Outside the U.S., findahelpline.com lists free helplines.
 
 ## 🤔 You Might Have Heard...
@@ -184,11 +184,11 @@ Mark 4:1-20 (BSB)
 
 **What the story is mainly about:** The farmer, and the harvest. The farmer throws seed everywhere, even on paths and rocks. That looks wasteful. But God is generous with his word. And the ending is a surprise. Some seed makes 100 times as much. God promised that his word **"will not return to Me empty"** (Isaiah 55:11). The word does the work. Soil cannot make itself good. Faith is God's gift. The Holy Spirit gives it through the word.†
 
-**Where Jesus is:** Many Christians see Jesus as the farmer. He sowed the word by preaching to anyone who would listen, even from a boat. Later he gives his own life, like a seed that dies and makes much fruit (John 12:24).†
+**Where Jesus is:** Many Christians see Jesus as the farmer. He sowed the word by preaching to anyone who would listen, even from a boat. Later he gave his own life. Jesus compared himself to a kernel of wheat that dies and then produces many more seeds (John 12:24).†
 
 ## ✝️ Good News
 
-You do not have to fix your own soil. God is the farmer. He keeps sowing his word, again and again, through Scripture, preaching, Baptism, and the Lord's Supper.
+You do not have to make your own soil good. God keeps sowing his word, again and again, through Scripture, preaching, Baptism, and the Lord's Supper.
 
 The same God said his word is like rain and snow that make the earth sprout (Isaiah 55:10). The same God keeps working in you. **"He who began a good work in you will carry it on to completion"** (Philippians 1:6).
 
@@ -198,7 +198,7 @@ The same God said his word is like rain and snow that make the earth sprout (Isa
 
 In the *Small Catechism* (1529), Luther explained the Third Article of the Creed. He wrote that we cannot believe in Jesus or come to him by our own reason or strength. Instead, the Holy Spirit calls us by the Gospel and keeps us in the true faith.†
 
-Lutherans call God's word and the sacraments the "means of grace." These are the ways God comes to us with forgiveness and faith. The Augsburg Confession (1530), written by Luther's coworker Philip Melanchthon, says God gives the Holy Spirit through the word and the sacraments. The Spirit makes faith where and when God pleases, in those who hear the Gospel (Article 5).†
+Lutherans call God's word and the sacraments the "means of grace." These are the ways God comes to us with forgiveness and faith. The Augsburg Confession (1530) was written by Luther's coworker Philip Melanchthon. It says God gives the Holy Spirit through the word and the sacraments. The Spirit makes faith where and when God pleases, in those who hear the Gospel (Article 5).†
 
 Luther also preached on this parable in his *Church Postil*, in a sermon for Sexagesima Sunday on Luke's telling of it (Luke 8:4-15). He noted that only a small part of the seed falls on good ground. But he said we can be sure God's word never goes out without bearing some fruit.
 
@@ -208,4 +208,4 @@ Many churches follow the Revised Common Lectionary. It reads Matthew's telling o
 
 ## 💡 Big Idea
 
-**God sows his word generously, and his word makes faith grow and brings a harvest far bigger than we could make ourselves.**
+**God sows his word generously, and that word grows faith and a harvest far bigger than we could make.**

@@ -24,9 +24,9 @@
 
 **Nineveh is Israel's enemy.** It is the capital of Assyria, a strong and cruel empire.
 
-**God has a job for Jonah.** Go to Nineveh and warn it.
+**God has a job for Jonah.** God wants Jonah to go to Nineveh and warn the people there.
 
-**Here's what you know that almost nobody in this story knows:** Jonah already knows how this might end. He tells us why he ran away near the end of the book (4:2).
+**Here's what you know that almost nobody in this story knows:** Jonah already knows how this might end. Near the end of the book, Jonah tells God why he ran away (4:2).
 
 ## 🗺️ Map of the Story
 
@@ -61,7 +61,7 @@ Then the LORD sent a great wind over the sea. A violent storm hit. The ship was 
 
 The sailors were terrified. Each one cried out to his own god. They threw the cargo into the sea to make the ship lighter. {v: 1:5}
 
-Jonah was not on deck. He had gone down to the lowest part of the ship. He was fast asleep. {v: 1:5}
+But Jonah had gone down to the lowest part of the ship. He was fast asleep. {v: 1:5}
 
 The captain found him. "How can you sleep?" the captain asked. "Get up and call on your God. Maybe your God will notice us, and we won't die." {v: 1:6}
 
@@ -78,7 +78,7 @@ The sailors asked him question after question. Who was to blame? What was his jo
 
 Jonah said he was a Hebrew. Then he said, **"I worship the LORD, the God of the heavens, who made the sea and the dry land"** (1:9). {v: 1:9}
 
-Think about what Jonah just said. His God made the sea. And Jonah was trying to escape that God by sea. {v: 1:9}
+Jonah had said that his God made the sea. And Jonah was trying to escape that God by sea. {v: 1:9}
 
 The sailors grew even more afraid. Jonah had already told them he was running from the LORD. "What have you done?" they asked. {v: 1:10}
 
@@ -102,19 +102,19 @@ The LORD had sent a great fish. It swallowed Jonah. Jonah was inside the fish fo
 
 Inside the fish, Jonah prayed to the LORD. {v: 2:1}
 
-His prayer is a poem. He remembered sinking into the deep sea. Waves rolled over him. Seaweed wrapped around his head. {v: 2:3, 2:5}
+His prayer is a poem. It begins, **"In my distress I called to the LORD, and He answered me"** (2:2). Distress means deep trouble and fear. {v: 2:2}
 
-He said he sank down "to the roots of the mountains." This is poetry. It means he sank as low as a person can go. {v: 2:6}
+Jonah remembered sinking into the deep sea. Waves rolled over him. Seaweed wrapped around his head. {v: 2:3, 2:5}
 
-But God heard him. **"In my distress I called to the LORD, and He answered me"** (2:2). Distress means deep trouble and fear. {v: 2:2}
+He said he sank down "to the roots of the mountains." This is poetry. It means he sank as low as a person can go. But he said God had rescued him. {v: 2:6}
 
 Jonah ended his prayer with thanks. **"Salvation is from the LORD!"** (2:9). Salvation means being rescued. {v: 2:9}
 
-Then the LORD spoke to the fish. The fish threw Jonah up onto dry land. {v: 2:10}
+Then the LORD spoke to the fish. The fish vomited Jonah out onto dry land. {v: 2:10}
 
 ### Scene 6: A Second Chance
 
-God spoke to Jonah a second time. The message was the same. Go to Nineveh. {v: 3:1, 3:2}
+God spoke to Jonah a second time. God again told him to go to Nineveh. Jonah was to speak the message God gave him. {v: 3:1, 3:2}
 
 This time, Jonah went. {v: 3:3}
 
@@ -122,7 +122,7 @@ Nineveh was enormous. It took about three days to go through it. {v: 3:3}
 
 Jonah walked into the city for one day. Then he gave his message. **"Forty more days and Nineveh will be overturned!"** (3:4). Overturned means destroyed. {v: 3:4}
 
-That was the whole message. In our English Bible, it is only eight words long. {v: 3:4}
+That is all the Bible tells us of his message. In our English Bible, it is only eight words long. {v: 3:4}
 
 ### Scene 7: The City Turns Around
 
@@ -132,7 +132,7 @@ They put on sackcloth. Sackcloth was rough cloth people wore to show they were s
 
 The news reached the king. He stood up from his throne and took off his royal robe. He put on sackcloth and sat in ashes. {v: 3:6}
 
-The king made a law for the whole city. No person or animal could eat or drink. Everyone had to pray hard to God. Everyone had to stop doing evil and violence. {v: 3:7, 3:8}
+The king made a law for the whole city. No person or animal could eat or drink. People and animals had to wear sackcloth. Everyone had to pray hard to God. Everyone had to stop doing evil and violence. {v: 3:7, 3:8}
 
 The king said, **"Who knows? God may turn and relent"** (3:9). Relent means to change your mind and hold back. {v: 3:9}
 
@@ -144,7 +144,7 @@ You might expect Jonah to be happy. He was not. He was very upset, and he became
 
 Then Jonah told God why he had run away. **"I knew that You are a gracious and compassionate God, slow to anger, abounding in loving devotion"** (4:2). {v: 4:2}
 
-Gracious means giving good things people don't earn. Compassionate means caring about people who hurt. {v: 4:2}
+Gracious means giving good things people don't earn. Compassionate means caring about people who are suffering. {v: 4:2}
 
 Jonah did not run because he thought God was cruel. He ran because he knew God might forgive Nineveh. {v: 4:2}
 
@@ -189,10 +189,10 @@ Jonah 1 to 4 (BSB)
 
 | The text says | It means |
 |---|---|
-| **"Away from the presence of the LORD"** (1:3) | Jonah tried to get as far from God's call as he could. He found out that was impossible. |
+| **"Away from the presence of the LORD"** (1:3) | Jonah tried to get as far from God's call as he could. He found out that escaping God was impossible. |
 | **"The LORD had appointed a great fish"** (1:17) | God was in charge of the storm, the fish, the plant, the worm, and the wind. God kept sending things to reach Jonah. |
 | **"Salvation is from the LORD!"** (2:9) | Only God can rescue. Jonah learned this in the fish. Nineveh learned it too. |
-| **"Gracious and compassionate... slow to anger"** (4:2) | Jonah is repeating what God said about himself to Moses (Exodus 34:6). Jonah knew what God is like. He did not like who God was being kind to. |
+| **"Gracious and compassionate... slow to anger"** (4:2) | Jonah is repeating what God said about himself to Moses (Exodus 34:6). Jonah knew what God is like. He did not like that God was being kind to Nineveh. |
 | **"Cannot tell their right hand from their left"** (4:11) | A saying. One likely meaning: they did not know any better. It is not about people who mix up left and right. |
 
 ## 🌍 Back Then...
@@ -205,11 +205,11 @@ Jonah 1 to 4 (BSB)
 
 ## 🚨 Literal Reader Alert: "Wait, what?"
 
-**Was it a whale?** The Bible says "a great fish." Many people say whale. The Bible does not say what kind of sea creature it was.
+**Was it a whale?** The Bible says "a great fish." Most people know this story as Jonah and the Whale, so we use that name too. The Bible does not say what kind of sea creature it was. When Jesus talks about Jonah (Matthew 12:40), the King James Bible says "the whale's belly." The Greek word there means a huge sea creature.
 
 **Could a person live inside a fish?** It's okay to notice things like this. Careful readers have asked about it for centuries. Some Christians read Jonah as history. Others read it as a true teaching story. Jesus talked about Jonah too (Matthew 12:40). Either way, the point is God's mercy.
 
-**Is it okay to be angry at God?** You can tell God how you really feel. Many psalms do (Psalm 13:1-2). God did not push Jonah away for being angry. He kept talking with him.
+**Is it okay to be angry at God?** You can tell God how you really feel. Many psalms do (Psalm 13:1-2). God did not push Jonah away for being angry. God kept talking with him.
 
 **Jonah asked to die. What does that mean?** Jonah was in deep pain and anger. God did not leave him. God kept talking with him, gently, with questions. If you ever feel like Jonah did, please talk to someone you trust. If you are in danger right now, call 911 or your local emergency number. In the United States, you can also call or text 988 any time, day or night. Outside the United States, findahelpline.com lists free helplines.
 
@@ -233,14 +233,14 @@ Jonah 1 to 4 (BSB)
 
 **Which part of Jonah's story feels most like yours?** Tap one.
 
-- Running away :: God went after Jonah, all the way into the sea. God does not give up on runaways.
-- Stuck in the deep :: Jonah prayed from the bottom of the sea, and God heard him. You can pray from wherever you are.
-- Angry at God :: Jonah told God exactly how he felt. God did not leave. He kept talking with him, gently.
-- Getting a second chance :: God spoke to Jonah a second time. Second chances are how God works.
+- Running away :: God did not let Jonah go. God sent a storm and a great fish, and then spoke to Jonah again. God does not give up on runaways.
+- Feeling stuck or trapped :: Jonah prayed from inside the fish, and God heard him. You can pray from wherever you are.
+- Angry at God :: Jonah told God exactly how he felt. God did not leave. God kept talking with Jonah, gently.
+- Getting a second chance :: God spoke to Jonah a second time. God gives second chances.
 
 ## 🤔 You Might Have Heard...
 
-*"Jonah is about obeying God, or else."*
+*"Jonah is about obeying God, or God will punish you."*
 
 **What's true:** Running from God did not work for Jonah.
 
@@ -252,7 +252,7 @@ Jonah 1 to 4 (BSB)
 
 God does not give up on runaways. God does not give up on enemies. And God does not give up on people who are angry at him.
 
-Jesus said he would be a sign like Jonah (Luke 11:30). Jonah went down into the sea. Jesus went down into death and rose again. So no one is too far gone for God to reach. **God's mercy is bigger than our anger.**†
+Jesus said he would be a sign like Jonah (Luke 11:30). Jonah went down into the sea. Jesus went down into death and rose again. So no one is too far away for God to reach. **God's mercy is bigger than our anger.**†
 
 ## 📚 From Luther
 
@@ -264,4 +264,4 @@ Many churches follow a reading plan called the Revised Common Lectionary. It rea
 
 ## 💡 Big Idea
 
-**God chases a runaway prophet and shows mercy even to his enemies.**
+**God does not let a runaway prophet go, and he shows mercy even to Israel's enemies.**

@@ -57,6 +57,13 @@ name and opens its Bible passage. So nothing on the site says "coming soon."
 
 Stories with kind "Poetry and Prayer" show as "Prayer" (Psalm 23, The Lord's Prayer).
 
+Subchapters: a big passage is told as several short stories plus a reading path
+under the familiar name. The Empty Tomb became The Crucifixion and The Resurrection.
+Moses and the Exodus became Baby Moses, The Burning Bush, The Ten Plagues, The Passover,
+and Crossing the Red Sea (path: /paths/moses-and-the-exodus/). The Sermon on the Mount
+is a path of seven stories (/paths/sermon-on-the-mount/). Christmas and Lost and Found are paths too. next.config.js redirects the
+old story links. Site search lists reading paths by name (lib/search-terms.ts).
+
 How a story page is arranged (from the student and pastor reviews, Sept 2026):
 
 - **Story** opens at Scene 1. The Scene Card, Before the Story, and Map boxes sit in a

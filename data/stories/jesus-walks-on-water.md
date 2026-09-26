@@ -47,7 +47,7 @@ Jesus had made the disciples get into the boat right away. They were to cross ah
 
 When the crowd was gone, Jesus went up on the mountain by himself. He went there to pray. {v: 14:23}
 
-Evening came. Jesus was still there, alone. Earlier that day, he had tried to get away to a quiet place. Now he was alone to pray. {v: 14:23}
+Evening came. Jesus was still there, alone. Earlier that day, Jesus had tried to get away to a quiet place (14:13). Now he was alone to pray. {v: 14:23}
 
 ### Scene 2: Against the Wind
 
@@ -55,7 +55,7 @@ By now the boat was far from land. The wind was blowing against it. Waves kept s
 
 Night went on. The disciples were still out on the dark water. Jesus was not in the boat with them. {v: 14:24, 14:25}
 
-Once before, in a storm on this same lake, Jesus had been asleep in the boat with them (8:24). This time, he was not there at all. {v: 14:24}
+Once before, in a storm on this same lake, Jesus had been asleep in the boat with them (8:24). This time, Jesus was not in the boat at all. {v: 14:24}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
 > Wind whistles over black water. Cold spray hits faces, and the oars creak and splash.
@@ -76,7 +76,7 @@ But Jesus spoke to them at once. **"Take courage! It is I. Do not be afraid"** (
 
 ### Scene 4: Peter Walks
 
-Peter answered him. **"Lord, if it is You... command me to come to You on the water"** (14:28). {v: 14:28}
+Peter answered Jesus. **"Lord, if it is You... command me to come to You on the water"** (14:28). {v: 14:28}
 
 Peter started with "if." The Bible doesn't say what Peter was feeling. But he did not step out on his own. He asked Jesus to call him. {v: 14:28}
 
@@ -94,17 +94,17 @@ Immediately Jesus reached out his hand. He took hold of Peter. {v: 14:31}
 
 Then Jesus spoke. **"You of little faith," He said, "why did you doubt?"** (14:31). {v: 14:31}
 
-This was a real correction. But Jesus said it after he had already caught Peter. He did not wait for Peter to trust him more before he saved him. {v: 14:31}
+This was a real correction. But Jesus said it after he had already caught Peter. Jesus did not wait for Peter to trust him more before saving Peter. {v: 14:31}
 
 ### Scene 6: "Truly You Are the Son of God"
 
 Jesus and Peter climbed back into the boat. The wind died down. {v: 14:32}
 
-The disciples in the boat worshiped Jesus. To worship means to honor someone with your whole self. People often bowed down to do it. {v: 14:33}
+The disciples in the boat worshiped Jesus. To worship means to give someone the highest honor. People often bowed down to do it. {v: 14:33}
 
 They said, **"Truly You are the Son of God!"** (14:33). {v: 14:33}
 
-That night began with the disciples crying out in fear. They thought they saw a ghost. It ended with them worshiping the one who came to them across the water. At Jesus's baptism, a voice from heaven had called him God's Son. Now his friends said it too. {v: 14:26, 14:33}
+That night began with the disciples crying out in fear. They thought they saw a ghost. It ended with them worshiping the one who came to them across the water. At Jesus's baptism, a voice from heaven had called him God's Son. Now the disciples said it too. {v: 14:26, 14:33}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
 > The water lies still around the boat. Wet clothes drip onto the wooden floor.
@@ -122,7 +122,7 @@ Matthew 14:22-33 (BSB)
 | The text says | It means |
 |---|---|
 | **"He went up on the mountain by Himself to pray"** (14:23) | Jesus prayed. After a long, sad, busy day, he made time to be alone with God. |
-| **"The fourth watch of the night"** (14:25) | About 3 to 6 in the morning. The disciples had been fighting the wind for most of the night. |
+| **"The fourth watch of the night"** (14:25) | About 3 to 6 in the morning. The disciples had been out in the wind and waves for most of the night. |
 | **"Walking on the sea"** (14:25) | In the Old Testament, God is the one who **"treads on the waves of the sea"** (Job 9:8). Jesus does what only God can do. |
 | **"It is I"** (14:27) | In Greek, these words are "I am." Many readers hear an echo of God's name here. God told Moses, **"I AM WHO I AM"** (Exodus 3:14). Matthew does not stop to explain it. |
 | **"Come"** (14:29) | Peter walked because Jesus called him. The power was in Jesus's word, not in Peter. |
@@ -140,13 +140,13 @@ Matthew 14:22-33 (BSB)
 
 ## 🚨 Literal Reader Alert: "Wait, what?"
 
-**Is it wrong to feel afraid?** No. Fear is a feeling, not a sin. The disciples were alone on a dark lake in a strong wind. Peter was sinking. And Peter did the right thing: he cried out to Jesus. Jesus's words to Peter were a real correction. But he said them after he had already caught him. He was not pushing Peter away. He was calling Peter to trust him. Jesus himself was **"sorrowful and deeply distressed"** the night before he died (Matthew 26:37).†
+**Is it wrong to feel afraid?** No. Fear is a feeling, not a sin. The disciples were alone on a dark lake in a strong wind. Peter was sinking. And Peter did the right thing: he cried out to Jesus. Jesus's words to Peter were a real correction. But Jesus said them after he had already caught Peter. Jesus was not pushing Peter away. He was calling Peter to trust him. Jesus himself was **"sorrowful and deeply distressed"** the night before he died (Matthew 26:37).†
 
 **What if I feel anxious a lot?** You are not alone, and you are not a bad Christian. Anxiety is real, and it is common. You can pray about it. Your prayer can be as short as Peter's: "Lord, save me." Talking to someone you trust helps too. If worry is making it hard to sleep, eat, or go to school, a doctor or counselor can help. Getting help is not a lack of faith. God often cares for us through other people. If you are in danger right now, call 911 or your local emergency number. In the United States, you can also call or text 988 any time, day or night. Outside the United States, findahelpline.com lists free helplines.†
 
 **Should I try something dangerous to prove my faith?** No. Peter stepped out because Jesus called him with the word "Come." This story is not a test for you to take. When Jesus was tempted to jump from the top of the temple, he said, **"Do not put the Lord your God to the test"** (Matthew 4:7). Faith is trusting Jesus, not proving yourself.
 
-**Why don't the other Gospels mention Peter's walk?** Mark and John tell this story too (Mark 6:45-52, John 6:16-21), but only Matthew includes Peter walking on the water.
+**Why don't the other Gospels mention Peter's walk?** Mark and John tell this story too (Mark 6:45-52, John 6:16-21). But only Matthew includes Peter walking on the water. The Bible doesn't say why.
 
 ## 💭 How People Feel
 
@@ -166,11 +166,11 @@ Matthew 14:22-33 (BSB)
 
 **Where are you in this story right now?** Tap one.
 
-- In the dark boat :: The disciples were far from land, and the wind was against them. Jesus came to them in the dark. He comes to you too.
+- In the dark boat :: The disciples were far from land, and the wind was against them. Jesus came to them while it was still dark. Jesus is with you in hard times too.
 - Sinking :: Peter cried, "Lord, save me." Immediately Jesus took hold of him. You can pray those same words.
-- I doubt a lot :: Jesus asked Peter why he doubted while Peter was already safe. Doubt did not make Jesus let go.
+- I doubt a lot :: Jesus asked Peter, "Why did you doubt?" He asked it after Peter was already safe. Doubt did not make Jesus let go of Peter.
 - Not sure it's him :: Peter said, "Lord, if it is You." Jesus did not scold him for the "if." He said, "Come."
-- It's really bad right now :: Peter told Jesus the truth: he was going under. You can tell him too. Please also tell a trusted adult today. If you are in danger, call or text 988 (in the U.S.) or your local emergency number.
+- It's really bad right now :: Peter told Jesus the truth: he was sinking. You can tell Jesus too. Please also tell a trusted adult today. In the U.S., call or text 988 any time, day or night. If you are in danger, call 911 or your local emergency number. Outside the U.S., findahelpline.com lists free helplines.
 
 ## 🤔 You Might Have Heard...
 
@@ -178,7 +178,7 @@ Matthew 14:22-33 (BSB)
 
 **What's true:** Peter's step was real trust. He went because Jesus said, "Come." God does sometimes call people to new and hard things.
 
-**What the story is mainly about:** Jesus, not Peter's courage. Jesus came to scared friends in the dark. He spoke to them before they were calm. Peter's brave step ended with him sinking. The story does not end there. It ends with Jesus's hand, and with everyone in the boat worshiping him. The disciples who stayed in the boat were not left out. Jesus came to them too.
+**What the story is mainly about:** Jesus, not Peter's courage. Jesus came to his frightened disciples while it was still dark. He spoke to them before they were calm. Peter's brave step ended with him sinking. The story does not end there. It ends with Jesus's hand, and with everyone in the boat worshiping him. The disciples who stayed in the boat were not left out. Jesus came to them too.
 
 **Where Jesus is:** On the water, coming toward the boat. Then reaching down to catch Peter. The disciples say who he is: the Son of God. At the cross, a Roman soldier says it too: **"Truly this was the Son of God"** (Matthew 27:54).
 
@@ -194,7 +194,7 @@ God first spoke these words to Israel, and Christians hear them too: **"When you
 
 ## 📚 From Luther
 
-In the Small Catechism, Martin Luther wrote, "I believe that I cannot by my own reason or strength believe in Jesus Christ, my Lord, or come to Him" (Third Article, Concordia Triglotta, 1921). He goes on to say that the Holy Spirit calls us by the Gospel and keeps us in the true faith. Peter's walk is a picture of this. Peter could not come to Jesus on the water by his own strength. He came because Jesus called him.†
+Martin Luther wrote about faith in the Small Catechism. He wrote, "I believe that I cannot by my own reason or strength believe in Jesus Christ, my Lord, or come to Him" (Third Article, Concordia Triglotta, 1921). He goes on to say that the Holy Spirit calls us by the Gospel and keeps us in the true faith. Peter's walk is a picture of this. Peter could not come to Jesus on the water by his own strength. He came because Jesus called him.†
 
 ## 📅 In Church
 
@@ -202,4 +202,4 @@ Many churches follow the Revised Common Lectionary. It reads Matthew 14:22-33 in
 
 ## 💡 Big Idea
 
-**Jesus comes to his frightened friends in the dark, catches them when they sink, and holds on to them even when their faith is small.**
+**Jesus comes to frightened disciples at night and catches them when they sink, even when their faith is small.**

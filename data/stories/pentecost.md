@@ -54,19 +54,19 @@ They saw what looked like flames of fire. The flames split apart and rested on e
 They were all filled with the Holy Spirit. They began to speak in other languages. The Spirit gave them the words. {v: 2:4}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> Picture a crowded room going quiet in prayer. Then a roar, like a storm with no rain. People look up at each other, and each face is lit.
+> Picture a crowded room going quiet in prayer. Then comes a roar like a storm with no rain, and firelight shines on every face.
 
 ### Scene 2: Every Language
 
 Many Jewish people from other countries were in Jerusalem. They were people who loved God, from every nation. {v: 2:5}
 
-They heard the sound, and a crowd came together. They were confused. Each person heard the believers speaking in his own language. {v: 2:6}
+They heard the sound, and a crowd came together. They were confused because each person heard the believers speaking in his own language. {v: 2:6}
 
 They were amazed. **"Are not all these men who are speaking Galileans?"** they asked (2:7). Galilee was an area in the north of Israel. Jesus and most of his followers came from there. {v: 2:7}
 
 They also asked, **"How is it then that each of us hears them in his own native language?"** (2:8). {v: 2:8}
 
-The crowd came from many lands. Today we call many of these places Iran, Iraq, Turkey, Egypt, Libya, and Italy. Some came from the island of Crete, and some from Arabia (parts of Jordan and Saudi Arabia today). Some lived in Judea, the area around Jerusalem. Some were born Jewish. Others had chosen to become Jewish. {v: 2:9, 2:10, 2:11}
+The crowd came from many lands. Today we call many of these places Iran, Iraq, Turkey, Egypt, Libya, and Italy. Some came from the island of Crete. Some came from Arabia, which is now parts of Jordan and Saudi Arabia. Some lived in Judea, the area around Jerusalem. Some were born Jewish. Others had chosen to become Jewish. {v: 2:9, 2:10, 2:11}
 
 They said, **"we hear them declaring the wonders of God in our own tongues!"** (2:11). Here "tongues" means languages. {v: 2:11}
 
@@ -74,7 +74,7 @@ They said, **"we hear them declaring the wonders of God in our own tongues!"** (
 
 Everyone was amazed and confused. They asked each other, **"What does this mean?"** (2:12). {v: 2:12}
 
-But some people made fun of them. They said the believers were drunk. {v: 2:13}
+But some people made fun of the believers. They said the believers were drunk on new wine. {v: 2:13}
 
 ### Scene 4: Peter Stands Up
 
@@ -86,35 +86,43 @@ Peter said, **"These men are not drunk, as you suppose. It is only the third hou
 
 Peter said this was what God had promised long ago, through the prophet Joel. {v: 2:16}
 
-God had said, **"I will pour out My Spirit on all people"** (2:17). Sons and daughters, young and old, would speak God's message. Even servants, men and women, would receive the Spirit and speak God's message. {v: 2:17, 2:18}
+God had said, **"I will pour out My Spirit on all people"** (2:17). Sons and daughters would speak God's message. Young men would see visions. Old men would dream dreams. Even servants, men and women, would receive the Spirit and speak God's message. {v: 2:17, 2:18}
 
-The words from Joel end with this promise: **"And everyone who calls on the name of the Lord will be saved"** (2:21). {v: 2:21}
+Joel also spoke of signs in the sky and on the earth before the great Day of the Lord. The words from Joel end with this promise: **"And everyone who calls on the name of the Lord will be saved"** (2:21). {v: 2:21}
 
 ### Scene 5: Peter Talks About Jesus
 
-Then Peter told them about Jesus from Nazareth. God showed who Jesus was by doing miracles through him. The crowd knew about them. {v: 2:22}
+Then Peter told them about Jesus from Nazareth. God showed who Jesus was by doing miracles through him. The crowd knew about these miracles. {v: 2:22}
 
-Peter said Jesus was handed over by God's plan. God knew it would happen. Peter told the crowd they had put Jesus to death. They used lawless men to nail him to the cross. "Lawless" here means people who did not know God's law. This probably means the Roman soldiers. {v: 2:23}
+Peter said Jesus was handed over by God's plan. God knew it would happen. Peter told the crowd they had put Jesus to death. They used lawless men to nail him to the cross. "Lawless" here means people who did not know God's law. These lawless men were probably the Roman soldiers. {v: 2:23}
 
 **"But God raised Him from the dead"** (2:24). Death could not hold him. {v: 2:24}
 
-Peter quoted King David, who wrote psalms (songs and prayers in the Bible) long ago. David wrote that God would not leave his Holy One in the grave. Peter said David was talking about Jesus. {v: 2:25, 2:27, 2:31}
+Peter quoted King David. Long ago, David wrote psalms, which are songs and prayers in the Bible. David wrote that God would not leave his Holy One in the grave. {v: 2:25, 2:27}
+
+Peter pointed out that David died and was buried. David's tomb was still there in Jerusalem. So Peter said David was talking about the Messiah, who would rise. Peter said that was Jesus. {v: 2:29, 2:30, 2:31}
 
 **"God has raised this Jesus to life, to which we are all witnesses"** (2:32). A witness is someone who saw it happen. {v: 2:32}
 
-Peter said Jesus was now at God's right hand. That means the place of highest honor and power. Jesus had received the Holy Spirit from the Father. Now Jesus had poured out the Spirit, and that was what they were seeing and hearing. {v: 2:33}
+Peter said Jesus was now at God's right hand. God's right hand means the place of highest honor and power. Jesus had received the Holy Spirit from the Father. Now Jesus had poured out the Spirit. That was what the crowd was seeing and hearing. {v: 2:33}
+
+Peter said David did not go up to heaven himself. Yet David wrote, "The Lord said to my Lord, 'Sit at My right hand.'" Peter meant that David's Lord was Jesus. {v: 2:34, 2:35}
 
 Peter finished, **"God has made this Jesus, whom you crucified, both Lord and Christ!"** (2:36). "Christ" means the same as "Messiah." It means the King God promised to send. {v: 2:36}
 
 ### Scene 6: "What Shall We Do?"
 
-The people's hearts were hurting when they heard this. They asked, **"Brothers, what shall we do?"** (2:37). {v: 2:37}
+When the people heard this, they were **"cut to the heart"** (2:37). This is a picture. It means they felt deep sorrow and pain because of what Peter said about Jesus. {v: 2:37}
+
+They asked Peter and the other apostles, **"Brothers, what shall we do?"** (2:37). {v: 2:37}
 
 Peter answered, **"Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit"** (2:38). {v: 2:38}
 
-Repent means turn back to God. To be baptized means to be washed with water in the name of Jesus. In Baptism, God is the one who acts. {v: 2:38}
+Repent means to turn around and change direction, back to God. To be baptized means to be washed with water in the name of Jesus. In Baptism, God is the one who acts. {v: 2:38}
 
-Peter said, **"This promise belongs to you and your children and to all who are far off"** (2:39). God calls people to himself. {v: 2:39}
+Peter said, **"This promise belongs to you and your children and to all who are far off"** (2:39). Peter said the promise is for everyone the Lord our God calls to himself. {v: 2:39}
+
+Peter said much more. He urged them, **"Be saved from this corrupt generation"** (2:40). A generation is the people living at one time. Corrupt means gone wrong. {v: 2:40}
 
 Those who accepted Peter's message were baptized. About 3,000 people joined the believers that day. {v: 2:41}
 
@@ -126,12 +134,12 @@ Everyone was filled with awe. Awe is a feeling of deep wonder and respect. God d
 
 The believers shared everything they had. They sold their belongings and gave to anyone who was in need. {v: 2:44, 2:45}
 
-Every day they met at the temple. They ate in each other's homes with glad and honest hearts. {v: 2:46}
+Every day they met at the temple. They shared meals in each other's homes. They were glad and sincere. Sincere means honest, with no pretending. {v: 2:46}
 
 They praised God, and people liked them. And every day, the Lord added more people who were being saved. {v: 2:47}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> Picture a small kitchen full of people from different countries. Bread is passed around the table. Someone is laughing. Someone is praying.
+> Picture a small kitchen full of people from different countries. Bread is passed around the table while someone laughs and someone prays.
 
 ---
 
@@ -147,11 +155,11 @@ Acts 2 (BSB)
 |---|---|
 | **"A sound like a mighty rushing wind"** (2:2) | The Greek word Luke uses for wind is close to the word for "spirit." God breathed life into the first person (Genesis 2:7). Later Jesus breathed on his followers and said, **"Receive the Holy Spirit"** (John 20:22). |
 | **"Tongues like flames of fire"** (2:3) | Here "tongues" means shapes like flames. Fire often shows that God is present, like the burning bush (Exodus 3:2). |
-| **"Each one heard them speaking his own language"** (2:6) | God did not make everyone learn one language. He spoke to each person in their own. |
+| **"Each one heard them speaking his own language"** (2:6) | God did not make everyone learn one language. He spoke to each person in their own language. |
 | **"I will pour out My Spirit on all people"** (2:17) | The Spirit is for all kinds of people: young and old, men and women, even servants. |
 | **"Repent and be baptized"** (2:38) | Turn back to God and be washed in Jesus's name. Baptism is God's work, not ours. In it, God forgives and gives his Spirit. |
 | **"This promise belongs to you and your children"** (2:39) | The promise is also for children. This is one reason Lutherans and many other Christians baptize babies. Baptism is God's gift, and even babies can receive a gift. Some Christians read this verse differently and baptize people when they are old enough to say what they believe.† |
-| **"They devoted themselves to the apostles’ teaching"** (2:42) | "Devoted" means they kept doing these things again and again. They learned, shared life, broke bread, and prayed. Many Christians hear the Lord's Supper in "the breaking of bread" (see Luke 24:35). Churches still gather around these same gifts.† |
+| **"They devoted themselves to the apostles’ teaching"** (2:42) | "Devoted" means they kept doing these things again and again. They learned, shared life, broke bread, and prayed. Many Christians see the Lord's Supper in "the breaking of bread" (see Luke 24:35). Churches still gather around these same gifts.† |
 
 ## 🌍 Back Then...
 
@@ -165,11 +173,11 @@ Acts 2 (BSB)
 
 **Was there real fire?** Luke calls them **"tongues like flames of fire"** (2:3). He is describing something hard to describe. The Bible does not say more.
 
-**Do you have to speak in other languages to have the Holy Spirit?** Christians answer this in different ways. Many Pentecostal and charismatic Christians speak in tongues, and they see it as a sign of the Spirit. Paul thanked God for this gift (1 Corinthians 14:18). Lutherans teach that every baptized believer has the Holy Spirit, with or without this gift. Peter promised the gift of the Spirit to everyone who is baptized (2:38). He did not say they would all speak other languages. Paul asked, **"Do all speak in tongues?"** (1 Corinthians 12:30). He also wrote, **"There are different gifts, but the same Spirit"** (1 Corinthians 12:4). No Christian is second-class. No one can say **"Jesus is Lord"** except by the Holy Spirit (1 Corinthians 12:3).†
+**Do you have to speak in other languages to have the Holy Spirit?** Christians answer this in different ways. Many Pentecostal and charismatic Christians speak in tongues. This means speaking in a language the Spirit gives. They see it as a sign of the Spirit. Paul thanked God for this gift (1 Corinthians 14:18). Lutherans teach that every baptized believer has the Holy Spirit, with or without this gift. Peter promised the gift of the Spirit to everyone who is baptized (2:38). He did not say they would all speak other languages. Paul asked, **"Do all speak in tongues?"** (1 Corinthians 12:30). He also wrote, **"There are different gifts, but the same Spirit"** (1 Corinthians 12:4). And no one can say **"Jesus is Lord"** except by the Holy Spirit (1 Corinthians 12:3). No Christian is second-class.†
 
 **Is Peter blaming all Jewish people for Jesus's death?** No. Peter was Jewish. So were Jesus, all the apostles, and the whole crowd. Peter did say "you crucified" (2:36). He spoke like the prophets of Israel, calling his own people to turn back to God. He was not speaking about Jewish people of every time and place. He also said Jesus was handed over by God's plan, and put to death **"by the hands of the lawless"** (2:23). This probably means the Roman soldiers. Peter's goal was not blame. It was forgiveness. About 3,000 people were forgiven and baptized that day. Christians confess that Jesus died because of everyone's sins, including our own. For centuries, many Christians, including Martin Luther, used verses like this to blame all Jewish people. This led to hatred and violence. It was wrong, and the ELCA has said so. [Read our note on this](/about/#luther-and-the-jewish-people).†
 
-**Did the believers have to give away everything?** The Bible says they chose to share with anyone in need (2:45; see 5:4). It describes what they did out of love. It does not give a rule for how much to give.
+**Did the believers have to give away everything?** The Bible says they chose to share with anyone in need (2:45). Later, Peter said that a believer's property still belonged to that believer (5:4). The Bible describes what they did out of love. It does not give a rule for how much to give.
 
 ## 💭 How People Feel
 
@@ -179,7 +187,7 @@ Acts 2 (BSB)
 | The crowd | Amazed | Galileans were speaking many languages (2:7) |
 | Some people | Mocking | They thought the believers were drunk (2:13) |
 | Peter | Bold | He stood up and spoke to the crowd (2:14) |
-| The crowd | Deeply sorry ("cut to the heart") | They heard that the Jesus they crucified is Lord and Christ (2:36-37) |
+| The crowd | Deeply sorry | They heard that the Jesus they crucified is Lord and Christ (2:36-37) |
 | The believers | Glad | They shared meals and praised God (2:46-47) |
 
 ---
@@ -190,8 +198,8 @@ Acts 2 (BSB)
 
 **Which part of Pentecost do you need today?** Tap one.
 
-- "Each one heard" :: God did not make everyone learn one language first. He spoke to each person in their own. God speaks to you too, just as you are.
-- Peter, who failed :: Seven weeks earlier, Peter said he didn't know Jesus. Now God used him to tell thousands. Failing is not the end of your story.
+- "Each one heard" :: God did not make everyone learn one language first. He spoke to each person in their own language. God speaks to you too, as you are.
+- Peter, who failed :: Seven weeks earlier, Peter said he didn't know Jesus. Now God used him to tell thousands. Failing does not stop God from using you.
 - "What does this mean?" :: Questions are a good place to start. The crowd's question led them to good news.
 - A new family :: The first Christians ate together, prayed together, and shared with anyone in need. You were not meant to follow Jesus alone.
 
@@ -209,17 +217,17 @@ Acts 2 (BSB)
 
 The Spirit did not come only to impressive people. He came to a room of ordinary people, including Peter, who had failed Jesus badly.
 
-God did not ask anyone to climb up to him. He poured out his Spirit, like water. First Peter's words pointed the crowd to Jesus. Then Peter promised forgiveness and the gift of the Spirit in Baptism (2:38).
+God did not ask anyone to earn the Spirit. God poured out his Spirit as a gift. "Pour out" is a picture word, like pouring water (2:17). Peter's words pointed the crowd to Jesus first. Then Peter promised forgiveness and the gift of the Spirit in Baptism (2:38).
 
 **The promise is for you, and for your children, and for people who feel far away.**†
 
 ## 📚 From Luther
 
-In the Small Catechism, Luther explains the Holy Spirit. He wrote that we cannot believe in Jesus by our own understanding or strength. Instead, the Holy Spirit calls us through the gospel, the good news about Jesus.†
+In the Small Catechism, Luther explains the Holy Spirit. He says that we cannot believe in Jesus by our own understanding or strength. Instead, the Holy Spirit calls us through the gospel, the good news about Jesus.†
 
 Luther's co-worker Philip Melanchthon wrote the Augsburg Confession (1530). Article 5 says God gives the Holy Spirit through the Word and the sacraments. Through them, the Spirit creates faith in people who hear the gospel, where and when God chooses.†
 
-Luther also wrote a Pentecost hymn in 1524, "Come, Holy Ghost, God and Lord." The first verse was an older German song, based on a Latin prayer that begins, "Come, Holy Spirit, fill the hearts of your faithful." Luther added two more verses. Many Lutheran churches still sing it.†
+Luther also wrote a Pentecost hymn in 1524, "Come, Holy Ghost, God and Lord." The first verse was an older German song. That song was based on a Latin prayer that begins, "Come, Holy Spirit, fill the hearts of your faithful." Luther added two more verses. Many Lutheran churches still sing it.†
 
 ## 📅 In Church
 
@@ -227,4 +235,4 @@ Many churches follow the Revised Common Lectionary. It reads Acts 2:1-21 every y
 
 ## 💡 Big Idea
 
-**God poured out his Spirit on ordinary people, spoke to each one in their own language, and made them one family in Jesus.**
+**God poured out his Spirit on ordinary people, spoke to each person in their own language, and made them one family in Jesus.**

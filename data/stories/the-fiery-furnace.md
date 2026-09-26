@@ -67,9 +67,9 @@ But three men did not bow. {v: 3:12}
 
 Some of the king's astrologers came to him. They wanted to get the Jews in trouble. Here "Jews" means people from Judah, the land around Jerusalem. {v: 3:8}
 
-The astrologers reminded the king of his order. Everyone must bow when the music plays. Anyone who does not will be thrown into the fire. {v: 3:9, 3:10, 3:11}
+The astrologers reminded the king of his order. Everyone had to bow when the music played. Anyone who did not bow would be thrown into the fire. {v: 3:9, 3:10, 3:11}
 
-Then they named names. They said there were some Jews the king had put in charge of the province. **"Shadrach, Meshach, and Abednego"** (3:12), they said. These men did not serve the king's gods. They did not worship the gold statue. {v: 3:12}
+Then the astrologers gave names. They said there were some Jews the king had put in charge of the province. **"Shadrach, Meshach, and Abednego"** (3:12), they said. The astrologers said these three men had ignored the king. These men did not serve the king's gods. They did not worship the gold statue. {v: 3:12}
 
 The Bible doesn't say why the astrologers did this. But remember, the king had given these three foreign young men very important jobs. {v: 3:8, 3:12}
 
@@ -79,7 +79,7 @@ King Nebuchadnezzar was furious. He sent for Shadrach, Meshach, and Abednego. {v
 
 The king asked them if it was true. Did they refuse to serve his gods and worship his statue? {v: 3:14}
 
-Then he gave them one more chance. When the music played again, they must bow down. If they refused, they would be thrown into the furnace at once. {v: 3:15}
+Then he gave them one more chance. When the music played again, they had to bow down. If they refused, they would be thrown into the furnace at once. {v: 3:15}
 
 The king ended with a question. **"Then what god will be able to deliver you from my hands?"** (3:15). Deliver means rescue. {v: 3:15}
 
@@ -89,13 +89,13 @@ His question was a boast. He did not think any god could rescue them from him. {
 
 Shadrach, Meshach, and Abednego answered the king. They did not argue or make excuses. They said they did not need to defend themselves. {v: 3:16}
 
-They said their God was **"able to deliver us from the blazing fiery furnace and from your hand, O king"** (3:17). {v: 3:17}
+Their answer was about God. God is **"able to deliver us from the blazing fiery furnace and from your hand, O king"** (3:17), they said. {v: 3:17}
 
 Then they said more. **"But even if He does not, let it be known to you, O king, that we will not serve your gods or worship the golden statue you have set up"** (3:18). {v: 3:18}
 
 The three friends did not know how this day would end. They knew God could save them. They did not know if God would. They still would not bow. {v: 3:17, 3:18}
 
-God's law told Israel not to bow down to idols, remember? The three friends were far from home. Everyone around them was bowing. They still belonged to God. {v: 3:18}
+The three friends knew God's law. It told Israel not to bow down to idols (Exodus 20:5). The three friends were far from home. Everyone around them was bowing. They still belonged to God. {v: 3:18}
 
 Their trust was in God, not in a promised rescue. {v: 3:18}
 
@@ -103,11 +103,11 @@ Their trust was in God, not in a promised rescue. {v: 3:18}
 
 Now King Nebuchadnezzar was filled with rage. His face changed as he looked at the three friends. {v: 3:19}
 
-He ordered the furnace heated seven times hotter than usual. This is a way of saying as hot as it could possibly get. {v: 3:19}
+He ordered the furnace heated seven times hotter than usual. This is a way of saying the fire should be as hot as possible. {v: 3:19}
 
 He told some of the strongest soldiers in his army to tie up the three friends and throw them in. {v: 3:20}
 
-The soldiers tied them up. The three friends still had all their clothes on, their robes, pants, and turbans. The soldiers threw them into the furnace. {v: 3:21}
+The soldiers tied them up. The three friends still had all their clothes on. They wore robes, pants, and turbans. The soldiers threw them into the furnace. {v: 3:21}
 
 The fire was so hot that the flames killed the soldiers who carried them up to it. {v: 3:22}
 
@@ -121,13 +121,13 @@ Then King Nebuchadnezzar jumped up. He was amazed. {v: 3:24}
 
 He asked his advisers, **"Did we not throw three men, firmly bound, into the fire?"** (3:24). {v: 3:24}
 
-"Yes, King," they said. {v: 3:24}
+"Yes, O king," they said. {v: 3:24}
 
 The king said, **"I see four men, unbound and unharmed, walking around in the fire"** (3:25). {v: 3:25}
 
 The ropes were gone. The men were walking. And there was a fourth person in the fire with them. The king said, **"the fourth looks like a son of the gods"** (3:25). {v: 3:25}
 
-The three friends were not alone in the fire. Someone was with them in the fire. {v: 3:25}
+The three friends were not alone in the fire. Someone else was with them. {v: 3:25}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
 > Flames roar from the wide mouth of the furnace. Inside the orange light, four shapes move slowly back and forth.
@@ -142,7 +142,7 @@ So Shadrach, Meshach, and Abednego walked out of the fire. {v: 3:26}
 
 The king's leaders gathered around them. They saw that the fire had not hurt the three men at all. {v: 3:27}
 
-**"Not a hair of their heads was singed"** (3:27). Singed means burned a little at the edges. Their robes were fine. They did not even smell like smoke. {v: 3:27}
+**"Not a hair of their heads was singed"** (3:27). Singed means burned a little at the edges. Their robes were not damaged. They did not even smell like smoke. {v: 3:27}
 
 Only the ropes that had tied them were gone. {v: 3:25, 3:27}
 
@@ -152,9 +152,9 @@ Nebuchadnezzar spoke. **"Blessed be the God of Shadrach, Meshach, and Abednego, 
 
 The king said the three friends had broken his command. They had risked their lives instead of worshiping any god but their own. {v: 3:28}
 
-Then the king made a new law. Anyone who said anything against their God would be killed and have their house destroyed. The king still ruled with threats. He said, **"there is no other god who can deliver in this way"** (3:29). {v: 3:29}
+Then the king made a new law. Anyone who said anything against the God of Shadrach, Meshach, and Abednego would be killed and have their house destroyed. The king still ruled with threats. He said, **"there is no other god who can deliver in this way"** (3:29). {v: 3:29}
 
-Then the king promoted Shadrach, Meshach, and Abednego. They got even higher jobs in Babylon. They were still far from home. But God had not forgotten them there. {v: 3:30}
+Then the king promoted Shadrach, Meshach, and Abednego. They got even higher jobs in the province of Babylon. They were still far from home. But God had not forgotten them there. {v: 3:30}
 
 The king had asked, "What god will be able to deliver you?" Now he had his answer. {v: 3:15, 3:29}
 
@@ -180,7 +180,7 @@ Daniel 3 (BSB)
 
 ## 🌍 Back Then...
 
-**Babylon took Judah's people away in more than one wave.** The first was in about 605 B.C., when Daniel and his friends were taken. The last was in about 586 B.C., when Jerusalem was destroyed. Cyrus, a Persian king, let the exiles go home in about 536 B.C. (Easton's Bible Dictionary)
+**Babylon took Judah's people away in more than one group, at different times.** The first was in about 605 B.C., when Daniel and his friends were taken. The last was in about 586 B.C., when Jerusalem was destroyed. Cyrus, a Persian king, let the exiles go home in about 536 B.C. (Easton's Bible Dictionary)
 
 **The new names honored Babylon's gods.** Abednego means "servant of Nebo," one of Babylon's gods. Shadrach may mean "Aku's command" (Easton's Bible Dictionary). The friends kept serving their own God anyway.
 
@@ -194,7 +194,7 @@ Daniel 3 (BSB)
 
 ## 🚨 Literal Reader Alert: "Wait, what?"
 
-**Did the three friends doubt that God exists?** No. The BSB says, **"If the God whom we serve exists"** (3:17). This sentence is hard to translate from the original language. Other English Bibles say "If it be so" (KJV) or "If our God... is able to keep us safe" (BBE). The friends were answering the king's question about which god could save them. In the next breath, they said their God **"is able"** (3:17). It's okay to notice things like this. Careful readers have asked about it for centuries.
+**Did the three friends doubt that God exists?** No. The BSB says, **"If the God whom we serve exists"** (3:17). This sentence is hard to translate from the original language. Other English Bibles say "If it be so" (KJV) or "If our God... is able to keep us safe" (BBE). The friends were answering the king's question about which god could save them. In the same sentence, they said their God **"is able"** (3:17). It's okay to notice things like this. Careful readers have asked about it for centuries.
 
 **Who was the fourth man in the fire?** The plain sense first: the king saw someone with the three friends who looked like a heavenly being. The king himself later said God **"has sent His angel"** (3:28). Many Christians have seen this as a picture of God being with his people in suffering. Some Christians, starting long ago, have seen the Son of God there, before he was born as Jesus in Bethlehem. The text doesn't say. The KJV says "like the Son of God," with a capital S. Most newer translations say "a son of the gods," because the words came from a king who worshiped many gods.†
 
@@ -202,7 +202,7 @@ Daniel 3 (BSB)
 
 **Does God always rescue faithful people from harm?** No, not always in this life. The three friends knew this. That is why they said **"even if He does not"** (3:18). Many faithful people through history suffered and died. The Bible says nothing can separate God's people **"from the love of God that is in Christ Jesus our Lord"** (Romans 8:39).
 
-**Is there more to this story somewhere else?** Yes, in some Bibles. Old Greek versions of Daniel add a prayer and a song that the three friends pray and sing inside the fire. These are called the Prayer of Azariah and the Song of the Three Young Men. They are part of the Apocrypha, books that Catholic and Orthodox Christians include in their Bibles and that Lutherans value but do not count as equal to Scripture. Free Scripture's KJV includes it as "The Song of the Three Holy Children."†
+**Is there more to this story somewhere else?** Yes, in some Bibles. Old Greek versions of Daniel add a prayer and a song that the three friends pray and sing inside the fire. These are called the Prayer of Azariah and the Song of the Three Young Men. They are part of the Apocrypha. The Apocrypha are books that Catholic and Orthodox Christians include in their Bibles. Lutherans value these books but do not count them as equal to Scripture. Free Scripture's KJV includes these additions as "The Song of the Three Holy Children."†
 
 **If this story brings up big feelings, talk with a parent, pastor, or trusted adult.** If someone is pressuring you or threatening to hurt you, tell a trusted adult today. If you are in danger right now, call 911 or your local emergency number. In the United States, you can also call or text 988 any time, day or night. Outside the United States, findahelpline.com lists free helplines.
 
@@ -226,7 +226,7 @@ Daniel 3 (BSB)
 
 - Pressure to go along :: The three friends felt that too. Everyone around them was bowing. God did not leave them to face it alone.
 - God didn't rescue me :: The three friends said "even if He does not." Their hope was God himself, not a promised escape. God has not left you, even when the rescue you wanted didn't come.
-- I'm going through a hard time :: You are not alone. The king looked into the fire and saw a fourth person with them. In Jesus, God comes into our hardest places.
+- I'm going through a hard time :: You are not alone. The king looked into the fire and saw a fourth person with them. In Jesus, God comes into our hardest times.
 - Watching for now :: That's okay. The king watched too. Then he saw what God can do.
 - It's really bad right now :: Please tell a trusted adult today. If you are in danger, call 911 or your local emergency number. In the U.S., you can call or text 988 any time. Outside the U.S., findahelpline.com lists free helplines.
 
@@ -236,31 +236,31 @@ Daniel 3 (BSB)
 
 **What's true:** The three friends were faithful. They would not bow to an idol. That mattered.
 
-**What the story is mainly about:** What God does. The friends did not know if they would be saved. They said so. God is the rescuer in this story, not the three men. God did not only pull them out of the fire. God was with them in it. Their faith was not a power that earned a rescue. It was trust in God, and trust like that is a gift the Holy Spirit gives.
+**What the story is mainly about:** What God does. The friends did not know if they would be saved. They said so. God is the rescuer in this story, not the three men. God did not only pull them out of the fire. God was with them in it. Their faith was not a power that earned a rescue. It was trust in God. Trust like that is a gift the Holy Spirit gives.
 
 **Where Jesus is:** Matthew calls Jesus Immanuel, which means **"God with us"** (Matthew 1:23). He did not stay outside our suffering. He came into it, all the way to the cross. And he promised, **"surely I am with you always, even to the end of the age"** (Matthew 28:20).
 
 ## ✝️ Good News
 
-Long before this story, God made a promise to Israel. Christians hear it too: **"When you walk through the fire, you will not be scorched; the flames will not set you ablaze"** (Isaiah 43:2). This is a comparison. It means God stays with his people in danger. It does not mean real fire cannot burn someone who trusts God.
+Through the prophet Isaiah, God made a promise to Israel. Christians hear it too: **"When you walk through the fire, you will not be scorched; the flames will not set you ablaze"** (Isaiah 43:2). This is a comparison. It means God stays with his people in danger. It does not mean real fire cannot burn someone who trusts God.
 
-Shadrach, Meshach, and Abednego did not walk through the fire alone. Someone was with them. In Jesus, God comes to be with us in every fire. Sometimes God takes us out of hard things. Sometimes God carries us through them. Nothing can take us out of his hands.
+Shadrach, Meshach, and Abednego did not walk through the fire alone. Someone was with them. In Jesus, God comes to be with us in every hard time. Sometimes God takes us out of hard things. Sometimes God stays with us through them. Nothing can separate us from God's love.
 
-**You are not alone in the fire. God is there with you.**
+**Whatever you are going through, you are not alone. God is with you.**
 
 ## 📚 From Luther
 
-In the Small Catechism, Luther explains the First Commandment, "You shall have no other gods." He writes, "We should fear, love, and trust in God above all things." The three friends show what that looks like: they trusted God more than the king and more than their own safety. In his explanation of the Creed, Luther also wrote, "I cannot by my own reason or strength believe in Jesus Christ." The Holy Spirit gives that trust through the Gospel.†
+In the Small Catechism, Luther explains the First Commandment, "You shall have no other gods." He writes, "We should fear, love, and trust in God above all things." The three friends show what that looks like. They trusted God more than the king and more than their own safety. In his explanation of the Creed, Luther also wrote, "I cannot by my own reason or strength believe in Jesus Christ." The Holy Spirit gives that trust through the Gospel.†
 
-Luther put the Prayer of Azariah and the Song of the Three Young Men in the Apocrypha section of his 1534 German Bible. He called those books not equal to Holy Scripture, yet useful and good to read.†
+Luther's 1534 German Bible had a section for the Apocrypha. He put the Prayer of Azariah and the Song of the Three Young Men there. He said those books were not equal to Holy Scripture, but were useful and good to read.†
 
 ## 🕊️ From the Wider Church
 
-Early Christians painted the three friends in the fire on the walls of the catacombs in Rome, the underground places where they buried their dead. It was a picture of hope that God stays with his people, even in death. Many churches still sing part of the Song of the Three Young Men in morning prayer. It is sometimes called the Benedicite, which means "Bless the Lord."†
+Early Christians painted the three friends in the fire on the walls of the catacombs in Rome. The catacombs were underground places where Christians buried their dead. It was a picture of hope that God stays with his people, even in death. Many churches still sing part of the Song of the Three Young Men in morning prayer. It is sometimes called the Benedicite, which means "Bless the Lord."†
 
 ## 📅 In Church
 
-Daniel 3 is not one of the Revised Common Lectionary's regular readings. But Evangelical Lutheran Worship, the ELCA's worship book, adds Daniel 3:1-29 as one of the readings at the Easter Vigil, the night before Easter. It is one of the stories of God's saving acts. The response is part of the Song of the Three Young Men (verses 35-65).†
+Daniel 3 is not one of the Revised Common Lectionary's regular readings. But Evangelical Lutheran Worship adds Daniel 3:1-29 as one of the readings at the Easter Vigil. Evangelical Lutheran Worship is the ELCA's worship book. The Easter Vigil is a service held the night before Easter. Daniel 3 is read there as one of the stories of God's saving acts. The response is part of the Song of the Three Young Men (verses 35-65).†
 
 ## 💡 Big Idea
 

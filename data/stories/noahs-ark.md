@@ -51,7 +51,7 @@
 
 God looked at the earth. Everywhere, people were hurting each other. The earth was ruined and full of violence. {v: 6:11, 6:12}
 
-The LORD saw how wicked people had become. Every plan and every thought in their hearts was evil, all the time. {v: 6:5}
+The LORD saw how wicked people had become. Every plan and every thought in their hearts was evil, all the time. In the Bible, the heart means the inside of a person: their thoughts, plans, and choices. {v: 6:5}
 
 The LORD was sorry that he had made people. **"He was grieved in His heart"** (6:6). Grieved means deeply sad and hurt. {v: 6:6}
 
@@ -69,7 +69,7 @@ Noah had three sons. Their names were Shem, Ham, and Japheth. {v: 6:10}
 
 ### Scene 3: Build an Ark
 
-God spoke to Noah. God said the end had come for all living creatures, because they had filled the earth with violence. {v: 6:13}
+God spoke to Noah. God said the end had come for all living creatures, because they had filled the earth with violence. God said he would destroy them along with the earth. {v: 6:13}
 
 Then God gave Noah a job. **"Make for yourself an ark of gopher wood"** (6:14). An ark is a huge wooden box that floats, like a giant boat. Nobody today knows for sure what gopher wood was. {v: 6:14}
 
@@ -93,7 +93,7 @@ Noah was to bring two of every kind of living creature, a male and a female. God
 
 ### Scene 5: Into the Ark
 
-Later, the LORD told Noah to go into the ark with his whole family. {v: 7:1}
+Then the LORD told Noah to go into the ark with his whole family. The LORD said he had found Noah righteous among the people of his time. {v: 7:1}
 
 This time the LORD gave more detail about the animals. Noah was to take seven pairs of every kind of clean animal. He was to take one pair of every kind of unclean animal. He was to take seven pairs of every kind of bird. {v: 7:2, 7:3}
 
@@ -161,7 +161,7 @@ Noah waited seven more days. He sent the dove out one more time. This time she d
 
 ### Scene 10: Out of the Ark
 
-On the first day of the first month, Noah took the covering off the ark. He looked out. The ground was dry. {v: 8:13}
+On the first day of the first month of Noah's 601st year, Noah took the covering off the ark. He looked out. The ground was dry. {v: 8:13}
 
 By the twenty-seventh day of the second month, the earth was completely dry. Noah's family had been in the ark for about a year. {v: 7:11, 8:14}
 
@@ -177,11 +177,11 @@ Then Noah built an altar to the LORD. An altar is a raised place for giving offe
 
 Noah took some of every kind of clean animal and clean bird. He offered them as burnt offerings. A burnt offering was a gift to God, burned whole on the altar. {v: 8:20}
 
-The LORD smelled the pleasing smell. Then the LORD made a promise in his heart. {v: 8:21}
+The LORD smelled the pleasing smell. Then the LORD made a promise in his heart. This means the LORD said it to himself. {v: 8:21}
 
 **"Never again will I curse the ground because of man, even though every inclination of his heart is evil from his youth"** (8:21). The LORD also said he would never again destroy all living creatures as he had done. {v: 8:21}
 
-Think back to the start of the story. The LORD saw that people's hearts were evil (6:5). Now, after the flood, God said the same thing about people's hearts. But this time he made a promise anyway. {v: 6:5, 8:21}
+At the start of the story, the LORD saw that people's hearts were evil (6:5). Now, after the flood, God said the same thing about people's hearts. But this time he made a promise anyway. {v: 6:5, 8:21}
 
 God said the seasons would keep coming. **"Seedtime and harvest, cold and heat, summer and winter, day and night shall never cease"** (8:22). {v: 8:22}
 
@@ -207,7 +207,7 @@ God gave a sign to go with the promise. **"I have set My rainbow in the clouds"*
 
 God said that when clouds came and the rainbow appeared, he would remember his promise. It was a promise to every living creature, for all time. {v: 9:14, 9:15, 9:16}
 
-The story began with God grieving over a violent world. It ends with God tying himself to a promise. The promise does not depend on people's hearts being good. It depends on God. {v: 6:6, 8:21, 9:16}
+The story began with God grieving over a violent world. It ends with God making a promise he will always keep. The promise does not depend on people's hearts being good. It depends on God. {v: 6:6, 8:21, 9:16}
 
 God said to Noah, **"This is the sign of the covenant that I have established between Me and every creature on the earth"** (9:17). {v: 9:17}
 
@@ -225,7 +225,7 @@ Genesis 6:5 to 9:17 (BSB)
 
 | The text says | It means |
 |---|---|
-| **"He was grieved in His heart"** (6:6) | God is not cold or far away. The violence in his world hurt him. |
+| **"He was grieved in His heart"** (6:6) | God cares about his world. The violence in it hurt him. |
 | **"Noah, however, found favor in the eyes of the LORD"** (6:8) | Favor is God's kindness, given freely. Genesis tells us about God's favor before it tells us about Noah's goodness. |
 | **"Noah walked with God"** (6:9) | This is a comparison. Noah lived close to God, the way friends walk side by side. |
 | **"I will establish My covenant with you"** (6:18) | Before the rain ever fell, God had already promised to keep Noah's family safe. |
@@ -233,7 +233,7 @@ Genesis 6:5 to 9:17 (BSB)
 | **"God remembered Noah"** (8:1) | God had not forgotten. In the Bible, "remember" means God acts on his promise. |
 | **"Even though every inclination of his heart is evil"** (8:21) | God's promise does not wait for people to become good. It rests on God. |
 | **"In His own image God has made mankind"** (9:6) | Every person is made to show something of who God is. That is why every human life is precious to God. |
-| **"I have set My rainbow in the clouds"** (9:13) | The rainbow is a sign. It points to God's promise, the way a wedding ring points to a promise. This is a comparison. |
+| **"I have set My rainbow in the clouds"** (9:13) | The rainbow is a sign. This is a comparison: a rainbow points to God's promise, the way a wedding ring points to a promise. |
 
 ## 🌍 Back Then...
 
@@ -257,7 +257,7 @@ Genesis 6:5 to 9:17 (BSB)
 
 **Are floods and storms today God's punishment?** No one can say that a flood or storm is God punishing the people it hurts. God promised never again to destroy all life with a flood (9:11). Once a tower fell and killed eighteen people. Jesus asked if the people who died were **"more sinful than all the others"** (Luke 13:4). He said no (Luke 13:5). If you have lived through a flood, a fire, or a storm, it was not your fault. It's okay to be scared of storms. If this story brings up big feelings, talk with a parent, pastor, or trusted adult.
 
-**Does 9:6 mean people should get revenge?** No. God is saying that a human life is so precious that taking one is a terrible wrong. It is not permission for anyone to pay someone back. Later, God's law said a person accused of killing must stand trial before the community (Numbers 35:12). Christians disagree about what this verse means for laws today. The ELCA's 1991 social statement on the death penalty opposes it.†
+**Does 9:6 mean people should get revenge?** No. God is saying that a human life is so precious that taking one is a terrible wrong. It is not permission for anyone to pay someone back. Later, God's law said a person accused of killing must stand trial before the community (Numbers 35:12). Christians disagree about what this verse means for laws today. The ELCA's 1991 social statement on the death penalty opposes the death penalty.†
 
 **Did God make a mistake?** Genesis says the LORD **"regretted that He had made man"** (6:6). The Bible uses human words to show God's real feelings. Other verses say God does not change his mind the way people do (Numbers 23:19). Genesis wants us to see how much the violence hurt God. It does not say God made a mistake in making people.†
 
@@ -305,22 +305,22 @@ Genesis 6:5 to 9:17 (BSB)
 
 The letter called 1 Peter, which begins with Peter's name, remembers Noah. **"In the ark a few people, only eight souls, were saved through water"** (1 Peter 3:20). Then it says, **"And this water symbolizes the baptism that now saves you also"** (1 Peter 3:21). It says this happens **"through the resurrection of Jesus Christ"** (1 Peter 3:21).
 
-In Baptism, God is the one who acts. Like the door of the ark, it is God's work, not ours. Paul says we were **"buried with Him through baptism into death"** so that we may **"walk in newness of life"** (Romans 6:4). Some Christians also think of Noah's dove when they read that the Spirit came down on Jesus at his baptism **"like a dove"** (Mark 1:10).†
+In Baptism, God is the one who acts. God closed the door of the ark. In the same way, Baptism is God's work, not ours. Paul says we were **"buried with Him through baptism into death"** so that we may **"walk in newness of life"** (Romans 6:4). This means we live a new life. Some Christians also think of Noah's dove when they read that the Spirit came down on Jesus at his baptism **"like a dove"** (Mark 1:10).†
 
 Later, God spoke through the prophet Isaiah and pointed back to his promise to Noah. These words were first spoken to Israel, and Christians hear them too. **"When I swore that the waters of Noah would never again cover the earth. So I have sworn that I will not be angry with you or rebuke you"** (Isaiah 54:9).
 
-**God shut Noah in and kept him safe. In Baptism, God holds on to you, and his promise does not depend on how good your heart is.**
+**God shut Noah in and kept him safe. In Baptism, God makes you his own, and his promise does not depend on how good your heart is.**
 
 ## 📚 From Luther
 
-In his service for Baptism (1523, revised 1526), Luther wrote a prayer called the Flood Prayer. It remembers how God judged the unbelieving world by the flood, and kept Noah and his family safe in the ark, eight people in all. It also remembers how God led Israel through the Red Sea. Luther said these were pictures of Baptism. Lutheran baptism services today still thank God for saving Noah and his family through the waters of the flood.†
+In his service for Baptism (1523, revised 1526), Luther wrote a prayer called the Flood Prayer. It remembers how God judged the unbelieving world by the flood. It also remembers how God kept Noah and his family safe in the ark, eight people in all. It also remembers how God led Israel through the Red Sea. Luther said these were pictures of Baptism. Lutheran baptism services today still thank God for saving Noah and his family through the waters of the flood.†
 
-Luther's Small Catechism asks what baptizing with water means. It answers that the old sinful self in us should be drowned every day, as we are sorry for sin and turn back to God. And every day a new person should come out and rise up, to live before God forever, right with him and pure.†
+Luther's Small Catechism asks what baptizing with water means. It answers that the old sinful self in us should be drowned every day. This is picture language. It happens as we are sorry for sin and turn back to God. And every day a new person should come out and rise up, to live before God forever, right with him and pure.†
 
 ## 📅 In Church
 
-Many churches follow the Revised Common Lectionary. It reads Genesis 9:8-17 on the First Sunday in Lent in Year B, along with 1 Peter 3:18-22 and the story of Jesus's baptism (Mark 1:9-15). The flood story is also one of the readings at the Easter Vigil, the night service before Easter morning. Some churches read parts of Genesis 6 to 8 in late spring or early summer of Year A (Lectionary 9).†
+Many churches follow the Revised Common Lectionary. It reads Genesis 9:8-17 on the First Sunday in Lent in Year B. The same Sunday reads 1 Peter 3:18-22 and the story of Jesus's baptism (Mark 1:9-15). The flood story is also one of the readings at the Easter Vigil, the night service before Easter morning. Some churches read parts of Genesis 6 to 8 in late spring or early summer of Year A (Lectionary 9).†
 
 ## 💡 Big Idea
 
-**God grieved over a violent world, kept Noah's family safe through the water, and made a promise to every living creature that he still keeps.**
+**God grieved over a violent world, kept Noah's family safe through the water, and made a lasting promise to every living creature.**

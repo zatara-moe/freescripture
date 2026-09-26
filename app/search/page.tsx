@@ -43,7 +43,7 @@ export default function Search() {
       <div id="search-results" className="search-results" aria-live="polite" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: "" }} />
 
       <script id="search-catalog" type="application/json" dangerouslySetInnerHTML={{ __html: JSON.stringify(searchCatalog()).replace(/</g, "\\u003c") }} />
-      <script src="/static/js/search.js?v=8" defer></script>
+      <script src="/static/js/search.js?v=9" defer></script>
     </div>
   );
 }

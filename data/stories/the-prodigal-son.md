@@ -6,8 +6,8 @@
 
 - **Jesus:** The one the Gospels present as the promised Messiah and the Son of God. He is teaching on his way to Jerusalem.
 - **Tax collectors and sinners:** People others looked down on. They came close to hear Jesus.
-- **Pharisees and scribes:** Pharisees were a Jewish group devoted to carefully keeping God's law. Scribes were teachers of Moses's law. They were unhappy about the company Jesus kept.
-- **In Jesus's story:** A father, his younger son, his older son, the father's servants, and a man in a far country who owned pigs.
+- **Pharisees and scribes:** Pharisees were a Jewish group devoted to carefully keeping God's law. Scribes were teachers of Moses's law. They were unhappy about the people Jesus spent time with.
+- **In Jesus's story:** A father and his two sons, one younger and one older. Also the father's servants, and a man in a far country who owned pigs.
 
 **Setting**
 
@@ -62,7 +62,7 @@ The younger son came to his father. He said, **"Father, give me my share of the 
 
 Usually, sons received their share when their father died. This son wanted his share now, while his father was still alive. {v: 15:12}
 
-The Bible doesn't say how the father felt. But he said yes. He divided his property between his two sons. {v: 15:12}
+The Bible doesn't say how the father felt. But he did what his son asked. He divided his property between his two sons. {v: 15:12}
 
 ### Scene 3: Far from Home
 
@@ -70,11 +70,11 @@ A few days later, the younger son packed up everything. He traveled to a distant
 
 There he **"squandered his wealth in wild living"** (15:13). Squandered means wasted. This is where the old word "prodigal" comes from. It means someone who wastes. {v: 15:13}
 
-Soon all his money was gone. Then a terrible famine hit that country. A famine is a time when there is not enough food. Now the son was in need. {v: 15:14}
+Then all his money was gone. After that, a terrible famine hit that country. A famine is a time when there is not enough food. Now the son was in need. {v: 15:14}
 
 He got a job with a man who lived there. The man sent him into the fields to feed pigs. {v: 15:15}
 
-Jesus's listeners knew what that meant. Moses's law called pigs unclean (Leviticus 11:7). Jewish people did not eat them. This young man had fallen about as low as he could go. {v: 15:15}
+Jesus's listeners knew what that meant. Moses's law called pigs unclean (Leviticus 11:7). Jewish people did not eat them. For a Jewish young man, this was about the worst job there was. {v: 15:15}
 
 He was so hungry that he wanted to eat the pigs' food. But no one gave him anything. {v: 15:16}
 
@@ -103,7 +103,7 @@ The father **"was filled with compassion. He ran to his son, embraced him, and k
 
 He ran. In that time and place, many scholars say, a respected older man did not run in public.† This father did. {v: 15:20}
 
-The son started his speech. "Father, I have sinned against heaven and against you. I am not worthy to be called your son." {v: 15:21}
+The son started his speech. "Father, I have sinned against heaven and against you. I am no longer worthy to be called your son." {v: 15:21}
 
 But the son did not say the part about being a hired worker. The Bible doesn't say why. But remember: the father had already run to him and kissed him. {v: 15:20, 15:21}
 
@@ -116,11 +116,11 @@ The father called to his servants. He told them to hurry. {v: 15:22}
 
 "Bring the best robe and put it on him. Put a ring on his finger and sandals on his feet." {v: 15:22}
 
-"Bring the fattened calf and kill it. We will have a feast." A fattened calf was fed extra so it was ready for a special celebration. {v: 15:23}
+"Bring the fattened calf and kill it. Let's feast and celebrate." A fattened calf was fed extra so it was ready for a special celebration. {v: 15:23}
 
 Then the father said why. **"For this son of mine was dead and is alive again! He was lost and is found"** (15:24). {v: 15:24}
 
-"Dead" is a comparison. The son was not really dead. He had been gone, as good as dead to his family. Now he was back. {v: 15:24}
+"Dead" is a comparison. The son was not really dead. He had been gone, and to his family it was as if he had died. Now he was back. {v: 15:24}
 
 So the party began. {v: 15:24}
 
@@ -148,7 +148,7 @@ The older son did not say "my brother." He said **"this son of yours"** (15:30).
 
 The father answered him. **"Son, you are always with me ... and all that is mine is yours"** (15:31). {v: 15:31}
 
-The father had not forgotten his older son. Everything the father had left belonged to him. {v: 15:31}
+The father had not forgotten his older son. Everything that remained of the father's property belonged to the older son. {v: 15:31}
 
 Then the father said, **"But it was fitting to celebrate and be glad, because this brother of yours was dead and is alive again; he was lost and is found"** (15:32). {v: 15:32}
 
@@ -156,7 +156,7 @@ The older son had said "this son of yours." The father said "this brother of you
 
 That is where Jesus ended the story. {v: 15:32}
 
-The party is going on inside. The older son is standing outside. His father is standing with him, asking him to come in. {v: 15:28, 15:32}
+The party was going on inside. The older son was standing outside. His father was standing with him, asking him to come in. {v: 15:28, 15:32}
 
 At the start, the Pharisees and scribes grumbled about Jesus welcoming sinners. Jesus told this story to them. {v: 15:2, 15:3}
 
@@ -179,7 +179,7 @@ Luke 15:1-3, 15:11-32 (BSB)
 | **"Squandered his wealth in wild living"** (15:13) | He wasted everything. This is why the story is called "prodigal," which means wasteful. |
 | **"He came to his senses"** (15:17) | He saw his life clearly. He turned around and went home. In the first two stories, Jesus calls turning back like this repenting (15:7, 15:10). |
 | **"He ran to his son"** (15:20) | The father did not wait for his son to reach the door. He went out to meet him. |
-| **"Was dead and is alive again"** (15:24) | This is a comparison. The lost son was as good as dead to the family. Now he is back. |
+| **"Was dead and is alive again"** (15:24) | This is a comparison. To the family, it was as if the lost son had died. Now he is back. |
 | **"All that is mine is yours"** (15:31) | The older son had never lost his place. He had been in the father's house all along. |
 
 ## 🌍 Back Then...
@@ -188,7 +188,7 @@ Luke 15:1-3, 15:11-32 (BSB)
 
 **Sons usually waited.** Sirach is an old Jewish book of wisdom, written about 200 years before Jesus. Catholic and Orthodox Bibles include it. Lutherans count it as useful to read but not equal to Scripture. Sirach tells readers not to give their property to a son or anyone else while they live. It says to divide the inheritance at the end of life (Sirach 33:19-23 in the KJV and RSV, 33:20-24 in some newer Bibles).† Many scholars today say that asking early was deeply shameful. Some say it was like wishing your father were dead.†
 
-**Pigs were unclean.** Moses's law said Israel must not eat pigs or touch their dead bodies (Leviticus 11:7-8). A Jewish young man feeding a foreigner's pigs had hit bottom.
+**Pigs were unclean.** Moses's law said Israel must not eat pigs or touch their dead bodies (Leviticus 11:7-8). A Jewish young man feeding a foreigner's pigs was in about the worst place he could be.
 
 **The pods were probably carob pods.** Carob trees grew in that region. Their bean pods were fed to animals and eaten by the very poor. (Easton's Bible Dictionary)
 
@@ -204,7 +204,7 @@ Luke 15:1-3, 15:11-32 (BSB)
 
 **Is the older brother "the Jews"?** No. Everyone in this story is Jewish, including the father and the younger son. The tax collectors and sinners in the crowd were Jewish. So were the Pharisees and scribes. So was Jesus. The older brother stands for anyone who works hard to do right and gets angry at God's welcome for others. That can be church people today too.
 
-**Does God only love people who come back?** No. The father saw his younger son while he was still far away, and was filled with compassion. He also went out to his older son, who was angry and would not come in.
+**Does God only love people who come back?** No. The father saw his younger son while the son was still far away. The father was filled with compassion. He also went out to his older son, who was angry and would not come in.
 
 ## 💭 How People Feel
 
@@ -225,7 +225,7 @@ Luke 15:1-3, 15:11-32 (BSB)
 
 **Which son are you today?** Tap one.
 
-- The younger son :: Then this story is for you first. The father ran before his son could finish his speech. You don't have to earn your way home.
+- The younger son :: Then this story is for you first. The father ran to his son before the son said a word. You don't have to earn your way home.
 - The older son :: Doing right and feeling unseen is a real hurt. The father came out for you too. "All that is mine is yours."
 - Honestly, both of them :: Most of us are. The father goes out to both sons, one on the road and one outside the door.
 - The one waiting :: Waiting for someone to come home is hard. The father in this story saw his son while he was still far away and ran to him. God sees the one you are waiting for, and God sees you.
@@ -245,13 +245,13 @@ Luke 15:1-3, 15:11-32 (BSB)
 
 The younger son had a speech ready. He planned to work his way back as a hired servant. He never said that part. The father gave him a robe, a ring, and a party instead.
 
-The older son thought he had to earn a young goat. The father told him everything was already his.
+The older son said he had served for years and never got even a young goat. The father told him everything was already his.
 
 Neither son earned the father's love. That love was there the whole time. In Jesus's first two stories, the joy belongs to heaven (15:7, 15:10). That is why many Christians see God in the father. **God runs to meet us first, and God goes out to plead with us when we stand outside.**
 
 ## 📚 From Luther
 
-In the Small Catechism, Luther explains the prayer "Forgive us our trespasses." He says we are not worthy of anything we pray for, and have not deserved it, but we ask God to give it all to us by grace (*Small Catechism*, Fifth Petition, 1529).† That is the younger son's speech, "I am no longer worthy," with the father's answer.
+In the Small Catechism, Luther explains the prayer "Forgive us our trespasses." He says we are not worthy of anything we pray for, and we have not deserved it. But we ask God to give it all to us by grace (*Small Catechism*, Fifth Petition, 1529).† That is the younger son's speech, "I am no longer worthy," with the father's answer.
 
 ## 📅 In Church
 

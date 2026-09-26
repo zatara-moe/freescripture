@@ -4,7 +4,7 @@
 
 **Cast**
 
-- **Jesus:** The one the Gospels present as the promised Messiah and the Son of God. He has just started teaching in public.
+- **Jesus:** The one the Gospels present as the promised Messiah and the Son of God. He has recently started teaching in public.
 - **The disciples:** Jesus's first followers. So far, Matthew has named four fishermen: Peter, Andrew, James, and John.
 - **The crowd:** People from many towns. Many of them are sick or in pain.
 
@@ -18,13 +18,13 @@
 
 ## 🧭 Before the Story
 
-**Jesus has started preaching.** His message is short: **"Repent, for the kingdom of heaven is near"** (4:17). Repent means turn around. Change direction.
+**Jesus had started preaching.** His message was short: **"Repent, for the kingdom of heaven is near"** (4:17). Repent means turn around. Change direction.
 
-**He has called his first followers.** Four fishermen left their nets to follow him (4:18-22).
+**He had called his first followers.** Four fishermen left their nets to follow him (4:18-22).
 
-**News is spreading.** People are hearing that Jesus heals the sick.
+**News was spreading.** People were hearing that Jesus healed the sick.
 
-**Here's what you know that almost nobody in this story knows:** These words will become some of the most famous words ever spoken. Today we call them the Beatitudes. Beatitudes means "the blessings."
+**Here's what you know that almost nobody in this story knows:** Jesus's words here will become world famous. Today we call them the Beatitudes. Beatitudes means "the blessings."
 
 ## 🗺️ Map of the Story
 
@@ -59,27 +59,27 @@ Back then, teachers sat down to teach. So sitting down was a signal. A lesson wa
 
 His disciples came close to him. Then Jesus began to teach them. {v: 5:1, 5:2}
 
-Think about who was on that mountain. Many people there had just been healed. Many were still hurting. {v: 4:24, 5:1}
+The Bible doesn't list who was on that mountain. But remember: these crowds had brought their sick and hurting to Jesus. {v: 4:24, 5:1}
 
 ### Scene 3: Blessed Are the Poor in Spirit
 
 Jesus said, **"Blessed are the poor in spirit, for theirs is the kingdom of heaven"** (5:3). {v: 5:3}
 
-Blessed means God's favor rests on them. Poor in spirit means knowing you have nothing to bring to God. Jesus says the kingdom belongs to people like that. It is a gift. {v: 5:3}
+Blessed means God's favor rests on them. Poor in spirit means knowing you have nothing to bring to God. The kingdom of heaven means God's rule, the way God runs things. Jesus says the kingdom belongs to people like that. It is a gift. {v: 5:3}
 
 **"Blessed are those who mourn, for they will be comforted"** (5:4). To mourn is to feel deep sadness, often after someone dies. {v: 5:4}
 
-The Bible doesn't say who in the crowd was grieving. But this crowd came carrying pain. {v: 4:24, 5:4}
+The Bible doesn't say who in the crowd was grieving. But many people in this crowd were sick or in pain. {v: 4:24, 5:4}
 
 **"Blessed are the meek, for they will inherit the earth"** (5:5). Meek means gentle. To inherit means to receive something as a gift because you belong to a family. {v: 5:5}
 
-**"Blessed are those who hunger and thirst for righteousness, for they will be filled"** (5:6). This is a comparison. Jesus means wanting to be right with God, and wanting what is right and fair, as badly as a hungry person wants food. {v: 5:6}
+**"Blessed are those who hunger and thirst for righteousness, for they will be filled"** (5:6). This is a comparison. Jesus means wanting to be right with God, and wanting what is right and fair. These people want it as badly as a hungry person wants food. {v: 5:6}
 
 ### Scene 4: Blessed Are the Merciful
 
 Jesus kept going. **"Blessed are the merciful, for they will be shown mercy"** (5:7). Mercy is kindness and help for someone who is hurting or has done wrong. {v: 5:7}
 
-**"Blessed are the pure in heart, for they will see God"** (5:8). A pure heart is an undivided heart. It wants God, and not only to look good. {v: 5:8}
+**"Blessed are the pure in heart, for they will see God"** (5:8). Here "heart" means a person's inner self, what they want and choose. A pure heart is undivided. It wants God, and not only to look good. {v: 5:8}
 
 **"Blessed are the peacemakers, for they will be called sons of God"** (5:9). Peacemakers help people stop fighting. "Sons of God" was a way of saying God's children. It includes everyone who belongs to God. {v: 5:9}
 
@@ -115,9 +115,9 @@ Matthew 4:23 to 5:12 (BSB)
 | **"Blessed are the poor in spirit"** (5:3) | God's favor rests on people who know they have nothing to bring. The kingdom is a gift. | A tax collector who would not even look up to pray (Luke 18:13) |
 | **"Those who mourn... will be comforted"** (5:4) | Jesus does not tell sad people to stop being sad. He promises comfort. | Jesus weeps with Mary and Martha at their brother's grave (John 11:35) |
 | **"The meek... will inherit the earth"** (5:5) | Gentle people will receive the earth as a gift. Jesus is repeating an old promise. | A psalm with almost the same words (Psalm 37:11) |
-| **"Hunger and thirst for righteousness"** (5:6) | Wanting to be right with God very badly. God does the filling. | Zacchaeus climbs a tree just to see Jesus (Luke 19:1-10) |
+| **"Hunger and thirst for righteousness"** (5:6) | Wanting to be right with God very badly. God does the filling. | Zacchaeus climbs a tree so he can see Jesus (Luke 19:1-10) |
 | **"The merciful... will be shown mercy"** (5:7) | People who show kindness will receive God's kindness. | The Samaritan who stops to help a hurt stranger (Luke 10:33) |
-| **"The pure in heart... will see God"** (5:8) | An undivided heart will see God. This is a promise, not a test score. | Nathanael, "in whom there is no deceit" (John 1:47) |
+| **"The pure in heart... will see God"** (5:8) | People with an undivided heart will see God. This is a promise, not a test score. | Nathanael, "in whom there is no deceit" (John 1:47) |
 | **"Sons of God"** (5:9) | God's children. Everyone who belongs to God. | "You are all sons of God through faith in Christ Jesus" (Galatians 3:26) |
 
 These are connections to other Bible passages. The Bible does not say Jesus had these people in mind.
@@ -126,7 +126,7 @@ These are connections to other Bible passages. The Bible does not say Jesus had 
 
 **Teachers sat down to teach.** Jesus also sits down to teach in his hometown synagogue (Luke 4:20).
 
-**"Blessed" had a special meaning.** The Greek word is *makarios*. It describes someone God has favored. (Strong's Concordance)
+**"Blessed" had a special meaning.** The Greek word is *makarios*. It describes someone God has favored (Strong's Concordance).
 
 ## 🚨 Literal Reader Alert: "Wait, what?"
 
@@ -150,10 +150,10 @@ These are connections to other Bible passages. The Bible does not say Jesus had 
 
 **Which blessing do you need to hear today?** Tap one.
 
-- "Blessed are those who mourn" :: Jesus does not tell sad people to cheer up. He promises comfort. That promise is for you too.
+- "Blessed are those who mourn" :: Jesus does not tell sad people to stop being sad. He promises comfort. That promise is for you too.
 - "Blessed are the poor in spirit" :: Maybe you feel like you have nothing to bring to God. Jesus says the kingdom belongs to people like that. It is a gift.
-- "Blessed are the meek" :: Gentle people can feel pushed aside. Jesus says the earth is theirs, as a gift.
-- "Blessed are the peacemakers" :: Maybe you are the one who calms things down with friends or at home. Jesus calls people like that God's children. But keeping the peace at home is not your job alone. If home feels unsafe, tell someone you trust.
+- "Blessed are the meek" :: Gentle people can feel ignored. Jesus says the earth is theirs, as a gift.
+- "Blessed are the peacemakers" :: Maybe you are the one who calms things down with friends or at home. Jesus calls people like that God's children. But stopping fights at home is not your job alone. If home feels unsafe, tell someone you trust.
 
 ## 🤔 You Might Have Heard...
 
@@ -161,13 +161,13 @@ These are connections to other Bible passages. The Bible does not say Jesus had 
 
 **What's true:** God cares how we live.
 
-**What the passage is mainly about:** Jesus announcing good news to people who were sick, sad, and left out. These blessings are gifts, not a scoreboard. Using them to feel better than other people misses the point. Jesus said them to people who had nothing to show off.
+**What the passage is mainly about:** Jesus announcing good news to people who were sick, sad, and left out. These blessings are gifts, not a scoreboard. They are not for feeling better than other people. Jesus said them to people who had nothing to show off.
 
-**Where Jesus is:** He does more than say these words. He lives them. On the cross, people insult him and hurt him. He still asks God to forgive them (Luke 23:34).†
+**Where Jesus is:** He does more than say these words. He lives them. On the cross, people insulted him and hurt him. He still asked God to forgive them (Luke 23:34).†
 
 ## ✝️ Good News
 
-You do not have to climb up to God's blessing. Jesus speaks it over people who have nothing to bring. **In Jesus, God's favor rests on you before you do anything to deserve it.**†
+You do not have to earn God's blessing. Jesus gives it to people who have nothing to bring. **In Jesus, God's favor rests on you before you do anything to deserve it.**†
 
 ## 📚 From Luther
 
@@ -179,4 +179,4 @@ Many churches follow a reading plan called the Revised Common Lectionary. It rea
 
 ## 💡 Big Idea
 
-**Jesus announces God's favor over hurting people and gives the kingdom as a gift.**
+**Jesus announces God's favor to hurting people and gives the kingdom as a gift.**

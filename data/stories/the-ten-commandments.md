@@ -25,7 +25,7 @@
 
 **The people got ready for the third day.** They washed their clothes. Moses set a boundary around the mountain. No one was to touch it (19:10-15).
 
-**Here's what you know that almost nobody in this story knows:** Before God gives one single command, he will say who he is and what he has already done.
+**Here's what you know that almost nobody in this story knows:** God's first words will not be a command. God will first say who he is and what he has already done.
 
 ## 🗺️ Map of the Story
 
@@ -47,7 +47,7 @@
 
 On the third morning, thunder crashed over the mountain. Lightning flashed. A thick cloud sat on top of it. {v: 19:16}
 
-Then a ram's horn blasted, very loud. A ram's horn is a trumpet made from the horn of a male sheep. Everyone in the camp trembled. The thunder, the lightning, and the horn made them afraid. {v: 19:16, 20:18}
+Then a ram's horn blasted very loudly. A ram's horn is a trumpet made from the horn of a male sheep. Everyone in the camp trembled. The thunder, the lightning, and the horn made them afraid. {v: 19:16, 20:18}
 
 Moses led the people out of the camp to meet God. They stood at the bottom of the mountain. {v: 19:17}
 
@@ -56,13 +56,13 @@ Mount Sinai was covered in smoke. **"The LORD had descended on it in fire"** (19
 The sound of the horn grew louder and louder. Moses spoke. And God answered him in the thunder. {v: 19:19}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> Black smoke rolls up into the sky, and the ground shakes under thousands of feet. The horn's blast echoes off the rocks, louder than the thunder.
+> Black smoke rolls up into the sky. The horn's blast echoes off the rocks, louder than the thunder.
 
 ### Scene 2: Stay Back
 
 The LORD came down to the top of Mount Sinai. He called Moses up to the top, and Moses climbed. {v: 19:20}
 
-Then God sent Moses back down with a warning. The people must not push past the boundary to see the LORD. If they did, many of them would die. Even the priests had to consecrate themselves. That means they had to get ready and be set apart for God. {v: 19:21, 19:22}
+Then God sent Moses back down with a warning. The people must not push past the boundary to see the LORD. If they did, many of them would die. Even the priests had to consecrate themselves. To consecrate means to get ready and be set apart for God. {v: 19:21, 19:22}
 
 Moses answered that the people could not come up. God had already told them to stay back. God had said to mark off the mountain as holy. {v: 19:23}
 
@@ -70,21 +70,21 @@ The LORD told Moses to go down and come back with his brother Aaron. But the pri
 
 So Moses went down to the people and told them. {v: 19:25}
 
-The Bible doesn't explain every reason for the boundary. But the story shows this: God is holy and powerful. Being near him was not a small thing. {v: 19:21, 19:24}
+The Bible doesn't explain every reason for the boundary. But the story shows this: God is holy and powerful. Being near him was serious. {v: 19:21, 19:24}
 
 ### Scene 3: Who God Is
 
 Then God spoke all these words. {v: 20:1}
 
-The first words were not a rule. They were about who God is, and what he had already done. {v: 20:1, 20:2}
+The first words were not a rule. They were about who God is and what he had already done. {v: 20:1, 20:2}
 
 **"I am the LORD your God, who brought you out of the land of Egypt, out of the house of slavery"** (20:2). {v: 20:2}
 
-Earlier, at a burning bush, God had told Moses his name. Now God said that name to all the people. He called himself **"the LORD your God"** (20:2). He belonged to them, and they belonged to him. {v: 20:2}
+Months before, at a burning bush, God had told Moses his name (Exodus 3:15). Now God said that name to all the people. He called himself **"the LORD your God"** (20:2). He belonged to them, and they belonged to him. {v: 20:2}
 
 God reminded them what he had done. They had been slaves. God had set them free. {v: 20:2}
 
-This is the order. God rescued them first. Then he gave them his commandments. They did not earn their freedom by keeping rules. The rules were for people who were already free. {v: 20:2}
+The order matters. God rescued them first. Then he gave them his commandments. They did not earn their freedom by keeping rules. The rules were for people who were already free. {v: 20:2}
 
 ### Scene 4: No Other Gods
 
@@ -100,7 +100,7 @@ God said the guilt of people who hate him would reach their children, to the thi
 
 The Second Commandment was about God's name. **"You shall not take the name of the LORD your God in vain"** (20:7). {v: 20:7}
 
-"In vain" means in an empty or wrong way. It means using God's name to curse, lie, trick people, or treat God like nothing. God said he would not let people get away with this. {v: 20:7}
+"In vain" means in an empty or wrong way. It means using God's name to curse, lie, trick people, or treat God as unimportant. God said he would punish anyone who did this. {v: 20:7}
 
 The Third Commandment was about God's day. **"Remember the Sabbath day by keeping it holy"** (20:8). {v: 20:8}
 
@@ -108,9 +108,9 @@ The Sabbath was the seventh day of the week. For six days, the people would do t
 
 No one was to work on that day. That rest was for everyone. It was for sons and daughters. It was for servants and animals. It was even for foreigners living among them. {v: 20:10}
 
-Later, Moses tied this rest to their past. He told them to remember that they had been slaves in Egypt (Deuteronomy 5:15). Now God gave rest to everyone in the house. {v: 20:10}
-
 God gave a reason. In six days the LORD made the heavens, the earth, the sea, and everything in them. On the seventh day he rested. So he blessed the Sabbath and made it holy. {v: 20:11}
+
+About forty years later, Moses gave the people a second reason. He told them to remember that they had been slaves in Egypt (Deuteronomy 5:15). Now God gave rest to everyone in the house, even the servants. {v: 20:10}
 
 ### Scene 6: Father and Mother
 
@@ -132,17 +132,17 @@ The Seventh Commandment protected what people own. **"You shall not steal"** (20
 
 The Eighth Commandment protected the truth, and a person's good name. **"You shall not bear false witness against your neighbor"** (20:16). Bearing false witness means telling lies about someone, especially in court. {v: 20:16}
 
-Life, marriage, things, and truth. God protected each one. God cared about how his people treated each other. {v: 20:13, 20:14, 20:15, 20:16}
+God protected life, marriage, belongings, and truth. He cared about how his people treated each other. {v: 20:13, 20:14, 20:15, 20:16}
 
 ### Scene 8: Wanting What Is Not Yours
 
-The last commandments went deeper. They were about what happens inside a person. {v: 20:17}
+The last commandments were different. They were about what happens inside a person. {v: 20:17}
 
 **"You shall not covet your neighbor's house"** (20:17). To covet means to want something that belongs to someone else so much that you would take it from them. {v: 20:17}
 
 God also said not to covet a neighbor's wife, servants, ox, donkey, or **"anything that belongs to your neighbor"** (20:17). Lutherans count these as the Ninth and Tenth Commandments. {v: 20:17}
 
-You can't see coveting from the outside. It happens in the heart. So these commandments showed that God cares about more than actions. He cares about what we want. {v: 20:17}
+You can't see coveting from the outside. It happens in a person's thoughts and wishes. So these commandments showed that God cares about more than actions. He cares about what we want. {v: 20:17}
 
 ### Scene 9: Standing Far Away
 
@@ -175,11 +175,11 @@ Exodus 19:16 to 20:21 (BSB)
 |---|---|
 | **"I am the LORD your God, who brought you out"** (20:2) | God says who he is and what he has done before he says what to do. The commandments are for people God has already freed. |
 | **"The house of slavery"** (20:2) | Egypt, where they had been slaves. God's law is not a new kind of slavery. It is a way of life for free people. |
-| **"You shall have no other gods before Me"** (20:3) | Nothing else gets the first place in your trust. Not money, fame, a person, or yourself. |
+| **"You shall have no other gods before Me"** (20:3) | Nothing else gets the first place in your trust. That includes money, fame, another person, and yourself. |
 | **"A jealous God"** (20:5) | A comparison. God's love is faithful, like a marriage. It is not petty or envious. |
-| **"Remember the Sabbath day"** (20:8) | Stop and rest, and make room for God. Rest is a gift, not a reward. |
+| **"Remember the Sabbath day"** (20:8) | Stop and rest, and make time for God. Rest is a gift, not a reward. |
 | **"Honor your father and mother"** (20:12) | Respect and care for your parents. This never means obeying someone who hurts you. |
-| **"You shall not covet"** (20:17) | Don't let wanting what belongs to others take over your heart. God cares about the inside too. |
+| **"You shall not covet"** (20:17) | Don't let wanting what belongs to others take over your thoughts. God cares about what happens inside you too. |
 | **"Do not be afraid"** (20:20) | Moses comforts the people. He says God came to test them, so they would respect him and not sin. |
 | **"The fear of Him"** (20:20) | Deep respect and awe for God. It is not the same as panic. |
 
@@ -215,7 +215,7 @@ The words are the same in every tradition. Only the counting is different. Catho
 
 **Does God punish children for what their parents did?** God said the guilt of those who hate him would reach **"to the third and fourth generations"** (20:5). Christians have struggled with this passage for a long time. Here are some things that help. First, the verse is about people who keep hating God, family after family. Second, it compares three or four generations to **"a thousand generations"** (20:6). God's love is much bigger than his anger. Third, the prophet Ezekiel says, **"A son will not bear the iniquity of his father"** (Ezekiel 18:20). Many readers understand Exodus 20:5 to mean that wrongdoing often hurts families for a long time. If you have been hurt by a parent's choices, it is not your fault. God does not blame you for it.†
 
-**Why did the people have to stay back or die?** God is holy, and the Bible treats being near him as serious. The boundary protected the people. It's okay to notice things like this. Careful readers have asked about it for centuries. The letter to the Hebrews remembers this scary day. Then it says Christians come to **"Jesus the mediator of a new covenant"** (Hebrews 12:24). A mediator is a go-between.
+**Why did the people have to stay back or die?** God is holy, and the Bible treats being near him as serious. The boundary protected the people. It's okay to notice things like this. Careful readers have asked about it for centuries. The letter to the Hebrews remembers this frightening day. Then it says Christians come to **"Jesus the mediator of a new covenant"** (Hebrews 12:24). A mediator is a go-between.
 
 **Does "honor your father and mother" mean I have to obey someone who hurts me?** No. Honoring means respect and care. It never means letting someone hurt you. It never means keeping a secret that hurts you. God also tells parents, **"do not provoke your children to wrath"** (Ephesians 6:4). If someone at home is hurting you, tell a trusted adult, like a teacher, school counselor, or pastor. In the U.S., you can call or text 988. If you are in danger, call 911 or your local emergency number. Outside the U.S., findahelpline.com lists free helplines. If this story brings up big feelings, talk with a parent, pastor, or trusted adult.
 
@@ -255,7 +255,7 @@ The words are the same in every tradition. Only the counting is different. Catho
 
 **What the story is mainly about:** God gave these words to people he had already rescued. **"I am the LORD your God, who brought you out"** (20:2) comes first. The people did not earn their freedom. God gave it.
 
-**Where Jesus is:** Someone once asked Jesus which commandment is the greatest. Jesus said, **"Love the Lord your God with all your heart and with all your soul and with all your mind"** (Matthew 22:37). Then he said, **"Love your neighbor as yourself"** (Matthew 22:39). **"All the Law and the Prophets hang on these two commandments"** (Matthew 22:40). Many Christians have taught that the first commandments are about loving God, and the rest are about loving people. Jesus also said about the Law and the Prophets, **"I have not come to abolish them, but to fulfill them"** (Matthew 5:17). He loved God and his neighbors perfectly, and he did it for us.†
+**Where Jesus is:** Someone once asked Jesus which commandment is the greatest. Jesus said, **"Love the Lord your God with all your heart and with all your soul and with all your mind"** (Matthew 22:37). Then he said, **"Love your neighbor as yourself"** (Matthew 22:39). **"All the Law and the Prophets hang on these two commandments"** (Matthew 22:40). Many Christians have taught that the first commandments are about loving God, and the rest are about loving people. Jesus also said about the Law and the Prophets, **"I have not come to abolish them, but to fulfill them"** (Matthew 5:17). Jesus loved God and his neighbors perfectly, and he did it for us.†
 
 ## ✝️ Good News
 
@@ -294,4 +294,4 @@ Many churches follow a reading plan called the Revised Common Lectionary. It rea
 
 ## 💡 Big Idea
 
-**God sets his people free first, tells them who he is, and then gives them his commandments as a gift for free people.**
+**God sets his people free, tells them who he is, and then gives his commandments as a gift for free people.**

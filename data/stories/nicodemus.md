@@ -42,7 +42,7 @@
 
 ### Scene 1: A Visitor at Night
 
-It was dark in Jerusalem. A man came to see Jesus. His name was Nicodemus. He was a Pharisee and a leader of the Jewish people. {v: 3:1, 3:2}
+It was night in Jerusalem. A man came to see Jesus. His name was Nicodemus. He was a Pharisee and a leader of the Jewish people. {v: 3:1, 3:2}
 
 The Bible doesn't say why Nicodemus came at night. But remember, John uses light and darkness as a picture all through his book (1:5). Some readers think Nicodemus wanted a quiet talk. Others think he did not want to be seen. {v: 3:2}
 
@@ -61,7 +61,7 @@ Jesus answered, **"Truly, truly, I tell you, no one can see the kingdom of God u
 
 The Greek word for "again" can also mean "from above." Jesus may have meant both. It is a new birth, and it comes from God. {v: 3:3}
 
-Nicodemus heard it the plain way. **"How can a man be born when he is old?"** he asked. **"Can he enter his mother's womb a second time to be born?"** (3:4). The womb is where a baby grows before birth. {v: 3:4}
+Nicodemus understood the words in the plain, literal way. **"How can a man be born when he is old?"** he asked. **"Can he enter his mother's womb a second time to be born?"** (3:4). The womb is where a baby grows before birth. {v: 3:4}
 
 That was a fair question. People are only born once. {v: 3:4}
 
@@ -81,9 +81,9 @@ This is a comparison. You cannot see the wind or control it. But you can hear it
 
 Nicodemus was still puzzled. **"How can this be?"** he asked (3:9). {v: 3:9}
 
-**"You are Israel's teacher,"** said Jesus, **"and you do not understand these things?"** (3:10). Nicodemus knew the Scriptures well. One likely reason for Jesus's question: the prophets had promised that God would give his people a new spirit (Ezekiel 36:26-27). {v: 3:10}
+**"You are Israel's teacher,"** said Jesus, **"and you do not understand these things?"** (3:10). Nicodemus was a teacher of the Scriptures. One likely reason for Jesus's question: the prophets had promised that God would give his people a new spirit (Ezekiel 36:26-27). {v: 3:10}
 
-Jesus said that he spoke about what he knew and had seen. But people did not accept it. He asked, if they did not believe him about earthly things, how would they believe him about heavenly things? {v: 3:11, 3:12}
+Jesus said that he spoke about what he knew and had seen. But people did not accept it. Jesus said they did not believe him about earthly things. So it would be even harder for them to believe him about heavenly things. {v: 3:11, 3:12}
 
 Then Jesus said that no one has gone up to heaven except the one who came down from heaven. That one is the Son of Man. "Son of Man" is a name Jesus used for himself. {v: 3:13}
 
@@ -98,7 +98,7 @@ Jesus said, **"Just as Moses lifted up the snake in the wilderness, so the Son o
 
 Why? **"That everyone who believes in Him may have eternal life"** (3:15). {v: 3:15}
 
-Here's what you know that Nicodemus doesn't know yet. Jesus would be lifted up on a cross. Later, Jesus speaks again of being lifted up. John explains that this pointed to the way Jesus would die (12:32-33). {v: 3:14, 3:15}
+Here's what you know that Nicodemus doesn't know yet: Jesus would be lifted up on a cross. Later in John's Gospel, Jesus speaks again about being lifted up. John explains that this pointed to the way Jesus would die (12:32-33). {v: 3:14, 3:15}
 
 ### Scene 6: God So Loved the World
 
@@ -112,25 +112,25 @@ To perish means to die and be lost. Eternal life is life with God that never end
 
 ### Scene 7: Light and Darkness
 
-The words go on. People who believe in God's Son are not condemned. People who do not believe are condemned already. {v: 3:18}
+The words go on. They say that people who believe in God's Son are not condemned. People who do not believe are condemned already. {v: 3:18}
 
 **"The Light has come into the world"** (3:19). This is a comparison. Jesus is the Light. {v: 3:19}
 
 But people loved the darkness more than the Light, because their deeds were evil. People who do evil hate the Light. They stay away from it, because they are afraid their deeds will be seen. {v: 3:19, 3:20}
 
-People who live by the truth come into the light. Then everyone can see that God was at work in what they did. {v: 3:21}
+The words also say that people who live by the truth come into the Light. Then everyone can see that God was at work in what they did. {v: 3:21}
 
-Nicodemus had come in the dark. He had come to the Light. {v: 3:2, 3:19}
+Nicodemus had come at night. And he had come to Jesus, the Light. {v: 3:2, 3:19}
 
 ### Scene 8: Nicodemus Comes Back
 
 John does not tell us how Nicodemus answered that night. But Nicodemus shows up again. {v: 7:50}
 
-Later, some leaders wanted to arrest Jesus. Nicodemus spoke up. **"Does our law convict a man without first hearing from him to determine what he has done?"** (7:51). {v: 7:50, 7:51}
+Later, some leaders wanted to arrest Jesus. Nicodemus spoke up. **"Does our law convict a man without first hearing from him to determine what he has done?"** (7:51). He meant that the law says a person must be heard before being judged. {v: 7:50, 7:51}
 
-After Jesus died on the cross, a man named Joseph of Arimathea asked for Jesus's body. Nicodemus came too. He brought myrrh and aloes, spices for burial, about 75 pounds of them. Together they wrapped Jesus's body in linen cloths with the spices, as Jewish burial custom was. John reminds us that this is the man who came to Jesus at night. {v: 19:38, 19:39, 19:40}
+After Jesus died on the cross, a man named Joseph of Arimathea asked Pilate for Jesus's body. Nicodemus came too. He brought myrrh and aloes, spices for burial, about 75 pounds of them. Together they wrapped Jesus's body in linen cloths with the spices. This was the Jewish way to bury someone. John reminds us that this is the man who came to Jesus at night. {v: 19:38, 19:39, 19:40}
 
-Jesus had been lifted up on the cross, as he told Nicodemus that night he would be. {v: 3:14, 19:39}
+Jesus had been lifted up on the cross. On the night Nicodemus came to him, Jesus had said this would happen. {v: 3:14, 19:39}
 
 ---
 
@@ -164,13 +164,13 @@ John 3:1-21 (BSB)
 
 ## 🚨 Literal Reader Alert: "Wait, what?"
 
-**Did Nicodemus really think people could be born twice from their mothers?** He asked about it because it was the plain meaning of the words. That was a very natural question. Jesus was using a comparison. He meant a new life that God gives, not a second baby birth. It's okay to notice things like this. Careful readers have asked about it for centuries.
+**Did Nicodemus really think people could be born twice from their mothers?** The Bible doesn't say what he thought. He asked about the plain meaning of the words. That was a very natural question. Jesus was using a comparison. He meant a new life that God gives, not a second baby birth. It's okay to notice things like this. Careful readers have asked about it for centuries.
 
 **Was Jesus making fun of Nicodemus?** No. Jesus called him **"Israel's teacher"** (3:10). He expected a teacher of the Scriptures to know God's promises about the Spirit. Jesus kept talking with him. He did not send him away.
 
 **Is it bad to come to Jesus at night, or with questions?** No. Nicodemus came with questions, and Jesus answered him. Later, Nicodemus asked for a fair hearing for Jesus and honored him at his burial.
 
-**Does "condemned already" mean God is waiting to punish people?** Verse 18 is serious. But verse 17 comes first. God did not send Jesus to condemn. People were already lost in the dark before Jesus came (3:19). Jesus came into the dark to rescue them. If you worry that your faith is not enough, remember: faith is a gift. The Spirit gives it, like the wind that blows where it wishes (3:8).
+**Does "condemned already" mean God is waiting to punish people?** Verse 18 is serious. But verse 17 comes first. God did not send Jesus to condemn. John uses darkness as a comparison for being far from God. People were already in that darkness before Jesus came (3:19). Jesus came to rescue them from it. If you worry that your faith is not enough, remember: faith is a gift. The Spirit gives it, like the wind that blows where it wishes (3:8).
 
 ## 💭 How People Feel
 
@@ -207,7 +207,7 @@ John 3:1-21 (BSB)
 
 ## ✝️ Good News
 
-Nicodemus came in the dark with questions. Jesus did not turn him away. He told him the best news there is.
+Nicodemus came at night with questions. Jesus did not turn him away. Jesus told Nicodemus the best news there is.
 
 **"For God did not send His Son into the world to condemn the world, but to save the world through Him"** (3:17).
 
@@ -219,7 +219,7 @@ In Baptism, God gives this new birth by water and the Spirit. You don't make it 
 
 In the Small Catechism, Luther asks how water can do such great things in Baptism. He answers that the water itself does not do it. God's word with the water, and faith that trusts that word, make it a washing of new birth in the Holy Spirit. Luther points to Titus 3:5, which calls Baptism **"the washing of new birth and renewal by the Holy Spirit"** (Titus 3:5).†
 
-Luther also teaches, in his explanation of the Third Article of the Creed, that we cannot come to Jesus by our own understanding or strength. The Holy Spirit calls us through the gospel. This fits what Jesus told Nicodemus: the Spirit gives the new birth.†
+Luther also explains the Third Article of the Creed. He teaches that we cannot come to Jesus by our own understanding or strength. The Holy Spirit calls us through the gospel. This fits what Jesus told Nicodemus: the Spirit gives the new birth.†
 
 ## 📅 In Church
 

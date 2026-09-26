@@ -25,7 +25,7 @@
 
 **The well was very old.** People said Jacob, the father of Israel's twelve tribes, had given it to them long ago (4:12).
 
-**Here's what you know that almost nobody in this story knows:** The tired stranger at the well is the Messiah, the king the woman is waiting for.
+**Here's what you know that almost nobody in this story knows:** The tired stranger at the well is the Messiah. He is the king the woman is waiting for.
 
 ## 🗺️ Map of the Story
 
@@ -38,7 +38,7 @@
 | 5. Which mountain? | 4:20-24 | They talk about where to worship God |
 | 6. "I am he" | 4:25-26 | Jesus tells her who he is |
 | 7. The disciples come back | 4:27, 4:31-38 | The disciples are surprised. Jesus talks about a harvest |
-| 8. The empty water jar | 4:28-30 | The woman runs to tell her town |
+| 8. The empty water jar | 4:28-30 | The woman goes to tell her town |
 | 9. The Savior of the world | 4:39-42 | Many Samaritans believe in Jesus |
 
 ## 📝 Plain Retelling
@@ -66,7 +66,7 @@ Jesus said to her, **"Give Me a drink"** (4:7). {v: 4:7}
 
 The woman was surprised. **"You are a Jew,"** she said. **"How can You ask for a drink from me, a Samaritan woman?"** (4:9). {v: 4:9}
 
-John explains that Jews did not mix with Samaritans. And a Jewish teacher did not usually talk alone with a woman he did not know. Jesus crossed both lines to ask for a drink. {v: 4:9, 4:27}
+John explains that Jews did not mix with Samaritans. And a Jewish teacher did not usually talk alone with a woman he did not know. Jesus set aside both of these customs to ask her for a drink. {v: 4:9, 4:27}
 
 The two groups had a long history. Jewish people and Samaritans both called Jacob their father. Both read the books of Moses. But each group believed the other had gone wrong, and each had hurt the other. That is why the woman was surprised. {v: 4:9, 4:12, 4:20}
 
@@ -76,7 +76,7 @@ Jesus answered, **"If you knew the gift of God and who is asking you for a drink
 
 Back then, "living water" meant fresh water from a spring or a stream. It kept flowing. This is a comparison. Jesus was talking about a gift from God that keeps giving life. {v: 4:10}
 
-The woman heard it as real water. "Sir, you don't have a bucket," she said. "And the well is deep. Where will you get this living water?" She asked if he was greater than their father Jacob, who gave them the well. {v: 4:11, 4:12}
+The woman thought Jesus meant ordinary water. "Sir, you don't have a bucket," she said. "And the well is deep. Where will you get this living water?" She asked if he was greater than their father Jacob, who gave them the well. {v: 4:11, 4:12}
 
 Jesus said, **"Everyone who drinks this water will be thirsty again. But whoever drinks the water I give him will never thirst"** (4:13-14). His water would become a spring inside a person, bubbling up to eternal life. {v: 4:13, 4:14}
 
@@ -102,11 +102,11 @@ The woman spoke about the mountain nearby. It was Mount Gerizim. Samaritans had 
 
 "Our fathers worshiped on this mountain," she said. "But you Jews say people must worship in Jerusalem." {v: 4:20}
 
-Jesus said a time was coming when people would worship God the Father, but not on this mountain and not in Jerusalem. {v: 4:21}
+Jesus said a time was coming when people would worship God the Father. They would not worship him on this mountain or in Jerusalem. {v: 4:21}
 
 Jesus was Jewish, and he said so. He told her that Samaritans worshiped what they did not know. The Jewish people worshiped what they knew. Then he said, **"salvation is from the Jews"** (4:22). Salvation means rescue. God's promise to rescue the world came through Israel. {v: 4:22}
 
-Then Jesus said the time had already come. **"God is Spirit, and His worshipers must worship Him in spirit and in truth"** (4:24). God is not tied to one place. The Father is looking for people who worship him this way. {v: 4:23, 4:24}
+Then Jesus said that time had already come. True worshipers would worship the Father in spirit and in truth. Jesus said the Father is looking for people who worship him this way. **"God is Spirit, and His worshipers must worship Him in spirit and in truth"** (4:24). God is not limited to one place. {v: 4:23, 4:24}
 
 ### Scene 6: "I Am He"
 
@@ -134,15 +134,15 @@ Jesus used another comparison. He told them to **"lift up your eyes and look at 
 
 ### Scene 8: The Empty Water Jar
 
-The woman left her water jar at the well. She went back into town. {v: 4:28}
+When the disciples came back, the woman left her water jar at the well. She went back into town. {v: 4:28}
 
 She told the people, **"Come, see a man who told me everything I ever did. Could this be the Christ?"** (4:29). {v: 4:29}
 
-She had come to carry water home. Now she left the jar behind. Earlier, she had asked Jesus for water so she would not have to keep coming back. Now she had something better to carry. {v: 4:15, 4:28}
+She had come to carry water home. Now she left the jar behind. Earlier, she had asked Jesus for water so she would not have to keep coming back. Now she had news about Jesus to take to her town instead. {v: 4:15, 4:28}
 
-She did not hide from what Jesus knew about her. She told everyone about it. She was not sure of everything yet. She asked a question. But she invited everyone to come and see. {v: 4:29}
+She did not hide from what Jesus knew about her. She told everyone that Jesus knew everything she had done. She was not sure of everything yet, so she asked a question. But she invited everyone to come and see. {v: 4:29}
 
-The people left the town. They walked out toward Jesus. {v: 4:30}
+The people left the town. They walked out toward Jesus. While they were on the way, Jesus was talking with his disciples about food and the harvest. {v: 4:30, 4:31}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
 > A clay water jar sits alone beside the well. Down the road, a crowd of people from town comes walking through the fields.
@@ -151,11 +151,11 @@ The people left the town. They walked out toward Jesus. {v: 4:30}
 
 Many Samaritans in that town believed in Jesus because of what the woman said. {v: 4:39}
 
-They asked Jesus to stay with them. So Jesus stayed two more days, in a Samaritan town. {v: 4:40}
+They asked Jesus to stay with them. So Jesus stayed with the Samaritans for two days. {v: 4:40}
 
 Many more people believed when they heard Jesus for themselves. {v: 4:41}
 
-They told the woman, **"we have heard for ourselves, and we know that this man truly is the Savior of the world"** (4:42). {v: 4:42}
+They told the woman, "We now believe, and not only because of your words." **"We have heard for ourselves, and we know that this man truly is the Savior of the world"** (4:42). {v: 4:42}
 
 Jesus had come to the well tired and thirsty. He asked a stranger for a drink. She went home with good news for her whole town. {v: 4:6, 4:7, 4:39}
 
@@ -172,7 +172,7 @@ John 4:1-42 (BSB)
 | The text says | It means |
 |---|---|
 | **"Give Me a drink"** (4:7) | Jesus started by needing something. He let a stranger help him. |
-| **"Living water"** (4:10) | This is a comparison. Fresh, flowing water stands for the life God gives. Later in John, Jesus uses the same picture, and John says he means the Holy Spirit (John 7:38-39). |
+| **"Living water"** (4:10) | This is a comparison. Fresh, flowing water stands for the life God gives. Later in John, Jesus uses the same picture. John says Jesus means the Holy Spirit (John 7:38-39). |
 | **"Will never thirst"** (4:14) | This is a comparison. Jesus does not mean you will never drink water again. He means God's gift will not run out. |
 | **"You have spoken truthfully"** (4:18) | Jesus named her life plainly. He also said she told the truth. |
 | **"Salvation is from the Jews"** (4:22) | God's promise of rescue came through Israel. Jesus was Jewish. |
@@ -202,7 +202,7 @@ John 4:1-42 (BSB)
 
 **Why did she come to the well at noon?** The Bible doesn't say. Some preachers say she came at noon to avoid other women. That is a guess. John only tells us the time.
 
-**Did Jesus say the Jewish temple did not matter?** No. Jesus said **"salvation is from the Jews"** (4:22). He was saying that God is not limited to one place, and that God is now meeting people in a new way through Jesus himself.
+**Did Jesus say the Jewish temple did not matter?** No. Jesus said **"salvation is from the Jews"** (4:22). He was saying that God is not limited to one place. God is now meeting people in a new way, through Jesus himself.
 
 ## 💭 How People Feel
 
@@ -226,7 +226,7 @@ John 4:1-42 (BSB)
 - Feeling alone :: The woman came to the well, and Jesus was already there. He started the talk. He comes looking for you too.
 - Not good enough :: Jesus did not wait for the right kind of person. He asked a Samaritan woman for help, and then he offered her living water.
 - Stuff I feel bad about :: Jesus knew her whole story. He did not shame her. He stayed and told her who he was. He knows you and stays with you too.
-- Wanting to tell someone :: That is what the woman did. You don't have to know everything. She said, "Come and see."
+- Wanting to tell someone :: The woman told her whole town. You don't have to know everything. She said, "Come and see."
 - It's really bad right now :: Please tell a trusted adult today. In the U.S., you can call or text 988 any time. If you are in danger, call 911 or your local emergency number. Outside the U.S., findahelpline.com lists free helplines.
 
 ## 🤔 You Might Have Heard...
@@ -237,21 +237,21 @@ John 4:1-42 (BSB)
 
 **What the story is mainly about:** The Bible never calls her a sinner, and it never says why her marriages ended. Women then usually could not divorce. She may have been widowed or sent away. What the story does show is Jesus. He asked her for help. He told her the truth about her life without shaming her. Then he told her who he was, before telling anyone else so plainly. Because of her words, many people in her town believed in Jesus (4:39).
 
-**Where Jesus is:** At the center. He is the one who comes to the well, who knows everything, and who gives living water anyway.
+**Where Jesus is:** Jesus is at the center of this story. He comes to the well. He knows everything about the woman, and he still offers her living water.
 
 ## ✝️ Good News
 
 Jesus came to a place where people did not expect him. He talked with someone others kept away from. He knew all about her, and he did not leave.
 
-The water he gives is God's own life. Later in John, Jesus uses the same picture for the Holy Spirit (John 7:38-39). In Baptism, God pours out that living water on you. You do not earn it. It is a gift.
+The living water Jesus gives is a comparison for God's own life. Later in John, Jesus uses the same picture for the Holy Spirit (John 7:38-39). In Baptism, God uses real water to give you this gift. You do not earn it. It is a gift.
 
-The woman did not make herself a witness. Jesus found her first. The Holy Spirit works the same way today. Faith comes when someone tells us about Jesus, and we hear him for ourselves.
+The woman's faith did not start with her. Jesus found her first. The Holy Spirit works the same way today. Faith comes when someone tells us about Jesus, and we hear him for ourselves.
 
 **Jesus knows your whole story, and he still offers you living water.**
 
 ## 📚 From Luther
 
-In the Small Catechism (1529), Luther explains the Third Article of the Creed. He says, "I believe that I cannot by my own reason or strength believe in Jesus Christ, my Lord, or come to Him." Instead, "the Holy Ghost has called me by the Gospel, enlightened me with His gifts." (Concordia Triglotta, 1921)† That is what happened in Sychar. The people heard a woman's word about Jesus. Then they heard Jesus himself, and they believed (4:42).
+In the Small Catechism (1529), Luther explains the Third Article of the Creed. He says, "I believe that I cannot by my own reason or strength believe in Jesus Christ, my Lord, or come to Him." Instead, "the Holy Ghost has called me by the Gospel, enlightened me with His gifts." (Concordia Triglotta, 1921)† That is what happened in Sychar. The people heard the woman's words about Jesus. Then they heard Jesus himself, and they believed (4:42).
 
 ## 🕊️ From the Wider Church
 
@@ -263,4 +263,4 @@ Many churches follow a reading plan called the Revised Common Lectionary. It rea
 
 ## 💡 Big Idea
 
-**Jesus crosses every line to find us, knows us fully, and gives us living water that never runs out.**
+**Jesus comes to people others avoid, knows us fully, and gives us living water that never runs out.**

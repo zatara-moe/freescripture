@@ -90,17 +90,17 @@ Ruth answered, **"Do not urge me to leave you or to turn from following you. For
 
 **"Where you die, I will die, and there I will be buried"** (1:17). Ruth made a serious promise in the LORD's name. {v: 1:17}
 
-Ruth was giving up her country, her family, and her gods. She chose a widow who had nothing to give her. Naomi saw that Ruth had made up her mind. So Naomi stopped arguing. {v: 1:16, 1:17, 1:18}
+Ruth was giving up her country, her family, and her gods. She chose a widow who had nothing to give her. Naomi saw that Ruth was determined to go with her. So Naomi stopped trying to change Ruth's mind. {v: 1:16, 1:17, 1:18}
 
 ### Scene 5: "Call Me Mara"
 
-The two women walked to Bethlehem. The whole town was stirred up. The women said, "Can this be Naomi?" {v: 1:19}
+The two women walked to Bethlehem. Everyone in town was talking about them. The women said, "Can this be Naomi?" {v: 1:19}
 
 The name Naomi means "pleasant." The name Mara means "bitter." {v: 1:20}
 
 Naomi said, **"Call me Mara, because the Almighty has dealt quite bitterly with me. I went away full, but the LORD has brought me back empty"** (1:20-21). {v: 1:20, 1:21}
 
-Naomi told the truth about her pain. The Bible does not scold her for it. Many psalms are honest, hurting prayers like hers. {v: 1:20, 1:21}
+Naomi told the truth about her pain. The Bible does not scold her for it. Many psalms speak with the same honest pain. {v: 1:20, 1:21}
 
 Naomi said she came back empty. But she did not come back alone. Ruth the Moabite came with her. And they arrived at the beginning of the barley harvest. {v: 1:22}
 
@@ -110,7 +110,7 @@ Naomi had a relative on her husband's side named Boaz. He was an important man o
 
 Ruth asked Naomi if she could go glean in the fields. To glean means to pick up the grain that harvest workers leave behind. God's law told farmers to leave the edges of their fields **"for the poor and the foreigner"** (Leviticus 19:10). Ruth was both. {v: 2:2}
 
-Ruth went out to glean. She happened to come to the part of the field that belonged to Boaz. The story does not stop to say God led her. But later Naomi will see the LORD's kindness in it (2:20). {v: 2:3}
+Ruth went out to glean. She happened to come to the part of the field that belonged to Boaz. The story does not say that God led her there. But in Scene 8, Naomi saw the LORD's kindness in it (2:20). {v: 2:3}
 
 Boaz came out and greeted his workers: **"The LORD be with you"** (2:4). He asked his foreman, the boss of the workers, who the young woman was. The foreman said she was the Moabite woman who came back with Naomi. She had worked since morning. {v: 2:4, 2:5, 2:6, 2:7}
 
@@ -139,11 +139,11 @@ Naomi said, **"May he be blessed by the LORD, who has not withdrawn His kindness
 
 Naomi said, **"He is one of our kinsman-redeemers"** (2:20). A kinsman-redeemer was a close relative with a duty to rescue family in trouble. To redeem means to buy back. He could buy back land a poor relative had to sell. He could help keep a dead man's family name alive. {v: 2:20}
 
-Ruth gleaned in Boaz's fields until the harvests were over. She lived with Naomi. {v: 2:23}
+Ruth gleaned in Boaz's fields until the barley and wheat harvests were finished. She lived with Naomi. {v: 2:23}
 
 ### Scene 9: The Threshing Floor
 
-One day Naomi said she wanted to find a safe home for Ruth. Boaz would be at the threshing floor that night. That was a flat, hard place where workers tossed grain in the air. The wind blew the husks away. {v: 3:1, 3:2}
+One day Naomi said she wanted to find a safe home for Ruth. Boaz would be at the threshing floor that night. A threshing floor was a flat, hard place where workers tossed grain in the air. The wind blew the husks away. {v: 3:1, 3:2}
 
 Naomi told Ruth to wash, put on perfume, and wear her best clothes. After Boaz lay down, she should uncover his feet and lie down there. Ruth did everything Naomi said. {v: 3:3, 3:4, 3:5, 3:6}
 
@@ -158,13 +158,13 @@ At midnight, Boaz woke up startled. A woman was lying at his feet. "Who are you?
 
 ### Scene 10: Boaz's Promise
 
-Boaz said, **"May the LORD bless you, my daughter"** (3:10). He said this kindness was even greater than her first. **"And now do not be afraid"** (3:11). He said he would do whatever she asked. The whole town knew she was a woman of noble character. Remember, the story used the same words for Boaz (2:1). {v: 3:10, 3:11}
+Boaz said, **"May the LORD bless you, my daughter"** (3:10). He said this kindness was even greater than her first. She had not gone after the younger men, rich or poor. **"And now do not be afraid"** (3:11). He said he would do whatever she asked. The whole town knew she was a woman of noble character. Remember, the story used the same words for Boaz (2:1). {v: 3:10, 3:11}
 
 But another relative was closer to the family. That man had the first right to redeem. If he would not, Boaz promised, **"as surely as the LORD lives, I will"** (3:13). {v: 3:12, 3:13}
 
 Ruth got up before it was light enough for anyone to recognize her. Boaz poured six measures of barley into her shawl. He did not want her to go back to Naomi empty-handed. {v: 3:14, 3:15, 3:17}
 
-Naomi had said she came home empty. Now Boaz made sure Ruth did not. Naomi told Ruth to wait. Boaz would settle it that day. {v: 1:21, 3:17, 3:18}
+Naomi had said she came home empty. Now Boaz made sure Ruth did not come home empty. Naomi told Ruth to wait. Boaz would settle it that day. {v: 1:21, 3:17, 3:18}
 
 ### Scene 11: At the Town Gate
 
@@ -172,7 +172,7 @@ Boaz sat down at the town gate, where people settled business and legal matters.
 
 Boaz said Naomi was selling Elimelech's land. The relative said, **"I will redeem it"** (4:4). {v: 4:3, 4:4}
 
-Then Boaz told him the rest. Whoever bought the land must also marry Ruth. Their child would carry on the dead man's name. The man changed his mind. It would hurt his own family's inheritance. {v: 4:5, 4:6}
+Then Boaz told him the rest. Whoever bought the land must also marry Ruth. Their child would carry on the dead man's name. The man changed his mind. He said that doing this would hurt his own family's inheritance. {v: 4:5, 4:6}
 
 Back then, people made a deal official by handing over a sandal. The man took off his sandal and gave it to Boaz. {v: 4:7, 4:8}
 
@@ -202,7 +202,7 @@ Ruth 1 to 4 (BSB)
 
 | The text says | It means |
 |---|---|
-| **"Loving devotion"** (1:8) | The Hebrew word is hesed. It means loyal, faithful love that keeps its promises. Ruth shows it. Boaz shows it. Behind them both, God shows it. |
+| **"Loving devotion"** (1:8) | The Hebrew word is hesed. It means loyal, faithful love that keeps its promises. Ruth shows it. Boaz shows it. Through them both, God shows it. |
 | **"The hand of the LORD has gone out against me"** (1:13) | Naomi felt that God was against her. It is honest grief. The Bible lets her say it. |
 | **"Your people will be my people, and your God will be my God"** (1:16) | Ruth joined Naomi's people and trusted Naomi's God. It was a promise for life. |
 | **"Call me Mara"** (1:20) | Mara means "bitter." Naomi named herself by her pain. The story keeps calling her Naomi. At the end, the neighbor women say her name again: "A son has been born to Naomi" (4:17). |
@@ -231,7 +231,7 @@ Ruth 1 to 4 (BSB)
 
 ## 🚨 Literal Reader Alert: "Wait, what?"
 
-**What happened at the threshing floor?** The Bible tells this scene quietly and modestly. Scholars discuss what "uncover his feet" means and why Naomi chose it. What Ruth asked for is clear. She asked Boaz to marry her and protect her (3:9). Boaz answered by praising her noble character (3:11). He promised to follow the proper law in front of the town (3:12-13). Then he sent her home before anyone could recognize her. He did not want it known that a woman had come to the threshing floor (3:14). They were married at the town gate the next day (4:10).
+**What happened at the threshing floor?** The Bible tells this scene quietly and modestly. Scholars discuss what "uncover his feet" means and why Naomi chose it. What Ruth asked for is clear. She asked Boaz to marry her and protect her (3:9). Boaz answered by praising her noble character (3:11). He promised to let the closer relative choose first (3:12-13). The next day, he settled it in front of the town elders (4:1-10). Then he sent her home before anyone could recognize her. He did not want it known that a woman had come to the threshing floor (3:14). They were married at the town gate the next day (4:10).
 
 **Didn't God's law keep Moabites out?** Deuteronomy 23:3 says no Moabite may enter the assembly of the LORD. Yet this story welcomes a Moabite woman, and she becomes David's great-grandmother. Later Jewish teachers said that law was about Moabite men, not women (Mishnah, Yevamot 8:3).† It's okay to notice things like this. Careful readers have asked about it for centuries.
 
@@ -243,7 +243,7 @@ Ruth 1 to 4 (BSB)
 
 | Who | Feeling | Why |
 |---|---|---|
-| Naomi | Heartbroken and bitter | Her husband and both sons had died (1:5, 1:20) |
+| Naomi | Deeply sad and bitter | Her husband and both sons had died (1:5, 1:20) |
 | Ruth | Determined | She would not leave Naomi alone (1:16-18) |
 | Ruth | Surprised and grateful | A stranger was kind to her, a foreigner (2:10, 2:13) |
 | Naomi | Hopeful | She saw God's kindness in Boaz (2:20) |
@@ -258,11 +258,11 @@ Ruth 1 to 4 (BSB)
 
 **Where are you in this story today?** Tap one.
 
-- Grieving, like Naomi :: Naomi told the truth about how much it hurt. You can tell God too. He did not turn away from her. If this brings up big feelings, talk with a parent, pastor, or trusted adult.
+- Grieving, like Naomi :: Naomi told the truth about how much it hurt. You can tell God too. God did not turn away from Naomi. If this brings up big feelings, talk with a parent, pastor, or trusted adult.
 - Far from home :: Ruth was a foreigner in a new land. God's law made room for her, and God's people welcomed her. God sees you where you are.
 - Feeling empty :: Naomi said, "the LORD has brought me back empty." She was not left that way. God often works slowly and quietly, through ordinary people.
 - Someone stayed with me :: That is hesed, loyal and faithful love. It is one of the ways God stays with us. You can thank God for that person.
-- It's really bad right now :: Naomi said it out loud, and that was not wrong. Please tell a trusted adult today. In the U.S., you can call or text 988 any time. If you are in danger, call 911 or your local emergency number. Outside the U.S., findahelpline.com lists free helplines.
+- It's really bad right now :: Naomi said her pain out loud, and that was not wrong. Please tell a trusted adult today. In the U.S., you can call or text 988 any time. If you are in danger, call 911 or your local emergency number. Outside the U.S., findahelpline.com lists free helplines.
 
 ## 🤔 You Might Have Heard...
 
@@ -276,7 +276,7 @@ Ruth 1 to 4 (BSB)
 
 ## ✝️ Good News
 
-Naomi said she came home empty. God did not argue with her grief. He stayed near. **"The LORD is near to the brokenhearted"** (Psalm 34:18).
+Naomi said she came home empty. God did not argue with her grief. He stayed near. **"The LORD is near to the brokenhearted"** (Psalm 34:18). The brokenhearted are people crushed by sadness.
 
 God's loyal love kept working, even when Naomi could not see it. It came through a foreign daughter-in-law, a field of leftover grain, and a kind farmer who kept his word.
 

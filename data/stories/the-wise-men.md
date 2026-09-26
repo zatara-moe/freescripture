@@ -51,7 +51,7 @@ A group of strangers walked through the gates of Jerusalem. They had come a very
 
 They were Magi. Magi were wise men who studied the stars. They were not Jewish. They came from another nation, and most likely another religion. {v: 2:1}
 
-Jesus had been born in Bethlehem, a few miles away. Herod was the king of the land. {v: 2:1}
+Jesus had been born in Bethlehem, about 5 miles away. Herod was the king of the land. {v: 2:1}
 
 The Magi had seen a star rise in the sky. They believed it meant a new king had been born. So they made the long trip west to Jerusalem. {v: 2:2}
 
@@ -99,7 +99,7 @@ When they saw the star, they were full of joy. Matthew says they **"rejoiced wit
 
 The Magi came to a house. Inside, they saw the child with Mary, his mother. {v: 2:11}
 
-Matthew says house, not stable. By now Jesus was a child, not a newborn baby. {v: 2:11}
+Matthew says a house, not a stable. By now Jesus was most likely a young child, not a newborn baby. {v: 2:11}
 
 The Magi fell down on their knees and worshiped him. These important travelers bowed to a small child in a small town. {v: 2:11}
 
@@ -119,7 +119,7 @@ The Magi never told Herod where the child was. God had given them a different wa
 
 After the Magi left, an angel of the Lord came to Joseph in a dream. {v: 2:13}
 
-The angel said, **"Get up!... Take the Child and His mother and flee to Egypt"** (2:13). The angel told Joseph to stay there until God told him to leave. Herod was going to search for the child to kill him. {v: 2:13}
+The angel said, **"Get up!... Take the Child and His mother and flee to Egypt"** (2:13). The angel told Joseph to stay there until the angel told him to leave. Herod was going to search for the child to kill him. {v: 2:13}
 
 Joseph got up. That same night, he took Jesus and Mary and left for Egypt. {v: 2:14}
 
@@ -168,11 +168,11 @@ Matthew 2:1-23 (BSB)
 | The text says | It means |
 |---|---|
 | **"Magi from the east"** (2:1) | Wise men from another nation who studied the stars. They were outsiders to Israel. |
-| **"King of the Jews"** (2:2) | The Magi were looking for a new king. That was the title Herod had. It is also the sign placed over Jesus on the cross (Matthew 27:37). |
+| **"King of the Jews"** (2:2) | The Magi were looking for a new king. That was the title Herod had. It is also the title on the sign placed over Jesus on the cross (Matthew 27:37). |
 | **"He was disturbed"** (2:3) | Herod was afraid a new king would take his place. |
 | **"The shepherd of My people Israel"** (2:6) | God's promised king would care for his people the way a shepherd cares for sheep. |
 | **"They fell down and worshiped Him"** (2:11) | People from far away bowed to Jesus. Matthew shows that Jesus is king for the nations too. |
-| **"Out of Egypt I called My Son"** (2:15) | These words first spoke about Israel (Hosea 11:1). Matthew sees Jesus living through his people's story. |
+| **"Out of Egypt I called My Son"** (2:15) | These words were first spoken about Israel (Hosea 11:1). Matthew sees Jesus's life repeating his people's story. |
 | **"Rachel weeping for her children"** (2:18) | Jeremiah first wrote these words about Israel's children being taken away into exile (Jeremiah 31:15). Matthew hears the same grief in Bethlehem. In Jeremiah, God goes on to promise that the children will return (Jeremiah 31:16-17). |
 
 ## 🌍 Back Then...
@@ -191,7 +191,7 @@ Matthew 2:1-23 (BSB)
 
 **Were there three wise men?** The Bible doesn't say. People often guess three because there were three gifts. Matthew never gives a number.
 
-**Were they kings?** The Bible doesn't say that either. Matthew calls them Magi. Later Christians read verses like **"Nations will come to your light, and kings to the brightness of your dawn"** (Isaiah 60:3), and began to call them kings. That is a tradition, not the text.
+**Were they kings?** The Bible doesn't say that either. Matthew calls them Magi. Later Christians read verses like **"Nations will come to your light, and kings to the brightness of your dawn"** (Isaiah 60:3). So they began to call the Magi kings. That is a tradition, not the text.
 
 **What were their names?** The Bible doesn't give names. Centuries later, church tradition named them Caspar, Melchior, and Balthasar.†
 
@@ -236,13 +236,13 @@ Matthew 2:1-23 (BSB)
 
 **What the story is mainly about:** God did the leading. God gave the star. God gave the warning dreams. God kept the child safe. The Magi did not find Jesus by being wise enough. God brought outsiders from far away to his king.
 
-**Where Jesus is:** He is the child at the center, the king the Magi came to see. Herod wanted a throne. Jesus came to be the shepherd of his people. At the end of Matthew, Jesus sends his friends to **"make disciples of all nations"** (Matthew 28:19). The nations came to him first, in this story.
+**Where Jesus is:** He is the child at the center, the king the Magi came to see. Herod wanted a throne. Jesus came to be the shepherd of his people. At the end of Matthew, Jesus sends his eleven disciples to **"make disciples of all nations"** (Matthew 28:19). In this story, people from the nations came to Jesus first.
 
 ## ✝️ Good News
 
 The Magi were strangers to Israel's Scriptures and Israel's God. God still called them, and they came. God's promised king is Israel's king, **"the shepherd of My people Israel"** (2:6). And he is for the nations too. That includes you.
 
-This story also holds real grief. The mothers of Bethlehem wept, and the Bible does not tell them to stop. God does not ask you to hide your tears either. Jesus knows fear, running, and danger. He was hunted as a child. He grew up, and he died on a cross, and he rose again. One day God **"will wipe away every tear from their eyes"** (Revelation 21:4).
+This story also holds real grief. The mothers of Bethlehem wept, and the Bible does not tell them to stop. God does not ask you to hide your tears either. Jesus knows what fear, running, and danger are like. He was hunted as a child. He grew up. He died on a cross, and he rose again. One day God **"will wipe away every tear from their eyes"** (Revelation 21:4).
 
 **God led outsiders to his king, and he stays near to people who are grieving.**
 

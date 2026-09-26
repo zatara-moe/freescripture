@@ -52,9 +52,9 @@
 
 Joseph was 17 years old. He took care of the flocks with some of his older brothers. {v: 37:1, 37:2}
 
-One day Joseph went to his father with a bad report about those brothers. He told on them. {v: 37:2}
+Joseph brought his father a bad report about those brothers. {v: 37:2}
 
-Jacob loved Joseph more than any of his other sons. Joseph was born when Jacob was old. {v: 37:3}
+Jacob loved Joseph more than his other sons. The reason was that Joseph was born when Jacob was old. {v: 37:3}
 
 So Jacob made Joseph a special robe. The Bible calls it **"a robe of many colors"** (37:3). {v: 37:3}
 
@@ -64,30 +64,30 @@ The brothers saw that their father loved Joseph most. They hated Joseph for it. 
 
 Then Joseph had a dream, and he told his brothers about it. {v: 37:5, 37:6}
 
-In the dream, they were all tying up bundles of grain in a field. Joseph's bundle stood up tall. The brothers' bundles gathered around it and bowed down. {v: 37:7}
+In the dream, Joseph and his brothers were tying up bundles of grain in a field. Joseph's bundle stood up tall. The brothers' bundles gathered around it and bowed down. {v: 37:7}
 
-His brothers said, "Do you think you are going to rule over us?" They hated him even more. {v: 37:8}
+His brothers said, "Do you think you are going to rule over us?" The brothers hated Joseph even more. {v: 37:8}
 
 Then Joseph had a second dream. **"The sun and moon and eleven stars were bowing down to me"** (37:9). {v: 37:9}
 
-Joseph told this dream to his father too. This time Jacob scolded him. Would the whole family bow down to Joseph? {v: 37:10}
+Joseph told this dream to his father too. Jacob scolded Joseph. He asked if the whole family was really going to bow down to Joseph. {v: 37:10}
 
-The brothers were jealous. But Jacob kept thinking about what Joseph had said. {v: 37:11}
+The brothers were jealous of Joseph. But Jacob kept thinking about what Joseph had said. {v: 37:11}
 
 ### Scene 3: The Pit
 
-Some time later, the brothers took the flocks far from home. Jacob sent Joseph to check on them. {v: 37:12, 37:13, 37:14}
+Some time later, the brothers took their father's flocks to graze near a town called Shechem. Jacob sent Joseph to check on them. {v: 37:12, 37:13, 37:14}
 
-Joseph searched for them. At last he found them near a place called Dothan. {v: 37:15, 37:16, 37:17}
+Joseph could not find his brothers at Shechem. A man told him they had moved on to a place called Dothan. Joseph found them there. {v: 37:15, 37:16, 37:17}
 
-The brothers saw him coming from far away. They called him "that dreamer." They made a plan to kill him. They would throw his body into a pit and say a wild animal ate him. Then they would see what happened to his dreams. {v: 37:18, 37:19, 37:20}
+The brothers saw Joseph coming from far away. They called him "that dreamer." They made a plan to kill Joseph. They would throw his body into a pit and say a wild animal ate him. Then they would see what happened to his dreams. {v: 37:18, 37:19, 37:20}
 
-Reuben, the oldest brother, said, "Let's not kill him." He told them to throw Joseph into a pit alive. Reuben secretly planned to come back and rescue him. {v: 37:21, 37:22}
+Reuben, the oldest brother, said, "Let's not kill him." He told them to throw Joseph into a pit alive. Reuben secretly planned to rescue Joseph and take him back to their father. {v: 37:21, 37:22}
 
-So when Joseph arrived, they tore off his robe. They threw him into the pit. It was empty and dry, with no water. {v: 37:23, 37:24}
+So when Joseph arrived, the brothers pulled off his special robe. They threw Joseph into the pit. The pit was empty and dry, with no water. {v: 37:23, 37:24}
 
 > 🎥 **Imagine the Scene** *(imagination, not Scripture)*
-> A deep hole cut into the rock, with dusty walls too steep to climb. Up above, the sky is a small circle of bright blue.
+> A deep hole cut into the rock. Its dusty walls are too steep to climb. Up above, the sky is a small circle of bright blue.
 
 ### Scene 4: Sold
 
@@ -95,19 +95,19 @@ Then the brothers sat down to eat a meal. {v: 37:25}
 
 They looked up and saw traders coming with camels. The traders were on their way to Egypt. {v: 37:25}
 
-Judah had an idea. Why kill their brother? They could sell him instead. **"He is our brother, our own flesh"** (37:27). The others agreed. {v: 37:26, 37:27}
+Judah said they would gain nothing by killing their brother. They could sell him instead. **"He is our brother, our own flesh"** (37:27). The others agreed. {v: 37:26, 37:27}
 
 They pulled Joseph out of the pit. They sold him for twenty shekels of silver. That was about 10 ounces of silver. The traders took Joseph to Egypt. {v: 37:28}
 
-Later, the brothers admitted they had seen Joseph's anguish. He begged them for help, and they would not listen. {v: 42:21}
+Years later, the brothers remembered this moment. They had seen Joseph's deep distress as he begged them for help. They would not listen. {v: 42:21}
 
-Reuben came back to the pit. Joseph was gone. Reuben tore his clothes in grief. {v: 37:29, 37:30}
+Reuben came back to the pit. Joseph was gone. Reuben tore his clothes to show his grief. He cried to his brothers, "The boy is gone!" {v: 37:29, 37:30}
 
 The brothers killed a young goat and dipped Joseph's robe in its blood. They sent the robe to their father. {v: 37:31, 37:32}
 
-Jacob knew the robe. He cried, **"It is my son's robe"** (37:33). He believed a wild animal had killed Joseph. {v: 37:33}
+Jacob recognized the robe. He cried, **"It is my son's robe"** (37:33). He believed a wild animal had killed Joseph. {v: 37:33}
 
-Jacob mourned for many days. Nobody could comfort him. {v: 37:34, 37:35}
+Jacob grieved for his son for many days. All his sons and daughters tried to comfort him, but Jacob refused to be comforted. {v: 37:34, 37:35}
 
 ### Scene 5: In Potiphar's House
 
@@ -117,7 +117,7 @@ In Egypt, Joseph was sold again. An officer of Pharaoh named Potiphar bought him
 
 Potiphar saw that the LORD made Joseph successful in everything he did. So Potiphar put Joseph in charge of his whole house. {v: 39:3, 39:4}
 
-The LORD blessed Potiphar's house because of Joseph. Soon Potiphar did not worry about anything except what he ate. {v: 39:5, 39:6}
+The LORD blessed Potiphar's house because of Joseph. Potiphar left everything in Joseph's care. He did not worry about anything except the food he ate. {v: 39:5, 39:6}
 
 ### Scene 6: A Lie
 
@@ -125,89 +125,101 @@ Joseph was strong and handsome. Potiphar's wife noticed him. She tried to get Jo
 
 Joseph said no. His master trusted him with everything. **"So how could I do such a great evil and sin against God?"** (39:9). {v: 39:8, 39:9}
 
-She kept asking him, day after day. Joseph kept saying no. He would not even stay near her. {v: 39:10}
+She kept asking him, day after day. Joseph kept saying no. He would not even be near her. {v: 39:10}
 
 One day no other servants were in the house. She grabbed Joseph by his cloak. Joseph pulled away and ran outside. His cloak stayed in her hand. {v: 39:11, 39:12}
 
-Then she lied. She told the servants, and later her husband, that Joseph had attacked her. She showed them his cloak. {v: 39:13, 39:14, 39:15, 39:16, 39:17, 39:18}
+Then she lied. She told the household servants that Joseph had attacked her. She kept his cloak until her husband came home. Then she told Potiphar the same lie. {v: 39:13, 39:14, 39:15, 39:16, 39:17, 39:18}
 
-Potiphar burned with anger. He had Joseph thrown into the king's prison. {v: 39:19, 39:20}
+Potiphar was furious. He had Joseph thrown into the prison where the king's prisoners were kept. {v: 39:19, 39:20}
 
-Joseph had done the right thing. He was punished anyway. But even in prison, **"the LORD was with him"** (39:21). Soon the warden put Joseph in charge of all the prisoners. {v: 39:20, 39:21, 39:22, 39:23}
+Joseph had done the right thing. He was punished anyway. But even in prison, **"the LORD was with him"** (39:21). The LORD gave Joseph favor with the warden, the man in charge of the prison. The warden put Joseph in charge of all the prisoners. {v: 39:20, 39:21, 39:22, 39:23}
 
 ### Scene 7: Two Prisoners' Dreams
 
-Two of Pharaoh's officials made him angry. One was his cupbearer, who served the king's drinks. The other was his baker. Pharaoh put them both in the prison where Joseph was. {v: 40:1, 40:2, 40:3}
+Some time later, two of Pharaoh's officials made Pharaoh angry. One was his chief cupbearer, who served the king's drinks. The other was his chief baker. Pharaoh put them both in the prison where Joseph was. {v: 40:1, 40:2, 40:3}
 
 One night both men had dreams. In the morning they looked upset. No one could tell them what their dreams meant. {v: 40:5, 40:6, 40:7, 40:8}
 
 Joseph said, **"Don't interpretations belong to God? Tell me your dreams"** (40:8). {v: 40:8}
 
-Joseph explained both dreams. The cupbearer would get his job back in three days. The baker would be put to death. It happened exactly as Joseph said. {v: 40:12, 40:13, 40:18, 40:19, 40:20, 40:21, 40:22}
+Joseph explained the cupbearer's dream first. In three days, Pharaoh would give the cupbearer his job back. {v: 40:9, 40:12, 40:13}
 
-Joseph had asked the cupbearer for one favor. "Remember me. Tell Pharaoh about me." Joseph said he had been kidnapped and had done nothing wrong. {v: 40:14, 40:15}
+Joseph asked the cupbearer for one favor. "Remember me. Tell Pharaoh about me." Joseph said he had been kidnapped and had done nothing wrong. {v: 40:14, 40:15}
+
+Then Joseph explained the baker's dream. In three days, the baker would be put to death. {v: 40:16, 40:18, 40:19}
+
+Three days later, it happened exactly as Joseph said. {v: 40:20, 40:21, 40:22}
 
 But the cupbearer forgot all about Joseph. Joseph stayed in prison two more years. {v: 40:23, 41:1}
 
 ### Scene 8: Pharaoh's Dreams
 
-Then Pharaoh had two strange dreams. Seven thin, ugly cows ate seven fat cows. Seven thin heads of grain swallowed seven full ones. None of Pharaoh's wise men could explain the dreams. {v: 41:1, 41:2, 41:3, 41:4, 41:5, 41:6, 41:7, 41:8}
+Then Pharaoh had two strange dreams. In the first dream, seven thin, ugly cows ate seven fat cows. In the second dream, seven thin heads of grain swallowed seven full ones. None of Pharaoh's wise men could explain the dreams. {v: 41:1, 41:2, 41:3, 41:4, 41:5, 41:6, 41:7, 41:8}
 
-At last the cupbearer remembered Joseph. Pharaoh sent for him. Joseph shaved, changed clothes, and was rushed out of the dungeon. {v: 41:9, 41:12, 41:14}
+At last the cupbearer remembered Joseph and told Pharaoh about him. Pharaoh sent for Joseph. Joseph was rushed out of the dungeon. He shaved and changed his clothes. Then he went in to see Pharaoh. {v: 41:9, 41:12, 41:14}
 
 Pharaoh said he had heard that Joseph could explain dreams. **"I myself cannot do it," Joseph replied, "but God will give Pharaoh a sound answer"** (41:16). {v: 41:15, 41:16}
 
-Joseph explained that both dreams meant the same thing. Seven years of plenty were coming. Then seven years of famine would follow. A famine is a long time without enough food. Joseph said Egypt should store extra grain during the good years. {v: 41:25, 41:29, 41:30, 41:34, 41:35, 41:36}
+Joseph explained that both dreams meant the same thing. God was showing Pharaoh what God was about to do. Seven years of plenty were coming. Then seven years of famine would follow. A famine is a long time without enough food. Joseph said Egypt should store extra grain during the good years. {v: 41:25, 41:29, 41:30, 41:34, 41:35, 41:36}
 
 Pharaoh said, **"Can we find anyone like this man, in whom the Spirit of God abides?"** (41:38). {v: 41:38}
 
-Pharaoh put Joseph in charge of all Egypt. Only Pharaoh was greater. Joseph was 30 years old. He stored up grain like sand by the sea. When the famine came, people from every land came to Joseph to buy food. {v: 41:40, 41:41, 41:46, 41:49, 41:54, 41:57}
+Pharaoh put Joseph in charge of all Egypt. Only Pharaoh was greater. Pharaoh put his own signet ring on Joseph's finger. Joseph was 30 years old. {v: 41:40, 41:41, 41:42, 41:46}
+
+During the seven good years, Joseph stored up so much grain that he stopped counting it. The Bible compares it to the sand of the sea. Then the famine came. People from every land came to Joseph to buy food. {v: 41:48, 41:49, 41:54, 41:57}
 
 ### Scene 9: The Brothers Bow
 
-The famine reached Canaan too. Jacob sent ten of his sons to Egypt to buy grain. He kept Benjamin home. He was afraid something would happen to him. {v: 42:1, 42:2, 42:3, 42:4}
+The famine reached Canaan too. Jacob sent ten of his sons to Egypt to buy grain. Jacob kept Benjamin at home. Jacob was afraid something bad would happen to Benjamin. {v: 42:1, 42:2, 42:3, 42:4}
 
-The brothers came before the ruler of Egypt. They bowed down with their faces to the ground. {v: 42:6}
+The brothers came before the ruler of Egypt. They bowed down to him with their faces to the ground. The ruler was Joseph. {v: 42:6}
 
-Joseph knew them right away. They did not know him. Joseph remembered his dreams. {v: 42:7, 42:8, 42:9}
+Joseph recognized his brothers right away. They did not recognize him. Joseph remembered his dreams. In the first dream, his brothers' bundles of grain bowed down to his bundle. {v: 37:7, 42:7, 42:8, 42:9}
 
-Joseph spoke harshly. He called them spies. He kept Simeon, one of the brothers, in prison. The rest could go home, but they had to come back with their youngest brother. {v: 42:14, 42:15, 42:19, 42:20, 42:24}
+Joseph spoke harshly to them. He said they were spies. He put all ten brothers in prison for three days. {v: 42:7, 42:9, 42:14, 42:17}
 
-Joseph said it was a test to see if they told the truth. The Bible doesn't say what else was in his heart. But remember: they had once sold a younger brother. One likely reason: Joseph wanted to see how they would treat Benjamin. {v: 42:15, 42:16, 42:20}
+Then Joseph said one brother must stay in prison. The rest could take grain home. But they had to come back with their youngest brother. {v: 42:18, 42:19, 42:20}
 
-The brothers talked among themselves. They did not know Joseph understood them. "We are being punished for what we did to our brother." {v: 42:21, 42:22, 42:23}
+Joseph said this was a test to see if they told the truth. The Bible doesn't say if Joseph had other reasons. But remember: they had once sold a younger brother. One likely reason: Joseph wanted to see how they would treat Benjamin. {v: 42:15, 42:16, 42:20}
 
-Joseph turned away from them and wept. {v: 42:24}
+The brothers talked among themselves. Joseph spoke to them through an interpreter, so they did not know he understood them. They said, "We are being punished for what we did to our brother." {v: 42:21, 42:22, 42:23}
+
+Joseph turned away from them and wept. Then he chose Simeon, one of the brothers, and had him tied up in front of them. Simeon stayed behind in Egypt. {v: 42:24}
 
 ### Scene 10: The Silver Cup
 
-The food ran out. Jacob did not want to send Benjamin. Judah promised to keep Benjamin safe. If he failed, he would carry the blame all his life. {v: 43:1, 43:2, 43:8, 43:9}
+The famine went on, and the family ate all the grain from Egypt. Jacob did not want to send Benjamin. Judah promised to keep Benjamin safe. If Judah failed, he would carry the blame all his life. {v: 43:1, 43:2, 43:8, 43:9}
 
 In Egypt, Joseph saw Benjamin, his own mother's son. Joseph was so moved that he hurried to a private room and cried. Then he washed his face and came back. {v: 43:29, 43:30, 43:31}
 
-Joseph tested them one more time. He had his silver cup hidden in Benjamin's grain sack. Then his servant chased the brothers and found the cup. {v: 44:1, 44:2, 44:4, 44:12}
+Joseph tested his brothers one more time. He had his silver cup hidden in Benjamin's grain sack. The brothers started for home. Then Joseph's steward, the servant in charge of his house, chased them. He searched their sacks and found the cup in Benjamin's sack. {v: 44:1, 44:2, 44:3, 44:4, 44:12}
 
-Joseph said Benjamin would be his slave. The others could go home. {v: 44:17}
+The brothers tore their clothes in grief. They all went back to Joseph's house. {v: 44:13, 44:14}
+
+Joseph said Benjamin would be his slave. The others could go home to their father. {v: 44:17}
 
 This was the brothers' chance to leave a younger brother behind again. Instead, Judah stepped forward. {v: 44:18}
 
 Judah said their father would die of grief. Then he made an offer. **"Now please let your servant stay here as my lord's slave in place of the boy"** (44:33). {v: 44:30, 44:31, 44:33, 44:34}
 
-Years before, Judah had said, "Let's sell him." Now Judah offered himself so his brother could go free. {v: 37:27, 44:33}
+Years before, Judah had said, "Let's sell him." Now Judah offered himself so that Benjamin could go home. {v: 37:27, 44:33}
 
 ### Scene 11: "I Am Joseph"
 
-Joseph could not hold it in anymore. He sent all the Egyptians out of the room. {v: 45:1}
+Joseph could not control his feelings anymore. He sent all the Egyptians out of the room. {v: 45:1}
 
 He wept so loudly that the Egyptians heard him. {v: 45:2}
 
 **"I am Joseph! Is my father still alive?"** (45:3). {v: 45:3}
 
-His brothers could not speak. They were terrified. {v: 45:3}
+His brothers could not answer. They were terrified to be standing in front of him. {v: 45:3}
 
 Joseph said, "Come near me." He told them he was their brother, the one they sold into Egypt. {v: 45:4}
 
-Then he said something surprising. They should not be upset or angry at themselves. **"It was to save lives that God sent me before you"** (45:5). {v: 45:5, 45:7}
+Then Joseph told them not to be upset or angry with themselves. **"It was to save lives that God sent me before you"** (45:5). {v: 45:5, 45:7}
+
+The famine would last five more years. Joseph told his brothers to bring their father to Egypt. Joseph would provide for the whole family there. {v: 45:6, 45:9, 45:10, 45:11}
 
 Joseph hugged Benjamin and cried. Benjamin cried too. Joseph kissed all his brothers and wept over them. After that, his brothers talked with him. {v: 45:14, 45:15}
 
@@ -216,17 +228,19 @@ Joseph hugged Benjamin and cried. Benjamin cried too. Joseph kissed all his brot
 
 ### Scene 12: "God Intended It for Good"
 
-Jacob heard that Joseph was alive. At first he could not believe it. On the way, God spoke to Jacob in a vision at night. God told him not to be afraid to go to Egypt. God promised to make his family a great nation there. **"I will go down with you to Egypt"** (46:4). {v: 46:2, 46:3, 46:4}
+The brothers went home and told Jacob that Joseph was alive. At first Jacob did not believe them. Then he saw the wagons Joseph had sent to carry him. Jacob said he would go and see his son before he died. {v: 45:25, 45:26, 45:27, 45:28}
 
-The whole family moved to Egypt. Joseph threw his arms around his father and cried for a long time. {v: 45:26, 45:27, 46:5, 46:6, 46:29}
+Jacob set out for Egypt with his whole family. At a place called Beersheba, God spoke to Jacob in a vision at night. God told Jacob not to be afraid to go to Egypt. God promised to make his family a great nation there. **"I will go down with you to Egypt"** (46:4). {v: 46:1, 46:2, 46:3, 46:4}
 
-Years later, Jacob died. Joseph wept over him. {v: 49:33, 50:1}
+The family arrived in Egypt. Joseph threw his arms around his father and cried for a long time. {v: 46:5, 46:6, 46:29}
+
+Jacob lived in Egypt for 17 more years. Then Jacob died. Joseph wept over his father. {v: 47:28, 49:33, 50:1}
 
 Now that their father was dead, the brothers were afraid again. They said, "What if Joseph still holds a grudge? He might pay us back for all the evil we did." They sent Joseph a message begging him to forgive them. {v: 50:15, 50:16, 50:17}
 
 When Joseph heard their message, he wept. {v: 50:17}
 
-The brothers came and bowed down. "We are your slaves," they said. Once again, Joseph's dreams had come true. {v: 50:18}
+The brothers came and bowed down to Joseph. "We are your slaves," they said. Once again, Joseph's dreams had come true. {v: 50:18}
 
 Joseph said, **"Do not be afraid. Am I in the place of God?"** (50:19). {v: 50:19}
 
@@ -234,7 +248,7 @@ Joseph said, **"Do not be afraid. Am I in the place of God?"** (50:19). {v: 50:1
 
 Joseph promised to take care of them and their children. He spoke kindly to them and comforted them. {v: 50:21}
 
-The brothers meant it for evil. God turned it into rescue. {v: 50:20}
+The brothers meant to do Joseph harm. God used what they did to rescue many people. {v: 50:20}
 
 ---
 
@@ -249,13 +263,13 @@ Genesis 37 to 50 (BSB)
 | The text says | It means |
 |---|---|
 | **"A robe of many colors"** (37:3) | A special robe that showed Joseph was the favorite. It made the brothers' hurt worse. |
-| **"He is our brother, our own flesh"** (37:27) | Judah knew Joseph was family. He sold him anyway. |
+| **"He is our brother, our own flesh"** (37:27) | Judah knew Joseph was family. Judah still sold him. |
 | **"The LORD was with Joseph"** (39:2) | Joseph was a slave, far from home. God had not left him. |
-| **"How could I do such a great evil and sin against God?"** (39:9) | Joseph said no because of God and because of his master's trust. |
+| **"How could I do such a great evil and sin against God?"** (39:9) | Joseph said no for two reasons. It would be a sin against God. It would betray his master's trust. |
 | **"Don't interpretations belong to God?"** (40:8) | Joseph did not take credit. The answers came from God. |
 | **"In place of the boy"** (44:33) | Judah offered to take Benjamin's punishment. The brother who once sold a brother now gave himself for one. |
 | **"God sent me before you"** (45:5) | Joseph saw God at work in the worst thing that happened to him. |
-| **"Am I in the place of God?"** (50:19) | Joseph would not take revenge. Judging them belonged to God. |
+| **"Am I in the place of God?"** (50:19) | Joseph's answer is no. Only God is the judge. So Joseph would not take revenge. |
 | **"God intended for good"** (50:20) | The brothers' evil was real. God used it to save many lives. |
 
 ## 🌍 Back Then...
@@ -274,13 +288,13 @@ Genesis 37 to 50 (BSB)
 
 **Wasn't it a "coat of many colors"?** Older Bibles, like the King James Version, say "coat of many colours." The BSB says "robe of many colors." The Hebrew word is hard to translate. Some Bibles say "a long robe with sleeves" or "an ornate robe." Either way, it was a special robe that marked Joseph as the favorite.
 
-**Was Joseph a perfect hero?** The Bible does not say he was. His father openly loved him most (37:3). Joseph told dreams that made his brothers angrier (37:5-10). The Bible doesn't say whether his bad report about them was fair (37:2). Telling a trusted adult when something is wrong is not a sin. None of this made the brothers' cruelty right. It means this story is about a real, messy family. God worked through them anyway.
+**Was Joseph a perfect hero?** The Bible does not say he was. His father openly loved him most (37:3). Joseph told dreams that made his brothers angrier (37:5-10). The Bible doesn't say whether his bad report about them was fair (37:2). Telling a trusted adult when something is wrong is not a sin. None of this made the brothers' cruelty right. These details show that this is a story about a real, messy family. God worked through that family anyway.
 
 **What did Potiphar's wife do?** She pressured Joseph again and again to have sex with her. He said no. Then she lied and said he attacked her. Joseph was punished for something he did not do. If someone is pressuring you, or lying about you, that is not your fault. Tell a parent, pastor, or trusted adult.
 
-**Was Joseph mean to test his brothers?** The Bible doesn't say exactly why he did it. He spoke harshly. He also wept, first in private and then so loudly that the Egyptians heard (42:24, 43:30, 45:2). It's okay to notice things like this. Careful readers have asked about it for centuries.
+**Was Joseph mean to test his brothers?** The Bible doesn't say exactly why Joseph tested them. He spoke harshly. He also wept, first in private and then so loudly that the Egyptians heard (42:24, 43:30, 45:2). It's okay to notice things like this. Careful readers have asked about it for centuries.
 
-**Does "God intended it for good" mean the evil was good?** No. Joseph called what his brothers did evil (50:20). They sold their own brother, and it was wrong. The verse means God is stronger than evil. God can bring rescue out of it. It does not mean God wants people to hurt you. Christians have struggled with this passage for a long time, especially people who have been badly hurt.
+**Does "God intended it for good" mean the evil was good?** No. Joseph called what his brothers did evil (50:20). Selling their own brother was wrong. The verse means God is stronger than evil. God can bring rescue out of it. It does not mean God wants people to hurt you. Christians have struggled with this passage for a long time, especially people who have been badly hurt.
 
 **Does forgiving mean going back to someone who hurts you?** Joseph forgave. But he did not tell his brothers who he was until after Judah offered himself in Benjamin's place (44:33, 45:1). Forgiving someone does not mean saying it was okay. It never means staying where you are unsafe. If someone is hurting you, tell a trusted adult today. If you are in danger, call 911 or your local emergency number. In the United States, you can call or text 988 any time. Outside the United States, findahelpline.com lists free helplines. If this story brings up big feelings, talk with a parent, pastor, or trusted adult.
 
@@ -303,9 +317,9 @@ Genesis 37 to 50 (BSB)
 
 **Where are you in this story today?** Tap one.
 
-- Left out, like the brothers :: The brothers were hurt by favoritism, and they did something terrible with that hurt. God did not give up on them. He changed Judah's heart and brought the family back together.
-- Stuck in the pit :: Joseph was in a pit, then a slave, then in prison. The Bible says the LORD was with him the whole time. God is with you in the low places too.
-- Carrying guilt :: The brothers carried their guilt for more than 20 years. Joseph said, "Do not be afraid." In Jesus, God says the same to you.
+- Left out, like the brothers :: The brothers were hurt by favoritism, and they did something terrible with that hurt. God did not give up on them. Judah changed from selling his brother to offering himself for his brother. God brought the family back together.
+- Stuck in the pit :: Joseph was in a pit, then a slave, then in prison. The Bible says the LORD was with him the whole time. God is with you in hard times too.
+- Carrying guilt :: The brothers felt guilty for more than 20 years. Joseph said, "Do not be afraid." In Jesus, God says the same to you.
 - Hurt by family :: Your hurt is real. Joseph wept many times. You can bring your pain to God, and to a trusted adult.
 - It's really bad right now :: Please tell a trusted adult today. In the U.S., you can call or text 988 any time. If you are in danger, call 911 or your local emergency number. Outside the U.S., find a helpline at findahelpline.com.
 
@@ -315,7 +329,7 @@ Genesis 37 to 50 (BSB)
 
 **What's true:** Joseph did refuse to sin with Potiphar's wife. That was brave and right.
 
-**What the story is mainly about:** Doing right sent Joseph to prison. Joseph was not rescued because he was perfect. He was a favored son in a hurting family. The story is about God, who stayed with Joseph in the pit and in prison, and who turned the brothers' evil into rescue for many people.
+**What the story is mainly about:** Doing right sent Joseph to prison. Joseph was not rescued because he was perfect. He was a favored son in a hurting family. The story is about God. God stayed with Joseph in the pit and in prison. God turned the brothers' evil into rescue for many people.
 
 **Where Jesus is:** Jesus was also betrayed by Judas, one of his twelve disciples, and handed over for silver (Matthew 26:14-15). He was also punished for something he did not do. Jesus came from the family of Judah, the brother who offered himself in another's place (Hebrews 7:14). And on the cross, Jesus forgave the people who hurt him. **"Father, forgive them, for they do not know what they are doing"** (Luke 23:34). What people meant for evil, God turned into the rescue of the world.
 
@@ -323,15 +337,15 @@ Genesis 37 to 50 (BSB)
 
 The brothers thought their sin was too big to forgive. They were afraid for years. Joseph said, **"Do not be afraid"** (50:21).
 
-Joseph could not see God's plan while he sat in the pit. God worked anyway, hidden under the worst days of Joseph's life. God often works this way. At the cross, the worst day looked like defeat. It was God's rescue for you.
+Joseph could not see God's plan while he sat in the pit. God worked anyway, even though nobody could see it during the worst days of Joseph's life. God often works this way. At the cross, the worst day looked like defeat. That day was God's rescue for you.
 
 **God can take what people meant for evil and turn it into rescue, and in Jesus, God forgives you.**
 
 ## 📚 From Luther
 
-Luther taught that God often hides his work under its opposite. God's help can look like suffering, and God's strength can look like weakness (*Heidelberg Disputation*, 1518). Joseph's story shows this. The pit and the prison were the road to the palace.†
+Luther taught that God often hides his work under its opposite. God's help can look like suffering, and God's strength can look like weakness (*Heidelberg Disputation*, 1518). Joseph's story shows this. God used the pit and the prison to bring Joseph to the palace.†
 
-In his *Lectures on Genesis* (1535 to 1545), the last great work of his life, Luther taught on the Joseph story at length. He treated Joseph as an example of how God stays with his people and keeps his promise through long, dark trials.†
+In his *Lectures on Genesis* (1535 to 1545), the last great work of his life, Luther taught on the Joseph story at length. He treated Joseph as an example of how God stays with his people and keeps his promise through long, hard trials.†
 
 In the Small Catechism, Luther explains the prayer "Forgive us our trespasses, as we forgive those who trespass against us." He says we pray that God would forgive us by grace, even though we deserve nothing. He says we also, in turn, will gladly forgive and do good to those who sin against us.†
 
@@ -341,4 +355,4 @@ Many churches follow the Revised Common Lectionary. In Year A, it reads Genesis 
 
 ## 💡 Big Idea
 
-**God stayed with Joseph in the pit and the prison, and God turned the evil done to him into rescue for many people.**
+**God stayed with Joseph in the pit and in prison, and turned his brothers' evil into rescue for many people.**
