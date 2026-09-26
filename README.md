@@ -9,6 +9,7 @@ and Bible in Basic English.
 ## The four places (same on phone and desktop)
 
 - Home: your next step, a place to start, and everything on the site.
+- Search (/search/): stories, parables, people, and passages by familiar name, then verses.
 - Stories (/stories/): stories, parables, and verses for how you feel, in one
   list with filters (feeling, kind, length). A preview shows what's inside first.
 - Full Bible (/bsb/): the text itself, word for word.
@@ -19,6 +20,19 @@ and Bible in Basic English.
 See the notes at the top of lib/stories.ts. Write the story in the Scene by
 Scene Style Guide format, save it in data/stories/, end each retelling
 paragraph with its verses like {v: 5:3}, and add a `memorize` line.
+Give it an `also` list: every other name people search for ("Jonah and the
+whale", "Good Friday"). Titles use the wording most Bibles print as the
+section heading, like "Jesus Walks on Water."
+
+## Search by familiar names
+
+Search (/search/) shows stories, parables, people, and well-known passages
+first, matched by title or any `also` name. Verses that contain the words
+show below. The list is built at build time from lib/stories.ts and
+lib/search-terms.ts. lib/search-terms.ts holds FAMILIAR: well-known passages
+with no story yet ("The Woman at the Well", "Jesus Feeds the 5,000"). Each
+opens the passage in the BSB. When a story is written for one, remove it
+from FAMILIAR and give the story an `also` list.
 Hard words for Word help live in lib/words.ts.
 
 The Bible timeline (/timeline/) lives in lib/timeline.ts: 4 parts and 11 eras, with
@@ -31,6 +45,17 @@ JavaScript. timeline.js (lib/static-assets/static/js/) makes it one part at a ti
 Reading paths live in lib/paths.ts. Each path is a short list of story slugs, each with
 one line saying what that story shows. The path page is /paths/<slug>/. A story counts
 as done when the reader reaches its Memorize step. Progress is saved on the device only.
+
+## Shelves and "no coming soon"
+
+The Stories page shows only stories you can read today. Inside each part of the
+Big Story, stories sit on shelves named the way people know them (SHELVES and
+SHELF_OF in lib/stories.ts: "Miracles of Jesus", "Holy Week and Easter", and so
+on). A shelf shows only when it has a story. A story with status "planned" is
+never listed on the Stories page or the timeline. Site search still finds it by
+name and opens its Bible passage. So nothing on the site says "coming soon."
+
+Stories with kind "Poetry and Prayer" show as "Prayer" (Psalm 23, The Lord's Prayer).
 
 How a story page is arranged (from the student and pastor reviews, Sept 2026):
 

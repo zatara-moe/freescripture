@@ -49,6 +49,38 @@ export const PATHS: ReadingPath[] = [
     afterHref: "/stories/?kind=Verses",
     afterLabel: "See verses for how you feel",
   },
+  {
+    slug: "holy-week",
+    title: "Holy Week and Easter",
+    question: "Four stories from Jesus's last supper to the empty tomb.",
+    lede: "Read them in order. Do one a day, or all at once. Your progress is saved on this device.",
+    care: "These stories include an arrest and Jesus's death on a cross. They are told plainly, without graphic detail. If they bring up big feelings, talk with a parent, pastor, or trusted adult. In the United States, you can call or text 988 any time.",
+    steps: [
+      { story: "the-last-supper", shows: "Jesus gives himself to his friends: \"given for you.\"" },
+      { story: "gethsemane", shows: "Jesus prays in deep sorrow, and his friends run away." },
+      { story: "peter-denies-jesus", shows: "Peter fails three times. Jesus had already prayed for him." },
+      { story: "the-empty-tomb", shows: "Jesus dies for us and rises again." },
+    ],
+    after: "Next, see what happened fifty days later, when the Holy Spirit came.",
+    afterHref: "/stories/pentecost/",
+    afterLabel: "Read Pentecost",
+  },
+  {
+    slug: "miracles-of-jesus",
+    title: "Miracles of Jesus",
+    question: "Five signs that show who Jesus is.",
+    lede: "Read them in order. Do one a day, or all at once. Your progress is saved on this device.",
+    steps: [
+      { story: "water-into-wine", shows: "Jesus's first sign: more than enough, and the best saved for last." },
+      { story: "jesus-calms-the-storm", shows: "Even the wind and the sea obey him." },
+      { story: "jesus-feeds-the-5000", shows: "A boy's lunch feeds a crowd." },
+      { story: "jesus-walks-on-water", shows: "Jesus catches Peter when he sinks." },
+      { story: "jesus-raises-lazarus", shows: "Jesus weeps with his friends, then calls Lazarus out of the tomb." },
+    ],
+    after: "Next, try the Bible timeline. It shows where each story fits in the whole Bible.",
+    afterHref: "/timeline/",
+    afterLabel: "See the Bible timeline",
+  },
 ];
 
 export function pathBySlug(slug: string) { return PATHS.find((p) => p.slug === slug) || null; }

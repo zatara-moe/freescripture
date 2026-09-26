@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/bible";
+import { searchCatalog } from "@/lib/search-terms";
 
 export const metadata: Metadata = {
   title: "Search",
   description:
-    "Search the King James, World English, and Basic English Bibles for a word or a verse.",
+    "Search Bible stories, parables, people, and verses by the names you know, like the Prodigal Son or the Woman at the Well. Four free translations.",
   alternates: { canonical: `${SITE_URL}/search/` },
 };
 
@@ -13,7 +14,7 @@ export default function Search() {
     <div className="reading-column search-page">
       <header className="page-head">
         <h1 className="page-title">Search</h1>
-        <p className="page-lede">Search across all three translations at once.</p>
+        <p className="page-lede">Type a story, a person, or a few words from a verse. Stories and familiar passages show first, then verses.</p>
       </header>
 
       <div className="search-box">
@@ -30,16 +31,19 @@ export default function Search() {
           id="search-input"
           className="search-input"
           type="search"
-          placeholder="Try: shepherd, John 3:16, fear not"
-          aria-label="Search scripture"
+          placeholder="Try: prodigal son, Nicodemus, John 3:16"
+          aria-label="Search stories, people, and verses"
           autoComplete="off"
+          suppressHydrationWarning
         />
       </div>
 
-      <div id="search-status" className="search-status" role="status" aria-live="polite" dangerouslySetInnerHTML={{ __html: "" }} />
-      <div id="search-results" className="search-results" aria-live="polite" dangerouslySetInnerHTML={{ __html: "" }} />
+      <div id="search-shortcuts" className="search-shortcuts" aria-live="polite" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: "" }} />
+      <div id="search-status" className="search-status" role="status" aria-live="polite" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: "" }} />
+      <div id="search-results" className="search-results" aria-live="polite" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: "" }} />
 
-      <script src="/static/js/search.js?v=3" defer></script>
+      <script id="search-catalog" type="application/json" dangerouslySetInnerHTML={{ __html: JSON.stringify(searchCatalog()).replace(/</g, "\\u003c") }} />
+      <script src="/static/js/search.js?v=8" defer></script>
     </div>
   );
 }

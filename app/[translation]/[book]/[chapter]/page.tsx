@@ -278,7 +278,7 @@ export default async function ChapterPage(
             return (
               <div className="chapter-story rail-card" key={st.slug}>
                 <p className="rail-card__kicker">
-                  {st.kind === "Teaching" ? "Teaching" : "Story"} · {st.ref}{min ? ` · About ${min} min` : ""}
+                  {st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story"} · {st.ref}{min ? ` · About ${min} min` : ""}
                   {st.status === "early" && <span className="badge badge--new">New</span>}
                 </p>
                 <p className="rail-card__title">{st.title}</p>

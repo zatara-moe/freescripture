@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const SECS = ["events", "people", "places", "back", "books"] as const;
 
 function storiesFor(e: Era) {
-  return STORIES.filter((s) => eraOfPassage(s.passage)?.id === e.id).sort((a, b) => a.order - b.order);
+  return STORIES.filter((s) => isReadable(s) && eraOfPassage(s.passage)?.id === e.id).sort((a, b) => a.order - b.order);
 }
 
 function Acc({ sec, label, children }: { sec: string; label: string; children: React.ReactNode }) {
@@ -85,7 +85,7 @@ function Panel({ e, i }: { e: Era; i: number }) {
                     return (
                       <li key={s.slug}>
                         <a href={storyHref(s)}>{s.title}</a>
-                        <span className="tl-reads__meta">{ready ? (min ? ` · About ${min} min` : "") : " · Coming soon"}</span>
+                        <span className="tl-reads__meta">{min ? ` · About ${min} min` : ""}</span>
                       </li>
                     );
                   })}
@@ -93,7 +93,6 @@ function Panel({ e, i }: { e: Era; i: number }) {
               ) : (
                 <p className="tl-reads__none">No stories for this part yet.{firstBook && <> <a href={bookHref(firstBook)!}>Read {firstBook.label.replace(/ \(.*$/, "")} in the Full Bible</a>.</>}</p>
               )}
-              {stories.some((s) => !isReadable(s)) && <p className="tl-reads__hint">&ldquo;Coming soon&rdquo; stories open the Bible passage for now.</p>}
             </div>
             <h3 className="tl-zone">Understand it</h3>
             <Acc sec="back" label="Back then"><p>{e.back}</p></Acc>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/bible";
-import { catalog, FEELINGS, KIND_HELP, nw, storyBySlug, type CatItem, type CatKind } from "@/lib/stories";
+import { catalog, FEELINGS, KIND_HELP, nw, storyBySlug, SHELVES, type CatItem, type CatKind } from "@/lib/stories";
 import { PARTS, partOfPassage } from "@/lib/timeline";
 import { PATHS, pathSteps, pathMinutes } from "@/lib/paths";
 
@@ -21,13 +21,12 @@ export const metadata: Metadata = {
    stories.js adds the filters, counts, and preview. Without it, this is a
    plain list of links that still works. */
 
-const KINDS: CatKind[] = ["Story", "Teaching", "Parable", "Verses"];
+const KINDS: CatKind[] = ["Story", "Teaching", "Prayer", "Parable", "Verses"];
 const LENGTHS: [string, string][] = [["short", "Under 5 minutes"], ["mid", "5 to 10 minutes"], ["long", "Over 10 minutes"]];
-const rank = (c: CatItem) => (c.status === "Coming soon" ? 3 : c.kind === "Parable" ? 2 : c.kind === "Verses" ? 1 : 0);
+const rank = (c: CatItem) => (c.kind === "Parable" ? 2 : c.kind === "Verses" ? 1 : 0);
 const lenOf = (m: number | null) => (m == null ? "" : m < 5 ? "short" : m <= 10 ? "mid" : "long");
 
 function openLabel(c: CatItem) {
-  if (c.status === "Coming soon") return "Read the Bible passage";
   if (c.kind === "Parable") return "Open the parable";
   if (c.kind === "Verses") return "Open the verses";
   return `Open the story${c.minutes ? ` (${c.minutes} min)` : ""}`;
@@ -43,12 +42,11 @@ export default function StoriesPage() {
   };
   const acts = PARTS.map((a) => ({
     ...a,
-    ready: items.filter((c) => partOf(c) === a.n && c.status !== "Coming soon").sort(byOrder),
-    soon: items.filter((c) => partOf(c) === a.n && c.status === "Coming soon").sort(byOrder),
+    ready: items.filter((c) => partOf(c) === a.n).sort(byOrder),
   }));
   const shelves = [
-    { id: "parables", name: "Parables of Jesus", kinds: "Parable", items: items.filter((c) => c.kind === "Parable"), pile: [] as CatItem[] },
-    { id: "verses", name: "Verses for how you feel", kinds: "Verses", items: items.filter((c) => c.kind === "Verses"), pile: [] as CatItem[] },
+    { id: "parables", name: "Parables of Jesus", kinds: "Parable", items: items.filter((c) => c.kind === "Parable") },
+    { id: "verses", name: "Verses for how you feel", kinds: "Verses", items: items.filter((c) => c.kind === "Verses") },
   ];
 
   return (
@@ -89,10 +87,6 @@ export default function StoriesPage() {
             </button>
           </div>
           <div className="cat-filters__body">
-            <fieldset className="fgroup">
-              <legend>Show</legend>
-              <label className="fopt"><input type="checkbox" name="ready" value="1" /><span className="fopt__label">Only things I can read now</span></label>
-            </fieldset>
             <fieldset className="fgroup">
               <legend>How you feel</legend>
               <p className="fgroup__hint">Shows anything that fits at least one.</p>
@@ -153,16 +147,17 @@ export default function StoriesPage() {
                         <span className="act__dot" aria-hidden="true">{a.n}</span>
                         <span className="act__text">
                           <span className="act__name">{a.name}</span>
-                          <span className="act__meta">{a.books} · {a.ready.length ? `${a.ready.length} to read` : "Being written"}</span>
+                          <span className="act__meta">{a.books}{a.ready.length ? ` · ${a.ready.length} to read` : ""}</span>
                         </span>
                         <svg className="act__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                       </summary>
                       <div className="act__body">
                         <p className="act__line">{a.line}</p>
-                        {a.ready.length > 0 && (
-                          <>
+                        {SHELVES.map((sh) => ({ sh, list: a.ready.filter((c) => c.shelf === sh.id) })).filter((g) => g.list.length).map(({ sh, list }) => (
+                          <div className="act__shelf" key={sh.id}>
+                            <h3 className="act__shelf-title">{sh.name}</h3>
                             <ul className="shelf2__row act__row" data-row>
-                              {a.ready.map((c) => (
+                              {list.map((c) => (
                                 <li key={c.id}>
                                   <a className={`cover2 cover2--${c.kind.toLowerCase()}`} href={c.href} data-cover={c.id}>
                                     <span className="cover2__spine" aria-hidden="true"></span>
@@ -181,23 +176,8 @@ export default function StoriesPage() {
                               ))}
                             </ul>
                             <div className="shelf2__ledge" aria-hidden="true"></div>
-                          </>
-                        )}
-                        {a.soon.length > 0 && (
-                          <div className="pile">
-                            <h3 className="pile__title">Being written</h3>
-                            <ul className="pile__stack">
-                              {a.soon.map((c, i) => (
-                                <li key={c.id} style={{ ["--shift" as any]: `${[0, 14, 4, 20, 8][i % 5]}px` }}>
-                                  <a className="pile__book" href={c.href} data-cover={c.id}>
-                                    <span className="pile__name">{c.title}</span>
-                                    <span className="pile__soon">Coming soon</span>
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
                           </div>
-                        )}
+                        ))}
                         <div className="act__links">
                           {a.n === 4 && <a className="act__link act__link--strong" href="/stories/?kind=Parable" data-see-kind="Parable">{`${items.filter((c) => c.kind === "Parable").length} more parables Jesus told`}</a>}
                           <a className="act__link" href={a.href}>Read this part in the Full Bible: {a.books}</a>
@@ -245,21 +225,6 @@ export default function StoriesPage() {
                   </button>
                 </div>
                 <div className="shelf2__ledge" aria-hidden="true"></div>
-                {sh.pile.length > 0 && (
-                  <div className="pile">
-                    <h3 className="pile__title">Being written</h3>
-                    <ul className="pile__stack">
-                      {sh.pile.map((c, i) => (
-                        <li key={c.id} style={{ ["--shift" as any]: `${[0, 14, 4, 20, 8][i % 5]}px` }}>
-                          <a className="pile__book" href={c.href} data-cover={c.id}>
-                            <span className="pile__name">{c.title}</span>
-                            <span className="pile__soon">Coming soon</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </section>
             ))}
           </div>
@@ -267,8 +232,8 @@ export default function StoriesPage() {
           <ol className="cat-list" data-list>
             {items.map((c) => (
               <li key={c.id} className="cat-item" data-id={c.id} data-kind={c.kind} data-feel={c.feel.join(" ")}
-                data-status={c.status} data-len={lenOf(c.minutes)} data-find={`${c.title} ${c.subtitle} ${c.ref} ${c.desc}`.toLowerCase()}>
-                <a className={`cat-card cat-card--${c.kind.toLowerCase()}${c.status === "Coming soon" ? " is-soon" : ""}`} href={c.href}>
+                data-status={c.status} data-len={lenOf(c.minutes)} data-find={`${c.title} ${c.subtitle} ${c.ref} ${c.desc} ${(c.also || []).join(" ")}`.toLowerCase()}>
+                <a className={`cat-card cat-card--${c.kind.toLowerCase()}`} href={c.href}>
                   <span className="cat-card__spine" aria-hidden="true"></span>
                   <span className="cat-card__body">
                     <span className="cat-card__top">
@@ -278,7 +243,7 @@ export default function StoriesPage() {
                     <span className="cat-card__title">{nw(c.title, 20)}</span>
                     <span className="cat-card__sub">{c.subtitle}</span>
                     <span className="cat-card__desc">{c.desc}</span>
-                    <span className="cat-card__meta">{c.minutes ? `About ${c.minutes} min` : "Not written yet"}{c.size ? ` · ${c.size}` : ""}</span>
+                    <span className="cat-card__meta">{c.minutes ? `About ${c.minutes} min` : ""}{c.size ? ` · ${c.size}` : ""}</span>
                     {c.note && <span className="cat-card__note"><strong>Content note:</strong> {c.note}</span>}
                   </span>
                 </a>
@@ -291,7 +256,7 @@ export default function StoriesPage() {
                     <h2 className="pv__title">{nw(c.title, 20)}</h2>
                     <p className="pv__sub">{c.subtitle}</p>
                     <p className="pv__desc">{c.desc}</p>
-                    <p className="pv__meta">{c.minutes ? `About ${c.minutes} min` : "Not written yet"}{c.size ? ` · ${c.size}` : ""}</p>
+                    <p className="pv__meta">{c.minutes ? `About ${c.minutes} min` : ""}{c.size ? ` · ${c.size}` : ""}</p>
                     {c.note && <p className="pv__note"><strong>Content note:</strong> {c.note}</p>}
                     <div className="pv__inside">
                       <h3 className="pv__inside-title">What&rsquo;s inside</h3>
@@ -324,7 +289,7 @@ export default function StoriesPage() {
           </div>
         </aside>
       </div>
-      <script src="/static/js/stories.js?v=2" defer></script>
+      <script src="/static/js/stories.js?v=3" defer></script>
     </div>
   );
 }

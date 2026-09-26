@@ -27,7 +27,7 @@ export default function Home() {
     { href: "/stories/?kind=Verses", title: "Verses for how you feel", count: `${NEEDS.length} topics`, line: "A few verses about one feeling. Easy to send to a friend.", opens: "Opens the Stories list" },
     { href: "/bsb/", title: "Full Bible", count: "66 books", line: "The actual text, word for word, in 4 free translations.", opens: "Opens Full Bible" },
     { href: "/memorize/", title: "Memorize", count: "Your lines", line: "Lines you are learning by heart, and when to practice next.", opens: "Opens Memorize" },
-    { href: "/search/", title: "Search", count: "Every verse", line: "Find a word, a name, or a verse like John 3:16.", opens: "Opens Search" },
+    { href: "/search/", title: "Search", count: "Stories and verses", line: "Find a story, a person, or a verse like John 3:16.", opens: "Opens Search" },
   ];
 
   return (

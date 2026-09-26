@@ -8,6 +8,7 @@ import { Bands } from "@/lib/TimelineBands";
 import { loadStory, loadScenes, type Block, type Box } from "@/lib/story";
 import { WORDS } from "@/lib/words";
 import { pathsData } from "@/lib/paths";
+import { JsonLd } from "@/lib/JsonLd";
 
 /* A Scene by Scene story, in four steps that are the same on every story:
      1 Story     what happened, each paragraph with its verses
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description,
+    keywords: [s.title, ...(s.also || []), s.ref],
     alternates: { canonical: `${SITE_URL}/stories/${s.slug}/` },
     openGraph: { title: `${s.title} | Free Scripture`, description, url: `${SITE_URL}/stories/${s.slug}/`, type: "article" },
     robots: isIndexed(s) ? { index: true, follow: true } : { index: false, follow: isReadable(s) },
@@ -326,8 +328,28 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
     paths: pathsData().filter((pp) => pp.steps.some((s) => s.slug === slug)),
   };
 
+  /* Page data for search engines: the familiar title, other names people
+     search for, and the passage it retells. */
+  const jsonld = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: entry.title,
+    alternativeHeadline: entry.subtitle,
+    alternateName: entry.also || [],
+    description: entry.desc,
+    url: `${SITE_URL}/stories/${slug}/`,
+    inLanguage: "en",
+    educationalLevel: entry.level,
+    isAccessibleForFree: true,
+    about: { "@type": "CreativeWork", name: `${entry.ref} (Bible)` },
+    publisher: { "@type": "Organization", name: "Hope for Americans" },
+    license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    isPartOf: { "@type": "CollectionPage", name: "Scene by Scene stories", url: `${SITE_URL}/stories/` },
+  };
+
   return (
     <>
+      <JsonLd data={jsonld} />
       <div className="reading-progress" aria-hidden="true"><div className="reading-progress__bar"></div></div>
       <article className="story-page story-v2" data-story={slug}>
         {/* The rail: finding your way and reading tools. Left of the text on
@@ -374,7 +396,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         </aside>
 
         <header className="story-head">
-          <div className="story-eyebrow">{entry.kind === "Teaching" ? "Teaching" : "Story"} · {entry.ref}</div>
+          <div className="story-eyebrow">{entry.kind === "Teaching" ? "Teaching" : entry.kind === "Poetry and Prayer" ? "Prayer" : "Story"} · {entry.ref}</div>
           <h1 className="story-title">{nw(entry.title)}</h1>
           <p className="story-subtitle">{entry.subtitle}</p>
           <div className="story-meta">
