@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { pullVerse, bookSlug, DEFAULT_TRANS, SITE_URL } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
@@ -55,7 +54,7 @@ export async function generateMetadata({
       : `${label}: ${primary} and ${books.length - 1} other place${books.length > 2 ? "s" : ""} it appears | Free Scripture`;
   const description =
     books.length === 1
-      ? `Read ${primary} ${label} in the World English Bible, King James Version, and Bible in Basic English.`
+      ? `Read ${primary} ${label} in the Berean Standard Bible, World English Bible, King James Version, and Bible in Basic English.`
       : `Chapter ${chapter}, verse ${verse} appears in ${books.length} books of the Bible, including ${primary}. See every occurrence and read each one in full.`;
 
   return {
@@ -105,7 +104,7 @@ export default async function VersePage({
 
       <nav className="chapter-nav" aria-label="Navigation">
         <div className="chapter-nav__group">
-          <Link href="/search/">&larr; Search</Link>
+          <a href="/search/">&larr; Search</a>
         </div>
         <div className="chapter-nav__current">Chapter {chapter}, verse {verse}</div>
         <div className="chapter-nav__group" />
@@ -126,23 +125,23 @@ export default async function VersePage({
 
       {/* Primary — the canonical-first match, shown in full */}
       <div className="verse-disambig-primary">
-        <Link
+        <a
           className="verse-disambig-primary__ref"
           href={`/${DEFAULT_TRANS}/${bookSlug(primary)}/${chapter}/#v${verse}`}
         >
           {primary} {chapter}:{verse}
-        </Link>
+        </a>
         {primaryText && (
           <blockquote className="verse-disambig-primary__text">
             {primaryText}
           </blockquote>
         )}
-        <Link
+        <a
           className="verse-disambig-primary__more"
           href={`/${DEFAULT_TRANS}/${bookSlug(primary)}/${chapter}/#v${verse}`}
         >
           Read the whole chapter
-        </Link>
+        </a>
       </div>
 
       {/* The rest — honestly listed, not hidden, because guessing wrong
@@ -155,7 +154,7 @@ export default async function VersePage({
           </h2>
           <div className="hcard-row hcard-row--col">
             {restWithText.map(({ book, text }) => (
-              <Link
+              <a
                 className="hcard hcard--wide"
                 href={`/${DEFAULT_TRANS}/${bookSlug(book)}/${chapter}/#v${verse}`}
                 key={book}
@@ -169,7 +168,7 @@ export default async function VersePage({
                   )}
                 </span>
                 <svg className="story-row__chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

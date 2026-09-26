@@ -62,9 +62,9 @@ Goliath shouted across the valley. "Why are you lining up for battle? Choose one
 
 Sometimes wars were settled this way. Instead of thousands dying, each side sent one champion. The winner's army won everything.
 
-Israel had a serious problem. The Philistines knew how to work iron. Israel had no blacksmiths at all. Israelites even had to go to the Philistines to sharpen their farm tools. Only Saul and his son Jonathan owned a sword or spear (1 Samuel 13:19–22). Most soldiers had no real weapons of war.
+Israel had a serious problem. The Philistines knew how to work iron. Israel had no blacksmiths at all. Israelites even had to go to the Philistines to sharpen their farm tools. At one battle a few years earlier, only Saul and his son Jonathan had a sword or spear (1 Samuel 13:19–22). Israel's army was probably still short on weapons.
 
-So Israel had one obvious choice: King Saul. He was the tallest man in Israel. He was the king the people had asked for, to fight their battles. He had one of the only swords in the army.
+So Israel had one obvious choice: King Saul. He was the tallest man in Israel. He was the king the people had asked for, to fight their battles.
 
 Saul didn't go. He and all his soldiers were terrified.
 
@@ -79,7 +79,7 @@ David's three oldest brothers were in Saul's army. David was the youngest. He we
 
 Being a shepherd was lonely, dangerous work. Shepherds lived outdoors with the flock, found them water and grass, and guarded them from wild animals. Lions and bears lived in Israel back then (1 Samuel 17:34).
 
-Soldiers often depended on food sent from home. So Jesse gave David a bag of roasted grain and ten loaves of bread for his brothers. He also sent ten portions of cheese for their commander. Jesse wanted news too. "Check on your brothers, and bring back something to show they're okay."
+Soldiers often depended on food sent from home. So Jesse gave David a bag of roasted grain and ten loaves of bread for his brothers. He also sent ten portions of cheese for their commander. He told David to check on his brothers and bring back word that they were okay.
 
 David got up early and left the sheep with another shepherd. He reached the camp just as the army was marching out and shouting the battle cry. He left the food with the supply keeper and ran to find his brothers.
 
@@ -89,11 +89,11 @@ While David was talking with them, Goliath stepped out and shouted his usual cha
 
 The soldiers told each other about a reward. King Saul had promised that whoever killed Goliath would get great riches. He would marry the king's daughter. His father's family would never pay taxes again.
 
-David asked what would be done for the man who killed this Philistine. Then he asked a bigger question: **"Just who is this uncircumcised Philistine, that he should defy the armies of the living God?"** (17:26). To David, Goliath wasn't only insulting soldiers. He was insulting God.
+David asked what would be done for the man who killed this Philistine. Then he asked a bigger question: **"Just who is this uncircumcised Philistine, that he should defy the armies of the living God?"** (17:26). Uncircumcised meant outside God's promise to Israel. To David, Goliath wasn't only insulting soldiers. He was insulting God.
 
 Eliab, David's oldest brother, heard him and got angry. "Why did you come down here? Who's watching those few sheep? I know how proud you are. You only came to watch the battle."
 
-The Bible doesn't say exactly why Eliab reacted so harshly. But remember: Eliab was the tall, impressive oldest son that Samuel first thought God would choose. Instead, Eliab watched his youngest brother get anointed.
+The Bible doesn't say exactly why Eliab reacted so harshly. But Eliab was the tall, impressive oldest son that Samuel first thought God would choose. Instead, Eliab watched his youngest brother get anointed.
 
 David said, "What did I do now? It was only a question." He turned to other soldiers and asked again. They gave him the same answer.
 
@@ -101,7 +101,7 @@ David said, "What did I do now? It was only a question." He turned to other sold
 
 Someone told Saul what David was saying. Saul sent for him.
 
-David said, "Don't let anyone lose heart because of this Philistine. I'll go and fight him."
+David told Saul not to let anyone be afraid of this Philistine. "I'll go and fight him."
 
 Saul said, "You can't. You're only a boy. He has been a warrior since he was young."
 
@@ -113,7 +113,7 @@ Saul said, "Go, and may the LORD be with you."
 
 Saul dressed David in his own tunic, armor, and bronze helmet. David strapped on Saul's sword and tried to walk. He couldn't. He had never trained in armor.
 
-Remember, Saul was a head taller than everyone else. His armor was made for him.
+Saul was a head taller than everyone else. His armor was made for him, not for David.
 
 David took it all off. He picked up his shepherd's staff. He walked down to the stream and chose five stones, worn smooth by the water. He put them in his shepherd's bag. With his sling in his hand, he walked toward Goliath.
 
@@ -142,7 +142,7 @@ The stone hit Goliath on the forehead and sank in. Goliath fell facedown on the 
 
 David had no sword. He ran and stood over the giant. He pulled Goliath's own sword out of its sheath and killed him with it. Then he cut off his head.
 
-Remember what David said: the LORD doesn't save with sword or spear. David won without a sword. The only sword in the fight belonged to Goliath.
+David had said the LORD doesn't save with sword or spear. The Bible says there was no sword in David's hand (17:50). The only sword in the fight belonged to Goliath.
 
 ### Scene 9: The Chase
 
@@ -157,7 +157,7 @@ The men of Israel and Judah, who had been afraid for 40 days, charged forward wi
 
 As David had gone out to fight, Saul asked Abner, the commander of his army, "Whose son is this young man?" Abner didn't know.
 
-After the battle, Abner brought David to Saul. David was still holding Goliath's head. Saul asked him, "Whose son are you, young man?"
+After the battle, Abner brought David to Saul. Saul asked him, "Whose son are you, young man?"
 
 David said, "I am the son of your servant Jesse of Bethlehem."
 
@@ -183,9 +183,9 @@ Saul still didn't know that the young man in front of him, holding Goliath's hea
 
 ## 🌍 Back Then...
 
-**How tall was Goliath?** The standard Hebrew text says six cubits and a span, about 9 feet 9 inches. The BSB follows this. The oldest Greek translation, a Dead Sea Scroll, and the historian Josephus say four cubits and a span, about 6 feet 9 inches. Either way, he was huge (BSB footnote).†
+**How tall was Goliath?** A cubit was about 18 inches, the length from your elbow to your fingertips. The standard Hebrew text says six cubits and a span, about 9 feet 9 inches. The BSB follows this. The oldest Greek translation, a Dead Sea Scroll, and the historian Josephus say four cubits and a span, about 6 feet 9 inches. Either way, he was huge. (BSB footnote; Josephus, *Antiquities* 6.171)†
 
-**Measurements:** Goliath's armor weighed 5,000 shekels, about 125 pounds. His spear point weighed 600 shekels, about 15 pounds (Easton's Bible Dictionary, "Shekel").†
+**Measurements:** Goliath's armor weighed 5,000 shekels, about 125 pounds. His spear point weighed 600 shekels, about 15 pounds. (BSB footnotes)†
 
 **Anointing:** Pouring oil on someone's head showed that God had chosen them for a special job, like king or priest (Easton's Bible Dictionary, "Anoint").
 
@@ -193,7 +193,7 @@ Saul still didn't know that the young man in front of him, holding Goliath's hea
 
 In chapter 16, David already plays the harp for Saul and becomes his armor-bearer (1 Samuel 16:21). So why does Saul ask who he is? People give three explanations:
 - **Saul is asking about David's family.** He promised the winner's family freedom from taxes, so he needs to know who David's father is. David answers with his father's name.
-- **The story may combine two older tellings.** Many scholars think this chapter weaves together two accounts. The oldest Greek translation has a shorter version without verses 12–31 and 55–58.
+- **The story may combine two older tellings.** Many scholars think this chapter weaves together two accounts. The oldest Greek translation has a shorter version. It leaves out several parts, including verses 12–31 and 55–58.
 - **The book arranges stories by topic,** not always in exact time order.
 
 It's okay to notice things like this. Careful readers have asked about it for centuries.
@@ -211,6 +211,15 @@ It's okay to notice things like this. Careful readers have asked about it for ce
 
 # Why It Matters
 
+## 🙋 Your Turn
+
+**Who are you most like in this story right now?** Tap one.
+
+- The scared soldiers on the hill :: That is most of us. The soldiers did not win the fight. David won it for them. Jesus fights for you the same way.
+- David, choosing stones :: God gave David courage. He can give you courage too. And when yours runs out, Jesus is still the one who wins.
+- Eliab, the angry brother :: Being passed over hurts, and that feeling is real. Eliab let it turn into anger at his brother. You can bring it to God instead.
+- Saul, afraid to go :: Even the king was scared. God did not give up on his people. He sent help.
+
 ## 🤔 You Might Have Heard...
 
 *"Be brave like David, and you'll defeat the giants in your life."*
@@ -219,7 +228,7 @@ It's okay to notice things like this. Careful readers have asked about it for ce
 
 **What the story is mainly about:** God rescuing helpless people. David's courage came from the Spirit God gave him. We're less like David and more like the scared soldiers on the hill.
 
-**Where Jesus is:** Jesus is our champion, the one who fights the enemies we can't beat.
+**Where Jesus is:** Jesus is our champion, the one who fights the enemies we can't beat.†
 
 ## ✝️ Good News
 
@@ -233,16 +242,21 @@ About 1,000 years later, another king was born in Bethlehem, from David's family
 
 ## 📚 From Luther
 
-**"A Mighty Fortress Is Our God"** by Martin Luther (1529), English translation by Frederick Hedge (1853):
+*A Mighty Fortress Is Our God*, by Martin Luther (written by about 1529), English translation by Frederick Hedge (1853):
 
 > *Did we in our own strength confide,*
 > *Our striving would be losing;*
 > *Were not the right Man on our side,*
 > *The Man of God's own choosing.*
 > *Dost ask who that may be?*
-> *Christ Jesus, it is He.*
+> *Christ Jesus, it is He;*
+> *Lord Sabaoth His name,*
+> *From age to age the same,*
+> *And He must win the battle.*
 
-**The Small Catechism** explains the Second Commandment: we should call on God's name in every trouble, pray, praise, and give thanks. That's what David does. He comes "in the name of the LORD of Hosts."
+"Lord Sabaoth" means the LORD of Hosts. It is the same name David used when he faced Goliath.
+
+**The Small Catechism** explains the Second Commandment: we should call on God's name in every time of need, and pray, praise, and give thanks. That's what David does. He comes "in the name of the LORD of Hosts."
 
 ## 🕊️ From the Wider Church
 
@@ -250,7 +264,7 @@ Early church writers, including Augustine, saw David as a picture of Christ: an 
 
 ## 📅 In Church
 
-ELCA congregations following the Revised Common Lectionary may hear this story in the summer of Year B, often alongside Mark 4:35–41, where Jesus calms a storm while his disciples are terrified.†
+In the Revised Common Lectionary, this story is a reading for Lectionary 12 (Proper 7) in Year B, in late June. Many ELCA congregations hear the other reading that day, from Job 38. The Gospel that day is Mark 4:35–41, where Jesus calms a storm while his disciples are terrified.†
 
 ## 💡 Big Idea
 

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { PARABLES, PARABLE_THEMES, SITE_URL } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
@@ -85,7 +84,7 @@ export default function ParablesIndex() {
             </div>
             <div className="read-list">
               {inTheme.map((p: any) => (
-                <Link
+                <a
                   className="bookrow bookrow--colored"
                   href={`/parables/${p.slug}/`}
                   key={p.slug}
@@ -99,7 +98,7 @@ export default function ParablesIndex() {
                     <span className="parable-row__ref">{refLabel(p)}</span>
                   </span>
                   <Chev />
-                </Link>
+                </a>
               ))}
             </div>
           </section>

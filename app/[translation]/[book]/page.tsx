@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import {
   TRANSLATIONS,
@@ -103,7 +102,7 @@ export default async function BookLanding(
       <JsonLd data={jsonld} />
       <nav className="chapter-nav" aria-label="Navigation">
         <div className="chapter-nav__group">
-          <Link href={`/${trans}/`}>&larr; {tmeta.label}</Link>
+          <a href={`/${trans}/`}>&larr; {tmeta.label}</a>
         </div>
         <div className="chapter-nav__current">{bk.name}</div>
         <div className="chapter-nav__group" />
@@ -119,9 +118,9 @@ export default async function BookLanding(
               {tmeta.short}
             </span>
           ) : (
-            <Link key={t} className="trans-switch__btn" href={`/${t}/${book}/`}>
+            <a key={t} className="trans-switch__btn" href={`/${t}/${book}/`}>
               {TRANSLATIONS[t].short}
-            </Link>
+            </a>
           )
         )}
       </div>
@@ -135,7 +134,7 @@ export default async function BookLanding(
       <ul className="chapter-grid">
         {bk.chapters.map((c) => (
           <li key={c.num}>
-            <Link href={`/${trans}/${book}/${c.num}/`}>{c.num}</Link>
+            <a href={`/${trans}/${book}/${c.num}/`}>{c.num}</a>
           </li>
         ))}
       </ul>

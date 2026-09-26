@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import {
   PARABLES,
@@ -7,6 +6,7 @@ import {
   pullRange,
   bookSlug,
   DEFAULT_TRANS,
+  TRANSLATIONS,
   SITE_URL,
 } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
@@ -98,7 +98,7 @@ export default async function ParablePage({
 
       <nav className="chapter-nav" aria-label="Navigation">
         <div className="chapter-nav__group">
-          <Link href="/parables/">← All parables</Link>
+          <a href="/parables/">← All parables</a>
         </div>
         <div className="chapter-nav__current">{theme?.label}</div>
         <div className="chapter-nav__group" />
@@ -123,7 +123,7 @@ export default async function ParablePage({
 
       <div className="parable-passage">
         <div className="parable-passage__ref">
-          <Link href={chapterUrl(p.ref)}>{refLabel(p.ref)}</Link>
+          <a href={chapterUrl(p.ref)}>{refLabel(p.ref)}</a>
         </div>
         <div className="chapter-text" lang="en">
           {verses.map((v) => (
@@ -134,8 +134,8 @@ export default async function ParablePage({
           ))}
         </div>
         <p className="parable-passage__trans">
-          World English Bible, public domain.{" "}
-          <Link href={chapterUrl(p.ref)}>Read the whole chapter</Link>
+          {TRANSLATIONS[DEFAULT_TRANS].label}, public domain.{" "}
+          <a href={chapterUrl(p.ref)}>Read the whole chapter</a>
         </p>
       </div>
 
@@ -163,7 +163,7 @@ export default async function ParablePage({
                 ))}
               </div>
               <p className="parable-passage__trans">
-                <Link href={pb.url}>Read the whole chapter</Link>
+                <a href={pb.url}>Read the whole chapter</a>
               </p>
             </details>
           ))}
@@ -175,10 +175,10 @@ export default async function ParablePage({
           <div className="keep-reading__heading">More on {theme?.label.toLowerCase()}</div>
           <div className="keep-reading__links">
             {siblings.map((s: any) => (
-              <Link className="keep-reading__link" href={`/parables/${s.slug}/`} key={s.slug}>
+              <a className="keep-reading__link" href={`/parables/${s.slug}/`} key={s.slug}>
                 <span className="keep-reading__link-label">{s.title}</span>
                 <span className="keep-reading__link-desc">{s.line}</span>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

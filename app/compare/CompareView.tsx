@@ -91,8 +91,8 @@ function Cell({ value, v }: { value: Row["a"]; v: Version }) {
 export default function CompareView({ versions, book, chapter }: { versions: Version[]; book: string; chapter: number }) {
   const ids = versions.map((v) => v.id);
   const firstStory = versions.find((v) => v.kind === "retelling");
-  const [a, setA] = useState(firstStory ? firstStory.id : "web");
-  const [b, setB] = useState(firstStory ? "web" : "kjv");
+  const [a, setA] = useState(firstStory ? firstStory.id : "bsb");
+  const [b, setB] = useState(firstStory ? "bsb" : "kjv");
 
   // URL wins, then the reader's last translation pair, then the defaults.
   useEffect(() => {

@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import {
   NEEDS,
@@ -70,7 +69,7 @@ export default async function NeedPage(
             name: `What does ${refLabel(p.book, p.chapter)}:${p.verse} say?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `${p.text} (${refLabel(p.book, p.chapter)}:${p.verse}, World English Bible)`,
+              text: `${p.text} (${refLabel(p.book, p.chapter)}:${p.verse}, BSB)`,
               url: `${SITE_URL}/${DEFAULT_TRANS}/${p.slug}/${p.chapter}/#v${p.verse}`,
             },
           })),
@@ -91,7 +90,7 @@ export default async function NeedPage(
       <JsonLd data={jsonld} />
       <nav className="chapter-nav" aria-label="Navigation">
         <div className="chapter-nav__group">
-          <Link href="/read/">&larr; All verses</Link>
+          <a href="/read/">&larr; All verses</a>
         </div>
         <div className="chapter-nav__current">{n.short}</div>
         <div className="chapter-nav__group" />
@@ -113,7 +112,7 @@ export default async function NeedPage(
               {p.frame && <div className="passage__frame">{p.frame}</div>}
               {p.text && <blockquote className="passage__verse">{p.text}</blockquote>}
               <div className="passage__acts">
-                <Link className="rbtn" href={url}>Read the chapter</Link>
+                <a className="rbtn" href={url}>Read the chapter</a>
                 <button
                   className="rbtn rbtn--subtle"
                   type="button"
@@ -155,7 +154,7 @@ export default async function NeedPage(
     if(copy){
       var t=copy.getAttribute('data-verse-text');
       var r=copy.getAttribute('data-verse-ref');
-      var full='"'+t+'" ('+r+', World English Bible)';
+      var full='"'+t+'" ('+r+', BSB)';
       if(navigator.clipboard&&window.isSecureContext){
         navigator.clipboard.writeText(full).then(function(){
           var span=copy.querySelector('.rbtn__copied')||copy;

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { NEEDS, SITE_URL } from "@/lib/bible";
 
@@ -14,7 +13,7 @@ export default function NeedsHub() {
   const good = NEEDS.filter((n: any) => n.group === "good");
 
   const Row = (n: any) => (
-    <Link
+    <a
       className="bookrow bookrow--colored"
       href={`/read/${n.slug}/`}
       key={n.slug}
@@ -25,7 +24,7 @@ export default function NeedsHub() {
         {n.card && <span className="bookrow__d">{n.card}</span>}
       </span>
       <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-    </Link>
+    </a>
   );
 
   return (

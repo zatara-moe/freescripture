@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import {
   TRANSLATIONS,
@@ -92,9 +91,9 @@ export default async function TranslationLanding(
         <div className="trans-switch" aria-label="Switch translation">
           <span className="trans-switch__label">Other versions:</span>
           {TRANS_ORDER.filter((t) => t !== trans).map((t) => (
-            <Link key={t} className="trans-switch__btn" href={`/${t}/`}>
+            <a key={t} className="trans-switch__btn" href={`/${t}/`}>
               {TRANSLATIONS[t].short}
-            </Link>
+            </a>
           ))}
         </div>
       </header>
@@ -120,7 +119,7 @@ export default async function TranslationLanding(
               const desc = m ? m[0] : full;
               const genre = GENRE_OF[name] || "";
               return (
-                <Link
+                <a
                   className="bookrow"
                   href={`/${trans}/${slug}/`}
                   key={name}
@@ -135,7 +134,7 @@ export default async function TranslationLanding(
                     {desc && <span className="bookrow__d">{desc}</span>}
                   </span>
                   <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </Link>
+                </a>
               );
             })}
           </div>

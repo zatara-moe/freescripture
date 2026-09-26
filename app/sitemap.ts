@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/` },
     { url: `${SITE_URL}/read/` },
     { url: `${SITE_URL}/stories/` },
+    { url: `${SITE_URL}/timeline/` },
     { url: `${SITE_URL}/parables/` },
     { url: `${SITE_URL}/genre/` },
     { url: `${SITE_URL}/search/` },

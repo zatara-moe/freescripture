@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import {
   GENRES,
@@ -49,7 +48,7 @@ export default async function GenrePage(
     <div className="reading-column genre-page">
       <nav className="chapter-nav" aria-label="Navigation">
         <div className="chapter-nav__group">
-          <Link href="/genre/">&larr; All kinds</Link>
+          <a href="/genre/">&larr; All kinds</a>
         </div>
         <div className="chapter-nav__current">{g.kicker}</div>
         <div className="chapter-nav__group" />
@@ -65,7 +64,7 @@ export default async function GenrePage(
           const slug = bookSlug(name);
           const desc = BOOK_PITCHES[name] || BOOK_INTROS[name] || "";
           return (
-            <Link
+            <a
               className="bookrow"
               href={`/${DEFAULT_TRANS}/${slug}/`}
               key={name}
@@ -76,7 +75,7 @@ export default async function GenrePage(
                 {desc && <span className="bookrow__d">{desc}</span>}
               </span>
               <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </Link>
+            </a>
           );
         })}
       </div>

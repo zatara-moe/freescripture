@@ -1,5 +1,17 @@
 {
   "TRANSLATIONS": {
+    "bsb": {
+      "slug": "bsb",
+      "label": "Berean Standard Bible",
+      "short": "BSB",
+      "plain": "modern and exact",
+      "year": "2022",
+      "description": "A modern English translation, clear and close to the original Hebrew and Greek. Its publishers gave it to the public domain in 2023. Our Scene by Scene stories are based on it.",
+      "attribution_canonical": "Berean Standard Bible<br>Public domain (dedicated April 30, 2023)<br>Source text from the Scrollmapper Bible Databases",
+      "has_apocrypha": false,
+      "tone": "modern",
+      "nick": "Modern"
+    },
     "kjv": {
       "slug": "kjv",
       "label": "King James Version",
@@ -22,7 +34,7 @@
       "attribution_canonical": "World English Bible<br>Public domain<br>Source text from the World English Bible (TehShrike repository)",
       "has_apocrypha": false,
       "tone": "modern",
-      "nick": "Modern"
+      "nick": "World English"
     },
     "bbe": {
       "slug": "bbe",
@@ -576,8 +588,8 @@
       "accent": "poetry",
       "short": "When you're afraid",
       "h1": "Verses for when you're afraid",
-      "lede": "For a hard night of your own, or to send to someone facing one. Read into any of these, or grab the line and pass it on.",
-      "card": "Fear answered, on the water and on foot.",
+      "lede": "For a hard night of your own, or to send to someone facing one. Read one, or send a line to a friend.",
+      "card": "For fear, big or small. God is with you.",
       "meta_title": "Bible verses for when you're afraid",
       "meta_desc": "Verses for fear and anxiety, from the storm Jesus calmed to whom shall I fear. Read one, or send it to a friend.",
       "passages": [
@@ -624,7 +636,7 @@
       "accent": "prophecy",
       "short": "When you're grieving",
       "h1": "Verses for grief and loss",
-      "lede": "For your own loss, or to send to someone carrying one. Read into a passage, or pass a verse along.",
+      "lede": "For your own loss, or to send to someone who is grieving. Read a passage, or send a verse.",
       "card": "For loss, and the God who weeps with you.",
       "meta_title": "Bible verses for grief and loss",
       "meta_desc": "Verses for mourning and sympathy, from Lazarus to the promise that every tear gets wiped away. Read one, or send it.",
@@ -672,8 +684,8 @@
       "accent": "wisdom",
       "short": "When you're worn out",
       "h1": "Verses for strength",
-      "lede": "For empty tanks and second winds, yours or a friend's. Read it, or send it.",
-      "card": "For empty tanks and second winds.",
+      "lede": "For when you or a friend feel worn out. Read it, or send it.",
+      "card": "For when you're tired and need strength to keep going.",
       "meta_title": "Bible verses for strength and weariness",
       "meta_desc": "Verses for exhaustion and encouragement, from eagles' wings to strength made perfect in weakness. Read one, or send it.",
       "passages": [
@@ -720,7 +732,7 @@
       "accent": "narrative",
       "short": "When you've messed up",
       "h1": "Verses for guilt and starting over",
-      "lede": "For shame and a fresh start. Read into one, or send it to someone who needs it.",
+      "lede": "For shame and a fresh start. Read one, or send it to someone who needs it.",
       "card": "For shame, regret, and starting over.",
       "meta_title": "Bible verses for guilt and starting over",
       "meta_desc": "Verses for regret and grace, from the prodigal son to no condemnation. Read one, or send it.",
@@ -768,8 +780,8 @@
       "accent": "letters",
       "short": "When someone hurt you",
       "h1": "Verses about forgiving someone",
-      "lede": "For the weight you can't put down. Read into one, or send it on.",
-      "card": "For the weight you can't put down.",
+      "lede": "For hurt that is hard to let go. Read one, or send it.",
+      "card": "For hurt that is hard to let go.",
       "meta_title": "Bible verses about forgiveness",
       "meta_desc": "Verses for resentment and forgiving, from Joseph to the words from the cross. Read one, or send it.",
       "passages": [
@@ -816,7 +828,7 @@
       "accent": "law",
       "short": "When you need wisdom",
       "h1": "Verses for wisdom",
-      "lede": "For decisions and how to live. Read into one, or send it to someone deciding.",
+      "lede": "For decisions and how to live. Read one, or send it to someone who is deciding.",
       "card": "For decisions and how to live.",
       "meta_title": "Bible verses for wisdom and decisions",
       "meta_desc": "Verses for choices and how to live, from Proverbs to the Sermon on the Mount. Read one, or send it.",
@@ -912,8 +924,8 @@
       "accent": "letters",
       "short": "When your mind won't slow down",
       "h1": "Verses for when your mind won't slow down",
-      "lede": "For looping thoughts, a busy head, and nights that won't settle. Pick one line and stay with it for a minute.",
-      "card": "For thoughts that keep looping.",
+      "lede": "For busy thoughts that won't stop, and nights when you can't settle. Pick one line and stay with it for a minute.",
+      "card": "For thoughts that go around and around.",
       "meta_title": "Bible verses for a racing mind",
       "meta_desc": "Verses for anxious, busy, looping thoughts, from \"Be still\" to the peace that guards your thoughts. Read one, or send it to a friend.",
       "passages": [
@@ -1042,7 +1054,7 @@
       "accent": "narrative",
       "short": "Something to celebrate",
       "h1": "Verses to celebrate",
-      "lede": "For good news worth marking, yours or someone else's. Read it, or send the joy along.",
+      "lede": "For good news, yours or someone else's. Read it, or send it along.",
       "card": "A win, a milestone, a good day.",
       "meta_title": "Bible verses to celebrate good news",
       "meta_desc": "Joyful verses for good news and milestones, from this is the day the Lord has made to rejoicing over you with singing. Read one, or send it.",
@@ -1138,7 +1150,7 @@
       "accent": "letters",
       "short": "Giving thanks",
       "h1": "Verses for giving thanks",
-      "lede": "For a full heart, or to thank someone who showed up. Read it, or send your thanks.",
+      "lede": "For a full heart, or to thank someone who helped you. Read it, or send your thanks.",
       "card": "When someone showed up for you.",
       "meta_title": "Bible verses for giving thanks",
       "meta_desc": "Verses for gratitude and thank you, from in everything give thanks to I thank my God whenever I remember you. Read one, or send it.",

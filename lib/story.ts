@@ -7,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 export type Block =
-  | { type: "p"; html: string }
+  | { type: "p"; html: string; v?: string[] }
   | { type: "label"; html: string }
   | { type: "key"; html: string }
   | { type: "scene"; id: string; num: number; title: string }
@@ -23,10 +23,30 @@ export interface Story { zones: Zone[]; bigIdea: string | null; words: number; s
 function esc(s: string) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
+/* Book names, so "(Luke 18:13)" can become a link to that verse. */
+let _books: { name: string; slug: string }[] | null = null;
+function books() {
+  if (!_books) {
+    const m = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "manifest.json"), "utf8"));
+    _books = (m.bsb as any[]).map((b) => ({ name: b.name, slug: b.slug }));
+    _books.push({ name: "Psalm", slug: "psalms" });
+  }
+  return _books;
+}
+function linkRefs(html: string) {
+  const names = books().map((b) => b.name.replace(/ /g, "\\s")).sort((a, b) => b.length - a.length).join("|");
+  const re = new RegExp(`\\((${names})\\s(\\d+):(\\d+)((?:-\\d+)?)\\)`, "g");
+  return html.replace(re, (all, name: string, ch: string, v: string, rest: string) => {
+    const b = books().find((x) => x.name === name.replace(/\s/g, " "));
+    if (!b) return all;
+    return `(<a class="ref-link" href="/bsb/${b.slug}/${ch}/#v${v}">${name} ${ch}:${v}${rest}</a>)`;
+  });
+}
 export function inline(s: string) {
-  return esc(s.replace(/†/g, ""))
+  return linkRefs(esc(s.replace(/†/g, ""))
     .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.+?)\*/g, "<em>$1</em>");
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, '<a href="$2">$1</a>'));
 }
 function slugify(s: string) {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -50,12 +70,15 @@ export function loadStory(slug: string): Story | null {
   const push = (b: Block) => { if (box) box.blocks.push(b); };
   const flush = () => {
     if (!para.length) return;
-    const text = para.join(" ");
+    let text = para.join(" ");
+    let v: string[] | undefined;
+    const tag = text.match(/\s*\{v:\s*([^}]*)\}\s*$/);
+    if (tag) { v = tag[1].split(",").map((x) => x.trim()).filter(Boolean); text = text.slice(0, tag.index).trim(); }
     const html = inline(text);
     const boldOnly = /^\*\*[^*]+\*\*$/.test(text.trim());
     if (boldOnly && text.trim().split(/\s+/).length <= 3) push({ type: "label", html });
     else if (boldOnly) push({ type: "key", html });
-    else push({ type: "p", html });
+    else push({ type: "p", html, v });
     if (box && box.id === "plain-retelling") words += text.split(/\s+/).length;
     para = [];
   };

@@ -19,7 +19,8 @@ export default function Search() {
       <div className="search-box">
         <label className="search-trans">
           <span>Translation</span>
-          <select id="search-trans" defaultValue="web">
+          <select id="search-trans" defaultValue="bsb">
+            <option value="bsb">Berean Standard Bible</option>
             <option value="web">World English Bible</option>
             <option value="kjv">King James Version</option>
             <option value="bbe">Bible in Basic English</option>
@@ -38,7 +39,7 @@ export default function Search() {
       <div id="search-status" className="search-status" role="status" aria-live="polite" dangerouslySetInnerHTML={{ __html: "" }} />
       <div id="search-results" className="search-results" aria-live="polite" dangerouslySetInnerHTML={{ __html: "" }} />
 
-      <script src="/static/js/search.js?v=2" defer></script>
+      <script src="/static/js/search.js?v=3" defer></script>
     </div>
   );
 }

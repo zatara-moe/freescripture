@@ -1,17 +1,20 @@
 "use client";
-/* Site navigation that always knows the current page, including after
-   in-app link taps (Next.js swaps pages without a full reload, so a
-   one-time script can't keep the highlight right). */
-import Link from "next/link";
+/* The same four places on every device, named for what's inside:
+     Home        an overview of everything, and your next step
+     Stories     Bible stories, parables, and verses, explained in plain words
+     Full Bible  the Bible text itself, word for word
+     Memorize    the lines you are learning by heart
+   Desktop shows them in the header. Phones show them as a tab bar. */
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-type Section = "home" | "stories" | "bible" | "foryou" | "";
+type Section = "home" | "stories" | "bible" | "memorize" | "";
 
 function sectionOf(p: string): Section {
   if (p === "/") return "home";
-  if (p.startsWith("/stories/") || p.startsWith("/parables/")) return "stories";
-  if (/^\/(web|kjv|bbe|genre|verse|compare)\//.test(p)) return "bible";
-  if (p.startsWith("/read/")) return "foryou";
+  if (/^\/(stories|parables|read)\//.test(p)) return "stories";
+  if (/^\/(bsb|web|kjv|bbe|genre|verse|compare|search)\//.test(p)) return "bible";
+  if (p.startsWith("/memorize/")) return "memorize";
   return "";
 }
 
@@ -21,9 +24,10 @@ export function SiteNav() {
   const s = sectionOf(usePathname() || "/");
   return (
     <nav className="site-nav" aria-label="Primary">
-      <Link href="/stories/" {...cur(s === "stories")}>Stories</Link>
-      <Link href="/web/" {...cur(s === "bible")}>Bible</Link>
-      <Link href="/read/" {...cur(s === "foryou")}>Verses</Link>
+      <a href="/" {...cur(s === "home")}>Home</a>
+      <a href="/stories/" {...cur(s === "stories")}>Stories</a>
+      <a href="/bsb/" {...cur(s === "bible")}>Full Bible</a>
+      <a href="/memorize/" {...cur(s === "memorize")}>Memorize</a>
     </nav>
   );
 }
@@ -34,22 +38,33 @@ export function TabBar() {
   const s = sectionOf(usePathname() || "/");
   return (
     <nav className="tab-bar" aria-label="Main">
-      <Link className="tab-bar__btn" href="/" aria-label="Home" {...cur(s === "home")}>
+      <a className="tab-bar__btn" href="/" {...cur(s === "home")}>
         <svg {...ICON}><path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V20h14V9.5" /></svg>
         <span>Home</span>
-      </Link>
-      <Link className="tab-bar__btn" href="/stories/" aria-label="Stories" {...cur(s === "stories")}>
-        <svg {...ICON}><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+      </a>
+      <a className="tab-bar__btn" href="/stories/" {...cur(s === "stories")}>
+        <svg {...ICON}><rect x="4" y="3" width="16" height="18" rx="2" /><path d="M8 8h8M8 12h8M8 16h5" /></svg>
         <span>Stories</span>
-      </Link>
-      <Link className="tab-bar__btn" href="/web/" aria-label="Bible" {...cur(s === "bible")}>
-        <svg {...ICON}><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M19 19H6a2 2 0 0 0-2 2" /></svg>
-        <span>Bible</span>
-      </Link>
-      <Link className="tab-bar__btn" href="/read/" aria-label="Verses" {...cur(s === "foryou")}>
-        <svg {...ICON}><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" /></svg>
-        <span>Verses</span>
-      </Link>
+      </a>
+      <a className="tab-bar__btn" href="/bsb/" {...cur(s === "bible")}>
+        <svg {...ICON}><path d="M2 5.5C4 4.5 8 4 12 6.5c4-2.5 8-2 10-1V19c-2-1-6-1.5-10 1-4-2.5-8-2-10-1z" /><path d="M12 6.5V20" /></svg>
+        <span>Full Bible</span>
+      </a>
+      <a className="tab-bar__btn" href="/memorize/" {...cur(s === "memorize")}>
+        <svg {...ICON}><path d="M6 3h12v18l-6-4-6 4z" /></svg>
+        <span>Memorize</span>
+      </a>
     </nav>
   );
+}
+
+/* Tells the page scripts (learn.js, stories.js) that React has finished
+   hydrating. They wait for this before changing the page, so React never
+   sees a page it didn't render and throws the changes away. */
+export function Hydrated() {
+  useEffect(() => {
+    (window as any).__fsHydrated = true;
+    window.dispatchEvent(new Event("fs:hydrated"));
+  }, []);
+  return null;
 }

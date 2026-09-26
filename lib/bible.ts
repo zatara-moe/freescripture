@@ -5,7 +5,7 @@ import meta from "./meta.json";
 // ------------------------------------------------------------
 // Types
 // ------------------------------------------------------------
-export type TransSlug = "web" | "kjv" | "bbe";
+export type TransSlug = "bsb" | "web" | "kjv" | "bbe";
 
 export interface Verse { v: number; t: string; }
 export interface Chapter { num: number; verses: Verse[]; }
@@ -33,8 +33,8 @@ type Manifest = Record<TransSlug, ManifestBook[]>;
 // Metadata (extracted from the original build, preserved verbatim)
 // ------------------------------------------------------------
 export const TRANSLATIONS = meta.TRANSLATIONS as Record<TransSlug, TransMeta>;
-export const TRANS_ORDER: TransSlug[] = ["web", "kjv", "bbe"];
-export const DEFAULT_TRANS: TransSlug = "web";
+export const TRANS_ORDER: TransSlug[] = ["bsb", "web", "kjv", "bbe"];
+export const DEFAULT_TRANS: TransSlug = "bsb";
 
 // BOOK_ORDER: [name, testament ('ot'|'ap'|'nt'), group]
 export const BOOK_ORDER = meta.BOOK_ORDER as [string, string, string][];

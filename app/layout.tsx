@@ -1,15 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import Link from "next/link";
-import { SiteNav, TabBar } from "./AppNav";
+import { SiteNav, TabBar, Hydrated } from "./AppNav";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://freescripture.org"),
   title: {
-    default: "Free Scripture. Read the whole Bible online.",
+    default: "Free Scripture: the Bible, one scene at a time",
     template: "%s | Free Scripture",
   },
   description:
-    "The King James, World English, and Basic English Bibles, free to read. Every book and chapter, plus a verse for whatever you're going through.",
+    "Bible stories explained in plain words, with the verse beside every paragraph. Plus the full Bible in four free translations. No account, no ads.",
   icons: {
     icon: "/static/favicon.svg",
     apple: "/static/favicon.svg",
@@ -31,11 +30,12 @@ export const viewport: Viewport = {
 };
 
 const PREFS_BOOTSTRAP = `(function () {
+  document.documentElement.classList.add('js-on');
   try {
     var raw = localStorage.getItem('fs-prefs');
     if (!raw) return;
     var p = JSON.parse(raw);
-    var defaults = {size:'default', leading:'default', layout:'verses', font:'default', focus:'off', theme:'system', reading:'scroll', turn:'paper'};
+    var defaults = {size:'default', leading:'default', layout:'verses', font:'default', focus:'off', theme:'system', reading:'scroll', turn:'paper', words:'on'};
     var root = document.documentElement;
     Object.keys(defaults).forEach(function (k) {
       if (p[k] && p[k] !== defaults[k]) root.setAttribute('data-fs-' + k, p[k]);
@@ -45,7 +45,7 @@ const PREFS_BOOTSTRAP = `(function () {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -53,10 +53,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:opsz,wght@7..72,400;7..72,700&family=Lexend:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=37" />
+        <link rel="stylesheet" href="/static/css/site.css?v=48" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#F0EFEA" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#1A1814" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#16182C" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Free Scripture" />
@@ -110,7 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <header className="site-header">
           <div className="site-header__inner">
-            <Link className="site-mark" href="/">
+            <a className="site-mark" href="/">
               <span className="site-mark__fs" aria-hidden="true">
                 <svg width="22" height="16" viewBox="0 0 26 20" fill="none" aria-hidden="true">
                   <path d="M13 3C11 1.5 8 0.5 5 0.5C3.5 0.5 2 0.8 1 1.3V16.5C2 16 3.5 15.7 5 15.7C8 15.7 11 16.7 13 18.5C15 16.7 18 15.7 21 15.7C22.5 15.7 24 16 25 16.5V1.3C24 0.8 22.5 0.5 21 0.5C18 0.5 15 1.5 13 3Z" fill="currentColor" />
@@ -121,14 +121,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </svg>
               </span>
               <span className="site-mark__text">Free Scripture</span>
-            </Link>
+            </a>
             <SiteNav />
             <div className="header-actions">
-            <Link className="icon-btn" href="/search/" aria-label="Search" title="Search (/)">
+            <a className="icon-btn" href="/search/" aria-label="Search" title="Search (/)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
-            </Link>
-            <button className="icon-btn icon-btn--aa" type="button" data-prefs-open aria-label="Display settings" title="Display (D)">
-              Aa
+            </a>
+            <button className="icon-btn icon-btn--display" type="button" data-prefs-open aria-label="Display settings: text size, word help, and colors" title="Display (D)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M4 7h11M4 12h16M4 17h7" /><circle cx="18" cy="7" r="2" /><circle cx="13" cy="17" r="2" /></svg>
+              <span className="icon-btn__label">Display</span>
             </button>
             <button
               className="theme-toggle"
@@ -169,12 +170,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
 
         <TabBar />
+        <Hydrated />
 
         <footer className="site-footer">
           <nav className="site-footer__links" aria-label="More">
-            <Link href="/about/">About</Link>
-            <Link href="/parables/">Parables</Link>
-            <Link href="/search/">Search</Link>
+            <a href="/about/">About</a>
+            <a href="/stories/">Stories</a>
+            <a href="/timeline/">Bible timeline</a>
+            <a href="/parables/">Parables</a>
+            <a href="/read/">Verses for how you feel</a>
+            <a href="/search/">Search</a>
           </nav>
           <p className="hfa-madein">Made with <span className="hfa-heart" aria-hidden="true">&hearts;</span> in Flagstaff</p>
           <div className="hfa-rule"></div>
@@ -211,7 +216,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <script src="/static/js/shortcuts.js?v=2" defer></script>
 
-        <script src="/static/js/reading-prefs.js?v=12" defer></script>
+        <script src="/static/js/reading-prefs.js?v=13" defer></script>
         <script dangerouslySetInnerHTML={{ __html: `
 (function(){
   /* --- Service worker registration --- */

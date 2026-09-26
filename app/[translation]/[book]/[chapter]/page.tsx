@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import {
   TRANSLATIONS,
@@ -151,7 +150,7 @@ export default async function ChapterPage(
   };
 
   // Scene by Scene stories that retell this chapter.
-  const chapterStories = trans === "web" || trans === "kjv" || trans === "bbe" ? storiesForChapter(book, num) : [];
+  const chapterStories = storiesForChapter(book, num);
   const canCompare = !!loadChapter("web", book, num);
 
   const lastPayload = JSON.stringify({
@@ -172,19 +171,19 @@ export default async function ChapterPage(
       <div className="reading-column">
         <nav className="chapter-nav" aria-label="Chapter navigation">
           <div className="chapter-nav__group">
-            <Link href={`/${trans}/${book}/`}>&larr; {bk.name}</Link>
+            <a href={`/${trans}/${book}/`}>&larr; {bk.name}</a>
           </div>
           <div className="chapter-nav__current">{refLabel(bk.name, num)}</div>
           <div className="chapter-nav__group">
             {withinPrev !== null && (
-              <Link href={`/${trans}/${book}/${withinPrev}/`} rel="prev">
+              <a href={`/${trans}/${book}/${withinPrev}/`} rel="prev">
                 &larr; Ch {withinPrev}
-              </Link>
+              </a>
             )}
             {withinNext !== null && (
-              <Link href={`/${trans}/${book}/${withinNext}/`} rel="next">
+              <a href={`/${trans}/${book}/${withinNext}/`} rel="next">
                 Ch {withinNext}
-              </Link>
+              </a>
             )}
           </div>
         </nav>
@@ -202,7 +201,7 @@ export default async function ChapterPage(
                 {tmeta.nick} <span className="trans-switch__abbr">{tmeta.short}</span>
               </span>
             ) : (
-              <Link
+              <a
                 key={t}
                 className="trans-switch__btn"
                 href={`/${t}/${book}/${num}/`}
@@ -210,14 +209,14 @@ export default async function ChapterPage(
                 title={`${TRANSLATIONS[t].label}: ${TRANSLATIONS[t].plain}`}
               >
                 {TRANSLATIONS[t].nick} <span className="trans-switch__abbr">{TRANSLATIONS[t].short}</span>
-              </Link>
+              </a>
             )
           )}
           {canCompare && (
-            <Link className="trans-switch__cmp" href={`/compare/${book}/${num}/?a=${trans}`}>
+            <a className="trans-switch__cmp" href={`/compare/${book}/${num}/?a=${trans}`}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.5" /><rect x="13.5" y="4" width="7.5" height="16" rx="1.5" /></svg>
               Side by side
-            </Link>
+            </a>
           )}
         </div>
 
@@ -242,8 +241,8 @@ export default async function ChapterPage(
                 <span className="chapter-story__line">{st.title}, retold in plain language, one scene at a time.</span>
               </div>
               <div className="chapter-story__acts">
-                <Link className="rbtn" href={`/stories/${st.slug}/`}>Read the story</Link>
-                <Link className="rbtn rbtn--subtle" href={compareHref(st, trans)}>Read both side by side</Link>
+                <a className="rbtn" href={`/stories/${st.slug}/`}>Read the story</a>
+                <a className="rbtn rbtn--subtle" href={compareHref(st, trans)}>Read both side by side</a>
               </div>
             </div>
           ))}
@@ -332,18 +331,18 @@ export default async function ChapterPage(
             <div className="keep-reading__heading">Keep reading</div>
             <div className="keep-reading__links">
               {needLinks.map((n) => (
-                <Link key={n.slug} className="keep-reading__link" href={`/read/${n.slug}/`}>
+                <a key={n.slug} className="keep-reading__link" href={`/read/${n.slug}/`}>
                   <span className="keep-reading__link-label">{n.short}</span>
                   <span className="keep-reading__link-desc">{n.card}</span>
-                </Link>
+                </a>
               ))}
               {genreSlug && (
-                <Link className="keep-reading__link" href={`/genre/${genreSlug}/`}>
+                <a className="keep-reading__link" href={`/genre/${genreSlug}/`}>
                   <span className="keep-reading__link-label">More {genreSlug} books</span>
                   <span className="keep-reading__link-desc">
                     Other books in the Bible that read like {bk.name}
                   </span>
-                </Link>
+                </a>
               )}
               {/* DLC cross-links: contextual, not generic. Psalms → pray,
                   Gospels → this Sunday's readings, pastoral books → what do you need. */}
@@ -356,12 +355,12 @@ export default async function ChapterPage(
                 </a>
               )}
               {["Matthew", "Mark", "Luke", "John"].includes(bk.name) && (
-                <Link className="keep-reading__link" href="/parables/">
+                <a className="keep-reading__link" href="/parables/">
                   <span className="keep-reading__link-label">The parables of Jesus</span>
                   <span className="keep-reading__link-desc">
                     All 37, sorted by what they are about
                   </span>
-                </Link>
+                </a>
               )}
               {["Matthew", "Mark", "Luke", "John"].includes(bk.name) && (
                 <a className="keep-reading__link" href="https://www.digitallutheranchurch.com/word/propers" rel="noopener">
@@ -377,18 +376,18 @@ export default async function ChapterPage(
           <footer className="chapter-foot">
             <nav className="chapter-foot__nav" aria-label="Adjacent chapters">
               {prev ? (
-                <Link href={`/${trans}/${prev.slug}/${prev.num}/`}>
+                <a href={`/${trans}/${prev.slug}/${prev.num}/`}>
                   <span className="arrow">&larr; Previous</span>
                   <span className="label">{refLabel(prev.name, prev.num)}</span>
-                </Link>
+                </a>
               ) : (
                 <span />
               )}
               {next ? (
-                <Link href={`/${trans}/${next.slug}/${next.num}/`} className="next">
+                <a href={`/${trans}/${next.slug}/${next.num}/`} className="next">
                   <span className="arrow">Next chapter</span>
                   <span className="label">{refLabel(next.name, next.num)}</span>
-                </Link>
+                </a>
               ) : (
                 <span />
               )}

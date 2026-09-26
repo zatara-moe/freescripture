@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { booksForTranslation, TRANSLATIONS, SITE_URL } from "@/lib/bible";
 import { readableStories, compareHref } from "@/lib/stories";
@@ -41,14 +40,14 @@ export default function CompareHub() {
           <p className="section-lede">Each scene lines up with the verses it comes from, so you can check the retelling against the text.</p>
           <div className="story-list">
             {stories.map((s) => (
-              <Link key={s.slug} className="story-row" href={compareHref(s)}>
+              <a key={s.slug} className="story-row" href={compareHref(s)}>
                 <div className="story-row__body">
                   <div className="story-row__name">{s.title}</div>
                   <div className="story-row__desc">Scene by Scene next to the {t.web.label}</div>
                   <div className="story-row__meta"><span>{s.ref}</span></div>
                 </div>
                 <Chev />
-              </Link>
+              </a>
             ))}
           </div>
         </section>
@@ -77,11 +76,11 @@ export default function CompareHub() {
         <h2 className="stories-section__title" id="cmp-classics">Good places to start</h2>
         <div className="passage-rows">
           {CLASSICS.map((c) => (
-            <Link className="passage-row" href={c.url} key={c.ref}>
+            <a className="passage-row" href={c.url} key={c.ref}>
               <span className="passage-row__ref">{c.ref}</span>
               <span className="passage-row__line">{c.line}</span>
               <Chev />
-            </Link>
+            </a>
           ))}
         </div>
       </section>

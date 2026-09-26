@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { GENRES, SITE_URL } from "@/lib/bible";
 
@@ -18,7 +17,7 @@ export default function GenreHub() {
       </header>
       <div className="read-list">
         {GENRES.map((g: any) => (
-          <Link
+          <a
             className="bookrow bookrow--colored"
             href={`/genre/${g.slug}/`}
             key={g.slug}
@@ -29,7 +28,7 @@ export default function GenreHub() {
               <span className="bookrow__d">{g.label}</span>
             </span>
             <svg className="bookrow__chev" width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1.5 1.5L7 7.5L1.5 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </Link>
+          </a>
         ))}
       </div>
     </div>

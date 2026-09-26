@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import {
   TRANSLATIONS, TRANS_ORDER, flatChapters, loadChapter, bookNameFromSlug,
@@ -92,7 +91,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
   return (
     <div className="cmp-page">
       <nav className="chapter-nav" aria-label="Chapter navigation">
-        <div className="chapter-nav__group"><Link href="/compare/">&larr; Side by side</Link></div>
+        <div className="chapter-nav__group"><a href="/compare/">&larr; Side by side</a></div>
         <div className="chapter-nav__current">{refLabel(name, num)}</div>
         <div className="chapter-nav__group" />
       </nav>
@@ -110,16 +109,16 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
 
       <nav className="chapter-foot__nav cmp-foot" aria-label="Previous and next chapter">
         {prev ? (
-          <Link href={`/compare/${prev.slug}/${prev.num}/`}>
+          <a href={`/compare/${prev.slug}/${prev.num}/`}>
             <span className="arrow">Previous chapter</span>
             <span className="label">{refLabel(prev.name, prev.num)}</span>
-          </Link>
+          </a>
         ) : <span />}
         {next ? (
-          <Link href={`/compare/${next.slug}/${next.num}/`} className="next">
+          <a href={`/compare/${next.slug}/${next.num}/`} className="next">
             <span className="arrow">Next chapter</span>
             <span className="label">{refLabel(next.name, next.num)}</span>
-          </Link>
+          </a>
         ) : <span />}
       </nav>
     </div>
