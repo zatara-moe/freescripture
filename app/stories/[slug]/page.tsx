@@ -289,7 +289,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
     }
   }
 
-  const era = eraOfPassage(entry.passage);
+  const era = eraOfPassage(entry.passage)!;
   const act = partOfEra(era);
   const before = prevReadable(entry);
   const after = nextReadable(entry);
@@ -330,20 +330,12 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
     <>
       <div className="reading-progress" aria-hidden="true"><div className="reading-progress__bar"></div></div>
       <article className="story-page story-v2" data-story={slug}>
-        <nav className="story-crumb" aria-label="Breadcrumb">
-          <a href="/stories/">← Stories</a>
-        </nav>
-
-        <header className="story-head">
-          <div className="story-eyebrow">{entry.kind === "Teaching" ? "Teaching" : "Story"} · {entry.ref}</div>
-          <h1 className="story-title">{nw(entry.title)}</h1>
-          <p className="story-subtitle">{entry.subtitle}</p>
-          <div className="story-meta">
-            {entry.status === "early" && <span className="badge badge--new">New</span>}
-            <span className="badge">{entry.level}</span>
-            <span>About {minutes} min in all</span>
-            <span>4 short steps</span>
-          </div>
+        {/* The rail: finding your way and reading tools. Left of the text on
+            wide screens, above it on narrower ones. Same place as on chapter pages. */}
+        <aside className="rail" aria-label="Story tools">
+          <nav className="story-crumb rail__crumb" aria-label="Breadcrumb">
+            <a href="/stories/">← Stories</a>
+          </nav>
           <a className="path-bar" data-path-bar hidden href="/stories/">
             <span className="path-bar__kicker">Reading path</span>
             <span className="path-bar__title" data-path-bar-title></span>
@@ -368,6 +360,29 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
               ))}
             </div>
           )}
+        <div className="story-tools">
+          <button className="tool-btn" type="button" data-listen aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z" /><path d="M15.5 8.5a5 5 0 0 1 0 7" /><path d="M19 5a10 10 0 0 1 0 14" /></svg>
+            <span data-listen-label>Listen</span>
+          </button>
+          <a className="tool-btn" href={compare}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.5" /><rect x="13.5" y="4" width="7.5" height="16" rx="1.5" /></svg>
+            <span>Side by side</span>
+          </a>
+        </div>
+
+        </aside>
+
+        <header className="story-head">
+          <div className="story-eyebrow">{entry.kind === "Teaching" ? "Teaching" : "Story"} · {entry.ref}</div>
+          <h1 className="story-title">{nw(entry.title)}</h1>
+          <p className="story-subtitle">{entry.subtitle}</p>
+          <div className="story-meta">
+            {entry.status === "early" && <span className="badge badge--new">New</span>}
+            <span className="badge">{entry.level}</span>
+            <span>About {minutes} min in all</span>
+            <span>4 short steps</span>
+          </div>
         </header>
 
         {entry.contentNote && (
@@ -376,21 +391,6 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
             <p>{entry.contentNote}</p>
           </div>
         )}
-
-        <div className="story-tools">
-          <button className="tool-btn" type="button" data-listen aria-pressed="false">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z" /><path d="M15.5 8.5a5 5 0 0 1 0 7" /><path d="M19 5a10 10 0 0 1 0 14" /></svg>
-            <span data-listen-label>Listen</span>
-          </button>
-          <button className="tool-btn" type="button" data-prefs-open aria-label="Display settings: text size, word help, spacing, and page color">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><path d="M4 7h11M4 12h16M4 17h7" /><circle cx="18" cy="7" r="2" /><circle cx="13" cy="17" r="2" /></svg>
-            <span>Display</span>
-          </button>
-          <a className="tool-btn" href={compare}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.5" /><rect x="13.5" y="4" width="7.5" height="16" rx="1.5" /></svg>
-            <span>Side by side</span>
-          </a>
-        </div>
 
         <div className="listen-bar" data-listen-bar hidden>
           <button type="button" className="listen-bar__btn" data-listen-toggle>Pause</button>
@@ -487,7 +487,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
                         <a className="finish__card" href={`/stories/${next.slug}/`}>
                           <span className="finish__kicker">{next.order > entry.order ? "What happens next in the Bible" : "Back to the start of the Bible"}</span>
                           <span className="finish__name">{nw(next.title)}</span>
-                          <span className="finish__meta">Part {partOfPassage(next.passage).n} of 4 · {next.subtitle}{nextMin ? ` · About ${nextMin} min` : ""}</span>
+                          <span className="finish__meta">Part {partOfPassage(next.passage)?.n} of 4 · {next.subtitle}{nextMin ? ` · About ${nextMin} min` : ""}</span>
                         </a>
                       )}
                       {alike && (
@@ -542,7 +542,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
       <script type="application/json" id="story-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />
       <script src="/static/js/chapter.js?v=9" defer></script>
-      <script src="/static/js/learn.js?v=3" defer></script>
+      <script src="/static/js/learn.js?v=4" defer></script>
       <script dangerouslySetInnerHTML={{ __html: `window.addEventListener('beforeprint',function(){document.documentElement.classList.add('printing');document.querySelectorAll('details').forEach(function(d){d.open=true;});});` }} />
     </>
   );

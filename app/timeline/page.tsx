@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const SECS = ["events", "people", "places", "back", "books"] as const;
 
 function storiesFor(e: Era) {
-  return STORIES.filter((s) => eraOfPassage(s.passage).id === e.id).sort((a, b) => a.order - b.order);
+  return STORIES.filter((s) => eraOfPassage(s.passage)?.id === e.id).sort((a, b) => a.order - b.order);
 }
 
 function Acc({ sec, label, children }: { sec: string; label: string; children: React.ReactNode }) {

@@ -14,7 +14,9 @@ import {
   GENRE_OF,
   type TransSlug,
 } from "@/lib/bible";
-import { storiesForChapter, compareHref } from "@/lib/stories";
+import { storiesForChapter, compareHref, storyMinutes, isReadable, nw } from "@/lib/stories";
+import { eraOfPassage, partOfEra, eraCenter } from "@/lib/timeline";
+import { Bands } from "@/lib/TimelineBands";
 
 type Params = { translation: string; book: string; chapter: string };
 
@@ -151,6 +153,9 @@ export default async function ChapterPage(
 
   // Scene by Scene stories that retell this chapter.
   const chapterStories = storiesForChapter(book, num);
+  // Where this chapter sits on the Bible timeline (null for books it doesn't place).
+  const era = eraOfPassage({ book, chapter: num });
+  const part = era ? partOfEra(era) : null;
   const canCompare = !!loadChapter("web", book, num);
 
   const lastPayload = JSON.stringify({
@@ -168,124 +173,141 @@ export default async function ChapterPage(
         <div className="reading-progress__bar"></div>
       </div>
       <div className="tradition-stripe"></div>
-      <div className="reading-column">
-        <nav className="chapter-nav" aria-label="Chapter navigation">
-          <div className="chapter-nav__group">
+      <div className="reading-column reading-column--rail">
+        {/* The rail: everything for finding your way and changing how you read.
+            Wide screens show it to the left of the text. Narrower screens show
+            it above the text, as a compact toolbar. */}
+        <aside className="rail" aria-label="Chapter tools">
+          <nav className="rail__crumb" aria-label="Breadcrumb">
             <a href={`/${trans}/${book}/`}>&larr; {bk.name}</a>
-          </div>
-          <div className="chapter-nav__current">{refLabel(bk.name, num)}</div>
-          <div className="chapter-nav__group">
-            {withinPrev !== null && (
-              <a href={`/${trans}/${book}/${withinPrev}/`} rel="prev">
-                &larr; Ch {withinPrev}
-              </a>
+          </nav>
+
+          <div className="bigstrip rail__where">
+            {era && part && (
+              <>
+                <Bands mini here={eraCenter(era)} />
+                <span className="bigstrip__kicker"><a href={`/timeline/#${era.id}`}>Bible timeline</a></span>
+                <span className="bigstrip__label">Part {part.n} of 4: {part.name} · <a href={`/timeline/#${era.id}`}>{nw(era.title, 20)}</a></span>
+              </>
             )}
-            {withinNext !== null && (
-              <a href={`/${trans}/${book}/${withinNext}/`} rel="next">
-                Ch {withinNext}
-              </a>
-            )}
+            <nav className="bigstrip__nav" aria-label="Chapters">
+              {prev ? (
+                <a className="bigstrip__link bigstrip__link--before" href={`/${trans}/${prev.slug}/${prev.num}/`} rel="prev">
+                  <span className="bigstrip__dir">&lsaquo; Previous</span>
+                  <span className="bigstrip__name">{refLabel(prev.name, prev.num)}</span>
+                </a>
+              ) : <span />}
+              {next ? (
+                <a className="bigstrip__link bigstrip__link--after" href={`/${trans}/${next.slug}/${next.num}/`} rel="next">
+                  <span className="bigstrip__dir">Next &rsaquo;</span>
+                  <span className="bigstrip__name">{refLabel(next.name, next.num)}</span>
+                </a>
+              ) : <span />}
+            </nav>
           </div>
-        </nav>
 
-        <div className="trans-switch" aria-label="Switch translation">
-          <span className="trans-switch__label">Translation</span>
-          {TRANS_ORDER.map((t) =>
-            t === trans ? (
-              <span
-                key={t}
-                className="trans-switch__btn trans-switch__btn--current"
-                aria-current="page"
-                title={`${tmeta.label}: ${tmeta.plain}`}
-              >
-                {tmeta.nick} <span className="trans-switch__abbr">{tmeta.short}</span>
-              </span>
-            ) : (
-              <a
-                key={t}
-                className="trans-switch__btn"
-                href={`/${t}/${book}/${num}/`}
-                data-trans-switch={t}
-                title={`${TRANSLATIONS[t].label}: ${TRANSLATIONS[t].plain}`}
-              >
-                {TRANSLATIONS[t].nick} <span className="trans-switch__abbr">{TRANSLATIONS[t].short}</span>
-              </a>
-            )
-          )}
-          {canCompare && (
-            <a className="trans-switch__cmp" href={`/compare/${book}/${num}/?a=${trans}`}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.5" /><rect x="13.5" y="4" width="7.5" height="16" rx="1.5" /></svg>
-              Side by side
-            </a>
-          )}
-        </div>
+          {/* Translation: a full list on wide screens, a short menu on narrow ones. */}
+          <div className="rail__group rail__trans" role="group" aria-label="Translation">
+            <p className="rail__label">Translation</p>
+            <ul className="trans-list">
+              {TRANS_ORDER.map((t) => (
+                <li key={t}>
+                  {t === trans ? (
+                    <span className="trans-list__item is-on" aria-current="page">
+                      <span className="trans-list__check" aria-hidden="true">✓</span>
+                      {TRANSLATIONS[t].nick} <span className="trans-list__abbr">{TRANSLATIONS[t].short}</span>
+                    </span>
+                  ) : (
+                    <a className="trans-list__item" href={`/${t}/${book}/${num}/`} data-trans-switch={t} title={`${TRANSLATIONS[t].label}: ${TRANSLATIONS[t].plain}`}>
+                      <span className="trans-list__check" aria-hidden="true"></span>
+                      {TRANSLATIONS[t].nick} <span className="trans-list__abbr">{TRANSLATIONS[t].short}</span>
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <article>
-          <header>
-            <div className="chapter-translation-tag">{tmeta.label}</div>
-            <div className="chapter-title-row">
-              <h1 className="chapter-title">{refLabel(bk.name, num)}</h1>
-              <button className="reading-settings-btn" type="button" data-prefs-open aria-label="Display settings: text size, spacing, font, and page color">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M4 7h11" /><path d="M4 12h16" /><path d="M4 17h7" /><circle cx="18" cy="7" r="2" /><circle cx="13" cy="17" r="2" />
-                </svg>
-                <span>Display</span>
-              </button>
-            </div>
-          </header>
-
-          {chapterStories.map((st) => (
-            <div className="chapter-story" key={st.slug}>
-              <div className="chapter-story__text">
-                <span className="chapter-story__name">This chapter is also a story</span>
-                <span className="chapter-story__line">{st.title}, retold in plain language, one scene at a time.</span>
-              </div>
-              <div className="chapter-story__acts">
-                <a className="rbtn" href={`/stories/${st.slug}/`}>Read the story</a>
-                <a className="rbtn rbtn--subtle" href={compareHref(st, trans)}>Read both side by side</a>
-              </div>
-            </div>
-          ))}
-          {bookIntro && (
-            <details className="chapter-context">
-              <summary className="chapter-context__label">About {bk.name}</summary>
-              <p>{bookIntro}</p>
+          <div className="rail__group rail__tools">
+            <details className="trans-menu">
+              <summary className="rail-btn">Translation: {tmeta.nick} <span className="trans-list__abbr">{tmeta.short}</span></summary>
+              <ul className="trans-menu__list">
+                {TRANS_ORDER.map((t) => (
+                  <li key={t}>
+                    {t === trans ? (
+                      <span className="trans-list__item is-on" aria-current="page"><span className="trans-list__check" aria-hidden="true">✓</span>{TRANSLATIONS[t].nick} <span className="trans-list__abbr">{TRANSLATIONS[t].short}</span></span>
+                    ) : (
+                      <a className="trans-list__item" href={`/${t}/${book}/${num}/`} data-trans-switch={t}><span className="trans-list__check" aria-hidden="true"></span>{TRANSLATIONS[t].nick} <span className="trans-list__abbr">{TRANSLATIONS[t].short}</span></a>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </details>
-          )}
-
-          <div className="chapter-meta-row">
-            <p className="chapter-meta">
-              {ch.verses.length} verse{ch.verses.length === 1 ? "" : "s"} · ~{readMinutes} min read
-            </p>
-            {ch.verses.length > 20 && (
-              <div className="chapter-jump">
-                <label htmlFor="verse-jump">Jump to verse</label>
-                <select id="verse-jump" data-verse-jump aria-label="Jump to verse" defaultValue="">
-                  <option value="" disabled>
-                    Verse…
-                  </option>
-                  {ch.verses.map((v) => (
-                    <option key={v.v} value={v.v}>
-                      {v.v}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            {canCompare && (
+              <a className="rail-btn" href={`/compare/${book}/${num}/?a=${trans}`}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="7.5" height="16" rx="1.5" /><rect x="13.5" y="4" width="7.5" height="16" rx="1.5" /></svg>
+                Side by side
+              </a>
             )}
-          </div>
-
-          <div className="chapter-toggles">
             <button
               type="button"
-              className="layout-toggle__btn chapter-focus-btn"
+              className="rail-btn chapter-focus-btn"
               data-fs-quick="focus"
               data-val="on"
               aria-pressed="false"
               title="Focus (G): hide everything but the text"
             >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3" /></svg>
               Focus
             </button>
+            {ch.verses.length > 20 && (
+              <label className="rail-btn rail-jump" htmlFor="verse-jump">
+                <span>Go to verse</span>
+                <select id="verse-jump" data-verse-jump defaultValue="">
+                  <option value="" disabled>Verse</option>
+                  {ch.verses.map((v) => (
+                    <option key={v.v} value={v.v}>{v.v}</option>
+                  ))}
+                </select>
+              </label>
+            )}
           </div>
+
+          {chapterStories.map((st) => {
+            const min = isReadable(st) ? storyMinutes(st.slug) : null;
+            return (
+              <div className="chapter-story rail-card" key={st.slug}>
+                <p className="rail-card__kicker">
+                  {st.kind === "Teaching" ? "Teaching" : "Story"} · {st.ref}{min ? ` · About ${min} min` : ""}
+                  {st.status === "early" && <span className="badge badge--new">New</span>}
+                </p>
+                <p className="rail-card__title">{st.title}</p>
+                <p className="rail-card__line">{st.subtitle}. Retold in plain words, one scene at a time.</p>
+                <div className="rail-card__acts">
+                  <a className="btn btn--primary" href={`/stories/${st.slug}/`}>Read the story</a>
+                  <a className="btn btn--line" href={compareHref(st, trans)}>Read both side by side</a>
+                </div>
+              </div>
+            );
+          })}
+
+          {bookIntro && (
+            <details className="tl-acc chapter-context">
+              <summary><span className="tl-acc__icon" aria-hidden="true"></span>About {bk.name}<span className="tl-acc__act" aria-hidden="true"></span></summary>
+              <div className="tl-acc__body"><p>{bookIntro}</p></div>
+            </details>
+          )}
+        </aside>
+
+        <article className="rail-text">
+          <header>
+            <div className="chapter-translation-tag">{tmeta.label}</div>
+            <h1 className="chapter-title">{refLabel(bk.name, num)}</h1>
+            <p className="chapter-meta">
+              {ch.verses.length} verse{ch.verses.length === 1 ? "" : "s"} · About {readMinutes} min
+            </p>
+          </header>
+
           <button
             type="button"
             className="focus-exit"

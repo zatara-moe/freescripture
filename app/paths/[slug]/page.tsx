@@ -90,7 +90,7 @@ export default async function PathPage({ params }: { params: Promise<{ slug: str
       </section>
 
       <script type="application/json" id="paths-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(pathsData()).replace(/</g, "\\u003c") }} />
-      <script src="/static/js/learn.js?v=3" defer></script>
+      <script src="/static/js/learn.js?v=4" defer></script>
     </div>
   );
 }

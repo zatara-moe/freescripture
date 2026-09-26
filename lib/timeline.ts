@@ -194,17 +194,24 @@ const WHOLE: Record<string, string> = {
   "1-maccabees": "between-the-testaments", "2-maccabees": "between-the-testaments",
   matthew: "jesus", mark: "jesus", luke: "jesus", john: "jesus",
 };
-export function eraOfPassage(p: { book: string; chapter: number }): Era {
+const CHURCH = ["acts", "romans", "1-corinthians", "2-corinthians", "galatians", "ephesians", "philippians", "colossians",
+  "1-thessalonians", "2-thessalonians", "1-timothy", "2-timothy", "titus", "philemon", "hebrews", "james",
+  "1-peter", "2-peter", "1-john", "2-john", "3-john", "jude", "revelation"];
+const APOCRYPHA = ["1-esdras", "2-esdras", "tobit", "judith", "esther-greek", "wisdom-of-solomon", "sirach", "baruch",
+  "the-song-of-the-three-holy-children", "susanna", "bel-and-the-dragon", "prayer-of-manasseh"];
+/** The era a passage belongs to, or null for a book the timeline does not place. */
+export function eraOfPassage(p: { book: string; chapter: number }): Era | null {
   const { book, chapter: c } = p;
-  let id = WHOLE[book];
+  let id: string | undefined = WHOLE[book];
   if (!id) {
     if (book === "genesis") id = c <= 11 ? "the-beginning" : "the-ancestors";
     else if (book === "exodus") id = c <= 2 ? "years-in-egypt" : "out-of-egypt";
     else if (book === "1-samuel") id = c <= 7 ? "the-judges" : "the-first-kings";
     else if (book === "1-kings") id = c <= 11 ? "the-first-kings" : "the-kingdom-splits";
     else if (book === "2-chronicles") id = c <= 9 ? "the-first-kings" : "the-kingdom-splits";
-    else id = "the-church-begins"; // Acts to Revelation
+    else if (CHURCH.includes(book)) id = "the-church-begins";
+    else if (APOCRYPHA.includes(book)) id = "between-the-testaments";
   }
-  return eraById(id)!;
+  return id ? eraById(id) : null;
 }
-export function partOfPassage(p: { book: string; chapter: number }) { return partOfEra(eraOfPassage(p)); }
+export function partOfPassage(p: { book: string; chapter: number }) { const e = eraOfPassage(p); return e ? partOfEra(e) : null; }

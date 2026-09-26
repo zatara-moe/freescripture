@@ -39,7 +39,7 @@ export default function StoriesPage() {
   // Stories sit in the same 4 parts as the Bible timeline (lib/timeline.ts).
   const partOf = (c: CatItem) => {
     const s = c.id.startsWith("story-") ? storyBySlug(c.id.slice(6)) : null;
-    return s ? partOfPassage(s.passage).n : 0;
+    return s ? partOfPassage(s.passage)?.n ?? 0 : 0;
   };
   const acts = PARTS.map((a) => ({
     ...a,

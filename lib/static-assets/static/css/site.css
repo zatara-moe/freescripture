@@ -429,9 +429,9 @@ button { font: inherit; cursor: pointer; }
 }
 [data-fs-layout="flowing"] .verse__num {
   vertical-align: super;
-  font-size: 14px;
+  font-size: 15px;
   padding: 0;
-  margin-right: 2px;
+  margin-right: 0.3em;
   text-align: left;
 }
 [data-fs-layout="flowing"] .verse__body { display: inline; }
@@ -1498,7 +1498,7 @@ body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
   text-align: left; hyphens: manual; -webkit-hyphens: manual;
   word-spacing: 0.04em; letter-spacing: 0.005em;
 }
-.verse__num { color: var(--ink-hint); font-weight: 700; font-size: 14px; }
+.verse__num { color: var(--ink-hint); font-weight: 700; font-size: 15px; }
 .verse__num:hover { color: var(--gold); }
 .verse--highlight, .verse:target { background: var(--highlight); }
 
@@ -1566,7 +1566,7 @@ a.story-row:hover { box-shadow: var(--card-shadow-hover); }
 
 /* One display control per screen: chapter pages keep their labeled
    "Display" button, so the header "Aa" steps aside there. */
-body:has(.reading-settings-btn) .icon-btn--display { display: none; }
+/* Display now always lives in the header, so the header never shifts between pages. */
 
 /* Night: keep the frosted header opaque enough that text never shows through */
 .site-header, .tab-bar { background: color-mix(in srgb, var(--paper) 97%, transparent); }
@@ -2469,8 +2469,8 @@ p, li { text-wrap: pretty; }
 /* ================= STORIES LIST ================= */
 .cat-page, .mem-page { max-width: 78rem; margin: 0 auto; padding: 0 20px 48px; }
 @media (min-width: 900px) { .cat-page, .mem-page { padding: 0 48px 64px; } }
-.mem-page { max-width: 46rem; }
-@media (min-width: 900px) { .mem-page { padding: 0 24px 64px; } }
+.mem-page { max-width: 40rem; }
+@media (min-width: 900px) { .mem-page { padding: 0 20px 64px; } }
 .cat-head { padding: 28px 0 8px; display: flex; flex-direction: column; gap: 8px; }
 @media (min-width: 900px) { .cat-head { padding-top: 48px; } }
 .cat-title { font-family: var(--font-ui); font-weight: 600; font-size: clamp(32px, 6vw, 44px); letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); }
@@ -2580,7 +2580,7 @@ body.sheet-open { overflow: hidden; }
 
 /* ================= STORY, 4 STEPS ================= */
 .story-page.story-v2 { max-width: 40rem; }
-@media (min-width: 1000px) { .story-page.story-v2 { max-width: 70rem; padding: 0 48px 64px; } .story-v2 .story-head, .story-v2 .story-note, .story-v2 .story-tools, .story-v2 .listen-bar, .story-v2 .first-tip, .story-v2 .steps, .story-v2 .story-crumb { max-width: 70rem; } }
+@media (min-width: 1200px) { .story-page.story-v2 { max-width: 70rem; padding: 0 48px 64px; } .story-v2 .story-head, .story-v2 .story-note, .story-v2 .story-tools, .story-v2 .listen-bar, .story-v2 .first-tip, .story-v2 .steps, .story-v2 .story-crumb { max-width: 70rem; } }
 .story-subtitle { font-family: var(--font-body); font-size: 19px; line-height: 1.45; color: var(--ink-soft); margin: -4px 0 12px; }
 .story-v2 .story-title { font-family: var(--font-ui); font-weight: 600; letter-spacing: -0.03em; }
 .story-v2 .story-note__label::before { content: "! "; }
@@ -2616,7 +2616,7 @@ body.sheet-open { overflow: hidden; }
 @media (min-width: 640px) { .steps__num { display: inline; color: var(--ink-hint); font-weight: 500; } }
 
 .story-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
-@media (min-width: 1000px) { .story-layout { grid-template-columns: minmax(0, 40rem) minmax(0, 1fr); gap: 48px; align-items: start; } }
+@media (min-width: 1200px) { .story-layout { grid-template-columns: minmax(0, 40rem) minmax(0, 1fr); gap: 48px; align-items: start; } }
 .step { padding-top: 12px; }
 .story-v2:not(.js) .step + .step { margin-top: 40px; border-top: 1px solid var(--rule); }
 .step__head { display: flex; flex-direction: column; gap: 2px; margin: 8px 0 6px; }
@@ -2662,8 +2662,8 @@ body.sheet-open { overflow: hidden; }
 .verse-panel__verse { padding-left: 14px; border-left: 3px solid var(--gold-leaf, #B8892B); }
 .verse-panel__verse p { font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--ink); }
 .verse-panel__foot { margin-top: 14px; font-family: var(--font-body); font-size: 13px; color: var(--ink-hint); }
-@media (min-width: 1000px) { .verse-panel { position: sticky; top: 96px; } }
-@media (max-width: 999px) {
+@media (min-width: 1200px) { .verse-panel { position: sticky; top: 96px; } }
+@media (max-width: 1199px) {
   .story-v2:not(.js) .verse-panel { display: none; }
   .story-v2.js .verse-panel {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; max-height: 80vh; overflow-y: auto;
@@ -3148,3 +3148,116 @@ span.bigstrip__link { background: transparent; border: 1px dashed var(--rule); }
 .bigstrip .tl-band__here { width: 12px; margin: -6px 0 0 -6px; box-shadow: 0 0 0 2px var(--paper-warm); }
 .bigstory__timeline { margin: 2px 0 8px; }
 html.tl-pre .tl-panel { display: none; }
+
+/* ================= READING FRAME (September 2026) =================
+   One frame on every page: the same 78rem width as the header.
+   Reading pages split it into a rail (finding your way and tools), the
+   text, and a margin for notes. The rail is in the same place on every
+   reading page. Below 1200px the rail sits above the text as a compact
+   toolbar. Spacing: 8 and 16px inside a group, 24 to 32px between groups. */
+:root { --rail-w: 208px; --text-w: 600px; --frame-gap: 36px; }
+
+.rail { display: grid; gap: 16px; margin: 4px 0 28px; min-width: 0; }
+.rail__crumb { margin: 0; }
+.rail__crumb a { font-family: var(--font-ui); font-size: 15px; font-weight: 700; color: var(--gold); text-decoration: none; }
+.rail__crumb a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.rail .bigstrip { margin: 0; }
+.rail__label { font-family: var(--font-ui); font-size: 13px; font-weight: 600; color: var(--ink-faded); margin: 0 0 6px; }
+.rail__trans { display: none; }
+.rail__tools { display: flex; flex-wrap: wrap; gap: 8px; }
+.rail-btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px;
+  border: 0; border-radius: 10px; background: var(--white); box-shadow: inset 0 0 0 1.5px var(--rule);
+  font-family: var(--font-ui); font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; cursor: pointer;
+}
+.rail-btn:hover { box-shadow: inset 0 0 0 1.5px var(--gold); color: var(--gold); }
+.rail-btn:focus-visible, .trans-list__item:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.rail-btn svg { flex: none; }
+.chapter-focus-btn.rail-btn { border: 0; background: var(--white); }
+.rail-jump select { font: inherit; font-weight: 700; color: var(--gold); border: 0; background: transparent; padding: 0 2px; cursor: pointer; }
+details.trans-menu { position: relative; }
+details.trans-menu > summary { list-style: none; }
+details.trans-menu > summary::-webkit-details-marker { display: none; }
+details.trans-menu > summary::after { content: "\25BE"; font-size: 13px; color: var(--ink-faded); }
+.trans-menu__list { position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; min-width: 230px; margin: 0; padding: 6px; list-style: none; background: var(--white); border-radius: 10px; box-shadow: var(--card-shadow-hover), 0 10px 28px rgba(0,0,0,.14); display: grid; gap: 2px; }
+.trans-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.trans-list__item { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; border-radius: 8px; font-family: var(--font-ui); font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; }
+a.trans-list__item:hover { background: var(--paper-warm); }
+.trans-list__item.is-on { background: var(--gold); color: var(--on-gold); }
+.trans-list__check { width: 14px; flex: none; text-align: center; }
+.trans-list__abbr { font-size: 12px; font-weight: 600; opacity: .75; margin-left: auto; }
+.rail-btn .trans-list__abbr { margin-left: 0; }
+
+.chapter-story.rail-card {
+  display: grid; gap: 6px; max-width: none; margin: 0; padding: 14px 16px 16px;
+  border-radius: 10px; background: var(--white); box-shadow: var(--card-shadow); border-top: 4px solid var(--gold);
+}
+.rail-card__kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; font-family: var(--font-ui); font-size: 13px; font-weight: 600; color: var(--ink-faded); }
+.rail-card__title { margin: 0; font-family: var(--font-ui); font-size: 19px; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); }
+.rail-card__line { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink-soft); }
+.rail-card__acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.rail-card__acts .btn { min-height: 40px; padding: 0 14px; font-size: 15px; }
+.rail details.chapter-context { padding: 0; margin: 0; border-left: 0; border-bottom: 1px solid var(--rule); border-radius: 0; background: none; }
+.rail details.chapter-context > summary { display: flex; min-height: 0; margin: 0; }
+.rail .chapter-context .tl-acc__body { padding-left: 0; }
+.rail .story-tools, .rail .story-versions { margin: 0; }
+.rail .path-bar { margin: 0; }
+.rail-text > header { margin-bottom: 24px; }
+.rail-text .chapter-title { margin: 2px 0 6px; }
+[data-fs-focus="on"] .rail { display: none; }
+
+@media (min-width: 1200px) {
+  .reading-column, .mem-page, .trans-landing, .story-page.story-v2 {
+    max-width: 78rem; margin: 0 auto; padding: 24px 48px 64px;
+    display: grid; grid-template-columns: var(--rail-w) minmax(0, var(--text-w)) minmax(0, 1fr);
+    column-gap: var(--frame-gap); align-content: start;
+  }
+  .reading-column > *, .mem-page > *, .trans-landing > *, .story-page.story-v2 > * { grid-column: 2; min-width: 0; max-width: none; }
+  .reading-column > .rail, .story-page.story-v2 > .rail, .reading-column > .chapter-nav, .reading-column > .story-crumb {
+    grid-column: 1; grid-row: 1 / span 60; align-self: start; margin: 0;
+    position: sticky; top: 88px; max-height: calc(100vh - 104px); overflow-y: auto; scrollbar-width: thin;
+  }
+  .reading-column > .chapter-nav { flex-direction: column; align-items: flex-start; gap: 8px; border: 0; padding: 0; }
+  .reading-column > .chapter-nav .chapter-nav__group { justify-content: flex-start; }
+  .rail { gap: 24px; padding-bottom: 8px; }
+  .rail__trans { display: block; }
+  details.trans-menu { display: none; }
+  .rail__tools { flex-direction: column; align-items: stretch; }
+  .rail-btn { width: 100%; }
+  .rail .story-tools { flex-direction: column; align-items: stretch; }
+  .rail .story-tools .tool-btn { width: 100%; justify-content: flex-start; }
+  .rail-card__acts .btn { width: 100%; justify-content: center; }
+  .rail .bigstrip__nav { grid-template-columns: minmax(0, 1fr); }
+  .rail .bigstrip__link--after { text-align: left; }
+  .story-page.story-v2 > .story-layout { grid-column: 2 / 4; grid-template-columns: minmax(0, var(--text-w)) minmax(0, 1fr); column-gap: var(--frame-gap); }
+  .story-page.story-v2 > .story-credit { grid-column: 2; }
+}
+@media (min-width: 1200px) {
+  /* Rail and text start on the same line */
+  .reading-column > .rail + *, .reading-column > .chapter-nav + *, .reading-column > .story-crumb + *,
+  .story-page.story-v2 > .rail + * { margin-top: 0; }
+  .rail-text > header > :first-child, .reading-column > .rail + * > :first-child,
+  .reading-column > .chapter-nav + * > :first-child { margin-top: 0; }
+  .reading-column > .chapter-nav .chapter-nav__current { display: none; }
+}
+@media (min-width: 1200px) {
+  .reading-column > .page-head, .reading-column > .parable-head, .reading-column > .path-head,
+  .reading-column > .story-crumb, .mem-page > .cat-head { padding-top: 0; }
+}
+@media (min-width: 1200px) {
+  .reading-column > .chapter-nav + .trans-switch, .story-page.story-v2 > .story-head, .rail .story-crumb { padding-top: 0; }
+}
+/* Below 1200px: title first, then the compact toolbar, then the text. */
+@media (max-width: 1199px) {
+  .reading-column--rail, .story-page.story-v2 { display: flex; flex-direction: column; }
+  .reading-column--rail > .rail, .reading-column--rail > .rail-text, .story-page.story-v2 > .rail { display: contents; }
+  .reading-column--rail .rail-text > *, .story-page.story-v2 > * { order: 3; }
+  .reading-column--rail .rail > *, .story-page.story-v2 > .rail > * { order: 2; margin: 0 0 16px; }
+  .reading-column--rail .rail > .rail__crumb, .story-page.story-v2 > .rail > .rail__crumb { order: 0; margin: 4px 0 12px; }
+  .reading-column--rail .rail-text > header, .story-page.story-v2 > .story-head { order: 1; margin-bottom: 16px; }
+  .reading-column--rail .rail > details.chapter-context { margin-bottom: 24px; }
+}
+@media (max-width: 699px) {
+  .rail-card__line { display: none; }
+}
+.rail details.chapter-context { width: 100%; max-width: none; }

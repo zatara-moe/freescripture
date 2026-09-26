@@ -28,7 +28,7 @@ export default function MemorizePage() {
       </div>
 
       <ol className="mem-list" data-mem-list></ol>
-      <script src="/static/js/learn.js?v=3" defer></script>
+      <script src="/static/js/learn.js?v=4" defer></script>
     </div>
   );
 }
