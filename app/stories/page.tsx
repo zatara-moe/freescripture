@@ -53,8 +53,8 @@ export default function StoriesPage() {
   return (
     <div className="cat-page">
       <header className="cat-head">
-        <h1 className="cat-title">Stories</h1>
-        <p className="cat-lede">Bible stories, parables, and verses for how you feel, explained in plain words. Pick one to see what&rsquo;s inside before you open it.</p>
+        <h1 className="cat-title ph-title">Bible stories</h1>
+        <p className="cat-lede ph-lede">Bible stories, parables, and verses for how you feel, explained in plain words. Pick one to see what&rsquo;s inside before you open it.</p>
       </header>
 
       <div className="cat-tools">

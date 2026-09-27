@@ -97,8 +97,9 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
       </nav>
 
       <header className="cmp-head">
-        <h1 className="cmp-title">{refLabel(name, num)}, side by side</h1>
-        <p className="cmp-lede">
+        <p className="ph-eyebrow">Side by side</p>
+        <h1 className="cmp-title ph-title">{refLabel(name, num)}</h1>
+        <p className="cmp-lede ph-lede">
           {hasStory
             ? "Our retelling next to the Bible text it comes from. Each row lines up one scene with the verses it retells."
             : "Two versions of the same chapter. Each row is one verse, so you can see how the wording changes."}

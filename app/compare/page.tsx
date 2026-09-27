@@ -26,8 +26,8 @@ export default function CompareHub() {
   return (
     <div className="reading-column cmp-hub">
       <header className="page-head">
-        <h1 className="page-title">Side by side</h1>
-        <p className="page-lede">
+        <h1 className="page-title ph-title">Compare Bible translations side by side</h1>
+        <p className="page-lede ph-lede">
           Read two versions at once. Put a Scene by Scene story next to the
           Bible text it retells, or see how {t.web.nick}, {t.kjv.nick}, and {t.bbe.nick} English
           say the same verse.

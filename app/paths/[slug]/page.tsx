@@ -41,9 +41,9 @@ export default async function PathPage({ params }: { params: Promise<{ slug: str
       </nav>
 
       <header className="path-head">
-        <span className="path-head__kicker"><Dots parts={["Reading path", `${steps.length} stories`]} /></span>
-        <h1 className="path-head__title">{nw(p.title)}</h1>
-        <p className="path-head__q">{p.question}</p>
+        <span className="path-head__kicker ph-eyebrow"><Dots parts={["Reading path", `${steps.length} stories`]} /></span>
+        <h1 className="path-head__title ph-title">{nw(p.title)}</h1>
+        <p className="path-head__q ph-lede">{p.question}</p>
         <p className="path-head__lede">{p.lede}</p>
         <p className="path-head__meta">About {total} minutes in all. About {Math.round(total / steps.length)} minutes each.</p>
       </header>

@@ -3492,3 +3492,84 @@ h1, h2, h3, h4, summary, figcaption, th, dt, label, button, .btn,
 .bigstrip__label { display: block; }
 /* If the title font hasn't loaded, a long word hyphenates instead of being cut. */
 .cover2__title--sm { hyphens: auto; }
+
+/* ==========================================================================
+   Headings: one system for every page (content design review, Sept 26 2026)
+
+   Every page opens the same way:
+     eyebrow  (optional) what kind of page this is: "Story · 1 Samuel 17"
+     H1       the name people know and search for
+     lede     one or two plain sentences: what's here, or what happens
+   Then two heading sizes inside the page:
+     section  h2 for parts of a page ("Stories you may already know")
+     card     h2 inside a card or panel ("How it works")
+   Eyebrows are grey, not lapis: lapis is only for things you can tap.
+   ========================================================================== */
+.ph-eyebrow.ph-eyebrow {
+  display: block; margin: 0 0 8px;
+  font-family: var(--font-ui); font-size: 14px; font-weight: 700; line-height: 1.35;
+  letter-spacing: 0.01em; text-transform: none; color: var(--ink-faded);
+}
+.ph-eyebrow a { color: inherit; }
+.ph-title.ph-title {
+  margin: 0;
+  font-family: var(--font-ui); font-weight: 600;
+  font-size: clamp(32px, 1.35rem + 2.6vw, 44px);
+  line-height: 1.1; letter-spacing: -0.03em; color: var(--ink);
+  text-wrap: balance; max-width: 22ch;
+}
+.ph-title--home.ph-title--home {
+  font-size: clamp(30px, 8.8vw, 56px); line-height: 1.05; max-width: none;
+}
+.ph-line { display: block; white-space: nowrap; }
+@media (max-width: 340px) { .ph-line { white-space: normal; } }
+.ph-lede.ph-lede {
+  margin: 12px 0 0; max-width: 38rem;
+  font-family: var(--font-body); font-size: clamp(17px, 1rem + 0.25vw, 19px);
+  font-weight: 400; font-style: normal; line-height: 1.55; color: var(--ink-soft);
+  text-wrap: pretty;
+}
+/* Pages that had their own spacing between title and lede */
+.home4-hero__text { gap: 0; }
+.cat-head { gap: 0; }
+.story-v2 .story-subtitle.ph-lede { margin-bottom: 12px; }
+.parable-also { margin-top: 8px; }
+
+/* Home: the headline sits at the top of its column, level with the
+   "New here?" card, instead of floating in the middle. */
+@media (min-width: 1000px) { .home4-hero { align-items: start; } .home4-hero__text { padding-top: 24px; } }
+
+/* Section headings: the same size and weight on every page. */
+.home4-h2.home4-h2, .shelf2__title.shelf2__title, .stories-section__title.stories-section__title,
+.parable-theme__title.parable-theme__title, .bible-test__title.bible-test__title,
+.step__title.step__title, .verse-disambig-rest__h.verse-disambig-rest__h,
+.about-page .prose h2, .tl-intro ~ section h2:not([class]) {
+  font-family: var(--font-ui); font-weight: 600;
+  font-size: clamp(22px, 1.2rem + 0.6vw, 26px);
+  line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); text-transform: none;
+}
+/* Card and panel headings */
+.start-card__title.start-card__title, .verse-panel__title.verse-panel__title,
+.mem2__how-title.mem2__how-title, .cat-filters__title.cat-filters__title, .pv__title.pv__title,
+.cmp-row__head.cmp-row__head {
+  font-family: var(--font-ui); font-weight: 600;
+  font-size: clamp(18px, 1rem + 0.3vw, 21px); line-height: 1.25; letter-spacing: -0.01em;
+}
+/* Small list labels ("Chapters", "For a hard day") */
+.book-section-label.book-section-label, .book-chapters-label.book-chapters-label {
+  font-family: var(--font-ui); font-size: 14px; font-weight: 700; letter-spacing: 0.01em;
+  text-transform: none; color: var(--ink-faded);
+}
+.story-box__title.story-box__title { font-weight: 600; }
+
+/* Space between every page head and the content under it */
+.page-head { padding-bottom: 24px; }
+.book-head, .parable-head { padding-bottom: 20px; }
+/* A section heading and its one-line intro read as a pair */
+.stories-section__title + .section-lede, .home4-h2 + p, .shelf2__title + p { margin-top: 6px; }
+/* Timeline strip: "Part 4 of 4: The King Arrives" on one line, the era on
+   the next, instead of breaking wherever the "·" fell. */
+.bigstrip__era { display: block; font-weight: 500; color: var(--ink-soft); }
+/* The kicker was a flex row, which put uneven gaps around each "·". */
+.rail-card__kicker.rail-card__kicker { display: block; }
+.rail-card__kicker .badge { margin-left: 4px; vertical-align: 1px; }

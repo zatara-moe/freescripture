@@ -30,8 +30,8 @@ export default function NeedsHub() {
   return (
     <div className="reading-column needs-hub">
       <header className="page-head">
-        <h1 className="page-title">Verses for how you feel</h1>
-        <p className="page-lede">Pick what fits. Read it, or send it to someone.</p>
+        <h1 className="page-title ph-title">Bible verses for how you feel</h1>
+        <p className="page-lede ph-lede">Pick what fits. Read it, or send it to someone.</p>
       </header>
 
       <h2 className="book-section-label">For a hard day</h2>

@@ -122,8 +122,9 @@ export default async function BookLanding(
       </div>
 
       <header className="book-head">
-        <h1 className="book-title">{bk.name}</h1>
-        {intro && <p className="book-intro">{intro}</p>}
+        <p className="ph-eyebrow">{tmeta.label}</p>
+        <h1 className="book-title ph-title">{bk.name}</h1>
+        {intro && <p className="book-intro ph-lede">{intro}</p>}
       </header>
 
       {(() => {

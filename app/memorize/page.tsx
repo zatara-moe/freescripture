@@ -57,8 +57,8 @@ export default function MemorizePage() {
   return (
     <div className="mem2">
       <header className="mem2__head">
-        <h1 className="cat-title">Memorize</h1>
-        <p className="cat-lede">Learn a Bible line by heart, a few minutes at a time. Pick a line below and practice it right here.</p>
+        <h1 className="cat-title ph-title">Memorize Bible verses</h1>
+        <p className="cat-lede ph-lede">Learn one line by heart, a few minutes at a time. Pick a line below and practice it right here.</p>
         <p className="mem-page__private">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
           Saved on this device only. No account.

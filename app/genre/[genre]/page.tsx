@@ -55,8 +55,9 @@ export default async function GenrePage(
       </nav>
 
       <header className="page-head">
-        <h1 className="page-title">{g.h1}</h1>
-        <p className="page-lede">{g.intro}</p>
+        <p className="ph-eyebrow">Books of the Bible by kind</p>
+        <h1 className="page-title ph-title">{g.title || g.h1}</h1>
+        <p className="page-lede ph-lede">{g.title ? `${g.h1}. ${g.intro}` : g.intro}</p>
       </header>
 
       <div className="book-grid">

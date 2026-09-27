@@ -13,8 +13,8 @@ export default function Search() {
   return (
     <div className="reading-column search-page">
       <header className="page-head">
-        <h1 className="page-title">Search</h1>
-        <p className="page-lede">Type a story, a person, or a few words from a verse. Stories and familiar passages show first, then verses.</p>
+        <h1 className="page-title ph-title">Search stories and verses</h1>
+        <p className="page-lede ph-lede">Type a story, a person, or a few words from a verse. Stories and familiar passages show first, then verses.</p>
       </header>
 
       <div className="search-box">

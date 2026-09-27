@@ -188,7 +188,7 @@ export default async function ChapterPage(
               <>
                 <Bands mini here={eraCenter(era)} />
                 <span className="bigstrip__kicker"><a href={`/timeline/#${era.id}`}>Bible timeline</a></span>
-                <span className="bigstrip__label"><Dots parts={[{ text: <><span className="keep">Part {part.n} of 4:</span> <span className="keep">{part.name}</span></>, wrap: true }, <a href={`/timeline/#${era.id}`}>{era.title}</a>]} /></span>
+                <span className="bigstrip__label"><span className="keep">Part {part.n} of 4:</span> <span className="keep">{part.name}</span><a className="bigstrip__era" href={`/timeline/#${era.id}`}>{era.title}</a></span>
               </>
             )}
             <nav className="bigstrip__nav" aria-label="Chapters">
@@ -302,8 +302,8 @@ export default async function ChapterPage(
 
         <article className="rail-text">
           <header>
-            <div className="chapter-translation-tag">{tmeta.label}</div>
-            <h1 className="chapter-title">{refLabel(bk.name, num)}</h1>
+            <div className="chapter-translation-tag ph-eyebrow">{tmeta.label}</div>
+            <h1 className="chapter-title ph-title">{refLabel(bk.name, num)}</h1>
             <p className="chapter-meta">
               <Dots parts={[`${ch.verses.length} verse${ch.verses.length === 1 ? "" : "s"}`, `About ${readMinutes} min`]} />
             </p>

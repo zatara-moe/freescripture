@@ -3,8 +3,8 @@ export default function NotFound() {
   return (
     <div className="reading-column notfound-page">
       <header className="page-head">
-        <h1 className="page-title">That page is not here</h1>
-        <p className="page-lede">
+        <h1 className="page-title ph-title">That page is not here</h1>
+        <p className="page-lede ph-lede">
           The link may be old, or the chapter may not exist in that book. Here are
           a few ways back.
         </p>

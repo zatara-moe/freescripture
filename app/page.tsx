@@ -58,8 +58,11 @@ export default function Home() {
     <div className="home4">
       <section className="home4-hero" aria-labelledby="home-title">
         <div className="home4-hero__text">
-          <h1 className="home4-title" id="home-title">The Bible, one scene at a time.</h1>
-          <p className="home4-lede">Bible stories explained in plain words, with the Bible verse beside every paragraph. Free, with no account and no ads.</p>
+          <p className="ph-eyebrow"><Dots parts={["Free", "No account", "No ads"]} /></p>
+          <h1 className="home4-title ph-title ph-title--home" id="home-title">
+            <span className="ph-line">Bible stories,</span> <span className="ph-line">one scene at a time</span>
+          </h1>
+          <p className="home4-lede ph-lede">Explained in plain words, with the Bible verse beside every paragraph. Start with a story you already know.</p>
         </div>
 
         <div className="home4-hero__side">

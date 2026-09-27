@@ -98,9 +98,9 @@ export default async function TranslationLanding(
     <div className="bible-home">
       <JsonLd data={jsonld} />
       <header className="bible-home__head">
-        <p className="bible-home__kicker">Full Bible</p>
-        <h1 className="bible-home__title">{tmeta.label}</h1>
-        <p className="bible-home__desc">{tmeta.description}</p>
+        <p className="bible-home__kicker ph-eyebrow">Full Bible</p>
+        <h1 className="bible-home__title ph-title">{tmeta.label}</h1>
+        <p className="bible-home__desc ph-lede">{tmeta.description}</p>
         <div className="bible-vers" role="group" aria-label="Choose a translation">
           <span className="bible-vers__label">Translation:</span>
           {TRANS_ORDER.map((t) =>

@@ -126,9 +126,8 @@ export default function TimelinePage() {
       {/* Hides the full list for the moment before timeline.js takes over, so the page doesn't jump. Shows it again if the script never arrives. */}
       <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('tl-pre');setTimeout(function(){var r=document.querySelector('[data-tl]');if(!r||!r.classList.contains('tl-js'))document.documentElement.classList.remove('tl-pre')},6000)" }} />
       <header className="tl-intro">
-        <p className="tl-kicker">Bible timeline</p>
-        <h1 className="tl-title">The Bible&rsquo;s story, in time order</h1>
-        <p className="tl-lede">About 2,000 years of history, from Abraham to the first churches. Told from a Christian perspective, in plain words.</p>
+        <h1 className="tl-title ph-title">Bible timeline</h1>
+        <p className="tl-lede ph-lede">The whole Bible story in time order: about 2,000 years, from Abraham to the first churches. Told from a Christian perspective, in plain words.</p>
         <p className="tl-hint">Tap any part to read more. About 2 minutes to look through.</p>
       </header>
 

@@ -414,7 +414,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           <nav className="bigstrip" aria-label="Where this story fits in the Bible">
             <Bands mini here={eraCenter(era)} />
             <span className="bigstrip__kicker"><a href={`/timeline/#${era.id}`}>Bible timeline</a></span>
-            <span className="bigstrip__label"><Dots parts={[{ text: <><span className="keep">Part {act.n} of 4:</span> <span className="keep">{act.name}</span></>, wrap: true }, <a href={`/timeline/#${era.id}`}>{era.title}</a>]} /></span>
+            <span className="bigstrip__label"><span className="keep">Part {act.n} of 4:</span> <span className="keep">{act.name}</span><a className="bigstrip__era" href={`/timeline/#${era.id}`}>{era.title}</a></span>
             <div className="bigstrip__nav">
               {hop(before, "before")}
               {hop(after, "after")}
@@ -444,9 +444,9 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         </aside>
 
         <header className="story-head">
-          <div className="story-eyebrow"><Dots parts={[entry.kind === "Teaching" ? "Teaching" : entry.kind === "Poetry and Prayer" ? "Prayer" : "Story", entry.ref]} /></div>
-          <h1 className="story-title">{nw(entry.title)}</h1>
-          <p className="story-subtitle">{entry.subtitle}</p>
+          <div className="story-eyebrow ph-eyebrow"><Dots parts={[entry.kind === "Teaching" ? "Teaching" : entry.kind === "Poetry and Prayer" ? "Prayer" : "Story", entry.ref]} /></div>
+          <h1 className="story-title ph-title">{nw(entry.title)}</h1>
+          <p className="story-subtitle ph-lede">{entry.subtitle}</p>
           <div className="story-meta">
             {entry.status === "early" && <span className="badge badge--new">New</span>}
             <span className="badge">{entry.level}</span>

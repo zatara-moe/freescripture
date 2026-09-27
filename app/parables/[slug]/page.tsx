@@ -11,6 +11,7 @@ import {
 } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
 import { STORIES, isReadable, storyHref, storyMinutes } from "@/lib/stories";
+import { Dots } from "@/lib/Meta";
 
 type Params = { slug: string };
 
@@ -114,12 +115,12 @@ export default async function ParablePage({
       </nav>
 
       <header className="parable-head">
-        <div className="parable-head__theme">{theme?.label}</div>
-        <h1 className="parable-title">{p.title}</h1>
+        <div className="parable-head__theme ph-eyebrow"><Dots parts={["Parable", refLabel(p.ref)]} /></div>
+        <h1 className="parable-title ph-title">{p.title}</h1>
+        <p className="parable-line ph-lede">{p.line}</p>
         {p.also.length > 0 && (
           <p className="parable-also">Also called {p.also.join(", ")}</p>
         )}
-        <p className="parable-line">{p.line}</p>
       </header>
 
       {story && (

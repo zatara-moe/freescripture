@@ -12,7 +12,8 @@ export default function About() {
   return (
     <div className="reading-column about-page">
       <header className="page-head">
-        <h1 className="page-title">About Free Scripture</h1>
+        <h1 className="page-title ph-title">About Free Scripture</h1>
+        <p className="page-lede ph-lede">Who makes it, how the stories are written, and where the Bible text comes from.</p>
       </header>
       <div className="prose">
         <p>

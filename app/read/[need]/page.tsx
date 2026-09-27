@@ -97,8 +97,9 @@ export default async function NeedPage(
       </nav>
 
       <div className="page-head">
-        <h1 className="page-title">{n.h1}</h1>
-        <p className="page-lede">{n.lede}</p>
+        <p className="ph-eyebrow">Bible verses for how you feel</p>
+        <h1 className="page-title ph-title">{n.h1}</h1>
+        <p className="page-lede ph-lede">{n.lede}</p>
       </div>
 
       <div className="passage-list">

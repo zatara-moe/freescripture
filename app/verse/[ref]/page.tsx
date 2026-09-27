@@ -111,11 +111,12 @@ export default async function VersePage({
       </nav>
 
       <header className="verse-disambig-head">
-        <div className="verse-disambig-head__label">
-          {chapter}:{verse}
-        </div>
+        <p className="ph-eyebrow">Verse lookup</p>
+        <h1 className="verse-disambig-head__label ph-title">
+          {chapter}:{verse} in the Bible
+        </h1>
         {books.length > 1 && (
-          <p className="verse-disambig-head__note">
+          <p className="verse-disambig-head__note ph-lede">
             Chapter {chapter}, verse {verse} appears in {books.length} books of
             the Bible. Here is {primary}{MOST_MEANT[`${chapter}:${verse}`] === primary ? ", the one most people mean" : ", the first in Bible order"}.
             Every other place it appears is listed below.

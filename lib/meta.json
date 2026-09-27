@@ -528,7 +528,8 @@
       "h1": "The books that read like a novel",
       "intro": "Battles, families, kings, exiles, and a wandering teacher. The parts of the Bible that move like a story.",
       "meta_title": "Books of the Bible that read like a novel",
-      "meta_desc": "The narrative books, from Genesis to Acts. The story parts of the Bible, free to read."
+      "meta_desc": "The narrative books, from Genesis to Acts. The story parts of the Bible, free to read.",
+      "title": "Story books of the Bible"
     },
     {
       "slug": "poetry",
@@ -538,7 +539,8 @@
       "h1": "The books that read like music",
       "intro": "Songs, laments, and love poems, written to be felt as much as understood. The psalms are here.",
       "meta_title": "The poetry books of the Bible",
-      "meta_desc": "Psalms, Song of Solomon, and Lamentations. The Bible's songs and poems, free to read."
+      "meta_desc": "Psalms, Song of Solomon, and Lamentations. The Bible's songs and poems, free to read.",
+      "title": "Poetry books of the Bible"
     },
     {
       "slug": "wisdom",
@@ -548,7 +550,8 @@
       "h1": "The books about how to live",
       "intro": "Hard-won advice on work, money, suffering, and time. Plain wisdom for ordinary days.",
       "meta_title": "The wisdom books of the Bible",
-      "meta_desc": "Job, Proverbs, and Ecclesiastes. The Bible's books of practical wisdom, free to read."
+      "meta_desc": "Job, Proverbs, and Ecclesiastes. The Bible's books of practical wisdom, free to read.",
+      "title": "Wisdom books of the Bible"
     },
     {
       "slug": "law",
@@ -558,7 +561,8 @@
       "h1": "The original constitution",
       "intro": "The codes and covenants a young nation was built on. Rules about worship, justice, and daily life that shaped three world religions.",
       "meta_title": "The law books of the Bible",
-      "meta_desc": "Leviticus and Deuteronomy. The Bible's books of law, free to read."
+      "meta_desc": "Leviticus and Deuteronomy. The Bible's books of law, free to read.",
+      "title": "Law books of the Bible"
     },
     {
       "slug": "letters",
@@ -568,7 +572,8 @@
       "h1": "Mail from the early church",
       "intro": "Real letters to real congregations: arguing, encouraging, and sorting out how to live together.",
       "meta_title": "The letters of the New Testament",
-      "meta_desc": "The epistles, from Romans to Jude. Letters written to the early church, free to read."
+      "meta_desc": "The epistles, from Romans to Jude. Letters written to the early church, free to read.",
+      "title": "Letters of the New Testament"
     },
     {
       "slug": "prophecy",
@@ -578,7 +583,8 @@
       "h1": "People speaking for God",
       "intro": "Warnings, visions, and promises delivered to real people in real crises. Harder to read, harder to ignore.",
       "meta_title": "The prophetic books of the Bible",
-      "meta_desc": "Isaiah through Malachi, and Revelation. The Bible's prophets, free to read."
+      "meta_desc": "Isaiah through Malachi, and Revelation. The Bible's prophets, free to read.",
+      "title": "Prophecy books of the Bible"
     }
   ],
   "NEEDS": [
@@ -587,7 +593,7 @@
       "group": "hard",
       "accent": "poetry",
       "short": "When you're afraid",
-      "h1": "Verses for when you're afraid",
+      "h1": "Bible verses for when you're afraid",
       "lede": "For a hard night of your own, or to send to someone facing one. Read one, or send a line to a friend.",
       "card": "For fear, big or small. God is with you.",
       "meta_title": "Bible verses for when you're afraid",
@@ -635,7 +641,7 @@
       "group": "hard",
       "accent": "prophecy",
       "short": "When you're grieving",
-      "h1": "Verses for grief and loss",
+      "h1": "Bible verses for grief and loss",
       "lede": "For your own loss, or to send to someone who is grieving. Read a passage, or send a verse.",
       "card": "For loss, and the God who weeps with you.",
       "meta_title": "Bible verses for grief and loss",
@@ -683,7 +689,7 @@
       "group": "hard",
       "accent": "wisdom",
       "short": "When you're worn out",
-      "h1": "Verses for strength",
+      "h1": "Bible verses for strength",
       "lede": "For when you or a friend feel worn out. Read it, or send it.",
       "card": "For when you're tired and need strength.",
       "meta_title": "Bible verses for strength and weariness",
@@ -731,7 +737,7 @@
       "group": "hard",
       "accent": "narrative",
       "short": "When you've messed up",
-      "h1": "Verses for guilt and starting over",
+      "h1": "Bible verses for guilt and starting over",
       "lede": "For shame and a fresh start. Read one, or send it to someone who needs it.",
       "card": "For shame, regret, and starting over.",
       "meta_title": "Bible verses for guilt and starting over",
@@ -779,7 +785,7 @@
       "group": "hard",
       "accent": "letters",
       "short": "When someone hurt you",
-      "h1": "Verses about forgiving someone",
+      "h1": "Bible verses about forgiving someone",
       "lede": "For hurt that is hard to let go. Read one, or send it.",
       "card": "For hurt that is hard to let go.",
       "meta_title": "Bible verses about forgiveness",
@@ -827,7 +833,7 @@
       "group": "hard",
       "accent": "law",
       "short": "When you need wisdom",
-      "h1": "Verses for wisdom",
+      "h1": "Bible verses for wisdom",
       "lede": "For decisions and how to live. Read one, or send it to someone who is deciding.",
       "card": "For decisions and how to live.",
       "meta_title": "Bible verses for wisdom and decisions",
@@ -875,7 +881,7 @@
       "group": "hard",
       "accent": "poetry",
       "short": "When you feel alone",
-      "h1": "Verses for when you feel alone",
+      "h1": "Bible verses for when you feel alone",
       "lede": "For the nights when it feels like nobody gets it. These were written by people who felt that too.",
       "card": "You are less alone than it feels.",
       "meta_title": "Bible verses for when you feel alone",
@@ -923,7 +929,7 @@
       "group": "hard",
       "accent": "letters",
       "short": "When your mind won't slow down",
-      "h1": "Verses for when your mind won't slow down",
+      "h1": "Bible verses for when your mind won't slow down",
       "lede": "For busy thoughts that won't stop, and nights when you can't settle. Pick one line and stay with it for a minute.",
       "card": "For thoughts that go around and around.",
       "meta_title": "Bible verses for a racing mind",
@@ -971,7 +977,7 @@
       "group": "hard",
       "accent": "narrative",
       "short": "When you have doubts",
-      "h1": "Verses for when you have doubts",
+      "h1": "Bible verses for when you have doubts",
       "lede": "Honest questions are part of the Bible, not a problem for it. Some of the people closest to Jesus doubted too.",
       "card": "Honest questions have a long history here.",
       "meta_title": "Bible verses for when you have doubts",
@@ -1012,7 +1018,7 @@
       "group": "hard",
       "accent": "wisdom",
       "short": "When you're angry",
-      "h1": "Verses for when you're angry",
+      "h1": "Bible verses for when you're angry",
       "lede": "Anger is real, and the Bible doesn't pretend otherwise. These are about what to do with it.",
       "card": "Anger is real. What you do next matters.",
       "meta_title": "Bible verses for when you're angry",
@@ -1053,7 +1059,7 @@
       "group": "good",
       "accent": "narrative",
       "short": "Something to celebrate",
-      "h1": "Verses to celebrate",
+      "h1": "Bible verses to celebrate",
       "lede": "For good news, yours or someone else's. Read it, or send it along.",
       "card": "A win, a milestone, a good day.",
       "meta_title": "Bible verses to celebrate good news",
@@ -1101,7 +1107,7 @@
       "group": "good",
       "accent": "poetry",
       "short": "A new baby",
-      "h1": "Verses for a new baby",
+      "h1": "Bible verses for a new baby",
       "lede": "For a birth, a blessing, a child arriving. Read one, or send it to the new family.",
       "card": "A birth, a blessing, a child arriving.",
       "meta_title": "Bible verses for a new baby",
@@ -1149,7 +1155,7 @@
       "group": "good",
       "accent": "letters",
       "short": "Giving thanks",
-      "h1": "Verses for giving thanks",
+      "h1": "Bible verses for giving thanks",
       "lede": "For a full heart, or to thank someone who helped you. Read it, or send your thanks.",
       "card": "When someone showed up for you.",
       "meta_title": "Bible verses for giving thanks",
@@ -1197,7 +1203,7 @@
       "group": "good",
       "accent": "prophecy",
       "short": "Thinking of you",
-      "h1": "Verses for thinking of you",
+      "h1": "Bible verses for thinking of you",
       "lede": "A blessing for no reason at all. Read it, or send it to someone on your mind.",
       "card": "A verse for no reason at all.",
       "meta_title": "Bible verses for thinking of you",

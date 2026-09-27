@@ -48,11 +48,10 @@ export default function ParablesIndex() {
       <JsonLd data={jsonld} />
 
       <div className="page-head">
-        <h1 className="page-title">The parables of Jesus</h1>
-        <p className="page-lede">
-          Thirty-seven stories, sorted by what they are about instead of where
-          they fall in the book. If you know the story but not the chapter,
-          start here.
+        <h1 className="page-title ph-title">Parables of Jesus</h1>
+        <p className="page-lede ph-lede">
+          {PARABLES.length} short stories Jesus told, sorted by what they are
+          about. If you know the story but not the chapter, start here.
         </p>
       </div>
 

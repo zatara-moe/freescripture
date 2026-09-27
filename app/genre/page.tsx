@@ -12,8 +12,8 @@ export default function GenreHub() {
   return (
     <div className="reading-column genre-hub">
       <header className="page-head">
-        <h1 className="page-title">Kinds of book</h1>
-        <p className="page-lede">Story, poetry, wisdom, law, letters, prophecy. Six ways the Bible reads.</p>
+        <h1 className="page-title ph-title">Books of the Bible by kind</h1>
+        <p className="page-lede ph-lede">Story, poetry, wisdom, law, letters, prophecy. Six ways the Bible reads.</p>
       </header>
       <div className="read-list">
         {GENRES.map((g: any) => (
