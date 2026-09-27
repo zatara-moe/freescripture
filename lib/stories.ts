@@ -23,6 +23,15 @@
    When the story centers on one well-known person, use the name
    ("Nicodemus"). The subtitle says it in plain words.
 
+   TWO FORMATS
+   Scene by Scene is for stories: people doing things, in order.
+   Section by Section (format: "section") is for letters and prophets:
+   someone talking, arguing, or singing. It walks through the text one
+   section at a time, in plain words, and every section lines up with its
+   verses on the Compare page. The rule: if characters move through
+   events, it's Scene by Scene. If someone is talking, it's Section by
+   Section. Both use the same page and the same four steps.
+
    SEARCH TERMS
    Put every other name people use in `also` ("Jonah and the whale",
    "Good Friday"). Site search, the Stories filter, and the page data for
@@ -46,7 +55,8 @@ export function nw(s: string, max = 16) {
 export type Lens = "story" | "literal" | "technical" | "philosopher";
 export type Level = "12+ and adult" | "8+";
 export type Status = "live" | "early" | "planned";
-export type Kind = "Story" | "Teaching" | "Poetry and Prayer";
+export type Kind = "Story" | "Teaching" | "Poetry and Prayer" | "Letter" | "Prophecy";
+export type Format = "scene" | "section";
 
 export const LENSES: Record<Lens, { name: string; line: string }> = {
   story: { name: "Story", line: "What happened, in order, one scene at a time." },
@@ -67,6 +77,8 @@ export interface StoryEntry {
   also?: string[];
   ref: string;
   kind: Kind;
+  /** "scene" (default): Scene by Scene. "section": Section by Section, for letters and prophets. */
+  format?: Format;
   lens: Lens;
   level: Level;
   desc: string;
@@ -1028,6 +1040,116 @@ export const STORIES: StoryEntry[] = [
     contentNote: "This passage is sometimes used to pressure people to stay in harmful relationships. Enduring all things does not mean staying when someone hurts you.",
     memorize: { ref: "1 Corinthians 13:4", text: "Love is patient, love is kind.", gaps: ["patient,", "kind."], decoys: ["proud,", "loud."], part: true },
   },
+
+  {
+    slug: "paul-and-silas-in-prison", family: "paul-and-silas-in-prison",
+    also: ["Paul and Silas", "Philippian jailer", "The jailer", "Lydia", "Lydia of Thyatira", "Lydia the seller of purple", "Singing in prison", "Midnight in prison", "Earthquake in prison", "What must I do to be saved", "Believe in the Lord Jesus and you will be saved", "The Macedonian call", "Come over to Macedonia and help us", "Slave girl with a spirit of divination", "Paul in Philippi", "Acts 16"],
+    act: 7, order: 205,
+    title: "Paul and Silas in Prison", subtitle: "Singing at midnight, with their feet in the stocks",
+    ref: "Acts 16:6-40",
+    kind: "Story", lens: "story", level: "12+ and adult",
+    desc: "Paul and Silas are beaten and locked in the stocks. At midnight they are singing, and the whole prison is listening.",
+    status: "early",
+    passage: { book: "acts", chapter: 16 },
+    feel: ["afraid", "lonely", "anxious", "thankful"],
+    contentNote: "This story includes a slave girl used by her owners for money, a public beating, and a jailer who is about to kill himself until Paul stops him. It is told plainly, without graphic detail.",
+    memorize: { ref: "Acts 16:31", text: "Believe in the Lord Jesus and you will be saved, you and your household.", gaps: ["Believe", "saved,"], decoys: ["Obey", "blessed,"], part: true },
+  },
+
+  {
+    slug: "paul-in-athens", family: "paul-in-athens",
+    also: ["Paul at the Areopagus", "Mars Hill", "Paul on Mars Hill", "The unknown god", "To an unknown god", "In Him we live and move and have our being", "We are his offspring", "Paul and the philosophers", "Epicureans and Stoics", "Dionysius the Areopagite", "Damaris", "Acts 17"],
+    act: 7, order: 206,
+    title: "Paul in Athens", subtitle: "An altar to an unknown god",
+    ref: "Acts 17:16-34",
+    kind: "Story", lens: "story", level: "12+ and adult",
+    desc: "A famous city of thinkers has an altar to a god no one knows. Paul tells them who he is.",
+    status: "early",
+    passage: { book: "acts", chapter: 17 },
+    feel: ["unsure", "lonely"],
+    memorize: { ref: "Acts 17:28", text: "For in Him we live and move and have our being.", gaps: ["live", "being."], decoys: ["hope", "name."], part: true },
+  },
+  {
+    slug: "the-shipwreck", family: "the-shipwreck",
+    also: ["Paul's shipwreck", "Shipwreck on Malta", "Paul on Malta", "Paul and the viper", "Paul and the snake", "The storm at sea", "The Northeaster", "Euroclydon", "Take courage", "Paul's voyage to Rome", "Paul goes to Rome", "Acts 27", "Acts 28"],
+    act: 7, order: 212,
+    title: "The Shipwreck", subtitle: "A storm, a snake, and a promise kept",
+    ref: "Acts 27:1 to 28:16",
+    kind: "Story", lens: "story", level: "12+ and adult",
+    desc: "For two weeks a storm drives the ship, and everyone gives up hope. The prisoner on board is the one who tells them to take courage.",
+    status: "early",
+    passage: { book: "acts", chapter: 27, toChapter: 28 },
+    feel: ["afraid", "anxious", "unsure"],
+    contentNote: "This story includes a violent storm at sea where everyone expects to die, and soldiers who plan to kill the prisoners. No one dies. It is told plainly, without graphic detail.",
+    memorize: { ref: "Acts 27:25", text: "So take courage, men, for I believe God that it will happen just as He told me.", gaps: ["courage,", "believe"], decoys: ["heart,", "hope"] },
+  },
+
+  /* ---------- Section by Section: letters and prophets ---------- */
+  {
+    slug: "isaiah-40", family: "isaiah-40", format: "section",
+    also: ["Comfort, comfort my people", "Comfort ye my people", "Wings like eagles", "They will soar on wings like eagles", "Mount up with wings as eagles", "Those who wait upon the Lord", "Isaiah 40:31", "The grass withers", "The word of our God stands forever", "A voice crying in the wilderness", "Prepare the way of the Lord", "Every valley shall be exalted", "Speak tenderly to Jerusalem", "He tends his flock like a shepherd", "Comfort for God's People"],
+    act: 3, order: 95,
+    title: "Isaiah 40", subtitle: "Comfort for God's people, and wings like eagles",
+    ref: "Isaiah 40",
+    kind: "Prophecy", lens: "story", level: "12+ and adult",
+    desc: "God's people are far from home and sure God has forgotten them. God's first word to them is \"Comfort.\"",
+    status: "early",
+    passage: { book: "isaiah", chapter: 40 },
+    feel: ["anxious", "lonely", "not-enough", "unsure"],
+    memorize: { ref: "Isaiah 40:31", text: "But those who wait upon the LORD will renew their strength; they will mount up with wings like eagles", gaps: ["wait", "eagles"], decoys: ["work", "angels"], part: true },
+  },
+  {
+    slug: "philippians-1", family: "philippians-1", format: "section",
+    also: ["Philippians", "Letter to the Philippians", "Epistle to the Philippians", "To live is Christ and to die is gain", "He who began a good work in you", "Philippians 1:6", "Philippians 1:21", "Worthy of the gospel"],
+    act: 7, order: 215,
+    title: "Philippians 1", subtitle: "To live is Christ, and to die is gain",
+    ref: "Philippians 1",
+    kind: "Letter", lens: "story", level: "12+ and adult",
+    desc: "Paul is in chains, and some people are working against him. He says it has all helped the good news spread.",
+    status: "early",
+    passage: { book: "philippians", chapter: 1 },
+    feel: ["afraid", "anxious", "unsure"],
+    memorize: { ref: "Philippians 1:6", text: "He who began a good work in you will carry it on to completion until the day of Christ Jesus.", gaps: ["began", "completion"], decoys: ["started", "perfection"], part: true },
+  },
+  {
+    slug: "philippians-2", family: "philippians-2", format: "section",
+    also: ["Philippians", "The Christ hymn", "He emptied himself", "Every knee should bow", "Every tongue confess", "Let this mind be in you", "Work out your salvation with fear and trembling", "Humility", "Consider others better than yourselves", "Shine like stars", "Philippians 2:5-11"],
+    act: 7, order: 215.1,
+    title: "Philippians 2", subtitle: "The mind of Christ, who humbled himself",
+    ref: "Philippians 2",
+    kind: "Letter", lens: "story", level: "12+ and adult",
+    desc: "A church is starting to compete with itself. Paul points them to Jesus, who gave up everything.",
+    status: "early",
+    passage: { book: "philippians", chapter: 2 },
+    feel: ["not-enough", "angry", "thankful"],
+    memorize: { ref: "Philippians 2:5", text: "Let this mind be in you which was also in Christ Jesus", gaps: ["mind", "Christ"], decoys: ["law", "Moses"], part: true },
+  },
+  {
+    slug: "philippians-3", family: "philippians-3", format: "section",
+    also: ["Philippians", "Press on toward the goal", "Forgetting what is behind", "I count all things as loss", "Knowing Christ", "Our citizenship is in heaven", "Righteousness by faith", "Philippians 3:14", "Philippians 3:20"],
+    act: 7, order: 215.2,
+    title: "Philippians 3", subtitle: "Everything is loss next to knowing Christ",
+    ref: "Philippians 3",
+    kind: "Letter", lens: "story", level: "12+ and adult",
+    desc: "Paul had every reason to be proud of his record. He calls it all rubbish next to knowing Christ.",
+    status: "early",
+    passage: { book: "philippians", chapter: 3 },
+    feel: ["not-enough", "guilty", "unsure"],
+    memorize: { ref: "Philippians 3:14", text: "I press on toward the goal to win the prize of God's heavenly calling in Christ Jesus.", gaps: ["goal", "prize"], decoys: ["crowd", "praise"] },
+  },
+  {
+    slug: "philippians-4", family: "philippians-4", format: "section",
+    also: ["Philippians", "Philippians 4:13", "I can do all things through Christ", "I can do all things through Christ who strengthens me", "Do not be anxious about anything", "Be anxious for nothing", "Philippians 4:6-7", "Rejoice in the Lord always", "The peace of God which passes all understanding", "Whatever is true, whatever is noble", "Think on these things", "My God will supply all your needs", "Content in every situation"],
+    act: 7, order: 215.3,
+    title: "Philippians 4", subtitle: "Rejoice, don't worry, and \"I can do all things\"",
+    ref: "Philippians 4",
+    kind: "Letter", lens: "story", level: "12+ and adult",
+    desc: "Paul is in chains when he writes, \"Rejoice in the Lord always.\" Then he tells them what to do with worry.",
+    status: "early",
+    passage: { book: "philippians", chapter: 4 },
+    feel: ["anxious", "angry", "thankful"],
+    memorize: { ref: "Philippians 4:13", text: "I can do all things through Christ who gives me strength.", gaps: ["Christ", "strength."], decoys: ["faith", "success."] },
+  },
 ];
 
 /* ---------- Shelves ----------
@@ -1072,6 +1194,8 @@ const SHELF_OF: Record<string, string> = {
   "mary-magdalene-sees-jesus": "holy-week",
   "doubting-thomas": "holy-week",
   "the-love-chapter": "letters",
+  "philippians-1": "letters", "philippians-2": "letters", "philippians-3": "letters", "philippians-4": "letters",
+  "isaiah-40": "prophets",
   "creation-and-the-fall": "beginnings", "noahs-ark": "beginnings",
   "hagar": "ancestors", "joseph-and-his-brothers": "ancestors",
   "baby-moses": "moses", "the-burning-bush": "moses", "the-ten-plagues": "moses", "the-passover": "moses",
@@ -1090,7 +1214,7 @@ const SHELF_OF: Record<string, string> = {
   "the-last-supper": "holy-week", "gethsemane": "holy-week", "peter-denies-jesus": "holy-week",
   "jesus-before-pilate": "holy-week", "the-crucifixion": "holy-week", "the-resurrection": "holy-week",
   "the-road-to-emmaus": "holy-week", "jesus-restores-peter": "holy-week",
-  "pentecost": "church", "saul-on-the-road-to-damascus": "church",
+  "pentecost": "church", "saul-on-the-road-to-damascus": "church", "paul-and-silas-in-prison": "church", "paul-in-athens": "church", "the-shipwreck": "church",
 };
 const SHELF_BY_ACT = ["", "beginnings", "ancestors", "kings", "born", "teaches", "holy-week", "church"];
 export function shelfOf(s: StoryEntry) { return SHELF_OF[s.slug] || SHELF_BY_ACT[s.act] || "teaches"; }
@@ -1123,6 +1247,19 @@ export function sameFeeling(s: StoryEntry, not: string[] = []) {
 }
 
 export function storyBySlug(slug: string) { return STORIES.find((s) => s.slug === slug) || null; }
+/** True for Section by Section pages (letters and prophets). */
+export function isSection(s: { format?: Format }) { return s.format === "section"; }
+/** The short word shown on cards and page tops: Story, Teaching, Prayer, Letter, Prophecy. */
+export function kindLabel(kind: Kind): CatKind {
+  return kind === "Poetry and Prayer" ? "Prayer" : kind;
+}
+/** What to call one part of it, and the whole thing, in plain words. */
+export function formatWords(s: StoryEntry) {
+  if (!isSection(s)) return { name: "Scene by Scene", part: "Scene", whole: "story", thing: "story" };
+  // A letter split into chapter pages ("Philippians 4") talks about "this chapter".
+  const whole = s.kind === "Letter" ? (/\s\d+$/.test(s.ref) ? "chapter" : "letter") : s.kind === "Prophecy" ? "message" : "passage";
+  return { name: "Section by Section", part: "Section", whole, thing: "guide" };
+}
 export function isBuilt(s: StoryEntry) { return s.status !== "planned"; }
 export function isReadable(s: StoryEntry) { return s.status === "live" || (s.status === "early" && SHOW_EARLY_EDITIONS); }
 /* SEARCH ENGINES (decided September 26, 2026: option B)
@@ -1137,6 +1274,11 @@ export const INDEX_EARLY = new Set<string>([
   "jonah", "the-birth-of-jesus", "the-beatitudes", "the-lords-prayer",
   "jesus-feeds-the-5000", "jesus-walks-on-water", "the-woman-at-the-well", "good-samaritan",
   "the-prodigal-son", "the-last-supper", "the-crucifixion", "the-resurrection",
+  /* Decided September 26, 2026: Philippians 4 is one of the most searched
+     chapters in the Bible (4:13, 4:6-7) and has the lowest theology risk of
+     the Section by Section pilots, so it opens now. Isaiah 40 and
+     Philippians 1 to 3 wait for the theologian's review of the format. */
+  "philippians-4",
 ]);
 export function isIndexed(s: StoryEntry) { return s.status === "live" || (s.status === "early" && INDEX_EARLY.has(s.slug)); }
 export function readableStories() { return STORIES.filter(isReadable); }
@@ -1147,8 +1289,10 @@ export function storyHref(s: StoryEntry) {
   if (s.parable) return `/parables/${s.parable}/`;
   return `/bsb/${s.passage.book}/${s.passage.chapter}/`;
 }
-export function compareHref(s: StoryEntry, other = "bsb") {
-  return `/compare/${s.passage.book}/${s.passage.chapter}/?a=story:${s.slug}&b=${other}`;
+export function compareHref(s: StoryEntry, other = "bsb", chapter?: number) {
+  const last = s.passage.toChapter ?? s.passage.chapter;
+  const ch = chapter && chapter >= s.passage.chapter && chapter <= last ? chapter : s.passage.chapter;
+  return `/compare/${s.passage.book}/${ch}/?a=story:${s.slug}&b=${other}`;
 }
 export function storiesForChapter(bookSlug: string, chapter: number) {
   return readableStories().filter(
@@ -1156,7 +1300,7 @@ export function storiesForChapter(bookSlug: string, chapter: number) {
   );
 }
 export function coverTone(kind: Kind) {
-  return kind === "Teaching" ? "letters" : kind === "Poetry and Prayer" ? "poetry" : "narrative";
+  return kind === "Teaching" || kind === "Letter" ? "letters" : kind === "Poetry and Prayer" ? "poetry" : kind === "Prophecy" ? "prophecy" : "narrative";
 }
 export function activeLenses(): Lens[] {
   const set = new Set(readableStories().map((s) => s.lens));
@@ -1166,7 +1310,7 @@ export function activeLenses(): Lens[] {
    Honest times: every word a reader will see in each step, at 150 words
    a minute (a careful pace for teens, English learners, and anyone who
    reads slowly). Drawers that start closed are not counted. */
-const CLOSED_BOXES = new Set(["scene-card", "before-the-story", "map-of-the-story", "from-luther", "in-church"]);
+const CLOSED_BOXES = new Set(["scene-card", "before-the-story", "map-of-the-story", "map-of-the-letter", "map-of-the-message", "from-luther", "in-church"]);
 const WPM = 150;
 function slugifyBox(s: string) { return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
 export function stepWords(slug: string): { story: number; meaning: number; foryou: number } | null {
@@ -1233,7 +1377,7 @@ const THEME_FEEL: Record<string, string[]> = {
 };
 
 /* ---------- The catalog: everything the Stories page lists ---------- */
-export type CatKind = "Story" | "Teaching" | "Prayer" | "Parable" | "Verses";
+export type CatKind = "Story" | "Teaching" | "Prayer" | "Letter" | "Prophecy" | "Parable" | "Verses";
 export type CatStatus = "Ready" | "New";
 export interface CatItem {
   id: string; kind: CatKind; title: string; subtitle: string; ref: string; desc: string;
@@ -1248,6 +1392,8 @@ export const KIND_HELP: Record<CatKind, string> = {
   Story: "Something that happened",
   Teaching: "Something Jesus or God taught",
   Prayer: "A psalm or a prayer",
+  Letter: "A letter to the early church, section by section",
+  Prophecy: "A prophet's message, section by section",
   Parable: "A short story Jesus told",
   Verses: "A few verses about one feeling",
 };
@@ -1256,6 +1402,13 @@ const SBS_INSIDE = [
   { name: "1. Story:", line: "what happened, in short scenes, with each verse beside it." },
   { name: "2. Meaning:", line: "hard words and key lines, explained." },
   { name: "3. For you:", line: "tap an answer and see what it means for your life. No typing, no grades." },
+  { name: "4. Memorize:", line: "one line to learn by heart." },
+];
+const SECTION_INSIDE = [
+  { name: "1. Read:", line: "the whole text in plain words, one section at a time, with each verse beside it." },
+  { name: "Side by side:", line: "every section next to the Bible text it explains." },
+  { name: "2. Meaning:", line: "hard words and key lines, explained." },
+  { name: "3. For you:", line: "tap an answer and see what it means for your life." },
   { name: "4. Memorize:", line: "one line to learn by heart." },
 ];
 
@@ -1271,11 +1424,11 @@ export function catalog(): CatItem[] {
     if (!ready) continue;
     const min = ready ? storyMinutes(s.slug) : null;
     items.push({
-      id: `story-${s.slug}`, kind: s.kind === "Teaching" ? "Teaching" : s.kind === "Poetry and Prayer" ? "Prayer" : "Story", shelf: shelfOf(s),
+      id: `story-${s.slug}`, kind: kindLabel(s.kind), shelf: shelfOf(s),
       title: s.title, subtitle: s.subtitle, ref: s.ref, desc: s.desc,
       minutes: min, size: "", status: s.status === "early" ? "New" : "Ready",
       feel: s.feel, href: storyHref(s), note: s.contentNote, act: s.act, order: s.order, also: s.also,
-      inside: SBS_INSIDE,
+      inside: isSection(s) ? SECTION_INSIDE : SBS_INSIDE,
     });
   }
   for (const p of PARABLES as any[]) {

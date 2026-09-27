@@ -118,7 +118,7 @@ export default function MemorizePage() {
       </section>
 
       <script id="mem-lines" type="application/json" dangerouslySetInnerHTML={{ __html: JSON.stringify(lines).replace(/</g, "\\u003c") }} />
-      <script src="/static/js/learn.js?v=5" defer></script>
+      <script src="/static/js/learn.js?v=7" defer></script>
     </div>
   );
 }

@@ -15,7 +15,7 @@
    TO ADD ONE: title, ref (as shown), book slug (see data/manifest.json),
    chapter, first verse, and `also` (other names people search for). */
 
-import { STORIES, isReadable, storyHref } from "./stories";
+import { kindLabel, STORIES, isReadable, storyHref } from "./stories";
 import { PARABLES, NEEDS } from "./bible";
 import { ERAS } from "./timeline";
 import { PATHS } from "./paths";
@@ -92,7 +92,7 @@ const PEOPLE_ALSO: Record<string, string[]> = {
 
 /* ---------- One list for site search ---------- */
 
-export type HitKind = "Story" | "Teaching" | "Prayer" | "Parable" | "Reading path" | "Bible passage" | "Person" | "Verses";
+export type HitKind = "Story" | "Teaching" | "Prayer" | "Letter" | "Prophecy" | "Parable" | "Reading path" | "Bible passage" | "Person" | "Verses";
 export interface SearchEntry {
   t: string;        // title
   s: string;        // one short line under the title
@@ -112,7 +112,7 @@ export function searchCatalog(): SearchEntry[] {
     /* A story that isn't written yet is listed as its Bible passage. */
     out.push({
       t: s.title, s: ready ? s.subtitle : "Read it in the Bible", r: s.ref,
-      k: !ready ? "Bible passage" : s.kind === "Teaching" ? "Teaching" : s.kind === "Poetry and Prayer" ? "Prayer" : "Story",
+      k: !ready ? "Bible passage" : kindLabel(s.kind),
       u: storyHref(s), a: s.also || [],
     });
   }

@@ -2,7 +2,10 @@
    Markdown format. Supports only what the guide uses: zone headings (#),
    boxes (##), scenes (###), paragraphs, bold, italics, lists, tables,
    and blockquotes (Imagine the Scene boxes and hymn quotes).
-   The † reviewer marks are stripped from what readers see. */
+   The † reviewer marks are stripped from what readers see.
+   Section by Section pages (letters and prophets) use the same format.
+   Their main box is "Section by Section" instead of "Plain Retelling",
+   and they can have "Follow the thread" notes (> 🧵 **Follow the thread**). */
 import fs from "node:fs";
 import path from "node:path";
 
@@ -14,11 +17,16 @@ export type Block =
   | { type: "ul"; items: string[] }
   | { type: "table"; head: string[]; rows: string[][] }
   | { type: "imagine"; label: string; html: string }
+  | { type: "thread"; html: string }
   | { type: "quote"; lines: string[] };
 
 export interface Box { id: string; emoji: string; title: string; blocks: Block[] }
 export interface Zone { id: string; title: string; boxes: Box[] }
 export interface Story { zones: Zone[]; bigIdea: string | null; words: number; scenes: number }
+
+/** The box that holds the main text: the retelling or the section-by-section guide. */
+export const MAIN_BOXES = ["plain-retelling", "section-by-section"];
+export const isMainBox = (id: string) => MAIN_BOXES.includes(id);
 
 function esc(s: string) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -79,7 +87,7 @@ export function loadStory(slug: string): Story | null {
     if (boldOnly && text.trim().split(/\s+/).length <= 3) push({ type: "label", html });
     else if (boldOnly) push({ type: "key", html });
     else push({ type: "p", html, v });
-    if (box && box.id === "plain-retelling") words += text.split(/\s+/).length;
+    if (box && isMainBox(box.id)) words += text.split(/\s+/).length;
     para = [];
   };
 
@@ -114,7 +122,9 @@ export function loadStory(slug: string): Story | null {
       const q: string[] = [];
       while (i < lines.length && /^> ?/.test(lines[i])) { q.push(lines[i].replace(/^> ?/, "")); i++; }
       i--;
-      if (q[0].includes("Imagine the Scene")) {
+      if (/Follow the thread/i.test(q[0])) {
+        push({ type: "thread", html: inline(q.slice(1).join(" ")) });
+      } else if (q[0].includes("Imagine the Scene")) {
         push({ type: "imagine", label: inline(q[0]), html: inline(q.slice(1).join(" ")) });
       } else {
         push({ type: "quote", lines: q.map(inline) });
@@ -184,6 +194,7 @@ function blockHtml(b: Block): string {
     case "p": case "key": case "label": return `<p>${b.html}</p>`;
     case "ul": return `<ul>${b.items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
     case "quote": return `<blockquote>${b.lines.join("<br>")}</blockquote>`;
+    case "thread": return `<aside class="cmp-thread"><strong>Follow the thread:</strong> ${b.html}</aside>`;
     case "imagine": return `<aside class="cmp-imagine"><strong>${b.label.replace(/<\/?em>/g, "")}</strong> ${b.html}</aside>`;
     default: return "";
   }
@@ -203,7 +214,7 @@ export function loadScenes(slug: string): Scene[] {
       if (n && r) ranges.set(+n[1], r);
     }
   }
-  const retell = boxes.find((b) => b.id === "plain-retelling");
+  const retell = boxes.find((b) => isMainBox(b.id));
   const scenes: Scene[] = [];
   let cur: Scene | null = null;
   for (const b of retell?.blocks || []) {

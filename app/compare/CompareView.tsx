@@ -10,6 +10,8 @@ export type Version = {
   id: string;
   kind: "translation" | "retelling";
   nick: string;
+  /** What one part is called: "Scene" for stories, "Section" for letters and prophets. */
+  part?: string;
   name: string;
   note: string;
   href: string;
@@ -39,7 +41,7 @@ function buildRows(A: Version, B: Version): Row[] {
   const rows: (Row & { start: number })[] = scenes.map((sc) => ({
     key: `s${sc.num}`,
     start: sc.from,
-    head: `Scene ${sc.num}: ${sc.title}`,
+    head: `${R.part || "Scene"} ${sc.num}: ${sc.title}`,
     sub: sc.to >= 999 ? `Verses ${sc.from} to the end` : sc.from === sc.to ? `Verse ${sc.from}` : `Verses ${sc.from} to ${sc.to}`,
     a: cellFor(A, sc),
     b: cellFor(B, sc),
@@ -53,10 +55,10 @@ function buildRows(A: Version, B: Version): Row[] {
     const flush = () => {
       if (!run.length) return;
       const from = run[0], to = run[run.length - 1];
-      const gap = "<p class=\"cmp-gap\">This part isn't retold as its own scene.</p>";
+      const gap = R.part === "Section" ? "<p class=\"cmp-gap\">This part isn't covered by the guide.</p>" : "<p class=\"cmp-gap\">This part isn't retold as its own scene.</p>";
       rows.push({
         key: `g${from}`, start: from,
-        head: "Between scenes",
+        head: R.part === "Section" ? "Between sections" : "Between scenes",
         sub: from === to ? `Verse ${from}` : `Verses ${from} to ${to}`,
         a: A === T ? versesIn(T, from, to) : gap,
         b: B === T ? versesIn(T, from, to) : gap,

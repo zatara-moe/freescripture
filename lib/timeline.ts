@@ -185,7 +185,7 @@ const WHOLE: Record<string, string> = {
   "2-samuel": "the-first-kings", "1-chronicles": "the-first-kings", psalms: "the-first-kings",
   proverbs: "the-first-kings", ecclesiastes: "the-first-kings", "song-of-solomon": "the-first-kings",
   job: "the-ancestors",
-  "2-kings": "the-kingdom-splits", isaiah: "the-kingdom-splits", jeremiah: "the-kingdom-splits",
+  "2-kings": "the-kingdom-splits", jeremiah: "the-kingdom-splits",
   hosea: "the-kingdom-splits", joel: "the-kingdom-splits", amos: "the-kingdom-splits", jonah: "the-kingdom-splits",
   micah: "the-kingdom-splits", nahum: "the-kingdom-splits", habakkuk: "the-kingdom-splits", zephaniah: "the-kingdom-splits",
   lamentations: "exile-and-return", ezekiel: "exile-and-return", daniel: "exile-and-return", obadiah: "exile-and-return",
@@ -206,6 +206,9 @@ export function eraOfPassage(p: { book: string; chapter: number }): Era | null {
   if (!id) {
     if (book === "genesis") id = c <= 11 ? "the-beginning" : "the-ancestors";
     else if (book === "exodus") id = c <= 2 ? "years-in-egypt" : "out-of-egypt";
+    /* Isaiah 40 on speaks to God's people in exile in Babylon, so it sits
+       there on the timeline, whoever wrote it down (see the Isaiah 40 page). */
+    else if (book === "isaiah") id = c >= 40 ? "exile-and-return" : "the-kingdom-splits";
     else if (book === "1-samuel") id = c <= 7 ? "the-judges" : "the-first-kings";
     else if (book === "1-kings") id = c <= 11 ? "the-first-kings" : "the-kingdom-splits";
     else if (book === "2-chronicles") id = c <= 9 ? "the-first-kings" : "the-kingdom-splits";

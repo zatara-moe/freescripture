@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { booksForTranslation, TRANSLATIONS, SITE_URL } from "@/lib/bible";
-import { readableStories, compareHref } from "@/lib/stories";
+import { isSection, readableStories, compareHref } from "@/lib/stories";
 
 export const metadata: Metadata = {
   title: "Side by side",
@@ -20,7 +20,8 @@ function Chev() {
 }
 
 export default function CompareHub() {
-  const stories = readableStories();
+  const stories = readableStories().filter((s) => !isSection(s));
+  const guides = readableStories().filter(isSection);
   const books = booksForTranslation("web");
   const t = TRANSLATIONS;
   return (
@@ -29,10 +30,29 @@ export default function CompareHub() {
         <h1 className="page-title ph-title">Compare Bible translations side by side</h1>
         <p className="page-lede ph-lede">
           Read two versions at once. Put a Scene by Scene story next to the
-          Bible text it retells, or see how {t.web.nick}, {t.kjv.nick}, and {t.bbe.nick} English
+          Bible text it retells, put a hard letter or prophecy next to a plain-language guide, or see how {t.web.nick}, {t.kjv.nick}, and {t.bbe.nick} English
           say the same verse.
         </p>
       </header>
+
+      {guides.length > 0 && (
+        <section className="home2-section" aria-labelledby="cmp-guides">
+          <h2 className="stories-section__title" id="cmp-guides">A letter or prophecy, made easier</h2>
+          <p className="section-lede">Letters and prophets can be hard to follow. Each section of our plain-language guide lines up with the verses it explains.</p>
+          <div className="story-list">
+            {guides.map((s) => (
+              <a key={s.slug} className="story-row" href={compareHref(s)}>
+                <div className="story-row__body">
+                  <div className="story-row__name">{s.title}</div>
+                  <div className="story-row__desc">Section by Section next to the {t.bsb.label}</div>
+                  {s.ref !== s.title && <div className="story-row__meta"><span>{s.ref}</span></div>}
+                </div>
+                <Chev />
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       {stories.length > 0 && (
         <section className="home2-section" aria-labelledby="cmp-stories">
@@ -43,7 +63,7 @@ export default function CompareHub() {
               <a key={s.slug} className="story-row" href={compareHref(s)}>
                 <div className="story-row__body">
                   <div className="story-row__name">{s.title}</div>
-                  <div className="story-row__desc">Scene by Scene next to the {t.web.label}</div>
+                  <div className="story-row__desc">Scene by Scene next to the {t.bsb.label}</div>
                   <div className="story-row__meta"><span>{s.ref}</span></div>
                 </div>
                 <Chev />

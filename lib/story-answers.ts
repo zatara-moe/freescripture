@@ -18,42 +18,22 @@
    Every story with an entry here gets the drawer and the FAQ data. */
 
 export const IN_SHORT: Record<string, string> = {
-  "creation-and-the-fall":
-    "God made the world in six days, made people in his image, and called it all very good. The man and the woman listened to the serpent instead of God and ate the fruit God had told them not to eat. God came looking for them, said what sin would break, and made a promise before sending them out of the garden.",
-  "noahs-ark":
-    "The world had become violent, and God grieved over it. God told Noah to build an ark and kept Noah's family and the animals safe through the flood. Afterward God made a covenant never to flood the earth again and gave the rainbow as its sign.",
-  "the-burning-bush":
-    "Moses was tending sheep when God spoke to him from a bush that burned but did not burn up. God told Moses his name and sent him to bring Israel out of slavery in Egypt. Moses begged God to send someone else, so God sent his brother Aaron to help him.",
-  "crossing-the-red-sea":
-    "Pharaoh let Israel go, then changed his mind and chased them with his army. Trapped at the sea, the people were terrified, but God opened a path through the water. Israel crossed on dry ground, the water came back over Pharaoh's army, and Moses and Miriam led the people in a song of praise.",
-  "the-ten-commandments":
-    "At Mount Sinai, God came down in smoke, fire, and a loud horn. God reminded the people that he had set them free from Egypt, then gave them ten commandments for living as free people. The people were afraid, so Moses went near to God for them.",
-  "david-and-goliath":
-    "For forty days a giant named Goliath dared Israel to send one man to fight him, and everyone was afraid. David, a young shepherd, came with food for his brothers and said God would fight for Israel. David faced Goliath with a sling and a stone, and Goliath fell.",
-  "psalm-23":
-    "In Psalm 23, David calls God his shepherd. God gives him rest, leads him on the right paths, and stays with him through the darkest valley. The psalm ends with David welcomed like an honored guest, living in God's house forever.",
-  "daniel-in-the-lions-den":
-    "Officials who wanted to bring Daniel down tricked King Darius into signing a law that no one could pray to anyone but the king for thirty days. Daniel kept praying to God at his window, as he always had, so he was thrown into a den of lions. In the morning the king found Daniel alive, because God had shut the lions' mouths.",
-  "jonah":
-    "God sent Jonah to warn the city of Nineveh, but Jonah ran the other way on a ship. After a storm, the sailors threw Jonah overboard, and a great fish swallowed him and later spit him out on land. Jonah finally went to Nineveh, the city turned from its evil, and God showed mercy, which made Jonah angry.",
-  "the-birth-of-jesus":
-    "Joseph and Mary traveled to Bethlehem for a census, and Mary gave birth to Jesus there. She laid him in a manger because there was no room for them. Angels told shepherds the good news, and the shepherds hurried to find the baby and told everyone what they had heard.",
-  "the-beatitudes":
-    "Crowds of sick and hurting people came to Jesus. He went up a mountain and began to teach, saying that God's favor rests on the poor in spirit, those who mourn, the meek, the merciful, and the peacemakers. These sayings, called the Beatitudes, open the Sermon on the Mount.",
-  "the-lords-prayer":
-    "In the Sermon on the Mount, Jesus teaches his followers to pray to God, not to impress other people. He gives them a short prayer that begins \"Our Father in heaven.\" It asks for God's name to be honored, God's kingdom to come, daily bread, forgiveness, and protection from evil.",
-  "jesus-feeds-the-5000":
-    "A huge crowd followed Jesus to a hillside, and there was nothing to feed them. A boy had five small loaves and two fish. Jesus gave thanks, and everyone ate until they were full, with twelve baskets of leftovers.",
-  "jesus-walks-on-water":
-    "Jesus sent his disciples ahead in a boat while he prayed on a mountain. In the night, wind and waves fought the boat, and Jesus came to them walking on the water. Peter walked toward Jesus, began to sink when he saw the wind, and Jesus caught him right away.",
-  "the-woman-at-the-well":
-    "At noon, Jesus sat by a well in Samaria and asked a Samaritan woman for a drink. He offered her living water and showed that he knew all about her life. She told her whole town about Jesus, and many of them believed in him.",
-  "good-samaritan":
-    "An expert in the law asked Jesus, \"Who is my neighbor?\" Jesus answered with a story about a man beaten by robbers. A priest and a Levite passed him by, but a Samaritan, someone Jesus's listeners saw as an enemy, stopped and cared for him.",
-  "the-prodigal-son":
-    "In this parable, a younger son took his share of his father's money early and wasted it all far from home. When he came back hoping to be a servant, his father ran to meet him and threw a feast. The older son was angry, and the story ends with the father pleading with him to come in.",
-  "the-last-supper":
-    "On the night before he died, Jesus shared the Passover meal with his disciples. He gave them bread and said it was his body, given for them, and a cup that was the new covenant in his blood. He also told them one of them would betray him.",
+  "paul-in-athens":
+    "While Paul waited in Athens, he was upset to see the city full of idols, and philosophers brought him to the council called the Areopagus. Paul pointed to an altar \"to an unknown god\" and told them about the God who made the world, who is not far from anyone, and who proved he will judge the world by raising a man from the dead. Some laughed, some wanted to hear more, and some believed, including Dionysius and a woman named Damaris.",
+  "the-shipwreck":
+    "Paul sailed for Rome as a prisoner, warned that the voyage would end in disaster, and was ignored. A storm drove the ship for fourteen days until everyone lost hope, but Paul said an angel had promised that all 276 people would live, and when the ship broke apart on Malta, everyone reached land. On Malta a viper bit Paul without harming him, Paul healed the sick, and at last he reached Rome.",
+  "paul-and-silas-in-prison":
+    "Paul and Silas crossed the sea to Philippi, where a businesswoman named Lydia believed and was baptized. After Paul commanded a fortune-telling spirit to leave a slave girl, her owners had Paul and Silas beaten and jailed, but at midnight they sang hymns, an earthquake opened the doors, and Paul stopped the jailer from killing himself. The jailer and his household believed in Jesus and were baptized that night, and a new church began meeting in Lydia's home.",
+  "philippians-1":
+    "Paul writes to the church in Philippi from chains, waiting for a trial that could end in his death. He thanks God for them, says his chains have helped the good news spread, and is torn between living and dying, but expects to live. He urges them to stand firm together without fear.",
+  "philippians-2":
+    "Paul urges the church to be united and to put others first, and points them to Jesus, who emptied himself, died on a cross, and was lifted up by God. He reminds them that God is at work in them and tells them to shine like lights in the world. Then he shares his plans to send Timothy and Epaphroditus.",
+  "philippians-3":
+    "Paul warns against teachers who said believers had to be circumcised, and lists his own proud record as a Jew and a Pharisee. He says he counts it all as loss next to knowing Christ and receiving the righteousness that comes from God through faith. He presses on toward the goal and reminds them that their citizenship is in heaven.",
+  "philippians-4":
+    "Paul urges two women in the church to agree, and tells the church to rejoice always and to bring every worry to God with thanks, so God's peace will guard their hearts. He thanks them for their gift and says he has learned to be content in any situation, because he can do all things through Christ who gives him strength. He ends with greetings and grace.",
+  "isaiah-40":
+    "Isaiah 40 is God's message to his people in exile in Babylon, and its first word is \"Comfort.\" A voice calls for a highway for God across the desert and says people fade like grass, but God's word stands forever. God comes like a shepherd, rules over every nation and star, and gives strength to tired people, so those who wait upon the LORD will mount up with wings like eagles.",
   "the-crucifixion":
     "Jesus was led to a place called the Skull and crucified between two criminals. Jesus prayed for God to forgive the people who did it and promised one criminal he would be with him in paradise. At noon the sky went dark, Jesus died, and Joseph of Arimathea buried him in a tomb.",
   "the-resurrection":

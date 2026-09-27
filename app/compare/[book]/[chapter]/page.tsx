@@ -4,7 +4,7 @@ import {
   TRANSLATIONS, TRANS_ORDER, flatChapters, loadChapter, bookNameFromSlug,
   normalizeDivineName, SITE_URL, type TransSlug,
 } from "@/lib/bible";
-import { storiesForChapter, LENSES } from "@/lib/stories";
+import { storiesForChapter, LENSES, isSection } from "@/lib/stories";
 import { loadScenes } from "@/lib/story";
 import CompareView, { type Version } from "../../CompareView";
 
@@ -61,9 +61,10 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
     versions.push({
       id: `story:${s.slug}`,
       kind: "retelling",
-      nick: s.lens === "story" ? "Scene by Scene" : LENSES[s.lens].name,
+      nick: isSection(s) ? "Section by Section" : s.lens === "story" ? "Scene by Scene" : LENSES[s.lens].name,
       name: s.title,
-      note: `Plain-language retelling, ${s.level}`,
+      part: isSection(s) ? "Section" : "Scene",
+      note: isSection(s) ? "A plain-language guide, not a translation" : `Plain-language retelling, ${s.level}`,
       href: `/stories/${s.slug}/`,
       scenes,
     });
@@ -87,6 +88,7 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
   const prev = idx > 0 ? flat[idx - 1] : null;
   const next = idx >= 0 && idx < flat.length - 1 ? flat[idx + 1] : null;
   const hasStory = versions[0].kind === "retelling";
+  const hasGuide = hasStory && versions[0].nick === "Section by Section";
 
   return (
     <div className="cmp-page">
@@ -100,7 +102,9 @@ export default async function ComparePage({ params }: { params: Promise<Params> 
         <p className="ph-eyebrow">Side by side</p>
         <h1 className="cmp-title ph-title">{refLabel(name, num)}</h1>
         <p className="cmp-lede ph-lede">
-          {hasStory
+          {hasGuide
+            ? "Our plain-language guide next to the Bible text. Each row lines up one section with the verses it explains."
+            : hasStory
             ? "Our retelling next to the Bible text it comes from. Each row lines up one scene with the verses it retells."
             : "Two versions of the same chapter. Each row is one verse, so you can see how the wording changes."}
         </p>

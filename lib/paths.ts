@@ -88,6 +88,39 @@ export const PATHS: ReadingPath[] = [
     afterLabel: "See the Bible timeline",
   },
   {
+    slug: "pauls-journeys",
+    title: "Paul's Journeys",
+    question: "Four stories that follow Paul from the road to Damascus to Rome.",
+    lede: "Read them in order. Do one a day, or all at once. Your progress is saved on this device.",
+    also: ["Paul", "Apostle Paul", "Paul's missionary journeys", "Life of Paul", "Saul of Tarsus"],
+    care: "Some of these stories include a beating, a jailer about to kill himself, and a storm where everyone expects to die. They are told plainly, without graphic detail. If they bring up big feelings, talk with someone you trust. In the United States, you can call or text 988 any time.",
+    steps: [
+      { story: "saul-on-the-road-to-damascus", shows: "Jesus stops his enemy on the road and makes him a brother." },
+      { story: "paul-and-silas-in-prison", shows: "Two beaten prisoners sing at midnight, and a jailer finds new life." },
+      { story: "paul-in-athens", shows: "Paul tells the thinkers of Athens the name of their unknown god." },
+      { story: "the-shipwreck", shows: "Through a storm and a shipwreck, God keeps his promise." },
+    ],
+    after: "Next, read the letter Paul wrote from chains to the church that began in that prison.",
+    afterHref: "/paths/philippians/",
+    afterLabel: "Read Philippians",
+  },
+  {
+    slug: "philippians",
+    title: "Philippians",
+    question: "Paul's letter of joy, written in chains, in four short parts.",
+    lede: "One part for each chapter, explained section by section. The letter was first read aloud all at once, so read the parts in order. Do one a day, or all at once. Your progress is saved on this device.",
+    also: ["Letter to the Philippians", "Epistle to the Philippians", "Philippians 1 to 4", "Book of Philippians"],
+    steps: [
+      { story: "philippians-1", shows: "Paul's chains help the good news spread. To live is Christ." },
+      { story: "philippians-2", shows: "Jesus humbled himself, and God lifted him up." },
+      { story: "philippians-3", shows: "Everything else is loss next to knowing Christ." },
+      { story: "philippians-4", shows: "Rejoice, bring every worry to God, and find strength in Christ." },
+    ],
+    after: "Next, read the story of the night this church began, in a prison at midnight.",
+    afterHref: "/stories/paul-and-silas-in-prison/",
+    afterLabel: "Read Paul and Silas in Prison",
+  },
+  {
     slug: "moses-and-the-exodus",
     title: "Moses and the Exodus",
     question: "Six stories, from a baby in a basket to God's ten words at the mountain.",
@@ -159,6 +192,10 @@ export const PATHS: ReadingPath[] = [
 
 export function pathBySlug(slug: string) { return PATHS.find((p) => p.slug === slug) || null; }
 
+/** What a path's steps are called: "parts" when every step is a chapter of one letter, otherwise "stories". */
+export function pathUnit(p: ReadingPath) {
+  return p.steps.every((s) => storyBySlug(s.story)?.kind === "Letter") ? "parts" : "stories";
+}
 /** Steps with their story details. Only readable stories count. */
 export function pathSteps(p: ReadingPath) {
   return p.steps
@@ -177,6 +214,7 @@ export function pathsData() {
     slug: p.slug,
     title: p.title,
     url: `/paths/${p.slug}/`,
+    unit: pathUnit(p) === "parts" ? "Part" : "Story",
     steps: pathSteps(p).map((s) => ({ slug: s.story, title: s.entry.title, url: `/stories/${s.story}/?path=${p.slug}`, shows: s.shows })),
   }));
 }

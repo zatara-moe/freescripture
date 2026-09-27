@@ -2,10 +2,10 @@ import { Fragment } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE_URL, loadChapter } from "@/lib/bible";
-import { nextReadableInBible, prevReadable, nextReadable, sameFeeling, FEELINGS, nw, STORIES, storyBySlug, isBuilt, isIndexed, isReadable, siblings, compareHref, storyMinutes, stepMinutes, LENSES } from "@/lib/stories";
+import { nextReadableInBible, prevReadable, nextReadable, sameFeeling, FEELINGS, nw, STORIES, storyBySlug, isBuilt, isIndexed, isReadable, siblings, compareHref, storyMinutes, stepMinutes, LENSES, isSection, kindLabel, formatWords } from "@/lib/stories";
 import { eraOfPassage, partOfEra, partOfPassage, eraCenter } from "@/lib/timeline";
 import { Bands } from "@/lib/TimelineBands";
-import { loadStory, loadScenes, type Block, type Box } from "@/lib/story";
+import { loadStory, loadScenes, isMainBox, type Block, type Box } from "@/lib/story";
 import { WORDS } from "@/lib/words";
 import { pathsData } from "@/lib/paths";
 import { JsonLd } from "@/lib/JsonLd";
@@ -18,7 +18,10 @@ import { Dots } from "@/lib/Meta";
      3 For you   what it means for your life
      4 Memorize  one line to learn by heart
    Without JavaScript all four steps show in order, like a printed page.
-   With it, learn.js turns them into steps you move through. */
+   With it, learn.js turns them into steps you move through.
+   Section by Section pages (letters and prophets) use the same four
+   steps. Step 1 is "Read" instead of "Story", and it starts with who
+   wrote it and why, plus a link to read it side by side. */
 
 export function generateStaticParams() {
   return STORIES.filter(isBuilt).map((s) => ({ slug: s.slug }));
@@ -33,7 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
      moves to the description. Keeps most titles under about 60 characters. */
   const word = s.kind === "Story" ? "Explained" : "Meaning";
   const title = s.ref.startsWith(s.title) ? `${s.title} ${word}` : `${s.title} ${word} (${s.ref})`;
-  const description = `${s.subtitle}${/[.?!]$/.test(s.subtitle) ? "" : "."} ${s.title} in plain words, one scene at a time, with every verse beside it. Free, no account.`;
+  const how = isSection(s) ? "section by section" : "one scene at a time";
+  const description = `${s.subtitle}${/[.?!]$/.test(s.subtitle) ? "" : "."} ${s.title} in plain words, ${how}, with every verse beside it. Free, no account.`;
   return {
     title,
     description,
@@ -44,6 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+const SECTION_STEP = { id: "story", zone: "the-story", label: "Read", q: "What does it say?" };
 const STEPS = [
   { id: "story", zone: "the-story", label: "Story", q: "What happened?" },
   { id: "meaning", zone: "understand-it", label: "Meaning", q: "What does it mean?" },
@@ -87,7 +92,7 @@ function renderBlock(b: Block, i: number, box: Box, ctx: any) {
               <span className="story-break__text">This is a good place for a break. Your spot is saved on this device.</span>
             </p>
             <h3 className="story-scene" id={b.id}>
-              <span className="story-scene__num">Scene {b.num}{ctx.scenes ? ` of ${ctx.scenes}` : ""}</span>
+              <span className="story-scene__num">{ctx.part} {b.num}{ctx.scenes ? ` of ${ctx.scenes}` : ""}</span>
               <span className="story-scene__title">{nw(b.title)}</span>
             </h3>
           </Fragment>
@@ -95,7 +100,7 @@ function renderBlock(b: Block, i: number, box: Box, ctx: any) {
       }
       return (
         <h3 className="story-scene" id={b.id} key={i}>
-          <span className="story-scene__num">Scene {b.num}{ctx.scenes ? ` of ${ctx.scenes}` : ""}</span>
+          <span className="story-scene__num">{ctx.part} {b.num}{ctx.scenes ? ` of ${ctx.scenes}` : ""}</span>
           <span className="story-scene__title">{nw(b.title)}</span>
         </h3>
       );
@@ -113,12 +118,12 @@ function renderBlock(b: Block, i: number, box: Box, ctx: any) {
             </a>
             <a className="story-passage__link" href={ctx.compare}>
               <span className="story-passage__title">Read it side by side</span>
-              <span className="story-passage__sub">This story next to the Bible text</span>
+              <span className="story-passage__sub">{ctx.sideSub}</span>
             </a>
           </div>
         );
       }
-      if (box.id === "plain-retelling") {
+      if (isMainBox(box.id)) {
         const refs = b.v && b.v.length ? b.v : ctx.sceneRange[ctx.scene] ? [ctx.sceneRange[ctx.scene]] : [];
         const keys = expand(refs);
         keys.forEach((k) => ctx.need.add(k));
@@ -158,6 +163,13 @@ function renderBlock(b: Block, i: number, box: Box, ctx: any) {
         <ul className={box.id === "scene-card" ? "story-cast" : "story-list-plain"} key={i}>
           {b.items.map((it, j) => <H key={j} as="li" html={it} />)}
         </ul>
+      );
+    case "thread":
+      return (
+        <aside className="story-thread" key={i}>
+          <span className="story-thread__label">Follow the thread</span>
+          <H as="p" html={b.html} />
+        </aside>
       );
     case "imagine":
       return (
@@ -211,7 +223,7 @@ function BoxView({ box, ctx }: { box: Box; ctx: any }) {
         {box.emoji && <span className="story-box__emoji" aria-hidden="true">{box.emoji}</span>}
         {box.title.replace(/\.\.\.$/, "").replace(/: "Wait, what\?"$/, "")}
       </h2>
-      {box.id === "plain-retelling" ? <div className="chapter-text story-text" lang="en">{blocks}</div> : blocks}
+      {isMainBox(box.id) ? <div className="chapter-text story-text" lang="en">{blocks}</div> : blocks}
     </section>
   );
 }
@@ -237,16 +249,20 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   const mins = stepMinutes(slug)!;
   // Long stories get a "Halfway there" break so they feel like two short parts.
   const breakAfter = mins.story >= 7 && story.scenes >= 6 ? Math.floor(story.scenes / 2) : 0;
-  const ctx: any = { passageHref, compare, ref: entry.ref, bookName, sceneRange, scene: 0, need: new Set<string>(), scenes: story.scenes, breakAfter };
+  const section = isSection(entry);
+  const fw = formatWords(entry);
+  const steps = section ? [SECTION_STEP, ...STEPS.slice(1)] : STEPS;
+  const ctx: any = { passageHref, compare, ref: entry.ref, bookName, sceneRange, scene: 0, need: new Set<string>(), scenes: story.scenes, breakAfter,
+    part: fw.part, sideSub: section ? `Each section next to the Bible text it explains` : "This story next to the Bible text" };
 
   const inShort = IN_SHORT[slug] || null;
   const zoneOf = (id: string) => story.zones.find((z) => z.id === id);
-  const DRAWER = ["scene-card", "before-the-story", "map-of-the-story"];
+  const DRAWER = ["scene-card", "before-the-story", "map-of-the-story", "map-of-the-letter", "map-of-the-message"];
   const LEADERS = ["from-luther", "in-church"];
   const FORYOU_ORDER = ["your-turn", "you-might-have-heard", "good-news"];
   const view = (b: Box) => <Fragment key={b.id}>{BoxView({ box: b, ctx })}</Fragment>;
   // Render the zones first so ctx.need collects every verse the page uses.
-  const zoneViews = STEPS.map((st) => {
+  const zoneViews = steps.map((st) => {
     const z = st.zone ? zoneOf(st.zone) : null;
     if (!z) return null;
     if (st.id === "story") {
@@ -257,8 +273,8 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           {inShort && (
             <details className="drawer drawer--short" data-drawer>
               <summary className="drawer__sum">
-                <span className="drawer__title">{nw("The whole story, in short", 20)}</span>
-                <span className="drawer__sub">{nw("What happens, start to finish. Open it if you want the ending first.", 20)}</span>
+                <span className="drawer__title">{nw(`The whole ${fw.whole}, in short`, 20)}</span>
+                <span className="drawer__sub">{nw(section ? `The main points of the whole ${fw.whole}, in a few sentences.` : "What happens, start to finish. Open it if you want the ending first.", 20)}</span>
               </summary>
               <div className="drawer__body">
                 <p>{inShort}</p>
@@ -269,8 +285,17 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           {inDrawer.length > 0 && (
             <details className="drawer" data-drawer>
               <summary className="drawer__sum">
-                <span className="drawer__title">{nw("Who’s who and what came before", 20)}</span>
-                <span className="drawer__sub">{nw("People, places, and the story so far. Open it anytime.", 20)}</span>
+                {section ? (
+                  <>
+                    <span className="drawer__title">{nw("All the sections at a glance", 20)}</span>
+                    <span className="drawer__sub">{nw(`A map of the ${fw.whole}, with the verses for each section.`, 20)}</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="drawer__title">{nw("Who’s who and what came before", 20)}</span>
+                    <span className="drawer__sub">{nw("People, places, and the story so far. Open it anytime.", 20)}</span>
+                  </>
+                )}
               </summary>
               <div className="drawer__body">{inDrawer.map(view)}</div>
             </details>
@@ -298,7 +323,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   }
 
   // The first-visit tip uses this story's own first verse and first hard word.
-  const retell = story.zones[0]?.boxes.find((b) => b.id === "plain-retelling");
+  const retell = story.zones[0]?.boxes.find((b) => isMainBox(b.id));
   const firstP = retell?.blocks.find((b) => b.type === "p" && (b as any).v?.length) as any;
   const firstRef = firstP ? firstP.v[0] : Object.values(sceneRange)[0]?.split("-")[0] || "1:1";
   let firstTerm = "", firstAt = Infinity;
@@ -342,6 +367,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
   const data = {
     slug, title: entry.title, url: `/stories/${slug}/`, book: bookName, verses,
+    readLabel: steps[0].label, part: fw.part,
     memorize: mem || null,
     words: WORDS,
     paths: pathsData().filter((pp) => pp.steps.some((s) => s.slug === slug)),
@@ -366,7 +392,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
     image: `${SITE_URL}/static/og-image.jpg`,
     isBasedOn: { "@type": "CreativeWork", name: `${entry.ref}, Berean Standard Bible`, url: `${SITE_URL}${passageHref}` },
     license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-    isPartOf: { "@type": "CollectionPage", name: "Scene by Scene stories", url: `${SITE_URL}/stories/` },
+    isPartOf: { "@type": "CollectionPage", name: section ? "Section by Section guides" : "Scene by Scene stories", url: `${SITE_URL}/stories/` },
   };  const whatQ = entry.kind === "Story" ? `What is ${entry.title} about?` : `What does ${entry.title} say?`;
   const teachQ = entry.kind === "Story" ? `What does ${entry.title} teach?` : `What does ${entry.title} mean?`;
   const graph: Record<string, unknown>[] = [
@@ -444,7 +470,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         </aside>
 
         <header className="story-head">
-          <div className="story-eyebrow ph-eyebrow"><Dots parts={[entry.kind === "Teaching" ? "Teaching" : entry.kind === "Poetry and Prayer" ? "Prayer" : "Story", entry.ref]} /></div>
+          <div className="story-eyebrow ph-eyebrow"><Dots parts={[kindLabel(entry.kind), entry.ref]} /></div>
           <h1 className="story-title ph-title">{nw(entry.title)}</h1>
           <p className="story-subtitle ph-lede">{entry.subtitle}</p>
           <div className="story-meta">
@@ -483,7 +509,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         </div>
 
         <nav className="steps" aria-label="Story steps" data-steps>
-          {STEPS.map((st, i) => (
+          {steps.map((st, i) => (
             <a key={st.id} className="steps__btn" href={`#step-${st.id}`} data-step={st.id}>
               <span className="steps__bar" aria-hidden="true"></span>
               <span className="steps__label"><span className="steps__num">{i + 1}</span> {st.label}</span>
@@ -493,7 +519,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
         <div className="story-layout">
           <div className="story-main">
-            {STEPS.map((st, i) => (
+            {steps.map((st, i) => (
               <section key={st.id} className="step" id={`step-${st.id}`} data-step-panel={st.id} aria-labelledby={`step-h-${st.id}`}>
                 <header className="step__head">
                   <span className="step__num"><Dots parts={[`Step ${i + 1} of 4`, `About ${(mins as any)[st.id]} min`]} /></span>
@@ -501,6 +527,18 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
                   <p className="step__q">{st.q}</p>
                 </header>
 
+                {st.id === "story" && section && (
+                  <a className="side-callout" href={compare}>
+                    <span className="side-callout__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="7.5" height="16" rx="1.5" /><rect x="13.5" y="4" width="7.5" height="16" rx="1.5" /></svg>
+                    </span>
+                    <span className="side-callout__text">
+                      <span className="side-callout__title">Read it side by side</span>
+                      <span className="side-callout__sub">{nw("Each section of this guide next to the Bible text it explains.", 20)}</span>
+                    </span>
+                  </a>
+                )}
+                {st.id === "story" && section && <p className="guide-note">This is a plain-language guide, not a translation. Check it against the Bible text any time.</p>}
                 {st.id === "story" && <p className="step__hint">Tap a verse number, like <span className="vchip vchip--demo" aria-hidden="true">{firstRef}</span>, to read the Bible&rsquo;s exact words.</p>}
 
                 {st.id === "foryou" ? forYou?.main : zoneViews[i]}
@@ -511,7 +549,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
                     <p className="big-idea__text" dangerouslySetInnerHTML={{ __html: story.bigIdea }} />
                   </section>
                 )}
-                {st.id === "foryou" && <p className="story-care">If this story brings up big feelings, talk with someone you trust, like a parent, pastor, or counselor.</p>}
+                {st.id === "foryou" && <p className="story-care">If this {fw.thing === "guide" ? fw.whole : "story"} brings up big feelings, talk with someone you trust, like a parent, pastor, or counselor.</p>}
                 {st.id === "foryou" && forYou?.lead?.length > 0 && (
                   <details className="drawer drawer--leaders" data-drawer>
                     <summary className="drawer__sum">
@@ -578,8 +616,8 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
                 )}
 
                 {i < 3 && (
-                  <a className="btn btn--primary step__next" href={`#step-${STEPS[i + 1].id}`} data-step-go={STEPS[i + 1].id}>
-                    Next: {STEPS[i + 1].label}
+                  <a className="btn btn--primary step__next" href={`#step-${steps[i + 1].id}`} data-step-go={steps[i + 1].id}>
+                    Next: {steps[i + 1].label}
                   </a>
                 )}
               </section>
@@ -595,7 +633,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
                 </button>
               </div>
               <div className="verse-panel__body" data-verse-body aria-live="polite">
-                <p className="verse-panel__empty">Tap a verse number in the story, like <span className="vchip vchip--demo" aria-hidden="true">{firstRef}</span>. The Bible&rsquo;s exact words will show here.</p>
+                <p className="verse-panel__empty">Tap a verse number in the {fw.whole === "story" ? "story" : "text"}, like <span className="vchip vchip--demo" aria-hidden="true">{firstRef}</span>. The Bible&rsquo;s exact words will show here.</p>
               </div>
               <p className="verse-panel__foot">Berean Standard Bible. Public domain.</p>
             </div>
@@ -603,7 +641,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         </div>
 
         <footer className="story-credit">
-          {entry.status === "early" && <p>This story is new. It has been checked line by line against the Bible text, but a Lutheran pastor has not reviewed it yet. Small changes may come.</p>}
+          {entry.status === "early" && <p>This {fw.thing} is new. It has been checked line by line against the Bible text, but a Lutheran pastor has not reviewed it yet. Small changes may come.</p>}
           <p>© 2026 Hope for Americans. Written by Moses David.</p>
           <p>Free to share and adapt for non-commercial use under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener">CC BY-NC-SA 4.0</a>.</p>
           <p>Bible text: Berean Standard Bible (public domain).</p>
@@ -612,7 +650,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
       <script type="application/json" id="story-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />
       <script src="/static/js/chapter.js?v=9" defer></script>
-      <script src="/static/js/learn.js?v=5" defer></script>
+      <script src="/static/js/learn.js?v=7" defer></script>
       <script dangerouslySetInnerHTML={{ __html: `window.addEventListener('beforeprint',function(){document.documentElement.classList.add('printing');document.querySelectorAll('details').forEach(function(d){d.open=true;});});` }} />
     </>
   );

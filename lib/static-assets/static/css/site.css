@@ -3573,3 +3573,32 @@ h1, h2, h3, h4, summary, figcaption, th, dt, label, button, .btn,
 /* The kicker was a flex row, which put uneven gaps around each "·". */
 .rail-card__kicker.rail-card__kicker { display: block; }
 .rail-card__kicker .badge { margin-left: 4px; vertical-align: 1px; }
+
+/* ---------- Section by Section: letters and prophets ----------
+   Same page as a Scene by Scene story. Letters and prophecies get their
+   own spine color on covers and cards, a "Read it side by side" callout
+   at the top of the Read step, and "Follow the thread" notes that show
+   how one section leads to the next. */
+:root { --spine-letter: #2F5E6E; --spine-prophecy: #8A4A2F; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-fs-theme="light"]):not([data-fs-theme="white"]) { --spine-letter: #8FC3D1; --spine-prophecy: #E3A585; }
+}
+:root[data-fs-theme="dark"] { --spine-letter: #8FC3D1; --spine-prophecy: #E3A585; }
+.cover2--letter .cover2__spine, .cat-card--letter .cat-card__spine { background: var(--spine-letter); }
+.cover2--prophecy .cover2__spine, .cat-card--prophecy .cat-card__spine { background: var(--spine-prophecy); }
+
+.side-callout { display: flex; align-items: center; gap: 14px; margin: 12px 0 6px; padding: 14px 16px; min-height: 44px; border-radius: 12px; background: var(--gold-wash); color: var(--ink); text-decoration: none; box-shadow: var(--card-shadow); transition: box-shadow .2s ease; }
+.side-callout:hover { box-shadow: var(--card-shadow-hover); }
+.side-callout:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.side-callout__icon { flex-shrink: 0; display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 10px; background: var(--gold); color: var(--on-gold); }
+.side-callout__icon svg { width: 22px; height: 22px; }
+.side-callout__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.side-callout__title { font-family: var(--font-ui); font-size: 17px; font-weight: 700; color: var(--gold-deep); }
+.side-callout__sub { font-family: var(--font-body); font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
+.guide-note { font-family: var(--font-ui); font-size: 14px; line-height: 1.5; color: var(--ink-faded); margin: 8px 0 0; }
+
+.story-thread { margin: 1.4em 0; padding: 12px 14px 12px 16px; border-left: 4px solid var(--gold); border-radius: 0 10px 10px 0; background: var(--paper-warm); }
+.story-thread__label { display: block; font-family: var(--font-ui); font-size: 14px; font-weight: 700; color: var(--gold-deep); margin-bottom: 4px; }
+.story-thread p { margin: 0 !important; font-size: 17px; line-height: 1.55; }
+.cmp-thread { display: block; margin: .7em 0; padding: 10px 12px; border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; background: var(--paper-warm); font-size: 15px; line-height: 1.5; }
+@media print { .side-callout { display: none; } .story-thread { background: none; border-left-color: #999; } }

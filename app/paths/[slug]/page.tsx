@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/bible";
 import { nw } from "@/lib/stories";
-import { PATHS, pathBySlug, pathSteps, pathMinutes, pathsData } from "@/lib/paths";
+import { PATHS, pathBySlug, pathSteps, pathMinutes, pathsData, pathUnit } from "@/lib/paths";
 import { Dots } from "@/lib/Meta";
 
 /* A reading path page. Without JavaScript it is a plain numbered list.
@@ -41,7 +41,7 @@ export default async function PathPage({ params }: { params: Promise<{ slug: str
       </nav>
 
       <header className="path-head">
-        <span className="path-head__kicker ph-eyebrow"><Dots parts={["Reading path", `${steps.length} stories`]} /></span>
+        <span className="path-head__kicker ph-eyebrow"><Dots parts={["Reading path", `${steps.length} ${pathUnit(p)}`]} /></span>
         <h1 className="path-head__title ph-title">{nw(p.title)}</h1>
         <p className="path-head__q ph-lede">{p.question}</p>
         <p className="path-head__lede">{p.lede}</p>
@@ -90,7 +90,7 @@ export default async function PathPage({ params }: { params: Promise<{ slug: str
       </section>
 
       <script type="application/json" id="paths-data" dangerouslySetInnerHTML={{ __html: JSON.stringify(pathsData()).replace(/</g, "\\u003c") }} />
-      <script src="/static/js/learn.js?v=5" defer></script>
+      <script src="/static/js/learn.js?v=7" defer></script>
     </div>
   );
 }

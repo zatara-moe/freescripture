@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/bible";
 import { catalog, FEELINGS, KIND_HELP, nw, storyBySlug, SHELVES, type CatItem, type CatKind } from "@/lib/stories";
 import { PARTS, partOfPassage } from "@/lib/timeline";
-import { PATHS, pathSteps, pathMinutes } from "@/lib/paths";
+import { PATHS, pathSteps, pathMinutes, pathUnit } from "@/lib/paths";
 import { Dots, Chain, coverTitle } from "@/lib/Meta";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
    stories.js adds the filters, counts, and preview. Without it, this is a
    plain list of links that still works. */
 
-const KINDS: CatKind[] = ["Story", "Teaching", "Prayer", "Parable", "Verses"];
+const KINDS: CatKind[] = ["Story", "Teaching", "Prayer", "Letter", "Prophecy", "Parable", "Verses"];
 const LENGTHS: [string, string][] = [["short", "Under 5 minutes"], ["mid", "5 to 10 minutes"], ["long", "Over 10 minutes"]];
 const rank = (c: CatItem) => (c.kind === "Parable" ? 2 : c.kind === "Verses" ? 1 : 0);
 const lenOf = (m: number | null) => (m == null ? "" : m < 5 ? "short" : m <= 10 ? "mid" : "long");
@@ -30,6 +30,8 @@ const lenOf = (m: number | null) => (m == null ? "" : m < 5 ? "short" : m <= 10 
 function openLabel(c: CatItem) {
   if (c.kind === "Parable") return "Open the parable";
   if (c.kind === "Verses") return "Open the verses";
+  if (c.kind === "Letter") return `Open the letter${c.minutes ? ` (${c.minutes} min)` : ""}`;
+  if (c.kind === "Prophecy") return `Open the prophecy${c.minutes ? ` (${c.minutes} min)` : ""}`;
   return `Open the story${c.minutes ? ` (${c.minutes} min)` : ""}`;
 }
 
@@ -125,7 +127,7 @@ export default function StoriesPage() {
               const st = pathSteps(pp);
               return (
                 <a key={pp.slug} className="path-card" href={`/paths/${pp.slug}/`}>
-                  <span className="path-card__kicker"><Dots parts={["Reading path", `${st.length} stories`, `About ${pathMinutes(pp)} min`]} /></span>
+                  <span className="path-card__kicker"><Dots parts={["Reading path", `${st.length} ${pathUnit(pp)}`, `About ${pathMinutes(pp)} min`]} /></span>
                   <span className="path-card__title">{nw(pp.title)}</span>
                   <span className="path-card__line">{pp.question}</span>
                   <span className="path-card__list"><Chain items={st.map((s) => s.entry.title)} /></span>

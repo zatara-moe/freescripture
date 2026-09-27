@@ -14,10 +14,11 @@ import {
   GENRE_OF,
   type TransSlug,
 } from "@/lib/bible";
-import { storiesForChapter, compareHref, storyMinutes, isReadable, nw } from "@/lib/stories";
+import { kindLabel, isSection, storiesForChapter, compareHref, storyMinutes, isReadable, nw } from "@/lib/stories";
 import { eraOfPassage, partOfEra, eraCenter } from "@/lib/timeline";
 import { Bands } from "@/lib/TimelineBands";
 import { Dots } from "@/lib/Meta";
+import { loadScenes } from "@/lib/story";
 
 type Params = { translation: string; book: string; chapter: string };
 
@@ -154,6 +155,13 @@ export default async function ChapterPage(
 
   // Scene by Scene stories that retell this chapter.
   const chapterStories = storiesForChapter(book, num);
+  /* A Section by Section guide to a whole letter opens at the first
+     section that covers this chapter, not at the top of the letter. */
+  const readHref = (st: (typeof chapterStories)[number]) => {
+    if (!isSection(st) || st.passage.chapter === num) return `/stories/${st.slug}/`;
+    const sc = loadScenes(st.slug).find((x) => x.range && x.range.endCh >= num);
+    return `/stories/${st.slug}/${sc ? `#scene-${sc.num}` : ""}`;
+  };
   // Where this chapter sits on the Bible timeline (null for books it doesn't place).
   const era = eraOfPassage({ book, chapter: num });
   const part = era ? partOfEra(era) : null;
@@ -279,14 +287,14 @@ export default async function ChapterPage(
             return (
               <div className="chapter-story rail-card rail-card--in-rail" key={st.slug}>
                 <p className="rail-card__kicker">
-                  <Dots parts={[st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story", st.ref, min ? `About ${min} min` : ""]} />
+                  <Dots parts={[kindLabel(st.kind), st.ref, min ? `About ${min} min` : ""]} />
                   {st.status === "early" && <>{"\u00A0"}<span className="badge badge--new">New</span></>}
                 </p>
                 <p className="rail-card__title">{st.title}</p>
-                <p className="rail-card__line">{st.subtitle}. Retold in plain words, one scene at a time.</p>
+                <p className="rail-card__line">{st.subtitle}. {isSection(st) ? "Explained in plain words, section by section." : "Retold in plain words, one scene at a time."}</p>
                 <div className="rail-card__acts">
-                  <a className="btn btn--primary" href={`/stories/${st.slug}/`}>Read the story</a>
-                  <a className="btn btn--line" href={compareHref(st, trans)}>Read both side by side</a>
+                  <a className="btn btn--primary" href={readHref(st)}>{isSection(st) ? "Read it in plain words" : "Read the story"}</a>
+                  <a className="btn btn--line" href={compareHref(st, trans, num)}>Read both side by side</a>
                 </div>
               </div>
             );
@@ -419,20 +427,20 @@ export default async function ChapterPage(
         </article>
         {chapterStories.length > 0 && (
           <aside className="rail-margin" aria-label="Stories from this chapter">
-            <p className="rail__label">Told scene by scene</p>
+            <p className="rail__label">{chapterStories.every(isSection) ? "Explained section by section" : chapterStories.some(isSection) ? "In plain words" : "Told scene by scene"}</p>
             {chapterStories.map((st) => {
             const min = isReadable(st) ? storyMinutes(st.slug) : null;
             return (
               <div className="chapter-story rail-card" key={st.slug}>
                 <p className="rail-card__kicker">
-                  <Dots parts={[st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story", st.ref, min ? `About ${min} min` : ""]} />
+                  <Dots parts={[kindLabel(st.kind), st.ref, min ? `About ${min} min` : ""]} />
                   {st.status === "early" && <>{"\u00A0"}<span className="badge badge--new">New</span></>}
                 </p>
                 <p className="rail-card__title">{st.title}</p>
-                <p className="rail-card__line">{st.subtitle}. Retold in plain words, one scene at a time.</p>
+                <p className="rail-card__line">{st.subtitle}. {isSection(st) ? "Explained in plain words, section by section." : "Retold in plain words, one scene at a time."}</p>
                 <div className="rail-card__acts">
-                  <a className="btn btn--primary" href={`/stories/${st.slug}/`}>Read the story</a>
-                  <a className="btn btn--line" href={compareHref(st, trans)}>Read both side by side</a>
+                  <a className="btn btn--primary" href={readHref(st)}>{isSection(st) ? "Read it in plain words" : "Read the story"}</a>
+                  <a className="btn btn--line" href={compareHref(st, trans, num)}>Read both side by side</a>
                 </div>
               </div>
             );

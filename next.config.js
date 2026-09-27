@@ -8,6 +8,8 @@ const nextConfig = {
       { source: "/stories/the-empty-tomb/", destination: "/stories/the-resurrection/", permanent: true },
       /* Moses and the Exodus became five stories plus The Ten Commandments (September 2026). */
       { source: "/stories/moses-and-the-exodus/", destination: "/paths/moses-and-the-exodus/", permanent: true },
+      /* Philippians became one page per chapter plus a reading path (September 2026). */
+      { source: "/stories/philippians/", destination: "/paths/philippians/", permanent: true },
     ];
   },
 };
