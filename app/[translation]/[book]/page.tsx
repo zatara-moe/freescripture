@@ -13,6 +13,7 @@ import {
 } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
 import { readableStories, storyMinutes } from "@/lib/stories";
+import { Dots } from "@/lib/Meta";
 
 type Params = { translation: string; book: string };
 
@@ -135,7 +136,7 @@ export default async function BookLanding(
               {sts.map((st) => (
                 <li key={st.slug}>
                   <a className="next-row" href={`/stories/${st.slug}/`}>
-                    <span className="next-row__kicker">{st.ref}{storyMinutes(st.slug) ? ` · About ${storyMinutes(st.slug)} min` : ""}</span>
+                    <span className="next-row__kicker"><Dots parts={[st.ref, storyMinutes(st.slug) ? `About ${storyMinutes(st.slug)} min` : ""]} /></span>
                     <span className="next-row__title">{st.title}</span>
                     <span className="next-row__meta">{st.subtitle}</span>
                   </a>

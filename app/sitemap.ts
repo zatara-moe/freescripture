@@ -10,6 +10,7 @@ import {
   SITE_URL,
 } from "@/lib/bible";
 import verseIndex from "@/lib/verse-index.json";
+import { PATHS } from "@/lib/paths";
 
 export const dynamic = "force-static";
 
@@ -24,10 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/search/` },
     { url: `${SITE_URL}/compare/` },
     { url: `${SITE_URL}/about/` },
+    { url: `${SITE_URL}/memorize/` },
   ];
   for (const n of NEEDS as any[]) urls.push({ url: `${SITE_URL}/read/${n.slug}/` });
   for (const g of GENRES as any[]) urls.push({ url: `${SITE_URL}/genre/${g.slug}/` });
   for (const s of STORIES) if (isIndexed(s)) urls.push({ url: `${SITE_URL}/stories/${s.slug}/` });
+  for (const p of PATHS) urls.push({ url: `${SITE_URL}/paths/${p.slug}/` });
   for (const p of PARABLES as any[]) urls.push({ url: `${SITE_URL}/parables/${p.slug}/` });
   // Bare "chapter:verse" disambiguation pages — every one built for the
   // literal query someone types when they don't remember the book name.

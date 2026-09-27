@@ -1,42 +1,50 @@
 # Free Scripture
 
-> Free Scripture is a free online Bible reader in three public-domain English translations: the World English Bible (WEB), the King James Version (KJV, including the Apocrypha), and the Bible in Basic English (BBE). Every book and chapter is free to read, with no account required. Stewarded by Hope for Americans in Flagstaff, Arizona.
+> Free Scripture (freescripture.org) explains well-known Bible stories in plain words, one scene at a time, with the Bible verse beside every paragraph. It also has the full Bible in four public-domain translations: the Berean Standard Bible (BSB, the default), the World English Bible (WEB), the King James Version (KJV, with the Apocrypha), and the Bible in Basic English (BBE). It is free, with no ads and no account. It is made by Hope for Americans, a nonprofit in Flagstaff, Arizona, and each story is reviewed by a pastor before it is marked final.
 
-The site lets people read the Bible online, look up a verse by what they are going through, or browse by kind of book. It is a reading tool, not a study tool: the text is presented plainly, with no commentary.
+Free Scripture is written for adults who are new to the Bible, who stopped reading it, or who find it hard to read. Stories are retold from the BSB in short sentences. Each paragraph links to the exact verses it retells, so a reader can always check the story against the Bible text. When quoting a story, cite the Bible reference shown on the page.
 
-## Translations
+## Bible stories, explained scene by scene
 
-- [World English Bible (WEB)](https://freescripture.org/web/): A modern English translation in the public domain, designed to read clearly in today's English while preserving accuracy. 66 books.
-- [King James Version (KJV)](https://freescripture.org/kjv/): The 1611 translation in its standard 1769 revision. The most-quoted English Bible in human history. 80 books.
-- [Bible in Basic English (BBE)](https://freescripture.org/bbe/): A translation using a vocabulary of about 1,000 common English words. Originally created for English-language learners and readers who find traditional translations difficult. 66 books.
+- [All stories](https://freescripture.org/stories/): 69 stories and teachings, grouped by part of the Bible's big story. Each has a cast list, background, a scene-by-scene retelling with verses, questions to think about, and one line to memorize.
+- [David and Goliath](https://freescripture.org/stories/david-and-goliath/): 1 Samuel 17, explained in plain words.
+- [The Prodigal Son](https://freescripture.org/stories/the-prodigal-son/): Luke 15, the lost son, the running father, and the older brother.
+- [The Woman at the Well](https://freescripture.org/stories/the-woman-at-the-well/): John 4, Jesus and the Samaritan woman.
+- [The Crucifixion](https://freescripture.org/stories/the-crucifixion/) and [The Resurrection](https://freescripture.org/stories/the-resurrection/): Good Friday and Easter in the Gospel of Luke.
+- [Psalm 23](https://freescripture.org/stories/psalm-23/) and [The Lord's Prayer](https://freescripture.org/stories/the-lords-prayer/): line by line, in plain words.
 
-## Find a verse for the moment
+## Reading paths (several stories in order)
 
-- [Verses for when you're afraid](https://freescripture.org/read/fear/): Verses for fear and anxiety, from the storm Jesus calmed to whom shall I fear. Read one, or send it to a friend.
-- [Verses for grief and loss](https://freescripture.org/read/grief/): Verses for mourning and sympathy, from Lazarus to the promise that every tear gets wiped away. Read one, or send it.
-- [Verses for strength](https://freescripture.org/read/strength/): Verses for exhaustion and encouragement, from eagles' wings to strength made perfect in weakness. Read one, or send it.
-- [Verses for guilt and starting over](https://freescripture.org/read/guilt/): Verses for regret and grace, from the prodigal son to no condemnation. Read one, or send it.
-- [Verses about forgiving someone](https://freescripture.org/read/forgiveness/): Verses for resentment and forgiving, from Joseph to the words from the cross. Read one, or send it.
-- [Verses for wisdom](https://freescripture.org/read/wisdom/): Verses for choices and how to live, from Proverbs to the Sermon on the Mount. Read one, or send it.
-- [Verses to celebrate](https://freescripture.org/read/celebrate/): Joyful verses for good news and milestones, from this is the day the Lord has made to rejoicing over you with singing. Read one, or send it.
-- [Verses for a new baby](https://freescripture.org/read/new-baby/): Verses to bless a newborn and new parents, from fearfully and wonderfully made to children are a gift. Read one, or send it.
-- [Verses for giving thanks](https://freescripture.org/read/gratitude/): Verses for gratitude and thank you, from in everything give thanks to I thank my God whenever I remember you. Read one, or send it.
-- [Verses for thinking of you](https://freescripture.org/read/thinking-of-you/): Verses to send when someone is on your mind, from the Lord bless you and keep you to plans for a future and a hope.
+- [Moses and the Exodus](https://freescripture.org/paths/moses-and-the-exodus/): Baby Moses, the burning bush, the ten plagues, the Passover, the Red Sea, the Ten Commandments.
+- [The Sermon on the Mount](https://freescripture.org/paths/sermon-on-the-mount/): Matthew 5 to 7 in seven short stories.
+- [Holy Week](https://freescripture.org/paths/holy-week/): Palm Sunday to Easter, in order.
+- [Christmas](https://freescripture.org/paths/christmas/): the angel visits Mary, the birth of Jesus, the wise men.
+- [Miracles of Jesus](https://freescripture.org/paths/miracles-of-jesus/), [Who is Jesus?](https://freescripture.org/paths/who-is-jesus/), [When life feels heavy](https://freescripture.org/paths/when-life-feels-heavy/), [Lost and found](https://freescripture.org/paths/lost-and-found/).
 
-## Browse by kind of book
+## The parables of Jesus
 
-- [The books that read like a novel](https://freescripture.org/genre/narrative/): Battles, families, kings, exiles, and a wandering teacher. The parts of the Bible that move like a story.
-- [The books that read like music](https://freescripture.org/genre/poetry/): Songs, laments, and love poems, written to be felt as much as read.
-- [The books about how to live](https://freescripture.org/genre/wisdom/): Hard-won advice on work, money, suffering, and time. Plain wisdom for ordinary days.
-- [The original constitution](https://freescripture.org/genre/law/): The codes a young nation was built on. Dense, but foundational.
-- [Mail from the early church](https://freescripture.org/genre/letters/): Real letters to real congregations: arguing, encouraging, and sorting out how to live together.
-- [People speaking for God](https://freescripture.org/genre/prophecy/): Warnings, visions, and promises, delivered by people convinced they spoke for God.
+- [All 37 parables](https://freescripture.org/parables/): each with its Bible text, parallel accounts in other Gospels, and a one-line summary of the turn in the story.
 
-## Pages
+## Bible timeline
 
-- [Search](https://freescripture.org/search/): Search any translation for a word or verse.
-- [About](https://freescripture.org/about/): About the project and its text sources.
+- [Bible timeline](https://freescripture.org/timeline/): the whole Bible story in time order, in 4 parts and 11 eras, with key people, places, events, and where each book fits.
 
-## Full text
+## Bible verses for how you feel
 
-Every chapter has its own page at https://freescripture.org/{translation}/{book}/{chapter}/ , for example https://freescripture.org/kjv/1-peter/5/ . A complete list of URLs is in the sitemap at https://freescripture.org/sitemap.xml .
+- [All topics](https://freescripture.org/read/): short sets of verses for fear, grief, strength, guilt, forgiveness, wisdom, loneliness, a racing mind, doubt, anger, good news, a new baby, gratitude, and thinking of someone. Each is easy to send to a friend.
+
+## The full Bible
+
+- [Berean Standard Bible (BSB)](https://freescripture.org/bsb/): a modern, accurate translation released to the public domain in 2023. The default text, and the base text for every story.
+- [World English Bible (WEB)](https://freescripture.org/web/): a public-domain modern English translation.
+- [King James Version (KJV)](https://freescripture.org/kjv/): the 1769 revision of the 1611 translation, with the Apocrypha (80 books).
+- [Bible in Basic English (BBE)](https://freescripture.org/bbe/): uses about 1,000 common English words. Helpful for English learners.
+- [Side by side](https://freescripture.org/compare/): any chapter in two translations at once, or a story next to the Bible text it retells.
+- Every chapter has its own page at https://freescripture.org/{translation}/{book}/{chapter}/ , for example https://freescripture.org/bsb/john/3/ .
+
+## Other
+
+- [Memorize](https://freescripture.org/memorize/): learn one Bible line at a time.
+- [Search](https://freescripture.org/search/): find a story by the name you know ("Jonah and the whale", "feeding the 5,000") or a verse like John 3:16.
+- [About and method](https://freescripture.org/about/): who makes Free Scripture, how stories are written and reviewed, and the text sources and licenses.
+- [Sitemap](https://freescripture.org/sitemap.xml)

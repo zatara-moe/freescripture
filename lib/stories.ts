@@ -1125,7 +1125,20 @@ export function sameFeeling(s: StoryEntry, not: string[] = []) {
 export function storyBySlug(slug: string) { return STORIES.find((s) => s.slug === slug) || null; }
 export function isBuilt(s: StoryEntry) { return s.status !== "planned"; }
 export function isReadable(s: StoryEntry) { return s.status === "live" || (s.status === "early" && SHOW_EARLY_EDITIONS); }
-export function isIndexed(s: StoryEntry) { return s.status === "live"; }
+/* SEARCH ENGINES (decided September 26, 2026: option B)
+   The best-known stories are open to search engines now, while they are
+   still early editions. Each early page already says a pastor has not
+   reviewed it yet. Every other story stays hidden from search engines
+   until its status is "live". To open another story early, add its slug
+   here. Keep it to stories people search for by name. */
+export const INDEX_EARLY = new Set<string>([
+  "creation-and-the-fall", "noahs-ark", "the-burning-bush", "crossing-the-red-sea",
+  "the-ten-commandments", "david-and-goliath", "psalm-23", "daniel-in-the-lions-den",
+  "jonah", "the-birth-of-jesus", "the-beatitudes", "the-lords-prayer",
+  "jesus-feeds-the-5000", "jesus-walks-on-water", "the-woman-at-the-well", "good-samaritan",
+  "the-prodigal-son", "the-last-supper", "the-crucifixion", "the-resurrection",
+]);
+export function isIndexed(s: StoryEntry) { return s.status === "live" || (s.status === "early" && INDEX_EARLY.has(s.slug)); }
 export function readableStories() { return STORIES.filter(isReadable); }
 export function plannedStories() { return STORIES.filter((s) => s.status === "planned"); }
 export function siblings(s: StoryEntry) { return STORIES.filter((x) => x.family === s.family && x.slug !== s.slug && isReadable(x)); }

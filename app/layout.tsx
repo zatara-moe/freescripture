@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:opsz,wght@7..72,400;7..72,700&family=Lexend:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/static/css/site.css?v=53" />
+        <link rel="stylesheet" href="/static/css/site.css?v=54" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#F0EFEA" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#16182C" media="(prefers-color-scheme: dark)" />
@@ -73,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   url: "https://freescripture.org/",
                   name: "Free Scripture",
                   description:
-                    "The King James, World English, and Basic English Bibles, free to read online. Every book and chapter.",
+                    "Bible stories explained in plain words, one scene at a time, with the verse beside every paragraph. Plus the full Bible in four free translations: Berean Standard Bible, World English Bible, King James Version with Apocrypha, and Bible in Basic English. No ads, no account.",
                   publisher: { "@id": "https://freescripture.org/#org" },
                   potentialAction: {
                     "@type": "SearchAction",
@@ -92,7 +92,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   name: "Free Scripture",
                   url: "https://freescripture.org/",
                   description:
-                    "A free online Bible reader stewarded by Hope for Americans in Flagstaff, Arizona.",
+                    "Free Scripture explains Bible stories in plain words for adults new to the Bible, with the full Bible in four public-domain translations. Made by Hope for Americans, a nonprofit in Flagstaff, Arizona.",
+                  logo: "https://freescripture.org/static/icons/icon-512.png",
                   parentOrganization: {
                     "@type": "Organization",
                     name: "Hope for Americans",
@@ -210,7 +211,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* First-visit tip: teaches chapter swipe/arrow navigation once. */}
         <div className="nav-tip" id="nav-tip" hidden>
-          <span>Swipe, or use &larr; &rarr;, to move between chapters.</span>
+          <span>Swipe, or use <span className="keep">&larr; &rarr;</span>, to move between chapters.</span>
           <button type="button" data-tip-close aria-label="Dismiss">&times;</button>
         </div>
 

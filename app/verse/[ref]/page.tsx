@@ -50,8 +50,8 @@ export async function generateMetadata({
   const label = `${chapter}:${verse}`;
   const title =
     books.length === 1
-      ? `${primary} ${label} | Free Scripture`
-      : `${label}: ${primary} and ${books.length - 1} other place${books.length > 2 ? "s" : ""} it appears | Free Scripture`;
+      ? `${primary} ${label}`
+      : `${label}: ${primary} and ${books.length - 1} other place${books.length > 2 ? "s" : ""} it appears`;
   const description =
     books.length === 1
       ? `Read ${primary} ${label} in the Berean Standard Bible, World English Bible, King James Version, and Bible in Basic English.`

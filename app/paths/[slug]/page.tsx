@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SITE_URL } from "@/lib/bible";
 import { nw } from "@/lib/stories";
 import { PATHS, pathBySlug, pathSteps, pathMinutes, pathsData } from "@/lib/paths";
+import { Dots } from "@/lib/Meta";
 
 /* A reading path page. Without JavaScript it is a plain numbered list.
    With it, learn.js marks the stories you finished and sets the button
@@ -18,10 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) return {};
   const description = `${p.question} Bible stories in plain words, one step at a time. Free, no account.`;
   return {
-    title: `${p.title}: a reading path`,
+    title: `${p.title}: Bible Stories in Plain Words`,
     description,
     alternates: { canonical: `${SITE_URL}/paths/${p.slug}/` },
-    robots: { index: false, follow: true },
   };
 }
 
@@ -41,7 +41,7 @@ export default async function PathPage({ params }: { params: Promise<{ slug: str
       </nav>
 
       <header className="path-head">
-        <span className="path-head__kicker">Reading path · {steps.length} stories</span>
+        <span className="path-head__kicker"><Dots parts={["Reading path", `${steps.length} stories`]} /></span>
         <h1 className="path-head__title">{nw(p.title)}</h1>
         <p className="path-head__q">{p.question}</p>
         <p className="path-head__lede">{p.lede}</p>
@@ -70,7 +70,7 @@ export default async function PathPage({ params }: { params: Promise<{ slug: str
               <span className="path-step__body">
                 <span className="path-step__title">{nw(s.entry.title)}</span>
                 <span className="path-step__shows">{s.shows}</span>
-                <span className="path-step__meta">{s.entry.ref} · About {s.minutes} min</span>
+                <span className="path-step__meta"><Dots parts={[s.entry.ref, `About ${s.minutes} min`]} /></span>
                 {s.entry.contentNote && <span className="path-step__note">Heads up: {s.entry.contentNote}</span>}
                 <span className="path-step__status" data-step-status></span>
               </span>

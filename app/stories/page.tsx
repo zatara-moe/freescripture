@@ -3,6 +3,7 @@ import { SITE_URL } from "@/lib/bible";
 import { catalog, FEELINGS, KIND_HELP, nw, storyBySlug, SHELVES, type CatItem, type CatKind } from "@/lib/stories";
 import { PARTS, partOfPassage } from "@/lib/timeline";
 import { PATHS, pathSteps, pathMinutes } from "@/lib/paths";
+import { Dots, Chain, coverTitle } from "@/lib/Meta";
 
 export const metadata: Metadata = {
   title: "Stories: Bible stories, parables, and verses in plain words",
@@ -124,10 +125,10 @@ export default function StoriesPage() {
               const st = pathSteps(pp);
               return (
                 <a key={pp.slug} className="path-card" href={`/paths/${pp.slug}/`}>
-                  <span className="path-card__kicker">Reading path · {st.length} stories · About {pathMinutes(pp)} min</span>
+                  <span className="path-card__kicker"><Dots parts={["Reading path", `${st.length} stories`, `About ${pathMinutes(pp)} min`]} /></span>
                   <span className="path-card__title">{nw(pp.title)}</span>
                   <span className="path-card__line">{pp.question}</span>
-                  <span className="path-card__list">{st.map((s) => s.entry.title).join(" → ")}</span>
+                  <span className="path-card__list"><Chain items={st.map((s) => s.entry.title)} /></span>
                 </a>
               );
             })}
@@ -147,7 +148,7 @@ export default function StoriesPage() {
                         <span className="act__dot" aria-hidden="true">{a.n}</span>
                         <span className="act__text">
                           <span className="act__name">{a.name}</span>
-                          <span className="act__meta">{a.books}{a.ready.length ? ` · ${a.ready.length} to read` : ""}</span>
+                          <span className="act__meta"><Dots parts={[a.books, a.ready.length ? `${a.ready.length} to read` : ""]} /></span>
                         </span>
                         <svg className="act__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                       </summary>
@@ -167,7 +168,7 @@ export default function StoriesPage() {
                                         {c.status === "New" && <span className="cover2__new">New</span>}
                                       </span>
                                       <span className="cover2__rule" aria-hidden="true"></span>
-                                      <span className="cover2__title">{c.title}</span>
+                                      <span className={`cover2__title${coverTitle(c.title).small ? " cover2__title--sm" : ""}`}>{coverTitle(c.title).text}</span>
                                       <span className="cover2__sub">{c.subtitle}</span>
                                       <span className="cover2__time">{c.minutes ? `About ${c.minutes} min` : ""}</span>
                                     </span>
@@ -212,7 +213,7 @@ export default function StoriesPage() {
                               {c.status === "New" && <span className="cover2__new">New</span>}
                             </span>
                             <span className="cover2__rule" aria-hidden="true"></span>
-                            <span className="cover2__title">{c.title}</span>
+                            <span className={`cover2__title${coverTitle(c.title).small ? " cover2__title--sm" : ""}`}>{coverTitle(c.title).text}</span>
                             <span className="cover2__sub">{c.kind === "Verses" ? c.desc : c.subtitle}</span>
                             <span className="cover2__time">{c.minutes ? `About ${c.minutes} min` : ""}</span>
                           </span>
@@ -237,26 +238,26 @@ export default function StoriesPage() {
                   <span className="cat-card__spine" aria-hidden="true"></span>
                   <span className="cat-card__body">
                     <span className="cat-card__top">
-                      <span className="cat-card__kind">{c.kind} · {c.ref}</span>
+                      <span className="cat-card__kind"><Dots parts={[c.kind, c.ref]} /></span>
                       {c.status !== "Ready" && <span className={`status status--${c.status === "New" ? "new" : "soon"}`}>{c.status}</span>}
                     </span>
                     <span className="cat-card__title">{nw(c.title, 20)}</span>
                     <span className="cat-card__sub">{c.subtitle}</span>
                     <span className="cat-card__desc">{c.desc}</span>
-                    <span className="cat-card__meta">{c.minutes ? `About ${c.minutes} min` : ""}{c.size ? ` · ${c.size}` : ""}</span>
+                    <span className="cat-card__meta"><Dots parts={[c.minutes ? `About ${c.minutes} min` : "", c.size]} /></span>
                     {c.note && <span className="cat-card__note"><strong>Content note:</strong> {c.note}</span>}
                   </span>
                 </a>
                 <div data-inside hidden>
                   <div className="pv">
                     <div className="pv__top">
-                      <span className="pv__kind">{c.kind} · {c.ref}</span>
+                      <span className="pv__kind"><Dots parts={[c.kind, c.ref]} /></span>
                       {c.status !== "Ready" && <span className={`status status--${c.status === "New" ? "new" : "soon"}`}>{c.status}</span>}
                     </div>
                     <h2 className="pv__title">{nw(c.title, 20)}</h2>
                     <p className="pv__sub">{c.subtitle}</p>
                     <p className="pv__desc">{c.desc}</p>
-                    <p className="pv__meta">{c.minutes ? `About ${c.minutes} min` : ""}{c.size ? ` · ${c.size}` : ""}</p>
+                    <p className="pv__meta"><Dots parts={[c.minutes ? `About ${c.minutes} min` : "", c.size]} /></p>
                     {c.note && <p className="pv__note"><strong>Content note:</strong> {c.note}</p>}
                     <div className="pv__inside">
                       <h3 className="pv__inside-title">What&rsquo;s inside</h3>

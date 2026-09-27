@@ -17,6 +17,7 @@ import {
 import { storiesForChapter, compareHref, storyMinutes, isReadable, nw } from "@/lib/stories";
 import { eraOfPassage, partOfEra, eraCenter } from "@/lib/timeline";
 import { Bands } from "@/lib/TimelineBands";
+import { Dots } from "@/lib/Meta";
 
 type Params = { translation: string; book: string; chapter: string };
 
@@ -187,7 +188,7 @@ export default async function ChapterPage(
               <>
                 <Bands mini here={eraCenter(era)} />
                 <span className="bigstrip__kicker"><a href={`/timeline/#${era.id}`}>Bible timeline</a></span>
-                <span className="bigstrip__label">Part {part.n} of 4: {part.name} · <a href={`/timeline/#${era.id}`}>{nw(era.title, 20)}</a></span>
+                <span className="bigstrip__label"><Dots parts={[{ text: <><span className="keep">Part {part.n} of 4:</span> <span className="keep">{part.name}</span></>, wrap: true }, <a href={`/timeline/#${era.id}`}>{era.title}</a>]} /></span>
               </>
             )}
             <nav className="bigstrip__nav" aria-label="Chapters">
@@ -278,8 +279,8 @@ export default async function ChapterPage(
             return (
               <div className="chapter-story rail-card rail-card--in-rail" key={st.slug}>
                 <p className="rail-card__kicker">
-                  {st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story"} · {st.ref}{min ? ` · About ${min} min` : ""}
-                  {st.status === "early" && <span className="badge badge--new">New</span>}
+                  <Dots parts={[st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story", st.ref, min ? `About ${min} min` : ""]} />
+                  {st.status === "early" && <>{"\u00A0"}<span className="badge badge--new">New</span></>}
                 </p>
                 <p className="rail-card__title">{st.title}</p>
                 <p className="rail-card__line">{st.subtitle}. Retold in plain words, one scene at a time.</p>
@@ -304,7 +305,7 @@ export default async function ChapterPage(
             <div className="chapter-translation-tag">{tmeta.label}</div>
             <h1 className="chapter-title">{refLabel(bk.name, num)}</h1>
             <p className="chapter-meta">
-              {ch.verses.length} verse{ch.verses.length === 1 ? "" : "s"} · About {readMinutes} min
+              <Dots parts={[`${ch.verses.length} verse${ch.verses.length === 1 ? "" : "s"}`, `About ${readMinutes} min`]} />
             </p>
           </header>
 
@@ -424,8 +425,8 @@ export default async function ChapterPage(
             return (
               <div className="chapter-story rail-card" key={st.slug}>
                 <p className="rail-card__kicker">
-                  {st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story"} · {st.ref}{min ? ` · About ${min} min` : ""}
-                  {st.status === "early" && <span className="badge badge--new">New</span>}
+                  <Dots parts={[st.kind === "Teaching" ? "Teaching" : st.kind === "Poetry and Prayer" ? "Prayer" : "Story", st.ref, min ? `About ${min} min` : ""]} />
+                  {st.status === "early" && <>{"\u00A0"}<span className="badge badge--new">New</span></>}
                 </p>
                 <p className="rail-card__title">{st.title}</p>
                 <p className="rail-card__line">{st.subtitle}. Retold in plain words, one scene at a time.</p>

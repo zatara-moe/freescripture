@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title: "Memorize",
   description: "Learn a Bible line by heart, a few minutes at a time. Pick a line and practice it three ways. Saved on your device. No account.",
   alternates: { canonical: `${SITE_URL}/memorize/` },
-  robots: { index: false, follow: true },
 };
 
 /* Memorize works on this page by itself. Nothing sends you away.

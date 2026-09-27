@@ -9,6 +9,8 @@ import { loadStory, loadScenes, type Block, type Box } from "@/lib/story";
 import { WORDS } from "@/lib/words";
 import { pathsData } from "@/lib/paths";
 import { JsonLd } from "@/lib/JsonLd";
+import { IN_SHORT } from "@/lib/story-answers";
+import { Dots } from "@/lib/Meta";
 
 /* A Scene by Scene story, in four steps that are the same on every story:
      1 Story     what happened, each paragraph with its verses
@@ -26,8 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const s = storyBySlug(slug);
   if (!s) return {};
-  const title = `${s.title}: ${s.subtitle} (${s.ref})`;
-  const description = `${s.desc} ${s.title} explained in plain words, one scene at a time, with every verse beside it. Free, no account.`;
+  /* Titles lead with the name people search for plus "Explained" (or
+     "Meaning" for teachings and prayers), then the reference. The subtitle
+     moves to the description. Keeps most titles under about 60 characters. */
+  const word = s.kind === "Story" ? "Explained" : "Meaning";
+  const title = s.ref.startsWith(s.title) ? `${s.title} ${word}` : `${s.title} ${word} (${s.ref})`;
+  const description = `${s.subtitle}${/[.?!]$/.test(s.subtitle) ? "" : "."} ${s.title} in plain words, one scene at a time, with every verse beside it. Free, no account.`;
   return {
     title,
     description,
@@ -233,6 +239,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   const breakAfter = mins.story >= 7 && story.scenes >= 6 ? Math.floor(story.scenes / 2) : 0;
   const ctx: any = { passageHref, compare, ref: entry.ref, bookName, sceneRange, scene: 0, need: new Set<string>(), scenes: story.scenes, breakAfter };
 
+  const inShort = IN_SHORT[slug] || null;
   const zoneOf = (id: string) => story.zones.find((z) => z.id === id);
   const DRAWER = ["scene-card", "before-the-story", "map-of-the-story"];
   const LEADERS = ["from-luther", "in-church"];
@@ -247,6 +254,18 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
       const rest = z.boxes.filter((b) => !DRAWER.includes(b.id));
       return (
         <>
+          {inShort && (
+            <details className="drawer drawer--short" data-drawer>
+              <summary className="drawer__sum">
+                <span className="drawer__title">{nw("The whole story, in short", 20)}</span>
+                <span className="drawer__sub">{nw("What happens, start to finish. Open it if you want the ending first.", 20)}</span>
+              </summary>
+              <div className="drawer__body">
+                <p>{inShort}</p>
+                <p><strong>Where it is in the Bible:</strong> <a href={passageHref}>{entry.ref}</a></p>
+              </div>
+            </details>
+          )}
           {inDrawer.length > 0 && (
             <details className="drawer" data-drawer>
               <summary className="drawer__sum">
@@ -330,8 +349,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
   /* Page data for search engines: the familiar title, other names people
      search for, and the passage it retells. */
-  const jsonld = {
-    "@context": "https://schema.org",
+  const article = {
     "@type": "Article",
     headline: entry.title,
     alternativeHeadline: entry.subtitle,
@@ -342,10 +360,40 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
     educationalLevel: entry.level,
     isAccessibleForFree: true,
     about: { "@type": "CreativeWork", name: `${entry.ref} (Bible)` },
-    publisher: { "@type": "Organization", name: "Hope for Americans" },
+    mainEntityOfPage: `${SITE_URL}/stories/${slug}/`,
+    author: { "@type": "Organization", name: "Hope for Americans", url: "https://hopeforamericans.net" },
+    publisher: { "@id": `${SITE_URL}/#org` },
+    image: `${SITE_URL}/static/og-image.jpg`,
+    isBasedOn: { "@type": "CreativeWork", name: `${entry.ref}, Berean Standard Bible`, url: `${SITE_URL}${passageHref}` },
     license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     isPartOf: { "@type": "CollectionPage", name: "Scene by Scene stories", url: `${SITE_URL}/stories/` },
-  };
+  };  const whatQ = entry.kind === "Story" ? `What is ${entry.title} about?` : `What does ${entry.title} say?`;
+  const teachQ = entry.kind === "Story" ? `What does ${entry.title} teach?` : `What does ${entry.title} mean?`;
+  const graph: Record<string, unknown>[] = [
+    article,
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Stories", item: `${SITE_URL}/stories/` },
+        { "@type": "ListItem", position: 2, name: entry.title, item: `${SITE_URL}/stories/${slug}/` },
+      ],
+    },
+  ];
+  /* Questions people ask, answered with text that is on the page:
+     the story in two sentences, the reference, and the Big Idea. */
+  if (inShort) {
+    const qa = [
+      { q: whatQ, a: inShort },
+      { q: `Where is ${entry.title} in the Bible?`, a: `${entry.title} is in ${entry.ref}.` },
+      ...(story.bigIdea ? [{ q: teachQ, a: story.bigIdea.replace(/<[^>]+>/g, "") }] : []),
+    ];
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: qa.map((x) => ({ "@type": "Question", name: x.q, acceptedAnswer: { "@type": "Answer", text: x.a } })),
+    });
+  }
+  const jsonld = { "@context": "https://schema.org", "@graph": graph };
+
 
   return (
     <>
@@ -366,7 +414,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           <nav className="bigstrip" aria-label="Where this story fits in the Bible">
             <Bands mini here={eraCenter(era)} />
             <span className="bigstrip__kicker"><a href={`/timeline/#${era.id}`}>Bible timeline</a></span>
-            <span className="bigstrip__label">Part {act.n} of 4: {act.name} · <a href={`/timeline/#${era.id}`}>{nw(era.title, 20)}</a></span>
+            <span className="bigstrip__label"><Dots parts={[{ text: <><span className="keep">Part {act.n} of 4:</span> <span className="keep">{act.name}</span></>, wrap: true }, <a href={`/timeline/#${era.id}`}>{era.title}</a>]} /></span>
             <div className="bigstrip__nav">
               {hop(before, "before")}
               {hop(after, "after")}
@@ -396,7 +444,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         </aside>
 
         <header className="story-head">
-          <div className="story-eyebrow">{entry.kind === "Teaching" ? "Teaching" : entry.kind === "Poetry and Prayer" ? "Prayer" : "Story"} · {entry.ref}</div>
+          <div className="story-eyebrow"><Dots parts={[entry.kind === "Teaching" ? "Teaching" : entry.kind === "Poetry and Prayer" ? "Prayer" : "Story", entry.ref]} /></div>
           <h1 className="story-title">{nw(entry.title)}</h1>
           <p className="story-subtitle">{entry.subtitle}</p>
           <div className="story-meta">
@@ -448,7 +496,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
             {STEPS.map((st, i) => (
               <section key={st.id} className="step" id={`step-${st.id}`} data-step-panel={st.id} aria-labelledby={`step-h-${st.id}`}>
                 <header className="step__head">
-                  <span className="step__num">Step {i + 1} of 4 · About {(mins as any)[st.id]} min</span>
+                  <span className="step__num"><Dots parts={[`Step ${i + 1} of 4`, `About ${(mins as any)[st.id]} min`]} /></span>
                   <h2 className="step__title" id={`step-h-${st.id}`}>{st.label}</h2>
                   <p className="step__q">{st.q}</p>
                 </header>
@@ -509,14 +557,14 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
                         <a className="finish__card" href={`/stories/${next.slug}/`}>
                           <span className="finish__kicker">{next.order > entry.order ? "What happens next in the Bible" : "Back to the start of the Bible"}</span>
                           <span className="finish__name">{nw(next.title)}</span>
-                          <span className="finish__meta">Part {partOfPassage(next.passage)?.n} of 4 · {next.subtitle}{nextMin ? ` · About ${nextMin} min` : ""}</span>
+                          <span className="finish__meta"><Dots parts={[`Part ${partOfPassage(next.passage)?.n} of 4`, { text: next.subtitle, wrap: true }, nextMin ? `About ${nextMin} min` : ""]} /></span>
                         </a>
                       )}
                       {alike && (
                         <a className="finish__card" href={`/stories/${alike.story.slug}/`}>
                           <span className="finish__kicker">Another story for feeling {alikeFeel?.toLowerCase()}</span>
                           <span className="finish__name">{nw(alike.story.title)}</span>
-                          <span className="finish__meta">{alike.story.subtitle}{alikeMin ? ` · About ${alikeMin} min` : ""}</span>
+                          <span className="finish__meta"><Dots parts={[{ text: alike.story.subtitle, wrap: true }, alikeMin ? `About ${alikeMin} min` : ""]} /></span>
                         </a>
                       )}
                       <a className="finish__card" href="/stories/">

@@ -3441,3 +3441,54 @@ a.bible-vers__btn:hover { box-shadow: inset 0 0 0 1.5px var(--gold); color: var(
   .bible-jump a.bible-jump__test { min-width: 0; }
   .bible-vers__btn { min-height: 38px; padding: 0 12px; font-size: 14px; }
 }
+
+/* ==========================================================================
+   Layout and line breaks, on purpose (UI review, September 26, 2026)
+   ========================================================================== */
+
+/* One site width. Wide pages (Home, Stories, Timeline, Full Bible, Memorize)
+   all use the same 78rem frame as the header, so their left edge lines up
+   with the logo. Reading pages keep the narrower reading column. */
+.mem2 { max-width: 78rem; }
+
+/* Every block of text avoids a lonely last word where the browser can
+   ("pretty"). Headlines, titles, and short labels are also balanced, so
+   their lines are about the same length. Intro paragraphs and descriptions
+   are NOT balanced: balancing a paragraph squeezes it narrower than the
+   column, which looks accidental next to other pages. */
+body { text-wrap: pretty; }
+h1, h2, h3, h4, summary, figcaption, th, dt, label, button, .btn,
+.cover2__title, .cover2__sub, .cat-card__title, .pv__title,
+.path-card__title, .path-card__kicker, .area__title,
+.bookrow__t, .home-tl__name, .mem2__part-name, .bigstrip__name, .bigstrip__label,
+.rail-card__kicker, .rail-card__title, .drawer__title, .fopt__help,
+.story-subtitle, .story-eyebrow, .finish__name, .tl-row__title, .tl-go__t,
+.hcard__title, .next-row__title, .path-step__title { text-wrap: balance; }
+
+/* Pieces that must stay together: "About 19 min", "1 Samuel 17",
+   a story title inside a "→" list. Lines break only at "·" or "→". */
+.keep { white-space: nowrap; }
+
+/* Small book covers: long words get a smaller size instead of being cut. */
+.cover2__title--sm { font-size: 14px; letter-spacing: -0.015em; }
+.cover2__sub { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+
+/* Stories page: the "Reading paths" intro had no room before the cards. */
+.paths-shelf .bigstory__lede { margin: 2px 0 14px; }
+
+/* Feelings stay inside Filters only (decided September 2026), on every
+   screen size. They were still showing as a chip row on phones. */
+.cat-quick { display: none !important; }
+
+/* Parable and topic rows showed two lines and then "…", cutting the
+   sentence off mid-thought. Show the whole line; the rows are short. */
+.bookrow__d { display: block; -webkit-line-clamp: unset; overflow: visible; }
+
+/* Parable and topic rows showed two lines and then "…", cutting the
+   sentence off mid-thought. Show the whole line; the rows are short. */
+.bookrow__d { display: block; -webkit-line-clamp: unset; overflow: visible; }
+/* The timeline label is a sentence in a narrow side panel; make it a block
+   so its lines balance ("Part 4 of 4: The King Arrives · Jesus"). */
+.bigstrip__label { display: block; }
+/* If the title font hasn't loaded, a long word hyphenates instead of being cut. */
+.cover2__title--sm { hyphens: auto; }

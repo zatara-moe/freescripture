@@ -4,6 +4,17 @@ import { readableStories, storyMinutes, catalog, nw } from "@/lib/stories";
 import { loadStory } from "@/lib/story";
 import { PARTS } from "@/lib/timeline";
 import { Bands } from "@/lib/TimelineBands";
+import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/bible";
+import { Dots, Chain, coverTitle } from "@/lib/Meta";
+
+export const metadata: Metadata = {
+  title: { absolute: "Bible Stories Explained in Plain Words | Free Scripture" },
+  description:
+    "Bible stories for adults, one scene at a time, with the verse beside every paragraph. Plus the full Bible in 4 free translations. No ads, no account.",
+  alternates: { canonical: `${SITE_URL}/` },
+  openGraph: { title: "Bible Stories Explained in Plain Words", url: `${SITE_URL}/` },
+};
 
 /* Home: an overview, not a set of doors.
    It answers, in this order:
@@ -88,7 +99,7 @@ export default function Home() {
                   <span className="cover2__body">
                     <span className="cover2__top"><span className="cover2__kind">{c.kind}</span></span>
                     <span className="cover2__rule" aria-hidden="true"></span>
-                    <span className="cover2__title">{c.title}</span>
+                    <span className={`cover2__title${coverTitle(c.title).small ? " cover2__title--sm" : ""}`}>{coverTitle(c.title).text}</span>
                     <span className="cover2__sub">{c.subtitle}</span>
                     <span className="cover2__time">{c.minutes ? `About ${c.minutes} min` : ""}</span>
                   </span>
@@ -129,7 +140,7 @@ export default function Home() {
           {paths.map((p) => (
             <li key={p.slug}>
               <a className="area" href={`/paths/${p.slug}/`}>
-                <span className="area__count">{p.steps.length} stories · About {pathMinutes(p)} min</span>
+                <span className="area__count"><Dots parts={[`${p.steps.length} stories`, `About ${pathMinutes(p)} min`]} /></span>
                 <span className="area__title">{nw(p.title)}</span>
                 <span className="area__line">{p.question}</span>
                 <span className="area__opens">Opens the reading path</span>

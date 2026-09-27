@@ -3,6 +3,7 @@ import { SITE_URL } from "@/lib/bible";
 import { STORIES, isReadable, storyHref, storyMinutes, nw } from "@/lib/stories";
 import { PARTS, ERAS, TL_CONTINUES, tlX, eraCenter, eraOfPassage, bookHref, type Era } from "@/lib/timeline";
 import { Bands } from "@/lib/TimelineBands";
+import { Dots } from "@/lib/Meta";
 
 export const metadata: Metadata = {
   title: "Bible timeline: the whole Bible story in time order",
@@ -47,7 +48,7 @@ function Panel({ e, i }: { e: Era; i: number }) {
     <section className={`tl-panel tl-p${p.n}`} id={e.id} data-panel={e.id} aria-labelledby={`${e.id}-title`}>
       <div className="tl-panel__head">
         <div className="tl-panel__partline">
-          <p className="tl-panel__part">Part {p.n} of 4 · {p.name}</p>
+          <p className="tl-panel__part"><Dots parts={[`Part ${p.n} of 4`, p.name]} /></p>
           <Bands mini here={eraCenter(e)} />
         </div>
         <div className="tl-panel__titles">
@@ -85,7 +86,7 @@ function Panel({ e, i }: { e: Era; i: number }) {
                     return (
                       <li key={s.slug}>
                         <a href={storyHref(s)}>{s.title}</a>
-                        <span className="tl-reads__meta">{min ? ` · About ${min} min` : ""}</span>
+                        <span className="tl-reads__meta">{min ? <>{" · "}<span className="keep">About {min} min</span></> : ""}</span>
                       </li>
                     );
                   })}
