@@ -1,4 +1,225 @@
 {
+ "/stories/jesus-speaks-about-the-end/": [
+  {
+   "sunday": "First Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "Matthew 24:36–44",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/advent-1/"
+    }
+   ]
+  },
+  {
+   "sunday": "First Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "Mark 13:24–37",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/advent-1/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 33",
+   "reading": "Gospel",
+   "ref": "Mark 13:1–8",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-33/"
+    }
+   ]
+  },
+  {
+   "sunday": "First Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "Luke 21:25–36",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/advent-1/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 33",
+   "reading": "Gospel",
+   "ref": "Luke 21:5–19",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-33/"
+    }
+   ]
+  }
+ ],
+ "/stories/swords-into-plowshares/": [
+  {
+   "sunday": "First Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Isaiah 2:1–5",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/advent-1/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-baptism-of-jesus/": [
+  {
+   "sunday": "Second Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "Matthew 3:1–12",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/advent-2/"
+    }
+   ]
+  },
+  {
+   "sunday": "Baptism of Our Lord",
+   "reading": "Gospel",
+   "ref": "Matthew 3:13–17",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/baptism-of-our-lord/"
+    }
+   ]
+  },
+  {
+   "sunday": "Second Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "Mark 1:1–8",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/advent-2/"
+    }
+   ]
+  },
+  {
+   "sunday": "Baptism of Our Lord",
+   "reading": "Gospel",
+   "ref": "Mark 1:4–11",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/baptism-of-our-lord/"
+    }
+   ]
+  },
+  {
+   "sunday": "First Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "Mark 1:9–15",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lent-1/"
+    }
+   ]
+  },
+  {
+   "sunday": "Second Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "Luke 3:1–6",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/advent-2/"
+    }
+   ]
+  },
+  {
+   "sunday": "Third Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "Luke 3:7–18",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/advent-3/"
+    }
+   ]
+  },
+  {
+   "sunday": "Baptism of Our Lord",
+   "reading": "Gospel",
+   "ref": "Luke 3:15–17, 21–22",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/baptism-of-our-lord/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-shoot-of-jesse/": [
+  {
+   "sunday": "Second Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Isaiah 11:1–10",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/advent-2/"
+    }
+   ]
+  }
+ ],
+ "/stories/are-you-the-one/": [
+  {
+   "sunday": "Third Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "Matthew 11:2–11",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/advent-3/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 14",
+   "reading": "Gospel",
+   "ref": "Matthew 11:16–19, 25–30",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-14/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-desert-will-bloom/": [
+  {
+   "sunday": "Third Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Isaiah 35:1–10",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/advent-3/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 23",
+   "reading": "First reading",
+   "ref": "Isaiah 35:4–7a",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-23/"
+    }
+   ]
+  }
+ ],
  "/stories/the-angel-visits-mary/": [
   {
    "sunday": "Third Sunday of Advent",
@@ -58,6 +279,19 @@
    ]
   }
  ],
+ "/stories/immanuel/": [
+  {
+   "sunday": "Fourth Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Isaiah 7:10–16",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/advent-4/"
+    }
+   ]
+  }
+ ],
  "/stories/the-birth-of-jesus/": [
   {
    "sunday": "Christmas: The Nativity of Our Lord",
@@ -79,7 +313,50 @@
    ]
   }
  ],
+ "/stories/a-child-is-born/": [
+  {
+   "sunday": "Christmas: The Nativity of Our Lord",
+   "reading": "First reading",
+   "ref": "Isaiah 9:2–7",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/christmas/"
+    },
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/christmas/"
+    },
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/christmas/"
+    }
+   ]
+  },
+  {
+   "sunday": "Third Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Isaiah 9:1–4",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-3/"
+    }
+   ]
+  }
+ ],
  "/stories/the-wise-men/": [
+  {
+   "sunday": "First Sunday of Christmas",
+   "reading": "Gospel",
+   "ref": "Matthew 2:13–23",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/christmas-sunday-1/"
+    }
+   ]
+  },
   {
    "sunday": "The Epiphany of Our Lord",
    "reading": "Gospel",
@@ -100,11 +377,142 @@
    ]
   }
  ],
- "/stories/the-baptism-of-jesus/": [
+ "/stories/tear-open-the-heavens/": [
+  {
+   "sunday": "First Sunday of Christmas",
+   "reading": "First reading",
+   "ref": "Isaiah 63:7–9",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/christmas-sunday-1/"
+    }
+   ]
+  },
+  {
+   "sunday": "First Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Isaiah 64:1–9",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/advent-1/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-word-became-flesh/": [
+  {
+   "sunday": "Second Sunday of Christmas",
+   "reading": "Gospel",
+   "ref": "John 1:[1–9] 10–18",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/christmas-sunday-2/"
+    },
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/christmas-sunday-2/"
+    },
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/christmas-sunday-2/"
+    }
+   ]
+  },
+  {
+   "sunday": "Third Sunday of Advent",
+   "reading": "Gospel",
+   "ref": "John 1:6–8, 19–28",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/advent-3/"
+    }
+   ]
+  }
+ ],
+ "/stories/a-new-covenant/": [
+  {
+   "sunday": "Second Sunday of Christmas",
+   "reading": "First reading",
+   "ref": "Jeremiah 31:7–14",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/christmas-sunday-2/"
+    },
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/christmas-sunday-2/"
+    },
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/christmas-sunday-2/"
+    }
+   ]
+  },
+  {
+   "sunday": "Fifth Sunday in Lent",
+   "reading": "First reading",
+   "ref": "Jeremiah 31:31–34",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lent-5/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 30",
+   "reading": "First reading",
+   "ref": "Jeremiah 31:7–9",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-30/"
+    }
+   ]
+  },
+  {
+   "sunday": "Reformation Sunday",
+   "reading": "First reading",
+   "ref": "Jeremiah 31:31–34",
+   "years": [
+    {
+     "year": null,
+     "url": "https://www.digitallutheranchurch.com/word/reformation-sunday/"
+    }
+   ]
+  }
+ ],
+ "/stories/arise-shine/": [
+  {
+   "sunday": "The Epiphany of Our Lord",
+   "reading": "First reading",
+   "ref": "Isaiah 60:1–6",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-of-our-lord/"
+    },
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-of-our-lord/"
+    },
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-of-our-lord/"
+    }
+   ]
+  }
+ ],
+ "/stories/a-light-to-the-nations/": [
   {
    "sunday": "Baptism of Our Lord",
-   "reading": "Gospel",
-   "ref": "Matthew 3:13–17",
+   "reading": "First reading",
+   "ref": "Isaiah 42:1–9",
    "years": [
     {
      "year": "A",
@@ -113,57 +521,116 @@
    ]
   },
   {
-   "sunday": "Second Sunday of Advent",
-   "reading": "Gospel",
-   "ref": "Mark 1:1–8",
+   "sunday": "Second Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Isaiah 49:1–7",
    "years": [
     {
-     "year": "B",
-     "url": "https://www.digitallutheranchurch.com/word/year-b/advent-2/"
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-2/"
     }
    ]
   },
+  {
+   "sunday": "Eighth Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Isaiah 49:8–16a",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-8/"
+    }
+   ]
+  }
+ ],
+ "/stories/peter-and-cornelius/": [
   {
    "sunday": "Baptism of Our Lord",
-   "reading": "Gospel",
-   "ref": "Mark 1:4–11",
+   "reading": "Second reading",
+   "ref": "Acts 10:34–43",
    "years": [
     {
-     "year": "B",
-     "url": "https://www.digitallutheranchurch.com/word/year-b/baptism-of-our-lord/"
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/baptism-of-our-lord/"
     }
    ]
   },
   {
-   "sunday": "First Sunday in Lent",
-   "reading": "Gospel",
-   "ref": "Mark 1:9–15",
+   "sunday": "Easter Day: The Resurrection of Our Lord",
+   "reading": "First reading",
+   "ref": "Acts 10:34–43 or Jeremiah 31:1–6",
    "years": [
     {
-     "year": "B",
-     "url": "https://www.digitallutheranchurch.com/word/year-b/lent-1/"
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/easter-day/"
     }
    ]
   },
   {
-   "sunday": "Third Sunday of Advent",
-   "reading": "Gospel",
-   "ref": "Luke 3:7–18",
+   "sunday": "Easter Day: The Resurrection of Our Lord",
+   "reading": "First reading",
+   "ref": "Acts 10:34–43 or Isaiah 25:6–9",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-day/"
+    }
+   ]
+  },
+  {
+   "sunday": "Sixth Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 10:44–48",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-6/"
+    }
+   ]
+  },
+  {
+   "sunday": "Easter Day: The Resurrection of Our Lord",
+   "reading": "First reading",
+   "ref": "Acts 10:34–43 or Isaiah 65:17–25",
    "years": [
     {
      "year": "C",
-     "url": "https://www.digitallutheranchurch.com/word/year-c/advent-3/"
+     "url": "https://www.digitallutheranchurch.com/word/year-c/easter-day/"
     }
    ]
   },
   {
-   "sunday": "Baptism of Our Lord",
-   "reading": "Gospel",
-   "ref": "Luke 3:15–17, 21–22",
+   "sunday": "Fifth Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 11:1–18",
    "years": [
     {
      "year": "C",
-     "url": "https://www.digitallutheranchurch.com/word/year-c/baptism-of-our-lord/"
+     "url": "https://www.digitallutheranchurch.com/word/year-c/easter-5/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-first-disciples/": [
+  {
+   "sunday": "Second Sunday after the Epiphany",
+   "reading": "Gospel",
+   "ref": "John 1:29–42",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-2/"
+    }
+   ]
+  },
+  {
+   "sunday": "Second Sunday after the Epiphany",
+   "reading": "Gospel",
+   "ref": "John 1:43–51",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-2/"
     }
    ]
   }
@@ -249,6 +716,19 @@
    ]
   }
  ],
+ "/stories/do-justice-love-mercy/": [
+  {
+   "sunday": "Fourth Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Micah 6:1–8",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-4/"
+    }
+   ]
+  }
+ ],
  "/stories/salt-and-light/": [
   {
    "sunday": "Fifth Sunday after the Epiphany",
@@ -258,6 +738,78 @@
     {
      "year": "A",
      "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-5/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-fast-god-chooses/": [
+  {
+   "sunday": "Fifth Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Isaiah 58:1–9a [9b–12]",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-5/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 21",
+   "reading": "First reading",
+   "ref": "Isaiah 58:9b–14",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-21/"
+    }
+   ]
+  }
+ ],
+ "/stories/you-have-heard-it-said/": [
+  {
+   "sunday": "Sixth Sunday after the Epiphany",
+   "reading": "Gospel",
+   "ref": "Matthew 5:21–37",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-6/"
+    }
+   ]
+  }
+ ],
+ "/stories/choose-life/": [
+  {
+   "sunday": "Sixth Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Deuteronomy 30:15–20 or Sirach 15:15–20",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-6/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 15",
+   "reading": "First reading",
+   "ref": "Deuteronomy 30:9–14",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-15/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 23",
+   "reading": "First reading",
+   "ref": "Deuteronomy 30:15–20",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-23/"
     }
    ]
   }
@@ -295,6 +847,100 @@
     {
      "year": "A",
      "url": "https://www.digitallutheranchurch.com/word/year-a/epiphany-8/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-transfiguration/": [
+  {
+   "sunday": "Transfiguration of Our Lord",
+   "reading": "Gospel",
+   "ref": "Matthew 17:1–9",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/transfiguration/"
+    }
+   ]
+  },
+  {
+   "sunday": "Transfiguration of Our Lord",
+   "reading": "Gospel",
+   "ref": "Mark 9:2–9",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/transfiguration/"
+    }
+   ]
+  },
+  {
+   "sunday": "Transfiguration of Our Lord",
+   "reading": "Gospel",
+   "ref": "Luke 9:28–36 [37–43]",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/transfiguration/"
+    }
+   ]
+  },
+  {
+   "sunday": "Second Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "Luke 13:31–35 or Luke 9:28–36",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lent-2/"
+    }
+   ]
+  }
+ ],
+ "/stories/moses-on-the-mountain/": [
+  {
+   "sunday": "Transfiguration of Our Lord",
+   "reading": "First reading",
+   "ref": "Exodus 24:12–18",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/transfiguration/"
+    }
+   ]
+  },
+  {
+   "sunday": "Transfiguration of Our Lord",
+   "reading": "First reading",
+   "ref": "Exodus 34:29–35",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/transfiguration/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-is-tempted/": [
+  {
+   "sunday": "First Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "Matthew 4:1–11",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lent-1/"
+    }
+   ]
+  },
+  {
+   "sunday": "First Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "Luke 4:1–13",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lent-1/"
     }
    ]
   }
@@ -439,6 +1085,56 @@
    ]
   }
  ],
+ "/stories/manna-from-heaven/": [
+  {
+   "sunday": "Third Sunday in Lent",
+   "reading": "First reading",
+   "ref": "Exodus 17:1–7",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lent-3/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 18",
+   "reading": "First reading",
+   "ref": "Exodus 16:2–4, 9–15",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-18/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-heals-a-man-born-blind/": [
+  {
+   "sunday": "Fourth Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "John 9:1–41",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lent-4/"
+    }
+   ]
+  }
+ ],
+ "/stories/david-is-anointed/": [
+  {
+   "sunday": "Fourth Sunday in Lent",
+   "reading": "First reading",
+   "ref": "1 Samuel 16:1–13",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lent-4/"
+    }
+   ]
+  }
+ ],
  "/stories/psalm-23/": [
   {
    "sunday": "Fourth Sunday in Lent",
@@ -513,6 +1209,19 @@
     {
      "year": "B",
      "url": "https://www.digitallutheranchurch.com/word/year-b/all-saints-sunday/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-valley-of-dry-bones/": [
+  {
+   "sunday": "Fifth Sunday in Lent",
+   "reading": "First reading",
+   "ref": "Ezekiel 37:1–14",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lent-5/"
     }
    ]
   }
@@ -594,6 +1303,49 @@
     {
      "year": "C",
      "url": "https://www.digitallutheranchurch.com/word/year-c/palm-sunday/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-suffering-servant/": [
+  {
+   "sunday": "Palm Sunday",
+   "reading": "First reading",
+   "ref": "Isaiah 50:4–9a",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/palm-sunday/"
+    },
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/palm-sunday/"
+    },
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/palm-sunday/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 24",
+   "reading": "First reading",
+   "ref": "Isaiah 50:4–9a",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-24/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 29",
+   "reading": "First reading",
+   "ref": "Isaiah 53:4–12",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-29/"
     }
    ]
   }
@@ -778,6 +1530,100 @@
    ]
   }
  ],
+ "/stories/the-good-shepherd/": [
+  {
+   "sunday": "Fourth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 10:1–10",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/easter-4/"
+    }
+   ]
+  },
+  {
+   "sunday": "Fourth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 10:11–18",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-4/"
+    }
+   ]
+  },
+  {
+   "sunday": "Fourth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 10:22–30",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/easter-4/"
+    }
+   ]
+  }
+ ],
+ "/stories/i-am-the-way/": [
+  {
+   "sunday": "Fifth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 14:1–14",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/easter-5/"
+    }
+   ]
+  },
+  {
+   "sunday": "Sixth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 14:15–21",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/easter-6/"
+    }
+   ]
+  },
+  {
+   "sunday": "Sixth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 14:23–29 or John 5:1–9",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/easter-6/"
+    }
+   ]
+  },
+  {
+   "sunday": "Day of Pentecost",
+   "reading": "Gospel",
+   "ref": "John 14:8–17 [25–27]",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/day-of-pentecost/"
+    }
+   ]
+  }
+ ],
+ "/stories/stephen/": [
+  {
+   "sunday": "Fifth Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 7:55–60",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/easter-5/"
+    }
+   ]
+  }
+ ],
  "/stories/paul-in-athens/": [
   {
    "sunday": "Sixth Sunday of Easter",
@@ -787,6 +1633,78 @@
     {
      "year": "A",
      "url": "https://www.digitallutheranchurch.com/word/year-a/easter-6/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-prays-for-his-followers/": [
+  {
+   "sunday": "Seventh Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 17:1–11",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/easter-7/"
+    }
+   ]
+  },
+  {
+   "sunday": "Seventh Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 17:6–19",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-7/"
+    }
+   ]
+  },
+  {
+   "sunday": "Seventh Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 17:20–26",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/easter-7/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-goes-up-to-heaven/": [
+  {
+   "sunday": "Seventh Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 1:6–14",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/easter-7/"
+    }
+   ]
+  },
+  {
+   "sunday": "Seventh Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 1:15–17, 21–26",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-7/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-great-commission/": [
+  {
+   "sunday": "The Holy Trinity",
+   "reading": "Gospel",
+   "ref": "Matthew 28:16–20",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/holy-trinity/"
     }
    ]
   }
@@ -815,6 +1733,87 @@
    ]
   }
  ],
+ "/stories/jairus-daughter/": [
+  {
+   "sunday": "Lectionary 10",
+   "reading": "Gospel",
+   "ref": "Matthew 9:9–13, 18–26",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-10/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 13",
+   "reading": "Gospel",
+   "ref": "Mark 5:21–43",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-13/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-sends-out-the-twelve/": [
+  {
+   "sunday": "Lectionary 11",
+   "reading": "Gospel",
+   "ref": "Matthew 9:35–10:8 [9–23]",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-11/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 12",
+   "reading": "Gospel",
+   "ref": "Matthew 10:24–39",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-12/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 13",
+   "reading": "Gospel",
+   "ref": "Matthew 10:40–42",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-13/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 14",
+   "reading": "Gospel",
+   "ref": "Mark 6:1–13",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-14/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 14",
+   "reading": "Gospel",
+   "ref": "Luke 10:1–11, 16–20",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-14/"
+    }
+   ]
+  }
+ ],
  "/parables/sower/": [
   {
    "sunday": "Lectionary 15",
@@ -824,6 +1823,52 @@
     {
      "year": "A",
      "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-15/"
+    }
+   ]
+  }
+ ],
+ "/stories/come-to-the-waters/": [
+  {
+   "sunday": "Lectionary 15",
+   "reading": "First reading",
+   "ref": "Isaiah 55:10–13",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-15/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 18",
+   "reading": "First reading",
+   "ref": "Isaiah 55:1–5",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-18/"
+    }
+   ]
+  },
+  {
+   "sunday": "Eighth Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Sirach 27:4–7 or Isaiah 55:10–13",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-8/"
+    }
+   ]
+  },
+  {
+   "sunday": "Third Sunday in Lent",
+   "reading": "First reading",
+   "ref": "Isaiah 55:1–9",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lent-3/"
     }
    ]
   }
@@ -846,6 +1891,19 @@
    "sunday": "Lectionary 17",
    "reading": "Gospel",
    "ref": "Matthew 13:31–33, 44–52",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-17/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-wisdom-of-solomon/": [
+  {
+   "sunday": "Lectionary 17",
+   "reading": "First reading",
+   "ref": "1 Kings 3:5–12",
    "years": [
     {
      "year": "A",
@@ -922,6 +1980,89 @@
     {
      "year": "B",
      "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-19/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-faith-of-the-canaanite-woman/": [
+  {
+   "sunday": "Lectionary 20",
+   "reading": "Gospel",
+   "ref": "Matthew 15:[10–20] 21–28",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-20/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 23",
+   "reading": "Gospel",
+   "ref": "Mark 7:24–37",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-23/"
+    }
+   ]
+  }
+ ],
+ "/stories/peter-says-who-jesus-is/": [
+  {
+   "sunday": "Lectionary 21",
+   "reading": "Gospel",
+   "ref": "Matthew 16:13–20",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-21/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 22",
+   "reading": "Gospel",
+   "ref": "Matthew 16:21–28",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-22/"
+    }
+   ]
+  },
+  {
+   "sunday": "Second Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "Mark 8:31–38 or Mark 9:2–9",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lent-2/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 24",
+   "reading": "Gospel",
+   "ref": "Mark 8:27–38",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-24/"
+    }
+   ]
+  }
+ ],
+ "/stories/when-someone-wrongs-you/": [
+  {
+   "sunday": "Lectionary 23",
+   "reading": "Gospel",
+   "ref": "Matthew 18:15–20",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-23/"
     }
    ]
   }
@@ -1122,6 +2263,67 @@
    ]
   }
  ],
+ "/stories/give-to-caesar/": [
+  {
+   "sunday": "Lectionary 29",
+   "reading": "Gospel",
+   "ref": "Matthew 22:15–22",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-29/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 32",
+   "reading": "Gospel",
+   "ref": "Luke 20:27–38",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-32/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-greatest-commandment/": [
+  {
+   "sunday": "Lectionary 30",
+   "reading": "Gospel",
+   "ref": "Matthew 22:34–46",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-30/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 31",
+   "reading": "Gospel",
+   "ref": "Mark 12:28–34",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-31/"
+    }
+   ]
+  }
+ ],
+ "/stories/practice-what-you-preach/": [
+  {
+   "sunday": "Lectionary 31",
+   "reading": "Gospel",
+   "ref": "Matthew 23:1–12",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-31/"
+    }
+   ]
+  }
+ ],
  "/parables/ten-virgins/": [
   {
    "sunday": "Lectionary 32",
@@ -1131,6 +2333,63 @@
     {
      "year": "A",
      "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-32/"
+    }
+   ]
+  }
+ ],
+ "/stories/let-justice-roll-down/": [
+  {
+   "sunday": "Lectionary 32",
+   "reading": "First reading",
+   "ref": "Wisdom of Solomon 6:12–16 or Amos 5:18–24",
+   "years": [
+    {
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/lectionary-32/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 15",
+   "reading": "First reading",
+   "ref": "Amos 7:7–15",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-15/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 28",
+   "reading": "First reading",
+   "ref": "Amos 5:6–7, 10–15",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-28/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 25",
+   "reading": "First reading",
+   "ref": "Amos 8:4–7",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-25/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 26",
+   "reading": "First reading",
+   "ref": "Amos 6:1a, 4–7",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-26/"
     }
    ]
   }
@@ -1161,26 +2420,15 @@
    ]
   }
  ],
- "/parables/watchful-servants/": [
+ "/stories/i-will-shepherd-my-sheep/": [
   {
-   "sunday": "First Sunday of Advent",
-   "reading": "Gospel",
-   "ref": "Mark 13:24–37",
+   "sunday": "Christ the King",
+   "reading": "First reading",
+   "ref": "Ezekiel 34:11–16, 20–24",
    "years": [
     {
-     "year": "B",
-     "url": "https://www.digitallutheranchurch.com/word/year-b/advent-1/"
-    }
-   ]
-  },
-  {
-   "sunday": "Lectionary 19",
-   "reading": "Gospel",
-   "ref": "Luke 12:32–40",
-   "years": [
-    {
-     "year": "C",
-     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-19/"
+     "year": "A",
+     "url": "https://www.digitallutheranchurch.com/word/year-a/christ-the-king/"
     }
    ]
   }
@@ -1209,6 +2457,67 @@
    ]
   }
  ],
+ "/stories/good-news-to-the-poor/": [
+  {
+   "sunday": "Third Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Isaiah 61:1–4, 8–11",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/advent-3/"
+    }
+   ]
+  },
+  {
+   "sunday": "First Sunday of Christmas",
+   "reading": "First reading",
+   "ref": "Isaiah 61:10–62:3",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/christmas-sunday-1/"
+    }
+   ]
+  },
+  {
+   "sunday": "Second Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Isaiah 62:1–5",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-2/"
+    }
+   ]
+  }
+ ],
+ "/stories/gods-promise-to-david/": [
+  {
+   "sunday": "Fourth Sunday of Advent",
+   "reading": "First reading",
+   "ref": "2 Samuel 7:1–11, 16",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/advent-4/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-is-presented-at-the-temple/": [
+  {
+   "sunday": "First Sunday of Christmas",
+   "reading": "Gospel",
+   "ref": "Luke 2:22–40",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/christmas-sunday-1/"
+    }
+   ]
+  }
+ ],
  "/stories/god-calls-samuel/": [
   {
    "sunday": "Second Sunday after the Epiphany",
@@ -1218,6 +2527,67 @@
     {
      "year": "B",
      "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-2/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-heals-in-capernaum/": [
+  {
+   "sunday": "Fourth Sunday after the Epiphany",
+   "reading": "Gospel",
+   "ref": "Mark 1:21–28",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-4/"
+    }
+   ]
+  },
+  {
+   "sunday": "Fifth Sunday after the Epiphany",
+   "reading": "Gospel",
+   "ref": "Mark 1:29–39",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-5/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-heals-a-man-with-leprosy/": [
+  {
+   "sunday": "Sixth Sunday after the Epiphany",
+   "reading": "Gospel",
+   "ref": "Mark 1:40–45",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-6/"
+    }
+   ]
+  }
+ ],
+ "/stories/naaman-is-healed/": [
+  {
+   "sunday": "Sixth Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "2 Kings 5:1–14",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-6/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 28",
+   "reading": "First reading",
+   "ref": "2 Kings 5:1–3, 7–15c",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-28/"
     }
    ]
   }
@@ -1235,6 +2605,41 @@
    ]
   }
  ],
+ "/stories/i-have-called-you-by-name/": [
+  {
+   "sunday": "Seventh Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Isaiah 43:18–25",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-7/"
+    }
+   ]
+  },
+  {
+   "sunday": "Baptism of Our Lord",
+   "reading": "First reading",
+   "ref": "Isaiah 43:1–7",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/baptism-of-our-lord/"
+    }
+   ]
+  },
+  {
+   "sunday": "Fifth Sunday in Lent",
+   "reading": "First reading",
+   "ref": "Isaiah 43:16–21",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lent-5/"
+    }
+   ]
+  }
+ ],
  "/parables/new-wineskins/": [
   {
    "sunday": "Eighth Sunday after the Epiphany",
@@ -1244,6 +2649,19 @@
     {
      "year": "B",
      "url": "https://www.digitallutheranchurch.com/word/year-b/epiphany-8/"
+    }
+   ]
+  }
+ ],
+ "/stories/elijah-goes-up-to-heaven/": [
+  {
+   "sunday": "Transfiguration of Our Lord",
+   "reading": "First reading",
+   "ref": "2 Kings 2:1–12",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/transfiguration/"
     }
    ]
   }
@@ -1261,6 +2679,32 @@
    ]
   }
  ],
+ "/stories/abraham-and-sarah-get-new-names/": [
+  {
+   "sunday": "Second Sunday in Lent",
+   "reading": "First reading",
+   "ref": "Genesis 17:1–7, 15–16",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lent-2/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-clears-the-temple/": [
+  {
+   "sunday": "Third Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "John 2:13–22",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lent-3/"
+    }
+   ]
+  }
+ ],
  "/stories/the-ten-commandments/": [
   {
    "sunday": "Third Sunday in Lent",
@@ -1270,6 +2714,191 @@
     {
      "year": "B",
      "url": "https://www.digitallutheranchurch.com/word/year-b/lent-3/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-bronze-snake/": [
+  {
+   "sunday": "Fourth Sunday in Lent",
+   "reading": "First reading",
+   "ref": "Numbers 21:4–9",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lent-4/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-grain-of-wheat/": [
+  {
+   "sunday": "Fifth Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "John 12:20–33",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lent-5/"
+    }
+   ]
+  }
+ ],
+ "/stories/peter-and-john-heal-a-lame-man/": [
+  {
+   "sunday": "Second Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 4:32–35",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-2/"
+    }
+   ]
+  },
+  {
+   "sunday": "Third Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 3:12–19",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-3/"
+    }
+   ]
+  },
+  {
+   "sunday": "Fourth Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 4:5–12",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-4/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-appears-to-the-disciples/": [
+  {
+   "sunday": "Third Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "Luke 24:36b–48",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-3/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-vine-and-the-branches/": [
+  {
+   "sunday": "Fifth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 15:1–8",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-5/"
+    }
+   ]
+  },
+  {
+   "sunday": "Sixth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 15:9–17",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-6/"
+    }
+   ]
+  }
+ ],
+ "/stories/philip-and-the-ethiopian/": [
+  {
+   "sunday": "Fifth Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 8:26–40",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/easter-5/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-spirit-of-truth/": [
+  {
+   "sunday": "Day of Pentecost",
+   "reading": "Gospel",
+   "ref": "John 15:26–27; 16:4b–15",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/day-of-pentecost/"
+    }
+   ]
+  },
+  {
+   "sunday": "The Holy Trinity",
+   "reading": "Gospel",
+   "ref": "John 16:12–15",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/holy-trinity/"
+    }
+   ]
+  }
+ ],
+ "/stories/isaiah-sees-the-lord/": [
+  {
+   "sunday": "The Holy Trinity",
+   "reading": "First reading",
+   "ref": "Isaiah 6:1–8",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/holy-trinity/"
+    }
+   ]
+  },
+  {
+   "sunday": "Fifth Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Isaiah 6:1–8 [9–13]",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-5/"
+    }
+   ]
+  }
+ ],
+ "/stories/lord-of-the-sabbath/": [
+  {
+   "sunday": "Lectionary 9",
+   "reading": "Gospel",
+   "ref": "Mark 2:23–3:6",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-9/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-true-family/": [
+  {
+   "sunday": "Lectionary 10",
+   "reading": "Gospel",
+   "ref": "Mark 3:20–35",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-10/"
     }
    ]
   }
@@ -1300,15 +2929,320 @@
    ]
   }
  ],
- "/stories/jairus-daughter/": [
+ "/stories/job/": [
   {
-   "sunday": "Lectionary 13",
-   "reading": "Gospel",
-   "ref": "Mark 5:21–43",
+   "sunday": "Lectionary 12",
+   "reading": "First reading",
+   "ref": "Job 38:1–11",
    "years": [
     {
      "year": "B",
-     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-13/"
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-12/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 32",
+   "reading": "First reading",
+   "ref": "Job 19:23–27a",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-32/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-death-of-john-the-baptist/": [
+  {
+   "sunday": "Lectionary 15",
+   "reading": "Gospel",
+   "ref": "Mark 6:14–29",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-15/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-righteous-branch/": [
+  {
+   "sunday": "Lectionary 16",
+   "reading": "First reading",
+   "ref": "Jeremiah 23:1–6",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-16/"
+    }
+   ]
+  },
+  {
+   "sunday": "First Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Jeremiah 33:14–16",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/advent-1/"
+    }
+   ]
+  },
+  {
+   "sunday": "Christ the King",
+   "reading": "First reading",
+   "ref": "Jeremiah 23:1–6",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/christ-the-king/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-bread-of-life/": [
+  {
+   "sunday": "Lectionary 18",
+   "reading": "Gospel",
+   "ref": "John 6:24–35",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-18/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 19",
+   "reading": "Gospel",
+   "ref": "John 6:35, 41–51",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-19/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 20",
+   "reading": "Gospel",
+   "ref": "John 6:51–58",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-20/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 21",
+   "reading": "Gospel",
+   "ref": "John 6:56–69",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-21/"
+    }
+   ]
+  }
+ ],
+ "/stories/wisdom-calls-out/": [
+  {
+   "sunday": "Lectionary 20",
+   "reading": "First reading",
+   "ref": "Proverbs 9:1–6",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-20/"
+    }
+   ]
+  },
+  {
+   "sunday": "The Holy Trinity",
+   "reading": "First reading",
+   "ref": "Proverbs 8:1–4, 22–31",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/holy-trinity/"
+    }
+   ]
+  }
+ ],
+ "/stories/as-for-me-and-my-house/": [
+  {
+   "sunday": "Lectionary 21",
+   "reading": "First reading",
+   "ref": "Joshua 24:1–2a, 14–18",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-21/"
+    }
+   ]
+  }
+ ],
+ "/stories/what-comes-from-the-heart/": [
+  {
+   "sunday": "Lectionary 22",
+   "reading": "Gospel",
+   "ref": "Mark 7:1–8, 14–15, 21–23",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-22/"
+    }
+   ]
+  }
+ ],
+ "/stories/who-is-the-greatest/": [
+  {
+   "sunday": "Lectionary 25",
+   "reading": "Gospel",
+   "ref": "Mark 9:30–37",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-25/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 29",
+   "reading": "Gospel",
+   "ref": "Mark 10:35–45",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-29/"
+    }
+   ]
+  }
+ ],
+ "/stories/whoever-is-not-against-us/": [
+  {
+   "sunday": "Lectionary 26",
+   "reading": "Gospel",
+   "ref": "Mark 9:38–50",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-26/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-blesses-the-children/": [
+  {
+   "sunday": "Lectionary 27",
+   "reading": "Gospel",
+   "ref": "Mark 10:2–16",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-27/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-rich-young-man/": [
+  {
+   "sunday": "Lectionary 28",
+   "reading": "Gospel",
+   "ref": "Mark 10:17–31",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-28/"
+    }
+   ]
+  }
+ ],
+ "/stories/blind-bartimaeus/": [
+  {
+   "sunday": "Lectionary 30",
+   "reading": "Gospel",
+   "ref": "Mark 10:46–52",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-30/"
+    }
+   ]
+  }
+ ],
+ "/stories/hear-o-israel/": [
+  {
+   "sunday": "Lectionary 31",
+   "reading": "First reading",
+   "ref": "Deuteronomy 6:1–9",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-31/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-widows-offering/": [
+  {
+   "sunday": "Lectionary 32",
+   "reading": "Gospel",
+   "ref": "Mark 12:38–44",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-32/"
+    }
+   ]
+  }
+ ],
+ "/stories/elijah-and-the-widow/": [
+  {
+   "sunday": "Lectionary 32",
+   "reading": "First reading",
+   "ref": "1 Kings 17:8–16",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-32/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 10",
+   "reading": "First reading",
+   "ref": "1 Kings 17:17–24",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-10/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-son-of-man-vision/": [
+  {
+   "sunday": "Lectionary 33",
+   "reading": "First reading",
+   "ref": "Daniel 12:1–3",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/lectionary-33/"
+    }
+   ]
+  },
+  {
+   "sunday": "Christ the King",
+   "reading": "First reading",
+   "ref": "Daniel 7:9–10, 13–14",
+   "years": [
+    {
+     "year": "B",
+     "url": "https://www.digitallutheranchurch.com/word/year-b/christ-the-king/"
     }
    ]
   }
@@ -1326,6 +3260,58 @@
    ]
   }
  ],
+ "/stories/god-sings-over-you/": [
+  {
+   "sunday": "Third Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Zephaniah 3:14–20",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/advent-3/"
+    }
+   ]
+  }
+ ],
+ "/stories/out-of-bethlehem/": [
+  {
+   "sunday": "Fourth Sunday of Advent",
+   "reading": "First reading",
+   "ref": "Micah 5:2–5a",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/advent-4/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-boy-jesus-at-the-temple/": [
+  {
+   "sunday": "First Sunday of Christmas",
+   "reading": "Gospel",
+   "ref": "Luke 2:41–52",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/christmas-sunday-1/"
+    }
+   ]
+  }
+ ],
+ "/stories/hannahs-prayer/": [
+  {
+   "sunday": "First Sunday of Christmas",
+   "reading": "First reading",
+   "ref": "1 Samuel 2:18–20, 26",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/christmas-sunday-1/"
+    }
+   ]
+  }
+ ],
  "/stories/water-into-wine/": [
   {
    "sunday": "Second Sunday after the Epiphany",
@@ -1335,6 +3321,56 @@
     {
      "year": "C",
      "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-2/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-is-rejected-at-nazareth/": [
+  {
+   "sunday": "Third Sunday after the Epiphany",
+   "reading": "Gospel",
+   "ref": "Luke 4:14–21",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-3/"
+    }
+   ]
+  },
+  {
+   "sunday": "Fourth Sunday after the Epiphany",
+   "reading": "Gospel",
+   "ref": "Luke 4:21–30",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-4/"
+    }
+   ]
+  }
+ ],
+ "/stories/ezra-reads-the-law/": [
+  {
+   "sunday": "Third Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Nehemiah 8:1–3, 5–6, 8–10",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-3/"
+    }
+   ]
+  }
+ ],
+ "/stories/god-calls-jeremiah/": [
+  {
+   "sunday": "Fourth Sunday after the Epiphany",
+   "reading": "First reading",
+   "ref": "Jeremiah 1:4–10",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/epiphany-4/"
     }
    ]
   }
@@ -1378,6 +3414,32 @@
    ]
   }
  ],
+ "/stories/mary-anoints-jesus/": [
+  {
+   "sunday": "Fifth Sunday in Lent",
+   "reading": "Gospel",
+   "ref": "John 12:1–8",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lent-5/"
+    }
+   ]
+  }
+ ],
+ "/stories/we-must-obey-god/": [
+  {
+   "sunday": "Second Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 5:27–32",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/easter-2/"
+    }
+   ]
+  }
+ ],
  "/stories/jesus-restores-peter/": [
   {
    "sunday": "Third Sunday of Easter",
@@ -1400,6 +3462,32 @@
     {
      "year": "C",
      "url": "https://www.digitallutheranchurch.com/word/year-c/easter-3/"
+    }
+   ]
+  }
+ ],
+ "/stories/peter-raises-tabitha/": [
+  {
+   "sunday": "Fourth Sunday of Easter",
+   "reading": "First reading",
+   "ref": "Acts 9:36–43",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/easter-4/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-washes-the-disciples-feet/": [
+  {
+   "sunday": "Fifth Sunday of Easter",
+   "reading": "Gospel",
+   "ref": "John 13:31–35",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/easter-5/"
     }
    ]
   }
@@ -1428,6 +3516,32 @@
    ]
   }
  ],
+ "/stories/the-faith-of-the-centurion/": [
+  {
+   "sunday": "Lectionary 9",
+   "reading": "Gospel",
+   "ref": "Luke 7:1–10",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-9/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-widow-of-nain/": [
+  {
+   "sunday": "Lectionary 10",
+   "reading": "Gospel",
+   "ref": "Luke 7:11–17",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-10/"
+    }
+   ]
+  }
+ ],
  "/parables/two-debtors/": [
   {
    "sunday": "Lectionary 11",
@@ -1441,6 +3555,45 @@
    ]
   }
  ],
+ "/stories/david-and-bathsheba/": [
+  {
+   "sunday": "Lectionary 11",
+   "reading": "First reading",
+   "ref": "2 Samuel 11:26–12:10, 13–15",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-11/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-man-among-the-tombs/": [
+  {
+   "sunday": "Lectionary 12",
+   "reading": "Gospel",
+   "ref": "Luke 8:26–39",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-12/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-sets-out-for-jerusalem/": [
+  {
+   "sunday": "Lectionary 13",
+   "reading": "Gospel",
+   "ref": "Luke 9:51–62",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-13/"
+    }
+   ]
+  }
+ ],
  "/parables/good-samaritan/": [
   {
    "sunday": "Lectionary 15",
@@ -1450,6 +3603,43 @@
     {
      "year": "C",
      "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-15/"
+    }
+   ]
+  }
+ ],
+ "/stories/mary-and-martha/": [
+  {
+   "sunday": "Lectionary 16",
+   "reading": "Gospel",
+   "ref": "Luke 10:38–42",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-16/"
+    }
+   ]
+  }
+ ],
+ "/stories/abrahams-visitors/": [
+  {
+   "sunday": "Lectionary 16",
+   "reading": "First reading",
+   "ref": "Genesis 18:1–10a",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-16/"
+    }
+   ]
+  },
+  {
+   "sunday": "Lectionary 17",
+   "reading": "First reading",
+   "ref": "Genesis 18:20–32",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-17/"
     }
    ]
   }
@@ -1480,6 +3670,71 @@
    ]
   }
  ],
+ "/stories/chasing-the-wind/": [
+  {
+   "sunday": "Lectionary 18",
+   "reading": "First reading",
+   "ref": "Ecclesiastes 1:2, 12–14; 2:18–23",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-18/"
+    }
+   ]
+  }
+ ],
+ "/parables/watchful-servants/": [
+  {
+   "sunday": "Lectionary 19",
+   "reading": "Gospel",
+   "ref": "Luke 12:32–40",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-19/"
+    }
+   ]
+  }
+ ],
+ "/stories/fire-on-the-earth/": [
+  {
+   "sunday": "Lectionary 20",
+   "reading": "Gospel",
+   "ref": "Luke 12:49–56",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-20/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-heals-a-bent-over-woman/": [
+  {
+   "sunday": "Lectionary 21",
+   "reading": "Gospel",
+   "ref": "Luke 13:10–17",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-21/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-lowest-seat/": [
+  {
+   "sunday": "Lectionary 22",
+   "reading": "Gospel",
+   "ref": "Luke 14:1, 7–14",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-22/"
+    }
+   ]
+  }
+ ],
  "/parables/counting-the-cost/": [
   {
    "sunday": "Lectionary 23",
@@ -1498,6 +3753,19 @@
    "sunday": "Lectionary 24",
    "reading": "Gospel",
    "ref": "Luke 15:1–10",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-24/"
+    }
+   ]
+  }
+ ],
+ "/stories/the-golden-calf/": [
+  {
+   "sunday": "Lectionary 24",
+   "reading": "First reading",
+   "ref": "Exodus 32:7–14",
    "years": [
     {
      "year": "C",
@@ -1545,11 +3813,50 @@
    ]
   }
  ],
+ "/stories/the-righteous-will-live-by-faith/": [
+  {
+   "sunday": "Lectionary 27",
+   "reading": "First reading",
+   "ref": "Habakkuk 1:1–4; 2:1–4",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-27/"
+    }
+   ]
+  }
+ ],
+ "/stories/jesus-heals-ten-lepers/": [
+  {
+   "sunday": "Lectionary 28",
+   "reading": "Gospel",
+   "ref": "Luke 17:11–19",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-28/"
+    }
+   ]
+  }
+ ],
  "/parables/persistent-widow/": [
   {
    "sunday": "Lectionary 29",
    "reading": "Gospel",
    "ref": "Luke 18:1–8",
+   "years": [
+    {
+     "year": "C",
+     "url": "https://www.digitallutheranchurch.com/word/year-c/lectionary-29/"
+    }
+   ]
+  }
+ ],
+ "/stories/jacob-wrestles-with-god/": [
+  {
+   "sunday": "Lectionary 29",
+   "reading": "First reading",
+   "ref": "Genesis 32:22–31",
    "years": [
     {
      "year": "C",

@@ -46,5 +46,5 @@ Free Scripture is written for adults who are new to the Bible, who stopped readi
 
 - [Memorize](https://freescripture.org/memorize/): learn one Bible line at a time.
 - [Search](https://freescripture.org/search/): find a story by the name you know ("Jonah and the whale", "feeding the 5,000") or a verse like John 3:16.
-- [About and method](https://freescripture.org/about/): who makes Free Scripture, how stories are written and reviewed, and the text sources and licenses.
+- [About and method](https://freescripture.org/about/): who makes Free Scripture, how stories are written and checked, and the text sources and licenses.
 - [Sitemap](https://freescripture.org/sitemap.xml)

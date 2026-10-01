@@ -43,9 +43,9 @@ export default function About() {
         </p>
         <p>
           The stories are written from a Lutheran (ELCA) point of view. Each
-          one is checked line by line against the Bible text. We also ask a
-          Lutheran pastor to review each story. Stories marked <em>New</em> are
-          still waiting for that review, so small changes may come.
+          one is checked line by line against the Bible text: every quotation
+          word for word, and every paragraph against the verses beside it. When
+          we find a mistake, we fix it.
         </p>
 
         <h2 id="luther-and-the-jewish-people">Luther and the Jewish people</h2>
