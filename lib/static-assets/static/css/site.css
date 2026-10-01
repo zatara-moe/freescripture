@@ -3602,3 +3602,19 @@ h1, h2, h3, h4, summary, figcaption, th, dt, label, button, .btn,
 .story-thread p { margin: 0 !important; font-size: 17px; line-height: 1.55; }
 .cmp-thread { display: block; margin: .7em 0; padding: 10px 12px; border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; background: var(--paper-warm); font-size: 15px; line-height: 1.5; }
 @media print { .side-callout { display: none; } .story-thread { background: none; border-left-color: #999; } }
+
+/* Using this at church (2026-09-30): story and parable pages.
+   Filled, not bordered, like the family cards on DLC and Luther's World. */
+.church-use { margin: 32px 0 8px; padding: 20px 22px; background: var(--paper-warm); border-radius: var(--radius); }
+.church-use__title { font-family: var(--font-book); font-size: 22px; line-height: 1.25; margin: 0 0 12px; color: var(--ink); }
+.church-use__label { font-family: var(--font-ui); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faded); margin: 16px 0 6px; }
+.church-use__sundays { list-style: none; margin: 0; padding: 0; }
+.church-use__sundays li { padding: 8px 0; border-top: 1px solid var(--rule); font-size: 16px; line-height: 1.5; color: var(--ink); }
+.church-use__sundays a, .church-use__more a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.church-use__sunday { font-weight: 700; }
+.church-use__reading { display: block; font-size: 14.5px; color: var(--ink-faded); }
+.church-use__box { background: var(--paper); border-radius: var(--radius); padding: 14px 16px; }
+.church-use__line { margin: 0 0 10px; font-size: 16px; line-height: 1.55; color: var(--ink); overflow-wrap: anywhere; user-select: all; }
+.church-use__copy { min-height: 44px; }
+.church-use__more { margin: 14px 0 0; font-size: 16px; }
+@media print { .church-use__copy { display: none; } }

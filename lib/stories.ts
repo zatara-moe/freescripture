@@ -1279,6 +1279,12 @@ export const INDEX_EARLY = new Set<string>([
      the Section by Section pilots, so it opens now. Isaiah 40 and
      Philippians 1 to 3 wait for the theologian's review of the format. */
   "philippians-4",
+  /* Decided September 30, 2026: Digital Lutheran Church now asks churches to
+     link these stories in newsletters and sermon notes, so four more stories
+     people search for by name open now. Each is read in church: Zacchaeus
+     (Lectionary 31, Year C), Lazarus (Lent 5, Year A), the Baptism of Jesus
+     (Baptism of Our Lord, all three years), Palm Sunday (all three years). */
+  "zacchaeus", "jesus-raises-lazarus", "the-baptism-of-jesus", "palm-sunday",
 ]);
 export function isIndexed(s: StoryEntry) { return s.status === "live" || (s.status === "early" && INDEX_EARLY.has(s.slug)); }
 export function readableStories() { return STORIES.filter(isReadable); }

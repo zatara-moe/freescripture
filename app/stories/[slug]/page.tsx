@@ -11,6 +11,7 @@ import { pathsData } from "@/lib/paths";
 import { JsonLd } from "@/lib/JsonLd";
 import { IN_SHORT } from "@/lib/story-answers";
 import { Dots } from "@/lib/Meta";
+import { ChurchUse } from "@/lib/ChurchUse";
 
 /* A Scene by Scene story, in four steps that are the same on every story:
      1 Story     what happened, each paragraph with its verses
@@ -639,6 +640,14 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
             </div>
           </aside>
         </div>
+
+        <ChurchUse
+          path={`/stories/${entry.slug}/`}
+          sundayPath={entry.parable ? `/parables/${entry.parable}/` : undefined}
+          name={entry.title}
+          hook={entry.desc}
+          minutes={storyMinutes(entry.slug)}
+        />
 
         <footer className="story-credit">
           {entry.status === "early" && <p>This {fw.thing} is new. It has been checked line by line against the Bible text, but a Lutheran pastor has not reviewed it yet. Small changes may come.</p>}

@@ -12,6 +12,7 @@ import {
 import { JsonLd } from "@/lib/JsonLd";
 import { STORIES, isReadable, storyHref, storyMinutes } from "@/lib/stories";
 import { Dots } from "@/lib/Meta";
+import { ChurchUse } from "@/lib/ChurchUse";
 
 type Params = { slug: string };
 
@@ -189,13 +190,19 @@ export default async function ParablePage({
         </div>
       )}
 
+      <ChurchUse
+        path={`/parables/${p.slug}/`}
+        name={`The parable of ${p.title.replace(/^The /, "the ")}`}
+        hook={p.cover || p.line}
+      />
+
       {siblings.length > 0 && (
         <div className="keep-reading">
           <div className="keep-reading__heading">More on {theme?.label.toLowerCase()}</div>
           <div className="keep-reading__links">
             {siblings.map((s: any) => (
               <a className="keep-reading__link" href={`/parables/${s.slug}/`} key={s.slug}>
-                <span className="keep-reading__link-label">{s.title}</span>
+                <span className="keep-reading__link-label">{s.title}</span>{" "}
                 <span className="keep-reading__link-desc">{s.line}</span>
               </a>
             ))}
