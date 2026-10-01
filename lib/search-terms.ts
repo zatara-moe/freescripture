@@ -48,10 +48,6 @@ export const FAMILIAR: Familiar[] = [
   /* ---- After Easter ---- */
 
   /* ---- Letters and well-known chapters ---- */
-  { title: "The Fruit of the Spirit", ref: "Galatians 5:22-23", book: "galatians", ch: 5, v: 22, also: ["Love, joy, peace", "Fruits of the spirit"] },
-  { title: "The Armor of God", ref: "Ephesians 6:10-18", book: "ephesians", ch: 6, v: 10, also: ["Full armor of God", "Shield of faith", "Sword of the Spirit"] },
-  { title: "The Heroes of Faith", ref: "Hebrews 11", book: "hebrews", ch: 11, v: 1, also: ["Faith hall of fame", "Faith is the assurance"] },
-  { title: "A New Heaven and a New Earth", ref: "Revelation 21:1-7", book: "revelation", ch: 21, v: 1, also: ["No more tears", "All things new", "New Jerusalem"] },
 ];
 
 /** Extra names for people on the timeline, so "Simon Peter" finds Peter. */
