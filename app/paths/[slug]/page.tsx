@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${p.title}: Bible Stories in Plain Words`,
     description,
     alternates: { canonical: `${SITE_URL}/paths/${p.slug}/` },
+    openGraph: { siteName: "Free Scripture", title: `${p.title} | Free Scripture`, description, url: `${SITE_URL}/paths/${p.slug}/` },
   };
 }
 

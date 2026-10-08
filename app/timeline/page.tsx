@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "The Bible's story from the beginning to the first churches, drawn to scale in 4 parts. Key events, people, places, and every book, in plain words. Free, no account.",
   alternates: { canonical: `${SITE_URL}/timeline/` },
-  openGraph: {
+  openGraph: { siteName: "Free Scripture",
     title: "Bible timeline | Free Scripture",
     description: "The whole Bible story in time order, drawn to scale, in plain words.",
     url: `${SITE_URL}/timeline/`,

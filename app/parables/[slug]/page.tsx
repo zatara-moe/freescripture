@@ -53,7 +53,7 @@ export async function generateMetadata({
     title: `${p.title} | The Parables of Jesus`,
     description: `${p.line} Read ${refLabel(p.ref)} in full, with parallel accounts.`,
     alternates: { canonical: `${SITE_URL}/parables/${p.slug}/` },
-    openGraph: {
+    openGraph: { siteName: "Free Scripture",
       title: p.title,
       description: p.line,
       url: `${SITE_URL}/parables/${p.slug}/`,

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { OG_DEFAULT } from "@/lib/og/card";
 import type { Metadata } from "next";
 import {
   TRANSLATIONS,
@@ -47,7 +48,7 @@ export async function generateMetadata(
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: "book" },
+    openGraph: { siteName: "Free Scripture", images: [OG_DEFAULT], title, description, url, type: "book" },
   };
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_DEFAULT } from "@/lib/og/card";
 import { PARABLES, PARABLE_THEMES, SITE_URL } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
 
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Every parable Jesus told, sorted by what it is about rather than where it falls in the book. The Prodigal Son, the Good Samaritan, the Sower, and 34 more.",
   alternates: { canonical: `${SITE_URL}/parables/` },
-  openGraph: {
+  openGraph: { siteName: "Free Scripture", images: [OG_DEFAULT],
     title: "The Parables of Jesus",
     description:
       "Every parable Jesus told, sorted by what it is about rather than where it falls in the book.",

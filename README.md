@@ -132,3 +132,16 @@ indexes, service worker, and manifest are stored in lib/static-assets/
 and published at their usual addresses (/static/css/site.css, /sw.js,
 and so on) by small route files in app/. This keeps every file inside
 folders that GitHub accepts.
+
+## Share images
+
+The picture that shows when someone shares a link (in a text, email, or post)
+is made by `lib/og/card.tsx`. Each page type has an `opengraph-image.tsx` next
+to its `page.tsx`: home, stories, Bible chapters, the timeline, reading paths,
+parables, and verses for how you feel. Every other page uses the home image.
+Story, path, parable, and verses images are made during the build. Chapter
+images are made the first time a chapter is shared, then cached for a year.
+Fonts for the images are in `lib/og/fonts/` (SIL Open Font License).
+`middleware.ts` adds the trailing slash to page addresses and lets share
+images load without a redirect.
+

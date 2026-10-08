@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { OG_DEFAULT } from "@/lib/og/card";
 import type { Metadata } from "next";
 import {
   TRANSLATIONS,
@@ -32,7 +33,7 @@ export async function generateMetadata(
   const title = `${tmeta.label} (${tmeta.short})`;
   const description = `Read the ${tmeta.label} online for free. ${tmeta.description}`;
   const url = `${SITE_URL}/${trans}/`;
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } };
+  return { title, description, alternates: { canonical: url }, openGraph: { siteName: "Free Scripture", images: [OG_DEFAULT], title, description, url } };
 }
 
 export default async function TranslationLanding(

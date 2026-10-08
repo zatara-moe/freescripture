@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
+  /* middleware.ts adds the trailing slash itself, so share images can skip it. */
+  skipTrailingSlashRedirect: true,
   /* The Empty Tomb was split into The Crucifixion and The Resurrection
      (September 2026). Old links go to The Resurrection. */
   async redirects() {

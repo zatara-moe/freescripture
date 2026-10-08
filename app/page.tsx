@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Bible stories for adults, one scene at a time, with the verse beside every paragraph. Plus the full Bible in 4 free translations. No ads, no account.",
   alternates: { canonical: `${SITE_URL}/` },
-  openGraph: { title: "Bible Stories Explained in Plain Words", url: `${SITE_URL}/` },
+  openGraph: { siteName: "Free Scripture", title: "Bible Stories Explained in Plain Words", url: `${SITE_URL}/` },
 };
 
 /* Home: an overview, not a set of doors.

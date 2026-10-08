@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { OG_DEFAULT } from "@/lib/og/card";
 import type { Metadata } from "next";
 import { pullVerse, bookSlug, DEFAULT_TRANS, SITE_URL } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
@@ -61,7 +62,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `${SITE_URL}/verse/${ref}/` },
-    openGraph: { title, description, url: `${SITE_URL}/verse/${ref}/` },
+    openGraph: { siteName: "Free Scripture", images: [OG_DEFAULT], title, description, url: `${SITE_URL}/verse/${ref}/` },
   };
 }
 

@@ -16,9 +16,10 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "Free Scripture",
     type: "website",
-    images: [{ url: "/static/og-image.jpg", width: 1200, height: 630 }],
   },
-  twitter: { card: "summary_large_image", images: ["/static/og-image.jpg"] },
+  /* Share images come from the opengraph-image.tsx files next to each page
+     (made with lib/og/card.tsx). X uses the same image when it has no image of its own. */
+  twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
 };
 

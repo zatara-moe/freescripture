@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description,
     keywords: [s.title, ...(s.also || []), s.ref],
     alternates: { canonical: `${SITE_URL}/stories/${s.slug}/` },
-    openGraph: { title: `${s.title} | Free Scripture`, description, url: `${SITE_URL}/stories/${s.slug}/`, type: "article" },
+    openGraph: { siteName: "Free Scripture", title: `${s.title} | Free Scripture`, description, url: `${SITE_URL}/stories/${s.slug}/`, type: "article" },
     robots: isIndexed(s) ? { index: true, follow: true } : { index: false, follow: isReadable(s) },
   };
 }
@@ -390,7 +390,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
     mainEntityOfPage: `${SITE_URL}/stories/${slug}/`,
     author: { "@type": "Organization", name: "Hope for Americans", url: "https://hopeforamericans.net" },
     publisher: { "@id": `${SITE_URL}/#org` },
-    image: `${SITE_URL}/static/og-image.jpg`,
+    image: `${SITE_URL}/stories/${slug}/opengraph-image`,
     isBasedOn: { "@type": "CreativeWork", name: `${entry.ref}, Berean Standard Bible`, url: `${SITE_URL}${passageHref}` },
     license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     isPartOf: { "@type": "CollectionPage", name: section ? "Section by Section guides" : "Scene by Scene stories", url: `${SITE_URL}/stories/` },

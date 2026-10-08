@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_DEFAULT } from "@/lib/og/card";
 import { SITE_URL } from "@/lib/bible";
 import { catalog, FEELINGS, KIND_HELP, nw, storyBySlug, SHELVES, type CatItem, type CatKind } from "@/lib/stories";
 import { PARTS, partOfPassage } from "@/lib/timeline";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Bible stories, the parables of Jesus, and verses for how you feel, explained in plain words. Filter by feeling, kind, or length. Free, no account.",
   alternates: { canonical: `${SITE_URL}/stories/` },
-  openGraph: {
+  openGraph: { siteName: "Free Scripture", images: [OG_DEFAULT],
     title: "Stories | Free Scripture",
     description: "Bible stories, parables, and verses for how you feel, explained in plain words.",
     url: `${SITE_URL}/stories/`,

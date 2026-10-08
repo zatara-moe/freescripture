@@ -27,6 +27,7 @@ export async function generateMetadata(
     title: n.meta_title || n.h1,
     description: n.meta_desc || n.lede,
     alternates: { canonical: `${SITE_URL}/read/${need}/` },
+    openGraph: { siteName: "Free Scripture", title: `${n.h1 || n.short} | Free Scripture`, description: n.meta_desc || n.lede, url: `${SITE_URL}/read/${need}/` },
   };
 }
 

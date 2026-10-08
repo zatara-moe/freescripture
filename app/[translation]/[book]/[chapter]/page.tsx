@@ -58,7 +58,7 @@ export async function generateMetadata(
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, url, type: "article" },
+    openGraph: { siteName: "Free Scripture", title, description, url, type: "article" },
   };
 }
 
