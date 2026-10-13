@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { OG_DEFAULT } from "@/lib/og/card";
 import type { Metadata } from "next";
-import { pullVerse, bookSlug, DEFAULT_TRANS, SITE_URL } from "@/lib/bible";
+import { pullVerse, bookSlug, testamentOf, DEFAULT_TRANS, SITE_URL } from "@/lib/bible";
 import { JsonLd } from "@/lib/JsonLd";
 import verseIndex from "@/lib/verse-index.json";
 
@@ -99,19 +99,79 @@ export default async function VersePage({
     })),
   };
 
+  // Group the other places by Testament, so the list is easier to scan.
+  const groups = [
+    { id: "ot", label: "Old Testament", items: restWithText.filter((r) => testamentOf(r.book) !== "nt") },
+    { id: "nt", label: "New Testament", items: restWithText.filter((r) => testamentOf(r.book) === "nt") },
+  ].filter((g) => g.items.length > 0);
+  const anchor = (book: string) => `at-${bookSlug(book)}`;
+  const card = ({ book, text }: { book: string; text: string | null }) => (
+    <a
+      className="hcard hcard--wide"
+      href={`/${DEFAULT_TRANS}/${bookSlug(book)}/${chapter}/#v${verse}`}
+      id={anchor(book)}
+      key={book}
+    >
+      <span className="hcard__body">
+        <span className="hcard__label">
+          {book} {chapter}:{verse}
+        </span>
+        {text && (
+          <span className="hcard__sub hcard__sub--italic">{text}</span>
+        )}
+      </span>
+      {/* Drawn by CSS, not an inline SVG: this list repeats it up to 65 times. */}
+      <span className="story-row__chev chev-css" aria-hidden="true" />
+    </a>
+  );
+
   return (
-    <div className="reading-column">
+    <div className="reading-column lookup-page">
       <JsonLd data={jsonld} />
 
-      <nav className="chapter-nav" aria-label="Navigation">
-        <div className="chapter-nav__group">
-          <a href="/search/">&larr; Search</a>
-        </div>
-        <div className="chapter-nav__current">Chapter {chapter}, verse {verse}</div>
-        <div className="chapter-nav__group" />
-      </nav>
+      {/* The left column on wide screens: look up another verse, and jump
+          to any book on this page. On phones only the lookup box shows. */}
+      <aside className="rail lookup-rail" aria-label="Verse lookup tools">
+        <p className="rail__crumb"><a href="/search/">&larr; Search</a></p>
 
-      <header className="verse-disambig-head">
+        <form className="lookup-form" action="/search/" method="get" data-verse-lookup>
+          <label className="rail__label" htmlFor="lookup-input">Look up another verse</label>
+          <div className="lookup-form__row">
+            <input
+              id="lookup-input"
+              className="lookup-form__input"
+              name="q"
+              type="text"
+              inputMode="text"
+              placeholder="Like 11:55"
+              autoComplete="off"
+            />
+            <input type="hidden" name="go" value="1" />
+            <button className="rail-btn lookup-form__go" type="submit">Go</button>
+          </div>
+        </form>
+
+        {groups.length > 0 && (
+          <nav className="lookup-jump" aria-label={`Books with a ${chapter}:${verse}`}>
+            <p className="rail__label">Jump to a book</p>
+            <ul className="need-others__list">
+              <li><a className="need-others__link" href="#lookup-top">{primary}</a></li>
+            </ul>
+            {groups.map((g) => (
+              <div key={g.id}>
+                <p className="rail__label need-others__sub">{g.label}</p>
+                <ul className="need-others__list">
+                  {g.items.map(({ book }) => (
+                    <li key={book}><a className="need-others__link" href={`#${anchor(book)}`}>{book}</a></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+        )}
+      </aside>
+
+      <header className="verse-disambig-head" id="lookup-top">
         <p className="ph-eyebrow">Verse lookup</p>
         <h1 className="verse-disambig-head__label ph-title">
           {chapter}:{verse} in the Bible
@@ -149,31 +209,19 @@ export default async function VersePage({
       {/* The rest — honestly listed, not hidden, because guessing wrong
           for someone who meant John 3:22 instead of Genesis 3:22 would
           be worse than showing one extra list. */}
-      {restWithText.length > 0 && (
+      {groups.length > 0 && (
         <div className="verse-disambig-rest">
           <h2 className="verse-disambig-rest__heading">
             Also at {chapter}:{verse}
           </h2>
-          <div className="hcard-row hcard-row--col">
-            {restWithText.map(({ book, text }) => (
-              <a
-                className="hcard hcard--wide"
-                href={`/${DEFAULT_TRANS}/${bookSlug(book)}/${chapter}/#v${verse}`}
-                key={book}
-              >
-                <span className="hcard__body">
-                  <span className="hcard__label">
-                    {book} {chapter}:{verse}
-                  </span>
-                  {text && (
-                    <span className="hcard__sub hcard__sub--italic">{text}</span>
-                  )}
-                </span>
-                {/* Drawn by CSS, not an inline SVG: this list repeats it up to 65 times. */}
-                <span className="story-row__chev chev-css" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
+          {groups.map((g) => (
+            <section className="lookup-group" key={g.id} aria-label={g.label}>
+              <h3 className="lookup-group__label">{g.label}</h3>
+              <div className="hcard-row hcard-row--col lookup-grid">
+                {g.items.map(card)}
+              </div>
+            </section>
+          ))}
         </div>
       )}
     </div>
