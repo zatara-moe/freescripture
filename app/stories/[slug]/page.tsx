@@ -62,6 +62,9 @@ const H = ({ html, as = "span", className }: { html: string; as?: any; className
   return <Tag className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 };
 const plain = (html: string) => html.replace(/<[^>]+>/g, "");
+/* Fixed note under Luther quotes. A constant so word help can see its words. */
+const LUTHER_NOTE = "We quote Luther for what he got right about grace. He also wrote terrible things about Jewish people.";
+
 /* Keep the last two words of a short option together, so no word sits alone. */
 const nwHtml = (html: string) => html.replace(/ (\S+)$/, "&nbsp;$1");
 
@@ -366,11 +369,23 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   const others = siblings(entry);
   const mem = entry.memorize;
 
+  /* Word help: send only the Word Bank entries that can appear on this page
+     (searched across the story, its entry, and its verses), not all of them.
+     The page looks and works the same; each story is about 35 KB lighter. */
+  // Everything word help can scan: the story, its entry and verses, the
+  // "In short" summary, and the fixed wording the page adds around them.
+  const haystack = JSON.stringify([story, entry, verses, inShort, LUTHER_NOTE]);
+  const pageWords = WORDS.filter((w) =>
+    w.match.some((form) =>
+      new RegExp(`(^|[^A-Za-z])(${form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})(?![A-Za-z])`).test(haystack)
+    )
+  );
+
   const data = {
     slug, title: entry.title, url: `/stories/${slug}/`, book: bookName, verses,
     readLabel: steps[0].label, part: fw.part,
     memorize: mem || null,
-    words: WORDS,
+    words: pageWords,
     paths: pathsData().filter((pp) => pp.steps.some((s) => s.slug === slug)),
   };
 
@@ -559,7 +574,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
                     </summary>
                     <div className="drawer__body">
                       {forYou.lead}
-                      <p className="drawer__note">We quote Luther for what he got right about grace. He also wrote terrible things about Jewish people. <a href="/about/#luther-and-the-jewish-people">Read our note on that.</a></p>
+                      <p className="drawer__note">{LUTHER_NOTE} <a href="/about/#luther-and-the-jewish-people">Read our note on that.</a></p>
                     </div>
                   </details>
                 )}
