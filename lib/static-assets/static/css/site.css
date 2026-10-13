@@ -820,6 +820,34 @@ button { font: inherit; cursor: pointer; }
 /* --- Needs hub --- */
 .needs-hub { }
 
+/* --- Card-list pages (need hub, need detail, parables hub):
+   wider container matches Stories catalog at all viewport sizes. --- */
+.reading-column.needs-hub,
+.reading-column.need-page,
+.reading-column.parables-hub {
+  max-width: 78rem;
+}
+@media (min-width: 900px) {
+  .reading-column.needs-hub,
+  .reading-column.need-page,
+  .reading-column.parables-hub {
+    padding: 0 48px 64px;
+  }
+}
+/* Hub pages: two-column book-row lists at medium screens */
+@media (min-width: 600px) {
+  .reading-column.needs-hub .read-list,
+  .reading-column.parables-hub .read-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  /* Cap the parables search input width */
+  .reading-column.parables-hub .parable-filter {
+    max-width: 520px;
+  }
+}
+
 /* --- Search page --- */
 .search-page { }
 .search-box { margin: 16px 0; }
@@ -3618,3 +3646,28 @@ h1, h2, h3, h4, summary, figcaption, th, dt, label, button, .btn,
 .church-use__copy { min-height: 44px; }
 .church-use__more { margin: 14px 0 0; font-size: 16px; }
 @media print { .church-use__copy { display: none; } }
+
+/* --- Card-list pages at 1200px+: override the 3-column reading grid --- */
+@media (min-width: 1200px) {
+  /* Hub pages: simple block flow instead of rail + content + empty columns */
+  .reading-column.needs-hub,
+  .reading-column.parables-hub {
+    display: block;
+    padding: 28px 48px 64px;
+  }
+  /* Need detail pages: keep chapter-nav in the sticky rail column,
+     but span the page head and verse cards across columns 2–3 */
+  .reading-column.need-page {
+    padding: 24px 48px 64px;
+  }
+  .reading-column.need-page > .page-head,
+  .reading-column.need-page > .passage-list {
+    grid-column: 2 / 4;
+  }
+  /* Two-column passage cards on wide screens */
+  .reading-column.need-page .passage-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}

@@ -45,7 +45,7 @@ export default function ParablesIndex() {
   };
 
   return (
-    <div className="reading-column">
+    <div className="reading-column parables-hub">
       <JsonLd data={jsonld} />
 
       <div className="page-head">
